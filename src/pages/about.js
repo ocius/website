@@ -6,6 +6,6 @@ export default () => (
   <div>
     <Nav />
     <Header content="About" />
-    <p>About Ocius</p>
+    <p>Hi Robert</p>
   </div>
 );
