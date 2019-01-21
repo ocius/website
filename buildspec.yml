@@ -6,4 +6,9 @@ phases:
             - 'npm install -g gatsby'    
     build:        
         commands:            
-            - 'gatsby build' 
+            - 'gatsby build'
+artifacts:    
+    base-directory: public    
+    files:        
+        - '**/*'    
+    discard-paths: yes
