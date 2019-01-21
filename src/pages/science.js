@@ -1,9 +1,11 @@
 import React from "react";
 import Header from "../components/header";
 import Title from "../components/title";
+import Nav from "../components/nav";
 
 export default () => (
-  <div style={{ color: `blue` }}>
+  <div style={{ color: `white` }}>
+    <Nav />
     <Title />
     <Header content="Science" />
 
