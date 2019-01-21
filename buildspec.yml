@@ -2,15 +2,8 @@ version: 0.1
 phases:    
     install:        
         commands:            
+            - 'npm install'
             - 'npm install -g gatsby'    
-    pre_build:        
-        commands:            
-            - 'npm install'    
     build:        
         commands:            
-            - 'gatsby build'    
-artifacts:    
-    base-directory: public
-    files:        
-        - '**/*'    
-    discard-paths: yes
+            - 'gatsby build' 

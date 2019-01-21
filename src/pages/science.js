@@ -4,7 +4,7 @@ import Title from "../components/title";
 import Nav from "../components/nav";
 
 export default () => (
-  <div style={{ color: `white` }}>
+  <div>
     <Nav />
     <Title />
     <Header content="Science" />
