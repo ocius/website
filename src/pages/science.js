@@ -1,8 +1,9 @@
 import React from "react";
+import Header from "../components/header";
 
 export default () => (
   <div style={{ color: `green` }}>
-    <h1>Science</h1>
+    <Header content="Science" />
     <p>Live Ocean Conditions</p>
     <p>Tsnuami Detection</p>
     <p>Whale and fish monitoring</p>
