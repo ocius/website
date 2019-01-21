@@ -3,7 +3,7 @@ import Nav from "../components/nav";
 import Title from "../components/title";
 
 export default () => (
-    <div style={{ color: `white`}}>
+    <div>
         <Nav />
         <Title />
         <p>Satellites of the Sea</p>
