@@ -5,6 +5,8 @@ phases:
       - "npm install"
       - "npm install -g gatsby"
       - "npm install -g lighthouse-ci"
+      - "apt update"
+      - "apt install -y chromium-browser"
       - "gatsby build"
   pre_build:
     commands:
