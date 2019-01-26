@@ -6,5 +6,6 @@ export default () => (
     <Link to="/science">Science</Link>
     <Link to="/news">News</Link>
     <Link to="/about">About</Link>
+    <Link to="/contact">Contact</Link>
   </div>
 );
