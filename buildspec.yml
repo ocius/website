@@ -4,11 +4,17 @@ phases:
     commands:
       - "npm install"
       - "npm install -g gatsby"
+      - "npm install -g lighthouse-ci"
+      - "gatsby build"
+  pre_build:
+    commands:
+      - 'echo "Run gatsby locally"'
+      - 'gatsby serve &'
+      - 'echo "Ensure changes meet lighthouse thresholds"'
+      - "lighthouse-ci http://localhost:9000/ --performance=90 --best-practices=90 --pwa=30 --accessibility=30 --seo=30"
   build:
     commands:
-      - "gatsby build"
-  post_build:
-    commands:
+      - 'echo "Upload build output to S3"'
       - 'aws s3 sync "public/" "s3://ocius-static-website" --delete --acl "public-read"'
 artifacts:
   base-directory: public
