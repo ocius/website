@@ -1,12 +1,10 @@
 import React from "react";
-import Nav from "../components/nav";
 import Header from "../components/header";
+import Layout from "../components/layout"
 
 export default () => (
-  <div>
-    <Helmet title="About page for Ocius website"/>
-    <Nav />
+  <Layout>
     <Header content="About" />
     <p>About Ocius</p>
-  </div>
+  </Layout>
 );
