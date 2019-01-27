@@ -1,9 +1,11 @@
 import React from "react";
 import Nav from "../components/nav";
 import Title from "../components/title";
+import Helmet from "react-helmet";
 
 export default () => (
     <div>
+        <Helmet title="Ocius Technology"/>
         <Nav />
         <Title />
         <p>Satellites of the Sea</p>
