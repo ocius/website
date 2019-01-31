@@ -1,12 +1,12 @@
 import React from "react";
-import Title from "../components/title";
 import Header from "../components/header";
+import Layout from "../components/layout";
 
 export default () => (
-    <div>
-        <Title />
-        <Header content="Not found" />
-        <p>We can't find that page</p>
-        <img src="https://images.pexels.com/photos/7321/sea-water-ocean-horizon.jpg" alt="An empty ocean"/>
-    </div>
+    <Layout>
+        <Header content="Not Found" />
+        <p>That page does not exist</p>
+        <img src="https://writerscafe.s3.amazonaws.com/stories/93933e3f3d753a029ec801d9fb2ba426.jpg" alt="An empty ocean"/>
+    </Layout>
+ 
 );
