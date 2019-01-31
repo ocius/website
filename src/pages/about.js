@@ -1,11 +1,10 @@
 import React from "react";
-import Nav from "../components/nav";
 import Header from "../components/header";
+import Layout from "../components/layout"
 
 export default () => (
-  <div>
-    <Nav />
+  <Layout>
     <Header content="About" />
     <p>About Ocius</p>
-  </div>
+  </Layout>
 );
