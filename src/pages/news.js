@@ -1,12 +1,12 @@
 import React from "react";
 import Header from "../components/header";
 import Layout from "../components/layout";
+import {graphql} from "gatsby";
 
 export default ({ data }) => (
   <Layout>
     <Header content="News" />
 
-    <p>{data.allMarkdownRemark.totalCount} Posts </p>
     <div>
       {data.allMarkdownRemark.edges.map(({ node }) => (
         <div key={node.id}>

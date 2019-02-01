@@ -5,8 +5,6 @@ module.exports = {
     description: `We make ocean drones`
   },
   plugins: [
-    "gatsby-plugin-offline",
-    `gatsby-transformer-remark`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -25,6 +23,8 @@ module.exports = {
         display: "standalone",
         icon: "src/images/ocius-logo.png"
       }
-    }
+    },
+    "gatsby-plugin-offline",
+    `gatsby-transformer-remark`
   ]
 };
