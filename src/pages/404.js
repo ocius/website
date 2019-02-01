@@ -4,7 +4,7 @@ import Header from "../components/header";
 
 export default () => (
   <Layout>
-    <Header content="Not Found" />
+    <Header title="Not Found" description="Our 404 page"/>
     <p>That page does not exist</p>
     <img
       src="https://writerscafe.s3.amazonaws.com/stories/93933e3f3d753a029ec801d9fb2ba426.jpg"
