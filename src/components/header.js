@@ -8,6 +8,6 @@ export default props => (
       <title>{props.title}</title>
       <meta name="description" content={props.description} />
     </Helmet>
-    <h1>{props.content}</h1>
+    <h1>{props.title}</h1>
   </div>
 );
