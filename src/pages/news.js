@@ -6,7 +6,7 @@ import { Link, graphql } from "gatsby";
 export default ({ data }) => {
   return (
     <Layout>
-      <Header content="News" />
+      <Header title="News" description="Ocius blog and news"/>
       {data.allMarkdownRemark.edges.map(({ node }) => (
         <div key={node.id}>
           <Link to={node.fields.slug}>

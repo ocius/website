@@ -1,3 +1,13 @@
-import React from "react"
+import React from "react";
+import { Helmet } from "react-helmet";
 
-export default props => <h1>{props.content}</h1>
+export default props => (
+  <div> 
+    <Helmet>
+      <html lang="en" />
+      <title>{props.title}</title>
+      <meta name="description" content={props.description} />
+    </Helmet>
+    <h1>{props.title}</h1>
+  </div>
+);
