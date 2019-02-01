@@ -1,6 +1,6 @@
 ---
 title: "Second blog post"
-date: "2017-02-01"
+date: "2017-12-12"
 ---
 
 Here we have the second blogpost. 
