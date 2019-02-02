@@ -13,7 +13,7 @@ phases:
       - 'echo "Run gatsby locally"'
       - 'gatsby serve &'
       - 'echo "Ensure changes meet lighthouse thresholds"'
-      - "lighthouse-ci http://localhost:9000/ --performance=99 --best-practices=99 --accessibility=99 --seo=99"
+      - "lighthouse-ci http://localhost:9000/ --performance=99 --best-practices=93 --accessibility=99 --seo=99"
   build:
     commands:
       - 'echo "Upload build output to S3"'
