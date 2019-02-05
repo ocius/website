@@ -15,7 +15,7 @@ phases:
   build:
     commands:
       - 'aws s3 sync "public/" "s3://ocius-static-website" --delete --acl "public-read"'
-      - 'aws cloudfront create-invalidation --distribution-id E32IQDBZLB1XOB --paths \"/*\"'
+      - 'aws cloudfront create-invalidation --distribution-id E32IQDBZLB1XOB --paths /*'
 artifacts:
   base-directory: public
   files:
