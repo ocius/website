@@ -4,10 +4,7 @@ import Layout from '../components/layout';
 
 export default () => (
   <Layout>
-    <Header title="About" description="Ocius history and information" />
-    <h2>Mission</h2>
-    <h2>People</h2>
-    <h2>Partners</h2>
-    <h2>Awards</h2>
+    <Header title="Defense" desciption="Applications for defense" />
+    <p>Applications for defense</p>
   </Layout>
 );

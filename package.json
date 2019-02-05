@@ -10,7 +10,7 @@
     "lint": "eslint src"
   },
   "dependencies": {
-    "gatsby": "^2.0.76",
+    "gatsby": "^2.4.9",
     "gatsby-plugin-react-helmet": "^3.0.5",
     "gatsby-source-filesystem": "^2.0.19",
     "gatsby-transformer-remark": "^2.2.2",
