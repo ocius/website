@@ -1,6 +1,6 @@
-import React from "react";
-import Nav from "../components/nav";
-import { StaticQuery } from "gatsby";
+import React from 'react';
+import { graphql, StaticQuery } from 'gatsby';
+import Nav from './nav';
 
 export default ({ children }) => (
   <StaticQuery

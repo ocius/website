@@ -10,16 +10,14 @@ phases:
       - "gatsby build"
   pre_build:
     commands:
-      - 'echo "Run gatsby locally"'
       - 'gatsby serve &'
-      - 'echo "Ensure changes meet lighthouse thresholds"'
       - "lighthouse-ci http://localhost:9000/ --performance=100 --best-practices=93 --accessibility=100 --seo=100"
   build:
     commands:
-      - 'echo "Upload build output to S3"'
       - 'aws s3 sync "public/" "s3://ocius-static-website" --delete --acl "public-read"'
+      - 'aws cloudfront create-invalidation --distribution-id E32IQDBZLB1XOB --paths \"/*\""
 artifacts:
   base-directory: public
   files:
-    - "**/*"
+    - '../{1}'
   discard-paths: yes
