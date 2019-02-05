@@ -4,7 +4,7 @@
 
 ## Installation
 
-- git clone git@github.com:ocius/website.git
+- clone this repo
 - cd website
 - npm install
 - npm install -g gatsby
