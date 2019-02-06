@@ -2,6 +2,7 @@ import React from 'react';
 import { Link as GatsbyLink, graphql, StaticQuery } from 'gatsby';
 import Navbar from './Navbar';
 import NavbarHeader from './NavbarHeader';
+import NavbarItems from './NavbarItems';
 
 const navitems = [
   { link: '/', title: 'Home' },
@@ -28,12 +29,14 @@ export default () => (
       `}
       render={data => <NavbarHeader name={data.site.siteMetadata.title} />}
     />
-    {navitems.map(item => {
-      return (
-        <GatsbyLink key={navitems.indexOf(item)} to={item.link}>
-          {item.title}
-        </GatsbyLink>
-      );
-    })}
+    <NavbarItems>
+      {navitems.map(item => {
+        return (
+          <GatsbyLink key={navitems.indexOf(item)} to={item.link}>
+            {item.title}
+          </GatsbyLink>
+        );
+      })}
+    </NavbarItems>
   </Navbar>
 );
