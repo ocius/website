@@ -4,3 +4,12 @@ body {
     font-size: 15px;
     line-height: 140%;
 }
+
+a:hover {
+    text-decoration: underline;
+}
+
+a {
+    color: #001826;
+    text-decoration: none;
+}
