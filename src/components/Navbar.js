@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Radium from 'radium';
+import Container from './Container';
 
 const styles = {
   navbar: {
@@ -10,25 +11,6 @@ const styles = {
     zIndex: '1',
     top: '0px',
     boxShadow: '0 2px 4px rgba(0, 0, 0, 0.2)'
-  },
-  container: {
-    width: '960px',
-    margin: '0 auto',
-    position: 'relative',
-    marginTop: '-10px',
-
-    '@media (max-width: 767px)': {
-      width: '100%'
-    },
-    '@media (min-width: 768px)': {
-      width: '768px'
-    },
-    '@media (min-width: 992px)': {
-      width: '970px'
-    },
-    '@media (min-width: 1200px)': {
-      width: '1140px'
-    }
   },
   clear: {
     clear: 'both'
@@ -58,12 +40,10 @@ class Navbar extends Component {
   }
 
   render() {
-    const { navStyle, contStyle } = this.props;
+    const { navStyle } = this.props;
     return (
       <header className="primary" style={[styles.navbar, navStyle && navStyle]}>
-        <div className="container" style={[styles.container, contStyle && contStyle]}>
-          {this.renderChildren()}
-        </div>
+        <Container>{this.renderChildren()}</Container>
         <div className="clear" style={[styles.clear]} />
       </header>
     );
@@ -72,13 +52,11 @@ class Navbar extends Component {
 
 Navbar.propTypes = {
   navStyle: PropTypes.objectOf(PropTypes.object),
-  contStyle: PropTypes.objectOf(PropTypes.object),
   children: PropTypes.node.isRequired
 };
 
 Navbar.defaultProps = {
-  navStyle: {},
-  contStyle: {}
+  navStyle: {}
 };
 
 export default Radium(Navbar);
