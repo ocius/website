@@ -1,8 +1,9 @@
 import React from 'react';
 import { Link } from 'gatsby';
+import Navbar from './Navbar';
 
 export default () => (
-  <div>
+  <Navbar>
     <Link to="/">Home</Link>
     <Link to="/about">About</Link>
     <Link to="/solutions">Solutions</Link>
@@ -11,5 +12,5 @@ export default () => (
     <Link to="/news">News</Link>
     <Link to="/contact">Contact</Link>
     <Link to="/careers">Careers</Link>
-  </div>
+  </Navbar>
 );
