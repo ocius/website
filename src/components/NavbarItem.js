@@ -6,40 +6,28 @@ import { Link as GatsbyLink } from 'gatsby';
 const styles = {
   base: {
     position: 'relative',
-    display: 'block',
-    boxSizing: 'border-box',
+    display: 'inline-block',
+    listStyle: 'none',
+    fontSize: '1.125em',
+    fontWeight: '300',
+    lineHeight: '1.4',
 
-    '@media (min-width: 768px)': {
-      float: 'left'
+    ':hover': {
+      color: '#60d2f6',
+      backgroundColor: '#fff'
     }
   },
   link: {
-    paddingTop: '10px',
-    paddingBottom: '10px',
-    paddingLeft: '15px',
-    paddingRight: '15px',
-    lineHeight: '20px',
-    position: 'relative',
-    display: 'block',
-    boxSizing: 'border-box',
+    display: 'inline-block',
+    padding: '2.25em 1.25em 1.75em',
+    fontSize: '1em',
+    fontWeight: '500',
+    lineHeight: '100%',
     textDecoration: 'none',
-    backgroundColor: 'transparent',
-    color: '#777',
-
-    ':hover': {
-      color: '#333',
-      backgroundColor: 'transparent'
-    },
-
-    ':focus': {
-      color: '#333',
-      backgroundColor: 'transparent'
-    },
-
-    '@media (min-width: 768px)': {
-      paddingTop: '15px',
-      paddingBottom: '15px'
-    }
+    color: '#001826'
+  },
+  active: {
+    backgroundColor: '#f7f7f7'
   }
 };
 
@@ -48,7 +36,7 @@ const NavbarItem = ({ style, link, title }) => {
 
   return (
     <li className="list" style={[styles.base, style && style]}>
-      <StyledLink className="link" to={link} style={styles.link}>
+      <StyledLink className="link" to={link} style={styles.link} activeStyle={styles.active}>
         {title}
       </StyledLink>
     </li>
