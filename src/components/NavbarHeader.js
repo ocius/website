@@ -15,6 +15,31 @@ const styles = {
       marginLeft: '0'
     }
   },
+  brand: {
+    float: 'left',
+    height: '50px',
+    padding: '15px',
+    lineHeight: '20px',
+    textDecoration: 'none',
+    backgroundColor: 'transparent',
+    boxSizing: 'border-box',
+
+    fontSize: '18px',
+    color: '#777',
+    fontFamily: '"Helvetica Neue",Helvetica,Arial,sans-serif',
+
+    ':hover': {
+      color: '#5e5e5e'
+    },
+
+    ':focus': {
+      color: '#5e5e5e'
+    },
+
+    '@media (min-width: 768px)': {
+      marginLeft: '-15px'
+    }
+  },
   navbarToggle: {
     position: 'relative',
     float: 'right',
@@ -82,12 +107,14 @@ class NavbarHeader extends Component {
 
   render() {
     const { href, name, headerStyle } = this.props;
+    const StyledLink = Radium(GatsbyLink);
+
     return (
       <div key="header" style={[styles.header, headerStyle && headerStyle]}>
         {this.renderToggleButton()}
-        <GatsbyLink key="brand" to={href}>
+        <StyledLink key="brand" to={href} style={styles.brand}>
           {name}
-        </GatsbyLink>
+        </StyledLink>
       </div>
     );
   }
