@@ -1,0 +1,42 @@
+@import 'node_modules/bootstrap/scss/_functions';
+@import 'node_modules/bootstrap/scss/_variables';
+
+$grid-columns: 12 !default;
+$grid-gutter-width: 30px !default;
+
+$ritual-blue: #142b6f;
+$ritual-yellow: #ffd600;
+$ritual-grey: #f2f1f5;
+$ritual-light-blue: #e1e9f0;
+
+// Blues added
+$ritual-secondary-blue: #9fafc9;
+$ritual-disabled-blue: #8b95b4;
+
+// Special case colors
+$ritual-red: #eb4343;
+$ritual-pink: #f97878;
+$ritual-green: #55940b;
+$paypal-gold: #ffce31;
+
+// Other colors
+$grey-border: #e1dee8;
+$darker-grey: #cccccc;
+$panel-bar-grey: #f5f3f7;
+
+@import 'node_modules/bootstrap/scss/bootstrap';
+
+
+.flush-left {
+
+  @media (min-width: map-get($grid-breakpoints, 'sm')) {
+    padding-left: 0px !important;
+  }
+}
+
+.flush-right {
+
+  @media (min-width: map-get($grid-breakpoints, 'sm')) {
+    padding-right: 0px !important;
+  }
+}

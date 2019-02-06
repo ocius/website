@@ -10,13 +10,19 @@
     "lint": "eslint src"
   },
   "dependencies": {
+    "babel-plugin-styled-components": "^1.10.0",
+    "bootstrap": "^4.2.1",
     "gatsby": "^2.0.76",
     "gatsby-plugin-react-helmet": "^3.0.5",
+    "gatsby-plugin-sass": "^2.0.10",
+    "gatsby-plugin-styled-components": "^3.0.5",
     "gatsby-source-filesystem": "^2.0.19",
     "gatsby-transformer-remark": "^2.2.2",
+    "node-sass": "^4.11.0",
     "react": "^16.5.1",
     "react-dom": "^16.5.1",
-    "react-helmet": "^5.2.0"
+    "react-helmet": "^5.2.0",
+    "styled-components": "^4.1.3"
   },
   "repository": {
     "type": "git",
@@ -32,7 +38,8 @@
     "eslint-plugin-prettier": "^3.0.1",
     "eslint-plugin-react": "^7.12.4",
     "husky": "^1.3.1",
-    "prettier": "^1.16.4"
+    "prettier": "^1.16.4",
+    "sass": "^1.17.0"
   },
   "husky": {
     "hooks": {
