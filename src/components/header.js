@@ -1,5 +1,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
+import PageHeader from './PageHeader';
 
 export default props => (
   <div>
@@ -8,6 +9,6 @@ export default props => (
       <title>{props.title}</title>
       <meta name="description" content={props.description} />
     </Helmet>
-    <h1>{props.title}</h1>
+    <PageHeader>{props.title}</PageHeader>
   </div>
 );

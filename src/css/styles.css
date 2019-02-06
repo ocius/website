@@ -3,6 +3,7 @@ body {
     font-family: 'Aktiv Grotesk', sans-serif;
     font-size: 15px;
     line-height: 140%;
+    margin: 0;
 }
 
 a:hover {
@@ -12,4 +13,51 @@ a:hover {
 a {
     color: #001826;
     text-decoration: none;
+}
+
+h1 {
+    font-size: 3em;
+    margin-top: 0.75em;
+    margin-bottom: 0.25em
+}
+
+h1:after {
+    content: "";
+    height: 1px;
+    border-bottom: 1px solid #135292;
+    width: 150px;
+    margin: auto;
+}
+
+h2 {
+    font-size: 2.25em;
+    margin-top: 1em;
+    margin-bottom: 0.25em;
+    font-weight: 300
+}
+
+h3 {
+    font-size: 1.5em;
+    margin-top: 1.25em;
+    margin-bottom: 0.5em;
+    font-weight: normal
+}
+
+h4 {
+    font-size: 1.25em;
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+    font-weight: normal
+}
+
+h5 {
+    font-size: 1.125em;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em
+}
+
+h6 {
+    font-size: 1em;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em
 }
