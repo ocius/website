@@ -4,32 +4,34 @@ import Radium from 'radium';
 
 const styles = {
   navbar: {
-    backgroundColor: '#f8f8f8',
-    border: '1px solid #e7e7e7',
-    borderRadius: '0px',
-    position: 'relative',
+    backgroundColor: '#efefef',
+    margin: '0px',
+    width: '100%',
+    zIndex: '1',
     top: '0px',
-    minHeight: '50px',
-    marginBottom: '20px',
-    display: 'block',
-    boxSizing: 'border-box'
+    boxShadow: '0 2px 4px rgba(0, 0, 0, 0.2)'
   },
   container: {
-    paddingRight: '15px',
-    paddingLeft: '15px',
-    marginRight: 'auto',
-    marginLeft: 'auto',
-    boxSizing: 'border-box',
+    width: '960px',
+    margin: '0 auto',
+    position: 'relative',
+    marginTop: '-10px',
 
+    '@media (max-width: 767px)': {
+      width: '100%'
+    },
     '@media (min-width: 768px)': {
-      width: '750px'
+      width: '768px'
     },
     '@media (min-width: 992px)': {
       width: '970px'
     },
     '@media (min-width: 1200px)': {
-      width: '1170px'
+      width: '1140px'
     }
+  },
+  clear: {
+    clear: 'both'
   }
 };
 
@@ -58,11 +60,12 @@ class Navbar extends Component {
   render() {
     const { navStyle, contStyle } = this.props;
     return (
-      <nav className="navbar" style={[styles.navbar, navStyle && navStyle]}>
+      <header className="primary" style={[styles.navbar, navStyle && navStyle]}>
         <div className="container" style={[styles.container, contStyle && contStyle]}>
           {this.renderChildren()}
         </div>
-      </nav>
+        <div className="clear" style={[styles.clear]} />
+      </header>
     );
   }
 }
