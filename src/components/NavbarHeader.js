@@ -96,7 +96,7 @@ class NavbarHeader extends Component {
 NavbarHeader.propTypes = {
   href: PropTypes.string,
   name: PropTypes.string,
-  headerStyle: PropTypes.objectOf(PropTypes.object),
+  headerStyle: PropTypes.objectOf(PropTypes.object)
 };
 
 NavbarHeader.defaultProps = {
