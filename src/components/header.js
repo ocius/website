@@ -1,5 +1,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
+import '../styles/global.css';
 
 export default props => (
   <div>
@@ -8,6 +9,8 @@ export default props => (
       <title>{props.title}</title>
       <meta name="description" content={props.description} />
     </Helmet>
-    <h1>{props.title}</h1>
+    <div className="header">
+      <h1 className="header-items">{props.title}</h1>
+    </div>
   </div>
 );

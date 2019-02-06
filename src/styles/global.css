@@ -1,0 +1,135 @@
+html,
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* slightly increases font size. Will need to be tested for mobile compat. */
+p {
+  font-size: 1.2em;
+}
+
+.padding {
+  padding-top: 5vh;
+}
+
+.container-body {
+  padding-left: 8vw;
+  /* padding: 5vh 8vw 5vh; */
+  min-height: 100vh;
+}
+
+@media only screen and (max-width: 768px) {
+  p {
+    font-size: 1.3em;
+  }
+  .container-body {
+    padding-left: 1vw;
+    padding-top: 5vh;
+    padding-bot: 3vh;
+  }
+}
+
+.container-contact-main {
+  min-height: 90vh;
+}
+
+.container-contact-right {
+  padding: 4vh 2vw 2vh;
+  background-color: #efefef;
+}
+
+.container-contact-right-items {
+  padding: 2em;
+  background-color: white;
+  box-shadow: 0px 10px 3px #8888889d;
+}
+
+/* Anchors and links, with corresponding hover effects. Phone links and email links are identical, but naming conventions are seperated to avoid confusion */
+a {
+  text-decoration: none;
+  color: '#bae8ff' !important;
+}
+
+.email-link {
+  text-decoration: none;
+  color: '#bae8ff' !important;
+}
+
+.phone-link:hover {
+  text-decoration: underline;
+}
+
+.phone-link {
+  text-decoration: none;
+  color: '#bae8ff' !important;
+}
+
+.email-link:hover {
+  text-decoration: underline;
+}
+
+/* Header and footer CSS. Changes here will be global to all pages until modification */
+
+.header {
+  background: linear-gradient(to right, #0066cc, #004d99);
+  height: 20vh;
+  justify-content: center;
+  width: 100vw !important;
+
+  margin: 0;
+  padding: 0;
+  color: #60d2f6;
+}
+
+@media only screen and (max-width: 768px) {
+  .header {
+    background: linear-gradient(to right, #0066cc, #004d99);
+    height: 10vh;
+    justify-content: center;
+    width: 100vw !important;
+    margin: 0;
+    top: 45%;
+    padding: 0;
+    color: #60d2f6;
+  }
+}
+
+.header-items {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #60d2f6;
+  padding-left: 8vw;
+  justify-content: center;
+
+  position: relative;
+  font-size: 3em;
+}
+
+/* Showcase footer ONLY. Will not function on additional pages yet, will appear too high up.  */
+.footer {
+  background: linear-gradient(to right, #0066cc, #004d99);
+  height: 10vh;
+  justify-content: center;
+  width: 100vw !important;
+  flex-shrink: 0;
+  padding: 0;
+
+  bottom: 0;
+  width: 100%;
+  color: #60d2f6;
+}
+
+/* Duplicate from the header texts. Fontsize will need a tuning, plus <li> and <ul> settings implemented. */
+.footer-items {
+  color: #f1f1f1;
+  justify-content: center;
+  top: 45%;
+  position: relative;
+  font-size: 2em;
+  text-align: center;
+}
+
+.container-contact {
+  background-color: rgb(109, 40, 40);
+}

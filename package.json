@@ -14,9 +14,12 @@
     "gatsby-plugin-react-helmet": "^3.0.5",
     "gatsby-source-filesystem": "^2.0.19",
     "gatsby-transformer-remark": "^2.2.2",
+    "lodash": "^4.17.11",
     "react": "^16.5.1",
     "react-dom": "^16.5.1",
-    "react-helmet": "^5.2.0"
+    "react-helmet": "^5.2.0",
+    "semantic-ui-css": "^2.4.1",
+    "semantic-ui-react": "^0.85.0"
   },
   "repository": {
     "type": "git",

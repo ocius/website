@@ -1,7 +1,7 @@
 import React from 'react';
 import { graphql, StaticQuery } from 'gatsby';
 import Nav from './nav';
-
+import Footer from './footer';
 export default ({ children }) => (
   <StaticQuery
     query={graphql`
@@ -14,10 +14,13 @@ export default ({ children }) => (
       }
     `}
     render={data => (
-      <div style={{ margin: `3rem auto`, maxWidth: 650, padding: `0 1rem` }}>
-        <h1>{data.site.siteMetadata.title}</h1>
-        <Nav />
+      <div>
+        <div>
+          <h1>{data.site.siteMetadata.title}</h1>
+          <Nav />
+        </div>
         {children}
+        <Footer />
       </div>
     )}
   />
