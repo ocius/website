@@ -1,11 +1,12 @@
 import _ from 'lodash';
 import React from 'react';
+import { Link, graphql } from 'gatsby';
 import { Segment, Grid, Container, Divider } from 'semantic-ui-react';
 import Layout from '../components/layout';
 import Header from '../components/header';
 import '../styles/global.css';
 
-export default () => (
+export default ({ data }) => (
   <Layout>
     <Header title="Contact" description="Links to contact Ocius" />
 
@@ -74,44 +75,20 @@ export default () => (
           <Grid.Column width={4} floated="right" className="container-contact-right">
             <Grid.Column width={4} className="container-contact-right-items" divided="vertically">
               <h3> Latest News... </h3>
-
-              <h3>
-                {' '}
-                OCIUS demonstrates ‘man portable’ USV prototype at Autonomous Warrior 18 Wargames
-              </h3>
-
-              <p>
-                {' '}
-                Ocius technology Ltd is building a new network of renewable energy powered unmanned
-                surface vessels and...
-              </p>
-              <span style={{ color: 'black' }}> 13 December, 2018</span>
-            </Grid.Column>
-            <Grid.Column width={4} className="container-contact-right-items" divided="vertically">
-              <Divider />
               <br />
-
-              <h3> OCIUS Christens next generation of BlueBottle “BOB”.</h3>
-
-              <p>
-                {' '}
-                Following our AGM on Tuesday, 27th November, 2018 as well as celebrating OCIUS’
-                success at the...
-              </p>
-              <span style={{ color: 'black' }}> 29 November, 2018</span>
-            </Grid.Column>
-            <Grid.Column width={4} className="container-contact-right-items" divided="vertically">
-              <Divider />
-              <br />
-
-              <h3> OCIUS Technology Awarded Defence Innovation Hub contract</h3>
-
-              <p>
-                {' '}
-                The Defence Innovation Hub has awarded $1.7 million to Ocius, in order to “determine
-                the viability...
-              </p>
-              <span style={{ color: 'black' }}> 22 November, 2018</span>
+              {data.allMarkdownRemark.edges.map(({ node }) => (
+                <div key={node.id}>
+                  <Link to={node.fields.slug} style={{ color: 'black' }}>
+                    <h3>{node.frontmatter.title}</h3>
+                  </Link>
+                  <br />
+                  <p>{node.excerpt}</p>
+                  <p>{node.frontmatter.date}</p>
+                  <br />
+                  <br />
+                  <br />
+                </div>
+              ))}
             </Grid.Column>
           </Grid.Column>
           <Grid.Column width={2} className="container-contact-right" />
@@ -120,3 +97,24 @@ export default () => (
     </div>
   </Layout>
 );
+
+export const query = graphql`
+  query {
+    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+      totalCount
+      edges {
+        node {
+          id
+          frontmatter {
+            title
+            date(formatString: "DD MMMM, YYYY")
+          }
+          fields {
+            slug
+          }
+          excerpt
+        }
+      }
+    }
+  }
+`;
