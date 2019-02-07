@@ -45,6 +45,6 @@ export default {
     tabletEnd: `${1023 / 16}em`,
     laptopStart: `${1024 / 16}em`,
     laptopEnd: `${1353 / 16}em`,
-    desktopStart: `${1354 / 16}em`,
+    desktopStart: `${1354 / 16}em`
   }
 };

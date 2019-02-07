@@ -1,10 +1,10 @@
 import React from 'react';
 import Header from '../components/header';
-import Layout from '../components/layout';
+import PageLayoutSidebar from '../layouts/PageLayoutSidebar';
 
 export default () => (
-  <Layout>
+  <PageLayoutSidebar>
     <Header title="Careers" description="Job openings at Ocius" />
     <p>Job openings</p>
-  </Layout>
+  </PageLayoutSidebar>
 );

@@ -1,11 +1,11 @@
 import React from 'react';
 import { Link, graphql } from 'gatsby';
 import Header from '../components/header';
-import Layout from '../components/layout';
+import PageLayoutSidebar from '../layouts/PageLayoutSidebar';
 
 export default ({ data }) => {
   return (
-    <Layout>
+    <PageLayoutSidebar>
       <Header title="News" description="Ocius blog and news" />
       {data.allMarkdownRemark.edges.map(({ node }) => (
         <div key={node.id}>
@@ -17,7 +17,7 @@ export default ({ data }) => {
           <p>{node.excerpt}</p>
         </div>
       ))}
-    </Layout>
+    </PageLayoutSidebar>
   );
 };
 

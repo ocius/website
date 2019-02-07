@@ -1,13 +1,13 @@
 import React from 'react';
-import Layout from '../components/layout';
+import PageLayoutSidebar from '../layouts/PageLayoutSidebar';
 import Header from '../components/header';
 
 export default () => (
-  <Layout>
+  <PageLayoutSidebar>
     <Header title="Ocean Drones" description="Ocius makes ocean drones" />
     <img
       src="https://ocius.com.au/wp-content/uploads/2017/09/wallpaperocius-768x432.jpg"
       alt="Ocius ocean drone: a blue boat sailing on the ocean at Sydney harbour"
     />
-  </Layout>
+  </PageLayoutSidebar>
 );
