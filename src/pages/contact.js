@@ -1,7 +1,6 @@
-import _ from 'lodash';
 import React from 'react';
 import { Link, graphql } from 'gatsby';
-import { Segment, Grid, Container, Divider } from 'semantic-ui-react';
+import { Grid, Container } from 'semantic-ui-react';
 import Layout from '../components/layout';
 import Header from '../components/header';
 import '../styles/global.css';

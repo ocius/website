@@ -1,6 +1,6 @@
 ---
-title: "Title of Test Blog Post"
-date: "2019-02-01"
+title: 'Title of Test Blog Post'
+date: '2019-02-01'
 ---
 
 Testing the blog posts!

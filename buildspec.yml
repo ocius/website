@@ -2,16 +2,16 @@ version: 0.1
 phases:
   install:
     commands:
-      - "npm install"
-      - "npm install -g gatsby"
-      - "npm install -g lighthouse-ci"
-      - "apt update"
-      - "apt install -y chromium-browser"
-      - "gatsby build"
+      - 'npm install'
+      - 'npm install -g gatsby'
+      - 'npm install -g lighthouse-ci'
+      - 'apt update'
+      - 'apt install -y chromium-browser'
+      - 'gatsby build'
   pre_build:
     commands:
       - 'gatsby serve &'
-      - "lighthouse-ci http://localhost:9000/ --performance=100 --best-practices=93 --accessibility=100 --seo=100"
+      - 'lighthouse-ci http://localhost:9000/ --performance=100 --best-practices=93 --accessibility=100 --seo=100'
   build:
     commands:
       - 'aws s3 sync "public/" "s3://ocius-static-website" --delete --acl "public-read"'
