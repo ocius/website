@@ -1,7 +1,7 @@
 import React from 'react';
 import { graphql, StaticQuery } from 'gatsby';
 import Nav from './nav';
-import Footer from './footer';
+import Footer from './Footer';
 
 export default ({ children }) => (
   <StaticQuery
