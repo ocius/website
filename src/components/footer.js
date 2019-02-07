@@ -1,7 +1,7 @@
 import React from 'react';
 import '../styles/global.css';
 
-export default footer => (
+export default props => (
   <div>
     <div className="footer">
       <h1 className="footer-items">- Footer Placeholder - </h1>
