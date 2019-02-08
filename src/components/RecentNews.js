@@ -3,7 +3,7 @@ import { Link, graphql, StaticQuery } from 'gatsby';
 
 const RecentNews = () => (
   <aside className="aside recent-news">
-    <Link to="/blog">Latest news...</Link>
+    <Link to="/news">Latest news...</Link>
     <StaticQuery
       query={graphql`
         query {
