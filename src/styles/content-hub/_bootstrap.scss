@@ -11,16 +11,13 @@ $panel-bar-grey: #f5f3f7;
 
 @import 'node_modules/bootstrap/scss/bootstrap';
 
-
 .flush-left {
-
   @media (min-width: map-get($grid-breakpoints, 'sm')) {
     padding-left: 0px !important;
   }
 }
 
 .flush-right {
-
   @media (min-width: map-get($grid-breakpoints, 'sm')) {
     padding-right: 0px !important;
   }

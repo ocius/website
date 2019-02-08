@@ -15,7 +15,7 @@ export default ({ children }) => (
       }
     `}
     render={data => (
-      <div style={{ margin: `3rem auto`, maxWidth: '100%', padding: `0` }}>
+      <div style={{ margin: `0rem auto`, maxWidth: '100%', padding: `0` }}>
         <h1>{data.site.siteMetadata.title}</h1>
         <Nav />
         {children}
