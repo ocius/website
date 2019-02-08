@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Radium from 'radium';
 
 const styles = {
   footer: {
@@ -7,7 +8,7 @@ const styles = {
     width: '100%',
     marginTop: '10px',
     clear: 'both',
-    padding: '0 0 20px 0'
+    padding: '4.5em 0'
   }
 };
 
@@ -28,4 +29,4 @@ Footer.defaultProps = {
   footerStyle: {}
 };
 
-export default Footer;
+export default Radium(Footer);
