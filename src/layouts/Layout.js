@@ -17,7 +17,7 @@ export default ({ children }) => (
         <Row>
           <Column sm={12} md={3} lg={3} fluid>
             <Link to="/about">About</Link>
-            <ul>
+            <ul className="menu-secondary">
               <li>
                 <Link to="/about">Mission</Link>
               </li>
@@ -34,7 +34,7 @@ export default ({ children }) => (
           </Column>
           <Column sm={12} md={3} lg={3} fluid>
             <Link to="/solutions">Solutions</Link>
-            <ul>
+            <ul className="menu-secondary">
               <li>
                 <Link to="/defence">Defence</Link>
               </li>
@@ -49,7 +49,7 @@ export default ({ children }) => (
           </Column>
           <Column sm={12} md={3} lg={3} fluid>
             <Link to="/bluebottle">BlueBottle USV</Link>
-            <ul>
+            <ul className="menu-secondary">
               <li>
                 <Link to="/bluebottle">What Is A USV?</Link>
               </li>
@@ -65,7 +65,7 @@ export default ({ children }) => (
           <Column sm={12} md={3} lg={3} fluid>
             <Link to="/findBruce">Find Bruce</Link>
             <Link to="/news">Media</Link>
-            <ul>
+            <ul className="menu-secondary">
               <li>
                 <Link to="/news">News</Link>
               </li>

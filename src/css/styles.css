@@ -153,6 +153,54 @@ aside.recent-news .date {
     color: #a3a3a3;
 }
 
+footer.footer a {
+    color: #ffffff;
+    font-weight: 600;
+}
+
+ul.menu-secondary {
+    padding: 0;
+}
+
+ul.menu-secondary li {
+    display: block;
+    position: relative;
+    margin: 0;
+    padding-left: 15px;
+}
+
+ul.menu-secondary li a {
+    padding: 8px 0;
+    font-weight: 400;
+    display: block;
+}
+
+ul.menu-secondary li a:hover {
+    text-decoration: underline;
+}
+
+ul.menu-secondary li:hover > a,
+ul.menu-secondary li a:hover,
+ul.menu-secondary li a.selected,
+ul.menu-secondary li.selected a {
+    background: transparent;
+}
+
+ul.menu-secondary li:before {
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-left: 5px solid rgba(255, 255, 255, 0.5);
+    float: left;
+    position: absolute;
+    top: 50%;
+    margin-top: -4px;
+    left: 0;
+}
+
 address a {
     color: #5b90bf;
 }
