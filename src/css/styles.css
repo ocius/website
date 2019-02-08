@@ -152,3 +152,7 @@ aside.recent-news .date {
     margin-top: -10px;
     color: #a3a3a3;
 }
+
+address a {
+    color: #5b90bf;
+}
