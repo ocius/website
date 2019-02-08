@@ -4,6 +4,7 @@ import Header from '../components/header';
 import Container from '../components/Container';
 import Row from '../components/GridRow';
 import Column from '../components/GridColumn';
+import RecentNews from '../components/RecentNews';
 
 export default () => (
   <Layout>
@@ -19,7 +20,7 @@ export default () => (
             <p>Instagram</p>
           </Column>
           <Column className="secondary-content" sm={4} md={5} lg={4} lgShift={1} fluid>
-            Latest Posts
+            <RecentNews />
           </Column>
         </Row>
       </Container>
