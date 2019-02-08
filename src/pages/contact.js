@@ -13,11 +13,46 @@ export default () => (
       <Container>
         <Row>
           <Column className="primary-content" sm={8} md={7} lg={7} fluid>
-            <p>Email</p>
-            <p>Phone</p>
-            <p>Twitter</p>
-            <p>Facebook</p>
-            <p>Instagram</p>
+            <Row>
+              <Column sm={12} md={6} lg={6} fluid>
+                <strong>For General Enquiries</strong>
+                <p>
+                  Main Phone: <a href="callto:+61299246400">+61 2 9924 6400</a>
+                  <br />
+                  Email: <a href="mailto:admin@ocius.com.au">admin@ocius.com.au</a>
+                </p>
+              </Column>
+              <Column sm={12} md={6} lg={6} fluid>
+                <strong>For Investment Enquiries</strong>
+                <p>Email: <a href="mailto:cosecretary@ocius.com.au">cosecretary@ocius.com.au</a></p>
+              </Column>
+            </Row>
+            <Row>
+              <Column sm={12} md={6} lg={6} fluid>
+                <strong>Address:</strong>
+                <p>
+                  Ainsworth Building
+                  <br />
+                  University of New South Wales
+                  <br />
+                  Willis Annex
+                  <br />
+                  Kensington NSW 2052
+                  <br />
+                  Phone: <a href="callto:+61299246400">+61 2 9924 6400</a>
+                </p>
+              </Column>
+              <Column sm={12} md={6} lg={6} fluid>
+                <strong>Postal Address:</strong>
+                <p>
+                  Office Box 4304
+                  <br />
+                  Castlecrag
+                  <br />
+                  Australia 2068
+                </p>
+              </Column>
+            </Row>
           </Column>
           <Column className="secondary-content" sm={4} md={5} lg={4} lgShift={1} fluid>
             <RecentNews />
