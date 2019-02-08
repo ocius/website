@@ -3,12 +3,11 @@ import { Link, graphql, StaticQuery } from 'gatsby';
 
 const RecentNews = () => (
   <aside className="aside recent-news">
-    <Link to="/blog" title="Latest news..." />
+    <Link to="/blog">Latest news...</Link>
     <StaticQuery
       query={graphql`
         query {
-          allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
-            totalCount
+          allMarkdownRemark(limit: 3, sort: { fields: [frontmatter___date], order: DESC }) {
             edges {
               node {
                 id

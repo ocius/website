@@ -15,6 +15,13 @@ a {
     text-decoration: none;
 }
 
+p {
+    margin: 1em 0;
+    font-weight: 300;
+    font-size: 1.125em;
+    line-height: 1.4;
+}
+
 h1 {
     font-size: 3em;
     margin-top: 0.75em;
@@ -102,14 +109,28 @@ h6 {
     margin: 1em;
 }
 
+aside.recent-news {
+    padding: 15px 20px;
+}
+
 aside.recent-news a {
     font-weight: bold;
+}
+
+aside.recent-news ul {
+    margin: 1em 0;
+    padding: 0;
 }
 
 aside.recent-news ul li {
     list-style: none;
     margin-bottom: 10px;
     padding-top: 15px;
+    border-top: 1px solid #efefef;
+}
+
+aside.recent-news ul li:first-child {
+    border-top: none;
 }
 
 aside.recent-news .excerpt {
