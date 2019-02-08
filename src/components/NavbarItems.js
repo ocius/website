@@ -7,7 +7,14 @@ const styles = {
     margin: '0',
     textAlign: 'right',
     listStyle: 'outside none none',
-    padding: '0'
+    padding: '0',
+    '@media (max-width: 767px)': {
+      display: 'none',
+      position: 'inherit',
+      background: '#fff',
+      top: '81px',
+      borderTop: '1px solid #001826'
+    }
   }
 };
 
