@@ -6,6 +6,10 @@ import Row from '../components/GridRow';
 import Column from '../components/GridColumn';
 import RecentNews from '../components/RecentNews';
 
+const addressPadding = {
+  padding: '1em 0'
+};
+
 export default () => (
   <Layout>
     <Header title="Contact" description="Links to contact Ocius" />
@@ -16,7 +20,7 @@ export default () => (
             <Row>
               <Column sm={12} md={6} lg={6} fluid>
                 <strong>For General Enquiries</strong>
-                <address>
+                <address style={addressPadding}>
                   Main Phone: <a href="callto:+61299246400">+61 2 9924 6400</a>
                   <br />
                   Email: <a href="mailto:admin@ocius.com.au">admin@ocius.com.au</a>
@@ -24,7 +28,7 @@ export default () => (
               </Column>
               <Column sm={12} md={6} lg={6} fluid>
                 <strong>For Investment Enquiries</strong>
-                <address>
+                <address style={addressPadding}>
                   Email: <a href="mailto:cosecretary@ocius.com.au">cosecretary@ocius.com.au</a>
                 </address>
               </Column>
@@ -32,7 +36,7 @@ export default () => (
             <Row>
               <Column sm={12} md={6} lg={6} fluid>
                 <strong>Address:</strong>
-                <address>
+                <address style={addressPadding}>
                   Ainsworth Building
                   <br />
                   University of New South Wales
@@ -46,7 +50,7 @@ export default () => (
               </Column>
               <Column sm={12} md={6} lg={6} fluid>
                 <strong>Postal Address:</strong>
-                <address>
+                <address style={addressPadding}>
                   Office Box 4304
                   <br />
                   Castlecrag
