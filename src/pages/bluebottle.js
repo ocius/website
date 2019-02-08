@@ -1,10 +1,10 @@
 import React from 'react';
 import Header from '../components/header';
-import PageLayoutSidebar from '../layouts/PageLayoutSidebar';
+import Layout from '../layouts/Layout';
 
 export default () => (
-  <PageLayoutSidebar>
+  <Layout>
     <Header title="Bluebottle" description="Information about our bluebottle drone" />
     <p>Information about our blue bottle drone</p>
-  </PageLayoutSidebar>
+  </Layout>
 );

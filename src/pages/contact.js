@@ -1,12 +1,12 @@
 import React from 'react';
-import PageLayoutSidebar from '../layouts/PageLayoutSidebar';
+import Layout from '../layouts/Layout';
 import Header from '../components/header';
 import Container from '../components/Container';
 import Row from '../components/GridRow';
 import Column from '../components/GridColumn';
 
 export default () => (
-  <PageLayoutSidebar>
+  <Layout>
     <Header title="Contact" description="Links to contact Ocius" />
     <section className="page-content">
       <Container>
@@ -24,5 +24,5 @@ export default () => (
         </Row>
       </Container>
     </section>
-  </PageLayoutSidebar>
+  </Layout>
 );

@@ -1,11 +1,11 @@
 import React from 'react';
 import { StyleRoot } from 'radium';
-import Nav from '../components/nav';
+import Menu from '../components/Menu';
 import '../css/styles.css';
 
 export default ({ children }) => (
   <StyleRoot>
-    <Nav />
+    <Menu />
     {children}
   </StyleRoot>
 );

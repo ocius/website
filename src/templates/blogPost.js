@@ -1,17 +1,20 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import PageLayoutSidebar from '../layouts/PageLayoutSidebar';
+import Layout from '../layouts/Layout';
+import Container from '../components/Container';
 import Header from '../components/header';
 
 export default ({ data }) => {
   const post = data.markdownRemark;
   return (
-    <PageLayoutSidebar>
+    <Layout>
       <div>
         <Header title={post.frontmatter.title} description={post.excerpt} />
-        <div dangerouslySetInnerHTML={{ __html: post.html }} />
+        <Container>
+          <div dangerouslySetInnerHTML={{ __html: post.html }} />
+        </Container>
       </div>
-    </PageLayoutSidebar>
+    </Layout>
   );
 };
 
