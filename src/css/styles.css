@@ -103,10 +103,19 @@ h6 {
     z-index: 0;
 }
 
+.page-content .primary-content {
+    min-height: 500px;
+    padding: 50px 0;
+}
+
 .page-content .secondary-content aside {
     background-color: #fff;
     border-bottom: 7px solid #d4dde1;
     margin: 1em;
+}
+
+.page-content .secondary-content aside:first-child {
+    margin-top: 30px;
 }
 
 aside.recent-news {
