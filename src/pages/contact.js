@@ -16,23 +16,23 @@ export default () => (
             <Row>
               <Column sm={12} md={6} lg={6} fluid>
                 <strong>For General Enquiries</strong>
-                <p>
+                <address>
                   Main Phone: <a href="callto:+61299246400">+61 2 9924 6400</a>
                   <br />
                   Email: <a href="mailto:admin@ocius.com.au">admin@ocius.com.au</a>
-                </p>
+                </address>
               </Column>
               <Column sm={12} md={6} lg={6} fluid>
                 <strong>For Investment Enquiries</strong>
-                <p>
+                <address>
                   Email: <a href="mailto:cosecretary@ocius.com.au">cosecretary@ocius.com.au</a>
-                </p>
+                </address>
               </Column>
             </Row>
             <Row>
               <Column sm={12} md={6} lg={6} fluid>
                 <strong>Address:</strong>
-                <p>
+                <address>
                   Ainsworth Building
                   <br />
                   University of New South Wales
@@ -42,17 +42,17 @@ export default () => (
                   Kensington NSW 2052
                   <br />
                   Phone: <a href="callto:+61299246400">+61 2 9924 6400</a>
-                </p>
+                </address>
               </Column>
               <Column sm={12} md={6} lg={6} fluid>
                 <strong>Postal Address:</strong>
-                <p>
+                <address>
                   Office Box 4304
                   <br />
                   Castlecrag
                   <br />
                   Australia 2068
-                </p>
+                </address>
               </Column>
             </Row>
           </Column>
