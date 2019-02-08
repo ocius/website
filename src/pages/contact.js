@@ -24,7 +24,9 @@ export default () => (
               </Column>
               <Column sm={12} md={6} lg={6} fluid>
                 <strong>For Investment Enquiries</strong>
-                <p>Email: <a href="mailto:cosecretary@ocius.com.au">cosecretary@ocius.com.au</a></p>
+                <p>
+                  Email: <a href="mailto:cosecretary@ocius.com.au">cosecretary@ocius.com.au</a>
+                </p>
               </Column>
             </Row>
             <Row>
