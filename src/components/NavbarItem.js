@@ -15,6 +15,10 @@ const styles = {
     ':hover': {
       color: '#60d2f6',
       backgroundColor: '#fff'
+    },
+
+    '@media (max-width: 767px)': {
+      display: 'block'
     }
   },
   link: {

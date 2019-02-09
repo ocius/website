@@ -11,6 +11,11 @@ const styles = {
     maxWidth: '200px',
     '@media (min-width: 768px)': {
       float: 'left'
+    },
+    '@media (max-width: 767px)': {
+      paddingTop: '8px',
+      width: '130px',
+      left: '20px'
     }
   }
 };

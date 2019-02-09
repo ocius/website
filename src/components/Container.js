@@ -7,7 +7,6 @@ const styles = {
     width: '960px',
     margin: '0 auto',
     position: 'relative',
-    marginTop: '-10px',
 
     '@media (max-width: 767px)': {
       width: '100%'

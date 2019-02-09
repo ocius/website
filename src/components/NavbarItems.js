@@ -38,14 +38,14 @@ class NavbarItems extends Component {
     const styles = {
       base: {
         margin: '0',
+        padding: '0',
         textAlign: 'right',
         listStyle: 'outside none none',
-        padding: '0',
         '@media (max-width: 767px)': {
           display: this.state.menuOpen ? 'block' : 'none',
           position: 'inherit',
           background: '#fff',
-          top: '81px',
+          top: '10px',
           borderTop: '1px solid #001826'
         }
       }
