@@ -21,20 +21,23 @@ class Navbar extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      collapseIn: false
+      menuOpen: false
     };
+
+    // This binding is necessary to make `this` work in the callback
+    this.handleMenuClick = this.handleMenuClick.bind(this);
   }
 
-  navbarToggle() {
-    this.setState(prevState => ({ collapseIn: !prevState.collapseIn }));
+  handleMenuClick() {
+    this.setState(prevState => ({ menuOpen: !prevState.menuOpen }));
   }
 
   renderChildren() {
     const { children } = this.props;
     return React.Children.map(children, child => {
       return React.cloneElement(child, {
-        navbarToggle: this.navbarToggle,
-        collapseIn: this.state.collapseIn
+        handleClick: this.handleMenuClick,
+        menuOpen: this.state.menuOpen
       });
     });
   }

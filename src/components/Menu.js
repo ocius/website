@@ -1,7 +1,7 @@
 import React from 'react';
-import { graphql, StaticQuery } from 'gatsby';
 import Navbar from './Navbar';
-import NavbarHeader from './NavbarHeader';
+import SiteLogo from './SiteLogo';
+import HamburgerButton from './HamburgerButton';
 import NavbarItems from './NavbarItems';
 import NavbarItem from './NavbarItem';
 
@@ -18,18 +18,8 @@ const navitems = [
 
 export default () => (
   <Navbar>
-    <StaticQuery
-      query={graphql`
-        query {
-          site {
-            siteMetadata {
-              title
-            }
-          }
-        }
-      `}
-      render={data => <NavbarHeader name={data.site.siteMetadata.title} />}
-    />
+    <SiteLogo />
+    <HamburgerButton />
     <NavbarItems>
       {navitems.map(item => {
         return <NavbarItem key={navitems.indexOf(item)} link={item.link} title={item.title} />;

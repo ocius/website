@@ -1,26 +1,7 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import { Link as GatsbyLink } from 'gatsby';
 import Radium from 'radium';
-import mainLogo from '../images/main-ocius.png';
 
 const styles = {
-  header: {
-    marginRight: '-15px',
-    marginLeft: '-15px',
-    boxSizing: 'border-box',
-
-    '@media (min-width: 768px)': {
-      float: 'left',
-      marginRight: '0',
-      marginLeft: '0'
-    }
-  },
-  logo: {
-    paddingTop: '17px',
-    marginTop: '8px',
-    maxWidth: '200px'
-  },
   navbarToggle: {
     position: 'relative',
     float: 'right',
@@ -74,43 +55,44 @@ const styles = {
   }
 };
 
-class NavbarHeader extends Component {
-  renderToggleButton = () => {
+class HamburgerButton extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      open: this.props.open ? this.props.open : false
+    };
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.open !== this.state.open) {
+      this.setState({ open: nextProps.open });
+    }
+  }
+
+  handleClick() {
+    this.setState(prevState => ({ open: !prevState.open }));
+  }
+
+  render() {
     return (
-      <button type="button" style={[styles.navbarToggle]} onClick={this.props.navbarToggle}>
+      <button
+        type="button"
+        style={[styles.navbarToggle]}
+        onClick={
+          this.props.handleClick
+            ? this.props.handleClick
+            : () => {
+                this.handleClick();
+              }
+        }
+      >
         <span style={[styles.srOnly]}>Toggle navigation</span>
         <span style={[styles.iconBar]} />
         <span style={[styles.iconBar, styles.burger]} />
         <span style={[styles.iconBar, styles.burger]} />
       </button>
     );
-  };
-
-  render() {
-    const { href, imgSrc, headerStyle } = this.props;
-    const StyledLink = Radium(GatsbyLink);
-
-    return (
-      <div key="header" style={[styles.header, headerStyle && headerStyle]}>
-        {this.renderToggleButton()}
-        <StyledLink key="brand" to={href}>
-          <img src={imgSrc} alt="Website logo" style={styles.logo} />
-        </StyledLink>
-      </div>
-    );
   }
 }
 
-NavbarHeader.propTypes = {
-  href: PropTypes.string,
-  imgSrc: PropTypes.string,
-  headerStyle: PropTypes.objectOf(PropTypes.object)
-};
-
-NavbarHeader.defaultProps = {
-  href: '/',
-  imgSrc: mainLogo,
-  headerStyle: {}
-};
-
-export default Radium(NavbarHeader);
+export default Radium(HamburgerButton);
