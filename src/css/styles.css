@@ -2,7 +2,7 @@ body {
     color: #001826;
     font-family: 'Aktiv Grotesk', sans-serif;
     font-size: 15px;
-    line-height: 140%;
+    line-height: 1.44;
     margin: 0;
 }
 
@@ -72,6 +72,11 @@ h6 {
 .page-content {
     overflow: hidden;
     height: 100%;
+}
+
+.page-content img {
+    max-width: 100%;
+    height: auto;
 }
 
 .page-content .secondary-content {
