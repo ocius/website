@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Radium from 'radium';
-import Container from './Container';
+import Container from '../Container';
 
 const styles = {
   navbar: {

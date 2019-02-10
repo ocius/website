@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleRoot } from 'radium';
 import { Link } from 'gatsby';
-import Menu from '../components/Menu';
+import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import Container from '../components/Container';
 import Row from '../components/GridRow';
@@ -10,7 +10,7 @@ import '../css/styles.css';
 
 export default ({ children }) => (
   <StyleRoot>
-    <Menu />
+    <Navbar />
     {children}
     <Footer>
       <Container>

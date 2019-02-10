@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link as GatsbyLink } from 'gatsby';
 import Radium from 'radium';
-import mainLogo from '../images/main-ocius.png';
+import mainLogo from '../../images/main-ocius.png';
 
 const styles = {
   logo: {
