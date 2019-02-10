@@ -112,6 +112,14 @@ h6 {
     padding: 25px 0;
 }
 
+.page-content .primary-content .date {
+    text-transform: uppercase;
+    color: #001826;
+    font-size: .9em;
+    font-weight: 300;
+    margin-bottom: 3px;
+}
+
 .page-content .secondary-content aside {
     background-color: #fff;
     border-bottom: 7px solid #d4dde1;
