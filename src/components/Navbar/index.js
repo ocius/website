@@ -4,10 +4,10 @@ import SiteLogo from './SiteLogo';
 import HamburgerButton from './HamburgerButton';
 import NavbarItems from './NavbarItems';
 import NavbarItem from './NavbarItem';
+import NavbarDropdown from './NavbarDropdown';
+import DropdownMenu from './DropdownMenu';
 
 const navitems = [
-  { link: '/', title: 'Home' },
-  { link: '/about', title: 'About' },
   { link: '/solutions', title: 'Solutions' },
   { link: '/bluebottle', title: 'Bluebottle' },
   { link: '/findBruce', title: 'Find Bruce' },
@@ -16,11 +16,21 @@ const navitems = [
   { link: '/careers', title: 'Careers' }
 ];
 
+const dropdownItems = [
+  { href: '/about', name: 'Mission' },
+  { href: '/about', name: 'People' },
+  { href: '/about', name: 'Partners' },
+  { href: '/about', name: 'Awards' }
+];
+
 export default () => (
   <Navbar>
     <SiteLogo />
     <HamburgerButton />
     <NavbarItems>
+      <NavbarDropdown name="About" link="/about">
+        <DropdownMenu menuItems={dropdownItems} />
+      </NavbarDropdown>
       {navitems.map(item => {
         return <NavbarItem key={navitems.indexOf(item)} link={item.link} title={item.title} />;
       })}
