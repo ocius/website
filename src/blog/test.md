@@ -1,6 +1,7 @@
 ---
 title: "Title of Test Blog Post"
 date: "2019-02-01"
+author: "Kevin Chan"
 ---
 
 Testing the blog posts!

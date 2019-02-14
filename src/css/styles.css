@@ -120,6 +120,13 @@ h6 {
     margin-bottom: 3px;
 }
 
+.page-content .primary-content .author {
+    text-transform: capitalize;
+    font-weight: 700;
+    margin-top: 0;
+    font-size: .9em;
+}
+
 .page-content .secondary-content aside {
     background-color: #fff;
     border-bottom: 7px solid #d4dde1;

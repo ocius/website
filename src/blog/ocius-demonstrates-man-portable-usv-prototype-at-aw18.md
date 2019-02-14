@@ -1,6 +1,7 @@
 ---
 title: "OCIUS demonstrates ‘man portable’ USV prototype at Autonomous Warrior 18 Wargames"
 date: "2018-12-13"
+author: "Kevin Chan"
 ---
 
 Ocius technology Ltd is building a new network of renewable energy powered unmanned surface vessels and today launched a ‘man-portable’ version of the Bluebottle USV. 

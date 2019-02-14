@@ -18,6 +18,7 @@ export default ({ data }) => {
             <Column className="primary-content" sm={8} md={7} lg={7} fluid>
               <h2 className="title">{post.frontmatter.title}</h2>
               <p className="date">{post.frontmatter.date}</p>
+              <p className="author">{post.frontmatter.author}</p>
               <div dangerouslySetInnerHTML={{ __html: post.html }} />
             </Column>
             <Column className="secondary-content" sm={4} md={5} lg={4} lgShift={1} fluid>
@@ -37,6 +38,7 @@ export const query = graphql`
       frontmatter {
         title
         date(formatString: "DD MMMM, YYYY")
+        author
       }
       excerpt
     }
