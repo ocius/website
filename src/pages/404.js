@@ -1,5 +1,5 @@
 import React from 'react';
-import Layout from '../components/layout';
+import Layout from '../layouts/Layout';
 import Header from '../components/header';
 
 export default () => (

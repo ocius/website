@@ -1,6 +1,7 @@
 ---
 title: "First Blog Post"
 date: "2015-07-20"
+author: "Kevin Chan"
 ---
 
 This is the first blog post. 

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, graphql } from 'gatsby';
 import Header from '../components/header';
-import Layout from '../components/layout';
+import Layout from '../layouts/Layout';
 
 export default ({ data }) => {
   return (

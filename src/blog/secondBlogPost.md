@@ -1,6 +1,7 @@
 ---
 title: "Second blog post"
 date: "2017-12-12"
+author: "Kevin Chan"
 ---
 
 Here we have the second blogpost. 

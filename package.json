@@ -10,10 +10,13 @@
     "lint": "eslint src"
   },
   "dependencies": {
+    "classnames": "^2.2.6",
     "gatsby": "^2.0.76",
     "gatsby-plugin-react-helmet": "^3.0.5",
     "gatsby-source-filesystem": "^2.0.19",
     "gatsby-transformer-remark": "^2.2.2",
+    "prop-types": "^15.6.2",
+    "radium": "^0.25.1",
     "react": "^16.5.1",
     "react-dom": "^16.5.1",
     "react-helmet": "^5.2.0"
