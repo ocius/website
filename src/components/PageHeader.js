@@ -11,8 +11,7 @@ const styles = {
   header: {
     color: '#60d2f6',
     paddingTop: '80px',
-    marginTop: '0',
-    marginLeft: '10px'
+    marginTop: '0'
   }
 };
 
