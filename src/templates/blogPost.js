@@ -6,7 +6,8 @@ import Row from '../components/GridRow';
 import Column from '../components/GridColumn';
 import RecentNews from '../components/RecentNews';
 import Header from '../components/header';
-import SocialIconButton from '../components/SocialIconButton';
+import SocialShareContainer from '../components/SocialShareContainer';
+import SocialShare from '../components/SocialShare';
 
 export default ({ data }) => {
   const post = data.markdownRemark;
@@ -21,20 +22,13 @@ export default ({ data }) => {
               <p className="date">{post.frontmatter.date}</p>
               <p className="author">{post.frontmatter.author}</p>
               <div dangerouslySetInnerHTML={{ __html: post.html }} />
-              <div className="post-share">
-                <h5>Share this post:</h5>
-                <SocialIconButton network="email" href="mailto:?subject=&body=" />
-                <SocialIconButton
-                  network="twitter"
-                  href="https://twitter.com/intent/tweet?text=&url=&via="
-                />
-                <SocialIconButton
-                  network="facebook"
-                  href="https://www.facebook.com/sharer/sharer.php?u="
-                />
-                <SocialIconButton href="fb-messenger://share/?link=" network="facebookMessenger" />
-                <SocialIconButton network="reddit" href="http://www.reddit.com/submit/?url=" />
-              </div>
+              <SocialShareContainer
+                text={post.frontmatter.title}
+                url={window.location.href}
+                headingText="Share this post:"
+              >
+                {SocialShare}
+              </SocialShareContainer>
             </Column>
             <Column className="secondary-content" sm={4} md={5} lg={4} lgShift={1} fluid>
               <RecentNews />
