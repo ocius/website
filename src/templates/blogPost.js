@@ -11,6 +11,7 @@ import SocialShare from '../components/SocialShare';
 
 export default ({ data }) => {
   const post = data.markdownRemark;
+  const { title, date, author } = post.frontmatter;
   return (
     <Layout>
       <Header title="News" description={post.excerpt} />
@@ -18,12 +19,12 @@ export default ({ data }) => {
         <Container>
           <Row>
             <Column className="primary-content" sm={8} md={7} lg={7} fluid>
-              <h2 className="title">{post.frontmatter.title}</h2>
-              <p className="date">{post.frontmatter.date}</p>
-              <p className="author">{post.frontmatter.author}</p>
+              <h2 className="title">{title}</h2>
+              <p className="date">{date}</p>
+              <p className="author">{author}</p>
               <div dangerouslySetInnerHTML={{ __html: post.html }} />
               <SocialShareContainer
-                text={post.frontmatter.title}
+                text={title}
                 url={window.location.href}
                 headingText="Share this post:"
               >
