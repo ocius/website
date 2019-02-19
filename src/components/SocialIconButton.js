@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Radium from 'radium';
 import cn from 'classnames';
-import Icon from './Icon';
+import iconFromString from '../common/iconFromString';
 
 const backgroundColors = {
   email: '#2c3643',
@@ -27,8 +27,6 @@ const iconNames = {
 };
 
 const sizeMultiplier = 2.5;
-
-const iconFromString = (iconName, props) => React.createElement(Icon[iconName], { ...props });
 
 const SocialIconButton = ({ network, href, onClick, iconSize, id, className, style }) => {
   const size = iconSize * sizeMultiplier;
