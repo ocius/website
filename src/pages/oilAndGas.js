@@ -6,10 +6,21 @@ import Row from '../components/GridRow';
 import Column from '../components/GridColumn';
 import Icon from '../components/Icon';
 
+const styles = {
+  alignment: {
+    left: {
+      textAlign: 'left'
+    },
+    center: {
+      textAlign: 'center'
+    }
+  }
+};
+
 export default () => (
   <Layout>
     <Header title="Oil And Gas" desciption="Applications for oil and gas" />
-    <Container>
+    <Container contStyle={styles.alignment.center}>
       <h3>
         USVs are already being used in the Oil &amp; Gas industry
         <br />
@@ -26,7 +37,7 @@ export default () => (
             }}
           />
           <h5>Seabed & Pipeline Surveys</h5>
-          <ul>
+          <ul style={styles.alignment.left}>
             <li>GPS mapping</li>
             <li>Assist seismic survey</li>
             <li>Much cheaper than crewed vessels</li>
@@ -45,7 +56,7 @@ export default () => (
             }}
           />
           <h5>Environmental Monitoring</h5>
-          <ul>
+          <ul style={styles.alignment.left}>
             <li>Hydrocarbon monitoring</li>
             <li>Pipeline and leak checking</li>
             <li>Marine biodiversity monitoring</li>
@@ -63,7 +74,7 @@ export default () => (
             }}
           />
           <h5>Security</h5>
-          <ul>
+          <ul style={styles.alignment.left}>
             <li>Early warning against asymmetrical threats</li>
             <li>Bluebottles can hear under the water and see and sense above the water</li>
             <li>
