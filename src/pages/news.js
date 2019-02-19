@@ -43,10 +43,14 @@ export default ({ data }) => {
               {data.allMarkdownRemark.edges.map(({ node }) => (
                 <article key={node.id} className="post" style={styles.post}>
                   {node.frontmatter.featuredImage && (
-                    <Img
-                      fixed={node.frontmatter.featuredImage.childImageSharp.fixed}
-                      alt={node.frontmatter.title}
-                    />
+                    <div className="img-wrap">
+                      <Link to={node.fields.slug}>
+                        <Img
+                          fixed={node.frontmatter.featuredImage.childImageSharp.fixed}
+                          alt={node.frontmatter.title}
+                        />
+                      </Link>
+                    </div>
                   )}
                   <h3>
                     <Link to={node.fields.slug}>{node.frontmatter.title}</Link>
