@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, graphql } from 'gatsby';
+import Img from 'gatsby-image';
 import Header from '../components/header';
 import Layout from '../layouts/Layout';
 import Container from '../components/Container';
@@ -41,6 +42,12 @@ export default ({ data }) => {
             <Column className="primary-content" sm={8} md={7} lg={7} fluid>
               {data.allMarkdownRemark.edges.map(({ node }) => (
                 <article key={node.id} className="post" style={styles.post}>
+                  {node.frontmatter.featuredImage && (
+                    <Img
+                      fixed={node.frontmatter.featuredImage.childImageSharp.fixed}
+                      alt={node.frontmatter.title}
+                    />
+                  )}
                   <h3>
                     <Link to={node.fields.slug}>{node.frontmatter.title}</Link>
                   </h3>
@@ -72,6 +79,13 @@ export const query = graphql`
           frontmatter {
             title
             date(formatString: "MMMM DD, YYYY")
+            featuredImage {
+              childImageSharp {
+                fixed(width: 700, height: 400) {
+                  ...GatsbyImageSharpFixed
+                }
+              }
+            }
           }
           fields {
             slug
