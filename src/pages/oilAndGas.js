@@ -4,6 +4,7 @@ import Layout from '../layouts/Layout';
 import Container from '../components/Container';
 import Row from '../components/GridRow';
 import Column from '../components/GridColumn';
+import Icon from '../components/Icon';
 
 export default () => (
   <Layout>
@@ -16,6 +17,14 @@ export default () => (
       </h3>
       <Row>
         <Column sm={12} md={4} lg={4} fluid>
+          <Icon.Compass
+            fill="#4db4e6"
+            style={{
+              height: '70px',
+              marginBottom: '3px',
+              width: 'auto'
+            }}
+          />
           <h5>Seabed & Pipeline Surveys</h5>
           <ul>
             <li>GPS mapping</li>
@@ -27,6 +36,14 @@ export default () => (
           </ul>
         </Column>
         <Column sm={12} md={4} lg={4} fluid>
+          <Icon.Envira
+            fill="#4db4e6"
+            style={{
+              height: '70px',
+              marginBottom: '3px',
+              width: 'auto'
+            }}
+          />
           <h5>Environmental Monitoring</h5>
           <ul>
             <li>Hydrocarbon monitoring</li>
@@ -37,6 +54,14 @@ export default () => (
           </ul>
         </Column>
         <Column sm={12} md={4} lg={4} fluid>
+          <Icon.Lock
+            fill="#4db4e6"
+            style={{
+              height: '70px',
+              marginBottom: '3px',
+              width: 'auto'
+            }}
+          />
           <h5>Security</h5>
           <ul>
             <li>Early warning against asymmetrical threats</li>
