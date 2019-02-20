@@ -11,7 +11,7 @@ phases:
   pre_build:
     commands:
       - 'gatsby serve &'
-      - "lighthouse-ci http://localhost:9000/ --performance=100 --best-practices=93 --accessibility=100 --seo=100"
+      - "lighthouse-ci http://localhost:9000/ --performance=99 --best-practices=93 --accessibility=100 --seo=100"
   build:
     commands:
       - 'aws s3 sync "public/" "s3://ocius-static-website" --delete --acl "public-read"'
