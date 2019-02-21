@@ -23,13 +23,15 @@ export default ({ data }) => {
               <p className="date">{date}</p>
               <p className="author">{author}</p>
               <div dangerouslySetInnerHTML={{ __html: post.html }} />
-              <SocialShareContainer
-                text={title}
-                url={window.location.href}
-                headingText="Share this post:"
-              >
-                {SocialShare}
-              </SocialShareContainer>
+              {typeof window !== 'undefined' && (
+                <SocialShareContainer
+                  text={title}
+                  url={window.location.href}
+                  headingText="Share this post:"
+                >
+                  {SocialShare}
+                </SocialShareContainer>
+              )}
             </Column>
             <Column className="secondary-content" sm={4} md={5} lg={4} lgShift={1} fluid>
               <RecentNews />
