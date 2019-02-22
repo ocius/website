@@ -7,18 +7,14 @@ import Container from '../components/Container';
 import Row from '../components/GridRow';
 import Column from '../components/GridColumn';
 import RecentNews from '../components/RecentNews';
+import Segmented from '../components/Segmented';
 
 const styles = {
-  post: {
-    borderBottom: '1px solid #efefef',
-    marginBottom: '10px'
-  },
   readMore: {
     display: 'inline-block',
     padding: '8px 15px',
     fontWeight: '500',
     textTransform: 'capitalize',
-    margin: '0 0 15px',
     background: '#efefef',
     color: '#7a96a2',
     borderRadius: '3px',
@@ -41,26 +37,28 @@ export default ({ data }) => {
           <Row>
             <Column className="primary-content" sm={8} md={7} lg={7} fluid>
               {data.allMarkdownRemark.edges.map(({ node }) => (
-                <article key={node.id} className="post" style={styles.post}>
-                  {node.frontmatter.featuredImage && (
-                    <div className="img-wrap">
-                      <Link to={node.fields.slug}>
-                        <Img
-                          fixed={node.frontmatter.featuredImage.childImageSharp.fixed}
-                          alt={node.frontmatter.title}
-                        />
-                      </Link>
-                    </div>
-                  )}
-                  <h3>
-                    <Link to={node.fields.slug}>{node.frontmatter.title}</Link>
-                  </h3>
-                  <p className="date">{node.frontmatter.date}</p>
-                  <p>{node.excerpt}</p>
-                  <Link style={styles.readMore} to={node.fields.slug}>
-                    Read More
-                  </Link>
-                </article>
+                <Segmented>
+                  <article key={node.id} className="post">
+                    {node.frontmatter.featuredImage && (
+                      <div className="img-wrap">
+                        <Link to={node.fields.slug}>
+                          <Img
+                            fixed={node.frontmatter.featuredImage.childImageSharp.fixed}
+                            alt={node.frontmatter.title}
+                          />
+                        </Link>
+                      </div>
+                    )}
+                    <h3>
+                      <Link to={node.fields.slug}>{node.frontmatter.title}</Link>
+                    </h3>
+                    <p className="date">{node.frontmatter.date}</p>
+                    <p>{node.excerpt}</p>
+                    <Link style={styles.readMore} to={node.fields.slug}>
+                      Read More
+                    </Link>
+                  </article>
+                </Segmented>
               ))}
             </Column>
             <Column className="secondary-content" sm={4} md={5} lg={4} lgShift={1} fluid>
