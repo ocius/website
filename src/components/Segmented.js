@@ -27,7 +27,7 @@ Segmented.propTypes = {
 };
 
 Segmented.defaultProps = {
-  borderBottom: '1px solid rgba(189,206,227, 0.47)'
+  borderBottom: '1px solid #efefef'
 };
 
 export default Segmented;
