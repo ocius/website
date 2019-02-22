@@ -6,7 +6,6 @@ const styles = {
   footer: {
     backgroundColor: '#125192',
     width: '100%',
-    marginTop: '10px',
     clear: 'both',
     padding: '4.5em 0'
   }
