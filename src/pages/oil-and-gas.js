@@ -6,6 +6,7 @@ import Row from '../components/GridRow';
 import Column from '../components/GridColumn';
 import Icon from '../components/Icon';
 import Segmented from '../components/Segmented';
+import Button from '../components/Button';
 
 const styles = {
   alignment: {
@@ -92,11 +93,10 @@ export default () => (
       <Segmented borderBottom="">
         <Row>
           <Column sm={12} md={12} lg={12} fluid>
-            <h3>
-              <strong>
-                WE ARE LOOKING FOR PARTNERS TO DO JOINT VENTURE AND DEMONSTRATION PROJECTS
-              </strong>
-            </h3>
+            <h3>WE ARE LOOKING FOR PARTNERS TO DO JOINT VENTURE AND DEMONSTRATION PROJECTS</h3>
+            <Button color="white" size="medium" href="/contact">
+              Contact Us Now
+            </Button>
           </Column>
         </Row>
       </Segmented>

@@ -8,25 +8,7 @@ import Row from '../components/GridRow';
 import Column from '../components/GridColumn';
 import RecentNews from '../components/RecentNews';
 import Segmented from '../components/Segmented';
-
-const styles = {
-  readMore: {
-    display: 'inline-block',
-    padding: '8px 15px',
-    fontWeight: '500',
-    textTransform: 'capitalize',
-    background: '#efefef',
-    color: '#7a96a2',
-    borderRadius: '3px',
-    transition: '.2s linear',
-
-    ':hover': {
-      background: '#003859',
-      textDecoration: 'none',
-      color: '#fff'
-    }
-  }
-};
+import Button from '../components/Button';
 
 export default ({ data }) => {
   return (
@@ -54,9 +36,9 @@ export default ({ data }) => {
                     </h3>
                     <p className="date">{node.frontmatter.date}</p>
                     <p>{node.excerpt}</p>
-                    <Link style={styles.readMore} to={node.fields.slug}>
+                    <Button color="gray" size="small" border={false} to={node.fields.slug}>
                       Read More
-                    </Link>
+                    </Button>
                   </article>
                 </Segmented>
               ))}
