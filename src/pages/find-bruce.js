@@ -2,6 +2,7 @@ import React from 'react';
 import Header from '../components/header';
 import Layout from '../layouts/Layout';
 import Container from '../components/Container';
+import Heading from '../components/Heading';
 
 export default () => (
   <Layout>
@@ -9,9 +10,9 @@ export default () => (
     <section className="page-content">
       <Container>
         <article>
-          <h3>
+          <Heading level="3">
             See where <i>Bruce</i> is, what he is doing and see what Bruce sees at any time – LIVE.
-          </h3>
+          </Heading>
           <p>
             <i>Bruce</i> is now transmitting LIVE some of his on- board sensors, cameras and data.
           </p>

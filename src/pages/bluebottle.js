@@ -2,15 +2,13 @@ import React from 'react';
 import Layout from '../layouts/Layout';
 import Container from '../components/Container';
 import BluebottleImage from '../../static/wallpaperocius-768x432.jpg';
+import Heading from '../components/Heading';
 
 const styles = {
   center: {
     textAlign: 'center'
   },
   header: {
-    textAlign: 'center',
-    position: 'relative',
-    paddingBottom: '0.25em',
     ':after': {
       content: '',
       position: 'absolute',
@@ -36,10 +34,12 @@ export default () => (
     <section className="page-content">
       <Container>
         <article>
-          <h1 style={styles.header}>What is a USV?</h1>
-          <h3 style={styles.center}>
-            <strong>A USV is an Unmanned Surface Vessel</strong>
-          </h3>
+          <Heading level="1" weight="thick" override={styles.center}>
+            What is a USV?
+          </Heading>
+          <Heading level="3" override={styles.center}>
+            A USV is an Unmanned Surface Vessel
+          </Heading>
           <h4>
             <strong>There are two types:</strong>
           </h4>

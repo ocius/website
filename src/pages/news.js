@@ -7,6 +7,7 @@ import Container from '../components/Container';
 import Row from '../components/GridRow';
 import Column from '../components/GridColumn';
 import RecentNews from '../components/RecentNews';
+import Heading from '../components/Heading';
 import Segmented from '../components/Segmented';
 import Button from '../components/Button';
 
@@ -31,9 +32,9 @@ export default ({ data }) => {
                         </Link>
                       </div>
                     )}
-                    <h3>
+                    <Heading level="3" size="medium">
                       <Link to={node.fields.slug}>{node.frontmatter.title}</Link>
-                    </h3>
+                    </Heading>
                     <p className="date">{node.frontmatter.date}</p>
                     <p>{node.excerpt}</p>
                     <Button color="gray" size="small" border={false} to={node.fields.slug}>

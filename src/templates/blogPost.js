@@ -8,6 +8,7 @@ import RecentNews from '../components/RecentNews';
 import Header from '../components/header';
 import SocialShareContainer from '../components/SocialShareContainer';
 import SocialShare from '../components/SocialShare';
+import Heading from '../components/Heading';
 
 export default ({ data }) => {
   const post = data.markdownRemark;
@@ -19,7 +20,9 @@ export default ({ data }) => {
         <Container>
           <Row>
             <Column className="primary-content" sm={8} md={7} lg={7} fluid>
-              <h2 className="title">{title}</h2>
+              <Heading className="title" level="2">
+                {title}
+              </Heading>
               <p className="date">{date}</p>
               <p className="author">{author}</p>
               <div dangerouslySetInnerHTML={{ __html: post.html }} />

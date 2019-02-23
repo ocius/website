@@ -5,6 +5,7 @@ import Container from '../components/Container';
 import Row from '../components/GridRow';
 import Column from '../components/GridColumn';
 import Icon from '../components/Icon';
+import Heading from '../components/Heading';
 import Segmented from '../components/Segmented';
 
 const styles = {
@@ -23,13 +24,19 @@ export default () => (
     <Header title="Defence" desciption="Applications for defence" />
     <Container style={styles.alignment.center}>
       <Segmented borderBottom="">
-        <h3>Persistent USVs are being seen as strategic in Defence as force multipliers</h3>
-        <h3>
-          <strong>
-            Bluebottles have more power payload and performance making them the superior persistent
-            USV for defence
-          </strong>
-        </h3>
+        <Row>
+          <Column sm={12} md={8} lg={8} lgShift={2} fluid>
+            <Heading level="3">
+              Persistent USVs are being seen as strategic in Defence as force multipliers
+            </Heading>
+            <Heading level="3">
+              <strong>
+                Bluebottles have more power payload and performance making them the superior
+                persistent USV for defence
+              </strong>
+            </Heading>
+          </Column>
+        </Row>
       </Segmented>
       <Segmented borderBottom="">
         <Row>
