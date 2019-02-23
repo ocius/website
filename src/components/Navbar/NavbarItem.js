@@ -23,7 +23,7 @@ const styles = {
   },
   link: {
     display: 'inline-block',
-    padding: '2.25em 1.25em 1.75em',
+    padding: '1.5em 1em 1.5em',
     fontSize: '1em',
     fontWeight: '500',
     lineHeight: '100%',
