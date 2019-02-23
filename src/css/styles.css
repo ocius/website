@@ -1,9 +1,21 @@
+@import url('https://use.typekit.net/agd1kws.css');
+
 body {
-    color: #001826;
-    font-family: 'Aktiv Grotesk', sans-serif;
-    font-size: 15px;
-    line-height: 1.44;
     margin: 0;
+    padding: 0;
+    color: #001826;
+    font-family: 'aktiv-grotesk-std',Helvetica Neue,Helvetica,Arial,sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+html {
+    font-family: sans-serif;
+    -webkit-text-size-adjust: 100%;
 }
 
 a:hover {
@@ -23,6 +35,11 @@ p {
 }
 
 strong, b {
+    font-weight: bold;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Effra', sans-serif;
     font-weight: bold;
 }
 
