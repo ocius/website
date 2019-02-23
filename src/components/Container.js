@@ -1,43 +1,84 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Radium from 'radium';
+import radium from 'radium';
+import cn from 'classnames';
 
-const styles = {
-  container: {
-    width: '960px',
-    margin: '0 auto',
-    position: 'relative',
+import mq from '../common/mq';
 
-    '@media (max-width: 767px)': {
-      width: '100%'
-    },
-    '@media (min-width: 768px)': {
-      width: '768px'
-    },
-    '@media (min-width: 992px)': {
-      width: '970px'
-    },
-    '@media (min-width: 1200px)': {
-      width: '1140px'
+const maxSiteWidth = 1290;
+const gutter = 30;
+const maxWidth = maxSiteWidth + gutter * 4;
+const mediaQuery = `${maxWidth * 0.0625}em`;
+
+const styles = `
+  .container {
+    box-sizing: border-box;
+    max-width: ${maxSiteWidth}px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+  }
+
+  .container::after {
+    content: " ";
+    display: block;
+    clear: both;
+  }
+
+  @media (max-width: ${mq.max[480]}) {
+    .container {
+      padding-left: ${gutter / 2}px;
+      padding-right: ${gutter / 2}px;
     }
   }
-};
 
-const Container = ({ children, contStyle }) => {
-  return (
-    <div className="container" style={[styles.container, contStyle && contStyle]}>
-      {children}
-    </div>
-  );
-};
+  @media (min-width: ${mq.min[480]}) {
+    .container {
+      margin-left: ${gutter}px;
+      margin-right: ${gutter}px;
+    }
+  }
+
+  @media (min-width: ${mq.min[1080]}) {
+    .container {
+      margin-left: ${gutter * 2}px;
+      margin-right: ${gutter * 2}px;
+    }
+  }
+
+  @media(min-width: ${mediaQuery}) {
+    .container {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+`;
+
+function markup(htmlContent) {
+  return {
+    __html: htmlContent
+  };
+}
+
+const Container = ({ children, id, className, style }) => (
+  <div id={id} className={cn('container', className)} style={style}>
+    <style dangerouslySetInnerHTML={markup(styles)} />
+
+    {children}
+  </div>
+);
 
 Container.propTypes = {
-  contStyle: PropTypes.objectOf(PropTypes.object),
-  children: PropTypes.node.isRequired
+  children: PropTypes.node.isRequired,
+  id: PropTypes.string,
+  className: PropTypes.string,
+  style: PropTypes.objectOf(PropTypes.object)
 };
 
 Container.defaultProps = {
-  contStyle: {}
+  id: '',
+  className: '',
+  style: {}
 };
 
-export default Radium(Container);
+export default radium(Container);

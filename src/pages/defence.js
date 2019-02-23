@@ -21,7 +21,7 @@ const styles = {
 export default () => (
   <Layout>
     <Header title="Defence" desciption="Applications for defence" />
-    <Container contStyle={styles.alignment.center}>
+    <Container style={styles.alignment.center}>
       <Segmented borderBottom="">
         <h3>Persistent USVs are being seen as strategic in Defence as force multipliers</h3>
         <h3>

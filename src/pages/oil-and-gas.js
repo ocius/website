@@ -22,7 +22,7 @@ const styles = {
 export default () => (
   <Layout>
     <Header title="Oil And Gas" desciption="Applications for oil and gas" />
-    <Container contStyle={styles.alignment.center}>
+    <Container style={styles.alignment.center}>
       <Segmented borderBottom="">
         <h3>
           USVs are already being used in the Oil &amp; Gas industry
