@@ -7,7 +7,7 @@ import mainLogo from '../../images/main-ocius.png';
 const styles = {
   logo: {
     paddingTop: '17px',
-    marginTop: '8px',
+    marginTop: '2px',
     maxWidth: '200px',
     '@media (min-width: 768px)': {
       float: 'left'

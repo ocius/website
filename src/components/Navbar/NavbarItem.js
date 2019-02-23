@@ -8,7 +8,7 @@ const styles = {
     position: 'relative',
     display: 'inline-block',
     listStyle: 'none',
-    fontSize: '1.125em',
+    fontSize: '1em',
     fontWeight: '300',
     lineHeight: '1.4',
 
@@ -23,7 +23,7 @@ const styles = {
   },
   link: {
     display: 'inline-block',
-    padding: '1.5em 1em 1.5em',
+    padding: '1.5em 1.2em',
     fontSize: '1em',
     fontWeight: '500',
     lineHeight: '100%',

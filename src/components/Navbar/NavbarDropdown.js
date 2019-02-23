@@ -43,7 +43,7 @@ class NavbarDropdown extends Component {
         position: 'relative',
         display: 'inline-block',
         listStyle: 'none',
-        fontSize: '1.125em',
+        fontSize: '1em',
         fontWeight: '300',
         lineHeight: '1.4',
 
