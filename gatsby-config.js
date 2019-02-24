@@ -28,6 +28,19 @@ module.exports = {
         ]
       }
     },
+
+    // Add Google Analytics
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: 'UA-96773019-1',
+        // Puts tracking script in the head instead of the body
+        head: false,
+        // Setting this parameter is also optional
+        respectDNT: true,
+      },
+    },
+
     `gatsby-plugin-react-helmet`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`

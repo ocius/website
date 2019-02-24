@@ -45,7 +45,7 @@ export default ({ children }) => (
                 <Link to="/science">Science</Link>
               </li>
             </ul>
-            <Link to="/solutions">Solutions</Link>
+            <Link to="/contact">Contact</Link>
           </Column>
           <Column sm={12} md={3} lg={3} fluid>
             <Link to="/bluebottle">BlueBottle USV</Link>
