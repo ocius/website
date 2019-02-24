@@ -1,12 +1,15 @@
 import React from 'react';
-import Header from '../components/header';
 import Layout from '../layouts/Layout';
 import Container from '../components/Container';
 import Row from '../components/GridRow';
 import Column from '../components/GridColumn';
 import Icon from '../components/Icon';
 import Segmented from '../components/Segmented';
+import HeroBlock from '../components/HeroBlock';
+import Heading from '../components/Heading';
 import Button from '../components/Button';
+// Import background image
+import HeaderBackground from '../images/Oil-Header-Background.jpg';
 
 const styles = {
   alignment: {
@@ -21,7 +24,42 @@ const styles = {
 
 export default () => (
   <Layout>
-    <Header title="Oil And Gas" desciption="Applications for oil and gas" />
+    <HeroBlock
+      image={HeaderBackground}
+      style={{
+        textAlign: 'center',
+        color: '#ffffff'
+      }}
+      constrained
+    >
+      <Heading level="2" weight="thick">
+        Oil &amp; Gas
+      </Heading>
+      <Row>
+        <Column sm={12} md={6} lg={6} fluid>
+          <Heading level="2" size="medium" weight="thick">
+            Seabed and Pipeline Surveys
+          </Heading>
+        </Column>
+        <Column sm={12} md={6} lg={6} fluid>
+          <Heading level="2" size="medium" weight="thick">
+            Security
+          </Heading>
+        </Column>
+      </Row>
+      <Row>
+        <Column sm={12} md={6} lg={6} fluid>
+          <Heading level="2" size="medium" weight="thick">
+            Environment Monitoring
+          </Heading>
+        </Column>
+        <Column sm={12} md={6} lg={6} fluid>
+          <Heading level="2" size="medium" weight="thick">
+            Partners
+          </Heading>
+        </Column>
+      </Row>
+    </HeroBlock>
     <Container style={styles.alignment.center}>
       <Segmented borderBottom="">
         <h3>

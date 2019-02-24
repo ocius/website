@@ -9,10 +9,6 @@ import propTypes from '../common/propTypes';
 import HeroImageContainer from './HeroImageContainer';
 import Container from './Container';
 
-const maxSiteWidth = 1290;
-const gutterWidth = 30;
-const maxWidth = maxSiteWidth + gutterWidth * 4;
-
 const styles = {
   container: {
     default: {
@@ -30,7 +26,6 @@ const styles = {
     constrained: {
       height: '35vh',
       maxHeight: '592px',
-      maxWidth: `${maxWidth}px`,
       minHeight: '300px',
 
       [`@media (max-width: ${mq.max[720]})`]: {
