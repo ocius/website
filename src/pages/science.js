@@ -1,13 +1,14 @@
 import React from 'react';
 import Layout from '../layouts/Layout';
 import SEO from '../components/SEO';
-import PageHeader from '../components/PageHeader';
 import Container from '../components/Container';
 import Row from '../components/GridRow';
 import Column from '../components/GridColumn';
 import Icon from '../components/Icon';
 import Segmented from '../components/Segmented';
+import HeroBlock from '../components/HeroBlock';
 import Button from '../components/Button';
+import Heading from '../components/Heading';
 // Import background image
 import HeaderBackground from '../images/Elevation.jpg';
 
@@ -31,7 +32,44 @@ export default () => (
         temperature Camera shots."
       image={HeaderBackground}
     />
-    <PageHeader>Science</PageHeader>
+    <Segmented borderBottom="">
+      <HeroBlock
+        image={HeaderBackground}
+        style={{
+          textAlign: 'center',
+          color: '#ffffff'
+        }}
+        constrained
+      >
+        <Heading level="2" weight="thick">
+          Science
+        </Heading>
+        <Row>
+          <Column sm={12} md={6} lg={6} fluid>
+            <Heading level="2" size="medium" weight="thick">
+              Weather &laquo;ground truth&raquo;
+            </Heading>
+          </Column>
+          <Column sm={12} md={6} lg={6} fluid>
+            <Heading level="2" size="medium" weight="thick">
+              Climate Change
+            </Heading>
+          </Column>
+        </Row>
+        <Row>
+          <Column sm={12} md={6} lg={6} fluid>
+            <Heading level="2" size="medium" weight="thick">
+              Hurricane Landfall Prediction
+            </Heading>
+          </Column>
+          <Column sm={12} md={6} lg={6} fluid>
+            <Heading level="2" size="medium" weight="thick">
+              Fisheries
+            </Heading>
+          </Column>
+        </Row>
+      </HeroBlock>
+    </Segmented>
     <Container style={styles.alignment.center}>
       <Segmented>
         <Row>
