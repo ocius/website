@@ -1,12 +1,101 @@
 import React from 'react';
 import Header from '../components/header';
 import Layout from '../layouts/Layout';
+import Container from '../components/Container';
+import Row from '../components/GridRow';
+import Column from '../components/GridColumn';
+import Icon from '../components/Icon';
+import Segmented from '../components/Segmented';
+import Button from '../components/Button';
+
+const styles = {
+  alignment: {
+    left: {
+      textAlign: 'left'
+    },
+    center: {
+      textAlign: 'center'
+    }
+  }
+};
 
 export default () => (
   <Layout>
-    <Header title="Science" desciption="Applications for science" />
-    <p>Live Ocean Conditions</p>
-    <p>Tsnuami Detection</p>
-    <p>Whale and fish monitoring</p>
+    <Segmented borderBottom="">
+      <Header title="Science" desciption="Applications for science" />
+    </Segmented>
+    <Container style={styles.alignment.center}>
+      <Segmented>
+        <Row>
+          <Column sm={12} md={4} lg={4} fluid>
+            <Icon.Bolt
+              fill="#4db4e6"
+              style={{
+                height: '70px',
+                marginBottom: '3px',
+                width: 'auto'
+              }}
+            />
+            <h5>Weather LIVE</h5>
+            <ul style={styles.alignment.left}>
+              <li>Wind direction & strength</li>
+              <li>Solar intensity & cloud</li>
+              <li>Wave direction & height</li>
+              <li>Air pressure</li>
+              <li>Water temperature</li>
+              <li>Camera shots</li>
+              <li>All transmitted back to base in real time</li>
+            </ul>
+          </Column>
+          <Column sm={12} md={4} lg={4} fluid>
+            <Icon.StackOverflow
+              fill="#4db4e6"
+              style={{
+                height: '70px',
+                marginBottom: '3px',
+                width: 'auto'
+              }}
+            />
+            <h5>Data storage on board for later use</h5>
+            <ul style={styles.alignment.left}>
+              <li>
+                Large volumes of data for scientific research sorted and stored for later download
+              </li>
+              <li>Time and date and GPS correlated against scientific parameters</li>
+              <li>&amp;Ground truth&amp; for satellite and computer modelling</li>
+            </ul>
+          </Column>
+          <Column sm={12} md={4} lg={4} fluid>
+            <Icon.Handshake
+              fill="#4db4e6"
+              style={{
+                height: '70px',
+                marginBottom: '3px',
+                width: 'auto'
+              }}
+            />
+            <h5>Multiple options</h5>
+            <ul style={styles.alignment.left}>
+              <li>Discuss with us your mission goals</li>
+              <li>Replace expensive bouys with mobile platforms</li>
+              <li>Configure your own modular payload</li>
+              <li>150 kg &amp;wet&amp; sensors & 150 kg &amp;dry&amp; equipment</li>
+            </ul>
+          </Column>
+        </Row>
+      </Segmented>
+      <Segmented borderBottom="">
+        <h3>
+          Persistent USVs are valuable tools for oceanographic and climate change research
+          <br />
+          <strong>Let Bluebottles help you do more</strong>
+          <br />
+          For how we can support your goals...
+        </h3>
+        <Button color="white" size="medium" href="/contact">
+          Contact Us Now
+        </Button>
+      </Segmented>
+    </Container>
   </Layout>
 );

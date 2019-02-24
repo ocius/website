@@ -6,6 +6,7 @@ import Row from '../components/GridRow';
 import Column from '../components/GridColumn';
 import Icon from '../components/Icon';
 import Heading from '../components/Heading';
+import Button from '../components/Button';
 import Segmented from '../components/Segmented';
 
 const styles = {
@@ -146,6 +147,11 @@ export default () => (
             </ul>
           </Column>
         </Row>
+      </Segmented>
+      <Segmented borderBottom="">
+        <Button color="white" size="medium" href="/contact">
+          Contact Us Now
+        </Button>
       </Segmented>
     </Container>
   </Layout>
