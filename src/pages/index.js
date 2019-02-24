@@ -4,6 +4,7 @@ import HeroBlock from '../components/HeroBlock';
 import Heading from '../components/Heading';
 import { add, gutter, span } from '../common/grid';
 import mq from '../common/mq';
+import HeroBackground from '../images/wallpaperocius-768x432.jpg';
 
 const gutterWidth = 30;
 
@@ -29,7 +30,7 @@ const styles = {
 export default () => (
   <Layout>
     <HeroBlock
-      image="https://ocius.com.au/wp-content/uploads/2017/09/wallpaperocius-768x432.jpg"
+      image={HeroBackground}
       style={{
         height: 'calc(100vh - 4em)',
         color: '#ffffff'
