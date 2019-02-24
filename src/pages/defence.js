@@ -1,7 +1,7 @@
 import React from 'react';
 import Layout from '../layouts/Layout';
 import SEO from '../components/SEO';
-import PageHeader from '../components/PageHeader';
+import HeroBlock from '../components/HeroBlock';
 import Container from '../components/Container';
 import Row from '../components/GridRow';
 import Column from '../components/GridColumn';
@@ -9,6 +9,8 @@ import Icon from '../components/Icon';
 import Heading from '../components/Heading';
 import Button from '../components/Button';
 import Segmented from '../components/Segmented';
+// Import background image
+import HeaderBackground from '../images/submarine.jpg';
 
 const styles = {
   alignment: {
@@ -28,7 +30,42 @@ export default () => (
       description="Persistent USVs are being seen as strategic in Defence as force multipliers Bluebottles have more
        power payload and performance making them the superior persistent USV for defence"
     />
-    <PageHeader>Defence</PageHeader>
+    <HeroBlock
+      image={HeaderBackground}
+      style={{
+        textAlign: 'center',
+        color: '#ffffff'
+      }}
+      constrained
+    >
+      <Heading level="2" weight="thick">
+        Defence
+      </Heading>
+      <Row>
+        <Column sm={12} md={6} lg={6} fluid>
+          <Heading level="2" size="medium" weight="thick">
+            Anti-Submarine Warfare
+          </Heading>
+        </Column>
+        <Column sm={12} md={6} lg={6} fluid>
+          <Heading level="2" size="medium" weight="thick">
+            Electronic Warfare
+          </Heading>
+        </Column>
+      </Row>
+      <Row>
+        <Column sm={12} md={6} lg={6} fluid>
+          <Heading level="2" size="medium" weight="thick">
+            Mine Counter Measures
+          </Heading>
+        </Column>
+        <Column sm={12} md={6} lg={6} fluid>
+          <Heading level="2" size="medium" weight="thick">
+            Gateway Communications
+          </Heading>
+        </Column>
+      </Row>
+    </HeroBlock>
     <Container style={styles.alignment.center}>
       <Segmented borderBottom="">
         <Row>
