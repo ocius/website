@@ -2,7 +2,8 @@ module.exports = {
   siteMetadata: {
     title: `OCIUS`,
     siteUrl: `https://ocius.cloud`,
-    description: `We make ocean drones`
+    description: `We make ocean drones`,
+    authorTwitterAccount: `OciusTechnology`
   },
   plugins: [
     {

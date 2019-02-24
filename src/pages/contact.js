@@ -1,6 +1,7 @@
 import React from 'react';
 import Layout from '../layouts/Layout';
-import Header from '../components/header';
+import SEO from '../components/SEO';
+import PageHeader from '../components/PageHeader';
 import Container from '../components/Container';
 import Row from '../components/GridRow';
 import Column from '../components/GridColumn';
@@ -13,7 +14,13 @@ const addressStyle = {
 
 export default () => (
   <Layout>
-    <Header title="Contact" description="Links to contact Ocius" />
+    <SEO
+      title="Contact"
+      description="For General Enquiries Main Phone: +61 2 9924 6400 Email: admin@ocius.com.au For Investment Enquiries
+      Email: cosecretary@ocius.com.au Address: Ainsworth Building University of New South Wales Willis Annex Kensington
+      NSW 2052 Phone: +61 2 9924 6400 Postal Address: Office Box 4304 Castlecrag Australia 2068"
+    />
+    <PageHeader>Contact</PageHeader>
     <section className="page-content">
       <Container>
         <Row>

@@ -1,11 +1,12 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import Layout from '../layouts/Layout';
+import SEO from '../components/SEO';
+import PageHeader from '../components/PageHeader';
 import Container from '../components/Container';
 import Row from '../components/GridRow';
 import Column from '../components/GridColumn';
 import RecentNews from '../components/RecentNews';
-import Header from '../components/header';
 import SocialShareContainer from '../components/SocialShareContainer';
 import SocialShare from '../components/SocialShare';
 import Heading from '../components/Heading';
@@ -15,7 +16,8 @@ export default ({ data }) => {
   const { title, date, author } = post.frontmatter;
   return (
     <Layout>
-      <Header title="News" description={post.excerpt} />
+      <SEO title={title} description={post.excerpt} />
+      <PageHeader>News</PageHeader>
       <section className="page-content">
         <Container>
           <Row>

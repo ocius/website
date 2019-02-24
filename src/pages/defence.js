@@ -1,6 +1,7 @@
 import React from 'react';
-import Header from '../components/header';
 import Layout from '../layouts/Layout';
+import SEO from '../components/SEO';
+import PageHeader from '../components/PageHeader';
 import Container from '../components/Container';
 import Row from '../components/GridRow';
 import Column from '../components/GridColumn';
@@ -22,7 +23,12 @@ const styles = {
 
 export default () => (
   <Layout>
-    <Header title="Defence" desciption="Applications for defence" />
+    <SEO
+      title="Defence"
+      description="Persistent USVs are being seen as strategic in Defence as force multipliers Bluebottles have more
+       power payload and performance making them the superior persistent USV for defence"
+    />
+    <PageHeader>Defence</PageHeader>
     <Container style={styles.alignment.center}>
       <Segmented borderBottom="">
         <Row>

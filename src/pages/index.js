@@ -1,5 +1,6 @@
 import React from 'react';
 import Layout from '../layouts/Layout';
+import SEO from '../components/SEO';
 import HeroBlock from '../components/HeroBlock';
 import Heading from '../components/Heading';
 import { add, gutter, span } from '../common/grid';
@@ -29,6 +30,7 @@ const styles = {
 
 export default () => (
   <Layout>
+    <SEO title="OCIUS - Satellites of the Sea" />
     <HeroBlock
       image={HeroBackground}
       style={{

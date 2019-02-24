@@ -1,12 +1,15 @@
 import React from 'react';
-import Header from '../components/header';
 import Layout from '../layouts/Layout';
+import SEO from '../components/SEO';
+import PageHeader from '../components/PageHeader';
 import Container from '../components/Container';
 import Row from '../components/GridRow';
 import Column from '../components/GridColumn';
 import Icon from '../components/Icon';
 import Segmented from '../components/Segmented';
 import Button from '../components/Button';
+// Import background image
+import HeaderBackground from '../images/Elevation.jpg';
 
 const styles = {
   alignment: {
@@ -21,9 +24,14 @@ const styles = {
 
 export default () => (
   <Layout>
-    <Segmented borderBottom="">
-      <Header title="Science" desciption="Applications for science" />
-    </Segmented>
+    <SEO
+      title="Science"
+      description="Science Weather 'ground truth' Hurricane Landfall Prediction Climate Change Fisheries Weather LIVE
+        Wind direction &amp; strength Solar intensity &amp; cloud Wave direction &amp; height Air pressure Water
+        temperature Camera shots."
+      image={HeaderBackground}
+    />
+    <PageHeader>Science</PageHeader>
     <Container style={styles.alignment.center}>
       <Segmented>
         <Row>

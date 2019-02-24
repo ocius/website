@@ -1,8 +1,9 @@
 import React from 'react';
 import { Link, graphql } from 'gatsby';
 import Img from 'gatsby-image';
-import Header from '../components/header';
 import Layout from '../layouts/Layout';
+import SEO from '../components/SEO';
+import PageHeader from '../components/PageHeader';
 import Container from '../components/Container';
 import Row from '../components/GridRow';
 import Column from '../components/GridColumn';
@@ -14,7 +15,13 @@ import Button from '../components/Button';
 export default ({ data }) => {
   return (
     <Layout>
-      <Header title="News" description="Ocius blog and news" />
+      <SEO
+        title="News"
+        description="Ocius technology Ltd is building a new network of renewable energy powered unmanned surface
+        vessels and today launched a &#8216;man-portable&#8217; version of the Bluebottle USV. &#8220;We&#8217;ve
+        had a number of enquiries for small self sustaining USVs that can be deployed easily from a deck or beach."
+      />
+      <PageHeader>News</PageHeader>
       <section className="page-content">
         <Container>
           <Row>

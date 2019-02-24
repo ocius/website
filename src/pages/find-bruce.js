@@ -1,12 +1,19 @@
 import React from 'react';
-import Header from '../components/header';
 import Layout from '../layouts/Layout';
+import SEO from '../components/SEO';
+import PageHeader from '../components/PageHeader';
 import Container from '../components/Container';
 import Heading from '../components/Heading';
 
 export default () => (
   <Layout>
-    <Header title="Find Bruce" description="Track our drones in real time" />
+    <SEO
+      title="Find Bruce"
+      description="See where Bruce is, what he is doing and see what Bruce sees at any time – LIVE. Bruce is now
+      transmitting LIVE some of his on- board sensors, cameras and data. NB Time is Greenwich Mean Time. Press
+      START button in the top right corner"
+    />
+    <PageHeader>Find Bruce</PageHeader>
     <section className="page-content">
       <Container>
         <article>

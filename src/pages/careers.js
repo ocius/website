@@ -1,6 +1,7 @@
 import React from 'react';
-import Header from '../components/header';
+import SEO from '../components/SEO';
 import Layout from '../layouts/Layout';
+import PageHeader from '../components/PageHeader';
 import Container from '../components/Container';
 import Row from '../components/GridRow';
 import Column from '../components/GridColumn';
@@ -14,7 +15,13 @@ const styles = {
 
 export default () => (
   <Layout>
-    <Header title="Careers" description="Job openings at Ocius" />
+    <SEO
+      title="Careers"
+      description="Working with Ocius &#8211; &#8220;Oceans is us&#8221; Ocius is an Australian public unlisted
+      Sydney-based SME (small to medium enterprise) operating at the cutting edge of technology to design and
+      build autonomous robots"
+    />
+    <PageHeader>Careers</PageHeader>
     <section className="page-content">
       <Container>
         <Row>

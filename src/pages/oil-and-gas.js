@@ -1,5 +1,6 @@
 import React from 'react';
 import Layout from '../layouts/Layout';
+import SEO from '../components/SEO';
 import Container from '../components/Container';
 import Row from '../components/GridRow';
 import Column from '../components/GridColumn';
@@ -24,6 +25,12 @@ const styles = {
 
 export default () => (
   <Layout>
+    <SEO
+      title="Oil &amp; Gas"
+      description="USVs are already being used in the Oil &amp; Gas industry Bluebottles can do more. WE ARE LOOKING
+      FOR PARTNERS TO DO JOINT VENTURE AND DEMONSTRATION PROJECTS"
+      image={HeaderBackground}
+    />
     <HeroBlock
       image={HeaderBackground}
       style={{

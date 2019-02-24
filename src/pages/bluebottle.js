@@ -1,5 +1,6 @@
 import React from 'react';
 import Layout from '../layouts/Layout';
+import SEO from '../components/SEO';
 import Container from '../components/Container';
 import BluebottleImage from '../../static/wallpaperocius-768x432.jpg';
 import Heading from '../components/Heading';
@@ -31,6 +32,12 @@ const styles = {
 
 export default () => (
   <Layout>
+    <SEO
+      title="What is a USV"
+      description="A USV is an Unmanned Surface Vessel There are two types: Conventional powered vessels which are
+      unmanned. They have limited time and range at sea and are acoustically noisy. Renewable energy powered vessels
+      which are unmanned."
+    />
     <section className="page-content">
       <Container>
         <article>
