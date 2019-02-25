@@ -1,6 +1,11 @@
 import React from 'react';
 import Layout from '../layouts/Layout';
 import SEO from '../components/SEO';
+import Container from '../components/Container';
+import Row from '../components/GridRow';
+import Column from '../components/GridColumn';
+import Segmented from '../components/Segmented';
+import Button from '../components/Button';
 import HeroBlock from '../components/HeroBlock';
 import Heading from '../components/Heading';
 import { add, gutter, span } from '../common/grid';
@@ -25,26 +30,56 @@ const styles = {
       marginRight: add([span(2), gutter()]),
       width: span(10)
     }
+  },
+
+  alignment: {
+    center: {
+      textAlign: 'center'
+    }
   }
 };
 
 export default () => (
   <Layout>
     <SEO title="OCIUS - Satellites of the Sea" />
-    <HeroBlock
-      image={HeroBackground}
-      gradient="leftCorner"
-      style={{
-        height: 'calc(100vh - 4em)',
-        color: '#ffffff'
-      }}
-    >
-      <div className="HeroBlock-callout" style={styles.callout}>
-        <Heading level="1" size="huge" weight="thick">
-          Innovative Autonomous Solutions
-        </Heading>
-        <Heading level="3">For persistent maritime surveillance</Heading>
-      </div>
-    </HeroBlock>
+    <Segmented borderBottom="">
+      <HeroBlock
+        image={HeroBackground}
+        gradient="leftCorner"
+        style={{
+          height: 'calc(100vh - 4em)',
+          color: '#ffffff'
+        }}
+      >
+        <div className="HeroBlock-callout" style={styles.callout}>
+          <Heading level="1" size="huge" weight="thick">
+            Innovative Autonomous Solutions
+          </Heading>
+          <Heading level="3">For persistent maritime surveillance</Heading>
+        </div>
+      </HeroBlock>
+    </Segmented>
+    <Container style={styles.alignment.center}>
+      <Segmented>
+        <Row>
+          <Column sm={12} md={8} lg={8} lgShift={2} fluid>
+            <Heading level="2">
+              We are the solution to the most challenging problems of the ocean
+            </Heading>
+            <p>
+              BlueBottle USVs are a new generation of ocean drones able to power large payloads,
+              roam widely and stay at sea for months at a time
+            </p>
+            <p>
+              BlueBottle offers economic and operational advantages over conventional methods in a
+              multitude of industries, below are just some of the solutions we offer...
+            </p>
+            <Button color="white" size="medium" href="/bluebottle">
+              What is a USV?
+            </Button>
+          </Column>
+        </Row>
+      </Segmented>
+    </Container>
   </Layout>
 );
