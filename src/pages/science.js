@@ -35,6 +35,7 @@ export default () => (
     <Segmented borderBottom="">
       <HeroBlock
         image={HeaderBackground}
+        gradient="linear"
         style={{
           textAlign: 'center',
           color: '#ffffff'

@@ -7,6 +7,7 @@ import font from '../common/font';
 import propTypes from '../common/propTypes';
 
 import HeroImageContainer from './HeroImageContainer';
+import GradientOverlay from './GradientOverlay';
 import Container from './Container';
 
 const styles = {
@@ -35,7 +36,7 @@ const styles = {
   }
 };
 
-const HeroBlock = ({ children, image, constrained, style }) => (
+const HeroBlock = ({ children, image, constrained, gradient, style }) => (
   <div
     className="HeroBlock"
     style={[styles.container.default, constrained && styles.container.constrained, style]}
@@ -44,11 +45,14 @@ const HeroBlock = ({ children, image, constrained, style }) => (
       <Container
         style={{
           height: '100%',
-          position: 'relative'
+          position: 'relative',
+          zIndex: 2
         }}
       >
         {children}
       </Container>
+
+      {gradient && <GradientOverlay gradientType={gradient} />}
     </HeroImageContainer>
   </div>
 );
@@ -56,11 +60,13 @@ const HeroBlock = ({ children, image, constrained, style }) => (
 HeroBlock.propTypes = {
   image: PropTypes.string.isRequired,
   constrained: PropTypes.bool,
+  gradient: PropTypes.string,
   style: propTypes.style
 };
 
 HeroBlock.defaultProps = {
   constrained: false,
+  gradient: '',
   style: {}
 };
 

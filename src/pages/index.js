@@ -33,6 +33,7 @@ export default () => (
     <SEO title="OCIUS - Satellites of the Sea" />
     <HeroBlock
       image={HeroBackground}
+      gradient="leftCorner"
       style={{
         height: 'calc(100vh - 4em)',
         color: '#ffffff'
