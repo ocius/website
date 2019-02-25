@@ -33,7 +33,7 @@ export default ({ data }) => {
                       <div className="img-wrap">
                         <Link to={node.fields.slug}>
                           <Img
-                            fixed={node.frontmatter.featuredImage.childImageSharp.fixed}
+                            fluid={node.frontmatter.featuredImage.childImageSharp.fluid}
                             alt={node.frontmatter.title}
                           />
                         </Link>
@@ -73,8 +73,8 @@ export const query = graphql`
             date(formatString: "MMMM DD, YYYY")
             featuredImage {
               childImageSharp {
-                fixed(width: 700, height: 400) {
-                  ...GatsbyImageSharpFixed
+                fluid(maxWidth: 700, maxHeight: 400) {
+                  ...GatsbyImageSharpFluid
                 }
               }
             }
