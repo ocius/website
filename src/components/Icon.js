@@ -64,7 +64,7 @@ function Icon(props) {
 
 Icon.propTypes = {
   children: PropTypes.node.isRequired,
-  viewBox: PropTypes.string.isRequired,
+  viewBox: PropTypes.string,
   className: PropTypes.string,
   fill: PropTypes.string,
   width: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
@@ -74,10 +74,11 @@ Icon.propTypes = {
 };
 
 Icon.defaultProps = {
+  viewBox: '0 0 32 32',
   className: '',
   fill: '',
-  width: 32,
-  height: 32,
+  width: 0,
+  height: 0,
   label: '',
   style: {}
 };

@@ -45,6 +45,7 @@ const SocialIconButton = ({ network, href, onClick, iconSize, id, className, sty
     lineHeight: `${size}px`,
     textAlign: 'center',
     textDecoration: 'none',
+    borderRadius: '100%',
     transition: `opacity 200ms ease-in-out`,
     width: `${size}px`,
 
