@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Radium from 'radium';
 import { Link as GatsbyLink } from 'gatsby';
-import mq from "../../common/mq";
+import mq from '../../common/mq';
 
 const styles = {
   base: {
