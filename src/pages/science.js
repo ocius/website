@@ -48,7 +48,7 @@ export default () => (
         <Row>
           <Column sm={12} md={6} lg={6} fluid>
             <Heading level="2" size="medium" weight="thick">
-              Weather &laquo;ground truth&raquo;
+              Weather “ground truth“
             </Heading>
           </Column>
           <Column sm={12} md={6} lg={6} fluid>
