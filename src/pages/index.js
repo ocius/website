@@ -8,9 +8,14 @@ import Segmented from '../components/Segmented';
 import Button from '../components/Button';
 import HeroBlock from '../components/HeroBlock';
 import Heading from '../components/Heading';
+import PanelCallout from '../components/PanelCallout';
+import PanelCalloutGroup from '../components/PanelCalloutGroup';
 import { add, gutter, span } from '../common/grid';
 import mq from '../common/mq';
 import HeroBackground from '../images/wallpaperocius-768x432.jpg';
+import ScienceTile from '../images/Science-Home-Tile-Background.jpg';
+import OilTile from '../images/Oil-Home-Tile-Background.jpg';
+import DefenceTile from '../images/Defence-Home-Tile-Background.jpg';
 
 const gutterWidth = 30;
 
@@ -60,7 +65,7 @@ export default () => (
       </HeroBlock>
     </Segmented>
     <Container style={styles.alignment.center}>
-      <Segmented>
+      <Segmented borderBottom="">
         <Row>
           <Column sm={12} md={8} lg={8} lgShift={2} fluid>
             <Heading level="2">
@@ -81,5 +86,27 @@ export default () => (
         </Row>
       </Segmented>
     </Container>
+
+    <Segmented borderBottom="">
+      <PanelCalloutGroup>
+        <PanelCallout bgImage={DefenceTile} title="Defence" url="/defence">
+          <p>Anti Submarine Warfare</p>
+          <p>Electronic Warfare</p>
+          <p>Gateway Coms</p>
+          <p>Mine Counter Measures</p>
+        </PanelCallout>
+
+        <PanelCallout bgImage={OilTile} title="Oil &amp; Gas" url="/oil-and-gas">
+          <p>Mapping pipelines</p>
+          <p>Security</p>
+          <p>Environmental monitoring</p>
+        </PanelCallout>
+
+        <PanelCallout bgImage={ScienceTile} title="Science" url="/science">
+          <p>Environmental monitoring</p>
+          <p>Seabed Mapping</p>
+        </PanelCallout>
+      </PanelCalloutGroup>
+    </Segmented>
   </Layout>
 );
