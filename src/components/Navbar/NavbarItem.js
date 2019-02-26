@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Radium from 'radium';
 import { Link as GatsbyLink } from 'gatsby';
+import mq from "../../common/mq";
 
 const styles = {
   base: {
@@ -17,7 +18,7 @@ const styles = {
       backgroundColor: '#fff'
     },
 
-    '@media (max-width: 767px)': {
+    [`@media (max-width: ${mq.max[768]})`]: {
       display: 'block'
     }
   },

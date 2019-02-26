@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Radium from 'radium';
+import mq from '../../common/mq';
 
 class DropdownMenu extends Component {
   getStyles = () => {
@@ -17,7 +18,7 @@ class DropdownMenu extends Component {
         textAlign: 'left',
         listStyle: 'none',
 
-        '@media (max-width: 767px)': {
+        [`@media (max-width: ${mq.max[768]})`]: {
           position: 'static',
           float: 'none',
           width: 'auto',
@@ -48,7 +49,7 @@ class DropdownMenu extends Component {
           color: '#001826'
         },
 
-        '@media (max-width: 767px)': {
+        [`@media (max-width: ${mq.max[768]})`]: {
           backgroundColor: 'transparent',
           color: '#777',
 
