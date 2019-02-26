@@ -1,43 +1,59 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link as GatsbyLink } from 'gatsby';
+import { Link as GatsbyLink, graphql, StaticQuery } from 'gatsby';
 import Radium from 'radium';
-import mainLogo from '../../images/main-ocius.png';
+import mq from '../../common/mq';
+
+const logoQuery = graphql`
+  query {
+    file(relativePath: { eq: "images/main-ocius.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 200) {
+          src
+        }
+      }
+    }
+  }
+`;
 
 const styles = {
   logo: {
+    position: 'relative',
     paddingTop: '17px',
     marginTop: '2px',
     maxWidth: '200px',
-    '@media (min-width: 768px)': {
+    [`@media (min-width: ${mq.min[768]})`]: {
       float: 'left'
     },
-    '@media (max-width: 767px)': {
-      paddingTop: '8px',
+    [`@media (max-width: ${mq.max[768]})`]: {
+      paddingTop: '13px',
       width: '130px',
-      left: '20px'
+      left: '5px'
     }
   }
 };
 
-const SiteLogo = ({ href, imgSrc }) => {
+const SiteLogo = ({ href }) => {
   const StyledLink = Radium(GatsbyLink);
 
   return (
-    <StyledLink key="brand" to={href}>
-      <img src={imgSrc} alt="Website logo" style={styles.logo} />
-    </StyledLink>
+    <StaticQuery
+      query={logoQuery}
+      render={data => (
+        <StyledLink key="brand" to={href}>
+          <img src={data.file.childImageSharp.fluid.src} alt="Website logo" style={styles.logo} />
+        </StyledLink>
+      )}
+    />
   );
 };
 
 SiteLogo.propTypes = {
-  href: PropTypes.string,
-  imgSrc: PropTypes.string
+  href: PropTypes.string
 };
 
 SiteLogo.defaultProps = {
-  href: '/',
-  imgSrc: mainLogo
+  href: '/'
 };
 
 export default Radium(SiteLogo);
