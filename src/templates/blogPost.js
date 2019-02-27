@@ -22,7 +22,7 @@ export default ({ data }) => {
         <Container>
           <Row>
             <Column className="primary-content" sm={8} md={7} lg={7} fluid>
-              <Heading className="title" level="2">
+              <Heading className="title" level="2" size="large">
                 {title}
               </Heading>
               <p className="date">{date}</p>

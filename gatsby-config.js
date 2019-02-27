@@ -22,7 +22,13 @@ module.exports = {
           {
             resolve: `gatsby-remark-images`,
             options: {
-              maxWidth: 690
+              maxWidth: 700,
+              // Add captions to images
+              showCaptions: true,
+              // Add custom styles to the div wrapping the responsive images
+              wrapperStyle: 'margin-left: unset !important;',
+              // Add webp version
+              withWebp: true
             }
           },
           `gatsby-remark-copy-linked-files`
