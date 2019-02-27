@@ -1,4 +1,6 @@
 import React from 'react';
+import { graphql } from 'gatsby';
+import Img from 'gatsby-image';
 import SEO from '../../components/SEO';
 import Layout from '../../layouts/Layout';
 import Container from '../../components/Container';
@@ -7,22 +9,13 @@ import Row from '../../components/GridRow';
 import Column from '../../components/GridColumn';
 import Heading from '../../components/Heading';
 
-// Import all the images
-import MarkBethwaite from './Mark-Bethwaite.jpg';
-import RobertDane from './Robert-Dane.png';
-import BobHawke from './Bob-Hawke.jpg';
-import DavidSaxelby from './David-Saxelby.jpg';
-import LloydBreckenridge from './Lloyd-Breckenridge.jpg';
-import PeterWlodarczyk from './Peter-Wlodarczyk.jpg';
-import TraceySharah from './Tracey-Sharah.jpg';
-
 const styles = {
   center: {
     textAlign: 'center'
   }
 };
 
-export default () => (
+export default ({ data }) => (
   <Layout>
     <SEO
       title="About"
@@ -53,7 +46,9 @@ export default () => (
         </Heading>
         <Row>
           <Column sm={12} md={4} lg={4} fluid>
-            <img src={MarkBethwaite} alt="Mark Bethwaite AM" />
+            {data.MarkBethwaite && (
+              <Img fixed={data.MarkBethwaite.childImageSharp.fixed} alt="Mark Bethwaite AM" />
+            )}
             <Heading level={3} size="medium">
               Mark Bethwaite AM
               <br />
@@ -71,7 +66,9 @@ export default () => (
             </p>
           </Column>
           <Column sm={12} md={4} lg={4} fluid>
-            <img src={RobertDane} alt="Robert Dane" />
+            {data.RobertDane && (
+              <Img fixed={data.RobertDane.childImageSharp.fixed} alt="Robert Dane" />
+            )}
             <Heading level={3} size="medium">
               Robert Dane
               <br />
@@ -92,7 +89,7 @@ export default () => (
             </p>
           </Column>
           <Column sm={12} md={4} lg={4} fluid>
-            <img src={BobHawke} alt="Bob Hawke" />
+            {data.BobHawke && <Img fixed={data.BobHawke.childImageSharp.fixed} alt="Bob Hawke" />}
             <Heading level={3} size="medium">
               The Hon. Bob Hawke AC
               <br />
@@ -107,7 +104,9 @@ export default () => (
         </Row>
         <Row>
           <Column sm={12} md={3} lg={3} fluid>
-            <img src={DavidSaxelby} alt="David Saxelby" />
+            {data.DavidSaxelby && (
+              <Img fixed={data.DavidSaxelby.childImageSharp.fixed} alt="David Saxelby" />
+            )}
             <Heading level={3} size="medium">
               David Saxelby
               <br />
@@ -128,7 +127,9 @@ export default () => (
             </p>
           </Column>
           <Column sm={12} md={3} lg={3} fluid>
-            <img src={LloydBreckenridge} alt="Lloyd Breckenridge" />
+            {data.LloydBreckenridge && (
+              <Img fixed={data.LloydBreckenridge.childImageSharp.fixed} alt="Lloyd Breckenridge" />
+            )}
             <Heading level={3} size="medium">
               Lloyd Breckenridge
               <br />
@@ -149,7 +150,9 @@ export default () => (
             </p>
           </Column>
           <Column sm={12} md={3} lg={3} fluid>
-            <img src={PeterWlodarczyk} alt="Peter Wlodarczyk" />
+            {data.PeterWlodarczyk && (
+              <Img fixed={data.PeterWlodarczyk.childImageSharp.fixed} alt="Peter Wlodarczyk" />
+            )}
             <Heading level={3} size="medium">
               Peter Wlodarczyk
               <br />
@@ -169,7 +172,9 @@ export default () => (
             </p>
           </Column>
           <Column sm={12} md={3} lg={3} fluid>
-            <img src={TraceySharah} alt="Tracey Sharah" />
+            {data.TraceySharah && (
+              <Img fixed={data.TraceySharah.childImageSharp.fixed} alt="Tracey Sharah" />
+            )}
             <Heading level={3} size="medium">
               Tracey Sharah B.Com CPA DipFP
               <br />
@@ -189,8 +194,236 @@ export default () => (
           </Column>
         </Row>
       </Segmented>
-      <h2>Partners</h2>
+      <Segmented borderBottom="">
+        <Heading level={2} size="huge">
+          Our Partners
+        </Heading>
+        <Row>
+          <Column sm={12} md={6} lg={6} fluid>
+            {data.AustralianGovernment && (
+              <Img
+                fixed={data.AustralianGovernment.childImageSharp.fixed}
+                alt="Australian Government Logotype"
+              />
+            )}
+            <p>
+              DST Group is a national leader in safeguarding Australia by delivering valued
+              scientific advice and innovative solutions for Defence and national security. OCIUS
+              Technology Limited was selected for the Capability and Technology Demonstrator Program
+              (CTD) in 2015 to develop an Anti-Submarine Warfare Unmanned Surface Vessel (ASW-USV).
+              The A$3M contract provided extensive validation of our strategy to draw on proprietary
+              technology for the development of long-range, autonomous surveillance and sensing
+              platforms. Specifically, it allowed us to develop a high-performance OCIUS Bluebottle
+              Unmanned Surface Vessel (USV) coupled with an integrated Thales Australia thin-line
+              towed array sonar system. This was demonstrated to NAVY on Aug 10, 2017, and exceeded
+              all contract performance measures. OCIUS has been invited to apply for further
+              Technology Demonstrator funding under the Defence Innovation Hub program.
+            </p>
+          </Column>
+          <Column sm={12} md={6} lg={6} fluid>
+            {data.SteberInternational && (
+              <Img
+                fixed={data.SteberInternational.childImageSharp.fixed}
+                alt="Steber International"
+              />
+            )}
+            <p>
+              Stebercraft International is a leader in Australian boat manufacturing and industrial
+              composite technology since 1947. Steber manufactures high-quality boats for fishing,
+              charter, patrol, sea rescue, medical support, surveillance and general boating use.
+              All Steber boats are individually designed and built to suit their purpose, with a
+              quality of manufacture that ensures a long service life and the capability to put to
+              sea when many other vessels need to return to port. Steber&apos;s core business of
+              composite component manufacture is all undertaken in their climate controlled factory
+              ensuring all laminating is carried out within humidity and temperature parameters
+              allowing 24-hour production when required. Stebercraft is an Australian owned and
+              operated family company with a firm commitment to provide a high-quality product with
+              excellent customer service.
+            </p>
+          </Column>
+        </Row>
+        <Row>
+          <Column sm={12} md={6} lg={6} fluid>
+            {data.Thales && <Img fixed={data.Thales.childImageSharp.fixed} alt="Thales" />}
+            <p>
+              Thales is part of a leading international electronics and systems group serving the
+              defence, aerospace and space, security, and transport markets in Australia and
+              throughout the world.Thales’ expertise ranges across protected mobility vehicles,
+              naval support services and integrated communications solutions for defence through to
+              air traffic management systems, cybersecurity solutions and transport systems for the
+              commercial sector. OCIUS and Thales have paired to demonstrate a low-cost, long-range,
+              persistent detection capability that enhances the ability of Navy surface forces to
+              detect and track modern submarines and torpedoes at realistic standoff distances.
+            </p>
+          </Column>
+          <Column sm={12} md={6} lg={6} fluid>
+            {data.OneTwoThree && (
+              <Img
+                fixed={data.OneTwoThree.childImageSharp.fixed}
+                alt="One2three Naval Architects"
+              />
+            )}
+            <p>
+              One2three naval architects designed our second prototype Bruce’s hull, keel, deck and
+              hatches. They are well known in the sailing world as the naval architects who have
+              multiple times re-designed “Wild Oats“ the record-breaking maxi and 8 times winner of
+              line honours in the Sydney to Hobart yacht race. They will review Bruce’s seakeeping
+              ability in a range of conditions to provide several improvements in design, tracking,
+              helm, payload bay & performance for the next prototypes.
+            </p>
+          </Column>
+        </Row>
+        <Row>
+          <Column sm={12} md={6} lg={6} fluid>
+            {data.UNSW && (
+              <Img
+                fixed={data.UNSW.childImageSharp.fixed}
+                alt="The University of New South Wales"
+              />
+            )}
+            <p>
+              UNSW Australia (The University of New South Wales) is one of Australia’s leading
+              research and teaching universities. OCIUS have a contract for research into autonomous
+              sailing and collision avoidance with the University of New South Wales. UNSW provide
+              OCIUS with a design facility in UNSW’s Mechanical Engineering and Robotics Buildings.
+              Additionally, OCIUS has hired a software engineer from UNSW, and four students from
+              UNSW’s Sunswift solar car team under a scholarship program.
+            </p>
+          </Column>
+          <Column sm={12} md={6} lg={6} fluid>
+            <Heading level={3} size="medium">
+              Ulladulla Engineering and Fibreglass.
+            </Heading>
+            <p>
+              Bruce Heggie and Graham ‘Butch’ Johnson are well known on the NSW South Coast as
+              suppliers of innovative machine and fibreglass products. They have supplied fibreglass
+              and mechanical engineering since the successful winning of the International boat race
+              in 1997. They have provided equipment for all solar sailor ferries, scale models and
+              prototypes including our Bluebottles&apos; steering mechanisms, patented rudder
+              flipper appendages and patented solarsails & mechanisms.
+            </p>
+          </Column>
+        </Row>
+        <Row>
+          <Column sm={12} md={6} lg={6} fluid>
+            {data.ClarkIP && <Img fixed={data.ClarkIP.childImageSharp.fixed} alt="Clark IP" />}
+            <p>
+              David Clark is a registered Australian and NZ Patent Attorney with 25 years’
+              experience in mechanical engineering, mining, medical, software, digital signal
+              processing, electronic gaming, plastics, environmental, agricultural machinery and
+              more. He has been Solar Sailor’s and OCIUS&apos; patent attourney for over 15 years.
+              Prior to founding Clark IP, David successfully managed the patent practices at a major
+              first tier law firm and has a strong business acumen so he provides OCIUS with not
+              only technically accurate work but also commercially meaningful and relevant advice.
+            </p>
+            <p>
+              Being a keen sailor he brings a unique mix of practical experience and technical
+              expertise to OCIUS. We enjoy working collaboratively with David to translate our R&D
+              into meaningful and quality patents, registered designs and trademarks.
+            </p>
+          </Column>
+          <Column sm={12} md={6} lg={6} fluid>
+            {data.Spitfire && (
+              <Img fixed={data.Spitfire.childImageSharp.fixed} alt="The Spitfire Association" />
+            )}
+            <p>
+              During the Second World War Australian service men and women played a vital role in
+              every theatre of the conflict, leading to the successful Allied outcome in 1945. The
+              Spitfire Association, founded by many of these men and women, remains strong to this
+              day. The spirit of camaraderie, service and enjoyment of life is a hallmark of the
+              Association, bound together by a love of this iconic aeroplane the Spitfire.
+            </p>
+            <p>
+              The Spitfire Association has a &apos;living memorial&apos; being the Spitfire Memorial
+              Defence Fund which is invested and the interest of which each year goes towards a
+              competitive Scholarship and/or Fellowship for Australians doing &apos;research to
+              benefit the Defence of Australia&apos;. In 2016, OCIUS was honoured to be awarded
+              scholarships for several UNSW students to go towards the design and build of hardware
+              for Bluebottle prototype Bruce. In 2017, Robert Dane was honoured to be awarded the
+              Spitfire Fellowship for the development of the unique &apos;reel in the keel&apos;
+              winch for Bluebottles, enabling a small USV to carry any number of sensors in a
+              seaworthy way and deploy and retrieve that sensor to depths of 1 - 140m as desired.
+            </p>
+          </Column>
+        </Row>
+      </Segmented>
       <h2>Awards</h2>
     </Container>
   </Layout>
 );
+
+export const query = graphql`
+  query getImages {
+    MarkBethwaite: file(relativePath: { eq: "pages/about/Mark-Bethwaite.jpg" }) {
+      ...imageSharpAvatar
+    }
+
+    RobertDane: file(relativePath: { eq: "pages/about/Robert-Dane.png" }) {
+      ...imageSharpAvatar
+    }
+
+    BobHawke: file(relativePath: { eq: "pages/about/Bob-Hawke.jpg" }) {
+      ...imageSharpAvatar
+    }
+
+    DavidSaxelby: file(relativePath: { eq: "pages/about/David-Saxelby.jpg" }) {
+      ...imageSharpAvatar
+    }
+
+    LloydBreckenridge: file(relativePath: { eq: "pages/about/Lloyd-Breckenridge.jpg" }) {
+      ...imageSharpAvatar
+    }
+
+    PeterWlodarczyk: file(relativePath: { eq: "pages/about/Peter-Wlodarczyk.jpg" }) {
+      ...imageSharpAvatar
+    }
+
+    TraceySharah: file(relativePath: { eq: "pages/about/Tracey-Sharah.jpg" }) {
+      ...imageSharpAvatar
+    }
+
+    AustralianGovernment: file(relativePath: { eq: "pages/about/australiangovernment.png" }) {
+      ...imageSharpLogotype
+    }
+
+    SteberInternational: file(relativePath: { eq: "pages/about/Steber-International.jpg" }) {
+      ...imageSharpLogotype
+    }
+
+    Thales: file(relativePath: { eq: "pages/about/thales-logo.jpg" }) {
+      ...imageSharpLogotype
+    }
+
+    OneTwoThree: file(relativePath: { eq: "pages/about/One-Two-Three-Naval-Architects.jpg" }) {
+      ...imageSharpLogotype
+    }
+
+    UNSW: file(relativePath: { eq: "pages/about/UNSW.jpg" }) {
+      ...imageSharpLogotype
+    }
+
+    ClarkIP: file(relativePath: { eq: "pages/about/Clark-IP-Logo.png" }) {
+      ...imageSharpLogotype
+    }
+
+    Spitfire: file(relativePath: { eq: "pages/about/Spitfire-Assoc-Logo.jpg" }) {
+      ...imageSharpLogotype
+    }
+  }
+
+  fragment imageSharpAvatar on File {
+    childImageSharp {
+      fixed(width: 200) {
+        ...GatsbyImageSharpFixed
+      }
+    }
+  }
+
+  fragment imageSharpLogotype on File {
+    childImageSharp {
+      fixed(width: 500) {
+        ...GatsbyImageSharpFixed
+      }
+    }
+  }
+`;
