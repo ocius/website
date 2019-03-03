@@ -11,6 +11,7 @@ import HeroBlock from '../components/HeroBlock';
 import Heading from '../components/Heading';
 import PanelCallout from '../components/PanelCallout';
 import PanelCalloutGroup from '../components/PanelCalloutGroup';
+import ArticlePreviewBlock from '../components/ArticlePreviewBlock';
 import { add, gutter, span } from '../common/grid';
 import mq from '../common/mq';
 
@@ -44,7 +45,7 @@ const styles = {
 export default ({ data }) => (
   <Layout>
     <SEO title="OCIUS - Satellites of the Sea" />
-    <Segmented borderBottom="">
+    <Segmented borderBottom="" multiplier={3}>
       {data.HeroBackground && (
         <HeroBlock
           image={data.HeroBackground.childImageSharp.sizes.src}
@@ -64,7 +65,7 @@ export default ({ data }) => (
       )}
     </Segmented>
     <Container style={styles.alignment.center}>
-      <Segmented borderBottom="">
+      <Segmented borderBottom="" multiplier={3}>
         <Row>
           <Column sm={12} md={8} lg={8} lgShift={2} fluid>
             <Heading level="2">
@@ -86,7 +87,7 @@ export default ({ data }) => (
       </Segmented>
     </Container>
 
-    <Segmented borderBottom="">
+    <Segmented borderBottom="" multiplier={3}>
       <PanelCalloutGroup>
         {data.DefenceTile && (
           <PanelCallout
@@ -125,6 +126,12 @@ export default ({ data }) => (
         )}
       </PanelCalloutGroup>
     </Segmented>
+
+    <Container>
+      <Segmented borderBottom="">
+        <ArticlePreviewBlock />
+      </Segmented>
+    </Container>
   </Layout>
 );
 
