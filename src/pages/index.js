@@ -87,51 +87,53 @@ export default ({ data }) => (
       </Segmented>
     </Container>
 
-    <Segmented borderBottom="" multiplier={3}>
-      <PanelCalloutGroup>
-        {data.DefenceTile && (
-          <PanelCallout
-            bgImage={data.DefenceTile.childImageSharp.sizes.src}
-            title="Defence"
-            url="/defence"
-          >
-            <p>Anti Submarine Warfare</p>
-            <p>Electronic Warfare</p>
-            <p>Gateway Coms</p>
-            <p>Mine Counter Measures</p>
-          </PanelCallout>
-        )}
+    <div style={{ backgroundColor: '#efefef' }}>
+      <Segmented borderBottom="" multiplier={3}>
+        <PanelCalloutGroup>
+          {data.DefenceTile && (
+            <PanelCallout
+              bgImage={data.DefenceTile.childImageSharp.sizes.src}
+              title="Defence"
+              url="/defence"
+            >
+              <p>Anti Submarine Warfare</p>
+              <p>Electronic Warfare</p>
+              <p>Gateway Coms</p>
+              <p>Mine Counter Measures</p>
+            </PanelCallout>
+          )}
 
-        {data.OilTile && (
-          <PanelCallout
-            bgImage={data.OilTile.childImageSharp.sizes.src}
-            title="Oil &amp; Gas"
-            url="/oil-and-gas"
-          >
-            <p>Mapping pipelines</p>
-            <p>Security</p>
-            <p>Environmental monitoring</p>
-          </PanelCallout>
-        )}
+          {data.OilTile && (
+            <PanelCallout
+              bgImage={data.OilTile.childImageSharp.sizes.src}
+              title="Oil &amp; Gas"
+              url="/oil-and-gas"
+            >
+              <p>Mapping pipelines</p>
+              <p>Security</p>
+              <p>Environmental monitoring</p>
+            </PanelCallout>
+          )}
 
-        {data.ScienceTile && (
-          <PanelCallout
-            bgImage={data.ScienceTile.childImageSharp.sizes.src}
-            title="Science"
-            url="/science"
-          >
-            <p>Environmental monitoring</p>
-            <p>Seabed Mapping</p>
-          </PanelCallout>
-        )}
-      </PanelCalloutGroup>
-    </Segmented>
-
-    <Container>
-      <Segmented borderBottom="">
-        <ArticlePreviewBlock />
+          {data.ScienceTile && (
+            <PanelCallout
+              bgImage={data.ScienceTile.childImageSharp.sizes.src}
+              title="Science"
+              url="/science"
+            >
+              <p>Environmental monitoring</p>
+              <p>Seabed Mapping</p>
+            </PanelCallout>
+          )}
+        </PanelCalloutGroup>
       </Segmented>
-    </Container>
+
+      <Container>
+        <Segmented borderBottom="">
+          <ArticlePreviewBlock />
+        </Segmented>
+      </Container>
+    </div>
   </Layout>
 );
 
