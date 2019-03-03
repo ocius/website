@@ -48,8 +48,25 @@ module.exports = {
       },
     },
 
+    // Add manifest
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `OCIUS`,
+        short_name: `OCIUS`,
+        start_url: `/`,
+        background_color: `#efefef`,
+        theme_color: `#125192`,
+        // Enables "Add to Homescreen" prompt and disables browser UI (including back button)
+        // see https://developers.google.com/web/fundamentals/web-app-manifest/#display
+        display: `standalone`,
+        icon: `static/favicon.ico`, // This path is relative to the root of the site.
+        include_favicon: true, // Include favicon
+      },
+    },
     `gatsby-plugin-react-helmet`,
     `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`
+    `gatsby-plugin-sharp`,
+    `gatsby-plugin-offline`
   ]
 };
