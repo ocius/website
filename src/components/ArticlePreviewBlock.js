@@ -44,7 +44,7 @@ const RecentNews = () => (
               image={
                 node.frontmatter.featuredImage
                   ? node.frontmatter.featuredImage.childImageSharp.fluid
-                  : ''
+                  : {}
               }
             />
           </Column>

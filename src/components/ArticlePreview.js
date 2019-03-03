@@ -19,8 +19,7 @@ function ArticlePreview({ title, paragraph, image, href }) {
       maxWidth: '540px',
       padding: '20px',
 
-      // TODO: Doesn't work, fix it
-      [`@media (max-width: ${mq.max[768]})`]: {
+      [`@media (maxWidth: ${mq.max[768]})`]: {
         padding: 0
       }
     },
@@ -62,7 +61,7 @@ function ArticlePreview({ title, paragraph, image, href }) {
     <article className="ArticlePreview" style={styles.container}>
       <div className="ArticlePreview-text" style={styles.textContainer}>
         <GatsbyLink to={href} style={assign({}, styles.anchor, { marginTop: '12px' })}>
-          <Heading weight="thick" override={styles.heading}>
+          <Heading level={3} weight="thick" override={styles.heading}>
             {title}
           </Heading>
 
@@ -85,11 +84,11 @@ ArticlePreview.propTypes = {
   title: PropTypes.string.isRequired,
   paragraph: PropTypes.string.isRequired,
   href: PropTypes.string.isRequired,
-  image: PropTypes.string
+  image: PropTypes.objectOf(PropTypes.object)
 };
 
 ArticlePreview.defaultProps = {
-  image: ''
+  image: {}
 };
 
 export default ArticlePreview;

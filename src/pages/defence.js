@@ -38,7 +38,7 @@ export default () => (
       }}
       constrained
     >
-      <Heading level="2" weight="thick">
+      <Heading level={2} weight="thick">
         Defence
       </Heading>
       <Row>
