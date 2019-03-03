@@ -40,29 +40,29 @@ export default () => (
       }}
       constrained
     >
-      <Heading level="2" weight="thick">
+      <Heading level={2} weight="thick">
         Oil &amp; Gas
       </Heading>
       <Row>
         <Column sm={12} md={6} lg={6} fluid>
-          <Heading level="2" size="medium" weight="thick">
+          <Heading level={2} size="medium" weight="thick">
             Seabed and Pipeline Surveys
           </Heading>
         </Column>
         <Column sm={12} md={6} lg={6} fluid>
-          <Heading level="2" size="medium" weight="thick">
+          <Heading level={2} size="medium" weight="thick">
             Security
           </Heading>
         </Column>
       </Row>
       <Row>
         <Column sm={12} md={6} lg={6} fluid>
-          <Heading level="2" size="medium" weight="thick">
+          <Heading level={2} size="medium" weight="thick">
             Environment Monitoring
           </Heading>
         </Column>
         <Column sm={12} md={6} lg={6} fluid>
-          <Heading level="2" size="medium" weight="thick">
+          <Heading level={2} size="medium" weight="thick">
             Partners
           </Heading>
         </Column>

@@ -56,10 +56,10 @@ export default ({ data }) => (
           }}
         >
           <div className="HeroBlock-callout" style={styles.callout}>
-            <Heading level="1" size="huge" weight="thick">
+            <Heading level={1} size="huge" weight="thick">
               Innovative Autonomous Solutions
             </Heading>
-            <Heading level="3">For persistent maritime surveillance</Heading>
+            <Heading level={3}>For persistent maritime surveillance</Heading>
           </div>
         </HeroBlock>
       )}
@@ -68,7 +68,7 @@ export default ({ data }) => (
       <Segmented borderBottom="" multiplier={3}>
         <Row>
           <Column sm={12} md={8} lg={8} lgShift={2} fluid>
-            <Heading level="2">
+            <Heading level={2}>
               We are the solution to the most challenging problems of the ocean
             </Heading>
             <p>
@@ -92,7 +92,7 @@ export default ({ data }) => (
         <PanelCalloutGroup>
           {data.DefenceTile && (
             <PanelCallout
-              bgImage={data.DefenceTile.childImageSharp.sizes.src}
+              bgImage={data.DefenceTile.childImageSharp.sizes}
               title="Defence"
               url="/defence"
             >
@@ -105,7 +105,7 @@ export default ({ data }) => (
 
           {data.OilTile && (
             <PanelCallout
-              bgImage={data.OilTile.childImageSharp.sizes.src}
+              bgImage={data.OilTile.childImageSharp.sizes}
               title="Oil &amp; Gas"
               url="/oil-and-gas"
             >
@@ -117,7 +117,7 @@ export default ({ data }) => (
 
           {data.ScienceTile && (
             <PanelCallout
-              bgImage={data.ScienceTile.childImageSharp.sizes.src}
+              bgImage={data.ScienceTile.childImageSharp.sizes}
               title="Science"
               url="/science"
             >
@@ -162,8 +162,8 @@ export const query = graphql`
 
   fragment imageSharpTile on File {
     childImageSharp {
-      sizes(quality: 100) {
-        src
+      sizes(quality: 88) {
+        ...GatsbyImageSharpSizes
       }
     }
   }

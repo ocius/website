@@ -43,24 +43,24 @@ export default () => (
       </Heading>
       <Row>
         <Column sm={12} md={6} lg={6} fluid>
-          <Heading level="2" size="medium" weight="thick">
+          <Heading level={2} size="medium" weight="thick">
             Anti-Submarine Warfare
           </Heading>
         </Column>
         <Column sm={12} md={6} lg={6} fluid>
-          <Heading level="2" size="medium" weight="thick">
+          <Heading level={2} size="medium" weight="thick">
             Electronic Warfare
           </Heading>
         </Column>
       </Row>
       <Row>
         <Column sm={12} md={6} lg={6} fluid>
-          <Heading level="2" size="medium" weight="thick">
+          <Heading level={2} size="medium" weight="thick">
             Mine Counter Measures
           </Heading>
         </Column>
         <Column sm={12} md={6} lg={6} fluid>
-          <Heading level="2" size="medium" weight="thick">
+          <Heading level={2} size="medium" weight="thick">
             Gateway Communications
           </Heading>
         </Column>
@@ -70,10 +70,10 @@ export default () => (
       <Segmented borderBottom="">
         <Row>
           <Column sm={12} md={8} lg={8} lgShift={2} fluid>
-            <Heading level="3">
+            <Heading level={3}>
               Persistent USVs are being seen as strategic in Defence as force multipliers
             </Heading>
-            <Heading level="3">
+            <Heading level={3}>
               <strong>
                 Bluebottles have more power payload and performance making them the superior
                 persistent USV for defence
