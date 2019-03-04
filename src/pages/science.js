@@ -1,4 +1,5 @@
 import React from 'react';
+import { graphql } from 'gatsby';
 import Layout from '../layouts/Layout';
 import SEO from '../components/SEO';
 import Container from '../components/Container';
@@ -9,8 +10,6 @@ import Segmented from '../components/Segmented';
 import HeroBlock from '../components/HeroBlock';
 import Button from '../components/Button';
 import Heading from '../components/Heading';
-// Import background image
-import HeaderBackground from '../images/Elevation.jpg';
 
 const styles = {
   alignment: {
@@ -23,18 +22,17 @@ const styles = {
   }
 };
 
-export default () => (
+export default ({ data }) => (
   <Layout>
     <SEO
       title="Science"
       description="Science Weather 'ground truth' Hurricane Landfall Prediction Climate Change Fisheries Weather LIVE
         Wind direction &amp; strength Solar intensity &amp; cloud Wave direction &amp; height Air pressure Water
         temperature Camera shots."
-      image={HeaderBackground}
     />
     <Segmented borderBottom="">
       <HeroBlock
-        image={HeaderBackground}
+        image={data.HeroBackground ? data.HeroBackground.childImageSharp.sizes : {}}
         gradient="linear"
         style={{
           textAlign: 'center',
@@ -146,3 +144,15 @@ export default () => (
     </Container>
   </Layout>
 );
+
+export const query = graphql`
+  query {
+    HeroBackground: file(relativePath: { eq: "images/Elevation.jpg" }) {
+      childImageSharp {
+        sizes(quality: 90) {
+          ...GatsbyImageSharpSizes_withWebp
+        }
+      }
+    }
+  }
+`;

@@ -48,7 +48,7 @@ export default ({ data }) => (
     <Segmented borderBottom="" multiplier={3}>
       {data.HeroBackground && (
         <HeroBlock
-          image={data.HeroBackground.childImageSharp.sizes.src}
+          image={data.HeroBackground.childImageSharp.sizes}
           gradient="leftCorner"
           style={{
             height: 'calc(100vh - 4em)',
@@ -141,8 +141,8 @@ export const query = graphql`
   query getHomepageImages {
     HeroBackground: file(relativePath: { eq: "images/wallpaperocius-768x432.jpg" }) {
       childImageSharp {
-        sizes(quality: 100) {
-          src
+        sizes(quality: 92) {
+          ...GatsbyImageSharpSizes_withWebp
         }
       }
     }
@@ -163,7 +163,7 @@ export const query = graphql`
   fragment imageSharpTile on File {
     childImageSharp {
       sizes(quality: 88) {
-        ...GatsbyImageSharpSizes
+        ...GatsbyImageSharpSizes_withWebp
       }
     }
   }

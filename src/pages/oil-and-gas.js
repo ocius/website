@@ -1,4 +1,5 @@
 import React from 'react';
+import { graphql } from 'gatsby';
 import Layout from '../layouts/Layout';
 import SEO from '../components/SEO';
 import Container from '../components/Container';
@@ -9,8 +10,6 @@ import Segmented from '../components/Segmented';
 import HeroBlock from '../components/HeroBlock';
 import Heading from '../components/Heading';
 import Button from '../components/Button';
-// Import background image
-import HeaderBackground from '../images/Oil-Header-Background.jpg';
 
 const styles = {
   alignment: {
@@ -23,16 +22,15 @@ const styles = {
   }
 };
 
-export default () => (
+export default ({ data }) => (
   <Layout>
     <SEO
       title="Oil &amp; Gas"
       description="USVs are already being used in the Oil &amp; Gas industry Bluebottles can do more. WE ARE LOOKING
       FOR PARTNERS TO DO JOINT VENTURE AND DEMONSTRATION PROJECTS"
-      image={HeaderBackground}
     />
     <HeroBlock
-      image={HeaderBackground}
+      image={data.HeroBackground ? data.HeroBackground.childImageSharp.sizes : {}}
       gradient="linear"
       style={{
         textAlign: 'center',
@@ -149,3 +147,15 @@ export default () => (
     </Container>
   </Layout>
 );
+
+export const query = graphql`
+  query {
+    HeroBackground: file(relativePath: { eq: "images/Oil-Header-Background.jpg" }) {
+      childImageSharp {
+        sizes(quality: 90) {
+          ...GatsbyImageSharpSizes_withWebp
+        }
+      }
+    }
+  }
+`;

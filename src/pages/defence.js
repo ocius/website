@@ -1,4 +1,5 @@
 import React from 'react';
+import { graphql } from 'gatsby';
 import Layout from '../layouts/Layout';
 import SEO from '../components/SEO';
 import HeroBlock from '../components/HeroBlock';
@@ -9,8 +10,6 @@ import Icon from '../components/Icon';
 import Heading from '../components/Heading';
 import Button from '../components/Button';
 import Segmented from '../components/Segmented';
-// Import background image
-import HeaderBackground from '../images/submarine.jpg';
 
 const styles = {
   alignment: {
@@ -23,15 +22,16 @@ const styles = {
   }
 };
 
-export default () => (
+export default ({ data }) => (
   <Layout>
     <SEO
       title="Defence"
       description="Persistent USVs are being seen as strategic in Defence as force multipliers Bluebottles have more
        power payload and performance making them the superior persistent USV for defence"
     />
+
     <HeroBlock
-      image={HeaderBackground}
+      image={data.HeroBackground ? data.HeroBackground.childImageSharp.sizes : {}}
       style={{
         textAlign: 'center',
         color: '#ffffff'
@@ -66,6 +66,7 @@ export default () => (
         </Column>
       </Row>
     </HeroBlock>
+
     <Container style={styles.alignment.center}>
       <Segmented borderBottom="">
         <Row>
@@ -199,3 +200,15 @@ export default () => (
     </Container>
   </Layout>
 );
+
+export const query = graphql`
+  query {
+    HeroBackground: file(relativePath: { eq: "images/submarine.jpg" }) {
+      childImageSharp {
+        sizes(quality: 90) {
+          ...GatsbyImageSharpSizes_withWebp
+        }
+      }
+    }
+  }
+`;
