@@ -19,7 +19,7 @@ const RecentNews = () => (
                 featuredImage {
                   childImageSharp {
                     fluid(maxWidth: 540, maxHeight: 320) {
-                      ...GatsbyImageSharpFluid
+                      ...GatsbyImageSharpFluid_withWebp
                     }
                   }
                 }

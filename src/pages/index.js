@@ -162,7 +162,7 @@ export const query = graphql`
 
   fragment imageSharpTile on File {
     childImageSharp {
-      sizes(quality: 88) {
+      sizes(maxWidth: 600, maxHeight: 470, quality: 90) {
         ...GatsbyImageSharpSizes_withWebp
       }
     }
