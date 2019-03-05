@@ -32,7 +32,7 @@ export default ({ data }) => (
     />
     <Segmented borderBottom="">
       <HeroBlock
-        image={data.HeroBackground ? data.HeroBackground.childImageSharp.sizes : {}}
+        image={data.HeroBackground ? data.HeroBackground.childImageSharp.fluid : ''}
         gradient="linear"
         style={{
           textAlign: 'center',
@@ -149,8 +149,8 @@ export const query = graphql`
   query {
     HeroBackground: file(relativePath: { eq: "images/Elevation.jpg" }) {
       childImageSharp {
-        sizes(quality: 90) {
-          ...GatsbyImageSharpSizes_withWebp
+        fluid(quality: 90, maxWidth: 1200) {
+          ...GatsbyImageSharpFluid_withWebp
         }
       }
     }
