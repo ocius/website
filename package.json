@@ -13,6 +13,7 @@
     "classnames": "^2.2.6",
     "color": "^3.1.0",
     "gatsby": "^2.0.76",
+    "gatsby-background-image": "^0.2.4",
     "gatsby-image": "^2.0.29",
     "gatsby-plugin-google-analytics": "^2.0.14",
     "gatsby-plugin-manifest": "^2.0.20",

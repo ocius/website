@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import radium from 'radium';
-import Img from 'gatsby-image';
+import assign from 'object-assign';
+import BackgroundImage from 'gatsby-background-image';
 
 import mq from '../common/mq';
 import font from '../common/font';
@@ -13,7 +14,6 @@ import Container from './Container';
 const styles = {
   container: {
     default: {
-      backgroundColor: '#125192',
       fontFamily: font('effra'),
       height: '100vh',
       marginLeft: 'auto',
@@ -21,7 +21,7 @@ const styles = {
       position: 'relative',
       overflow: 'hidden',
 
-      [`@media (max-width: ${mq.max[720]})`]: {
+      [`@media (maxWidth: ${mq.max[720]})`]: {
         maxHeight: '592px'
       }
     },
@@ -31,25 +31,19 @@ const styles = {
       maxHeight: '592px',
       minHeight: '300px',
 
-      [`@media (max-width: ${mq.max[720]})`]: {
+      [`@media (maxWidth: ${mq.max[720]})`]: {
         maxHeight: 'none'
       }
     }
-  },
-
-  image: {
-    width: '100%',
-    height: '100%',
-    position: 'absolute',
-    left: 0,
-    top: 0
   }
 };
 
 const HeroBlock = ({ children, image, constrained, gradient, style }) => (
-  <div
+  <BackgroundImage
+    Tag="section"
     className="HeroBlock"
-    style={[styles.container.default, constrained && styles.container.constrained, style]}
+    fluid={image}
+    style={assign({}, styles.container.default, constrained && styles.container.constrained, style)}
   >
     <Container
       style={{
@@ -61,20 +55,18 @@ const HeroBlock = ({ children, image, constrained, gradient, style }) => (
       {children}
     </Container>
 
-    {image && <Img sizes={image} style={styles.image} />}
     {gradient && <GradientOverlay gradientType={gradient} />}
-  </div>
+  </BackgroundImage>
 );
 
 HeroBlock.propTypes = {
-  image: PropTypes.objectOf(PropTypes.object),
+  image: PropTypes.string.isRequired,
   constrained: PropTypes.bool,
   gradient: PropTypes.string,
   style: propTypes.style
 };
 
 HeroBlock.defaultProps = {
-  image: {},
   constrained: false,
   gradient: '',
   style: {}
