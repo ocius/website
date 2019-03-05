@@ -2,13 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Radium from 'radium';
 import { Link as GatsbyLink } from 'gatsby';
+import mq from '../../common/mq';
 
 const styles = {
   base: {
     position: 'relative',
     display: 'inline-block',
     listStyle: 'none',
-    fontSize: '1.125em',
+    fontSize: '1em',
     fontWeight: '300',
     lineHeight: '1.4',
 
@@ -17,13 +18,13 @@ const styles = {
       backgroundColor: '#fff'
     },
 
-    '@media (max-width: 767px)': {
+    [`@media (max-width: ${mq.max[768]})`]: {
       display: 'block'
     }
   },
   link: {
     display: 'inline-block',
-    padding: '2.25em 1.25em 1.75em',
+    padding: '1.5em 1.2em',
     fontSize: '1em',
     fontWeight: '500',
     lineHeight: '100%',

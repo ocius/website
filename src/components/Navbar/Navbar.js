@@ -11,9 +11,6 @@ const styles = {
     zIndex: '1',
     top: '0px',
     boxShadow: '0 2px 4px rgba(0, 0, 0, 0.2)'
-  },
-  clear: {
-    clear: 'both'
   }
 };
 
@@ -47,7 +44,6 @@ class Navbar extends Component {
     return (
       <header className="primary" style={[styles.navbar, navStyle && navStyle]}>
         <Container>{this.renderChildren()}</Container>
-        <div className="clear" style={[styles.clear]} />
       </header>
     );
   }

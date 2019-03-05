@@ -1,8 +1,20 @@
 import React from 'react';
+import Radium from 'radium';
 import { Link, graphql, StaticQuery } from 'gatsby';
+import mq from '../common/mq';
+
+const gutter = 30;
+const styles = {
+  padding: '15px 20px',
+
+  [`@media (max-width: ${mq.min[480]})`]: {
+    marginLeft: `-${gutter / 2}px`,
+    marginRight: `-${gutter / 2}px`
+  }
+};
 
 const RecentNews = () => (
-  <aside className="aside recent-news">
+  <aside className="aside recent-news" style={styles}>
     <Link to="/news">Latest news...</Link>
     <StaticQuery
       query={graphql`
@@ -39,4 +51,4 @@ const RecentNews = () => (
   </aside>
 );
 
-export default RecentNews;
+export default Radium(RecentNews);

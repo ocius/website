@@ -17,12 +17,9 @@ import propTypes from '../common/propTypes';
 
 const styles = {
   base: {
-    fontFamily: font('benton'),
-    lineHeight: 1,
-    marginTop: 0,
-    marginRight: 0,
-    marginBottom: 0,
-    marginLeft: 0
+    fontFamily: font('effra'),
+    lineHeight: 1.2,
+    marginTop: '1em'
   },
 
   size: {
@@ -30,6 +27,7 @@ const styles = {
       fontSize: `${fontSizeUppercase}px`
     },
     small: {
+      marginTop: '1.25em',
       fontSize: `${fontSizeUppercase}px`,
 
       [`@media (min-width: ${mq.min[600]})`]: {
@@ -37,10 +35,12 @@ const styles = {
       }
     },
     medium: {
+      marginTop: '1em',
       fontSize: `${fontSizeHeading5 + 2}px`,
       lineHeight: 40 / 26
     },
     large: {
+      marginTop: '0.75em',
       fontSize: `${fontSizeHeading2 - 8}px`,
 
       [`@media (min-width: ${mq.min[600]})`]: {
@@ -48,6 +48,7 @@ const styles = {
       }
     },
     huge: {
+      marginTop: '0.5em',
       fontSize: `${fontSizeHeading4 + 2}px`,
       letterSpacing: '-1px',
       lineHeight: 36 / 30,

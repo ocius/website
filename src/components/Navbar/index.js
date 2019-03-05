@@ -10,7 +10,7 @@ import DropdownMenu from './DropdownMenu';
 const navitems = [
   { link: '/solutions', title: 'Solutions' },
   { link: '/bluebottle', title: 'BlueBottle USV' },
-  { link: '/findBruce', title: 'Find Bruce' },
+  { link: '/find-bruce', title: 'Find Bruce' },
   { link: '/news', title: 'News' },
   { link: '/contact', title: 'Contact' },
   { link: '/careers', title: 'Careers' }

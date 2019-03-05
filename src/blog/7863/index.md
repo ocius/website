@@ -1,5 +1,5 @@
 ---
-title: "OCIUS Christens next generation of BlueBottle “BOB”."
+title: "OCIUS Christens next generation of BlueBottle “BOB”"
 date: "2018-11-29"
 author: "Kevin Chan"
 featuredImage: OCIUS-2018-small5.jpg

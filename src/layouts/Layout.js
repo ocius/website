@@ -39,13 +39,13 @@ export default ({ children }) => (
                 <Link to="/defence">Defence</Link>
               </li>
               <li>
-                <Link to="/oilAndGas">Oil & Gas</Link>
+                <Link to="/oil-and-gas">Oil & Gas</Link>
               </li>
               <li>
                 <Link to="/science">Science</Link>
               </li>
             </ul>
-            <Link to="/solutions">Solutions</Link>
+            <Link to="/contact">Contact</Link>
           </Column>
           <Column sm={12} md={3} lg={3} fluid>
             <Link to="/bluebottle">BlueBottle USV</Link>
@@ -63,7 +63,7 @@ export default ({ children }) => (
             <Link to="/careers">Careers</Link>
           </Column>
           <Column sm={12} md={3} lg={3} fluid>
-            <Link to="/findBruce">Find Bruce</Link>
+            <Link to="/find-bruce">Find Bruce</Link>
             <Link to="/news">Media</Link>
             <ul className="menu-secondary">
               <li>

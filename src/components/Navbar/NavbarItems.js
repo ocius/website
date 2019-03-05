@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Radium from 'radium';
+import mq from '../../common/mq';
 
 class NavbarItems extends Component {
   constructor(props) {
@@ -35,18 +36,21 @@ class NavbarItems extends Component {
   };
 
   render() {
+    const gutter = 30;
     const styles = {
       base: {
         margin: '0',
         padding: '0',
         textAlign: 'right',
         listStyle: 'outside none none',
-        '@media (max-width: 767px)': {
+        [`@media (max-width: ${mq.max[768]})`]: {
           display: this.state.menuOpen ? 'block' : 'none',
           position: 'inherit',
           background: '#fff',
           top: '10px',
-          borderTop: '1px solid #001826'
+          borderTop: '1px solid #001826',
+          marginLeft: `-${gutter / 2}px`,
+          marginRight: `-${gutter / 2}px`
         }
       }
     };
