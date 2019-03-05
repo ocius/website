@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Radium from 'radium';
 import { Link as GatsbyLink } from 'gatsby';
-import Img from 'gatsby-image';
+import BackgroundImage from 'gatsby-background-image';
 
 import font from '../common/font';
 import { add, span, gutter } from '../common/grid';
@@ -56,7 +56,7 @@ function PanelCallout({ children, bgImage, title, url }) {
   const StyledLink = Radium(GatsbyLink);
 
   return (
-    <div className="PanelCallout" style={styles.container}>
+    <BackgroundImage Tag="div" className="PanelCallout" fluid={bgImage} style={styles.container}>
       <StyledLink to={url} style={styles.anchor} />
       <Heading level={2} weight="thick" override={styles.heading}>
         {title}
@@ -65,24 +65,13 @@ function PanelCallout({ children, bgImage, title, url }) {
       <div className="PanelBody" style={styles.body}>
         {children}
       </div>
-
-      <Img
-        sizes={bgImage}
-        style={{
-          position: 'absolute',
-          left: 0,
-          top: 0,
-          width: '100%',
-          height: '100%'
-        }}
-      />
-    </div>
+    </BackgroundImage>
   );
 }
 
 PanelCallout.propTypes = {
   children: PropTypes.node,
-  bgImage: PropTypes.objectOf(PropTypes.object).isRequired,
+  bgImage: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   url: PropTypes.string.isRequired
 };

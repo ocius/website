@@ -92,7 +92,7 @@ export default ({ data }) => (
         <PanelCalloutGroup>
           {data.DefenceTile && (
             <PanelCallout
-              bgImage={data.DefenceTile.childImageSharp.sizes}
+              bgImage={data.DefenceTile.childImageSharp.fluid}
               title="Defence"
               url="/defence"
             >
@@ -105,7 +105,7 @@ export default ({ data }) => (
 
           {data.OilTile && (
             <PanelCallout
-              bgImage={data.OilTile.childImageSharp.sizes}
+              bgImage={data.OilTile.childImageSharp.fluid}
               title="Oil &amp; Gas"
               url="/oil-and-gas"
             >
@@ -117,7 +117,7 @@ export default ({ data }) => (
 
           {data.ScienceTile && (
             <PanelCallout
-              bgImage={data.ScienceTile.childImageSharp.sizes}
+              bgImage={data.ScienceTile.childImageSharp.fluid}
               title="Science"
               url="/science"
             >
@@ -162,8 +162,8 @@ export const query = graphql`
 
   fragment imageSharpTile on File {
     childImageSharp {
-      sizes(maxWidth: 600, maxHeight: 470, quality: 90) {
-        ...GatsbyImageSharpSizes_withWebp
+      fluid(maxWidth: 600, maxHeight: 470, quality: 90) {
+        ...GatsbyImageSharpFluid_withWebp
       }
     }
   }
