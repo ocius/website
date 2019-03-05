@@ -57,7 +57,7 @@ function PanelCallout({ children, bgImage, title, url }) {
 
   return (
     <BackgroundImage Tag="div" className="PanelCallout" fluid={bgImage} style={styles.container}>
-      <StyledLink to={url} style={styles.anchor} />
+      <StyledLink to={url} aria-label={`Read more about ${title}`} style={styles.anchor} />
       <Heading level={2} weight="thick" override={styles.heading}>
         {title}
       </Heading>
