@@ -189,8 +189,17 @@ aside.recent-news .date {
     color: #a3a3a3;
 }
 
+footer.footer p,
 footer.footer a {
     color: #ffffff;
+}
+
+footer.footer p {
+    font-size: .9em;
+    font-weight: 500;
+}
+
+footer.footer a {
     font-weight: 600;
 }
 

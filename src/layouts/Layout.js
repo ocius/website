@@ -6,6 +6,7 @@ import Footer from '../components/Footer';
 import Container from '../components/Container';
 import Row from '../components/GridRow';
 import Column from '../components/GridColumn';
+import Icon from '../components/Icon';
 import '../css/styles.css';
 
 export default ({ children }) => (
@@ -62,20 +63,26 @@ export default ({ children }) => (
             </ul>
             <Link to="/careers">Careers</Link>
           </Column>
-          <Column sm={12} md={3} lg={3} fluid>
-            <Link to="/find-bruce">Find Bruce</Link>
-            <Link to="/news">Media</Link>
-            <ul className="menu-secondary">
-              <li>
-                <Link to="/news">News</Link>
-              </li>
-              <li>
-                <Link to="/news">Photos</Link>
-              </li>
-              <li>
-                <Link to="/news">Technical Specifications</Link>
-              </li>
-            </ul>
+          <Column sm={12} md={3} lg={3} fluid style={{ textAlign: 'right' }}>
+            <Icon.OciusGlobe
+              fill="#ffffff"
+              style={{
+                height: '110px',
+                marginBottom: '3px',
+                width: 'auto'
+              }}
+            />
+            <p>
+              22 King St,
+              <br />
+              Building R13
+              <br />
+              UNSW Randwick Campus,
+              <br />
+              Randwick NSW 2031
+              <br />
+              Mail PO Box 4304 Castlecrag 2068 NSW Australia
+            </p>
           </Column>
         </Row>
       </Container>
