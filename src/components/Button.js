@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Radium from 'radium';
-import assign from 'object-assign';
+import styled, { css } from 'styled-components';
 import cn from 'classnames';
 import { Link as GatsbyLink } from 'gatsby';
 import propTypes from '../common/propTypes';
@@ -17,153 +16,172 @@ const colors = {
   bgAccent: 'rgba(126, 130, 126, 0.3)'
 };
 
-const hoverStyles = {
-  base: {
-    textDecoration: 'none'
-  },
+const borderStyle = css`
+  box-shadow: none;
+`;
 
-  white: {
-    backgroundColor: colors.bgAccent,
-    color: colors.textPrimary
-  },
+const roundedStyle = css`
+  border-radius: 100px;
+  padding-left: ${21 / 9}em;
+  padding-right: ${21 / 9}em;
+  padding-top: ${12 / 9}em;
 
-  gray: {
-    backgroundColor: colors.accent,
-    color: colors.bgPrimary
-  },
+  ${props =>
+    props.size === 'tiny' &&
+    css`
+      padding-bottom: ${9 / 9}em;
+    `}
 
-  transparent: {
-    backgroundColor: 'transparent',
-    color: colors.textPrimary
+  ${props =>
+    props.size === 'small' &&
+    css`
+      padding-bottom: ${10 / 9}em;
+    `}
+    
+  ${props =>
+    props.size === 'medium' &&
+    css`
+      padding-bottom: ${9 / 9}em;
+    `}
+    
+  ${props =>
+    props.size === 'large' &&
+    css`
+      padding-bottom: ${10 / 9}em;
+    `}
+    
+  ${props =>
+    props.size === 'huge' &&
+    css`
+      padding-bottom: ${9 / 9}em;
+    `}
+`;
+
+const fullStyle = css`
+  display: block;
+  width: 100%;
+`;
+
+const ButtonLink = styled(GatsbyLink)`
+  appearance: none;
+  backface-visibility: hidden;
+  border: 0;
+  border-radius: 0;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: 600;
+  line-height: 1;
+  overflow: hidden;
+  padding-left: ${30 / 13}em;
+  padding-right: ${30 / 13}em;
+  text-align: center;
+  text-decoration: none;
+  text-overflow: ellipsis;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  transition: color 400ms ease-in-out, background-color 400ms ease-in-out, opacity 400ms ease-in-out;
+  vertical-align: middle;
+  white-space: nowrap;
+
+  :focus,
+  :hover,
+  :active {
+    text-decoration: none;
   }
-};
 
-const styles = {
-  base: {
-    appearance: 'none',
-    WebkitAppearance: 'none',
-    backfaceVisibility: 'hidden',
-    border: 0,
-    borderRadius: 0,
-    cursor: 'pointer',
-    display: 'inline-block',
-    fontWeight: 600,
-    lineHeight: 1,
-    overflow: 'hidden',
-    paddingLeft: `${30 / 13}em`,
-    paddingRight: `${30 / 13}em`,
-    textAlign: 'center',
-    textDecoration: 'none',
-    textOverflow: 'ellipsis',
-    letterSpacing: '0.6px',
-    textTransform: 'uppercase',
-    transition: `color 400ms ease-in-out,
-      background-color 400ms ease-in-out,
-      opacity 400ms ease-in-out`,
-    verticalAlign: 'middle',
-    whiteSpace: 'nowrap',
+  ${props =>
+    props.color === 'gray' &&
+    css`
+      background-color: ${colors.bgSecondary};
+      color: ${colors.textSecondary};
+      box-shadow: 0 0 0 2px ${colors.borderPrimary} inset;
 
-    ':hover': hoverStyles.base,
-    ':active': hoverStyles.base
-  },
-
-  color: {
-    gray: {
-      backgroundColor: colors.bgSecondary,
-      color: colors.textSecondary,
-      boxShadow: `0 0 0 2px ${colors.borderPrimary} inset`,
-
-      ':hover': hoverStyles.gray,
-      ':focus': hoverStyles.gray,
-      ':active': hoverStyles.gray
-    },
-
-    white: {
-      backgroundColor: colors.bgPrimary,
-      color: colors.borderPrimary,
-      boxShadow: `0 0 0 2px ${colors.borderPrimary} inset`,
-
-      ':hover': hoverStyles.white,
-      ':focus': hoverStyles.white,
-      ':active': hoverStyles.white
-    },
-
-    transparent: {
-      backgroundColor: 'transparent',
-      color: colors.textOverlay,
-      boxShadow: `0 0 0 2px ${colors.bgPrimary} inset`,
-
-      ':hover': hoverStyles.transparent,
-      ':focus': hoverStyles.transparent,
-      ':active': hoverStyles.transparent
-    }
-  },
-
-  size: {
-    tiny: {
-      fontSize: '9px',
-      paddingBottom: `${9 / 9}em`,
-      paddingLeft: `${19 / 9}em`,
-      paddingRight: `${19 / 9}em`,
-      paddingTop: `${12 / 9}em`
-    },
-    small: {
-      fontSize: '11px',
-      paddingBottom: `${15 / 11}em`,
-      paddingTop: `${18 / 11}em`
-    },
-    medium: {
-      fontSize: '13px',
-      paddingBottom: `${21 / 13}em`,
-      paddingTop: `${26 / 13}em`
-    },
-    large: {
-      fontSize: '15px',
-      paddingBottom: `${23 / 15}em`,
-      paddingTop: `${28 / 15}em`
-    },
-    huge: {
-      fontSize: '17px',
-      paddingBottom: `${25 / 17}em`,
-      paddingTop: `${30 / 17}em`
-    }
-  },
-
-  type: {
-    rounded: {
-      base: {
-        borderRadius: '100px', // a value large enough to scale
-        paddingLeft: `${21 / 9}em`,
-        paddingRight: `${21 / 9}em`,
-        paddingTop: `${12 / 9}em`
-      },
-
-      tiny: {
-        paddingBottom: `${9 / 9}em`
-      },
-
-      small: {
-        paddingBottom: `${10 / 9}em`
-      },
-
-      medium: {
-        paddingBottom: `${9 / 9}em`
-      },
-
-      large: {
-        paddingBottom: `${10 / 9}em`
-      },
-
-      huge: {
-        paddingBottom: `${9 / 9}em`
+      :focus,
+      :hover,
+      :active {
+        background-color: ${colors.accent};
+        color: ${colors.bgPrimary};
       }
-    },
-    full: {
-      display: 'block',
-      width: '100%'
-    }
-  }
-};
+    `}
+
+  ${props =>
+    props.color === 'white' &&
+    css`
+      background-color: ${colors.bgPrimary};
+      color: ${colors.borderPrimary};
+      box-shadow: 0 0 0 2px ${colors.borderPrimary} inset;
+
+      :focus,
+      :hover,
+      :active {
+        background-color: ${colors.bgAccent};
+        color: ${colors.textPrimary};
+      }
+    `}
+    
+  ${props =>
+    props.color === 'transparent' &&
+    css`
+      background-color: transparent;
+      color: ${colors.textOverlay};
+      box-shadow: 0 0 0 2px ${colors.bgPrimary} inset;
+
+      :focus,
+      :hover,
+      :active {
+        background-color: transparent;
+        color: ${colors.textPrimary};
+      }
+    `}
+    
+  ${props =>
+    props.size === 'tiny' &&
+    css`
+      font-size: 9px;
+      padding-bottom: ${9 / 9}em;
+      padding-left: ${19 / 9}em;
+      padding-right: ${19 / 9}em;
+      padding-top: ${12 / 9}em;
+    `}
+    
+  ${props =>
+    props.size === 'small' &&
+    css`
+      font-size: 11px;
+      padding-bottom: ${15 / 11}em;
+      padding-top: ${18 / 11}em;
+    `}
+    
+  ${props =>
+    props.size === 'medium' &&
+    css`
+      font-size: 13px;
+      padding-bottom: ${21 / 13}em;
+      padding-top: ${26 / 13}em;
+    `}
+    
+  ${props =>
+    props.size === 'large' &&
+    css`
+      font-size: 15px;
+      padding-bottom: ${23 / 15}em;
+      padding-top: ${28 / 15}em;
+    `}
+    
+  ${props =>
+    props.size === 'huge' &&
+    css`
+      font-size: 17px;
+      padding-bottom: ${25 / 17}em;
+      padding-top: ${30 / 17}em;
+    `}
+    
+  ${props => props.rounded && roundedStyle}
+  ${props => props.full && fullStyle}
+  ${props => !props.border && borderStyle}
+`;
+
+ButtonLink.defaultProps = {};
 
 /**
  * Button component
@@ -184,32 +202,21 @@ function Button({
   className,
   ...rest
 }) {
-  const StyledLink = Radium(GatsbyLink);
-
-  const style = assign(
-    {},
-    styles.base,
-    color && styles.color[color],
-    size && styles.size[size],
-    rounded && styles.type.rounded.base,
-    rounded && styles.type.rounded[size],
-    full && styles.type.full,
-    customStyles,
-    !border && {
-      boxShadow: 'none'
-    }
-  );
-
   return (
-    <StyledLink
+    <ButtonLink
       className={cn('Button', className)}
-      style={style}
+      style={customStyles}
       to={href}
       onClick={onClick}
+      color={color}
+      size={size}
+      rounded={rounded}
+      full={full}
+      border={border}
       {...rest}
     >
       {children}
-    </StyledLink>
+    </ButtonLink>
   );
 }
 
@@ -282,6 +289,4 @@ Button.defaultProps = {
   className: null
 };
 
-Button.styles = styles;
-
-export default Radium(Button);
+export default Button;

@@ -64,6 +64,15 @@ module.exports = {
         include_favicon: true, // Include favicon
       },
     },
+
+    // Enable styled components support
+    {
+      resolve: `gatsby-plugin-styled-components`,
+      options: {
+        // Add any options here
+      },
+    },
+
     `gatsby-plugin-react-helmet`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
