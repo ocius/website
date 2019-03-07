@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import styled, { css } from 'styled-components';
 import cn from 'classnames';
 
-const StyledFooter = styled.footer`
+const StyledRow = styled.div`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -16,14 +16,14 @@ const StyledFooter = styled.footer`
 `;
 
 const GridRow = ({ children, className, id, alignItems, style }) => (
-  <StyledFooter
+  <StyledRow
     className={`${cn(className, 'GridRow')}`}
     alignItems={alignItems}
     id={id}
     style={style}
   >
     {children}
-  </StyledFooter>
+  </StyledRow>
 );
 
 GridRow.propTypes = {
