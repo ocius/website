@@ -58,7 +58,7 @@ export default ({ children }) => (
                 <Link to="/bluebottle">BlueBottle Overview</Link>
               </li>
               <li>
-                <Link to="/bluebottle">Technical Specifications</Link>
+                <Link to="/bluebottle-usv-brochure">Technical Specifications</Link>
               </li>
             </ul>
             <Link to="/careers">Careers</Link>

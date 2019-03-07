@@ -17,7 +17,7 @@ export default () => (
     <section className="page-content">
       <Container>
         <article>
-          <Heading level="3">
+          <Heading level={3}>
             See where <i>Bruce</i> is, what he is doing and see what Bruce sees at any time – LIVE.
           </Heading>
           <p>
