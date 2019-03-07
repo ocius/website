@@ -1,5 +1,4 @@
 import React from 'react';
-import Radium from 'radium';
 import { graphql, StaticQuery } from 'gatsby';
 
 import Row from './GridRow';
@@ -44,7 +43,7 @@ const RecentNews = () => (
               image={
                 node.frontmatter.featuredImage
                   ? node.frontmatter.featuredImage.childImageSharp.fluid
-                  : {}
+                  : ''
               }
             />
           </Column>
@@ -54,4 +53,4 @@ const RecentNews = () => (
   />
 );
 
-export default Radium(RecentNews);
+export default RecentNews;
