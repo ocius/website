@@ -1,18 +1,29 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import radium from 'radium';
+import styled, { css } from 'styled-components';
 import cn from 'classnames';
 
-const styles = {
-  display: 'flex',
-  flexDirection: 'row',
-  flexWrap: 'wrap'
-};
+const StyledFooter = styled.footer`
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  ${props =>
+    props.alignItems &&
+    css`
+      align-items: ${props.alignItems};
+    `}
+`;
 
 const GridRow = ({ children, className, id, alignItems, style }) => (
-  <div className={`${cn(className, 'GridRow')}`} id={id} style={[styles, { alignItems }, style]}>
+  <StyledFooter
+    className={`${cn(className, 'GridRow')}`}
+    alignItems={alignItems}
+    id={id}
+    style={style}
+  >
     {children}
-  </div>
+  </StyledFooter>
 );
 
 GridRow.propTypes = {
@@ -31,4 +42,4 @@ GridRow.defaultProps = {
   alignItems: null
 };
 
-export default radium(GridRow);
+export default GridRow;
