@@ -47,14 +47,7 @@ export default ({ data }) => (
     <SEO title="OCIUS - Satellites of the Sea" />
     <Segmented borderBottom="" multiplier={3}>
       {data.HeroBackground && (
-        <HeroBlock
-          image={data.HeroBackground.childImageSharp.fluid}
-          gradient="leftCorner"
-          style={{
-            height: 'calc(100vh - 4em)',
-            color: '#ffffff'
-          }}
-        >
+        <HeroBlock image={data.HeroBackground.childImageSharp.fluid} gradient="leftCorner">
           <div className="HeroBlock-callout" style={styles.callout}>
             <Heading level={1} size="huge" weight="thick">
               Innovative Autonomous Solutions

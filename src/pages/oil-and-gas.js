@@ -32,10 +32,6 @@ export default ({ data }) => (
     <HeroBlock
       image={data.HeroBackground ? data.HeroBackground.childImageSharp.fluid : ''}
       gradient="linear"
-      style={{
-        textAlign: 'center',
-        color: '#ffffff'
-      }}
       constrained
     >
       <Heading level={2} weight="thick">
