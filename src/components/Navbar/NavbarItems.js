@@ -36,21 +36,21 @@ class NavbarItems extends Component {
   };
 
   render() {
-    const gutter = 30;
     const styles = {
       base: {
-        margin: '0',
+        margin: '0 0 0 auto',
         padding: '0',
         textAlign: 'right',
         listStyle: 'outside none none',
         [`@media (max-width: ${mq.max[768]})`]: {
           display: this.state.menuOpen ? 'block' : 'none',
-          position: 'inherit',
+          position: 'absolute',
           background: '#fff',
-          top: '10px',
+          top: '100%',
+          left: '0',
+          width: '100%',
           borderTop: '1px solid #001826',
-          marginLeft: `-${gutter / 2}px`,
-          marginRight: `-${gutter / 2}px`
+          zIndex: 3
         }
       }
     };

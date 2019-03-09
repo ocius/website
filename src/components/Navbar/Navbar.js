@@ -1,18 +1,22 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import Radium from 'radium';
+import styled from 'styled-components';
 import Container from '../Container';
 
-const styles = {
-  navbar: {
-    backgroundColor: '#efefef',
-    margin: '0px',
-    width: '100%',
-    zIndex: '1',
-    top: '0px',
-    boxShadow: '0 2px 4px rgba(0, 0, 0, 0.2)'
-  }
-};
+const StyledNavbar = styled.header`
+  background-color: #efefef;
+  margin: 0px;
+  width: 100%;
+  z-index: 1;
+  top: 0px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+`;
+
+const FlexContainer = styled(Container)`
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+`;
 
 class Navbar extends Component {
   constructor(props) {
@@ -42,9 +46,9 @@ class Navbar extends Component {
   render() {
     const { navStyle } = this.props;
     return (
-      <header className="primary" style={[styles.navbar, navStyle && navStyle]}>
-        <Container>{this.renderChildren()}</Container>
-      </header>
+      <StyledNavbar className="primary" style={navStyle}>
+        <FlexContainer>{this.renderChildren()}</FlexContainer>
+      </StyledNavbar>
     );
   }
 }
@@ -58,4 +62,4 @@ Navbar.defaultProps = {
   navStyle: {}
 };
 
-export default Radium(Navbar);
+export default Navbar;

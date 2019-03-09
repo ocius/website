@@ -4,11 +4,11 @@ import Radium from 'radium';
 const styles = {
   navbarToggle: {
     position: 'relative',
-    float: 'right',
     padding: '9px 10px',
     marginTop: '8px',
     marginRight: '15px',
     marginBottom: '8px',
+    marginLeft: 'auto',
     backgroundColor: 'transparent',
     backgroundImage: 'none',
     borderWidth: '1px',
