@@ -15,7 +15,7 @@ const Container = styled.article`
   max-width: 540px;
   padding: 20px;
 
-  @media (max-width: ${mq.max[768]}) : {
+  @media (max-width: ${mq.max[768]}) {
     padding: 0;
   }
 `;

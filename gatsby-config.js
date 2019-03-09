@@ -73,6 +73,16 @@ module.exports = {
       },
     },
 
+    // Load TypeKit fonts asynchronously
+    {
+      resolve: 'gatsby-plugin-web-font-loader',
+      options: {
+        typekit: {
+          id: 'agd1kws'
+        }
+      }
+    },
+
     `gatsby-plugin-react-helmet`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
