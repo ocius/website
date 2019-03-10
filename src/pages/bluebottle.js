@@ -9,19 +9,6 @@ const styles = {
   center: {
     textAlign: 'center'
   },
-  header: {
-    ':after': {
-      content: '',
-      position: 'absolute',
-      bottom: 0,
-      left: 0,
-      right: 0,
-      borderBottom: '1px solid #60d2f6',
-      height: '1px',
-      width: '150px',
-      margin: 'auto'
-    }
-  },
   highlight: {
     color: '#3366ff'
   },
@@ -41,10 +28,10 @@ export default () => (
     <section className="page-content">
       <Container>
         <article>
-          <Heading level="1" weight="thick" override={styles.center}>
+          <Heading level={1} size="huge" weight="thick" underline>
             What is a USV?
           </Heading>
-          <Heading level="3" override={styles.center}>
+          <Heading level={3} size="medium" override={styles.center}>
             A USV is an Unmanned Surface Vessel
           </Heading>
           <h4>

@@ -26,6 +26,17 @@ const Truncate = css`
   white-space: nowrap;
 `;
 
+const Underline = css`
+  &::after {
+    content: '';
+    display: block;
+    background-color: #60d2f6;
+    height: 6px;
+    width: 100px;
+    margin: 10px auto;
+  }
+`;
+
 const StyledHeading = styled.h3`
   font-family: ${font('effra')};
   line-height: 1.2;
@@ -103,6 +114,7 @@ const StyledHeading = styled.h3`
      
    ${props => props.caps && VariantCaps}
    ${props => props.truncate && Truncate}
+   ${props => props.underline && Underline}
 `;
 
 StyledHeading.defaultProps = {};
@@ -110,7 +122,18 @@ StyledHeading.defaultProps = {};
 /**
  * Heading component
  */
-function Heading({ children, level, size, weight, tracking, truncate, caps, className, ...rest }) {
+function Heading({
+  children,
+  level,
+  size,
+  weight,
+  tracking,
+  truncate,
+  caps,
+  underline,
+  className,
+  ...rest
+}) {
   const HeadingLevel = `h${level}`;
 
   return (
@@ -122,6 +145,7 @@ function Heading({ children, level, size, weight, tracking, truncate, caps, clas
       tracking={tracking}
       truncate={truncate}
       caps={caps}
+      underline={underline}
       {...rest}
     >
       {children}
@@ -163,14 +187,20 @@ Heading.propTypes = {
   /**
    * Whether or not to set the heading in all caps
    */
-  caps: PropTypes.bool
+  caps: PropTypes.bool,
+
+  /**
+   * Whether or not to add underline to the heading
+   */
+  underline: PropTypes.bool
 };
 
 Heading.defaultProps = {
   weight: 'normal',
   tracking: 'normal',
   truncate: false,
-  caps: false
+  caps: false,
+  underline: false
 };
 
 export default Heading;

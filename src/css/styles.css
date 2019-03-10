@@ -47,14 +47,6 @@ h1 {
     margin-bottom: 0.25em
 }
 
-h1:after {
-    content: "";
-    height: 1px;
-    border-bottom: 1px solid #135292;
-    width: 150px;
-    margin: auto;
-}
-
 h2 {
     font-size: 2.25em;
     margin-top: 1em;

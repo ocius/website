@@ -63,7 +63,7 @@ export default ({ data }) => (
       <Segmented borderBottom="" multiplier={3}>
         <Row>
           <Column sm={12} md={8} lg={8} lgShift={2} fluid>
-            <Heading level={2} size="large">
+            <Heading level={2} size="large" underline>
               We are the solution to the most challenging problems of the ocean
             </Heading>
             <p>
