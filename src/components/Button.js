@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled, { css } from 'styled-components';
+import { switchProp } from 'styled-tools';
 import cn from 'classnames';
 import { Link as GatsbyLink } from 'gatsby';
 import propTypes from '../common/propTypes';
@@ -26,35 +27,27 @@ const roundedStyle = css`
   padding-right: ${21 / 9}em;
   padding-top: ${12 / 9}em;
 
-  ${props =>
-    props.size === 'tiny' &&
-    css`
+  ${switchProp('size', {
+    tiny: css`
       padding-bottom: ${9 / 9}em;
-    `}
+    `,
 
-  ${props =>
-    props.size === 'small' &&
-    css`
+    small: css`
       padding-bottom: ${10 / 9}em;
-    `}
-    
-  ${props =>
-    props.size === 'medium' &&
-    css`
+    `,
+
+    medium: css`
       padding-bottom: ${9 / 9}em;
-    `}
-    
-  ${props =>
-    props.size === 'large' &&
-    css`
+    `,
+
+    large: css`
       padding-bottom: ${10 / 9}em;
-    `}
-    
-  ${props =>
-    props.size === 'huge' &&
-    css`
+    `,
+
+    huge: css`
       padding-bottom: ${9 / 9}em;
-    `}
+    `
+  })}
 `;
 
 const fullStyle = css`
@@ -89,9 +82,8 @@ const ButtonLink = styled(GatsbyLink)`
     text-decoration: none;
   }
 
-  ${props =>
-    props.color === 'gray' &&
-    css`
+  ${switchProp('color', {
+    gray: css`
       background-color: ${colors.bgSecondary};
       color: ${colors.textSecondary};
       box-shadow: 0 0 0 2px ${colors.borderPrimary} inset;
@@ -102,11 +94,9 @@ const ButtonLink = styled(GatsbyLink)`
         background-color: ${colors.accent};
         color: ${colors.bgPrimary};
       }
-    `}
+    `,
 
-  ${props =>
-    props.color === 'white' &&
-    css`
+    white: css`
       background-color: ${colors.bgPrimary};
       color: ${colors.borderPrimary};
       box-shadow: 0 0 0 2px ${colors.borderPrimary} inset;
@@ -117,11 +107,9 @@ const ButtonLink = styled(GatsbyLink)`
         background-color: ${colors.bgAccent};
         color: ${colors.textPrimary};
       }
-    `}
-    
-  ${props =>
-    props.color === 'transparent' &&
-    css`
+    `,
+
+    transparent: css`
       background-color: transparent;
       color: ${colors.textOverlay};
       box-shadow: 0 0 0 2px ${colors.bgPrimary} inset;
@@ -132,49 +120,42 @@ const ButtonLink = styled(GatsbyLink)`
         background-color: transparent;
         color: ${colors.textPrimary};
       }
-    `}
-    
-  ${props =>
-    props.size === 'tiny' &&
-    css`
+    `
+  })}
+
+  ${switchProp('size', {
+    tiny: css`
       font-size: 9px;
       padding-bottom: ${9 / 9}em;
       padding-left: ${19 / 9}em;
       padding-right: ${19 / 9}em;
       padding-top: ${12 / 9}em;
-    `}
-    
-  ${props =>
-    props.size === 'small' &&
-    css`
+    `,
+
+    small: css`
       font-size: 11px;
       padding-bottom: ${15 / 11}em;
       padding-top: ${18 / 11}em;
-    `}
-    
-  ${props =>
-    props.size === 'medium' &&
-    css`
+    `,
+
+    medium: css`
       font-size: 13px;
       padding-bottom: ${21 / 13}em;
       padding-top: ${26 / 13}em;
-    `}
-    
-  ${props =>
-    props.size === 'large' &&
-    css`
+    `,
+
+    large: css`
       font-size: 15px;
       padding-bottom: ${23 / 15}em;
       padding-top: ${28 / 15}em;
-    `}
-    
-  ${props =>
-    props.size === 'huge' &&
-    css`
+    `,
+
+    huge: css`
       font-size: 17px;
       padding-bottom: ${25 / 17}em;
       padding-top: ${30 / 17}em;
-    `}
+    `
+  })}
     
   ${props => props.rounded && roundedStyle}
   ${props => props.full && fullStyle}
