@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled, { css } from 'styled-components';
+import { switchProp, prop, withProp } from 'styled-tools';
 
 import rgb from '../common/color';
 
@@ -13,37 +14,33 @@ const GradientContainer = styled.div`
   position: absolute;
   z-index: 1;
 
-  ${props =>
-    props.type === 'linear' &&
-    css`
+  ${switchProp('type', {
+    linear: css`
       opacity: 0.45;
       background-image: linear-gradient(
         -180deg,
-        rgba(${rgb(props.color)}, 0) 53%,
-        ${props.color} 100%
+        rgba(${withProp('color', color => `${rgb(color)}`)}, 0) 53%,
+        ${prop('color')} 100%
       );
-    `}
+    `,
 
-  ${props =>
-    props.type === 'radial' &&
-    css`
+    radial: css`
       background-image: radial-gradient(
         55% 60%,
-        rgba(${rgb(props.color)}, 0) 40%,
-        ${props.color} 100%
+        rgba(${withProp('color', color => `${rgb(color)}`)}, 0) 40%,
+        ${prop('color')} 100%
       );
-    `}
-    
-  ${props =>
-    props.type === 'leftCorner' &&
-    css`
+    `,
+
+    leftCorner: css`
       opacity: 0.67;
       background-image: linear-gradient(
         to right top,
-        ${props.color},
-        rgba(${rgb(props.color)}, 0) 56%
+        ${prop('color')},
+        rgba(${withProp('color', color => `${rgb(color)}`)}, 0) 56%
       );
-    `}
+    `
+  })}
 `;
 
 GradientContainer.defaultProps = {};
