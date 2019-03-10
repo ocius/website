@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled, { css } from 'styled-components';
+import { switchProp } from 'styled-tools';
 import mq from '../common/mq';
 import {
   fontSizeHeading1,
@@ -29,92 +30,75 @@ const StyledHeading = styled.h3`
   line-height: 1.2;
   margin-top: 1em;
 
-  ${props =>
-    props.size === 'tiny' &&
-    css`
+  ${switchProp('size', {
+    tiny: css`
       font-size: ${fontSizeUppercase}px;
-    `}
+    `,
 
-  ${props =>
-    props.size === 'small' &&
-    css`
+    small: css`
       margin-top: 1.25em;
       font-size: ${fontSizeUppercase}px;
 
       @media (min-width: ${mq.min[600]}) {
         font-size: ${fontSizeUppercase + 2}px;
       }
-    `}
-    
-  ${props =>
-    props.size === 'medium' &&
-    css`
+    `,
+
+    medium: css`
       margin-top: 1em;
       font-size: ${fontSizeHeading5 + 2}px;
       line-height: ${40 / 26};
-    `}
-    
-    
-  ${props =>
-    props.size === 'large' &&
-    css`
+    `,
+
+    large: css`
       margin-top: 0.75em;
       font-size: ${fontSizeHeading2 - 8}px;
 
       @media (min-width: ${mq.min[600]}) {
         font-size: ${fontSizeHeading2 - 3}px;
       }
-    `}
-    
-   ${props =>
-     props.size === 'huge' &&
-     css`
-       margin-top: 0.5em;
-       font-size: ${fontSizeHeading4 + 2}px;
-       letter-spacing: -1px;
-       line-height: ${36 / 30};
+    `,
 
-       @media (min-width: ${mq.min[600]}) {
-         font-size: ${fontSizeHeading1}px;
-         line-height: ${70 / 64};
-       }
-     `}
-     
-   ${props =>
-     props.weight === 'extraThin' &&
-     css`
-       font-weight: ${fontWeightLight}px;
-     `}
-    
-   ${props =>
-     props.weight === 'thin' &&
-     css`
-       font-weight: ${fontWeightLight}px;
-     `}
+    huge: css`
+      margin-top: 0.5em;
+      font-size: ${fontSizeHeading4 + 2}px;
+      letter-spacing: -1px;
+      line-height: ${36 / 30};
 
-   ${props =>
-     props.weight === 'normal' &&
-     css`
-       font-weight: ${fontWeightRegular}px;
-     `}
-    
-   ${props =>
-     props.weight === 'thick' &&
-     css`
-       font-weight: ${fontWeightMedium}px;
-     `}
-     
-   ${props =>
-     props.tracking === 'tight' &&
-     css`
-       letter-spacing: -1px;
-     `}
-     
-   ${props =>
-     props.tracking === 'loose' &&
-     css`
-       letter-spacing: 1px;
-     `}
+      @media (min-width: ${mq.min[600]}) {
+        font-size: ${fontSizeHeading1}px;
+        line-height: ${70 / 64};
+      }
+    `
+  })}
+  
+  ${switchProp('weight', {
+    extraThin: css`
+      font-weight: ${fontWeightLight};
+    `,
+
+    thin: css`
+      font-weight: ${fontWeightLight};
+    `,
+
+    normal: css`
+      font-weight: ${fontWeightRegular};
+    `,
+
+    thick: css`
+      font-weight: ${fontWeightMedium};
+    `
+  })}
+  
+  ${switchProp('tracking', {
+    tight: css`
+      letter-spacing: -1px;
+    `,
+
+    loose: css`
+      letter-spacing: 1px;
+    `
+  })}
      
    ${props => props.caps && VariantCaps}
    ${props => props.truncate && Truncate}
