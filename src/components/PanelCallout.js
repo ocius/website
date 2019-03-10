@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Radium from 'radium';
+import styled from 'styled-components';
 import { Link as GatsbyLink } from 'gatsby';
 import Img from 'gatsby-image';
 
@@ -10,73 +10,65 @@ import Heading from './Heading';
 
 const containerMaxWidth = add([span(4, 'fluid'), gutter('fluid')], 'fluid');
 
-const styles = {
-  container: {
-    color: '#ffffff',
-    display: 'flex',
-    flexDirection: 'column',
-    flexGrow: 1,
-    fontFamily: font('effra'),
-    justifyContent: 'baseline',
-    maxWidth: containerMaxWidth,
-    minHeight: '350px',
-    textAlign: 'left',
-    position: 'relative',
-    padding: `calc(${gutter('static')} * 2)`
-  },
+const PanelContainer = styled.div`
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  font-family: ${font('effra')};
+  justify-content: baseline;
+  max-width: ${containerMaxWidth};
+  min-height: 350px;
+  text-align: left;
+  position: relative;
+  padding: calc(${gutter('static')} * 2);
+`;
 
-  anchor: {
-    display: 'block',
-    textDecoration: 'none',
-    position: 'absolute',
-    top: 0,
-    right: 0,
-    bottom: 0,
-    left: 0,
-    zIndex: 2
-  },
+const StyledLink = styled(GatsbyLink)`
+  display: block;
+  text-decoration: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+`;
 
-  heading: {
-    marginTop: '33px',
-    transition: `transform 200ms ease-in-out`,
-    zIndex: 1
-  },
+const PanelHeading = styled(Heading)`
+  margin-top: 33px;
+  transition: transform 200ms ease-in-out;
+  z-index: 1;
+`;
 
-  body: {
-    fontSize: '1em',
-    fontFamily: font('grotesk'),
-    lineHeight: 24 / 16,
-    marginRight: 'auto',
-    marginTop: '11px',
-    zIndex: 1
-  }
-};
+const PanelBody = styled.div`
+  font-size: 1em;
+  font-family: ${font('grotesk')};
+  line-height: ${24 / 16};
+  margin-right: auto;
+  margin-top: 11px;
+  z-index: 1;
+`;
+
+const BackgroundImage = styled(Img)`
+  position: absolute !important;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+`;
 
 function PanelCallout({ children, bgImage, title, url }) {
-  const StyledLink = Radium(GatsbyLink);
-
   return (
-    <div className="PanelCallout" style={styles.container}>
-      <StyledLink to={url} aria-label={`Read more about ${title}`} style={styles.anchor} />
-      <Heading level={2} weight="thick" override={styles.heading}>
+    <PanelContainer className="PanelCallout">
+      <StyledLink to={url} aria-label={`Read more about ${title}`} />
+      <PanelHeading level={2} size="large" weight="thick">
         {title}
-      </Heading>
+      </PanelHeading>
 
-      <div className="PanelBody" style={styles.body}>
-        {children}
-      </div>
-
-      <Img
-        sizes={bgImage}
-        style={{
-          position: 'absolute',
-          left: 0,
-          top: 0,
-          width: '100%',
-          height: '100%'
-        }}
-      />
-    </div>
+      <PanelBody className="PanelBody">{children}</PanelBody>
+      <BackgroundImage sizes={bgImage} />
+    </PanelContainer>
   );
 }
 

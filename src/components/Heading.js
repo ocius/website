@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled, { css } from 'styled-components';
 import { switchProp } from 'styled-tools';
+import cn from 'classnames';
 import mq from '../common/mq';
 import {
   fontSizeHeading1,
@@ -109,18 +110,19 @@ StyledHeading.defaultProps = {};
 /**
  * Heading component
  */
-function Heading({ children, level, size, weight, tracking, truncate, caps }) {
+function Heading({ children, level, size, weight, tracking, truncate, caps, className, ...rest }) {
   const HeadingLevel = `h${level}`;
 
   return (
     <StyledHeading
-      className="Heading"
+      className={cn('Heading', className)}
       as={HeadingLevel}
       size={size}
       weight={weight}
       tracking={tracking}
       truncate={truncate}
       caps={caps}
+      {...rest}
     >
       {children}
     </StyledHeading>
