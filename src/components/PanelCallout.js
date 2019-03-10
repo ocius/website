@@ -5,6 +5,7 @@ import { Link as GatsbyLink } from 'gatsby';
 import Img from 'gatsby-image';
 
 import font from '../common/font';
+import mq from '../common/mq';
 import { add, span, gutter } from '../common/grid';
 import Heading from './Heading';
 
@@ -22,6 +23,11 @@ const PanelContainer = styled.div`
   text-align: left;
   position: relative;
   padding: calc(${gutter('static')} * 2);
+
+  @media (max-width: ${mq.max[960]}) {
+    flex: 1 1 calc(100%);
+    max-width: none;
+  }
 `;
 
 const StyledLink = styled(GatsbyLink)`
@@ -39,6 +45,15 @@ const PanelHeading = styled(Heading)`
   margin-top: 33px;
   transition: transform 200ms ease-in-out;
   z-index: 1;
+
+  ${PanelContainer}:hover & {
+    transform: translateY(-5px);
+  }
+
+  @media (max-width: ${mq.max[480]}) {
+    font-size: 30px;
+    margin-top: 13px;
+  }
 `;
 
 const PanelBody = styled.div`
