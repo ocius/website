@@ -70,9 +70,9 @@ class DropdownMenu extends Component {
 
   render() {
     const defStyle = this.getStyles();
-    const { menuItems, style, menuItemStyle } = this.props;
+    const { menuItems, style, menuItemStyle, setRef } = this.props;
     return (
-      <ul style={[defStyle.menu, style && style]}>
+      <ul ref={setRef} style={[defStyle.menu, style && style]}>
         {menuItems.map(item => {
           return (
             <li key={menuItems.indexOf(item)}>
