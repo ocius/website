@@ -61,7 +61,7 @@ function ArticlePreview({ title, paragraph, image, href }) {
     <Container className="ArticlePreview">
       <TextContainer className="ArticlePreview-text">
         <StyledLinkMargin to={href}>
-          <StyledHeading level={3} weight="thick">
+          <StyledHeading level={3} size="medium" weight="thick">
             {title}
           </StyledHeading>
 

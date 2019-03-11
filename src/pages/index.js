@@ -33,12 +33,6 @@ const styles = {
       marginRight: add([span(2), gutter()]),
       width: span(10)
     }
-  },
-
-  alignment: {
-    center: {
-      textAlign: 'center'
-    }
   }
 };
 
@@ -59,7 +53,7 @@ export default ({ data }) => (
         </HeroBlock>
       )}
     </Segmented>
-    <Container style={styles.alignment.center}>
+    <Container className="centered">
       <Segmented borderBottom="" multiplier={3}>
         <Row>
           <Column sm={12} md={8} lg={8} lgShift={2} fluid>

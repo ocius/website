@@ -11,17 +11,6 @@ import HeroBlock from '../components/HeroBlock';
 import Heading from '../components/Heading';
 import Button from '../components/Button';
 
-const styles = {
-  alignment: {
-    left: {
-      textAlign: 'left'
-    },
-    center: {
-      textAlign: 'center'
-    }
-  }
-};
-
 export default ({ data }) => (
   <Layout>
     <SEO
@@ -34,7 +23,7 @@ export default ({ data }) => (
       gradient="linear"
       constrained
     >
-      <Heading level={2} weight="thick">
+      <Heading level={2} size="large" weight="thick">
         Oil &amp; Gas
       </Heading>
       <Row>
@@ -62,7 +51,7 @@ export default ({ data }) => (
         </Column>
       </Row>
     </HeroBlock>
-    <Container style={styles.alignment.center}>
+    <Container className="centered">
       <Segmented borderBottom="">
         <h3>
           USVs are already being used in the Oil &amp; Gas industry
@@ -82,7 +71,7 @@ export default ({ data }) => (
               }}
             />
             <h5>Seabed & Pipeline Surveys</h5>
-            <ul style={styles.alignment.left}>
+            <ul className="left-align">
               <li>GPS mapping</li>
               <li>Assist seismic survey</li>
               <li>Much cheaper than crewed vessels</li>
@@ -101,7 +90,7 @@ export default ({ data }) => (
               }}
             />
             <h5>Environmental Monitoring</h5>
-            <ul style={styles.alignment.left}>
+            <ul className="left-align">
               <li>Hydrocarbon monitoring</li>
               <li>Pipeline and leak checking</li>
               <li>Marine biodiversity monitoring</li>
@@ -119,7 +108,7 @@ export default ({ data }) => (
               }}
             />
             <h5>Security</h5>
-            <ul style={styles.alignment.left}>
+            <ul className="left-align">
               <li>Early warning against asymmetrical threats</li>
               <li>Bluebottles can hear under the water and see and sense above the water</li>
               <li>

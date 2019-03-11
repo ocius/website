@@ -11,9 +11,6 @@ import Column from '../../components/GridColumn';
 import Heading from '../../components/Heading';
 
 const styles = {
-  center: {
-    textAlign: 'center'
-  },
   wrapper: {
     fontSize: '17px',
     paddingRight: '30px'
@@ -40,9 +37,9 @@ export default ({ data }) => (
     />
     <Container>
       <Segmented>
-        <Row style={styles.center}>
+        <Row className="centered">
           <Column sm={12} md={8} lg={8} lgShift={2} fluid>
-            <Heading level={1} size="huge">
+            <Heading level={1} size="huge" underline>
               Our Mission
             </Heading>
             <p>
@@ -55,7 +52,7 @@ export default ({ data }) => (
           </Column>
         </Row>
       </Segmented>
-      <header style={styles.center}>
+      <header className="centered">
         <Heading level={3} size="large">
           People
         </Heading>
@@ -231,7 +228,7 @@ export default ({ data }) => (
           </Column>
         </Row>
       </Segmented>
-      <header style={styles.center}>
+      <header className="centered">
         <Heading level={3} size="large">
           Our Partners
         </Heading>
@@ -241,7 +238,7 @@ export default ({ data }) => (
           <Column sm={12} md={6} lg={6} fluid>
             <TextWrapper>
               {data.AustralianGovernment && (
-                <div style={styles.center}>
+                <div className="centered">
                   <Img
                     fixed={data.AustralianGovernment.childImageSharp.fixed}
                     alt="Australian Government Logotype"
@@ -267,7 +264,7 @@ export default ({ data }) => (
           <Column sm={12} md={6} lg={6} fluid>
             <TextWrapper>
               {data.SteberInternational && (
-                <div style={styles.center}>
+                <div className="centered">
                   <Img
                     fixed={data.SteberInternational.childImageSharp.fixed}
                     alt="Steber International"
@@ -296,7 +293,7 @@ export default ({ data }) => (
           <Column sm={12} md={6} lg={6} fluid>
             <TextWrapper>
               {data.Thales && (
-                <div style={styles.center}>
+                <div className="centered">
                   <Img fixed={data.Thales.childImageSharp.fixed} alt="Thales" />
                 </div>
               )}
@@ -316,7 +313,7 @@ export default ({ data }) => (
           <Column sm={12} md={6} lg={6} fluid>
             <TextWrapper>
               {data.OneTwoThree && (
-                <div style={styles.center}>
+                <div className="centered">
                   <Img
                     fixed={data.OneTwoThree.childImageSharp.fixed}
                     alt="One2three Naval Architects"
@@ -340,7 +337,7 @@ export default ({ data }) => (
           <Column sm={12} md={6} lg={6} fluid>
             <TextWrapper>
               {data.UNSW && (
-                <div style={styles.center}>
+                <div className="centered">
                   <Img
                     fixed={data.UNSW.childImageSharp.fixed}
                     alt="The University of New South Wales"
@@ -359,7 +356,7 @@ export default ({ data }) => (
           </Column>
           <Column sm={12} md={6} lg={6} fluid>
             <TextWrapper>
-              <div style={styles.center}>
+              <div className="centered">
                 <Heading level={3} size="medium">
                   Ulladulla Engineering and Fibreglass.
                 </Heading>
@@ -381,7 +378,7 @@ export default ({ data }) => (
           <Column sm={12} md={6} lg={6} fluid>
             <TextWrapper>
               {data.ClarkIP && (
-                <div style={styles.center}>
+                <div className="centered">
                   <Img fixed={data.ClarkIP.childImageSharp.fixed} alt="Clark IP" />
                 </div>
               )}
@@ -405,7 +402,7 @@ export default ({ data }) => (
           <Column sm={12} md={6} lg={6} fluid>
             <TextWrapper>
               {data.Spitfire && (
-                <div style={styles.center}>
+                <div className="centered">
                   <Img fixed={data.Spitfire.childImageSharp.fixed} alt="The Spitfire Association" />
                 </div>
               )}

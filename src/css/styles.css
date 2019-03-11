@@ -80,6 +80,18 @@ h6 {
     margin-bottom: 0.5em
 }
 
+.centered {
+    text-align: center;
+}
+
+.left-align {
+    text-align: left;
+}
+
+.right-align {
+    text-align: right;
+}
+
 textarea,
 input[type="text"],
 input[type="password"],

@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 // Import media queries
 import mq from '../common/mq';
 
-const Segmented = ({ children, borderBottom, multiplier }) => (
+const Segmented = ({ children, borderBottom, multiplier, ...rest }) => (
   <div
     className="Segmented"
     style={{
@@ -16,6 +16,7 @@ const Segmented = ({ children, borderBottom, multiplier }) => (
         paddingBottom: `${3.2 * multiplier}rem`
       }
     }}
+    {...rest}
   >
     {children}
   </div>

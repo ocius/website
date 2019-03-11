@@ -11,17 +11,6 @@ import HeroBlock from '../components/HeroBlock';
 import Button from '../components/Button';
 import Heading from '../components/Heading';
 
-const styles = {
-  alignment: {
-    left: {
-      textAlign: 'left'
-    },
-    center: {
-      textAlign: 'center'
-    }
-  }
-};
-
 export default ({ data }) => (
   <Layout>
     <SEO
@@ -36,7 +25,7 @@ export default ({ data }) => (
         gradient="linear"
         constrained
       >
-        <Heading level="2" weight="thick">
+        <Heading size="large" level="2" weight="thick">
           Science
         </Heading>
         <Row>
@@ -65,7 +54,7 @@ export default ({ data }) => (
         </Row>
       </HeroBlock>
     </Segmented>
-    <Container style={styles.alignment.center}>
+    <Container className="centered">
       <Segmented>
         <Row>
           <Column sm={12} md={4} lg={4} fluid>
@@ -78,7 +67,7 @@ export default ({ data }) => (
               }}
             />
             <h5>Weather LIVE</h5>
-            <ul style={styles.alignment.left}>
+            <ul className="left-align">
               <li>Wind direction & strength</li>
               <li>Solar intensity & cloud</li>
               <li>Wave direction & height</li>
@@ -98,7 +87,7 @@ export default ({ data }) => (
               }}
             />
             <h5>Data storage on board for later use</h5>
-            <ul style={styles.alignment.left}>
+            <ul className="left-align">
               <li>
                 Large volumes of data for scientific research sorted and stored for later download
               </li>
@@ -116,7 +105,7 @@ export default ({ data }) => (
               }}
             />
             <h5>Multiple options</h5>
-            <ul style={styles.alignment.left}>
+            <ul className="left-align">
               <li>Discuss with us your mission goals</li>
               <li>Replace expensive bouys with mobile platforms</li>
               <li>Configure your own modular payload</li>

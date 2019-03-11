@@ -11,17 +11,6 @@ import Heading from '../components/Heading';
 import Button from '../components/Button';
 import Segmented from '../components/Segmented';
 
-const styles = {
-  alignment: {
-    left: {
-      textAlign: 'left'
-    },
-    center: {
-      textAlign: 'center'
-    }
-  }
-};
-
 export default ({ data }) => (
   <Layout>
     <SEO
@@ -34,7 +23,7 @@ export default ({ data }) => (
       image={data.HeroBackground ? data.HeroBackground.childImageSharp.fluid : ''}
       constrained
     >
-      <Heading level={2} weight="thick">
+      <Heading level={2} size="large" weight="thick">
         Defence
       </Heading>
       <Row>
@@ -63,14 +52,14 @@ export default ({ data }) => (
       </Row>
     </HeroBlock>
 
-    <Container style={styles.alignment.center}>
+    <Container className="centered">
       <Segmented borderBottom="">
         <Row>
           <Column sm={12} md={8} lg={8} lgShift={2} fluid>
-            <Heading level={3}>
+            <Heading size="medium" level={3}>
               Persistent USVs are being seen as strategic in Defence as force multipliers
             </Heading>
-            <Heading level={3}>
+            <Heading size="medium" level={3}>
               <strong>
                 Bluebottles have more power payload and performance making them the superior
                 persistent USV for defence
@@ -91,7 +80,7 @@ export default ({ data }) => (
               }}
             />
             <h5>Anti-Submarine Warfare</h5>
-            <ul style={styles.alignment.left}>
+            <ul className="left-align">
               <li>Silent</li>
               <li>“Reel in keel“ winch</li>
               <li>50W average / kW bursts</li>
@@ -111,7 +100,7 @@ export default ({ data }) => (
               }}
             />
             <h5>Electronic Warfare</h5>
-            <ul style={styles.alignment.left}>
+            <ul className="left-align">
               <li>6m mast above sea level</li>
               <li>Communications and Radar</li>
               <li>Combine with other sensors</li>
@@ -128,7 +117,7 @@ export default ({ data }) => (
               }}
             />
             <h5>Gateway Communications</h5>
-            <ul style={styles.alignment.left}>
+            <ul className="left-align">
               <li>6m mast above sea level</li>
               <li>Combine with other sensors</li>
               <li>Cross-domain communications and data exchange system</li>
@@ -146,7 +135,7 @@ export default ({ data }) => (
               }}
             />
             <h5>Multiple sensors</h5>
-            <ul style={styles.alignment.left}>
+            <ul className="left-align">
               <li>More power, payload and performance</li>
               <li>Network with other Bluebottles and assets</li>
               <li>Allows multiple sensors on the same platform</li>
@@ -162,7 +151,7 @@ export default ({ data }) => (
               }}
             />
             <h5>Mine Counter Measures</h5>
-            <ul style={styles.alignment.left}>
+            <ul className="left-align">
               <li>Manage fleets of underwater assets</li>
               <li>Intelligent path planning and manoeuvring systems</li>
               <li>Remain safely in proximity while exchanging high-volume data</li>
@@ -178,7 +167,7 @@ export default ({ data }) => (
               }}
             />
             <h5>Other</h5>
-            <ul style={styles.alignment.left}>
+            <ul className="left-align">
               <li>Intrinsic low-observability</li>
               <li>2 per 20&apos; shipping container</li>
               <li>5-6 m aft communications mast</li>
