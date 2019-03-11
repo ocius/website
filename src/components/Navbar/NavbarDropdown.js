@@ -89,16 +89,14 @@ NavbarDropdown.propTypes = {
   name: PropTypes.string,
   link: PropTypes.string,
   index: PropTypes.number,
-  activeIndex: PropTypes.number,
-  parentCallBack: PropTypes.func
+  activeIndex: PropTypes.number
 };
 
 NavbarDropdown.defaultProps = {
   name: '',
   link: '',
   index: 0,
-  activeIndex: 0,
-  parentCallBack: null
+  activeIndex: 0
 };
 
 export default Radium(NavbarDropdown);
