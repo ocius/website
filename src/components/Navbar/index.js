@@ -18,9 +18,9 @@ const navitems = [
 
 const dropdownItems = [
   { href: '/about', name: 'Mission' },
-  { href: '/about', name: 'People' },
-  { href: '/about', name: 'Partners' },
-  { href: '/about', name: 'Awards' }
+  { href: '/about#people', name: 'People' },
+  { href: '/about#partners', name: 'Partners' },
+  { href: '/about#awards', name: 'Awards' }
 ];
 
 export default () => (

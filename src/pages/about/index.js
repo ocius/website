@@ -52,7 +52,7 @@ export default ({ data }) => (
           </Column>
         </Row>
       </Segmented>
-      <header className="centered">
+      <header id="people" className="centered">
         <Heading level={3} size="large">
           People
         </Heading>
@@ -228,7 +228,7 @@ export default ({ data }) => (
           </Column>
         </Row>
       </Segmented>
-      <header className="centered">
+      <header id="partners" className="centered">
         <Heading level={3} size="large">
           Our Partners
         </Heading>
@@ -544,7 +544,7 @@ export default ({ data }) => (
             </p>
           </Column>
           <Column sm={12} md={6} lg={6} fluid>
-            <header>
+            <header id="awards">
               <Heading level={3} size="large">
                 Awards and Milestones
               </Heading>
