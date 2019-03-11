@@ -1,108 +1,100 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import Radium from 'radium';
+import styled from 'styled-components';
+import { ifProp } from 'styled-tools';
+import { Link as GatsbyLink } from 'gatsby';
 import mq from '../../common/mq';
 
-class DropdownMenu extends Component {
-  getStyles = () => {
-    const { open, active } = this.props;
-    const styles = {
-      menu: {
-        margin: '0px',
-        padding: '0px',
-        position: 'absolute',
-        left: '0',
-        border: '1px solid #fff',
-        background: 'white',
-        zIndex: '1000',
-        textAlign: 'left',
-        listStyle: 'none',
+const Menu = styled.ul`
+  display: ${ifProp('display', 'block', 'none')};
+  margin: 0px;
+  padding: 0px;
+  position: absolute;
+  left: 0;
+  border: 1px solid #fff;
+  background: white;
+  z-index: 1000;
+  text-align: left;
+  list-style: none;
 
-        [`@media (max-width: ${mq.max[768]})`]: {
-          position: 'static',
-          float: 'none',
-          width: 'auto',
-          marginTop: '0',
-          backgroundColor: 'transparent',
-          border: '0',
-          boxShadow: 'none'
-        }
-      },
-      link: {
-        display: 'block',
-        padding: '10px 20px',
-        clear: 'both',
-        fontWeight: 'normal',
-        lineHeight: '1.42857143',
-        color: '#333',
-        whiteSpace: 'nowrap',
-        textDecoration: 'none',
-        boxSizing: 'border-box',
+  @media (max-width: ${mq.max[768]}) {
+    position: static;
+    float: none;
+    width: auto;
+    margin-top: 0;
+    background-color: transparent;
+    border: 0;
+    box-shadow: none;
+  }
+`;
 
-        ':hover': {
-          background: '#efefef',
-          color: '#001826'
-        },
+const Link = styled(GatsbyLink)`
+  display: block;
+  padding: 10px 20px;
+  clear: both;
+  font-weight: normal;
+  line-height: 1.42857143;
+  color: #333;
+  white-space: nowrap;
+  text-decoration: none;
+  box-sizing: border-box;
 
-        ':focus': {
-          background: '#efefef',
-          color: '#001826'
-        },
+  :focus,
+  :hover {
+    background: #efefef;
+    color: #001826;
+    text-decoration: none;
+  }
 
-        [`@media (max-width: ${mq.max[768]})`]: {
-          backgroundColor: 'transparent',
-          color: '#777',
+  @media (max-width: ${mq.max[768]}) {
+    background-color: transparent;
+    color: #777;
 
-          ':hover': {
-            color: '#333',
-            backgroundColor: 'transparent'
-          }
-        }
-      }
-    };
-    if (active) {
-      styles.menu.display = open ? 'block' : 'none';
-    } else {
-      styles.menu.display = 'none';
+    :hover {
+      color: #333;
+      background: transparent;
     }
-    return styles;
+  }
+`;
+
+class DropdownMenu extends Component {
+  /*
+    Check if dropdown is open
+   */
+  isOpen = () => {
+    const { open, active } = this.props;
+    if (active) {
+      return !!open;
+    }
+    return false;
   };
 
   render() {
-    const defStyle = this.getStyles();
-    const { menuItems, style, menuItemStyle, setRef } = this.props;
+    const { menuItems, setRef } = this.props;
     return (
-      <ul ref={setRef} style={[defStyle.menu, style && style]}>
+      <Menu ref={setRef} display={!!this.isOpen()}>
         {menuItems.map(item => {
           return (
             <li key={menuItems.indexOf(item)}>
-              <a
-                key={item.name}
-                style={[defStyle.link, menuItemStyle && menuItemStyle]}
-                href={item.href}
-              >
+              <Link key={item.name} to={item.href}>
                 {item.name}
-              </a>
+              </Link>
             </li>
           );
         })}
-      </ul>
+      </Menu>
     );
   }
 }
 
 DropdownMenu.propTypes = {
   menuItems: PropTypes.objectOf(PropTypes.array),
-  style: PropTypes.objectOf(PropTypes.object),
-  menuItemStyle: PropTypes.objectOf(PropTypes.object),
   open: PropTypes.bool
 };
 
 DropdownMenu.defaultProps = {
   menuItems: [],
-  style: {},
-  menuItemStyle: {},
   open: false
 };
 
-export default Radium(DropdownMenu);
+export default DropdownMenu;
