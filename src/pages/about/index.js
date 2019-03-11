@@ -429,7 +429,277 @@ export default ({ data }) => (
           </Column>
         </Row>
       </Segmented>
-      <h2>Awards</h2>
+      <Segmented borderBottom="">
+        <Row>
+          <Column sm={12} md={6} lg={6} fluid>
+            <header>
+              <Heading level={3} size="large">
+                Our Story
+              </Heading>
+            </header>
+            <p>
+              In 1996, Dr Robert Dane watched a solar boat race in Canberra and wondered how to
+              build a solar and wind-powered vessel that was seaworthy. The next year he was back
+              with a &apos;solarsailor&apos; prototype the <em>Marjory K</em> and won the race,
+              beating the next solar boat by six laps of 5km using a new patented &apos;solar
+              sail&apos; - one simple device that could harness solar and wind power and fold away
+              when not used. In 2000, he founded Solar Sailor Holdings Limited, with its mission to
+              combine renewable energies for marine propulsion.
+            </p>
+            <p>
+              With support from family &amp; friends, early investors and an Australian Greenhouse
+              Office Federal Government grant, SolarSailor built a 100 pax tourist leisure ferry for
+              Sydney Harbour.&nbsp; This innovative vessel won the Australian Design Award of the
+              Year in 2001 and was operated commercially by Captain Cook Cruises for over 10 years
+              carrying tens of thousands of passengers. Following the sale of Captain Cook Cruises
+              in 2011, the&nbsp;
+              <em>
+                <a href="https://ocius.com.au/2014/11/solar-sailor-and-marjorie-k/">Solar Sailor</a>
+                &nbsp;
+              </em>
+              vessel operated commercially on Lake Macquarie as a charter and dolphin watch vessel
+              and in 2014 was sold to a private buyer to convert into a houseboat.
+            </p>
+            <p>
+              Solar Sailor built 5 other commercial solar sailor vessels providing valuable
+              experience to OCIUS on the commercial maritime and technical applications of its
+              technology as well as developing an extensive network of first-class suppliers and
+              partners.
+            </p>
+            <p>
+              <strong>Commercial Ferries</strong>
+            </p>
+            <ul>
+              <li>
+                <strong>
+                  <em>
+                    “
+                    <a href="https://ocius.com.au/wp-content/uploads/2014/09/ck63.jpg">
+                      SolarSailor
+                    </a>
+                    ”&nbsp;
+                  </em>
+                </strong>
+                <strong>(Australia).&nbsp;</strong>This vessel was completed in one year and won the
+                Australian Design Award of the Year in 2001.
+              </li>
+              <li>
+                <strong>
+                  Hong Kong Jockey Club Charities Trust Project (Hong Kong).<em>&nbsp;</em>
+                </strong>
+                In July 2008, with oil at $140/ barrel, the Hong Kong Jockey Club ordered the
+                construction of four&nbsp;
+                <a href="https://ocius.com.au/wp-content/uploads/2014/09/120116-b4-solarsails-outbound-at-sai-kung.jpg">
+                  commuter ferries
+                </a>
+                &nbsp;to operate a service to transport players, staff and supplies from the
+                mainland at Sai Kung to the island of Kau Sai Chau where the HKJC has three 18 hole
+                golf courses. The ferries alternate two routes of five and seven mile round trips
+                with slow sectors at each end in a 20-minute cycle. Solar Sailor modelling predicted
+                substantial savings in fuel consumption compared to the previous ‘standard’ diesel
+                ferry service, as well as reductions in emissions.&nbsp; The boats in operation have
+                exceeded this since in independent tests since delivery and are still running 14
+                hours a day, seven days a week using half the fuel of the previous ferries.
+              </li>
+              <li>
+                <strong>
+                  Shanghai World Expo (China).<em>&nbsp;</em>
+                </strong>
+                After demonstration of the Sydney ferry to Suntech, a Wuxi-based solar panel
+                company, in 2009 OCIUS was awarded a contract to design, build and install a 12
+                -metre high SolarSail with software integration, on a 250 pax VIP river cruise boat
+                vessel,&nbsp;&nbsp;‘
+                <em>
+                  <a href="https://ocius.com.au/2010/05/expo-ferry-rides-on-sun-and-wind-using-technology-based-on-the-evolution-of-insects-wings/">
+                    Suntech Guoshung
+                  </a>
+                </em>
+                ’ for the World Expo in Shanghai.
+              </li>
+            </ul>
+            <p>
+              <strong>Unmanned Surface Vessels</strong>
+              <br />
+              Following an enquiry from the USA in 2007 for a ‘self-sustaining platform at sea’,
+              OCIUS began research into the development of unmanned solar/wind/wave and ballasted
+              powered ocean vessels or autonomous unmanned surface vessels. Initially, a 20
+              foot&nbsp;manned engineering development model (EDM) proved the &apos;speed of
+              advance&apos; in all conditions, adequate power, payload and persistence for a
+              sustainable platform able to go to sea for months.
+            </p>
+            <p>
+              In 2014, Solar Sailor changed its name to OCIUS (Latin for &apos;fleet&apos;) to
+              reflect an expansion of its patented technologies including the solar sail. With
+              Ulladulla Fibreglass and Engineering, OCIUS built multiple scale models for tank and
+              lake testing, culminating in the building of the first 10&apos; prototype called
+              &apos;Nemo&apos; (Latin for &apos;no one&apos; ie unmanned) which provided significant
+              proof of concept of a solar, wind and wave powered USV carrying a significant payload.
+            </p>
+            <p>
+              Based on Nemo&apos;s development, in 2015 OCIUS was awarded a $3M Capability
+              Technology Demonstrator (CTD) from Defence Science and Technology Group. This proved a
+              significant contract and OCIUS with our partners developed an 18&apos; prototype
+              &apos;Bruce&apos; for Antisubmarine Warfare (ASW), which demonstrated to NAVY in
+              August 2017.
+            </p>
+          </Column>
+          <Column sm={12} md={6} lg={6} fluid>
+            <header>
+              <Heading level={3} size="large">
+                Awards and Milestones
+              </Heading>
+            </header>
+            <p>
+              Ocius has 20 years’ experience developing and commercialising patented technology.
+            </p>
+            <p>
+              <strong>2017</strong> - Awarded{' '}
+              <a href="https://ocius.com.au/2017/10/ocius-wins-maritime-australian-defence-innovation-sme-award/">
+                Australian Maritime Innovation Award: Defence SME
+              </a>{' '}
+              - With a $10 000 grant
+            </p>
+            <p>
+              <strong>2017</strong>&nbsp;– Awarded Spitfire Memorial Defence Fellowship
+            </p>
+            <p>
+              <strong>2017</strong> – Successfully completed{' '}
+              <a href="https://ocius.com.au/wp-content/uploads/2015/09/150914OCIUSCTDPressRelease.pdf">
+                Capability Technology Demonstrator (CTD) Contract
+              </a>{' '}
+              for development of Anti-Submarine Unmanned Surface Vessel (ASW-USV)
+            </p>
+            <p>
+              <strong>2016</strong> – Finalist{' '}
+              <a href="http://wind-ship.org/en/innovation_awards_2016/">
+                Wind Propulsion Technology User Award
+              </a>{' '}
+              &amp;{' '}
+              <a href="https://ocius.com.au/2016/07/wind-propulsion-innovation-award/">
+                Lifetime Achievement Award,{' '}
+              </a>
+              International Windship Association
+            </p>
+            <p>
+              <strong>2016</strong>&nbsp;–&nbsp;Robert Dane, finalist in the&nbsp;
+              <a href="https://ocius.com.au/2016/07/wind-propulsion-innovation-award/">
+                Lifetime Achievement Award,&nbsp;
+              </a>
+              International Windship Association
+            </p>
+            <p>
+              <strong>2016 </strong>- Awarded Spitfire Memorial Defence Scholarship
+            </p>
+            <p>
+              <strong>2015 </strong>- Build and successful testing of Bluebottle 10’ prototype
+              ‘Nemo’
+            </p>
+            <p>
+              <strong>2015</strong> –{' '}
+              <a href="https://ocius.com.au/2015/10/ocius-wins-australian-technology-competition-prize/">
+                Winner Australian Technologies Competition
+              </a>
+              , Best Advanced Manufacturing
+            </p>
+            <p>
+              <strong>2014</strong>&nbsp;– Sold 100 PAX<em> ‘Sydney SolarSailor’</em> ferry to
+              private buyer
+            </p>
+            <p>
+              <strong>2013</strong>&nbsp;– Energy Globe Award for Sustainability
+            </p>
+            <p>
+              <strong>2012</strong>&nbsp;– Robert Dane,&nbsp;
+              <a href="http://www.wwf.org.au/?4023/Winners-announced-for-the-WWF-Earth-Hour-Awards">
+                WWF Future Makers Award
+              </a>
+            </p>
+            <p>
+              <strong>2011 </strong>–<strong>&nbsp;</strong>Delivery of the final vessel for HKJC –
+              &apos;<em>Solar Albatross</em>&apos;
+            </p>
+            <p>
+              <strong>2010</strong> –<strong>&nbsp;</strong>Winner China Seatrade Award – Dalian
+            </p>
+            <p>
+              <strong>2010 </strong>–<strong>&nbsp;</strong>Delivery of third HK ferry –{' '}
+              <em>‘Solar Eagle’</em>
+            </p>
+            <p>
+              <strong>2010</strong> –&nbsp;Delivery of second HK ferry – <em>‘Solar Birdie’</em>
+            </p>
+            <p>
+              <strong>2010 </strong>–<strong>&nbsp;</strong>Winner Environmental Technology Award at
+              the Sustainable Shipping Awards
+            </p>
+            <p>
+              <strong>2010 </strong>–&nbsp;Delivery Shanghai Vessel for World Expo – &apos;
+              <em>Suntech Guoshung</em>&apos;
+            </p>
+            <p>
+              <strong>2010 </strong>–&nbsp;Delivery first Hong Kong Jockey Club ferry –{' '}
+              <em>‘Solar Golf’</em>
+            </p>
+            <p>
+              <strong>2009&nbsp;</strong>–<strong>&nbsp;</strong>Contract Schneider Electric for SS
+              HMP190/25 supply and warranty for Hong Kong boats
+            </p>
+            <p>
+              <strong>2009&nbsp;</strong>–<strong>&nbsp;</strong>Italian Well Tech Design Award
+            </p>
+            <p>
+              <strong>2007 </strong>–&nbsp;Paper Australian Journal of Mechanical Engineers Vol 4 No
+              2. ISSN: 1448-4846
+            </p>
+            <p>
+              <strong>2007</strong>&nbsp;–<strong>&nbsp;</strong>Robert Dane&nbsp;
+              <a href="http://www.ecocitizenaustralia.com.au/solar-sailor-dr-robert-dane/">
+                Intel Environment Laureate USA
+              </a>
+            </p>
+            <p>
+              <strong>2004</strong>&nbsp;–<strong>&nbsp;</strong>United Nations Awards finalist –
+              Green Ferries for Blue Highways
+            </p>
+            <p>
+              <strong>2003</strong>&nbsp;–<strong>&nbsp;</strong>Contract Captain Cook Cruises to
+              manage and operate the <em>‘Sydney SolarSailor’</em>
+            </p>
+            <p>
+              <strong>2002</strong>&nbsp;–<strong>&nbsp;</strong>Hon Bob Hawke Chairman of the
+              Company
+            </p>
+            <p>
+              <strong>2002</strong>&nbsp;–<strong>&nbsp;</strong>Robert Dane SEDA NSW Green
+              Ambassador
+            </p>
+            <p>
+              <strong>2001</strong>&nbsp;–<strong>&nbsp;</strong>Winner Australian Design Award of
+              the Year 2001
+            </p>
+            <p>
+              <strong>2000</strong>&nbsp;–<strong>&nbsp;</strong>
+              <em>‘Sydney SolarSailor’</em> launched
+            </p>
+            <p>
+              <strong>2000</strong>&nbsp;–<strong>&nbsp;</strong>Winner International Cargo Handling
+              Co-ordination Association Award
+            </p>
+            <p>
+              <strong>2000</strong>&nbsp;–<strong>&nbsp;</strong>Winner Boating Industry Association
+              of Australia Marine Awards
+            </p>
+            <p>
+              <strong>1999</strong>&nbsp;–<strong>&nbsp;</strong>Winner Far Eastern Economic
+              Review/Du Pont Asian Innovation Award
+            </p>
+            <p>
+              <strong>1997</strong>&nbsp;–<strong>&nbsp;</strong>Winner Advanced Technology Boat
+              Race Canberra – <em>‘Marjorie K’</em> prototype.
+            </p>
+          </Column>
+        </Row>
+      </Segmented>
     </Container>
   </Layout>
 );
