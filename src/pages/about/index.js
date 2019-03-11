@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { graphql } from 'gatsby';
+import { graphql, Link as GatsbyLink } from 'gatsby';
 import Img from 'gatsby-image';
 import SEO from '../../components/SEO';
 import Layout from '../../layouts/Layout';
@@ -554,9 +554,9 @@ export default ({ data }) => (
             </p>
             <p>
               <strong>2017</strong> - Awarded{' '}
-              <a href="https://ocius.com.au/2017/10/ocius-wins-maritime-australian-defence-innovation-sme-award/">
+              <GatsbyLink to="/blog/ocius-wins-maritime-australian-defence-innovation-sme-award/">
                 Australian Maritime Innovation Award: Defence SME
-              </a>{' '}
+              </GatsbyLink>{' '}
               - With a $10 000 grant
             </p>
             <p>
