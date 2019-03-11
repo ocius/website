@@ -58,21 +58,10 @@ const Link = styled(GatsbyLink)`
 `;
 
 class DropdownMenu extends Component {
-  /*
-    Check if dropdown is open
-   */
-  isOpen = () => {
-    const { open, active } = this.props;
-    if (active) {
-      return !!open;
-    }
-    return false;
-  };
-
   render() {
-    const { menuItems, setRef } = this.props;
+    const { open, menuItems, setRef } = this.props;
     return (
-      <Menu ref={setRef} display={this.isOpen() ? 'block' : 'none'}>
+      <Menu ref={setRef} display={open ? 'block' : 'none'}>
         {menuItems.map(item => {
           return (
             <li key={menuItems.indexOf(item)}>

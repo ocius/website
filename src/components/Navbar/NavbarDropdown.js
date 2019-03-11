@@ -106,16 +106,10 @@ class NavbarDropdown extends Component {
   }
 
   renderChildren = () => {
-    const { children, index, activeIndex } = this.props;
-    let active = false;
-    // This particular dropdown is clicked
-    if (index === activeIndex) {
-      active = true;
-    }
+    const { children } = this.props;
     return React.Children.map(children, child => {
       return React.cloneElement(child, {
         open: this.state.open,
-        active,
         setRef: this.setRef
       });
     });
@@ -143,16 +137,12 @@ class NavbarDropdown extends Component {
 
 NavbarDropdown.propTypes = {
   name: PropTypes.string,
-  link: PropTypes.string,
-  index: PropTypes.number,
-  activeIndex: PropTypes.number
+  link: PropTypes.string
 };
 
 NavbarDropdown.defaultProps = {
   name: '',
-  link: '',
-  index: 0,
-  activeIndex: 0
+  link: ''
 };
 
 export default NavbarDropdown;
