@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { ifProp } from 'styled-tools';
+import { prop } from 'styled-tools';
 import { Link as GatsbyLink } from 'gatsby';
 import mq from '../../common/mq';
 
 const Menu = styled.ul`
-  display: ${ifProp('display', 'block', 'none')};
+  display: ${prop('display', 'none')};
   margin: 0px;
   padding: 0px;
   position: absolute;
@@ -72,7 +72,7 @@ class DropdownMenu extends Component {
   render() {
     const { menuItems, setRef } = this.props;
     return (
-      <Menu ref={setRef} display={!!this.isOpen()}>
+      <Menu ref={setRef} display={this.isOpen() ? 'block' : 'none'}>
         {menuItems.map(item => {
           return (
             <li key={menuItems.indexOf(item)}>
@@ -88,12 +88,16 @@ class DropdownMenu extends Component {
 }
 
 DropdownMenu.propTypes = {
-  menuItems: PropTypes.objectOf(PropTypes.array),
+  menuItems: PropTypes.arrayOf(
+    PropTypes.shape({
+      href: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired
+    })
+  ).isRequired,
   open: PropTypes.bool
 };
 
 DropdownMenu.defaultProps = {
-  menuItems: [],
   open: false
 };
 
