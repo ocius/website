@@ -1,7 +1,26 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import Radium from 'radium';
+import styled from 'styled-components';
+import { prop } from 'styled-tools';
 import mq from '../../common/mq';
+
+const NavItems = styled.ul`
+  margin: 0 0 0 auto;
+  padding: 0;
+  text-align: right;
+  list-style: outside none none;
+
+  @media (max-width: ${mq.max[768]}) {
+    display: ${prop('display', 'none')};
+    position: absolute;
+    background: #fff;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    border-top: 1px solid #001826;
+    z-index: 3;
+  }
+`;
 
 class NavbarItems extends Component {
   constructor(props) {
@@ -36,41 +55,16 @@ class NavbarItems extends Component {
   };
 
   render() {
-    const styles = {
-      base: {
-        margin: '0 0 0 auto',
-        padding: '0',
-        textAlign: 'right',
-        listStyle: 'outside none none',
-        [`@media (max-width: ${mq.max[768]})`]: {
-          display: this.state.menuOpen ? 'block' : 'none',
-          position: 'absolute',
-          background: '#fff',
-          top: '100%',
-          left: '0',
-          width: '100%',
-          borderTop: '1px solid #001826',
-          zIndex: 3
-        }
-      }
-    };
-
-    const { style } = this.props;
     return (
-      <ul className="navitems" style={[styles.base, style && style]}>
+      <NavItems className="navitems" display={this.state.menuOpen ? 'block' : 'none'}>
         {this.renderChildren()}
-      </ul>
+      </NavItems>
     );
   }
 }
 
 NavbarItems.propTypes = {
-  style: PropTypes.objectOf(PropTypes.object),
   children: PropTypes.node.isRequired
 };
 
-NavbarItems.defaultProps = {
-  style: {}
-};
-
-export default Radium(NavbarItems);
+export default NavbarItems;
