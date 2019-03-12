@@ -11,11 +11,6 @@ const Dropdown = styled.li`
   font-size: 1em;
   font-weight: 300;
   line-height: 1.4;
-
-  :hover {
-    color: #60d2f6;
-    background-color: #fff;
-  }
 `;
 
 const Caret = styled.b`
@@ -41,6 +36,8 @@ const Link = styled(GatsbyLink)`
 
   :hover {
     text-decoration: none;
+    color: #60d2f6;
+    background-color: #ffffff;
   }
 `;
 

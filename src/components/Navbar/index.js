@@ -8,7 +8,6 @@ import NavbarDropdown from './NavbarDropdown';
 import DropdownMenu from './DropdownMenu';
 
 const navitems = [
-  { link: '/bluebottle', title: 'BlueBottle USV' },
   { link: '/find-bruce', title: 'Find Bruce' },
   { link: '/news', title: 'News' },
   { link: '/contact', title: 'Contact' },
@@ -36,6 +35,14 @@ export default () => (
             { href: '/defence', name: 'Defence' },
             { href: '/oil-and-gas', name: 'Oil & Gas' },
             { href: '/science', name: 'Science' }
+          ]}
+        />
+      </NavbarDropdown>
+      <NavbarDropdown name="BlueBottle USV" link="/bluebottle">
+        <DropdownMenu
+          menuItems={[
+            { href: '/bluebottle', name: 'BlueBottle Overview' },
+            { href: '/bluebottle-usv-brochure', name: 'Technical Specification' }
           ]}
         />
       </NavbarDropdown>

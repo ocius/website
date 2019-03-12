@@ -23,18 +23,18 @@ export default ({ children }) => (
                 <Link to="/about">Mission</Link>
               </li>
               <li>
-                <Link to="/about">People</Link>
+                <Link to="/about#people">People</Link>
               </li>
               <li>
-                <Link to="/about">Partners</Link>
+                <Link to="/about#partners">Partners</Link>
               </li>
               <li>
-                <Link to="/about">Awards</Link>
+                <Link to="/about#awards">Awards</Link>
               </li>
             </ul>
           </Column>
           <Column sm={12} md={3} lg={3} fluid>
-            <Link to="/solutions">Solutions</Link>
+            <Link to="/#solutions">Solutions</Link>
             <ul className="menu-secondary">
               <li>
                 <Link to="/defence">Defence</Link>
