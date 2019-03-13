@@ -6,7 +6,7 @@ const SocialShare = ({ networks, headingText, onClick }) => (
   <div className="SocialShare" role="complementary">
     {headingText && <h5 className="ShareHeading">{headingText}</h5>}
 
-    {Object.keys(networks).map((network) => (
+    {Object.keys(networks).map(network => (
       <SocialIconButton
         className={networks[network].name}
         network={networks[network].name}

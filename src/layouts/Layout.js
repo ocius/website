@@ -1,5 +1,4 @@
-import React from 'react';
-import { StyleRoot } from 'radium';
+import React, { Fragment } from 'react';
 import { Link } from 'gatsby';
 import { Row, Col } from 'react-flexbox-grid';
 import Navbar from '../components/Navbar';
@@ -9,7 +8,7 @@ import Icon from '../components/Icon';
 import '../css/styles.css';
 
 export default ({ children }) => (
-  <StyleRoot>
+  <Fragment>
     <Navbar />
     {children}
     <Footer>
@@ -86,5 +85,5 @@ export default ({ children }) => (
         </Row>
       </Container>
     </Footer>
-  </StyleRoot>
+  </Fragment>
 );

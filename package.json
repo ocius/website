@@ -31,7 +31,6 @@
     "gatsby-transformer-sharp": "^2.1.13",
     "object-assign": "^4.1.1",
     "prop-types": "^15.6.2",
-    "radium": "^0.25.1",
     "react": "^16.5.1",
     "react-dom": "^16.5.1",
     "react-flexbox-grid": "^2.1.2",
