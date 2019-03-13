@@ -42,6 +42,10 @@ const IconButton = styled.a`
   border-radius: 100%;
   transition: opacity 200ms ease-in-out;
 
+  & + & {
+    margin-left: 12px;
+  }
+
   :hover,
   :active {
     opacity: 0.7;
