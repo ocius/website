@@ -1,10 +1,9 @@
 import React from 'react';
+import { Row, Col } from 'react-flexbox-grid';
 import Layout from '../layouts/Layout';
 import SEO from '../components/SEO';
 import PageHeader from '../components/PageHeader';
 import Container from '../components/Container';
-import Row from '../components/GridRow';
-import Column from '../components/GridColumn';
 import RecentNews from '../components/RecentNews';
 
 const addressStyle = {
@@ -24,25 +23,25 @@ export default () => (
     <section className="page-content">
       <Container>
         <Row>
-          <Column className="primary-content" sm={8} md={7} lg={7} fluid>
+          <Col className="primary-content" xs={8} md={7} lg={7}>
             <Row>
-              <Column sm={12} md={6} lg={6} fluid>
+              <Col xs={12} md={6} lg={6}>
                 <strong>For General Enquiries</strong>
                 <address style={addressStyle}>
                   Main Phone: <a href="callto:+61299246400">+61 2 9924 6400</a>
                   <br />
                   Email: <a href="mailto:admin@ocius.com.au">admin@ocius.com.au</a>
                 </address>
-              </Column>
-              <Column sm={12} md={6} lg={6} fluid>
+              </Col>
+              <Col xs={12} md={6} lg={6}>
                 <strong>For Investment Enquiries</strong>
                 <address style={addressStyle}>
                   Email: <a href="mailto:cosecretary@ocius.com.au">cosecretary@ocius.com.au</a>
                 </address>
-              </Column>
+              </Col>
             </Row>
             <Row>
-              <Column sm={12} md={6} lg={6} fluid>
+              <Col xs={12} md={6} lg={6}>
                 <strong>Address:</strong>
                 <address style={addressStyle}>
                   Ainsworth Building
@@ -55,8 +54,8 @@ export default () => (
                   <br />
                   Phone: <a href="callto:+61299246400">+61 2 9924 6400</a>
                 </address>
-              </Column>
-              <Column sm={12} md={6} lg={6} fluid>
+              </Col>
+              <Col xs={12} md={6} lg={6}>
                 <strong>Postal Address:</strong>
                 <address style={addressStyle}>
                   Office Box 4304
@@ -65,12 +64,12 @@ export default () => (
                   <br />
                   Australia 2068
                 </address>
-              </Column>
+              </Col>
             </Row>
-          </Column>
-          <Column className="secondary-content" sm={4} md={5} lg={4} lgShift={1} fluid>
+          </Col>
+          <Col className="secondary-content" xs={4} md={5} lg={4} lgOffset={1}>
             <RecentNews />
-          </Column>
+          </Col>
         </Row>
       </Container>
     </section>

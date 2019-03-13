@@ -1,10 +1,9 @@
 import React from 'react';
 import { graphql } from 'gatsby';
+import { Row, Col } from 'react-flexbox-grid';
 import Layout from '../layouts/Layout';
 import SEO from '../components/SEO';
 import Container from '../components/Container';
-import Row from '../components/GridRow';
-import Column from '../components/GridColumn';
 import Icon from '../components/Icon';
 import Segmented from '../components/Segmented';
 import HeroBlock from '../components/HeroBlock';
@@ -29,35 +28,35 @@ export default ({ data }) => (
           Science
         </Heading>
         <Row>
-          <Column sm={12} md={6} lg={6} fluid>
+          <Col xs={12} md={6} lg={6}>
             <Heading level="2" size="medium" weight="thick">
               Weather “ground truth“
             </Heading>
-          </Column>
-          <Column sm={12} md={6} lg={6} fluid>
+          </Col>
+          <Col sm={12} md={6} lg={6}>
             <Heading level="2" size="medium" weight="thick">
               Climate Change
             </Heading>
-          </Column>
+          </Col>
         </Row>
         <Row>
-          <Column sm={12} md={6} lg={6} fluid>
+          <Col xs={12} md={6} lg={6}>
             <Heading level="2" size="medium" weight="thick">
               Hurricane Landfall Prediction
             </Heading>
-          </Column>
-          <Column sm={12} md={6} lg={6} fluid>
+          </Col>
+          <Col sm={12} md={6} lg={6}>
             <Heading level="2" size="medium" weight="thick">
               Fisheries
             </Heading>
-          </Column>
+          </Col>
         </Row>
       </HeroBlock>
     </Segmented>
     <Container className="centered">
       <Segmented>
         <Row>
-          <Column sm={12} md={4} lg={4} fluid>
+          <Col xs={12} md={4} lg={4}>
             <Icon.Bolt
               fill="#4db4e6"
               style={{
@@ -76,8 +75,8 @@ export default ({ data }) => (
               <li>Camera shots</li>
               <li>All transmitted back to base in real time</li>
             </ul>
-          </Column>
-          <Column sm={12} md={4} lg={4} fluid>
+          </Col>
+          <Col xs={12} md={4} lg={4}>
             <Icon.StackOverflow
               fill="#4db4e6"
               style={{
@@ -94,8 +93,8 @@ export default ({ data }) => (
               <li>Time and date and GPS correlated against scientific parameters</li>
               <li>&amp;Ground truth&amp; for satellite and computer modelling</li>
             </ul>
-          </Column>
-          <Column sm={12} md={4} lg={4} fluid>
+          </Col>
+          <Col xs={12} md={4} lg={4}>
             <Icon.Handshake
               fill="#4db4e6"
               style={{
@@ -111,7 +110,7 @@ export default ({ data }) => (
               <li>Configure your own modular payload</li>
               <li>150 kg &amp;wet&amp; sensors & 150 kg &amp;dry&amp; equipment</li>
             </ul>
-          </Column>
+          </Col>
         </Row>
       </Segmented>
       <Segmented borderBottom="">

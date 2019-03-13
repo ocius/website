@@ -1,11 +1,10 @@
 import React from 'react';
 import { graphql } from 'gatsby';
+import { Row, Col } from 'react-flexbox-grid';
 import Layout from '../layouts/Layout';
 import SEO from '../components/SEO';
 import HeroBlock from '../components/HeroBlock';
 import Container from '../components/Container';
-import Row from '../components/GridRow';
-import Column from '../components/GridColumn';
 import Icon from '../components/Icon';
 import Heading from '../components/Heading';
 import Button from '../components/Button';
@@ -27,35 +26,35 @@ export default ({ data }) => (
         Defence
       </Heading>
       <Row>
-        <Column sm={12} md={6} lg={6} fluid>
+        <Col xs={12} md={6} lg={6}>
           <Heading level={2} size="medium" weight="thick">
             Anti-Submarine Warfare
           </Heading>
-        </Column>
-        <Column sm={12} md={6} lg={6} fluid>
+        </Col>
+        <Col xs={12} md={6} lg={6}>
           <Heading level={2} size="medium" weight="thick">
             Electronic Warfare
           </Heading>
-        </Column>
+        </Col>
       </Row>
       <Row>
-        <Column sm={12} md={6} lg={6} fluid>
+        <Col xs={12} md={6} lg={6}>
           <Heading level={2} size="medium" weight="thick">
             Mine Counter Measures
           </Heading>
-        </Column>
-        <Column sm={12} md={6} lg={6} fluid>
+        </Col>
+        <Col xs={12} md={6} lg={6}>
           <Heading level={2} size="medium" weight="thick">
             Gateway Communications
           </Heading>
-        </Column>
+        </Col>
       </Row>
     </HeroBlock>
 
     <Container className="centered">
       <Segmented borderBottom="">
         <Row>
-          <Column sm={12} md={8} lg={8} lgShift={2} fluid>
+          <Col xs={12} md={8} lg={8} lgOffset={2}>
             <Heading size="medium" level={3}>
               Persistent USVs are being seen as strategic in Defence as force multipliers
             </Heading>
@@ -65,12 +64,12 @@ export default ({ data }) => (
                 persistent USV for defence
               </strong>
             </Heading>
-          </Column>
+          </Col>
         </Row>
       </Segmented>
       <Segmented borderBottom="">
         <Row>
-          <Column sm={12} md={4} lg={4} fluid>
+          <Col xs={12} md={4} lg={4}>
             <Icon.Ship
               fill="#4db4e6"
               style={{
@@ -89,8 +88,8 @@ export default ({ data }) => (
               <li>Speed to resolve L-R ambiguity</li>
               <li>Network &amp; collaborate with other Bluebottles &amp; other assets</li>
             </ul>
-          </Column>
-          <Column sm={12} md={4} lg={4} fluid>
+          </Col>
+          <Col xs={12} md={4} lg={4}>
             <Icon.Podcast
               fill="#4db4e6"
               style={{
@@ -106,8 +105,8 @@ export default ({ data }) => (
               <li>Combine with other sensors</li>
               <li>Electronic Support Measures (ESM) platform</li>
             </ul>
-          </Column>
-          <Column sm={12} md={4} lg={4} fluid>
+          </Col>
+          <Col xs={12} md={4} lg={4}>
             <Icon.Link
               fill="#4db4e6"
               style={{
@@ -122,10 +121,10 @@ export default ({ data }) => (
               <li>Combine with other sensors</li>
               <li>Cross-domain communications and data exchange system</li>
             </ul>
-          </Column>
+          </Col>
         </Row>
         <Row>
-          <Column sm={12} md={4} lg={4} fluid>
+          <Col xs={12} md={4} lg={4}>
             <Icon.ConnectDevelop
               fill="#4db4e6"
               style={{
@@ -140,8 +139,8 @@ export default ({ data }) => (
               <li>Network with other Bluebottles and assets</li>
               <li>Allows multiple sensors on the same platform</li>
             </ul>
-          </Column>
-          <Column sm={12} md={4} lg={4} fluid>
+          </Col>
+          <Col xs={12} md={4} lg={4}>
             <Icon.Bomb
               fill="#4db4e6"
               style={{
@@ -156,8 +155,8 @@ export default ({ data }) => (
               <li>Intelligent path planning and manoeuvring systems</li>
               <li>Remain safely in proximity while exchanging high-volume data</li>
             </ul>
-          </Column>
-          <Column sm={12} md={4} lg={4} fluid>
+          </Col>
+          <Col xs={12} md={4} lg={4}>
             <Icon.Anchor
               fill="#4db4e6"
               style={{
@@ -174,7 +173,7 @@ export default ({ data }) => (
               <li>Silent when not communicating</li>
               <li>LARS from boat ramp or jetty/deck crane</li>
             </ul>
-          </Column>
+          </Col>
         </Row>
       </Segmented>
       <Segmented borderBottom="">

@@ -1,10 +1,9 @@
 import React from 'react';
 import { graphql } from 'gatsby';
+import { Row, Col } from 'react-flexbox-grid';
 import Layout from '../layouts/Layout';
 import SEO from '../components/SEO';
 import Container from '../components/Container';
-import Row from '../components/GridRow';
-import Column from '../components/GridColumn';
 import Icon from '../components/Icon';
 import Segmented from '../components/Segmented';
 import HeroBlock from '../components/HeroBlock';
@@ -27,28 +26,28 @@ export default ({ data }) => (
         Oil &amp; Gas
       </Heading>
       <Row>
-        <Column sm={12} md={6} lg={6} fluid>
+        <Col xs={12} md={6} lg={6}>
           <Heading level={2} size="medium" weight="thick">
             Seabed and Pipeline Surveys
           </Heading>
-        </Column>
-        <Column sm={12} md={6} lg={6} fluid>
+        </Col>
+        <Col xs={12} md={6} lg={6}>
           <Heading level={2} size="medium" weight="thick">
             Security
           </Heading>
-        </Column>
+        </Col>
       </Row>
       <Row>
-        <Column sm={12} md={6} lg={6} fluid>
+        <Col xs={12} md={6} lg={6}>
           <Heading level={2} size="medium" weight="thick">
             Environment Monitoring
           </Heading>
-        </Column>
-        <Column sm={12} md={6} lg={6} fluid>
+        </Col>
+        <Col xs={12} md={6} lg={6}>
           <Heading level={2} size="medium" weight="thick">
             Partners
           </Heading>
-        </Column>
+        </Col>
       </Row>
     </HeroBlock>
     <Container className="centered">
@@ -61,7 +60,7 @@ export default ({ data }) => (
       </Segmented>
       <Segmented>
         <Row>
-          <Column sm={12} md={4} lg={4} fluid>
+          <Col xs={12} md={4} lg={4}>
             <Icon.Compass
               fill="#4db4e6"
               style={{
@@ -79,8 +78,8 @@ export default ({ data }) => (
               <li>Coastal waters, navigation channel hazards</li>
               <li>Onboard processing for anomalies for real-time check</li>
             </ul>
-          </Column>
-          <Column sm={12} md={4} lg={4} fluid>
+          </Col>
+          <Col xs={12} md={4} lg={4}>
             <Icon.Envira
               fill="#4db4e6"
               style={{
@@ -97,8 +96,8 @@ export default ({ data }) => (
               <li>Subsea floor sensors gateway communications</li>
               <li>Pre-exploration meteorological and oceanographic data</li>
             </ul>
-          </Column>
-          <Column sm={12} md={4} lg={4} fluid>
+          </Col>
+          <Col sm={12} md={4} lg={4}>
             <Icon.Lock
               fill="#4db4e6"
               style={{
@@ -116,17 +115,17 @@ export default ({ data }) => (
                 over the horizon.
               </li>
             </ul>
-          </Column>
+          </Col>
         </Row>
       </Segmented>
       <Segmented borderBottom="">
         <Row>
-          <Column sm={12} md={12} lg={12} fluid>
+          <Col xs={12} md={12} lg={12}>
             <h3>WE ARE LOOKING FOR PARTNERS TO DO JOINT VENTURE AND DEMONSTRATION PROJECTS</h3>
             <Button color="white" size="medium" href="/contact">
               Contact Us Now
             </Button>
-          </Column>
+          </Col>
         </Row>
       </Segmented>
     </Container>

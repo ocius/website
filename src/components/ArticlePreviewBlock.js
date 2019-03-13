@@ -1,8 +1,7 @@
 import React from 'react';
 import { graphql, StaticQuery } from 'gatsby';
 
-import Row from './GridRow';
-import Column from './GridColumn';
+import { Row, Col } from 'react-flexbox-grid';
 import ArticlePreview from './ArticlePreview';
 
 const RecentNews = () => (
@@ -35,7 +34,7 @@ const RecentNews = () => (
     render={data => (
       <Row>
         {data.allMarkdownRemark.edges.map(({ node }) => (
-          <Column key={node.id} sm={12} md={6} lg={6} fluid>
+          <Col key={node.id} xs={12} md={6} lg={6}>
             <ArticlePreview
               href={node.fields.slug}
               title={node.frontmatter.title}
@@ -46,7 +45,7 @@ const RecentNews = () => (
                   : ''
               }
             />
-          </Column>
+          </Col>
         ))}
       </Row>
     )}

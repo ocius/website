@@ -1,11 +1,10 @@
 import React from 'react';
 import { StyleRoot } from 'radium';
 import { Link } from 'gatsby';
+import { Row, Col } from 'react-flexbox-grid';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import Container from '../components/Container';
-import Row from '../components/GridRow';
-import Column from '../components/GridColumn';
 import Icon from '../components/Icon';
 import '../css/styles.css';
 
@@ -16,7 +15,7 @@ export default ({ children }) => (
     <Footer>
       <Container>
         <Row>
-          <Column sm={12} md={3} lg={3} fluid>
+          <Col xs={12} md={3} lg={3}>
             <Link to="/about">About</Link>
             <ul className="menu-secondary">
               <li>
@@ -32,8 +31,8 @@ export default ({ children }) => (
                 <Link to="/about#awards">Awards</Link>
               </li>
             </ul>
-          </Column>
-          <Column sm={12} md={3} lg={3} fluid>
+          </Col>
+          <Col xs={12} md={3} lg={3}>
             <Link to="/#solutions">Solutions</Link>
             <ul className="menu-secondary">
               <li>
@@ -47,8 +46,8 @@ export default ({ children }) => (
               </li>
             </ul>
             <Link to="/contact">Contact</Link>
-          </Column>
-          <Column sm={12} md={3} lg={3} fluid>
+          </Col>
+          <Col xs={12} md={3} lg={3}>
             <Link to="/bluebottle">BlueBottle USV</Link>
             <ul className="menu-secondary">
               <li>
@@ -62,8 +61,8 @@ export default ({ children }) => (
               </li>
             </ul>
             <Link to="/careers">Careers</Link>
-          </Column>
-          <Column sm={12} md={3} lg={3} fluid style={{ textAlign: 'right' }}>
+          </Col>
+          <Col xs={12} md={3} lg={3} style={{ textAlign: 'right' }}>
             <Icon.OciusGlobe
               fill="#ffffff"
               style={{
@@ -83,7 +82,7 @@ export default ({ children }) => (
               <br />
               Mail PO Box 4304 Castlecrag 2068 NSW Australia
             </p>
-          </Column>
+          </Col>
         </Row>
       </Container>
     </Footer>

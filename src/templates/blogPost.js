@@ -1,11 +1,10 @@
 import React from 'react';
 import { graphql } from 'gatsby';
+import { Row, Col } from 'react-flexbox-grid';
 import Layout from '../layouts/Layout';
 import SEO from '../components/SEO';
 import PageHeader from '../components/PageHeader';
 import Container from '../components/Container';
-import Row from '../components/GridRow';
-import Column from '../components/GridColumn';
 import RecentNews from '../components/RecentNews';
 import SocialShareContainer from '../components/SocialShareContainer';
 import SocialShare from '../components/SocialShare';
@@ -21,7 +20,7 @@ export default ({ data }) => {
       <section className="page-content">
         <Container>
           <Row>
-            <Column className="primary-content" sm={8} md={7} lg={7} fluid>
+            <Col className="primary-content" xs={8} md={7} lg={7}>
               <Heading className="title" level="2" size="large">
                 {title}
               </Heading>
@@ -37,10 +36,10 @@ export default ({ data }) => {
                   {SocialShare}
                 </SocialShareContainer>
               )}
-            </Column>
-            <Column className="secondary-content" sm={4} md={5} lg={4} lgShift={1} fluid>
+            </Col>
+            <Col className="secondary-content" xs={4} md={5} lg={4} lgOffset={1}>
               <RecentNews />
-            </Column>
+            </Col>
           </Row>
         </Container>
       </section>

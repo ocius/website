@@ -1,12 +1,11 @@
 import React from 'react';
 import { Link, graphql } from 'gatsby';
 import Img from 'gatsby-image';
+import { Row, Col } from 'react-flexbox-grid';
 import Layout from '../layouts/Layout';
 import SEO from '../components/SEO';
 import PageHeader from '../components/PageHeader';
 import Container from '../components/Container';
-import Row from '../components/GridRow';
-import Column from '../components/GridColumn';
 import RecentNews from '../components/RecentNews';
 import Heading from '../components/Heading';
 import Segmented from '../components/Segmented';
@@ -25,7 +24,7 @@ export default ({ data }) => {
       <section className="page-content">
         <Container>
           <Row>
-            <Column className="primary-content" sm={8} md={7} lg={7} fluid>
+            <Col className="primary-content" xs={12} md={7} lg={7}>
               {data.allMarkdownRemark.edges.map(({ node }) => (
                 <Segmented>
                   <article key={node.id} className="post">
@@ -50,10 +49,10 @@ export default ({ data }) => {
                   </article>
                 </Segmented>
               ))}
-            </Column>
-            <Column className="secondary-content" sm={4} md={5} lg={4} lgShift={1} fluid>
+            </Col>
+            <Col className="secondary-content" xs={12} md={5} lg={4} lgOffset={1}>
               <RecentNews />
-            </Column>
+            </Col>
           </Row>
         </Container>
       </section>

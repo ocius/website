@@ -1,10 +1,9 @@
 import React from 'react';
 import { graphql } from 'gatsby';
+import { Row, Col } from 'react-flexbox-grid';
 import Layout from '../layouts/Layout';
 import SEO from '../components/SEO';
 import Container from '../components/Container';
-import Row from '../components/GridRow';
-import Column from '../components/GridColumn';
 import Segmented from '../components/Segmented';
 import Button from '../components/Button';
 import HeroBlock from '../components/HeroBlock';
@@ -56,7 +55,7 @@ export default ({ data }) => (
     <Container className="centered">
       <Segmented borderBottom="" multiplier={3}>
         <Row>
-          <Column sm={12} md={8} lg={8} lgShift={2} fluid>
+          <Col xs={12} md={8} lg={8} lgOffset={2}>
             <Heading level={2} size="large" underline>
               We are the solution to the most challenging problems of the ocean
             </Heading>
@@ -71,7 +70,7 @@ export default ({ data }) => (
             <Button color="white" size="medium" href="/bluebottle">
               What is a USV?
             </Button>
-          </Column>
+          </Col>
         </Row>
       </Segmented>
     </Container>

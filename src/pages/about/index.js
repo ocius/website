@@ -2,18 +2,16 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { graphql, Link as GatsbyLink } from 'gatsby';
 import Img from 'gatsby-image';
+import { Row, Col } from 'react-flexbox-grid';
 import SEO from '../../components/SEO';
 import Layout from '../../layouts/Layout';
 import Container from '../../components/Container';
 import Segmented from '../../components/Segmented';
-import Row from '../../components/GridRow';
-import Column from '../../components/GridColumn';
 import Heading from '../../components/Heading';
 
 const styles = {
   wrapper: {
-    fontSize: '17px',
-    paddingRight: '30px'
+    fontSize: '17px'
   }
 };
 
@@ -38,7 +36,7 @@ export default ({ data }) => (
     <Container>
       <Segmented>
         <Row className="centered">
-          <Column sm={12} md={8} lg={8} lgShift={2} fluid>
+          <Col xs={12} md={8} lg={8} lgOffset={2}>
             <Heading level={1} size="huge" underline>
               Our Mission
             </Heading>
@@ -49,7 +47,7 @@ export default ({ data }) => (
               ocean&nbsp;
               <strong>continuously at low cost and with no one in harm&apos;s way.&nbsp;</strong>
             </p>
-          </Column>
+          </Col>
         </Row>
       </Segmented>
       <header id="people" className="centered">
@@ -59,7 +57,7 @@ export default ({ data }) => (
       </header>
       <Segmented borderBottom="">
         <Row>
-          <Column sm={12} md={4} lg={4} fluid>
+          <Col xs={12} md={4} lg={4}>
             <TextWrapper>
               {data.MarkBethwaite && (
                 <Img fixed={data.MarkBethwaite.childImageSharp.fixed} alt="Mark Bethwaite AM" />
@@ -80,8 +78,8 @@ export default ({ data }) => (
                 Order of Australia (AM) in early 2011 for services to industry and to sailing.
               </p>
             </TextWrapper>
-          </Column>
-          <Column sm={12} md={4} lg={4} fluid>
+          </Col>
+          <Col xs={12} md={4} lg={4}>
             <TextWrapper>
               {data.RobertDane && (
                 <Img fixed={data.RobertDane.childImageSharp.fixed} alt="Robert Dane" />
@@ -105,8 +103,8 @@ export default ({ data }) => (
                 Defence Association Fellowship.
               </p>
             </TextWrapper>
-          </Column>
-          <Column sm={12} md={4} lg={4} fluid>
+          </Col>
+          <Col xs={12} md={4} lg={4}>
             <TextWrapper>
               {data.BobHawke && <Img fixed={data.BobHawke.childImageSharp.fixed} alt="Bob Hawke" />}
               <Heading level={3} size="medium">
@@ -120,12 +118,12 @@ export default ({ data }) => (
               </p>
               <p>He was Chairman of OCIUS (formerly Solar Sailor) for 12 years from 2002 - 2014.</p>
             </TextWrapper>
-          </Column>
+          </Col>
         </Row>
       </Segmented>
       <Segmented borderBottom="">
         <Row>
-          <Column sm={12} md={3} lg={3} fluid>
+          <Col xs={12} md={3} lg={3}>
             <TextWrapper>
               {data.DavidSaxelby && (
                 <Img fixed={data.DavidSaxelby.childImageSharp.fixed} alt="David Saxelby" />
@@ -150,8 +148,8 @@ export default ({ data }) => (
                 Capella Capital.
               </p>
             </TextWrapper>
-          </Column>
-          <Column sm={12} md={3} lg={3} fluid>
+          </Col>
+          <Col xs={12} md={3} lg={3}>
             <TextWrapper>
               {data.LloydBreckenridge && (
                 <Img
@@ -178,8 +176,8 @@ export default ({ data }) => (
                 Ltd he feels he has found his dream job.
               </p>
             </TextWrapper>
-          </Column>
-          <Column sm={12} md={3} lg={3} fluid>
+          </Col>
+          <Col xs={12} md={3} lg={3}>
             <TextWrapper>
               {data.PeterWlodarczyk && (
                 <Img fixed={data.PeterWlodarczyk.childImageSharp.fixed} alt="Peter Wlodarczyk" />
@@ -202,8 +200,8 @@ export default ({ data }) => (
                 CSIRO and Queensland University of Technology.
               </p>
             </TextWrapper>
-          </Column>
-          <Column sm={12} md={3} lg={3} fluid>
+          </Col>
+          <Col xs={12} md={3} lg={3}>
             <TextWrapper>
               {data.TraceySharah && (
                 <Img fixed={data.TraceySharah.childImageSharp.fixed} alt="Tracey Sharah" />
@@ -225,7 +223,7 @@ export default ({ data }) => (
                 tax technology apps and 90% paperless.
               </p>
             </TextWrapper>
-          </Column>
+          </Col>
         </Row>
       </Segmented>
       <header id="partners" className="centered">
@@ -235,7 +233,7 @@ export default ({ data }) => (
       </header>
       <Segmented borderBottom="">
         <Row>
-          <Column sm={12} md={6} lg={6} fluid>
+          <Col xs={12} md={6} lg={6}>
             <TextWrapper>
               {data.AustralianGovernment && (
                 <div className="centered">
@@ -260,8 +258,8 @@ export default ({ data }) => (
                 program.
               </p>
             </TextWrapper>
-          </Column>
-          <Column sm={12} md={6} lg={6} fluid>
+          </Col>
+          <Col xs={12} md={6} lg={6}>
             <TextWrapper>
               {data.SteberInternational && (
                 <div className="centered">
@@ -285,12 +283,12 @@ export default ({ data }) => (
                 commitment to provide a high-quality product with excellent customer service.
               </p>
             </TextWrapper>
-          </Column>
+          </Col>
         </Row>
       </Segmented>
       <Segmented borderBottom="">
         <Row>
-          <Column sm={12} md={6} lg={6} fluid>
+          <Col xs={12} md={6} lg={6}>
             <TextWrapper>
               {data.Thales && (
                 <div className="centered">
@@ -309,8 +307,8 @@ export default ({ data }) => (
                 standoff distances.
               </p>
             </TextWrapper>
-          </Column>
-          <Column sm={12} md={6} lg={6} fluid>
+          </Col>
+          <Col xs={12} md={6} lg={6}>
             <TextWrapper>
               {data.OneTwoThree && (
                 <div className="centered">
@@ -329,12 +327,12 @@ export default ({ data }) => (
                 design, tracking, helm, payload bay & performance for the next prototypes.
               </p>
             </TextWrapper>
-          </Column>
+          </Col>
         </Row>
       </Segmented>
       <Segmented borderBottom="">
         <Row>
-          <Column sm={12} md={6} lg={6} fluid>
+          <Col xs={12} md={6} lg={6}>
             <TextWrapper>
               {data.UNSW && (
                 <div className="centered">
@@ -353,8 +351,8 @@ export default ({ data }) => (
                 four students from UNSW’s Sunswift solar car team under a scholarship program.
               </p>
             </TextWrapper>
-          </Column>
-          <Column sm={12} md={6} lg={6} fluid>
+          </Col>
+          <Col xs={12} md={6} lg={6}>
             <TextWrapper>
               <div className="centered">
                 <Heading level={3} size="medium">
@@ -370,12 +368,12 @@ export default ({ data }) => (
                 mechanisms, patented rudder flipper appendages and patented solarsails & mechanisms.
               </p>
             </TextWrapper>
-          </Column>
+          </Col>
         </Row>
       </Segmented>
       <Segmented borderBottom="">
         <Row>
-          <Column sm={12} md={6} lg={6} fluid>
+          <Col xs={12} md={6} lg={6}>
             <TextWrapper>
               {data.ClarkIP && (
                 <div className="centered">
@@ -398,8 +396,8 @@ export default ({ data }) => (
                 into meaningful and quality patents, registered designs and trademarks.
               </p>
             </TextWrapper>
-          </Column>
-          <Column sm={12} md={6} lg={6} fluid>
+          </Col>
+          <Col xs={12} md={6} lg={6}>
             <TextWrapper>
               {data.Spitfire && (
                 <div className="centered">
@@ -426,12 +424,12 @@ export default ({ data }) => (
                 depths of 1 - 140m as desired.
               </p>
             </TextWrapper>
-          </Column>
+          </Col>
         </Row>
       </Segmented>
       <Segmented borderBottom="">
         <Row>
-          <Column sm={12} md={6} lg={6} fluid>
+          <Col xs={12} md={6} lg={6}>
             <header>
               <Heading level={3} size="large">
                 Our Story
@@ -542,8 +540,8 @@ export default ({ data }) => (
               &apos;Bruce&apos; for Antisubmarine Warfare (ASW), which demonstrated to NAVY in
               August 2017.
             </p>
-          </Column>
-          <Column sm={12} md={6} lg={6} fluid>
+          </Col>
+          <Col xs={12} md={6} lg={6}>
             <header id="awards">
               <Heading level={3} size="large">
                 Awards and Milestones
@@ -697,7 +695,7 @@ export default ({ data }) => (
               <strong>1997</strong>&nbsp;–<strong>&nbsp;</strong>Winner Advanced Technology Boat
               Race Canberra – <em>‘Marjorie K’</em> prototype.
             </p>
-          </Column>
+          </Col>
         </Row>
       </Segmented>
     </Container>
