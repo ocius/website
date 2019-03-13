@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Radium from 'radium';
+import styled from 'styled-components';
+import { prop, withProp } from 'styled-tools';
 import cn from 'classnames';
 import iconFromString from '../common/iconFromString';
 
@@ -27,43 +28,39 @@ const iconNames = {
 };
 
 const sizeMultiplier = 2.5;
+const IconButton = styled.a`
+  background-color: ${prop('backgroundColor')};
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-size: ${prop('iconSize', 16)}px;
+  width: ${withProp('iconSize', size => `${size * sizeMultiplier}`)}px;
+  height: ${withProp('iconSize', size => `${size * sizeMultiplier}`)}px;
+  line-height: ${withProp('iconSize', size => `${size * sizeMultiplier}`)}px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 100%;
+  transition: opacity 200ms ease-in-out;
 
-const SocialIconButton = ({ network, href, onClick, iconSize, id, className, style }) => {
-  const size = iconSize * sizeMultiplier;
+  :hover,
+  :active {
+    opacity: 0.7;
+  }
+`;
 
-  const hoverStyles = {
-    opacity: 0.7
-  };
-
-  const styles = {
-    backgroundColor: backgroundColors[network],
-    color: '#fff',
-    cursor: 'pointer',
-    display: 'inline-block',
-    fontSize: `${iconSize}px`,
-    height: `${size}px`,
-    lineHeight: `${size}px`,
-    textAlign: 'center',
-    textDecoration: 'none',
-    borderRadius: '100%',
-    transition: `opacity 200ms ease-in-out`,
-    width: `${size}px`,
-
-    ':hover': hoverStyles,
-    ':active': hoverStyles
-  };
-
+const SocialIconButton = ({ network, href, onClick, iconSize, id, className }) => {
   return (
-    <a
+    <IconButton
+      backgroundColor={backgroundColors[network]}
+      iconSize={iconSize}
       className={cn('SocialIconButton', className)}
       id={id}
       href={href}
       onClick={onClick}
-      style={[styles, style]}
       data-network={network}
     >
       {iconFromString(iconNames[network])}
-    </a>
+    </IconButton>
   );
 };
 
@@ -82,8 +79,7 @@ SocialIconButton.propTypes = {
   onClick: PropTypes.func,
   iconSize: PropTypes.number,
   id: PropTypes.string,
-  className: PropTypes.string,
-  style: PropTypes.objectOf(PropTypes.object)
+  className: PropTypes.string
 };
 
 SocialIconButton.defaultProps = {
@@ -91,8 +87,7 @@ SocialIconButton.defaultProps = {
   onClick: null,
   iconSize: 16,
   id: '',
-  className: '',
-  style: {}
+  className: ''
 };
 
-export default Radium(SocialIconButton);
+export default SocialIconButton;
