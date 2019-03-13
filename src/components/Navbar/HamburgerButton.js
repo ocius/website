@@ -1,59 +1,63 @@
 import React, { Component } from 'react';
-import Radium from 'radium';
+import styled from 'styled-components';
+import mq from '../../common/mq';
 
-const styles = {
-  navbarToggle: {
-    position: 'relative',
-    padding: '9px 10px',
-    marginTop: '8px',
-    marginRight: '15px',
-    marginBottom: '8px',
-    marginLeft: 'auto',
-    backgroundColor: 'transparent',
-    backgroundImage: 'none',
-    borderWidth: '1px',
-    borderStyle: 'solid',
-    borderRadius: '4px',
-    borderColor: '#ddd',
-    cursor: 'pointer',
-    boxSizing: 'border-box',
+const NavbarToggle = styled.button`
+  position: relative;
+  padding: 9px 10px;
+  margin-top: 8px;
+  margin-right: 15px;
+  margin-bottom: 8px;
+  margin-left: auto;
+  background-color: transparent;
+  background-image: none;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 4px;
+  border-color: #ddd;
+  cursor: pointer;
+  box-sizing: border-box;
 
-    ':hover': {
-      backgroundColor: '#ddd'
-    },
-
-    ':focus': {
-      outline: '0',
-      backgroundColor: '#ddd'
-    },
-    '@media (min-width: 768px)': {
-      display: 'none'
-    }
-  },
-  srOnly: {
-    position: 'absolute',
-    width: '1px',
-    height: '1px',
-    padding: '0',
-    margin: '-1px',
-    overflow: 'hidden',
-    clip: 'rect(0, 0, 0, 0)',
-    borderWidth: '0',
-    borderStyle: 'none',
-    boxSizing: 'border-box'
-  },
-  iconBar: {
-    display: 'block',
-    width: '22px',
-    height: '2px',
-    borderRadius: '1px',
-    backgroundColor: '#888',
-    boxSizing: 'border-box'
-  },
-  burger: {
-    marginTop: '4px'
+  :hover {
+    background-color: #ddd;
   }
-};
+
+  :focus {
+    outline: 0;
+    background-color: #ddd;
+  }
+
+  @media (min-width: ${mq.min[768]}) {
+    display: none;
+  }
+`;
+
+// For accessibility purposes only, add visually hidden text
+const SrOnly = styled.span`
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border-width: 0;
+  border-style: none;
+  box-sizing: border-box;
+`;
+
+const IconBar = styled.span`
+  display: block;
+  width: 22px;
+  height: 2px;
+  border-radius: 1px;
+  background-color: #888;
+  box-sizing: border-box;
+
+  & + & {
+    margin-top: 4px;
+  }
+`;
 
 class HamburgerButton extends Component {
   constructor(props) {
@@ -75,9 +79,8 @@ class HamburgerButton extends Component {
 
   render() {
     return (
-      <button
+      <NavbarToggle
         type="button"
-        style={[styles.navbarToggle]}
         onClick={
           this.props.handleClick
             ? this.props.handleClick
@@ -86,13 +89,13 @@ class HamburgerButton extends Component {
               }
         }
       >
-        <span style={[styles.srOnly]}>Toggle navigation</span>
-        <span style={[styles.iconBar]} />
-        <span style={[styles.iconBar, styles.burger]} />
-        <span style={[styles.iconBar, styles.burger]} />
-      </button>
+        <SrOnly>Toggle navigation</SrOnly>
+        <IconBar />
+        <IconBar />
+        <IconBar />
+      </NavbarToggle>
     );
   }
 }
 
-export default Radium(HamburgerButton);
+export default HamburgerButton;
