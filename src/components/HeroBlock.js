@@ -36,19 +36,17 @@ const HeroContainer = styled(BackgroundImage)`
     `}
 `;
 
+const StyledContainer = styled(Container)`
+  height: 100%;
+  position: relative;
+  z-index: 2;
+`;
+
 HeroContainer.defaultProps = {};
 
 const HeroBlock = ({ children, image, constrained, gradient }) => (
   <HeroContainer Tag="section" className="HeroBlock" fluid={image} constrained={constrained}>
-    <Container
-      style={{
-        height: '100%',
-        position: 'relative',
-        zIndex: 2
-      }}
-    >
-      {children}
-    </Container>
+    <StyledContainer>{children}</StyledContainer>
 
     {gradient && <GradientOverlay gradientType={gradient} />}
   </HeroContainer>

@@ -15,7 +15,7 @@
     "color": "^3.1.0",
     "formik": "^1.5.1",
     "gatsby": "^2.0.76",
-    "gatsby-background-image": "^0.2.6",
+    "gatsby-background-image": "^0.2.61",
     "gatsby-image": "^2.0.29",
     "gatsby-plugin-google-analytics": "^2.0.14",
     "gatsby-plugin-manifest": "^2.0.20",
