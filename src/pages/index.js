@@ -67,7 +67,7 @@ export default ({ data }) => (
               BlueBottle offers economic and operational advantages over conventional methods in a
               multitude of industries, below are just some of the solutions we offer...
             </p>
-            <Button color="white" size="medium" href="/bluebottle">
+            <Button color="white" size="medium" href="/bluebottle" border>
               What is a USV?
             </Button>
           </Col>

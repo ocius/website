@@ -191,9 +191,9 @@ function Button({
       onClick={onClick}
       color={color}
       size={size}
-      rounded={rounded}
-      full={full}
-      border={border}
+      rounded={rounded ? 1 : undefined}
+      full={full ? 1 : undefined}
+      border={border ? 1 : undefined}
       {...rest}
     >
       {children}
@@ -265,7 +265,7 @@ Button.defaultProps = {
   size: 'medium',
   rounded: false,
   full: false,
-  border: true,
+  border: false,
   customStyles: null,
   className: null
 };

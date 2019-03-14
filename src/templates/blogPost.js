@@ -21,7 +21,7 @@ export default ({ data }) => {
         <Container>
           <Row>
             <Col className="primary-content" xs={8} md={7} lg={7}>
-              <Heading className="title" level="2" size="large">
+              <Heading className="title" level={2} size="large">
                 {title}
               </Heading>
               <p className="date">{date}</p>

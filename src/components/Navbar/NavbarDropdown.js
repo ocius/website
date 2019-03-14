@@ -32,7 +32,7 @@ const Link = styled(GatsbyLink)`
   line-height: 100%;
   text-decoration: none;
   color: #001826;
-  background-color: ${prop('backgroundColor', 'transparent')};
+  background-color: ${prop('backgroundсolor', 'transparent')};
 
   :hover {
     text-decoration: none;
@@ -121,7 +121,7 @@ class NavbarDropdown extends Component {
           to={link}
           onMouseOver={this.showDropdown}
           onFocus={this.showDropdown}
-          backgroundColor={this.state.open ? '#e7e7e7' : 'transparent'}
+          backgroundсolor={this.state.open ? '#e7e7e7' : 'transparent'}
         >
           {name}
           <Caret />

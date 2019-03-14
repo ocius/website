@@ -8,6 +8,7 @@ const SocialShare = ({ networks, headingText, onClick }) => (
 
     {Object.keys(networks).map(network => (
       <SocialIconButton
+        key={networks[network].name}
         className={networks[network].name}
         network={networks[network].name}
         href={networks[network].href}

@@ -26,8 +26,8 @@ export default ({ data }) => {
           <Row>
             <Col className="primary-content" xs={12} md={7} lg={7}>
               {data.allMarkdownRemark.edges.map(({ node }) => (
-                <Segmented>
-                  <article key={node.id} className="post">
+                <Segmented key={node.id}>
+                  <article className="post">
                     {node.frontmatter.featuredImage && (
                       <div className="img-wrap">
                         <Link to={node.fields.slug}>
@@ -38,12 +38,12 @@ export default ({ data }) => {
                         </Link>
                       </div>
                     )}
-                    <Heading level="3" size="medium">
+                    <Heading level={3} size="medium">
                       <Link to={node.fields.slug}>{node.frontmatter.title}</Link>
                     </Heading>
                     <p className="date">{node.frontmatter.date}</p>
                     <p>{node.excerpt}</p>
-                    <Button color="gray" size="small" border={false} to={node.fields.slug}>
+                    <Button color="gray" size="small" to={node.fields.slug}>
                       Read More
                     </Button>
                   </article>
