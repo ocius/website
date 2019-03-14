@@ -177,7 +177,7 @@ export default ({ data }) => (
         </Row>
       </Segmented>
       <Segmented borderBottom="">
-        <Button color="white" size="medium" href="/contact">
+        <Button color="white" size="medium" href="/contact" border>
           Contact Us Now
         </Button>
       </Segmented>

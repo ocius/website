@@ -121,8 +121,10 @@ export default ({ data }) => (
       <Segmented borderBottom="">
         <Row>
           <Col xs={12} md={12} lg={12}>
-            <h3>WE ARE LOOKING FOR PARTNERS TO DO JOINT VENTURE AND DEMONSTRATION PROJECTS</h3>
-            <Button color="white" size="medium" href="/contact">
+            <Heading size="medium" level={3}>
+              WE ARE LOOKING FOR PARTNERS TO DO JOINT VENTURE AND DEMONSTRATION PROJECTS
+            </Heading>
+            <Button color="white" size="medium" href="/contact" border>
               Contact Us Now
             </Button>
           </Col>

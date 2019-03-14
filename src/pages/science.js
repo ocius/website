@@ -24,29 +24,29 @@ export default ({ data }) => (
         gradient="linear"
         constrained
       >
-        <Heading size="large" level="2" weight="thick">
+        <Heading size="large" level={2} weight="thick">
           Science
         </Heading>
         <Row>
           <Col xs={12} md={6} lg={6}>
-            <Heading level="2" size="medium" weight="thick">
+            <Heading level={2} size="medium" weight="thick">
               Weather “ground truth“
             </Heading>
           </Col>
           <Col sm={12} md={6} lg={6}>
-            <Heading level="2" size="medium" weight="thick">
+            <Heading level={2} size="medium" weight="thick">
               Climate Change
             </Heading>
           </Col>
         </Row>
         <Row>
           <Col xs={12} md={6} lg={6}>
-            <Heading level="2" size="medium" weight="thick">
+            <Heading level={2} size="medium" weight="thick">
               Hurricane Landfall Prediction
             </Heading>
           </Col>
           <Col sm={12} md={6} lg={6}>
-            <Heading level="2" size="medium" weight="thick">
+            <Heading level={2} size="medium" weight="thick">
               Fisheries
             </Heading>
           </Col>
@@ -114,14 +114,14 @@ export default ({ data }) => (
         </Row>
       </Segmented>
       <Segmented borderBottom="">
-        <h3>
+        <Heading size="medium" level={3}>
           Persistent USVs are valuable tools for oceanographic and climate change research
           <br />
           <strong>Let Bluebottles help you do more</strong>
           <br />
           For how we can support your goals...
-        </h3>
-        <Button color="white" size="medium" href="/contact">
+        </Heading>
+        <Button color="white" size="medium" href="/contact" border>
           Contact Us Now
         </Button>
       </Segmented>
