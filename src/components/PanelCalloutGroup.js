@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 
 import mq from '../common/mq';
-import PanelCallout from './PanelCallout';
 
 const PanelContainer = styled.div`
   box-sizing: border-box;
@@ -24,11 +23,11 @@ PanelCalloutGroup.propTypes = {
     let error = null;
 
     React.Children.forEach(prop, child => {
-      if (child.type !== PanelCallout) {
+      if (child.type.displayName !== 'PanelCallout') {
         error = new Error(`${componentName} children should be of type "PanelCallout".`);
       }
 
-      if (child.type === PanelCallout && React.Children.count.length > 4) {
+      if (child.type.displayName === 'PanelCallout' && React.Children.count.length > 4) {
         error = new Error(`${componentName} should have no more than 4 children.`);
       }
     });
