@@ -89,7 +89,7 @@ function PanelCallout({ children, bgImage, title, url }) {
 
 PanelCallout.propTypes = {
   children: PropTypes.node,
-  bgImage: PropTypes.string.isRequired,
+  bgImage: PropTypes.objectOf(PropTypes.any).isRequired,
   title: PropTypes.string.isRequired,
   url: PropTypes.string.isRequired
 };

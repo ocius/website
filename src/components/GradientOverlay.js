@@ -60,7 +60,7 @@ GradientOverlay.propTypes = {
 };
 
 GradientOverlay.defaultProps = {
-  children: '',
+  children: null,
   color: '#4cb4e6',
   gradientType: 'linear'
 };

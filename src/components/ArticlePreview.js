@@ -84,7 +84,7 @@ ArticlePreview.propTypes = {
   title: PropTypes.string.isRequired,
   paragraph: PropTypes.string.isRequired,
   href: PropTypes.string.isRequired,
-  image: PropTypes.string
+  image: PropTypes.objectOf(PropTypes.any)
 };
 
 ArticlePreview.defaultProps = {

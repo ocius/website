@@ -55,7 +55,7 @@ const HeroBlock = ({ children, image, constrained, gradient }) => (
 );
 
 HeroBlock.propTypes = {
-  image: PropTypes.string.isRequired,
+  image: PropTypes.objectOf(PropTypes.any).isRequired,
   constrained: PropTypes.bool,
   gradient: PropTypes.string
 };
