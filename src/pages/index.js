@@ -37,7 +37,7 @@ const Callout = styled.div`
 export default ({ data }) => (
   <Layout>
     <SEO title="OCIUS - Satellites of the Sea" />
-    <Segmented borderBottom="" multiplier={3}>
+    <Segmented borderBottom="">
       {data.HeroBackground && (
         <HeroBlock image={data.HeroBackground.childImageSharp.fluid} gradient="leftCorner">
           <Callout className="HeroBlock-callout">
@@ -52,7 +52,7 @@ export default ({ data }) => (
       )}
     </Segmented>
     <Container className="centered">
-      <Segmented borderBottom="" multiplier={3}>
+      <Segmented borderBottom="">
         <Row>
           <Col xs={12} md={8} lg={8} lgOffset={2}>
             <Heading level={2} size="large" underline>
@@ -75,7 +75,7 @@ export default ({ data }) => (
     </Container>
 
     <div id="solutions" style={{ backgroundColor: '#efefef' }}>
-      <Segmented borderBottom="" multiplier={3}>
+      <Segmented borderBottom="">
         <PanelCalloutGroup>
           {data.DefenceTile && (
             <PanelCallout
