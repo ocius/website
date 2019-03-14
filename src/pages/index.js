@@ -1,6 +1,7 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import { Row, Col } from 'react-flexbox-grid';
+import styled from 'styled-components';
 import Layout from '../layouts/Layout';
 import SEO from '../components/SEO';
 import Container from '../components/Container';
@@ -16,24 +17,22 @@ import mq from '../common/mq';
 
 const gutterWidth = 30;
 
-const styles = {
-  callout: {
-    bottom: '110px',
-    left: 0,
-    position: 'absolute',
-    right: 0,
-    width: '100%',
+const Callout = styled.div`
+  bottom: 110px;
+  left: 0;
+  right: 0;
+  position: absolute;
+  width: 100%;
 
-    [`@media (max-width: ${mq.max[480]})`]: {
-      paddingRight: `${gutterWidth}px`
-    },
-
-    [`@media (min-width: ${mq.min[1024]})`]: {
-      marginRight: add([span(2), gutter()]),
-      width: span(10)
-    }
+  @media (max-width: ${mq.max[480]}) {
+    padding-right: ${gutterWidth}px;
   }
-};
+
+  @media (min-width: ${mq.min[1024]}) {
+    margin-right: ${add([span(2), gutter()])};
+    width: ${span(10)};
+  }
+`;
 
 export default ({ data }) => (
   <Layout>
@@ -41,14 +40,14 @@ export default ({ data }) => (
     <Segmented borderBottom="" multiplier={3}>
       {data.HeroBackground && (
         <HeroBlock image={data.HeroBackground.childImageSharp.fluid} gradient="leftCorner">
-          <div className="HeroBlock-callout" style={styles.callout}>
+          <Callout className="HeroBlock-callout">
             <Heading level={1} size="huge" weight="thick">
               Innovative Autonomous Solutions
             </Heading>
             <Heading level={3} size="medium">
               For persistent maritime surveillance
             </Heading>
-          </div>
+          </Callout>
         </HeroBlock>
       )}
     </Segmented>
