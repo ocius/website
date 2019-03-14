@@ -42,6 +42,8 @@ const Link = styled(GatsbyLink)`
 `;
 
 class NavbarDropdown extends Component {
+  isDropdownMounted = false;
+
   constructor() {
     super();
 
@@ -53,6 +55,19 @@ class NavbarDropdown extends Component {
     this.mouseOnDropdown = this.mouseOnDropdown.bind(this);
     this.showDropdown = this.showDropdown.bind(this);
     this.closeDropdown = this.closeDropdown.bind(this);
+  }
+
+  /**
+   * Set isDropdownMounted to true to control possible memory leaks
+   */
+  componentDidMount() {
+    this.isDropdownMounted = true;
+  }
+
+  componentWillUnmount() {
+    this.isDropdownMounted = false;
+    // Remove event listener
+    document.removeEventListener('mouseout', this.closeDropdown);
   }
 
   /*
@@ -86,20 +101,24 @@ class NavbarDropdown extends Component {
   }
 
   showDropdown() {
-    this.setState({ open: true }, () => {
-      document.addEventListener('mouseout', this.closeDropdown);
-    });
+    if (this.isDropdownMounted) {
+      this.setState({ open: true }, () => {
+        document.addEventListener('mouseout', this.closeDropdown);
+      });
+    }
   }
 
   closeDropdown() {
-    // Check if the mouse is actually over the dropdown, if so don't hide the dropdown
-    if (this.mouseOnDropdown()) {
-      return;
-    }
+    if (this.isDropdownMounted) {
+      // Check if the mouse is actually over the dropdown, if so don't hide the dropdown
+      if (this.mouseOnDropdown()) {
+        return;
+      }
 
-    this.setState({ open: false }, () => {
-      document.removeEventListener('mouseout', this.closeDropdown);
-    });
+      this.setState({ open: false }, () => {
+        document.removeEventListener('mouseout', this.closeDropdown);
+      });
+    }
   }
 
   renderChildren = () => {
