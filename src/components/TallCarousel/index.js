@@ -6,6 +6,7 @@ import Slider from 'react-slick';
 import mq from '../../common/mq';
 import Heading from '../Heading';
 import SlideTall from './SlideTall';
+import PaginatorButton from './PaginatorButton';
 
 // Import carousel styles
 import './carousel.css';
@@ -15,8 +16,7 @@ const Carousel = styled.div`
 
   @media (min-width: ${mq.min[840]}) {
     .slick-slide {
-      box-shadow: none;
-      transition: box-shadow 400ms ease, transform 400ms ease, z-index 400ms ease;
+      transition: transform 400ms ease;
     }
 
     .slick-slide:hover {
@@ -25,7 +25,11 @@ const Carousel = styled.div`
   }
 `;
 
-const Index = ({ slides, title, settings, customSettings }) => {
+const TallCarousel = ({ slides, title, settings, customSettings }) => {
+  const renderPaginator = direction => (
+    <PaginatorButton direction={direction} />
+  );
+
   return (
     <Carousel className="TallCarousel">
       {title && (
@@ -33,7 +37,12 @@ const Index = ({ slides, title, settings, customSettings }) => {
           {title}
         </Heading>
       )}
-      <Slider {...settings} {...customSettings}>
+      <Slider
+        {...settings}
+        {...customSettings}
+        prevArrow={renderPaginator('Left')}
+        nextArrow={renderPaginator('Right')}
+      >
         {slides.map(({ node }) => {
           if (node.frontmatter.featuredImage) {
             return (
@@ -57,7 +66,7 @@ const Index = ({ slides, title, settings, customSettings }) => {
   );
 };
 
-Index.propTypes = {
+TallCarousel.propTypes = {
   slides: PropTypes.arrayOf(PropTypes.object),
   title: PropTypes.string,
   settings: PropTypes.objectOf(
@@ -80,7 +89,7 @@ Index.propTypes = {
   )
 };
 
-Index.defaultProps = {
+TallCarousel.defaultProps = {
   slides: [],
   title: '',
   // React Slick settings
@@ -124,4 +133,4 @@ Index.defaultProps = {
   customSettings: {}
 };
 
-export default Index;
+export default TallCarousel;
