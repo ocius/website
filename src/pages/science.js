@@ -9,6 +9,7 @@ import Segmented from '../components/Segmented';
 import HeroBlock from '../components/HeroBlock';
 import Button from '../components/Button';
 import Heading from '../components/Heading';
+import TallCarousel from '../components/TallCarousel';
 
 export default ({ data }) => (
   <Layout>
@@ -91,7 +92,7 @@ export default ({ data }) => (
                 Large volumes of data for scientific research sorted and stored for later download
               </li>
               <li>Time and date and GPS correlated against scientific parameters</li>
-              <li>&amp;Ground truth&amp; for satellite and computer modelling</li>
+              <li>“Ground truth“ for satellite and computer modelling</li>
             </ul>
           </Col>
           <Col xs={12} md={4} lg={4}>
@@ -125,6 +126,9 @@ export default ({ data }) => (
           Contact Us Now
         </Button>
       </Segmented>
+      <Segmented borderBottom="">
+        <TallCarousel title="Ocius in Research" slides={data.allMarkdownRemark.edges} />
+      </Segmented>
     </Container>
   </Layout>
 );
@@ -135,6 +139,27 @@ export const query = graphql`
       childImageSharp {
         fluid(quality: 90, maxWidth: 1200) {
           ...GatsbyImageSharpFluid_withWebp
+        }
+      }
+    }
+
+    allMarkdownRemark(limit: 10, sort: { fields: [frontmatter___date], order: DESC }) {
+      edges {
+        node {
+          id
+          frontmatter {
+            title
+            featuredImage {
+              childImageSharp {
+                fluid(maxWidth: 272, maxHeight: 164, quality: 100) {
+                  ...GatsbyImageSharpFluid_withWebp
+                }
+              }
+            }
+          }
+          fields {
+            slug
+          }
         }
       }
     }
