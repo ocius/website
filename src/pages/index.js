@@ -14,6 +14,7 @@ import PanelCalloutGroup from '../components/PanelCalloutGroup';
 import ArticlePreviewBlock from '../components/ArticlePreviewBlock';
 import { add, gutter, span } from '../common/grid';
 import mq from '../common/mq';
+import Icon from '../components/Icon';
 
 const gutterWidth = 30;
 
@@ -68,6 +69,14 @@ export default ({ data }) => (
             </p>
             <Button color="white" size="medium" href="/bluebottle" border>
               What is a USV?
+              <Icon.ArrowRight
+                fill="#000000"
+                style={{
+                  width: '18px',
+                  height: '18px',
+                  marginLeft: '3px'
+                }}
+              />
             </Button>
           </Col>
         </Row>
