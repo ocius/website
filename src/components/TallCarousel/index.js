@@ -26,9 +26,7 @@ const Carousel = styled.div`
 `;
 
 const TallCarousel = ({ slides, title, settings, customSettings }) => {
-  const renderPaginator = direction => (
-    <PaginatorButton direction={direction} />
-  );
+  const renderPaginator = direction => <PaginatorButton direction={direction} />;
 
   return (
     <Carousel className="TallCarousel">
