@@ -539,9 +539,9 @@ export default ({ data }) => (
             </p>
             <p>
               <strong>2015</strong> –{' '}
-              <a href="https://ocius.com.au/2015/10/ocius-wins-australian-technology-competition-prize/">
+              <GatsbyLink to="/blog/ocius-wins-australian-technology-competition-prize/">
                 Winner Australian Technologies Competition
-              </a>
+              </GatsbyLink>
               , Best Advanced Manufacturing
             </p>
             <p>
