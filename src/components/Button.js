@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled, { css } from 'styled-components';
+import styled, { css, keyframes } from 'styled-components';
 import { switchProp } from 'styled-tools';
 import cn from 'classnames';
 import { Link as GatsbyLink } from 'gatsby';
@@ -14,7 +14,7 @@ const colors = {
   bgSecondary: '#efefef',
   textSecondary: '#7a96a2',
   accent: '#003859',
-  bgAccent: 'rgba(126, 130, 126, 0.3)'
+  bgAccent: 'rgba(126, 130, 126, 0.1)'
 };
 
 const borderStyle = css`
@@ -55,13 +55,26 @@ const fullStyle = css`
   width: 100%;
 `;
 
+const Zebra = keyframes`
+  from {
+    background-position: 0px 0px;
+  }
+  
+  to {
+    background-position: 2rem 4rem;
+  }
+`;
+
 const ButtonLink = styled(GatsbyLink)`
   appearance: none;
   backface-visibility: hidden;
   border: 0;
   border-radius: 0;
   cursor: pointer;
-  display: inline-block;
+  display: inline-flex;
+  flex-shrink: 0;
+  -moz-box-align: center;
+  align-items: center;
   font-weight: 600;
   line-height: 1;
   overflow: hidden;
@@ -72,13 +85,13 @@ const ButtonLink = styled(GatsbyLink)`
   text-overflow: ellipsis;
   letter-spacing: 0.6px;
   text-transform: uppercase;
-  transition: color 400ms ease-in-out, background-color 400ms ease-in-out, opacity 400ms ease-in-out;
+  transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1) 0s;
   vertical-align: middle;
   white-space: nowrap;
 
-  :focus,
+  :active,
   :hover,
-  :active {
+  :focus {
     text-decoration: none;
   }
 
@@ -98,14 +111,26 @@ const ButtonLink = styled(GatsbyLink)`
 
     white: css`
       background-color: ${colors.bgPrimary};
+      background-size: 4rem 4rem;
       color: ${colors.borderPrimary};
       box-shadow: 0 0 0 2px ${colors.borderPrimary} inset;
 
       :focus,
       :hover,
       :active {
-        background-color: ${colors.bgAccent};
         color: ${colors.textPrimary};
+        background-color: ${colors.bgAccent};
+        background-image: linear-gradient(
+          135deg,
+          rgba(38, 82, 96, 0.1) 25%,
+          transparent 25%,
+          transparent 50%,
+          rgba(38, 82, 96, 0.1) 50%,
+          rgba(38, 82, 96, 0.1) 75%,
+          transparent 75%,
+          transparent
+        );
+        animation: 2.8s linear 0s infinite normal none running ${Zebra};
       }
     `,
 
