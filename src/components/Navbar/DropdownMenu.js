@@ -32,6 +32,7 @@ const Link = styled(GatsbyLink)`
   display: block;
   padding: 10px 20px;
   clear: both;
+  font-size: 17px;
   font-weight: normal;
   line-height: 1.42857143;
   color: #333;

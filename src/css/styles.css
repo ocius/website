@@ -105,6 +105,14 @@ blockquote::before {
     font-family: 'Alegreya Sans';
 }
 
+ol li,
+ul li {
+    font-size: 1.125em;
+    font-weight: 300;
+    line-height: 1.4;
+    list-style-position: outside;
+}
+
 .centered {
     text-align: center;
 }
