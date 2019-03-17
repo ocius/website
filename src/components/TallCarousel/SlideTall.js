@@ -7,8 +7,7 @@ import styled from 'styled-components';
 import mq from '../../common/mq';
 
 const Title = styled.p`
-  font-weight: 600;
-  letter-spacing: -0.08px;
+  font-weight: 500;
   font-size: 12px;
   text-align: center;
 
