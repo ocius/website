@@ -20,6 +20,13 @@ a:hover {
     text-decoration: underline;
 }
 
+a:focus {
+    outline-color: rgba(14,190,255,0.4);
+    outline-offset: 1px;
+    outline-style: auto;
+    outline-width: 4px;
+}
+
 a {
     color: #125192;
     text-decoration: none;
