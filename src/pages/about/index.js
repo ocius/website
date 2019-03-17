@@ -518,16 +518,16 @@ export default ({ data }) => (
                 Wind Propulsion Technology User Award
               </a>{' '}
               &amp;{' '}
-              <a href="https://ocius.com.au/2016/07/wind-propulsion-innovation-award/">
+              <GatsbyLink to="/blog/wind-propulsion-innovation-award/">
                 Lifetime Achievement Award,{' '}
-              </a>
+              </GatsbyLink>
               International Windship Association
             </p>
             <p>
               <strong>2016</strong>&nbsp;–&nbsp;Robert Dane, finalist in the&nbsp;
-              <a href="https://ocius.com.au/2016/07/wind-propulsion-innovation-award/">
+              <GatsbyLink to="/blog/wind-propulsion-innovation-award/">
                 Lifetime Achievement Award,&nbsp;
-              </a>
+              </GatsbyLink>
               International Windship Association
             </p>
             <p>
