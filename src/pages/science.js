@@ -126,9 +126,7 @@ export default ({ data }) => (
           Contact Us Now
         </Button>
       </Segmented>
-      <Segmented borderBottom="">
-        <TallCarousel title="Ocius in Research" slides={data.allMarkdownRemark.edges} />
-      </Segmented>
+      <TallCarousel title="Ocius in Research" slides={data.allMarkdownRemark.edges} />
     </Container>
   </Layout>
 );

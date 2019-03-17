@@ -3,7 +3,7 @@ body {
     padding: 0;
     color: #001826;
     font-family: 'aktiv-grotesk-std',Helvetica Neue,Helvetica,Arial,sans-serif;
-    font-size: 18px;
+    font-size: 17px;
     line-height: 1.5;
 }
 
@@ -209,6 +209,7 @@ input[type="color"] {
 .page-content .secondary-content aside {
     background-color: #fff;
     border-bottom: 7px solid #d4dde1;
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
     margin: 1em;
 }
 

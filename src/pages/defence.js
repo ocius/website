@@ -9,6 +9,7 @@ import Icon from '../components/Icon';
 import Heading from '../components/Heading';
 import Button from '../components/Button';
 import Segmented from '../components/Segmented';
+import TallCarousel from '../components/TallCarousel';
 
 export default ({ data }) => (
   <Layout>
@@ -181,6 +182,7 @@ export default ({ data }) => (
           Contact Us Now
         </Button>
       </Segmented>
+      <TallCarousel title="Ocius in Defence" slides={data.allMarkdownRemark.edges} />
     </Container>
   </Layout>
 );
@@ -191,6 +193,27 @@ export const query = graphql`
       childImageSharp {
         fluid(quality: 90, maxWidth: 1200) {
           ...GatsbyImageSharpFluid_withWebp
+        }
+      }
+    }
+
+    allMarkdownRemark(limit: 10, sort: { fields: [frontmatter___date], order: DESC }) {
+      edges {
+        node {
+          id
+          frontmatter {
+            title
+            featuredImage {
+              childImageSharp {
+                fluid(maxWidth: 272, maxHeight: 164, quality: 100) {
+                  ...GatsbyImageSharpFluid_withWebp
+                }
+              }
+            }
+          }
+          fields {
+            slug
+          }
         }
       }
     }
