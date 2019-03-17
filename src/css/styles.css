@@ -80,6 +80,31 @@ h6 {
     margin-bottom: 0.5em
 }
 
+blockquote, q {
+    quotes: none;
+}
+
+blockquote {
+    margin: 1em 0;
+    padding: 0 0 0 4em;
+    color: #135292;
+    font-style: italic;
+    font-size: .9em;
+    font-weight: 300;
+    line-height: 160%;
+    position: relative;
+}
+
+blockquote::before {
+    content: "“";
+    font-size: 6em;
+    position: absolute;
+    left: -5px;
+    top: 25px;
+    font-weight: 500;
+    font-family: 'Alegreya Sans';
+}
+
 .centered {
     text-align: center;
 }
