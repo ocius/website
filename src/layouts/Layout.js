@@ -5,6 +5,7 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import Container from '../components/Container';
 import Icon from '../components/Icon';
+import SocialLink from '../components/SocialLink';
 import '../css/styles.css';
 
 export default ({ children }) => (
@@ -81,6 +82,8 @@ export default ({ children }) => (
               <br />
               Mail PO Box 4304 Castlecrag 2068 NSW Australia
             </p>
+            <SocialLink network="facebook" href="https://www.facebook.com/ociustechnology" />
+            <SocialLink network="twitter" href="https://twitter.com/OciusTechnology" />
           </Col>
         </Row>
       </Container>
