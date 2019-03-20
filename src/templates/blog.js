@@ -10,8 +10,11 @@ import RecentNews from '../components/RecentNews';
 import Heading from '../components/Heading';
 import Segmented from '../components/Segmented';
 import Button from '../components/Button';
+import Pagination from '../components/Pagination';
 
-export default ({ data }) => {
+export default ({ data, pageContext }) => {
+  const { edges: posts } = data.allMarkdownRemark;
+
   return (
     <Layout>
       <SEO
@@ -25,7 +28,7 @@ export default ({ data }) => {
         <Container>
           <Row>
             <Col className="primary-content" xs={12} md={7} lg={7}>
-              {data.allMarkdownRemark.edges.map(({ node }) => (
+              {posts.map(({ node }) => (
                 <Segmented key={node.id}>
                   <article className="post">
                     {node.frontmatter.featuredImage && (
@@ -49,6 +52,7 @@ export default ({ data }) => {
                   </article>
                 </Segmented>
               ))}
+              <Pagination pageContext={pageContext} pathPrefix="/" />
             </Col>
             <Col className="secondary-content" xs={12} md={5} lg={4} lgOffset={1}>
               <RecentNews />
@@ -61,8 +65,12 @@ export default ({ data }) => {
 };
 
 export const query = graphql`
-  query {
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+  query IndexQuery($limit: Int!, $skip: Int!) {
+    allMarkdownRemark(
+      sort: { fields: [frontmatter___date], order: DESC }
+      limit: $limit
+      skip: $skip
+    ) {
       totalCount
       edges {
         node {

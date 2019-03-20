@@ -1,20 +1,24 @@
-const path = require(`path`)
-const { createFilePath } = require(`gatsby-source-filesystem`)
+const _ = require('lodash');
 
-exports.onCreateNode = ({ node, getNode, actions }) => {
-  const { createNodeField } = actions
+const path = require(`path`);
+const { createFilePath } = require(`gatsby-source-filesystem`);
+const { paginate } = require('gatsby-awesome-pagination');
+
+exports.onCreateNode = ({ node, actions, getNode }) => {
+  const { createNodeField } = actions;
+
   if (node.internal.type === `MarkdownRemark`) {
-    const slug = createFilePath({ node, getNode, basePath: `pages` })
+    const value = createFilePath({ node, getNode });
     createNodeField({
-      node,
       name: `slug`,
-      value: slug,
-    })
+      node,
+      value
+    });
   }
-}
+};
 
 exports.createPages = ({ graphql, actions }) => {
-  const { createPage } = actions
+  const { createPage } = actions;
   return graphql(`
     {
       allMarkdownRemark {
@@ -28,16 +32,37 @@ exports.createPages = ({ graphql, actions }) => {
       }
     }
   `).then(result => {
-    result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+    if (result.errors) {
+      result.errors.forEach(e => console.error(e.toString()));
+      return Promise.reject(result.errors);
+    }
+
+    const postTemplate = path.resolve(`./src/templates/blogPost.js`);
+    const blogTemplate = path.resolve(`./src/templates/blog.js`);
+
+    const allPosts = result.data.allMarkdownRemark.edges;
+
+    // Iterate over the array of posts
+    _.each(allPosts, ({ node: post }) => {
+      // Create the Gatsby page for this WordPress post
       createPage({
-        path: node.fields.slug,
-        component: path.resolve(`./src/templates/blogPost.js`),
+        path: `/${post.fields.slug}/`,
+        component: postTemplate,
         context: {
           // Data passed to context is available
           // in page queries as GraphQL variables.
-          slug: node.fields.slug,
-        },
-      })
-    })
-  })
-}
+          slug: post.fields.slug
+        }
+      });
+    });
+
+    // Create a paginated blog, e.g., /news, /news/2, /news/3
+    paginate({
+      createPage,
+      items: allPosts,
+      itemsPerPage: 10,
+      pathPrefix: '/news',
+      component: blogTemplate
+    });
+  });
+};
