@@ -2,6 +2,7 @@
 title: "OCIUS Technology Awarded Defence Innovation Hub contract"
 date: "2018-11-22"
 author: "Kevin Chan"
+category: "Defence"
 ---
 
 The Defence Innovation Hub has awarded $1.7 million to Ocius, in order to “determine the viability of an intelligent command and control network of persistent unmanned surface vessels”.

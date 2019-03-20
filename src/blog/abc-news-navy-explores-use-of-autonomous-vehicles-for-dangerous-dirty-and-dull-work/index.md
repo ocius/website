@@ -2,6 +2,7 @@
 title: "ABC News: Navy explores use of autonomous vehicles for dangerous, dirty and dull work"
 date: "2018-11-12"
 author: "Kevin Chan"
+category: "Defence"
 featuredImage: ABC-News.png
 ---
 

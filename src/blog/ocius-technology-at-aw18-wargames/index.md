@@ -2,6 +2,7 @@
 title: "OCIUS Technology at AW18 Wargames"
 date: "2018-11-14"
 author: "Kevin Chan"
+category: "Defence"
 featuredImage: WamV.jpg
 ---
 

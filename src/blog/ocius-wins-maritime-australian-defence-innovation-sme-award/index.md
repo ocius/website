@@ -2,6 +2,7 @@
 title: "$10,000 Maritime Australian Defence Innovation Grant Awarded by Hon Minister for Defence Industry ​Christopher Pyne"
 date: "2017-10-04"
 author: "Kevin Chan"
+category: "Defence"
 featuredImage: DSC_9138.jpg
 ---
 

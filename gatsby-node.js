@@ -60,7 +60,7 @@ exports.createPages = ({ graphql, actions }) => {
     paginate({
       createPage,
       items: allPosts,
-      itemsPerPage: 10,
+      itemsPerPage: 3,
       pathPrefix: '/news',
       component: blogTemplate
     });
