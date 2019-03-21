@@ -12,6 +12,7 @@ import Heading from '../components/Heading';
 import PanelCallout from '../components/PanelCallout';
 import PanelCalloutGroup from '../components/PanelCalloutGroup';
 import ArticlePreviewBlock from '../components/ArticlePreviewBlock';
+import RecentNews from '../components/RecentNews';
 import { add, gutter, span } from '../common/grid';
 import mq from '../common/mq';
 import Icon from '../components/Icon';
@@ -33,6 +34,10 @@ const Callout = styled.div`
     margin-right: ${add([span(2), gutter()])};
     width: ${span(10)};
   }
+`;
+
+const RecentNewsWrapper = styled(Container)`
+  background-color: #fff;
 `;
 
 export default ({ data }) => (
@@ -129,6 +134,10 @@ export default ({ data }) => (
           <ArticlePreviewBlock />
         </Segmented>
       </Container>
+
+      <RecentNewsWrapper>
+        <RecentNews />
+      </RecentNewsWrapper>
     </div>
   </Layout>
 );
