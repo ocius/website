@@ -197,7 +197,11 @@ export const query = graphql`
       }
     }
 
-    allMarkdownRemark(limit: 10, sort: { fields: [frontmatter___date], order: DESC }) {
+    allMarkdownRemark(
+      limit: 10
+      sort: { fields: [frontmatter___date], order: DESC }
+      filter: { frontmatter: { category: { in: "Defence" } } }
+    ) {
       edges {
         node {
           id
