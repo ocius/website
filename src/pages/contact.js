@@ -23,7 +23,7 @@ export default () => (
     <section className="page-content">
       <Container>
         <Row>
-          <Col className="primary-content" xs={8} md={7} lg={7}>
+          <Col className="primary-content" xs={12} md={7} lg={7}>
             <Row>
               <Col xs={12} md={6} lg={6}>
                 <strong>For General Enquiries</strong>
@@ -67,7 +67,7 @@ export default () => (
               </Col>
             </Row>
           </Col>
-          <Col className="secondary-content" xs={4} md={5} lg={4} lgOffset={1}>
+          <Col className="secondary-content" xs={12} md={5} lg={4} lgOffset={1}>
             <RecentNews />
           </Col>
         </Row>
