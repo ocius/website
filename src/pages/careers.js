@@ -4,6 +4,7 @@ import SEO from '../components/SEO';
 import Layout from '../layouts/Layout';
 import PageHeader from '../components/PageHeader';
 import Container from '../components/Container';
+import Heading from '../components/Heading';
 import RecentNews from '../components/RecentNews';
 
 const styles = {
@@ -26,7 +27,9 @@ export default () => (
         <Row>
           <Col className="primary-content" xs={12} md={7} lg={7}>
             <article>
-              <h2>Working with Ocius – “Oceans is us”</h2>
+              <Heading level="2" size="large">
+                Working with Ocius – “Oceans is us”
+              </Heading>
               <p>
                 Ocius is an Australian public unlisted Sydney-based SME (small to medium enterprise)
                 operating at the cutting edge of technology to design and build autonomous robots
@@ -37,7 +40,9 @@ export default () => (
                 If you like a challenge, can work in a team, love the ocean and believe in a
                 positive future you could be part of our exciting future.
               </p>
-              <h3>Featured Jobs</h3>
+              <Heading level="3" size="medium">
+                Featured Jobs
+              </Heading>
               <pre>
                 <span style={styles.underline}>Roles</span>&nbsp;- Junior Software and Systems
                 Engineers
