@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { prop } from 'styled-tools';
 import { Link as GatsbyLink } from 'gatsby';
-import mq from '../../common/mq';
 
 const Menu = styled.ul`
   display: ${prop('display', 'none')};
@@ -16,16 +15,6 @@ const Menu = styled.ul`
   z-index: 1000;
   text-align: left;
   list-style: none;
-
-  @media (max-width: ${mq.max[768]}) {
-    position: static;
-    float: none;
-    width: auto;
-    margin-top: 0;
-    background-color: transparent;
-    border: 0;
-    box-shadow: none;
-  }
 `;
 
 const Link = styled(GatsbyLink)`
@@ -45,16 +34,6 @@ const Link = styled(GatsbyLink)`
     background: #efefef;
     color: #001826;
     text-decoration: none;
-  }
-
-  @media (max-width: ${mq.max[768]}) {
-    background-color: transparent;
-    color: #777;
-
-    :hover {
-      color: #333;
-      background: transparent;
-    }
   }
 `;
 

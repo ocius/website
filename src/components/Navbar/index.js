@@ -1,11 +1,11 @@
 import React from 'react';
 import Navbar from './Navbar';
 import SiteLogo from './SiteLogo';
-import HamburgerButton from './HamburgerButton';
 import NavbarItems from './NavbarItems';
 import NavbarItem from './NavbarItem';
 import NavbarDropdown from './NavbarDropdown';
 import DropdownMenu from './DropdownMenu';
+import MobileNavigation from './MobileNavigation';
 
 const navitems = [
   { link: '/find-bruce', title: 'Find Bruce' },
@@ -17,7 +17,7 @@ const navitems = [
 export default () => (
   <Navbar>
     <SiteLogo />
-    <HamburgerButton />
+    <MobileNavigation />
     <NavbarItems>
       <NavbarDropdown name="About" link="/about">
         <DropdownMenu

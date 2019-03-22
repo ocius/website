@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { Link as GatsbyLink } from 'gatsby';
-import mq from '../../common/mq';
 
 const Item = styled.li`
   position: relative;
@@ -11,10 +10,6 @@ const Item = styled.li`
   font-size: 1em;
   font-weight: 300;
   line-height: 1.4;
-
-  @media (max-width: ${mq.max[768]}) {
-    display: block;
-  }
 `;
 
 const Link = styled(GatsbyLink)`
