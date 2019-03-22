@@ -1,76 +1,25 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
-import Radium from 'radium';
+import styled from 'styled-components';
 import mq from '../../common/mq';
 
-class NavbarItems extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      menuOpen: this.props.menuOpen ? this.props.menuOpen : false
-    };
+const NavItems = styled.ul`
+  margin: 0 0 0 auto;
+  padding: 0;
+  text-align: right;
+  list-style: outside none none;
+
+  @media (max-width: ${mq.max[768]}) {
+    display: none;
   }
+`;
 
-  componentWillReceiveProps(nextProps) {
-    if (nextProps.menuOpen !== this.state.menuOpen) {
-      this.setState({ menuOpen: nextProps.menuOpen });
-    }
-  }
-
-  onClickHandler = activeIndex => {
-    this.setState({
-      activeIndex
-    });
-  };
-
-  renderChildren = () => {
-    const { children } = this.props;
-    const { activeIndex } = this.state;
-    return React.Children.map(children, (child, index) => {
-      return React.cloneElement(child, {
-        index,
-        activeIndex,
-        parentCallBack: this.onClickHandler
-      });
-    });
-  };
-
-  render() {
-    const gutter = 30;
-    const styles = {
-      base: {
-        margin: '0',
-        padding: '0',
-        textAlign: 'right',
-        listStyle: 'outside none none',
-        [`@media (max-width: ${mq.max[768]})`]: {
-          display: this.state.menuOpen ? 'block' : 'none',
-          position: 'inherit',
-          background: '#fff',
-          top: '10px',
-          borderTop: '1px solid #001826',
-          marginLeft: `-${gutter / 2}px`,
-          marginRight: `-${gutter / 2}px`
-        }
-      }
-    };
-
-    const { style } = this.props;
-    return (
-      <ul className="navitems" style={[styles.base, style && style]}>
-        {this.renderChildren()}
-      </ul>
-    );
-  }
-}
+const NavbarItems = ({ children }) => {
+  return <NavItems className="navitems">{children}</NavItems>;
+};
 
 NavbarItems.propTypes = {
-  style: PropTypes.objectOf(PropTypes.object),
   children: PropTypes.node.isRequired
 };
 
-NavbarItems.defaultProps = {
-  style: {}
-};
-
-export default Radium(NavbarItems);
+export default NavbarItems;

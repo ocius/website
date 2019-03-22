@@ -1,122 +1,164 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import Radium from 'radium';
+import { Link as GatsbyLink } from 'gatsby';
+import styled from 'styled-components';
+import { prop } from 'styled-tools';
+
+const Dropdown = styled.li`
+  position: relative;
+  display: inline-block;
+  list-style: none;
+  font-size: 1em;
+  font-weight: 300;
+  line-height: 1.4;
+`;
+
+const Caret = styled.b`
+  display: inline-block;
+  width: 0;
+  height: 0;
+  margin-left: 2px;
+  vertical-align: middle;
+  border-top: 4px dashed;
+  border-right: 4px solid transparent;
+  border-left: 4px solid transparent;
+`;
+
+const Link = styled(GatsbyLink)`
+  display: inline-block;
+  padding: 1.5em 1em 1.5em;
+  font-size: 1em;
+  font-weight: 500;
+  line-height: 100%;
+  text-decoration: none;
+  color: #001826;
+  background-color: ${prop('backgroundсolor', 'transparent')};
+
+  :hover {
+    text-decoration: none;
+    color: #60d2f6;
+    background-color: #ffffff;
+  }
+`;
 
 class NavbarDropdown extends Component {
-  state = {
-    open: false
-  };
+  isDropdownMounted = false;
 
-  componentWillReceiveProps(nextProps) {
-    const { index, activeIndex } = nextProps;
-    if (index === activeIndex) {
-      if (this.state.open) {
-        this.setState({ open: false });
-        // When all the dropdowns are closed, activeIndex is set to -1
-        this.props.parentCallBack(-1);
-      } else {
-        this.setState({ open: true });
+  constructor() {
+    super();
+
+    this.state = {
+      open: false
+    };
+
+    this.setRef = this.setRef.bind(this);
+    this.mouseOnDropdown = this.mouseOnDropdown.bind(this);
+    this.showDropdown = this.showDropdown.bind(this);
+    this.closeDropdown = this.closeDropdown.bind(this);
+  }
+
+  /**
+   * Set isDropdownMounted to true to control possible memory leaks
+   */
+  componentDidMount() {
+    this.isDropdownMounted = true;
+  }
+
+  componentWillUnmount() {
+    this.isDropdownMounted = false;
+    // Remove event listener
+    document.removeEventListener('mouseout', this.closeDropdown);
+  }
+
+  /*
+    Access ref of a child component
+   */
+  setRef(input) {
+    this.dropdownMenu = input;
+  }
+
+  /**
+   * Return if the mouse is on the tooltip.
+   * @returns {boolean} true - mouse is on the tooltip
+   */
+  mouseOnDropdown() {
+    const { open } = this.state;
+
+    if (open && this.dropdownMenu) {
+      /* old IE or Firefox work around */
+      if (!this.dropdownMenu.matches) {
+        /* old IE work around */
+        if (this.dropdownMenu.msMatchesSelector) {
+          this.dropdownMenu.matches = this.dropdownMenu.msMatchesSelector;
+        } else {
+          /* old Firefox work around */
+          this.dropdownMenu.matches = this.dropdownMenu.mozMatchesSelector;
+        }
       }
-    } else {
-      this.setState({ open: false });
+      return this.dropdownMenu.matches(':hover');
+    }
+    return false;
+  }
+
+  showDropdown() {
+    if (this.isDropdownMounted) {
+      this.setState({ open: true }, () => {
+        document.addEventListener('mouseout', this.closeDropdown);
+      });
+    }
+  }
+
+  closeDropdown() {
+    if (this.isDropdownMounted) {
+      // Check if the mouse is actually over the dropdown, if so don't hide the dropdown
+      if (this.mouseOnDropdown()) {
+        return;
+      }
+
+      this.setState({ open: false }, () => {
+        document.removeEventListener('mouseout', this.closeDropdown);
+      });
     }
   }
 
   renderChildren = () => {
-    const { children, index, activeIndex } = this.props;
-    let active = false;
-    // This particular dropdown is clicked
-    if (index === activeIndex) {
-      active = true;
-    }
+    const { children } = this.props;
     return React.Children.map(children, child => {
       return React.cloneElement(child, {
         open: this.state.open,
-        active
+        setRef: this.setRef
       });
     });
   };
 
-  getStyles = () => {
-    const styles = {
-      dropdown: {
-        position: 'relative',
-        display: 'inline-block',
-        listStyle: 'none',
-        fontSize: '1em',
-        fontWeight: '300',
-        lineHeight: '1.4',
-
-        ':hover': {
-          color: '#60d2f6',
-          backgroundColor: '#fff'
-        }
-      },
-      caret: {
-        display: 'inline-block',
-        width: '0',
-        height: '0',
-        marginLeft: '2px',
-        verticalAlign: 'middle',
-        borderTop: '4px dashed',
-        borderRight: '4px solid transparent',
-        borderLeft: '4px solid transparent'
-      },
-      link: {
-        display: 'inline-block',
-        padding: '1.5em 1em 1.5em',
-        fontSize: '1em',
-        fontWeight: '500',
-        lineHeight: '100%',
-        textDecoration: 'none',
-        color: '#001826'
-      }
-    };
-    if (this.props.index === this.props.activeIndex) {
-      styles.link.backgroundColor = this.state.open ? '#e7e7e7' : 'transparent';
-    }
-    return styles;
-  };
-
   render() {
-    const { style, name, link, itemStyle } = this.props;
-    const defStyle = this.getStyles();
+    const { name, link } = this.props;
 
     return (
-      <li style={[defStyle.dropdown, style && style]}>
-        <a
-          href={link}
-          onMouseEnter={() => this.setState({ open: true })}
-          onMouseLeave={() => this.setState({ open: false })}
-          style={[defStyle.link, itemStyle && itemStyle]}
+      <Dropdown>
+        <Link
+          to={link}
+          onMouseOver={this.showDropdown}
+          onFocus={this.showDropdown}
+          backgroundсolor={this.state.open ? '#e7e7e7' : 'transparent'}
         >
           {name}
-          <b style={[defStyle.caret]} />
-        </a>
+          <Caret />
+        </Link>
         {this.renderChildren()}
-      </li>
+      </Dropdown>
     );
   }
 }
 
 NavbarDropdown.propTypes = {
   name: PropTypes.string,
-  link: PropTypes.string,
-  style: PropTypes.objectOf(PropTypes.object),
-  itemStyle: PropTypes.objectOf(PropTypes.object),
-  index: PropTypes.number,
-  activeIndex: PropTypes.number,
-  parentCallBack: PropTypes.func
+  link: PropTypes.string
 };
 
 NavbarDropdown.defaultProps = {
   name: '',
-  link: '',
-  style: {},
-  itemStyle: {},
-  index: 0,
-  activeIndex: 0,
-  parentCallBack: null
+  link: ''
 };
 
-export default Radium(NavbarDropdown);
+export default NavbarDropdown;

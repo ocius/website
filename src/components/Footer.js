@@ -1,21 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Radium from 'radium';
+import styled from 'styled-components';
 
-const styles = {
-  footer: {
-    backgroundColor: '#125192',
-    width: '100%',
-    clear: 'both',
-    padding: '4.5em 0'
-  }
-};
+const StyledFooter = styled.footer`
+  background-color: #125192;
+  width: 100%;
+  clear: both;
+  padding: 4.5em 0;
+`;
 
 const Footer = ({ children, footerStyle }) => {
   return (
-    <footer className="footer" style={[styles.footer, footerStyle && footerStyle]}>
+    <StyledFooter className="footer" style={footerStyle}>
       {children}
-    </footer>
+    </StyledFooter>
   );
 };
 
@@ -28,4 +26,4 @@ Footer.defaultProps = {
   footerStyle: {}
 };
 
-export default Radium(Footer);
+export default Footer;

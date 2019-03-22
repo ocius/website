@@ -1,27 +1,36 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Radium from 'radium';
+import styled from 'styled-components';
+import mq from '../common/mq';
 import Container from './Container';
 
-const styles = {
-  background: {
-    backgroundColor: '#125192',
-    minHeight: '180px'
-  },
-  header: {
-    color: '#60d2f6',
-    paddingTop: '80px',
-    marginTop: '0'
+const HeaderContainer = styled.header`
+  background-color: #125192;
+  min-height: 180px;
+
+  @media (max-width: ${mq.max[768]}) {
+    font-size: 0.9em;
+    min-height: 80px;
   }
-};
+`;
+
+const Heading = styled.h1`
+  color: #60d2f6;
+  padding-top: 80px;
+  margin-top: 0;
+
+  @media (max-width: ${mq.max[768]}) {
+    padding-top: 5px;
+  }
+`;
 
 const PageHeader = ({ children }) => {
   return (
-    <header className="page-header" style={[styles.background]}>
+    <HeaderContainer className="page-header">
       <Container>
-        <h1 style={[styles.header]}>{children}</h1>
+        <Heading>{children}</Heading>
       </Container>
-    </header>
+    </HeaderContainer>
   );
 };
 
@@ -29,4 +38,4 @@ PageHeader.propTypes = {
   children: PropTypes.node.isRequired
 };
 
-export default Radium(PageHeader);
+export default PageHeader;

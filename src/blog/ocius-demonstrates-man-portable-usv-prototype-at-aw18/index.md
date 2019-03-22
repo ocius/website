@@ -2,6 +2,7 @@
 title: "OCIUS demonstrates ‘man portable’ USV prototype at Autonomous Warrior 18 Wargames"
 date: "2018-12-13"
 author: "Kevin Chan"
+category: "Defence"
 featuredImage: ocius-demonstrates-man-portable.jpg
 ---
 

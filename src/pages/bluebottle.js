@@ -4,24 +4,9 @@ import SEO from '../components/SEO';
 import Container from '../components/Container';
 import BluebottleImage from '../../static/wallpaperocius-768x432.jpg';
 import Heading from '../components/Heading';
+import Segmented from '../components/Segmented';
 
 const styles = {
-  center: {
-    textAlign: 'center'
-  },
-  header: {
-    ':after': {
-      content: '',
-      position: 'absolute',
-      bottom: 0,
-      left: 0,
-      right: 0,
-      borderBottom: '1px solid #60d2f6',
-      height: '1px',
-      width: '150px',
-      margin: 'auto'
-    }
-  },
   highlight: {
     color: '#3366ff'
   },
@@ -41,12 +26,14 @@ export default () => (
     <section className="page-content">
       <Container>
         <article>
-          <Heading level="1" weight="thick" override={styles.center}>
-            What is a USV?
-          </Heading>
-          <Heading level="3" override={styles.center}>
-            A USV is an Unmanned Surface Vessel
-          </Heading>
+          <Segmented className="centered">
+            <Heading level={1} size="huge" weight="thick" underline>
+              What is a USV?
+            </Heading>
+            <Heading level={3} size="medium">
+              A USV is an Unmanned Surface Vessel
+            </Heading>
+          </Segmented>
           <h4>
             <strong>There are two types:</strong>
           </h4>
@@ -82,20 +69,20 @@ export default () => (
             often have low performance to manoeuvre, avoid collisions and &apos;make way&apos; out
             of currents.
           </p>
-          <p style={styles.center}>
+          <p className="centered">
             <strong>
               Bluebottles harvest all the weather on the ocean; the sun, the wind and the waves so
               they can advance under all conditions and can remain at sea for months at a
               time.&nbsp;
             </strong>
           </p>
-          <p style={styles.center}>
+          <p className="centered">
             <strong>
               Bluebottles have more power, payload and performance in the one USV than any known
               persistent USV.
             </strong>
           </p>
-          <p style={styles.center}>
+          <p className="centered">
             <img src={BluebottleImage} alt="Bluebottle USV" />
           </p>
           <p>

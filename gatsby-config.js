@@ -64,6 +64,25 @@ module.exports = {
         include_favicon: true, // Include favicon
       },
     },
+
+    // Enable styled components support
+    {
+      resolve: `gatsby-plugin-styled-components`,
+      options: {
+        // Add any options here
+      },
+    },
+
+    // Load TypeKit fonts asynchronously
+    {
+      resolve: 'gatsby-plugin-web-font-loader',
+      options: {
+        typekit: {
+          id: 'agd1kws'
+        }
+      }
+    },
+
     `gatsby-plugin-react-helmet`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,

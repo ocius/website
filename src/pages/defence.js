@@ -1,26 +1,15 @@
 import React from 'react';
 import { graphql } from 'gatsby';
+import { Row, Col } from 'react-flexbox-grid';
 import Layout from '../layouts/Layout';
 import SEO from '../components/SEO';
 import HeroBlock from '../components/HeroBlock';
 import Container from '../components/Container';
-import Row from '../components/GridRow';
-import Column from '../components/GridColumn';
 import Icon from '../components/Icon';
 import Heading from '../components/Heading';
 import Button from '../components/Button';
 import Segmented from '../components/Segmented';
-
-const styles = {
-  alignment: {
-    left: {
-      textAlign: 'left'
-    },
-    center: {
-      textAlign: 'center'
-    }
-  }
-};
+import TallCarousel from '../components/TallCarousel';
 
 export default ({ data }) => (
   <Layout>
@@ -32,60 +21,56 @@ export default ({ data }) => (
 
     <HeroBlock
       image={data.HeroBackground ? data.HeroBackground.childImageSharp.fluid : ''}
-      style={{
-        textAlign: 'center',
-        color: '#ffffff'
-      }}
       constrained
     >
-      <Heading level={2} weight="thick">
+      <Heading level={2} size="large" weight="thick">
         Defence
       </Heading>
       <Row>
-        <Column sm={12} md={6} lg={6} fluid>
+        <Col xs={12} md={6} lg={6}>
           <Heading level={2} size="medium" weight="thick">
             Anti-Submarine Warfare
           </Heading>
-        </Column>
-        <Column sm={12} md={6} lg={6} fluid>
+        </Col>
+        <Col xs={12} md={6} lg={6}>
           <Heading level={2} size="medium" weight="thick">
             Electronic Warfare
           </Heading>
-        </Column>
+        </Col>
       </Row>
       <Row>
-        <Column sm={12} md={6} lg={6} fluid>
+        <Col xs={12} md={6} lg={6}>
           <Heading level={2} size="medium" weight="thick">
             Mine Counter Measures
           </Heading>
-        </Column>
-        <Column sm={12} md={6} lg={6} fluid>
+        </Col>
+        <Col xs={12} md={6} lg={6}>
           <Heading level={2} size="medium" weight="thick">
             Gateway Communications
           </Heading>
-        </Column>
+        </Col>
       </Row>
     </HeroBlock>
 
-    <Container style={styles.alignment.center}>
+    <Container className="centered">
       <Segmented borderBottom="">
         <Row>
-          <Column sm={12} md={8} lg={8} lgShift={2} fluid>
-            <Heading level={3}>
+          <Col xs={12} md={8} lg={8} lgOffset={2}>
+            <Heading size="medium" level={3}>
               Persistent USVs are being seen as strategic in Defence as force multipliers
             </Heading>
-            <Heading level={3}>
+            <Heading size="medium" level={3}>
               <strong>
                 Bluebottles have more power payload and performance making them the superior
                 persistent USV for defence
               </strong>
             </Heading>
-          </Column>
+          </Col>
         </Row>
       </Segmented>
       <Segmented borderBottom="">
         <Row>
-          <Column sm={12} md={4} lg={4} fluid>
+          <Col xs={12} md={4} lg={4}>
             <Icon.Ship
               fill="#4db4e6"
               style={{
@@ -95,7 +80,7 @@ export default ({ data }) => (
               }}
             />
             <h5>Anti-Submarine Warfare</h5>
-            <ul style={styles.alignment.left}>
+            <ul className="left-align">
               <li>Silent</li>
               <li>“Reel in keel“ winch</li>
               <li>50W average / kW bursts</li>
@@ -104,8 +89,8 @@ export default ({ data }) => (
               <li>Speed to resolve L-R ambiguity</li>
               <li>Network &amp; collaborate with other Bluebottles &amp; other assets</li>
             </ul>
-          </Column>
-          <Column sm={12} md={4} lg={4} fluid>
+          </Col>
+          <Col xs={12} md={4} lg={4}>
             <Icon.Podcast
               fill="#4db4e6"
               style={{
@@ -115,14 +100,14 @@ export default ({ data }) => (
               }}
             />
             <h5>Electronic Warfare</h5>
-            <ul style={styles.alignment.left}>
+            <ul className="left-align">
               <li>6m mast above sea level</li>
               <li>Communications and Radar</li>
               <li>Combine with other sensors</li>
               <li>Electronic Support Measures (ESM) platform</li>
             </ul>
-          </Column>
-          <Column sm={12} md={4} lg={4} fluid>
+          </Col>
+          <Col xs={12} md={4} lg={4}>
             <Icon.Link
               fill="#4db4e6"
               style={{
@@ -132,15 +117,15 @@ export default ({ data }) => (
               }}
             />
             <h5>Gateway Communications</h5>
-            <ul style={styles.alignment.left}>
+            <ul className="left-align">
               <li>6m mast above sea level</li>
               <li>Combine with other sensors</li>
               <li>Cross-domain communications and data exchange system</li>
             </ul>
-          </Column>
+          </Col>
         </Row>
         <Row>
-          <Column sm={12} md={4} lg={4} fluid>
+          <Col xs={12} md={4} lg={4}>
             <Icon.ConnectDevelop
               fill="#4db4e6"
               style={{
@@ -150,13 +135,13 @@ export default ({ data }) => (
               }}
             />
             <h5>Multiple sensors</h5>
-            <ul style={styles.alignment.left}>
+            <ul className="left-align">
               <li>More power, payload and performance</li>
               <li>Network with other Bluebottles and assets</li>
               <li>Allows multiple sensors on the same platform</li>
             </ul>
-          </Column>
-          <Column sm={12} md={4} lg={4} fluid>
+          </Col>
+          <Col xs={12} md={4} lg={4}>
             <Icon.Bomb
               fill="#4db4e6"
               style={{
@@ -166,13 +151,13 @@ export default ({ data }) => (
               }}
             />
             <h5>Mine Counter Measures</h5>
-            <ul style={styles.alignment.left}>
+            <ul className="left-align">
               <li>Manage fleets of underwater assets</li>
               <li>Intelligent path planning and manoeuvring systems</li>
               <li>Remain safely in proximity while exchanging high-volume data</li>
             </ul>
-          </Column>
-          <Column sm={12} md={4} lg={4} fluid>
+          </Col>
+          <Col xs={12} md={4} lg={4}>
             <Icon.Anchor
               fill="#4db4e6"
               style={{
@@ -182,21 +167,22 @@ export default ({ data }) => (
               }}
             />
             <h5>Other</h5>
-            <ul style={styles.alignment.left}>
+            <ul className="left-align">
               <li>Intrinsic low-observability</li>
               <li>2 per 20&apos; shipping container</li>
               <li>5-6 m aft communications mast</li>
               <li>Silent when not communicating</li>
               <li>LARS from boat ramp or jetty/deck crane</li>
             </ul>
-          </Column>
+          </Col>
         </Row>
       </Segmented>
       <Segmented borderBottom="">
-        <Button color="white" size="medium" href="/contact">
+        <Button color="white" size="medium" href="/contact" border>
           Contact Us Now
         </Button>
       </Segmented>
+      <TallCarousel title="Ocius in Defence" slides={data.allMarkdownRemark.edges} />
     </Container>
   </Layout>
 );
@@ -207,6 +193,31 @@ export const query = graphql`
       childImageSharp {
         fluid(quality: 90, maxWidth: 1200) {
           ...GatsbyImageSharpFluid_withWebp
+        }
+      }
+    }
+
+    allMarkdownRemark(
+      limit: 10
+      sort: { fields: [frontmatter___date], order: DESC }
+      filter: { frontmatter: { category: { in: "Defence" } } }
+    ) {
+      edges {
+        node {
+          id
+          frontmatter {
+            title
+            featuredImage {
+              childImageSharp {
+                fluid(maxWidth: 272, maxHeight: 164, quality: 100) {
+                  ...GatsbyImageSharpFluid_withWebp
+                }
+              }
+            }
+          }
+          fields {
+            slug
+          }
         }
       }
     }

@@ -1,39 +1,39 @@
-import React from 'react';
-import { StyleRoot } from 'radium';
+import React, { Fragment } from 'react';
 import { Link } from 'gatsby';
+import { Row, Col } from 'react-flexbox-grid';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import Container from '../components/Container';
-import Row from '../components/GridRow';
-import Column from '../components/GridColumn';
+import Icon from '../components/Icon';
+import SocialLink from '../components/SocialLink';
 import '../css/styles.css';
 
 export default ({ children }) => (
-  <StyleRoot>
+  <Fragment>
     <Navbar />
     {children}
     <Footer>
       <Container>
         <Row>
-          <Column sm={12} md={3} lg={3} fluid>
+          <Col xs={12} md={3} lg={3}>
             <Link to="/about">About</Link>
             <ul className="menu-secondary">
               <li>
                 <Link to="/about">Mission</Link>
               </li>
               <li>
-                <Link to="/about">People</Link>
+                <Link to="/about#people">People</Link>
               </li>
               <li>
-                <Link to="/about">Partners</Link>
+                <Link to="/about#partners">Partners</Link>
               </li>
               <li>
-                <Link to="/about">Awards</Link>
+                <Link to="/about#awards">Awards</Link>
               </li>
             </ul>
-          </Column>
-          <Column sm={12} md={3} lg={3} fluid>
-            <Link to="/solutions">Solutions</Link>
+          </Col>
+          <Col xs={12} md={3} lg={3}>
+            <Link to="/#solutions">Solutions</Link>
             <ul className="menu-secondary">
               <li>
                 <Link to="/defence">Defence</Link>
@@ -46,8 +46,8 @@ export default ({ children }) => (
               </li>
             </ul>
             <Link to="/contact">Contact</Link>
-          </Column>
-          <Column sm={12} md={3} lg={3} fluid>
+          </Col>
+          <Col xs={12} md={3} lg={3}>
             <Link to="/bluebottle">BlueBottle USV</Link>
             <ul className="menu-secondary">
               <li>
@@ -57,28 +57,36 @@ export default ({ children }) => (
                 <Link to="/bluebottle">BlueBottle Overview</Link>
               </li>
               <li>
-                <Link to="/bluebottle">Technical Specifications</Link>
+                <Link to="/bluebottle-usv-brochure">Technical Specifications</Link>
               </li>
             </ul>
             <Link to="/careers">Careers</Link>
-          </Column>
-          <Column sm={12} md={3} lg={3} fluid>
-            <Link to="/find-bruce">Find Bruce</Link>
-            <Link to="/news">Media</Link>
-            <ul className="menu-secondary">
-              <li>
-                <Link to="/news">News</Link>
-              </li>
-              <li>
-                <Link to="/news">Photos</Link>
-              </li>
-              <li>
-                <Link to="/news">Technical Specifications</Link>
-              </li>
-            </ul>
-          </Column>
+          </Col>
+          <Col xs={12} md={3} lg={3} style={{ textAlign: 'right' }}>
+            <Icon.OciusGlobe
+              fill="#ffffff"
+              style={{
+                height: '110px',
+                marginBottom: '3px',
+                width: 'auto'
+              }}
+            />
+            <p>
+              22 King St,
+              <br />
+              Building R13
+              <br />
+              UNSW Randwick Campus,
+              <br />
+              Randwick NSW 2031
+              <br />
+              Mail PO Box 4304 Castlecrag 2068 NSW Australia
+            </p>
+            <SocialLink network="facebook" href="https://www.facebook.com/ociustechnology" />
+            <SocialLink network="twitter" href="https://twitter.com/OciusTechnology" />
+          </Col>
         </Row>
       </Container>
     </Footer>
-  </StyleRoot>
+  </Fragment>
 );

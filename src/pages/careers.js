@@ -1,10 +1,10 @@
 import React from 'react';
+import { Row, Col } from 'react-flexbox-grid';
 import SEO from '../components/SEO';
 import Layout from '../layouts/Layout';
 import PageHeader from '../components/PageHeader';
 import Container from '../components/Container';
-import Row from '../components/GridRow';
-import Column from '../components/GridColumn';
+import Heading from '../components/Heading';
 import RecentNews from '../components/RecentNews';
 
 const styles = {
@@ -25,9 +25,11 @@ export default () => (
     <section className="page-content">
       <Container>
         <Row>
-          <Column className="primary-content" sm={8} md={7} lg={7} fluid>
+          <Col className="primary-content" xs={12} md={7} lg={7}>
             <article>
-              <h2>Working with Ocius – “Oceans is us”</h2>
+              <Heading level="2" size="large">
+                Working with Ocius – “Oceans is us”
+              </Heading>
               <p>
                 Ocius is an Australian public unlisted Sydney-based SME (small to medium enterprise)
                 operating at the cutting edge of technology to design and build autonomous robots
@@ -38,7 +40,9 @@ export default () => (
                 If you like a challenge, can work in a team, love the ocean and believe in a
                 positive future you could be part of our exciting future.
               </p>
-              <h3>Featured Jobs</h3>
+              <Heading level="3" size="medium">
+                Featured Jobs
+              </Heading>
               <pre>
                 <span style={styles.underline}>Roles</span>&nbsp;- Junior Software and Systems
                 Engineers
@@ -72,10 +76,10 @@ export default () => (
                 <li>Experience with Ardupilot and supporting tools is highly desirable.</li>
               </ul>
             </article>
-          </Column>
-          <Column className="secondary-content" sm={4} md={5} lg={4} lgShift={1} fluid>
+          </Col>
+          <Col className="secondary-content" xs={12} md={5} lg={4} lgOffset={1}>
             <RecentNews />
-          </Column>
+          </Col>
         </Row>
       </Container>
     </section>

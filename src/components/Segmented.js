@@ -1,24 +1,31 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
+import { prop, withProp } from 'styled-tools';
 
 // Import media queries
 import mq from '../common/mq';
 
-const Segmented = ({ children, borderBottom, multiplier }) => (
-  <div
+const SegmentedContainer = styled.div`
+  border-bottom: ${prop('borderbottom', '1px solid #efefef')};
+  padding-bottom: ${withProp('multiplier', multiplier => `${multiplier * 2.25}rem`)};
+  margin-bottom: ${withProp('multiplier', multiplier => `${multiplier * 2.25}rem`)};
+
+  @media (min-width: ${mq.min['1024']}) {
+    padding-bottom: ${withProp('multiplier', multiplier => `${multiplier * 3.2}rem`)};
+    margin-bottom: ${withProp('multiplier', multiplier => `${multiplier * 3.2}rem`)};
+  }
+`;
+
+const Segmented = ({ children, borderBottom, multiplier, ...rest }) => (
+  <SegmentedContainer
     className="Segmented"
-    style={{
-      borderBottom,
-      paddingBottom: `${2.25 * multiplier}rem`,
-      marginBottom: `${2.25 * multiplier}2.25rem`,
-      [`@media (minWidth: ${mq.min['1024']})`]: {
-        marginBottom: `${3.2 * multiplier}rem`,
-        paddingBottom: `${3.2 * multiplier}rem`
-      }
-    }}
+    borderbottom={borderBottom}
+    multiplier={multiplier}
+    {...rest}
   >
     {children}
-  </div>
+  </SegmentedContainer>
 );
 
 Segmented.propTypes = {

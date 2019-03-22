@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import assign from 'object-assign';
+import styled from 'styled-components';
 import { Link as GatsbyLink } from 'gatsby';
 import Img from 'gatsby-image';
 
@@ -8,75 +8,75 @@ import font from '../common/font';
 import Heading from './Heading';
 import mq from '../common/mq';
 
-const markup = html => ({ __html: html });
+const Container = styled.article`
+  font-family: ${font('grotesk')};
+  color: #001826;
+  background-color: #ffffff;
+  max-width: 540px;
+  padding: 20px;
+
+  @media (max-width: ${mq.max[768]}) {
+    padding: 0;
+  }
+`;
+
+const TextContainer = styled.div`
+  margin-bottom: 22px;
+`;
+
+const Paragraph = styled.p`
+  font-size: 1em;
+  font-weight: 300;
+  line-height: ${28 / 16};
+  margin-bottom: 0;
+  margin-top: 13px;
+`;
+
+const StyledLink = styled(GatsbyLink)`
+  color: inherit;
+  display: block;
+  text-decoration: none;
+`;
+
+const StyledLinkMargin = styled(StyledLink)`
+  margin-top: 12px;
+`;
+
+const StyledHeading = styled(Heading)`
+  font-size: 24px;
+  line-height: ${32 / 24};
+`;
+
+const ImageContainer = styled.figure`
+  margin: 0;
+`;
+
+const Image = styled(Img)`
+  display: block;
+  max-width: 100%;
+`;
 
 function ArticlePreview({ title, paragraph, image, href }) {
-  const styles = {
-    container: {
-      fontFamily: font('grotesk'),
-      color: '#001826',
-      backgroundColor: '#ffffff',
-      maxWidth: '540px',
-      padding: '20px',
-
-      [`@media (maxWidth: ${mq.max[768]})`]: {
-        padding: 0
-      }
-    },
-
-    imageContainer: {
-      margin: 0
-    },
-
-    textContainer: {
-      marginBottom: '22px'
-    },
-
-    anchor: {
-      color: 'inherit',
-      display: 'block',
-      textDecoration: 'none'
-    },
-
-    heading: {
-      fontSize: '24px',
-      lineHeight: 32 / 24
-    },
-
-    paragraph: {
-      fontSize: '1em',
-      fontWeight: 300,
-      lineHeight: 28 / 16,
-      marginBottom: 0,
-      marginTop: '13px'
-    },
-
-    image: {
-      display: 'block',
-      maxWidth: '100%'
-    }
-  };
-
   return (
-    <article className="ArticlePreview" style={styles.container}>
-      <div className="ArticlePreview-text" style={styles.textContainer}>
-        <GatsbyLink to={href} style={assign({}, styles.anchor, { marginTop: '12px' })}>
-          <Heading level={3} weight="thick" override={styles.heading}>
+    <Container className="ArticlePreview">
+      <TextContainer className="ArticlePreview-text">
+        <StyledLinkMargin to={href}>
+          <StyledHeading level={3} size="medium" weight="thick">
             {title}
-          </Heading>
+          </StyledHeading>
 
-          <p style={styles.paragraph} dangerouslySetInnerHTML={markup(paragraph)} />
-        </GatsbyLink>
-      </div>
+          <Paragraph>{paragraph}</Paragraph>
+        </StyledLinkMargin>
+      </TextContainer>
 
       {image && (
-        <figure className="ArticlePreview-image" style={styles.imageContainer}>
-          <GatsbyLink to={href} style={styles.anchor}>
-            <Img fluid={image} alt="" style={styles.image} />
-          </GatsbyLink>
-        </figure>
+        <ImageContainer className="ArticlePreview-image">
+          <StyledLink to={href}>
+            <Image fluid={image} alt="" />
+          </StyledLink>
+        </ImageContainer>
       )}
-    </article>
+    </Container>
   );
 }
 
@@ -84,11 +84,11 @@ ArticlePreview.propTypes = {
   title: PropTypes.string.isRequired,
   paragraph: PropTypes.string.isRequired,
   href: PropTypes.string.isRequired,
-  image: PropTypes.objectOf(PropTypes.object)
+  image: PropTypes.objectOf(PropTypes.any)
 };
 
 ArticlePreview.defaultProps = {
-  image: {}
+  image: ''
 };
 
 export default ArticlePreview;

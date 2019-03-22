@@ -1,10 +1,10 @@
 import React from 'react';
 import { graphql } from 'gatsby';
+import { Row, Col } from 'react-flexbox-grid';
+import styled from 'styled-components';
 import Layout from '../layouts/Layout';
 import SEO from '../components/SEO';
 import Container from '../components/Container';
-import Row from '../components/GridRow';
-import Column from '../components/GridColumn';
 import Segmented from '../components/Segmented';
 import Button from '../components/Button';
 import HeroBlock from '../components/HeroBlock';
@@ -12,63 +12,56 @@ import Heading from '../components/Heading';
 import PanelCallout from '../components/PanelCallout';
 import PanelCalloutGroup from '../components/PanelCalloutGroup';
 import ArticlePreviewBlock from '../components/ArticlePreviewBlock';
+import RecentNews from '../components/RecentNews';
 import { add, gutter, span } from '../common/grid';
 import mq from '../common/mq';
+import Icon from '../components/Icon';
 
 const gutterWidth = 30;
 
-const styles = {
-  callout: {
-    bottom: '110px',
-    left: 0,
-    position: 'absolute',
-    right: 0,
-    width: '100%',
+const Callout = styled.div`
+  bottom: 110px;
+  left: 0;
+  right: 0;
+  position: absolute;
+  width: 100%;
 
-    [`@media (max-width: ${mq.max[480]})`]: {
-      paddingRight: `${gutterWidth}px`
-    },
-
-    [`@media (min-width: ${mq.min[1024]})`]: {
-      marginRight: add([span(2), gutter()]),
-      width: span(10)
-    }
-  },
-
-  alignment: {
-    center: {
-      textAlign: 'center'
-    }
+  @media (max-width: ${mq.max[480]}) {
+    padding-right: ${gutterWidth}px;
   }
-};
+
+  @media (min-width: ${mq.min[1024]}) {
+    margin-right: ${add([span(2), gutter()])};
+    width: ${span(10)};
+  }
+`;
+
+const RecentNewsWrapper = styled(Container)`
+  background-color: #fff;
+`;
 
 export default ({ data }) => (
   <Layout>
     <SEO title="OCIUS - Satellites of the Sea" />
-    <Segmented borderBottom="" multiplier={3}>
+    <Segmented borderBottom="">
       {data.HeroBackground && (
-        <HeroBlock
-          image={data.HeroBackground.childImageSharp.fluid}
-          gradient="leftCorner"
-          style={{
-            height: 'calc(100vh - 4em)',
-            color: '#ffffff'
-          }}
-        >
-          <div className="HeroBlock-callout" style={styles.callout}>
+        <HeroBlock image={data.HeroBackground.childImageSharp.fluid} gradient="leftCorner">
+          <Callout className="HeroBlock-callout">
             <Heading level={1} size="huge" weight="thick">
               Innovative Autonomous Solutions
             </Heading>
-            <Heading level={3}>For persistent maritime surveillance</Heading>
-          </div>
+            <Heading level={3} size="medium">
+              For persistent maritime surveillance
+            </Heading>
+          </Callout>
         </HeroBlock>
       )}
     </Segmented>
-    <Container style={styles.alignment.center}>
-      <Segmented borderBottom="" multiplier={3}>
+    <Container className="centered">
+      <Segmented borderBottom="">
         <Row>
-          <Column sm={12} md={8} lg={8} lgShift={2} fluid>
-            <Heading level={2}>
+          <Col xs={12} md={8} lg={8} lgOffset={2}>
+            <Heading level={2} size="large" underline>
               We are the solution to the most challenging problems of the ocean
             </Heading>
             <p>
@@ -79,16 +72,24 @@ export default ({ data }) => (
               BlueBottle offers economic and operational advantages over conventional methods in a
               multitude of industries, below are just some of the solutions we offer...
             </p>
-            <Button color="white" size="medium" href="/bluebottle">
+            <Button color="white" size="medium" href="/bluebottle" border>
               What is a USV?
+              <Icon.ArrowRight
+                fill="#000000"
+                style={{
+                  width: '18px',
+                  height: '18px',
+                  marginLeft: '3px'
+                }}
+              />
             </Button>
-          </Column>
+          </Col>
         </Row>
       </Segmented>
     </Container>
 
-    <div style={{ backgroundColor: '#efefef' }}>
-      <Segmented borderBottom="" multiplier={3}>
+    <div id="solutions" style={{ backgroundColor: '#efefef' }}>
+      <Segmented borderBottom="">
         <PanelCalloutGroup>
           {data.DefenceTile && (
             <PanelCallout
@@ -133,6 +134,10 @@ export default ({ data }) => (
           <ArticlePreviewBlock />
         </Segmented>
       </Container>
+
+      <RecentNewsWrapper>
+        <RecentNews />
+      </RecentNewsWrapper>
     </div>
   </Layout>
 );
