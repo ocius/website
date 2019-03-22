@@ -9,7 +9,8 @@ const HeaderContainer = styled.header`
   min-height: 180px;
 
   @media (max-width: ${mq.max[768]}) {
-    min-height: 150px;
+    font-size: 0.9em;
+    min-height: 80px;
   }
 `;
 
@@ -17,6 +18,10 @@ const Heading = styled.h1`
   color: #60d2f6;
   padding-top: 80px;
   margin-top: 0;
+
+  @media (max-width: ${mq.max[768]}) {
+    padding-top: 5px;
+  }
 `;
 
 const PageHeader = ({ children }) => {
