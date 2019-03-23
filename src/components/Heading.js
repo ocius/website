@@ -9,6 +9,7 @@ import {
   fontSizeHeading2,
   fontSizeHeading4,
   fontSizeHeading5,
+  fontSizeHeading7,
   fontSizeUppercase,
   fontWeightLight,
   fontWeightRegular,
@@ -49,22 +50,22 @@ const StyledHeading = styled.h3`
 
     small: css`
       margin-top: 1.25em;
-      font-size: ${fontSizeUppercase}px;
+      font-size: ${fontSizeHeading7}px;
 
       @media (min-width: ${mq.min[600]}) {
-        font-size: ${fontSizeUppercase + 2}px;
+        font-size: ${fontSizeHeading7 + 2}px;
       }
     `,
 
     medium: css`
       margin-top: 1em;
-      font-size: ${fontSizeHeading5 + 2}px;
-      line-height: ${40 / 26};
+      font-size: ${fontSizeHeading5}px;
+      line-height: ${40 / 32};
     `,
 
     large: css`
       margin-top: 0.75em;
-      font-size: ${fontSizeHeading2 - 8}px;
+      font-size: ${fontSizeHeading4}px;
 
       @media (min-width: ${mq.min[600]}) {
         font-size: ${fontSizeHeading2 - 3}px;

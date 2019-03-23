@@ -36,7 +36,7 @@ p {
     margin: 1em 0;
     font-weight: 300;
     font-size: 1.125em;
-    line-height: 1.4;
+    line-height: 1.45;
 }
 
 strong, b {
@@ -163,7 +163,7 @@ input[type="color"] {
 }
 
 .page-content .primary-content {
-    padding: 25px 0;
+    padding: 20px 0;
 }
 
 .page-content .primary-content .date {
@@ -179,13 +179,6 @@ input[type="color"] {
     font-weight: 700;
     margin-top: 0;
     font-size: .9em;
-}
-
-.page-content .secondary-content aside {
-    background-color: #fff;
-    border-bottom: 7px solid #d4dde1;
-    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
-    margin: 1em;
 }
 
 .page-content .secondary-content aside:first-child {
@@ -282,4 +275,15 @@ ul.menu-secondary li:before {
 
 address a {
     color: #5b90bf;
+}
+
+@media (max-width: 47.9375em) {
+    body {
+        font-size: 15px;
+    }
+
+    /* Add some padding to the content */
+    .page-content .primary-content {
+        padding: 10px;
+    }
 }

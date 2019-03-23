@@ -29,7 +29,9 @@ const PageHeader = ({ children }) => {
   return (
     <HeaderContainer className="page-header">
       <Container>
-        <H1 level={1} size="huge">{children}</H1>
+        <H1 level={1} size="huge">
+          {children}
+        </H1>
       </Container>
     </HeaderContainer>
   );

@@ -36,10 +36,6 @@ const Callout = styled.div`
   }
 `;
 
-const RecentNewsWrapper = styled(Container)`
-  background-color: #fff;
-`;
-
 export default ({ data }) => (
   <Layout>
     <SEO title="OCIUS - Satellites of the Sea" />
@@ -135,9 +131,9 @@ export default ({ data }) => (
         </Segmented>
       </Container>
 
-      <RecentNewsWrapper>
+      <Container>
         <RecentNews />
-      </RecentNewsWrapper>
+      </Container>
     </div>
   </Layout>
 );

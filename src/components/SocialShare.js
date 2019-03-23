@@ -1,10 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Heading from './Heading';
 import SocialIconButton from './SocialIconButton';
 
 const SocialShare = ({ networks, headingText, onClick }) => (
   <div className="SocialShare" role="complementary">
-    {headingText && <h5 className="ShareHeading">{headingText}</h5>}
+    {headingText && (
+      <Heading size="small" level={4} className="ShareHeading">
+        {headingText}
+      </Heading>
+    )}
 
     {Object.keys(networks).map(network => (
       <SocialIconButton
