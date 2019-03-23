@@ -16,7 +16,7 @@ export default ({ data }) => (
       performance supporting Defence, Industry and Science personnel to monitor large areas of ocean continuously
       at low cost and with no one in harm's way."
     />
-    <Container>
+    <Container className="page-content">
       <Segmented>
         <Row className="centered">
           <Col xs={12} md={8} lg={8} lgOffset={2}>
@@ -39,7 +39,7 @@ export default ({ data }) => (
         </Heading>
       </header>
       <Segmented borderBottom="">
-        <Row>
+        <Row className="primary-content">
           <Col xs={12} md={4} lg={4}>
             {data.MarkBethwaite && (
               <Img fixed={data.MarkBethwaite.childImageSharp.fixed} alt="Mark Bethwaite AM" />
@@ -99,7 +99,7 @@ export default ({ data }) => (
         </Row>
       </Segmented>
       <Segmented borderBottom="">
-        <Row>
+        <Row className="primary-content">
           <Col xs={12} md={3} lg={3}>
             {data.DavidSaxelby && (
               <Img fixed={data.DavidSaxelby.childImageSharp.fixed} alt="David Saxelby" />
@@ -197,7 +197,7 @@ export default ({ data }) => (
         </Heading>
       </header>
       <Segmented borderBottom="">
-        <Row>
+        <Row className="primary-content">
           <Col xs={12} md={6} lg={6}>
             {data.AustralianGovernment && (
               <div className="centered">
@@ -247,7 +247,7 @@ export default ({ data }) => (
         </Row>
       </Segmented>
       <Segmented borderBottom="">
-        <Row>
+        <Row className="primary-content">
           <Col xs={12} md={6} lg={6}>
             {data.Thales && (
               <div className="centered">
@@ -286,7 +286,7 @@ export default ({ data }) => (
         </Row>
       </Segmented>
       <Segmented borderBottom="">
-        <Row>
+        <Row className="primary-content">
           <Col xs={12} md={6} lg={6}>
             {data.UNSW && (
               <div className="centered">
@@ -323,7 +323,7 @@ export default ({ data }) => (
         </Row>
       </Segmented>
       <Segmented borderBottom="">
-        <Row>
+        <Row className="primary-content">
           <Col xs={12} md={6} lg={6}>
             {data.ClarkIP && (
               <div className="centered">
@@ -373,7 +373,7 @@ export default ({ data }) => (
         </Row>
       </Segmented>
       <Segmented borderBottom="">
-        <Row>
+        <Row className="primary-content">
           <Col xs={12} md={6} lg={6}>
             <header>
               <Heading level={3} size="large">

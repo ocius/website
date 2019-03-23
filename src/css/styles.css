@@ -167,6 +167,10 @@ input[type="color"] {
     padding: 20px 0;
 }
 
+.page-content .primary-content a {
+    color: #125192;
+}
+
 .page-content .primary-content .title {
     margin-bottom: 0;
 }
@@ -272,10 +276,6 @@ ul.menu-secondary li:before {
     top: 50%;
     margin-top: -4px;
     left: 0;
-}
-
-address a {
-    color: #5b90bf;
 }
 
 @media (max-width: 47.9375em) {
