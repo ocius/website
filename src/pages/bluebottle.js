@@ -4,7 +4,6 @@ import SEO from '../components/SEO';
 import Container from '../components/Container';
 import BluebottleImage from '../../static/wallpaperocius-768x432.jpg';
 import Heading from '../components/Heading';
-import Segmented from '../components/Segmented';
 
 const styles = {
   highlight: {
@@ -26,17 +25,17 @@ export default () => (
     <section className="page-content">
       <Container>
         <article>
-          <Segmented className="centered">
+          <header className="centered">
             <Heading level={1} size="huge" weight="thick" underline>
               What is a USV?
             </Heading>
-            <Heading level={3} size="medium">
+            <Heading level={2} size="medium">
               A USV is an Unmanned Surface Vessel
             </Heading>
-          </Segmented>
-          <h4>
+          </header>
+          <Heading level={4} size="small">
             <strong>There are two types:</strong>
-          </h4>
+          </Heading>
           <ol>
             <li>
               Conventional powered vessels which are unmanned. They have limited time and range at
@@ -48,9 +47,9 @@ export default () => (
               biofouling. Bluebottles are in this category.
             </li>
           </ol>
-          <h4>
+          <Heading level={4} size="small">
             <strong>Bluebottle USVs are the new &apos;Satellites Of the Sea&apos;.</strong>
-          </h4>
+          </Heading>
           <p>
             Bluebottle USVs are autonomous data gathering &amp; communications platforms being like
             &apos;satellites of the sea&apos;. They offer&nbsp;multiple economic and operational

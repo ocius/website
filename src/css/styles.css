@@ -28,7 +28,7 @@ a:focus {
 }
 
 a {
-    color: #125192;
+    color: #000000;
     text-decoration: none;
 }
 
@@ -138,6 +138,7 @@ input[type="color"] {
     position: relative;
     right: 0;
     height: 100%;
+    padding: 1em;
 }
 
 .page-content .secondary-content::before {
@@ -166,6 +167,10 @@ input[type="color"] {
     padding: 20px 0;
 }
 
+.page-content .primary-content .title {
+    margin-bottom: 0;
+}
+
 .page-content .primary-content .date {
     text-transform: uppercase;
     color: #001826;
@@ -179,10 +184,6 @@ input[type="color"] {
     font-weight: 700;
     margin-top: 0;
     font-size: .9em;
-}
-
-.page-content .secondary-content aside:first-child {
-    margin-top: 30px;
 }
 
 aside.recent-news a {

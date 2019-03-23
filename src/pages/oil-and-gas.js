@@ -69,7 +69,9 @@ export default ({ data }) => (
                 width: 'auto'
               }}
             />
-            <h5>Seabed & Pipeline Surveys</h5>
+            <Heading level={4} size="small" weight="thick">
+              Seabed & Pipeline Surveys
+            </Heading>
             <ul className="left-align">
               <li>GPS mapping</li>
               <li>Assist seismic survey</li>
@@ -88,7 +90,9 @@ export default ({ data }) => (
                 width: 'auto'
               }}
             />
-            <h5>Environmental Monitoring</h5>
+            <Heading level={4} size="small" weight="thick">
+              Environmental Monitoring
+            </Heading>
             <ul className="left-align">
               <li>Hydrocarbon monitoring</li>
               <li>Pipeline and leak checking</li>
@@ -106,7 +110,9 @@ export default ({ data }) => (
                 width: 'auto'
               }}
             />
-            <h5>Security</h5>
+            <Heading level={4} size="small" weight="thick">
+              Security
+            </Heading>
             <ul className="left-align">
               <li>Early warning against asymmetrical threats</li>
               <li>Bluebottles can hear under the water and see and sense above the water</li>

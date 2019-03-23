@@ -7,7 +7,6 @@ const gutter = 30;
 const NewsContainer = styled.aside`
   padding: 15px 20px;
   background-color: #fff;
-  margin: 1em;
   border-bottom: 7px solid #d4dde1;
   box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
 

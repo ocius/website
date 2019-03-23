@@ -74,6 +74,7 @@ const StyledHeading = styled.h3`
 
     huge: css`
       margin-top: 0.5em;
+      margin-bottom: 0;
       font-size: ${fontSizeHeading4 + 2}px;
       letter-spacing: -1px;
       line-height: ${36 / 30};

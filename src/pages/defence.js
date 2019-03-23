@@ -79,7 +79,9 @@ export default ({ data }) => (
                 width: 'auto'
               }}
             />
-            <h5>Anti-Submarine Warfare</h5>
+            <Heading level={4} size="small" weight="thick">
+              Anti-Submarine Warfare
+            </Heading>
             <ul className="left-align">
               <li>Silent</li>
               <li>“Reel in keel“ winch</li>
@@ -99,7 +101,9 @@ export default ({ data }) => (
                 width: 'auto'
               }}
             />
-            <h5>Electronic Warfare</h5>
+            <Heading level={4} size="small" weight="thick">
+              Electronic Warfare
+            </Heading>
             <ul className="left-align">
               <li>6m mast above sea level</li>
               <li>Communications and Radar</li>
@@ -116,7 +120,9 @@ export default ({ data }) => (
                 width: 'auto'
               }}
             />
-            <h5>Gateway Communications</h5>
+            <Heading level={4} size="small" weight="thick">
+              Gateway Communications
+            </Heading>
             <ul className="left-align">
               <li>6m mast above sea level</li>
               <li>Combine with other sensors</li>
@@ -134,7 +140,9 @@ export default ({ data }) => (
                 width: 'auto'
               }}
             />
-            <h5>Multiple sensors</h5>
+            <Heading level={4} size="small" weight="thick">
+              Multiple sensors
+            </Heading>
             <ul className="left-align">
               <li>More power, payload and performance</li>
               <li>Network with other Bluebottles and assets</li>
@@ -150,7 +158,9 @@ export default ({ data }) => (
                 width: 'auto'
               }}
             />
-            <h5>Mine Counter Measures</h5>
+            <Heading level={4} size="small" weight="thick">
+              Mine Counter Measures
+            </Heading>
             <ul className="left-align">
               <li>Manage fleets of underwater assets</li>
               <li>Intelligent path planning and manoeuvring systems</li>
@@ -166,7 +176,9 @@ export default ({ data }) => (
                 width: 'auto'
               }}
             />
-            <h5>Other</h5>
+            <Heading level={4} size="small" weight="thick">
+              Other
+            </Heading>
             <ul className="left-align">
               <li>Intrinsic low-observability</li>
               <li>2 per 20&apos; shipping container</li>
