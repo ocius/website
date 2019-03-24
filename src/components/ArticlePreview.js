@@ -13,7 +13,7 @@ const Container = styled.article`
   color: #001826;
   background-color: #ffffff;
   max-width: 540px;
-  padding: 20px;
+  padding: 1em;
 
   @media (max-width: ${mq.max[768]}) {
     margin: 0 -15px;

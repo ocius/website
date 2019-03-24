@@ -28,24 +28,24 @@ export default ({ data }) => (
       </Heading>
       <Row>
         <Col xs={12} md={6} lg={6}>
-          <Heading level={2} size="medium" weight="thick">
+          <Heading level={3} size="medium" weight="thick">
             Anti-Submarine Warfare
           </Heading>
         </Col>
         <Col xs={12} md={6} lg={6}>
-          <Heading level={2} size="medium" weight="thick">
+          <Heading level={3} size="medium" weight="thick">
             Electronic Warfare
           </Heading>
         </Col>
       </Row>
       <Row>
         <Col xs={12} md={6} lg={6}>
-          <Heading level={2} size="medium" weight="thick">
+          <Heading level={3} size="medium" weight="thick">
             Mine Counter Measures
           </Heading>
         </Col>
         <Col xs={12} md={6} lg={6}>
-          <Heading level={2} size="medium" weight="thick">
+          <Heading level={3} size="medium" weight="thick">
             Gateway Communications
           </Heading>
         </Col>

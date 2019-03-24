@@ -27,24 +27,24 @@ export default ({ data }) => (
       </Heading>
       <Row>
         <Col xs={12} md={6} lg={6}>
-          <Heading level={2} size="medium" weight="thick">
+          <Heading level={3} size="medium" weight="thick">
             Seabed and Pipeline Surveys
           </Heading>
         </Col>
         <Col xs={12} md={6} lg={6}>
-          <Heading level={2} size="medium" weight="thick">
+          <Heading level={3} size="medium" weight="thick">
             Security
           </Heading>
         </Col>
       </Row>
       <Row>
         <Col xs={12} md={6} lg={6}>
-          <Heading level={2} size="medium" weight="thick">
+          <Heading level={3} size="medium" weight="thick">
             Environment Monitoring
           </Heading>
         </Col>
         <Col xs={12} md={6} lg={6}>
-          <Heading level={2} size="medium" weight="thick">
+          <Heading level={3} size="medium" weight="thick">
             Partners
           </Heading>
         </Col>
@@ -52,11 +52,11 @@ export default ({ data }) => (
     </HeroBlock>
     <Container className="centered">
       <Segmented borderBottom="">
-        <h3>
+        <Heading level={3} size="medium">
           USVs are already being used in the Oil &amp; Gas industry
           <br />
           <strong>Bluebottles can do more</strong>
-        </h3>
+        </Heading>
       </Segmented>
       <Segmented>
         <Row>

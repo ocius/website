@@ -41,7 +41,6 @@ const Underline = css`
 const StyledHeading = styled.h3`
   font-family: ${font('effra')};
   line-height: 1.2;
-  margin-top: 1em;
 
   ${switchProp('size', {
     tiny: css`
@@ -50,6 +49,7 @@ const StyledHeading = styled.h3`
 
     small: css`
       margin-top: 1.25em;
+      margin-bottom: 0.25em;
       font-size: ${fontSizeHeading7}px;
 
       @media (min-width: ${mq.min[600]}) {
@@ -59,12 +59,14 @@ const StyledHeading = styled.h3`
 
     medium: css`
       margin-top: 1em;
+      margin-bottom: 0.5em;
       font-size: ${fontSizeHeading5}px;
-      line-height: ${40 / 32};
+      line-height: ${40 / 28};
     `,
 
     large: css`
       margin-top: 0.75em;
+      margin-bottom: 0.5em;
       font-size: ${fontSizeHeading4}px;
 
       @media (min-width: ${mq.min[600]}) {

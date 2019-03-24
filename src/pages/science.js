@@ -30,24 +30,24 @@ export default ({ data }) => (
         </Heading>
         <Row>
           <Col xs={12} md={6} lg={6}>
-            <Heading level={2} size="medium" weight="thick">
+            <Heading level={3} size="medium" weight="thick">
               Weather “ground truth“
             </Heading>
           </Col>
           <Col sm={12} md={6} lg={6}>
-            <Heading level={2} size="medium" weight="thick">
+            <Heading level={3} size="medium" weight="thick">
               Climate Change
             </Heading>
           </Col>
         </Row>
         <Row>
           <Col xs={12} md={6} lg={6}>
-            <Heading level={2} size="medium" weight="thick">
+            <Heading level={3} size="medium" weight="thick">
               Hurricane Landfall Prediction
             </Heading>
           </Col>
           <Col sm={12} md={6} lg={6}>
-            <Heading level={2} size="medium" weight="thick">
+            <Heading level={3} size="medium" weight="thick">
               Fisheries
             </Heading>
           </Col>
