@@ -16,7 +16,7 @@
     "formik": "^1.5.1",
     "gatsby": "^2.2.9",
     "gatsby-awesome-pagination": "^0.3.4",
-    "gatsby-background-image": "^0.2.73",
+    "gatsby-background-image": "https://github.com/r007/gatsby-background-image",
     "gatsby-image": "^2.0.34",
     "gatsby-plugin-google-analytics": "^2.0.17",
     "gatsby-plugin-manifest": "^2.0.24",

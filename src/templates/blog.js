@@ -1,7 +1,8 @@
 import React from 'react';
-import { Link, graphql } from 'gatsby';
+import { Link as GatsbyLink, graphql } from 'gatsby';
 import Img from 'gatsby-image';
 import { Row, Col } from 'react-flexbox-grid';
+import styled from 'styled-components';
 import Layout from '../layouts/Layout';
 import SEO from '../components/SEO';
 import PageHeader from '../components/PageHeader';
@@ -11,6 +12,10 @@ import Heading from '../components/Heading';
 import Segmented from '../components/Segmented';
 import Button from '../components/Button';
 import Pagination from '../components/Pagination';
+
+const Link = styled(GatsbyLink)`
+  color: #001826;
+`;
 
 export default ({ data, pageContext }) => {
   const { edges: posts } = data.allMarkdownRemark;

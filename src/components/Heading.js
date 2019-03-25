@@ -70,7 +70,7 @@ const StyledHeading = styled.h3`
       font-size: ${fontSizeHeading4}px;
 
       @media (min-width: ${mq.min[600]}) {
-        font-size: ${fontSizeHeading2 - 3}px;
+        font-size: ${fontSizeHeading2 - 5}px;
       }
     `,
 
