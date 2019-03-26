@@ -34,11 +34,15 @@ const iconNames = {
   twitter: 'Twitter'
 };
 
-const SocialLink = ({ network, href, ...rest }) => (
-  <Link href={href} target="_blank" {...rest}>
-    {iconFromString(iconNames[network])}
-  </Link>
-);
+const SocialLink = ({ network, href, ...rest }) => {
+  const label = `"Follow us on ${iconNames[network]}`;
+
+  return (
+    <Link href={href} target="_blank" rel="noopener" aria-label={label} {...rest}>
+      {iconFromString(iconNames[network])}
+    </Link>
+  );
+};
 
 SocialLink.propTypes = {
   network: PropTypes.oneOf(['facebook', 'reddit', 'twitter']).isRequired,
