@@ -13,7 +13,7 @@ exports.handler = (event, context, callback) => {
   headers['content-security-policy'] = [{key: 'Content-Security-Policy', value: "default-src 'self';" +
   "script-src 'self' 'unsafe-inline' www.google-analytics.com use.typekit.net;" +
   "style-src 'self' 'unsafe-inline';" +
-  "img-src 'self' p.typekit.net data:;" +
+  "img-src 'self' p.typekit.net www.google-analytics.com data:;" +
   "child-src www.youtube.com usvna.ocius.com.au;" +
   "font-src 'self' use.typekit.net;"}]; 
   headers['x-content-type-options'] = [{key: 'X-Content-Type-Options', value: 'nosniff'}]; 
