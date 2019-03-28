@@ -33,7 +33,45 @@ const Alert = styled.span`
   )};
 `;
 
+const Feedback = styled.div`
+  display: block;
+  width: 100%;
+  margin-bottom: 0.25rem;
+  font-size: 80%;
+  color: #dc3545;
+`;
+
+const FieldWrapper = styled.div`
+  margin: 0 0 0.625em;
+`;
+
 class TechnicalSpecificationForm extends React.Component {
+  static validateFullName(value) {
+    let error;
+    if (!value) {
+      error = 'Please enter your name';
+    }
+    return error;
+  }
+
+  static validateInterest(value) {
+    let error;
+    if (!value) {
+      error = 'Please enter reason for interest';
+    }
+    return error;
+  }
+
+  static validateEmail(value) {
+    let error;
+    if (!value) {
+      error = 'Please enter your email';
+    } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(value)) {
+      error = 'Please provide a valid email';
+    }
+    return error;
+  }
+
   constructor(props) {
     super(props);
     this.state = {
@@ -86,17 +124,6 @@ class TechnicalSpecificationForm extends React.Component {
                     phone: '',
                     interest: ''
                   }}
-                  validate={({ fullName, email, interest }) => {
-                    const errors = {};
-
-                    if (!email || !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(email)) {
-                      errors.email = true;
-                    }
-
-                    if (!interest || !fullName) errors.message = true;
-
-                    return errors;
-                  }}
                   onSubmit={({ fullName, email, interest }, actions) => {
                     const endPoint = 'https://c2fpksv8c0.execute-api.us-east-1.amazonaws.com/dev';
 
@@ -122,24 +149,63 @@ class TechnicalSpecificationForm extends React.Component {
                         this.handleFormSubmitError(error);
                       });
                   }}
-                  render={props => (
-                    <form onSubmit={props.handleSubmit}>
+                  render={({ errors, touched, handleSubmit, isSubmitting }) => (
+                    <form onSubmit={handleSubmit}>
                       {this.state.formMessage && (
                         <Alert success={this.state.submitSuccess}>{this.state.formMessage}</Alert>
                       )}
-                      <Field type="text" name="fullName" placeholder="Full Name (required)" />
-                      <Field type="text" name="position" placeholder="Position" />
-                      <Field type="text" name="company" placeholder="Company or Company Website" />
-                      <Field type="email" name="email" placeholder="Email (required)" />
-                      <Field type="tel" name="phone" placeholder="Phone" />
-                      <Field
-                        name="interest"
-                        component="textarea"
-                        cols={40}
-                        rows={10}
-                        placeholder="Reason for interest"
-                      />
-                      <button type="submit">Submit</button>
+                      <FieldWrapper>
+                        <Field
+                          type="text"
+                          name="fullName"
+                          validate={TechnicalSpecificationForm.validateFullName}
+                          placeholder="Full Name (required)"
+                        />
+                        {errors.fullName && touched.fullName && (
+                          <Feedback>{errors.fullName}</Feedback>
+                        )}
+                      </FieldWrapper>
+
+                      <FieldWrapper>
+                        <Field type="text" name="position" placeholder="Position" />
+                      </FieldWrapper>
+                      <FieldWrapper>
+                        <Field
+                          type="text"
+                          name="company"
+                          placeholder="Company or Company Website"
+                        />
+                      </FieldWrapper>
+                      <FieldWrapper>
+                        <Field
+                          type="email"
+                          name="email"
+                          validate={TechnicalSpecificationForm.validateEmail}
+                          placeholder="Email (required)"
+                        />
+                        {errors.email && touched.email && <Feedback>{errors.email}</Feedback>}
+                      </FieldWrapper>
+
+                      <FieldWrapper>
+                        <Field type="tel" name="phone" placeholder="Phone" />
+                      </FieldWrapper>
+                      <FieldWrapper>
+                        <Field
+                          name="interest"
+                          component="textarea"
+                          validate={TechnicalSpecificationForm.validateInterest}
+                          cols={40}
+                          rows={10}
+                          placeholder="Reason for interest"
+                        />
+                        {errors.interest && touched.interest && (
+                          <Feedback>{errors.interest}</Feedback>
+                        )}
+                      </FieldWrapper>
+
+                      <button type="submit" disabled={isSubmitting}>
+                        Submit
+                      </button>
                     </form>
                   )}
                 />

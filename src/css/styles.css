@@ -110,7 +110,6 @@ input[type="image"],
 input[type="color"] {
     display: block;
     padding: 0.5em;
-    margin: 0 0 0.625em;
     vertical-align: middle;
     border: 1px solid #fff;
     background-color: #efefef;
