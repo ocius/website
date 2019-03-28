@@ -14,7 +14,7 @@ exports.handler = (event, context, callback) => {
   "script-src 'self' 'unsafe-inline' www.google-analytics.com use.typekit.net;" +
   "style-src 'self' 'unsafe-inline';" +
   "img-src 'self' p.typekit.net www.google-analytics.com data:;" +
-  "child-src www.youtube.com usvna.ocius.com.au;" +
+  "child-src 'self' www.youtube.com usvna.ocius.com.au;" +
   "font-src 'self' use.typekit.net;"}]; 
   headers['x-content-type-options'] = [{key: 'X-Content-Type-Options', value: 'nosniff'}]; 
   headers['x-frame-options'] = [{key: 'X-Frame-Options', value: 'DENY'}]; 
