@@ -38,7 +38,11 @@ export default () => (
                 }, 1000);
               }}
               render={props => (
-                <form onSubmit={props.handleSubmit}>
+                <form
+                  action="https://c2fpksv8c0.execute-api.us-east-1.amazonaws.com/dev/contact"
+                  onSubmit={props.handleSubmit}
+                  method="POST"
+                >
                   <Field type="text" name="full_name" placeholder="Full Name (required)" />
                   <Field type="text" name="position" placeholder="Position" />
                   <Field type="text" name="company" placeholder="Company or Company Website" />
