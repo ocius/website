@@ -15,8 +15,8 @@ exports.handler = (event, context, callback) => {
   "style-src 'self' 'unsafe-inline';" +
   "img-src 'self' p.typekit.net www.google-analytics.com data:;" +
   "child-src 'self' www.youtube.com usvna.ocius.com.au;" +
-  "prefetch-src www.google-analytics.com www.google.com marketingplatform.google.com use.typekit.net;" +
-  "connect-src c2fpksv8c0.execute-api.us-east-1.amazonaws.com/dev/contact;" +
+  "prefetch-src 'self' www.google-analytics.com www.google.com marketingplatform.google.com use.typekit.net;" +
+  "connect-src 'self' c2fpksv8c0.execute-api.us-east-1.amazonaws.com;" +
   "font-src 'self' use.typekit.net;"}]; 
   headers['x-content-type-options'] = [{key: 'X-Content-Type-Options', value: 'nosniff'}]; 
   headers['x-frame-options'] = [{key: 'X-Frame-Options', value: 'DENY'}]; 
