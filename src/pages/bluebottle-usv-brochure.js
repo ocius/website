@@ -10,6 +10,42 @@ import PageHeader from '../components/PageHeader';
 import Container from '../components/Container';
 import RecentNews from '../components/RecentNews';
 
+const SubmitButton = styled.button`
+  appearance: none;
+  backface-visibility: hidden;
+  border: 0;
+  border-radius: 0;
+  cursor: pointer;
+  display: inline-flex;
+  flex-shrink: 0;
+  -moz-box-align: center;
+  align-items: center;
+  font-weight: 600;
+  line-height: 1;
+  overflow: hidden;
+  padding-left: ${30 / 13}em;
+  padding-right: ${30 / 13}em;
+  padding-bottom: ${21 / 13}em;
+  padding-top: ${26 / 13}em;
+  font-size: 13px;
+  text-align: center;
+  text-decoration: none;
+  text-overflow: ellipsis;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1) 0s;
+  vertical-align: middle;
+  white-space: nowrap;
+  background-color: #001826;
+  color: #ffffff;
+
+  &:hover,
+  &:active,
+  &:focus {
+    background-color: #003859;
+  }
+`;
+
 const Alert = styled.span`
   display: block;
   position: relative;
@@ -203,9 +239,9 @@ class TechnicalSpecificationForm extends React.Component {
                         )}
                       </FieldWrapper>
 
-                      <button type="submit" disabled={isSubmitting}>
+                      <SubmitButton type="submit" disabled={isSubmitting}>
                         Submit
-                      </button>
+                      </SubmitButton>
                     </form>
                   )}
                 />
