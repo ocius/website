@@ -44,6 +44,13 @@ const SubmitButton = styled.button`
   &:focus {
     background-color: #003859;
   }
+
+  &:disabled,
+  &[disabled] {
+    border: 1px solid #999999;
+    background-color: #cccccc;
+    color: #666666;
+  }
 `;
 
 const Alert = styled.span`
