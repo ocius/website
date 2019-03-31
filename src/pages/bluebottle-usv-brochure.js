@@ -1,5 +1,5 @@
 import React from 'react';
-import { Formik, Field } from 'formik';
+import { Formik, Field, ErrorMessage } from 'formik';
 import axios from 'axios';
 import styled, { css } from 'styled-components';
 import { ifProp } from 'styled-tools';
@@ -185,7 +185,7 @@ class TechnicalSpecificationForm extends React.Component {
                         this.handleFormSubmitError(error);
                       });
                   }}
-                  render={({ errors, touched, handleSubmit, isSubmitting }) => (
+                  render={({ handleSubmit, isSubmitting }) => (
                     <form onSubmit={handleSubmit}>
                       {this.state.formMessage && (
                         <Alert success={this.state.submitSuccess}>{this.state.formMessage}</Alert>
@@ -197,9 +197,9 @@ class TechnicalSpecificationForm extends React.Component {
                           validate={TechnicalSpecificationForm.validateFullName}
                           placeholder="Full Name (required)"
                         />
-                        {errors.fullName && touched.fullName && (
-                          <Feedback>{errors.fullName}</Feedback>
-                        )}
+                        <ErrorMessage name="fullName">
+                          {msg => <Feedback>{msg}</Feedback>}
+                        </ErrorMessage>
                       </FieldWrapper>
 
                       <FieldWrapper>
@@ -219,7 +219,9 @@ class TechnicalSpecificationForm extends React.Component {
                           validate={TechnicalSpecificationForm.validateEmail}
                           placeholder="Email (required)"
                         />
-                        {errors.email && touched.email && <Feedback>{errors.email}</Feedback>}
+                        <ErrorMessage name="email">
+                          {msg => <Feedback>{msg}</Feedback>}
+                        </ErrorMessage>
                       </FieldWrapper>
 
                       <FieldWrapper>
@@ -234,9 +236,9 @@ class TechnicalSpecificationForm extends React.Component {
                           rows={10}
                           placeholder="Reason for interest"
                         />
-                        {errors.interest && touched.interest && (
-                          <Feedback>{errors.interest}</Feedback>
-                        )}
+                        <ErrorMessage name="interest">
+                          {msg => <Feedback>{msg}</Feedback>}
+                        </ErrorMessage>
                       </FieldWrapper>
 
                       <SubmitButton type="submit" disabled={isSubmitting}>
