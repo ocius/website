@@ -234,6 +234,7 @@ footer.footer a {
 
 ul.menu-secondary {
     padding: 0;
+    margin: 0;
 }
 
 ul.menu-secondary li {
@@ -244,9 +245,7 @@ ul.menu-secondary li {
 }
 
 ul.menu-secondary li a {
-    padding: 8px 0;
     font-weight: 400;
-    display: block;
 }
 
 ul.menu-secondary li a:hover {
