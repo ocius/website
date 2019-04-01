@@ -54,10 +54,10 @@ export default ({ children }) => (
             </ul>
           </Col>
           <Col xs={12} md={2} lg={2}>
-            <FooterLink to="/bluebottle">BlueBottle USV</FooterLink>
+            <FooterLink to="/usv">BlueBottle USV</FooterLink>
             <ul className="menu-secondary">
               <li>
-                <FooterLink to="/bluebottle">What Is A USV?</FooterLink>
+                <FooterLink to="/usv">What Is A USV?</FooterLink>
               </li>
               <li>
                 <FooterLink to="/bluebottle">BlueBottle Overview</FooterLink>
