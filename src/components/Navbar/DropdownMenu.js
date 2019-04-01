@@ -10,8 +10,9 @@ const Menu = styled.ul`
   padding: 0px;
   position: absolute;
   left: 0;
-  border: 1px solid #fff;
-  background: white;
+  border: 1px solid #ddd;
+  box-shadow: 0px 3px 2px 0px rgba(0, 0, 0, 0.1);
+  background-color: white;
   z-index: 1000;
   text-align: left;
   list-style: none;
