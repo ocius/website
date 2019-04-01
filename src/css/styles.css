@@ -36,7 +36,7 @@ p {
     margin: 1em 0;
     font-weight: 300;
     font-size: 1.125em;
-    line-height: 1.4;
+    line-height: 1.45;
 }
 
 strong, b {
@@ -46,45 +46,6 @@ strong, b {
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Effra', sans-serif;
     font-weight: bold;
-}
-
-h1 {
-    font-size: 3em;
-    margin-top: 0.75em;
-    margin-bottom: 0.25em
-}
-
-h2 {
-    font-size: 2.25em;
-    margin-top: 1em;
-    margin-bottom: 0.25em;
-    font-weight: 300
-}
-
-h3 {
-    font-size: 1.5em;
-    margin-top: 1.25em;
-    margin-bottom: 0.5em;
-    font-weight: normal
-}
-
-h4 {
-    font-size: 1.25em;
-    margin-top: 1em;
-    margin-bottom: 0.5em;
-    font-weight: normal
-}
-
-h5 {
-    font-size: 1.125em;
-    margin-top: 0.5em;
-    margin-bottom: 0.5em
-}
-
-h6 {
-    font-size: 1em;
-    margin-top: 0.5em;
-    margin-bottom: 0.5em
 }
 
 blockquote, q {
@@ -149,7 +110,6 @@ input[type="image"],
 input[type="color"] {
     display: block;
     padding: 0.5em;
-    margin: 0 0 0.625em;
     vertical-align: middle;
     border: 1px solid #fff;
     background-color: #efefef;
@@ -159,6 +119,7 @@ input[type="color"] {
     border-radius: 0;
     -webkit-appearance: none;
     -moz-appearance: none;
+    box-sizing: border-box;
     width: 100%;
 }
 
@@ -177,6 +138,7 @@ input[type="color"] {
     position: relative;
     right: 0;
     height: 100%;
+    padding: 1em;
 }
 
 .page-content .secondary-content::before {
@@ -202,7 +164,12 @@ input[type="color"] {
 }
 
 .page-content .primary-content {
-    padding: 25px 0;
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+
+.page-content .primary-content .title {
+    margin-bottom: 0;
 }
 
 .page-content .primary-content .date {
@@ -218,17 +185,6 @@ input[type="color"] {
     font-weight: 700;
     margin-top: 0;
     font-size: .9em;
-}
-
-.page-content .secondary-content aside {
-    background-color: #fff;
-    border-bottom: 7px solid #d4dde1;
-    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
-    margin: 1em;
-}
-
-.page-content .secondary-content aside:first-child {
-    margin-top: 30px;
 }
 
 aside.recent-news a {
@@ -259,7 +215,7 @@ aside.recent-news .date {
     font-size: .9em;
     font-weight: 300;
     margin-top: -10px;
-    color: #a3a3a3;
+    color: #164194;
 }
 
 footer.footer p,
@@ -278,6 +234,7 @@ footer.footer a {
 
 ul.menu-secondary {
     padding: 0;
+    margin: 0;
 }
 
 ul.menu-secondary li {
@@ -288,9 +245,7 @@ ul.menu-secondary li {
 }
 
 ul.menu-secondary li a {
-    padding: 8px 0;
     font-weight: 400;
-    display: block;
 }
 
 ul.menu-secondary li a:hover {
@@ -319,6 +274,13 @@ ul.menu-secondary li:before {
     left: 0;
 }
 
-address a {
-    color: #5b90bf;
+@media (max-width: 47.9375em) {
+    body {
+        font-size: 15px;
+    }
+
+    /* Add some padding to the content */
+    .page-content .primary-content {
+        padding: 10px;
+    }
 }

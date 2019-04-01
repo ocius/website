@@ -25,8 +25,10 @@ const PanelContainer = styled.div`
   padding: calc(${gutter('static')} * 2);
 
   @media (max-width: ${mq.max[960]}) {
+    min-height: 200px;
     flex: 1 1 calc(100%);
     max-width: none;
+    padding: ${gutter('static')};
   }
 `;
 
@@ -53,6 +55,7 @@ const PanelHeading = styled(Heading)`
   @media (max-width: ${mq.max[480]}) {
     font-size: 30px;
     margin-top: 13px;
+    margin-bottom: 0;
   }
 `;
 
@@ -63,6 +66,12 @@ const PanelBody = styled.div`
   margin-right: auto;
   margin-top: 11px;
   z-index: 1;
+
+  @media (max-width: ${mq.max[960]}) {
+    p {
+      margin: 0.8em 0;
+    }
+  }
 `;
 
 const BackgroundImage = styled(Img)`

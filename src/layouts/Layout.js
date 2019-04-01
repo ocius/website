@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react';
 import { Link } from 'gatsby';
+import styled from 'styled-components';
 import { Row, Col } from 'react-flexbox-grid';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
@@ -8,6 +9,12 @@ import Icon from '../components/Icon';
 import SocialLink from '../components/SocialLink';
 import '../css/styles.css';
 
+const FooterLink = styled(Link)`
+  display: block;
+  padding: 8px 0;
+  font-size: 17px;
+`;
+
 export default ({ children }) => (
   <Fragment>
     <Navbar />
@@ -15,54 +22,58 @@ export default ({ children }) => (
     <Footer>
       <Container>
         <Row>
-          <Col xs={12} md={3} lg={3}>
-            <Link to="/about">About</Link>
+          <Col xs={12} md={2} lg={2}>
+            <FooterLink to="/about">About</FooterLink>
             <ul className="menu-secondary">
               <li>
-                <Link to="/about">Mission</Link>
+                <FooterLink to="/about">Mission</FooterLink>
               </li>
               <li>
-                <Link to="/about#people">People</Link>
+                <FooterLink to="/about#people">People</FooterLink>
               </li>
               <li>
-                <Link to="/about#partners">Partners</Link>
+                <FooterLink to="/about#partners">Partners</FooterLink>
               </li>
               <li>
-                <Link to="/about#awards">Awards</Link>
+                <FooterLink to="/about#awards">Awards</FooterLink>
               </li>
             </ul>
           </Col>
-          <Col xs={12} md={3} lg={3}>
-            <Link to="/#solutions">Solutions</Link>
+          <Col xs={12} md={2} lg={2}>
+            <FooterLink to="/#solutions">Solutions</FooterLink>
             <ul className="menu-secondary">
               <li>
-                <Link to="/defence">Defence</Link>
+                <FooterLink to="/defence">Defence</FooterLink>
               </li>
               <li>
-                <Link to="/oil-and-gas">Oil & Gas</Link>
+                <FooterLink to="/oil-and-gas">Oil & Gas</FooterLink>
               </li>
               <li>
-                <Link to="/science">Science</Link>
+                <FooterLink to="/science">Science</FooterLink>
               </li>
             </ul>
-            <Link to="/contact">Contact</Link>
           </Col>
-          <Col xs={12} md={3} lg={3}>
-            <Link to="/bluebottle">BlueBottle USV</Link>
+          <Col xs={12} md={2} lg={2}>
+            <FooterLink to="/bluebottle">BlueBottle USV</FooterLink>
             <ul className="menu-secondary">
               <li>
-                <Link to="/bluebottle">What Is A USV?</Link>
+                <FooterLink to="/bluebottle">What Is A USV?</FooterLink>
               </li>
               <li>
-                <Link to="/bluebottle">BlueBottle Overview</Link>
+                <FooterLink to="/bluebottle">BlueBottle Overview</FooterLink>
               </li>
               <li>
-                <Link to="/bluebottle-usv-brochure">Technical Specifications</Link>
+                <FooterLink to="/bluebottle-usv-brochure">Technical Specifications</FooterLink>
               </li>
             </ul>
-            <Link to="/careers">Careers</Link>
           </Col>
-          <Col xs={12} md={3} lg={3} style={{ textAlign: 'right' }}>
+          <Col xs={12} md={2} lg={2}>
+            <FooterLink to="/find-bruce">Find Bruce</FooterLink>
+            <FooterLink to="/news">News</FooterLink>
+            <FooterLink to="/contact">Contact</FooterLink>
+            <FooterLink to="/careers">Careers</FooterLink>
+          </Col>
+          <Col xs={12} md={4} lg={3} lgOffset={1} style={{ textAlign: 'right' }}>
             <Icon.OciusGlobe
               fill="#ffffff"
               style={{

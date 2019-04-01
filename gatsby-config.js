@@ -38,13 +38,12 @@ module.exports = {
 
     // Add Google Analytics
     {
-      resolve: `gatsby-plugin-google-analytics`,
+      resolve: `gatsby-plugin-gtag`,
       options: {
+        // Your google analytics tracking ID
         trackingId: 'UA-96773019-1',
         // Puts tracking script in the head instead of the body
-        head: false,
-        // Setting this parameter is also optional
-        respectDNT: true,
+        head: false
       },
     },
 

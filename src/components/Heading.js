@@ -9,6 +9,7 @@ import {
   fontSizeHeading2,
   fontSizeHeading4,
   fontSizeHeading5,
+  fontSizeHeading7,
   fontSizeUppercase,
   fontWeightLight,
   fontWeightRegular,
@@ -40,7 +41,6 @@ const Underline = css`
 const StyledHeading = styled.h3`
   font-family: ${font('effra')};
   line-height: 1.2;
-  margin-top: 1em;
 
   ${switchProp('size', {
     tiny: css`
@@ -49,30 +49,34 @@ const StyledHeading = styled.h3`
 
     small: css`
       margin-top: 1.25em;
-      font-size: ${fontSizeUppercase}px;
+      margin-bottom: 0.25em;
+      font-size: ${fontSizeHeading7}px;
 
       @media (min-width: ${mq.min[600]}) {
-        font-size: ${fontSizeUppercase + 2}px;
+        font-size: ${fontSizeHeading7 + 2}px;
       }
     `,
 
     medium: css`
       margin-top: 1em;
-      font-size: ${fontSizeHeading5 + 2}px;
-      line-height: ${40 / 26};
+      margin-bottom: 0.5em;
+      font-size: ${fontSizeHeading5}px;
+      line-height: ${40 / 28};
     `,
 
     large: css`
       margin-top: 0.75em;
-      font-size: ${fontSizeHeading2 - 8}px;
+      margin-bottom: 0.5em;
+      font-size: ${fontSizeHeading4}px;
 
       @media (min-width: ${mq.min[600]}) {
-        font-size: ${fontSizeHeading2 - 3}px;
+        font-size: ${fontSizeHeading2 - 5}px;
       }
     `,
 
     huge: css`
       margin-top: 0.5em;
+      margin-bottom: 0;
       font-size: ${fontSizeHeading4 + 2}px;
       letter-spacing: -1px;
       line-height: ${36 / 30};

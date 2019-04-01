@@ -24,20 +24,15 @@ const Callout = styled.div`
   left: 0;
   right: 0;
   position: absolute;
-  width: 100%;
 
   @media (max-width: ${mq.max[480]}) {
-    padding-right: ${gutterWidth}px;
+    padding: 0 ${gutterWidth / 2}px;
   }
 
   @media (min-width: ${mq.min[1024]}) {
     margin-right: ${add([span(2), gutter()])};
     width: ${span(10)};
   }
-`;
-
-const RecentNewsWrapper = styled(Container)`
-  background-color: #fff;
 `;
 
 export default ({ data }) => (
@@ -50,7 +45,7 @@ export default ({ data }) => (
             <Heading level={1} size="huge" weight="thick">
               Innovative Autonomous Solutions
             </Heading>
-            <Heading level={3} size="medium">
+            <Heading level={2} size="medium">
               For persistent maritime surveillance
             </Heading>
           </Callout>
@@ -135,9 +130,9 @@ export default ({ data }) => (
         </Segmented>
       </Container>
 
-      <RecentNewsWrapper>
+      <Container>
         <RecentNews />
-      </RecentNewsWrapper>
+      </Container>
     </div>
   </Layout>
 );

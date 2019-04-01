@@ -30,24 +30,24 @@ export default ({ data }) => (
         </Heading>
         <Row>
           <Col xs={12} md={6} lg={6}>
-            <Heading level={2} size="medium" weight="thick">
+            <Heading level={3} size="medium" weight="thick">
               Weather “ground truth“
             </Heading>
           </Col>
           <Col sm={12} md={6} lg={6}>
-            <Heading level={2} size="medium" weight="thick">
+            <Heading level={3} size="medium" weight="thick">
               Climate Change
             </Heading>
           </Col>
         </Row>
         <Row>
           <Col xs={12} md={6} lg={6}>
-            <Heading level={2} size="medium" weight="thick">
+            <Heading level={3} size="medium" weight="thick">
               Hurricane Landfall Prediction
             </Heading>
           </Col>
           <Col sm={12} md={6} lg={6}>
-            <Heading level={2} size="medium" weight="thick">
+            <Heading level={3} size="medium" weight="thick">
               Fisheries
             </Heading>
           </Col>
@@ -66,7 +66,9 @@ export default ({ data }) => (
                 width: 'auto'
               }}
             />
-            <h5>Weather LIVE</h5>
+            <Heading level={4} size="small" weight="thick">
+              Weather LIVE
+            </Heading>
             <ul className="left-align">
               <li>Wind direction & strength</li>
               <li>Solar intensity & cloud</li>
@@ -86,7 +88,9 @@ export default ({ data }) => (
                 width: 'auto'
               }}
             />
-            <h5>Data storage on board for later use</h5>
+            <Heading level={4} size="small" weight="thick">
+              Data storage on board for later use
+            </Heading>
             <ul className="left-align">
               <li>
                 Large volumes of data for scientific research sorted and stored for later download
@@ -104,7 +108,9 @@ export default ({ data }) => (
                 width: 'auto'
               }}
             />
-            <h5>Multiple options</h5>
+            <Heading level={4} size="small" weight="thick">
+              Multiple options
+            </Heading>
             <ul className="left-align">
               <li>Discuss with us your mission goals</li>
               <li>Replace expensive bouys with mobile platforms</li>

@@ -27,7 +27,7 @@ export default () => (
         <Row>
           <Col className="primary-content" xs={12} md={7} lg={7}>
             <article>
-              <Heading level="2" size="large">
+              <Heading level={2} size="large">
                 Working with Ocius – “Oceans is us”
               </Heading>
               <p>
@@ -40,7 +40,7 @@ export default () => (
                 If you like a challenge, can work in a team, love the ocean and believe in a
                 positive future you could be part of our exciting future.
               </p>
-              <Heading level="3" size="medium">
+              <Heading level={3} size="medium">
                 Featured Jobs
               </Heading>
               <pre>

@@ -6,6 +6,13 @@ import mq from '../common/mq';
 const gutter = 30;
 const NewsContainer = styled.aside`
   padding: 15px 20px;
+  background-color: #fff;
+  border-bottom: 7px solid #d4dde1;
+  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
+
+  a {
+    color: #001826;
+  }
 
   @media (max-width: ${mq.min[480]}) {
     margin-left: -${gutter / 2}px;

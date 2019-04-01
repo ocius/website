@@ -32,6 +32,7 @@ const HeroContainer = styled(BackgroundImage)`
 
       @media (max-width: ${mq.max[720]}) {
         max-height: none;
+        height: auto;
       }
     `}
 `;
