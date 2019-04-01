@@ -21,9 +21,9 @@ exports.handler = (event, context, callback) => {
       key: 'Content-Security-Policy',
       value:
         "default-src 'self';" +
-        "script-src 'self' 'unsafe-inline' www.google-analytics.com www.googletagmanager.com use.typekit.net;" +
+        "script-src 'self' 'unsafe-inline' www.google-analytics.com static.doubleclick.net stats.g.doubleclick.net www.googletagmanager.com use.typekit.net;" +
         "style-src 'self' 'unsafe-inline' use.typekit.net;" +
-        "img-src 'self' p.typekit.net www.google-analytics.com data:;" +
+        "img-src 'self' p.typekit.net www.google-analytics.com stats.g.doubleclick.net data:;" +
         "frame-src 'self' *.youtube.com *.youtube-nocookie.com www.instagram.com twitter.com usvna.ocius.com.au;" +
         "object-src 'self' *.googlevideo.com *.ytimg.com *.youtube.com *.youtube-nocookie.com;" +
         "connect-src 'self' www.google-analytics.com www.googletagmanager.com stats.g.doubleclick.net c2fpksv8c0.execute-api.us-east-1.amazonaws.com;" +
