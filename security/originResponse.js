@@ -24,7 +24,7 @@ exports.handler = (event, context, callback) => {
         "script-src 'self' 'unsafe-inline' www.google-analytics.com use.typekit.net;" +
         "style-src 'self' 'unsafe-inline' use.typekit.net;" +
         "img-src 'self' p.typekit.net www.google-analytics.com data:;" +
-        "frame-src 'self' *.youtube.com *.youtube-nocookie.com usvna.ocius.com.au;" +
+        "frame-src 'self' *.youtube.com *.youtube-nocookie.com www.instagram.com twitter.com usvna.ocius.com.au;" +
         "object-src 'self' *.googlevideo.com *.ytimg.com *.youtube.com *.youtube-nocookie.com;" +
         "connect-src 'self' www.google-analytics.com stats.g.doubleclick.net c2fpksv8c0.execute-api.us-east-1.amazonaws.com;" +
         "font-src 'self' use.typekit.net;"
