@@ -1,10 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import { OutboundLink } from 'gatsby-plugin-gtag';
 import iconFromString from '../common/iconFromString';
 
-const Link = styled.a`
-  padding: 0.5em 1em;
+const Link = styled(OutboundLink)`
+  padding: 0.5em 0.625em;
   margin: 0 0 0.625em;
   font-family: inherit;
   font-size: 1em;
