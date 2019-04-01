@@ -3,8 +3,8 @@ const React = require(`react`);
 exports.onRenderBody = ({ setHeadComponents }) => {
   setHeadComponents([
     <link
-      rel="dns-prefetch"
-      key="dns-prefetch-google-analytics"
+      rel="preconnect dns-prefetch"
+      key="preconnect-google-analytics"
       href="https://www.google-analytics.com"
     />,
     <link
@@ -18,10 +18,10 @@ exports.onRenderBody = ({ setHeadComponents }) => {
       href="https://marketingplatform.google.com"
     />,
     <link
-      rel="preconnect"
+      rel="preconnect dns-prefetch"
       key="preconnect-typekit"
       href="https://use.typekit.net"
-      crossorigin="anonymous"
+      crossOrigin="anonymous"
     />
   ]);
 };
