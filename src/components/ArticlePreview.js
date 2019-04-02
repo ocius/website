@@ -20,10 +20,6 @@ const Container = styled.article`
   }
 `;
 
-const TextContainer = styled.div`
-  margin-bottom: 22px;
-`;
-
 const Paragraph = styled.p`
   font-size: 1em;
   font-weight: 300;
@@ -48,7 +44,7 @@ const StyledHeading = styled(Heading)`
 `;
 
 const ImageContainer = styled.figure`
-  margin: 0;
+  margin: 22px 0 0;
 `;
 
 const Image = styled(Img)`
@@ -59,23 +55,19 @@ const Image = styled(Img)`
 function ArticlePreview({ title, paragraph, image, href }) {
   return (
     <Container className="ArticlePreview">
-      <TextContainer className="ArticlePreview-text">
-        <StyledLinkMargin to={href}>
-          <StyledHeading level={3} size="medium" weight="thick">
-            {title}
-          </StyledHeading>
+      <StyledLinkMargin to={href}>
+        <StyledHeading level={3} size="medium" weight="thick">
+          {title}
+        </StyledHeading>
 
-          <Paragraph>{paragraph}</Paragraph>
-        </StyledLinkMargin>
-      </TextContainer>
+        <Paragraph>{paragraph}</Paragraph>
 
-      {image && (
-        <ImageContainer className="ArticlePreview-image">
-          <StyledLink to={href}>
+        {image && (
+          <ImageContainer className="ArticlePreview-image">
             <Image fluid={image} alt="" />
-          </StyledLink>
-        </ImageContainer>
-      )}
+          </ImageContainer>
+        )}
+      </StyledLinkMargin>
     </Container>
   );
 }
