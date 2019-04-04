@@ -167,17 +167,17 @@ class TechnicalSpecificationForm extends React.Component {
                     phone: '',
                     interest: ''
                   }}
-                  onSubmit={({ fullName, email, interest }, actions) => {
+                  onSubmit={({ fullName, position, company, email, phone, interest }, actions) => {
                     const endPoint = 'https://c2fpksv8c0.execute-api.us-east-1.amazonaws.com/dev';
 
                     axios
                       .post(`${endPoint}/contact`, {
                         // HACK: Endpoint expects name property
                         fullName,
-                        position: '',
-                        company: '',
+                        position,
+                        company,
                         email,
-                        phone: '',
+                        phone,
                         interest
                       })
                       .then(response => {

@@ -38,9 +38,10 @@ export default () => (
           ]}
         />
       </NavbarDropdown>
-      <NavbarDropdown name="BlueBottle USV" link="/bluebottle">
+      <NavbarDropdown name="BlueBottle USV" link="/usv">
         <DropdownMenu
           menuItems={[
+            { href: '/usv', name: 'What Is A USV?' },
             { href: '/bluebottle', name: 'BlueBottle Overview' },
             { href: '/bluebottle-usv-brochure', name: 'Technical Specification' }
           ]}

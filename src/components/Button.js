@@ -83,7 +83,7 @@ const ButtonLink = styled(GatsbyLink)`
   text-align: center;
   text-decoration: none;
   text-overflow: ellipsis;
-  letter-spacing: 0.6px;
+  letter-spacing: 1px;
   text-transform: uppercase;
   transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1) 0s;
   vertical-align: middle;
