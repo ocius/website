@@ -1,4 +1,4 @@
-var CONTACT_ADDRESS = 'admin@ocius.com.au';
+var CONTACT_ADDRESS = 'enquiries@ocius.com.au';
 const AJV = require('ajv');
 
 var mailer = require('nodemailer').createTransport({
