@@ -59,7 +59,7 @@ functions:
     handler: handler.contact
     environment: 
       GMAIL_ADDRESS: ociuscontact@gmail.com
-      GMAIL_PASSWORD: HywmDVQimOmc622WdNwEtLHRj7IXZhP6nRNG6i1x7CJ0hu1fhYi7mPnqZUs
+      GMAIL_PASSWORD: 
     events:
       - http:
           path: contact
