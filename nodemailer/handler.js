@@ -28,7 +28,8 @@ module.exports.contact = (event, context, callback) => {
   });
 
   console.log(JSON.stringify(event));
-  const { fullName, position, company, email, phone, interest } = event;
+  const body = JSON.parse(event.body);
+  const { fullName, position, company, email, phone, interest } = body;
 
   const headers = {
     'Content-Type': 'application/json',
