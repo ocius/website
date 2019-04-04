@@ -1,4 +1,4 @@
-var CONTACT_ADDRESS = 'enquiries@ocius.com.au';
+var CONTACT_ADDRESS = 'tom@ocius.com.au';
 const AJV = require('ajv');
 
 var mailer = require('nodemailer').createTransport({
@@ -27,8 +27,8 @@ module.exports.contact = (event, context, callback) => {
     "required": ["fullName", "email", "interest"]
   });
 
-  console.log(JSON.stringify(event));
-  const { fullName, position, company, email, phone, interest } = event;
+  var body = JSON.parse(event.body);
+  const { fullName, position, company, email, phone, interest } = body;
 
   const headers = {
     'Content-Type': 'application/json',
@@ -59,7 +59,7 @@ module.exports.contact = (event, context, callback) => {
         if (err) return callback(err);
         callback(null, {
           statusCode: 200,
-          body: "Success!",
+          body: "Success! Email sent from  " + fullName,
           headers
         });
       });
