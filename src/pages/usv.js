@@ -102,8 +102,7 @@ export default () => (
             </p>
             <p>
               <strong>
-                We&apos;d love to hear from you.&nbsp;<span style={styles.highlight}>Tell us </span>
-                what YOU think about our product or how it could benefit your organisation...
+                We&apos;d love to hear from you.&nbsp; Tell us what you think about our product or how it could benefit your organisation.
               </strong>
             </p>
             <p>
