@@ -25,7 +25,7 @@ export default () => (
         <Row>
           <Col className="primary-content" xs={12} md={12} lg={12}>
             <header className="centered">
-              <Heading level={1} size="huge" weight="thick" underline>
+              <Heading level={1} size="huge" underline>
                 What is a USV?
               </Heading>
               <Heading level={2} size="medium">
