@@ -44,7 +44,7 @@ const StyledHeading = styled(Heading)`
   font-size: 24px;
   line-height: ${32 / 24};
   :hover {
-    text-decoration: underline
+    text-decoration: underline;
   }
 `;
 

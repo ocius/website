@@ -6,12 +6,6 @@ import Container from '../components/Container';
 import BluebottleImage from '../../static/wallpaperocius-768x432.jpg';
 import Heading from '../components/Heading';
 
-const styles = {
-  highlight: {
-    color: '#3366ff'
-  }
-};
-
 export default () => (
   <Layout>
     <SEO

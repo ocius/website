@@ -20,9 +20,7 @@ export default () => (
           <Heading size="medium" level={3}>
             See where Bruce is, what he is doing and see what Bruce sees at any time – LIVE.
           </Heading>
-          <p>
-            Bruce is now transmitting LIVE some of his on- board sensors, cameras and data.
-          </p>
+          <p>Bruce is now transmitting LIVE some of his on- board sensors, cameras and data.</p>
           <p>NB Time is Greenwich Mean Time. Press START button in the top right corner.</p>
           <iframe
             title="See where Bruce is"
