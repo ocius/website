@@ -49,7 +49,7 @@ const PanelHeading = styled(Heading)`
   z-index: 1;
 
   ${PanelContainer}:hover & {
-    transform: translateY(-5px);
+    text-decoration: underline;
   }
 
   @media (max-width: ${mq.max[480]}) {
