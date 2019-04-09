@@ -81,9 +81,11 @@ export default () => (
               Applications for USVs are myriad and measured in the billions of dollars. Major
               entities in offshore energy, defence and science are investing heavily in unmanned
               systems for “dull, dirty or dangerous” operations. Independent industry research
-              estimates the USV market for defence alone to be a staggering <a href="http://marketinfogroup.com/unmanned-surface-vehicles-for-defense-and-security-markets-technologies/">
-                US$3.8Bn by 2020
-              </a>.
+              estimates the USV market for defence alone to be a staggering
+              <a href="http://marketinfogroup.com/unmanned-surface-vehicles-for-defense-and-security-markets-technologies/">
+                &nbsp;US$3.8Bn by 2020
+              </a>
+              .
             </p>
             <p>
               Bluebottle USVs&nbsp;have greater <strong>power, payload and performance</strong>
@@ -98,7 +100,8 @@ export default () => (
             </p>
             <p>
               <strong>
-                We&apos;d love to hear from you.&nbsp; Tell us what you think about our product or how it could benefit your organisation.
+                We&apos;d love to hear from you.&nbsp; Tell us what you think about our product or
+                how it could benefit your organisation.
               </strong>
             </p>
           </Col>

@@ -83,7 +83,7 @@ export default ({ data }) => (
       </Segmented>
     </Container>
 
-    <div id="solutions" style={{ backgroundColor: '#efefef', paddingBottom: '20px'}}>
+    <div id="solutions" style={{ backgroundColor: '#efefef', paddingBottom: '20px' }}>
       <Segmented borderBottom="">
         <PanelCalloutGroup>
           {data.DefenceTile && (
