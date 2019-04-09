@@ -5,6 +5,7 @@ import SEO from '../components/SEO';
 import Container from '../components/Container';
 import BluebottleImage from '../../static/wallpaperocius-768x432.jpg';
 import Heading from '../components/Heading';
+import PageHeader from '../components/PageHeader';
 
 export default () => (
   <Layout>
@@ -14,6 +15,7 @@ export default () => (
       unmanned. They have limited time and range at sea and are acoustically noisy. Renewable energy powered vessels
       which are unmanned."
     />
+    <PageHeader>Drones</PageHeader>
     <section className="page-content">
       <Container>
         <Row>

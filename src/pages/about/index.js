@@ -5,6 +5,7 @@ import { Row, Col } from 'react-flexbox-grid';
 import SEO from '../../components/SEO';
 import Layout from '../../layouts/Layout';
 import Container from '../../components/Container';
+import PageHeader from '../../components/PageHeader';
 import Segmented from '../../components/Segmented';
 import Heading from '../../components/Heading';
 
@@ -16,6 +17,7 @@ export default ({ data }) => (
       performance supporting Defence, Industry and Science personnel to monitor large areas of ocean continuously
       at low cost and with no one in harm's way."
     />
+    <PageHeader>About</PageHeader>
     <Container className="page-content">
       <Segmented>
         <Row className="centered">
