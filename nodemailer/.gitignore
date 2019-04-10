@@ -2,5 +2,8 @@
 node_modules
 jspm_packages
 
+# Remove idea
+.idea
+
 # Serverless directories
 .serverless
