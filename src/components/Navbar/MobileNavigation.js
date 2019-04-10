@@ -183,7 +183,7 @@ const MobileNavItem = ({ linkTo, label, icon }) => (
 const MobileNavigation = () => (
   <>
     <Wrapper>
-      <MobileNavItem linkTo="/bluebottle/" label="Overview" icon="About" />
+      <MobileNavItem linkTo="/usv/" label="Overview" icon="About" />
       <MobileNavItem linkTo="/#solutions" label="Solutions" icon="Idea" />
       <MobileNavItem linkTo="/news/" label="News" icon="News" />
       <MobileNavItem linkTo="/contact/" label="Contact" icon="Support" />
