@@ -35,6 +35,9 @@ export default ({ children }) => (
                 <FooterLink to="/about#partners">Partners</FooterLink>
               </li>
               <li>
+                <FooterLink to="/about#story">Our Story</FooterLink>
+              </li>
+              <li>
                 <FooterLink to="/about#awards">Awards</FooterLink>
               </li>
             </ul>

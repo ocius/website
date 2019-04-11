@@ -25,6 +25,7 @@ export default () => (
             { href: '/about', name: 'Mission' },
             { href: '/about#people', name: 'People' },
             { href: '/about#partners', name: 'Partners' },
+            { href: '/about#story', name: 'Our Story' },
             { href: '/about#awards', name: 'Awards' }
           ]}
         />
