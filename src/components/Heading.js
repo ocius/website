@@ -32,7 +32,7 @@ const Underline = css`
     content: '';
     display: block;
     background-color: #60d2f6;
-    height: 6px;
+    height: 4px;
     width: 100px;
     margin: 10px auto;
   }
