@@ -126,8 +126,7 @@ class TechnicalSpecificationForm extends React.Component {
   handleFormSubmitSuccess() {
     this.setState({
       submitSuccess: true,
-      formMessage:
-        'Your message was sent successfully. You will receive a reply within 24 hours.'
+      formMessage: 'Your message was sent successfully. You will receive a reply within 24 hours.'
     });
   }
 
