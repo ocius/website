@@ -128,7 +128,7 @@ export default ({ data }) => (
         <Row>
           <Col xs={12} md={12} lg={12}>
             <Heading size="medium" level={3}>
-              WE ARE LOOKING FOR PARTNERS TO DO JOINT VENTURE AND DEMONSTRATION PROJECTS
+              We are looking for partners to do joint venture and demonstration projects.
             </Heading>
             <Button color="white" size="medium" href="/contact" border>
               Contact Us Now
