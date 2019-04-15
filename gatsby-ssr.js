@@ -16,12 +16,6 @@ exports.onRenderBody = ({ setHeadComponents }) => {
       rel="dns-prefetch"
       key="dns-prefetch-marketingplatform"
       href="https://marketingplatform.google.com"
-    />,
-    <link
-      rel="preconnect dns-prefetch"
-      key="preconnect-typekit"
-      href="https://use.typekit.net"
-      crossOrigin="anonymous"
     />
   ]);
 };
