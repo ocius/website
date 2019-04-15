@@ -9,7 +9,7 @@ import Heading from './Heading';
 import mq from '../common/mq';
 
 const Container = styled.article`
-  font-family: ${font('grotesk')};
+  font-family: ${font('main')};
   color: #001826;
   background-color: #ffffff;
   max-width: 540px;

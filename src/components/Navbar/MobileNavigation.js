@@ -6,7 +6,7 @@ import mq from '../../common/mq';
 import iconFromString from '../../common/iconFromString';
 
 const Wrapper = styled.div`
-  font-family: ${font('grotesk')};
+  font-family: ${font('main')};
   position: fixed;
   display: flex;
   justify-content: space-around;

@@ -1,11 +1,10 @@
 const fonts = {
-  grotesk: ["'aktiv-grotesk-std'", "'Helvetica Neue'", "'Helvetica'", "'Arial'", 'sans-serif'],
-  effra: ["'Effra'", "'Helvetica Neue'", "'Helvetica'", "'Arial'", 'sans-serif']
+  main: ["'Helvetica Neue'", "'Helvetica'", "'Arial'", 'sans-serif']
 };
 
 /**
  * Return a font stack
- * @param  {String} family The name of the font family; one of "grotesk", "effra"
+ * @param  {String} family The name of the font family
  * @return {String}        Font stack
  */
 export default function font(family) {
