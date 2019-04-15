@@ -11,7 +11,7 @@ import Container from './Container';
 
 const HeroContainer = styled(BackgroundImage)`
   color: #ffffff;
-  font-family: ${font('effra')};
+  font-family: ${font('main')};
   height: calc(100vh - 4em);
   margin-left: auto;
   margin-right: auto;

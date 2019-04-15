@@ -39,7 +39,7 @@ const Underline = css`
 `;
 
 const StyledHeading = styled.h3`
-  font-family: ${font('effra')};
+  font-family: ${font('main')};
   line-height: 1.2;
 
   ${switchProp('size', {
