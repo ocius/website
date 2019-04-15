@@ -3,12 +3,8 @@ import { Formik, Field, ErrorMessage } from 'formik';
 import axios from 'axios';
 import styled, { css } from 'styled-components';
 import { ifProp } from 'styled-tools';
-import { Row, Col } from 'react-flexbox-grid';
-import Layout from '../layouts/Layout';
-import SEO from '../components/SEO';
-import PageHeader from '../components/PageHeader';
-import Container from '../components/Container';
-import RecentNews from '../components/RecentNews';
+import { Col } from 'react-flexbox-grid';
+import Heading from '../components/Heading';
 
 const SubmitButton = styled.button`
   appearance: none;
@@ -144,124 +140,103 @@ class TechnicalSpecificationForm extends React.Component {
 
   render() {
     return (
-      <Layout>
-        <SEO
-          title="BlueBottle USV Brochure"
-          description="For technical specifications of Ocius' BlueBottle USV, contact us below for a PDF Brochure"
-        />
-        <PageHeader>BlueBottle USV Brochure</PageHeader>
-        <section className="page-content">
-          <Container>
-            <Row>
-              <Col className="primary-content" xs={12} md={7} lg={7}>
-                <p>
-                  For technical specifications of Ocius&apos; BlueBottle USV, contact us below for a
-                  PDF Brochure
-                </p>
-                <Formik
-                  initialValues={{
-                    fullName: '',
-                    position: '',
-                    company: '',
-                    email: '',
-                    phone: '',
-                    interest: ''
-                  }}
-                  onSubmit={({ fullName, position, company, email, phone, interest }, actions) => {
-                    const endPoint = 'https://c2fpksv8c0.execute-api.us-east-1.amazonaws.com/dev';
+      <Col xs={12} md={12} lg={12} style={{ paddingBottom: '20px' }}>
+        <header id="technical" className="centered">
+          <Heading level={1} size="huge" underline>
+            BlueBottle USV Brochure
+          </Heading>
+        </header>
+        <p>
+          For technical specifications of Ocius&apos; BlueBottle USV, contact us below for a PDF
+          Brochure
+        </p>
+        <Formik
+          initialValues={{
+            fullName: '',
+            position: '',
+            company: '',
+            email: '',
+            phone: '',
+            interest: ''
+          }}
+          onSubmit={({ fullName, position, company, email, phone, interest }, actions) => {
+            const endPoint = 'https://c2fpksv8c0.execute-api.us-east-1.amazonaws.com/dev';
 
-                    axios
-                      .post(`${endPoint}/contact`, {
-                        // HACK: Endpoint expects name property
-                        fullName,
-                        position,
-                        company,
-                        email,
-                        phone,
-                        interest
-                      })
-                      .then(response => {
-                        if (response.status === 200) {
-                          this.handleFormSubmitSuccess();
-                          actions.resetForm();
-                        } else {
-                          this.handleFormSubmitError();
-                        }
-                      })
-                      .catch(error => {
-                        this.handleFormSubmitError(error);
-                      });
-                  }}
-                  render={({ handleSubmit, isSubmitting }) => (
-                    <form onSubmit={handleSubmit}>
-                      {this.state.formMessage && (
-                        <Alert success={this.state.submitSuccess}>{this.state.formMessage}</Alert>
-                      )}
-                      <FieldWrapper>
-                        <Field
-                          type="text"
-                          name="fullName"
-                          validate={TechnicalSpecificationForm.validateFullName}
-                          placeholder="Full Name (required)"
-                        />
-                        <ErrorMessage name="fullName">
-                          {msg => <Feedback>{msg}</Feedback>}
-                        </ErrorMessage>
-                      </FieldWrapper>
-
-                      <FieldWrapper>
-                        <Field type="text" name="position" placeholder="Position" />
-                      </FieldWrapper>
-                      <FieldWrapper>
-                        <Field
-                          type="text"
-                          name="company"
-                          placeholder="Company or Company Website"
-                        />
-                      </FieldWrapper>
-                      <FieldWrapper>
-                        <Field
-                          type="email"
-                          name="email"
-                          validate={TechnicalSpecificationForm.validateEmail}
-                          placeholder="Email (required)"
-                        />
-                        <ErrorMessage name="email">
-                          {msg => <Feedback>{msg}</Feedback>}
-                        </ErrorMessage>
-                      </FieldWrapper>
-
-                      <FieldWrapper>
-                        <Field type="tel" name="phone" placeholder="Phone" />
-                      </FieldWrapper>
-                      <FieldWrapper>
-                        <Field
-                          name="interest"
-                          component="textarea"
-                          validate={TechnicalSpecificationForm.validateInterest}
-                          cols={40}
-                          rows={10}
-                          placeholder="Reason for interest"
-                        />
-                        <ErrorMessage name="interest">
-                          {msg => <Feedback>{msg}</Feedback>}
-                        </ErrorMessage>
-                      </FieldWrapper>
-
-                      <SubmitButton type="submit" disabled={isSubmitting}>
-                        Submit
-                      </SubmitButton>
-                    </form>
-                  )}
+            axios
+              .post(`${endPoint}/contact`, {
+                // HACK: Endpoint expects name property
+                fullName,
+                position,
+                company,
+                email,
+                phone,
+                interest
+              })
+              .then(response => {
+                if (response.status === 200) {
+                  this.handleFormSubmitSuccess();
+                  actions.resetForm();
+                } else {
+                  this.handleFormSubmitError();
+                }
+              })
+              .catch(error => {
+                this.handleFormSubmitError(error);
+              });
+          }}
+          render={({ handleSubmit, isSubmitting }) => (
+            <form onSubmit={handleSubmit}>
+              {this.state.formMessage && (
+                <Alert success={this.state.submitSuccess}>{this.state.formMessage}</Alert>
+              )}
+              <FieldWrapper>
+                <Field
+                  type="text"
+                  name="fullName"
+                  validate={TechnicalSpecificationForm.validateFullName}
+                  placeholder="Full Name (required)"
                 />
-              </Col>
-              <Col className="secondary-content" xs={12} md={5} lg={4} lgOffset={1}>
-                <RecentNews />
-              </Col>
-            </Row>
-          </Container>
-        </section>
-      </Layout>
+                <ErrorMessage name="fullName">{msg => <Feedback>{msg}</Feedback>}</ErrorMessage>
+              </FieldWrapper>
+
+              <FieldWrapper>
+                <Field type="text" name="position" placeholder="Position" />
+              </FieldWrapper>
+              <FieldWrapper>
+                <Field type="text" name="company" placeholder="Company or Company Website" />
+              </FieldWrapper>
+              <FieldWrapper>
+                <Field
+                  type="email"
+                  name="email"
+                  validate={TechnicalSpecificationForm.validateEmail}
+                  placeholder="Email (required)"
+                />
+                <ErrorMessage name="email">{msg => <Feedback>{msg}</Feedback>}</ErrorMessage>
+              </FieldWrapper>
+
+              <FieldWrapper>
+                <Field type="tel" name="phone" placeholder="Phone" />
+              </FieldWrapper>
+              <FieldWrapper>
+                <Field
+                  name="interest"
+                  component="textarea"
+                  validate={TechnicalSpecificationForm.validateInterest}
+                  cols={40}
+                  rows={10}
+                  placeholder="Reason for interest"
+                />
+                <ErrorMessage name="interest">{msg => <Feedback>{msg}</Feedback>}</ErrorMessage>
+              </FieldWrapper>
+
+              <SubmitButton type="submit" disabled={isSubmitting}>
+                Submit
+              </SubmitButton>
+            </form>
+          )}
+        />
+      </Col>
     );
   }
 }

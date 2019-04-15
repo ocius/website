@@ -35,6 +35,9 @@ export default ({ children }) => (
                 <FooterLink to="/about#partners">Partners</FooterLink>
               </li>
               <li>
+                <FooterLink to="/about#story">Our Story</FooterLink>
+              </li>
+              <li>
                 <FooterLink to="/about#awards">Awards</FooterLink>
               </li>
             </ul>
@@ -54,16 +57,16 @@ export default ({ children }) => (
             </ul>
           </Col>
           <Col xs={12} md={2} lg={2}>
-            <FooterLink to="/usv">BlueBottle USV</FooterLink>
+            <FooterLink to="/usv">Drones</FooterLink>
             <ul className="menu-secondary">
               <li>
-                <FooterLink to="/usv">What Is A USV?</FooterLink>
+                <FooterLink to="/usv">What is a USV?</FooterLink>
               </li>
               <li>
-                <FooterLink to="/bluebottle">BlueBottle Overview</FooterLink>
+                <FooterLink to="/usv#overview">BlueBottle Overview</FooterLink>
               </li>
               <li>
-                <FooterLink to="/bluebottle-usv-brochure">Technical Specifications</FooterLink>
+                <FooterLink to="/usv#technical">Technical Specifications</FooterLink>
               </li>
             </ul>
           </Col>

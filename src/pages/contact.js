@@ -15,7 +15,7 @@ export default () => (
   <Layout>
     <SEO
       title="Contact"
-      description="For General Enquiries Main Phone: +61 2 9924 6400 Email: admin@ocius.com.au For Investment Enquiries
+      description="For General Enquiries Main Phone: +61 2 9924 6400 Email: contact@ocius.com.au For Investment Enquiries
       Email: cosecretary@ocius.com.au Address: Ainsworth Building University of New South Wales Willis Annex Kensington
       NSW 2052 Phone: +61 2 9924 6400 Postal Address: Office Box 4304 Castlecrag Australia 2068"
     />
@@ -30,7 +30,7 @@ export default () => (
                 <address style={addressStyle}>
                   Main Phone: <a href="callto:+61299246400">+61 2 9924 6400</a>
                   <br />
-                  Email: <a href="mailto:admin@ocius.com.au">admin@ocius.com.au</a>
+                  Email: <a href="mailto:contact@ocius.com.au">contact@ocius.com.au</a>
                 </address>
               </Col>
               <Col xs={12} md={6} lg={6}>

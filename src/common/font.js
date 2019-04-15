@@ -1,6 +1,6 @@
 const fonts = {
   grotesk: ["'aktiv-grotesk-std'", "'Helvetica Neue'", "'Helvetica'", "'Arial'", 'sans-serif'],
-  effra: ["'Effra'", "'Georgia'", "'Times'", "'Times New Roman'", 'serif']
+  effra: ["'Effra'", "'Helvetica Neue'", "'Helvetica'", "'Arial'", 'sans-serif']
 };
 
 /**
