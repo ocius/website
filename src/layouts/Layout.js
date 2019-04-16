@@ -60,13 +60,13 @@ export default ({ children }) => (
             <FooterLink to="/usv">Drones</FooterLink>
             <ul className="menu-secondary">
               <li>
-                <FooterLink to="/usv">What is a USV?</FooterLink>
+                <FooterLink to="/usv">USV</FooterLink>
               </li>
               <li>
-                <FooterLink to="/usv#overview">BlueBottle Overview</FooterLink>
+                <FooterLink to="/usv#overview">BlueBottle</FooterLink>
               </li>
               <li>
-                <FooterLink to="/usv#technical">Technical Specifications</FooterLink>
+                <FooterLink to="/usv#technical">Tech Specs</FooterLink>
               </li>
             </ul>
           </Col>
