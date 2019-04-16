@@ -44,9 +44,9 @@ const Link = styled(GatsbyLink)`
   }
 `;
 
-const getProps = ({ isPartiallyCurrent }) => {
+const getProps = ({ isCurrent }) => {
   return {
-    ...(isPartiallyCurrent
+    ...(isCurrent
       ? {
           'data-active': true
         }
@@ -65,10 +65,10 @@ const MobileNavigation = () => (
   <>
     <Wrapper>
       <MobileNavItem linkTo="/" label="Home" icon="Home" />
-      <MobileNavItem linkTo="/about/" label="About" icon="Idea" />
-      <MobileNavItem linkTo="/usv/" label="Drones" icon="Drone" />
-      <MobileNavItem linkTo="/news/" label="News" icon="News" />
-      <MobileNavItem linkTo="/contact/" label="Contact" icon="Contact" />
+      <MobileNavItem linkTo="/about" label="About" icon="Idea" />
+      <MobileNavItem linkTo="/usv" label="Drones" icon="Drone" />
+      <MobileNavItem linkTo="/news" label="News" icon="News" />
+      <MobileNavItem linkTo="/contact" label="Contact" icon="Contact" />
     </Wrapper>
   </>
 );
