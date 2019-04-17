@@ -6,7 +6,7 @@ import mq from '../../common/mq';
 
 const logoQuery = graphql`
   query {
-    file(relativePath: { eq: "images/main-ocius.png" }) {
+    file(relativePath: { eq: "images/ocius-logo-header.png" }) {
       childImageSharp {
         fluid(maxWidth: 200) {
           src

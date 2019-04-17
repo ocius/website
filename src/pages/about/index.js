@@ -204,6 +204,8 @@ export default ({ data }) => (
             {data.AustralianGovernment && (
               <div className="centered">
                 <Img
+                  style={{ maxWidth: '100%' }}
+                  imgStyle={{ objectFit: 'contain' }}
                   fixed={data.AustralianGovernment.childImageSharp.fixed}
                   alt="Australian Government Logotype"
                 />
@@ -227,6 +229,8 @@ export default ({ data }) => (
             {data.SteberInternational && (
               <div className="centered">
                 <Img
+                  style={{ maxWidth: '100%' }}
+                  imgStyle={{ objectFit: 'contain' }}
                   fixed={data.SteberInternational.childImageSharp.fixed}
                   alt="Steber International"
                 />
@@ -253,7 +257,12 @@ export default ({ data }) => (
           <Col xs={12} md={6} lg={6}>
             {data.Thales && (
               <div className="centered">
-                <Img fixed={data.Thales.childImageSharp.fixed} alt="Thales" />
+                <Img
+                  style={{ maxWidth: '100%' }}
+                  imgStyle={{ objectFit: 'contain' }}
+                  fixed={data.Thales.childImageSharp.fixed}
+                  alt="Thales"
+                />
               </div>
             )}
             <p>
@@ -271,6 +280,8 @@ export default ({ data }) => (
             {data.OneTwoThree && (
               <div className="centered">
                 <Img
+                  style={{ maxWidth: '100%' }}
+                  imgStyle={{ objectFit: 'contain' }}
                   fixed={data.OneTwoThree.childImageSharp.fixed}
                   alt="One2three Naval Architects"
                 />
@@ -293,6 +304,8 @@ export default ({ data }) => (
             {data.UNSW && (
               <div className="centered">
                 <Img
+                  style={{ maxWidth: '100%' }}
+                  imgStyle={{ objectFit: 'contain' }}
                   fixed={data.UNSW.childImageSharp.fixed}
                   alt="The University of New South Wales"
                 />
@@ -329,7 +342,12 @@ export default ({ data }) => (
           <Col xs={12} md={6} lg={6}>
             {data.ClarkIP && (
               <div className="centered">
-                <Img fixed={data.ClarkIP.childImageSharp.fixed} alt="Clark IP" />
+                <Img
+                  style={{ maxWidth: '100%' }}
+                  imgStyle={{ objectFit: 'contain' }}
+                  fixed={data.ClarkIP.childImageSharp.fixed}
+                  alt="Clark IP"
+                />
               </div>
             )}
             <p>
@@ -350,7 +368,12 @@ export default ({ data }) => (
           <Col xs={12} md={6} lg={6}>
             {data.Spitfire && (
               <div className="centered">
-                <Img fixed={data.Spitfire.childImageSharp.fixed} alt="The Spitfire Association" />
+                <Img
+                  style={{ maxWidth: '100%' }}
+                  imgStyle={{ objectFit: 'contain' }}
+                  fixed={data.Spitfire.childImageSharp.fixed}
+                  alt="The Spitfire Association"
+                />
               </div>
             )}
             <p>

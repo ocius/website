@@ -42,9 +42,9 @@ export default () => (
       <NavbarDropdown name="Drones" link="/usv">
         <DropdownMenu
           menuItems={[
-            { href: '/usv', name: 'What is a USV?' },
-            { href: '/usv#overview', name: 'BlueBottle Overview' },
-            { href: '/usv#technical', name: 'Technical Specification' }
+            { href: '/usv', name: 'USV' },
+            { href: '/usv#overview', name: 'BlueBottle' },
+            { href: '/usv#technical', name: 'Tech Specs' }
           ]}
         />
       </NavbarDropdown>

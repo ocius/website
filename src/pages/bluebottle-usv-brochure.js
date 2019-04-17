@@ -126,8 +126,7 @@ class TechnicalSpecificationForm extends React.Component {
   handleFormSubmitSuccess() {
     this.setState({
       submitSuccess: true,
-      formMessage:
-        'Contact Form Successfully Submitted. You will receive a reply to your message within 24 hours.'
+      formMessage: 'Your message was sent successfully. You will receive a reply within 24 hours.'
     });
   }
 
@@ -225,7 +224,7 @@ class TechnicalSpecificationForm extends React.Component {
                   validate={TechnicalSpecificationForm.validateInterest}
                   cols={40}
                   rows={10}
-                  placeholder="Reason for interest"
+                  placeholder="Reason for interest (required)"
                 />
                 <ErrorMessage name="interest">{msg => <Feedback>{msg}</Feedback>}</ErrorMessage>
               </FieldWrapper>
