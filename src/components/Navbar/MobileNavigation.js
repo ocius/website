@@ -34,7 +34,7 @@ const Link = styled(GatsbyLink)`
   text-decoration: none;
   text-align: center;
   -webkit-font-smoothing: antialiased;
-  color: #adadad;
+  color: #125192;
 
   :hover,
   &[data-active] {
