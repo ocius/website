@@ -40,4 +40,4 @@ Last year, the US Navy [established](http://www.public.navy.mil/bupers-npc/refer
 
 A cost-effective security hedge depends on maintaining Australia’s technological advantage. Innovation needs to be central to both our future submarine program and the 2016 white paper.
 
-_Martin Callinan and Alan Gray wrote _[Defence science and innovation: An affordable strategic advantage](https://www.aspi.org.au/publications/defence-science-and-innovation-an-affordable-strategic-advantage)_, a 2015 special report for the Australian Strategic Policy Institute._
+_Martin Callinan and Alan Gray wrote [Defence science and innovation: An affordable strategic advantage](https://www.aspi.org.au/publications/defence-science-and-innovation-an-affordable-strategic-advantage), a 2015 special report for the Australian Strategic Policy Institute._
