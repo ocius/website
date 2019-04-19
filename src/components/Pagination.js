@@ -31,9 +31,9 @@ const Pagination = ({ pageContext }) => {
 
   return (
     <Navigation className="pagination" role="navigation">
-      {previousPagePath && (
+      {nextPagePath && (
         <Item>
-          <Link to={previousPagePath} rel="prev">
+          <Link to={nextPagePath} rel="next">
             <Icon.ArrowLeft
               fill="#125192"
               style={{
@@ -42,14 +42,14 @@ const Pagination = ({ pageContext }) => {
                 marginRight: '3px'
               }}
             />
-            Previous
+            Older posts
           </Link>
         </Item>
       )}
-      {nextPagePath && (
+      {previousPagePath && (
         <Item>
-          <Link to={nextPagePath} rel="next">
-            Next
+          <Link to={previousPagePath} rel="prev">
+            Newer posts
             <Icon.ArrowRight
               fill="#125192"
               style={{
