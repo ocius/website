@@ -5,7 +5,7 @@ author: "Ocius Administrator"
 featuredImage: ADM0.png
 ---
 
-Ocius under the spotlight in the latest Australian Defence Magazine. You can download the full spread by clicking on <span style="text-decoration: underline; color: #0000ff;">[ADM Aug 2016 Ocius](./ADM-Aug-2016-Ocius.pdf)</span> – which makes for easier reading!
+Ocius under the spotlight in the latest Australian Defence Magazine. You can download the full spread by clicking on [ADM Aug 2016 Ocius](./ADM-Aug-2016-Ocius.pdf) – which makes for easier reading!
 
 ![0](./ADM0.png)
 
