@@ -4,7 +4,7 @@ date: "2016-09-11"
 author: "Ocius Administrator"
 ---
 
-#### Ocius and CEO, Robert Dane, recently attended the International Wind-ship Association Awards ceremony as finalists in the <span style="text-decoration: underline;">[Wind Propulsion Innovation Award and Lifetime Achievement Award](http://ec2-13-210-89-186.ap-southeast-2.compute.amazonaws.com/2016/07/wind-propulsion-innovation-award/)</span>, respectively. The Awards recognise pioneering projects and technological innovation in the development of wind propulsion for technically and commercially viable solutions for the shipping industry.
+#### Ocius and CEO, Robert Dane, recently attended the International Wind-ship Association Awards ceremony as finalists in the <span style="text-decoration: underline;">[Wind Propulsion Innovation Award and Lifetime Achievement Award](/blog/wind-propulsion-innovation-award/)</span>, respectively. The Awards recognise pioneering projects and technological innovation in the development of wind propulsion for technically and commercially viable solutions for the shipping industry.
 
 In the Lifetime Achievement Award, Robert was pleased to present our achievements but the award went to Bernd Wagner – for the Dyna Rig. Bernd, at eighty years of age was a worthy recipient, his research on square sailing rigs dating back to the 1960’s.
 
