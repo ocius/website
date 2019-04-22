@@ -12,9 +12,9 @@ The symposium is dedicated to the design and hydrodynamics of all types of marin
 
 The working title and abstract of Robert Dane’s speech is:
 
-###### **Wind Energy Assistance for Vessels Travelling at 13.6 knots (7m/s) on any Global Shipping Route by Retrofitting Opening Wingsails**
+### **Wind Energy Assistance for Vessels Travelling at 13.6 knots (7m/s) on any Global Shipping Route by Retrofitting Opening Wingsails**
 
-###### **Abstract:**
+### **Abstract:**
 
 For centuries ships navigated the oceans using wind energy harnessed by sails. In the last 200 years sails have been replaced first by steam and then diesel engines.
 
@@ -26,7 +26,7 @@ For any route, the voyage is run starting on the 1st of July 1987\. The lift for
 
 The voyage is then run on the 2 July 1987 and then the third of July 1987 and repeated by the program 8500 times to the 30th Dec 2010 – giving an accurate historical mean of the amount of energy that saved by using sail assist. This average over 22.5 years is then converted to fuel savings for that route based on modern propeller efficiencies and typical ship engine fuel consumption of 170 g/kWh and converted to cost savings using todays fuel price.
 
-###### **Summary of Results:**
+### **Summary of Results:**
 
 Without altering the primary propulsion system of a modern tanker of bulker, and using (retrofitted) opening wing sails to ‘motor-sail’, ship operators can expect 20% -25% fuel savings on cross-equator shipping routes and 30-40% on same-hemisphere shipping routes. Return on investment at today’s fuel price is estimated to be 1-2 years.
 
