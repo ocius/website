@@ -14,7 +14,9 @@ Pax 14 guests
 
 SolarSails and HMP together in harmony on a private yacht. In 2010, SolarSailor joined forces with Alastair Callender, a student at Coventry University in the UK to design a concept supergreen superyacht incorporating SolarSails and HMP technology together. The result was the 58m Soliloquy which won several awards and industry acclaim.
 
-[**Mer & Bateaux Magazine, Front Cover & Feature Article:** ](http://www.callenderdesigns.co.uk/download/i/mark_dl/u/4008019471/4559040816/Mer_Bateaux_Dec2011_FrontCover.jpg)[**_The Future of Yacht_**](http://www.callenderdesigns.co.uk/download/i/mark_dl/u/4008019471/4559040816/Mer_Bateaux_Dec2011_FrontCover.jpg)[**s. December 2011**](http://www.callenderdesigns.co.uk/download/i/mark_dl/u/4008019471/4559040816/Mer_Bateaux_Dec2011_FrontCover.jpg)
+[**Mer & Bateaux Magazine, Front Cover & Feature Article:** ](http://www.callenderdesigns.co.uk/download/i/mark_dl/u/4008019471/4559040816/Mer_Bateaux_Dec2011_FrontCover.jpg)
+
+[**The Future of Yachts. December 2011**](http://www.callenderdesigns.co.uk/download/i/mark_dl/u/4008019471/4559040816/Mer_Bateaux_Dec2011_FrontCover.jpg)
 
 [Future of Superyachts Conference, 2011 – Cited within Presentation on Green Yachts, by Yacht Carbon Offset](http://www.quaynote.com/images/Mark%20Robinson,%20Yacht%20Carbon%20Offset.pdf)
 
