@@ -26,11 +26,16 @@ export default ({ data }) => (
               Our Mission
             </Heading>
             <p>
-              Innovative Autonomous Solutions<br />
-              for<br />
-              Persistent Maritime Surveillance<br />
-              so that<br />
-              Defence, Industry and Science personnel can monitor large areas of ocean<br />
+              Innovative Autonomous Solutions
+              <br />
+              for
+              <br />
+              Persistent Maritime Surveillance
+              <br />
+              so that
+              <br />
+              Defence, Industry and Science personnel can monitor large areas of ocean
+              <br />
               continuously with no one in harm’s way at low cost
             </p>
           </Col>
@@ -45,15 +50,18 @@ export default ({ data }) => (
               </Heading>
             </header>
             <p>
-              Agile Australian company<br />
-              Respect for our stakeholders, our team and the ocean environment in which our products operate.<br />
-
-              Responsibility to our stakeholders, our team and the environment.<br />
+              Agile Australian company
+              <br />
+              Respect for our stakeholders, our team and the ocean environment in which our products
+              operate.
+              <br />
+              Responsibility to our stakeholders, our team and the environment.
+              <br />
             </p>
           </Col>
         </Row>
       </Segmented>
- <header id="people" className="centered">
+      <header id="people" className="centered">
         <Heading level={1} size="huge" underline>
           People
         </Heading>
@@ -98,7 +106,10 @@ export default ({ data }) => (
               within leading Australian organisations in both government and private sectors.
             </p>
             <p>
-              Part of the founding management team at Holocentric, a Canberra based, he draws upon his extensive experience working in sales and in senior management roles for global companies such as Honeywell, Microsoft and Cisco Systems to help steer the company to success
+              Part of the founding management team at Holocentric, a Canberra based, he draws upon
+              his extensive experience working in sales and in senior management roles for global
+              companies such as Honeywell, Microsoft and Cisco Systems to help steer the company to
+              success
             </p>
           </Col>
           <Col xs={12} md={4} lg={4}>
@@ -194,11 +205,10 @@ export default ({ data }) => (
               Ocius Corporate Lawyer
             </Heading>
             <p>
-              Andrew practices principally in the areas of commercial law, succession and
-              estate planning. Andrew provides advice on the sale and purchase of
-              businesses and companies, corporate governance, risk management and a wide
-              range of issues facing SME owners, including intellectual property, shareholder
-              agreements and commercial contracts.
+              Andrew practices principally in the areas of commercial law, succession and estate
+              planning. Andrew provides advice on the sale and purchase of businesses and companies,
+              corporate governance, risk management and a wide range of issues facing SME owners,
+              including intellectual property, shareholder agreements and commercial contracts.
             </p>
           </Col>
         </Row>
@@ -415,32 +425,32 @@ export default ({ data }) => (
                 Our Story
               </Heading>
             </header>
-              <p>
-                Ocius Technology Ltd (formerly known as Solar Sailor Holdings Ltd) is an Australian
-                public unlisted company trading since June 1999. Starting with winning the Advanced
-                Technology Boat Race in Canberra in 1997, beatng the next solar boat by 5 laps of
-                6km = 30km using a new patented ‘solar sail’ Ocius has a track record of conceiving,
-                funding and delivering difficult innovative high-tech award-winning projects on time
-                and on budget.
-              </p>
-              <p>
-                Ocius has built multiple ‘solarsailor’ models and prototypes culminating in 6 high-
-                tech award winning hybrid electric commercial passenger ferries to international
-                classification requirements, which together have carried tens of thousands of
-                passengers. Today, four OCIUS hybrid electric ferries run in HK today from Sai Kung
-                to Kau Sai Chau 364 days of the year 14 hours a day saving half the fuel of the
-                conventional ferries they replaced. Dozens of subcontractors have built, commissioned
-                and tested our commercial ferries and tens of thousands of passengers have travelled
-                on our ferries without incident. 
-              </p>
-              <p>
-                In the last 8 years, Ocius has focused on building multiple unmanned surface vessel
-                scale models and working prototypes initially under a DST CTD contract and then a DST
-                DIH contract, culminating in participating and exceeding all TPMs at the Autonomous
-                Warrior War games in Jervis Bay in November 2019. Ocius is now under its second DST
-                Group Innovation contract to build a network of intelligent persistent unmanned surface
-                vessels.
-              </p>
+            <p>
+              Ocius Technology Ltd (formerly known as Solar Sailor Holdings Ltd) is an Australian
+              public unlisted company trading since June 1999. Starting with winning the Advanced
+              Technology Boat Race in Canberra in 1997, beatng the next solar boat by 5 laps of 6km
+              = 30km using a new patented ‘solar sail’ Ocius has a track record of conceiving,
+              funding and delivering difficult innovative high-tech award-winning projects on time
+              and on budget.
+            </p>
+            <p>
+              Ocius has built multiple ‘solarsailor’ models and prototypes culminating in 6 high-
+              tech award winning hybrid electric commercial passenger ferries to international
+              classification requirements, which together have carried tens of thousands of
+              passengers. Today, four OCIUS hybrid electric ferries run in HK today from Sai Kung to
+              Kau Sai Chau 364 days of the year 14 hours a day saving half the fuel of the
+              conventional ferries they replaced. Dozens of subcontractors have built, commissioned
+              and tested our commercial ferries and tens of thousands of passengers have travelled
+              on our ferries without incident.
+            </p>
+            <p>
+              In the last 8 years, Ocius has focused on building multiple unmanned surface vessel
+              scale models and working prototypes initially under a DST CTD contract and then a DST
+              DIH contract, culminating in participating and exceeding all TPMs at the Autonomous
+              Warrior War games in Jervis Bay in November 2019. Ocius is now under its second DST
+              Group Innovation contract to build a network of intelligent persistent unmanned
+              surface vessels.
+            </p>
             <p>
               Solar Sailor built 5 other commercial solar sailor vessels providing valuable
               experience to OCIUS on the commercial maritime and technical applications of its
@@ -536,23 +546,24 @@ export default ({ data }) => (
                   Ocius has 20 years’ experience developing and commercialising patented technology.
                 </p>
                 <p>
-                  <strong>2019 April</strong> - Successful Seatrials of next-gen 18-foot Bluebottle USV off NSW coast
+                  <strong>2019 April</strong> - Successful Seatrials of next-gen 18-foot Bluebottle
+                  USV off NSW coast
                 </p>
                 <p>
                   <strong>2018 Nov</strong> - Success at{' '}
                   <GatsbyLink to="/blog/ocius-demonstrates-man-portable-usv-prototype-at-aw18/">
-                    Autonomous Warrior Wargames 
+                    Autonomous Warrior Wargames
                   </GatsbyLink>{' '}
-                  with control of two USVs, two UUVs, networking to UK MAPLE C2 system and operations in all conditions during three week wargames.
+                  with control of two USVs, two UUVs, networking to UK MAPLE C2 system and
+                  operations in all conditions during three week wargames.
                 </p>
                 <p>
                   <strong>2018 Sept</strong> - Awarded{' '}
                   <GatsbyLink to="blog/defence-connect-ocius-technology-awarded-defence-innovation-hub-contract/">
                     $1.6M DST Group Defence Innovation Hub contract
                   </GatsbyLink>{' '}
-                    to demonstrate a network of intelligent persistent unmanned surface vessels
-                    Australian Maritime Innovation Award: Defence SME
-                  - With a $10 000 grant
+                  to demonstrate a network of intelligent persistent unmanned surface vessels
+                  Australian Maritime Innovation Award: Defence SME - With a $10 000 grant
                 </p>
                 <p>
                   <strong>2017</strong> - Awarded{' '}
@@ -739,7 +750,6 @@ export const query = graphql`
     AndrewAtkin: file(relativePath: { eq: "pages/about/Andrew-Atkin.png" }) {
       ...imageSharpAvatar
     }
-
 
     AustralianGovernment: file(relativePath: { eq: "pages/about/australiangovernment.png" }) {
       ...imageSharpLogotype
