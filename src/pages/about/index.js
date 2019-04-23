@@ -26,42 +26,40 @@ export default ({ data }) => (
               Our Mission
             </Heading>
             <p>
-              To supply the world&apos;s best unmanned surface vessels with more <br />
-              <strong>power, payload and performance</strong>
-              &nbsp;supporting Defence, Industry and Science personnel to monitor large areas of
-              ocean&nbsp;
-              <strong>continuously at low cost and with no one in harm&apos;s way.&nbsp;</strong>
+              Innovative Autonomous Solutions<br />
+              for<br />
+              Persistent Maritime Surveillance<br />
+              so that<br />
+              Defence, Industry and Science personnel can monitor large areas of ocean<br />
+              continuously with no one in harm’s way at low cost
             </p>
           </Col>
         </Row>
       </Segmented>
-      <header id="people" className="centered">
+      <Segmented>
+        <Row className="centered">
+          <Col xs={12} md={8} lg={9} lgOffset={2}>
+            <header id="people" className="centered">
+              <Heading level={1} size="huge" underline>
+                Our Culture
+              </Heading>
+            </header>
+            <p>
+              Agile Australian company<br />
+              Respect for our stakeholders, our team and the ocean environment in which our products operate.<br />
+
+              Responsibility to our stakeholders, our team and the environment.<br />
+            </p>
+          </Col>
+        </Row>
+      </Segmented>
+ <header id="people" className="centered">
         <Heading level={1} size="huge" underline>
           People
         </Heading>
       </header>
       <Segmented borderBottom="">
         <Row className="primary-content">
-          <Col xs={12} md={4} lg={4}>
-            {data.MarkBethwaite && (
-              <Img fixed={data.MarkBethwaite.childImageSharp.fixed} alt="Mark Bethwaite AM" />
-            )}
-            <Heading level={3} size="medium">
-              Mark Bethwaite AM
-              <br />
-              Chairman
-            </Heading>
-            <p>
-              Now a professional director, Mark has been a shareholder in OCIUS since 2000. He has a
-              degree in Engineering and an MBA and has been Managing Director of two large mining
-              companies and one of Australia’s leading industry associations.
-            </p>
-            <p>
-              Mark represented Australia in sailing in the 1972 and 1976 Olympic Games and has won
-              World Championships in three international classes. Mark was made a Member of the
-              Order of Australia (AM) in early 2011 for services to industry and to sailing.
-            </p>
-          </Col>
           <Col xs={12} md={4} lg={4}>
             {data.RobertDane && (
               <Img fixed={data.RobertDane.childImageSharp.fixed} alt="Robert Dane" />
@@ -86,6 +84,24 @@ export default ({ data }) => (
             </p>
           </Col>
           <Col xs={12} md={4} lg={4}>
+            {data.GeoffZuber && (
+              <Img fixed={data.GeoffZuber.childImageSharp.fixed} alt="Geoff Zuber" />
+            )}
+            <Heading level={3} size="medium">
+              Geoff Zuber
+              <br />
+              Non-Executive Director
+            </Heading>
+            <p>
+              Well respected for his strategic thinking and passion for business transformation
+              programs, Geoff has earned the admiration and respect of many C- level executives
+              within leading Australian organisations in both government and private sectors.
+            </p>
+            <p>
+              Part of the founding management team at Holocentric, a Canberra based, he draws upon his extensive experience working in sales and in senior management roles for global companies such as Honeywell, Microsoft and Cisco Systems to help steer the company to success
+            </p>
+          </Col>
+          <Col xs={12} md={4} lg={4}>
             {data.BobHawke && <Img fixed={data.BobHawke.childImageSharp.fixed} alt="Bob Hawke" />}
             <Heading level={3} size="medium">
               The Hon. Bob Hawke AC
@@ -102,29 +118,6 @@ export default ({ data }) => (
       </Segmented>
       <Segmented borderBottom="">
         <Row className="primary-content">
-          <Col xs={12} md={3} lg={3}>
-            {data.DavidSaxelby && (
-              <Img fixed={data.DavidSaxelby.childImageSharp.fixed} alt="David Saxelby" />
-            )}
-            <Heading level={3} size="medium">
-              David Saxelby
-              <br />
-              Non-Executive Director
-            </Heading>
-            <p>
-              David is one of the most senior Executives in the Construction and Infrastructure
-              Industry in Australia. He has held a number of senior industry positions including
-              President and Board member of Australian Constructors Association, Board member of
-              Roads Australia, Board member of Infrastructure Partnership Association and Board
-              member of Minerals Council of Australia.
-            </p>
-            <p>
-              Listed in the Top 100 Engineers in Australia for the past four years, David currently
-              holds a number of board positions and consults extensively within the Industry. Most
-              recently with Lend Lease as CEO of Construction and Infrastructure Australia, a $7Bn
-              per annum business including Engineering, Building, Services and Capella Capital.
-            </p>
-          </Col>
           <Col xs={12} md={3} lg={3}>
             {data.LloydBreckenridge && (
               <Img fixed={data.LloydBreckenridge.childImageSharp.fixed} alt="Lloyd Breckenridge" />
@@ -189,6 +182,23 @@ export default ({ data }) => (
               engagements, Business Taxation, Accounting, Advisory and Self-Managed Superannuation
               Funds. The practice is a 100% sustainable business, adopts the latest accounting and
               tax technology apps and 90% paperless.
+            </p>
+          </Col>
+          <Col xs={12} md={3} lg={3}>
+            {data.AndrewAtkin && (
+              <Img fixed={data.AndrewAtkin.childImageSharp.fixed} alt="David Saxelby" />
+            )}
+            <Heading level={3} size="medium">
+              Andrew Atkin
+              <br />
+              Ocius Corporate Lawyer
+            </Heading>
+            <p>
+              Andrew practices principally in the areas of commercial law, succession and
+              estate planning. Andrew provides advice on the sale and purchase of
+              businesses and companies, corporate governance, risk management and a wide
+              range of issues facing SME owners, including intellectual property, shareholder
+              agreements and commercial contracts.
             </p>
           </Col>
         </Row>
@@ -405,29 +415,32 @@ export default ({ data }) => (
                 Our Story
               </Heading>
             </header>
-            <p>
-              In 1996, Dr Robert Dane watched a solar boat race in Canberra and wondered how to
-              build a solar and wind-powered vessel that was seaworthy. The next year he was back
-              with a &apos;solarsailor&apos; prototype the <em>Marjory K</em> and won the race,
-              beating the next solar boat by six laps of 5km using a new patented &apos;solar
-              sail&apos; - one simple device that could harness solar and wind power and fold away
-              when not used. In 2000, he founded Solar Sailor Holdings Limited, with its mission to
-              combine renewable energies for marine propulsion.
-            </p>
-            <p>
-              With support from family &amp; friends, early investors and an Australian Greenhouse
-              Office Federal Government grant, SolarSailor built a 100 pax tourist leisure ferry for
-              Sydney Harbour.&nbsp; This innovative vessel won the Australian Design Award of the
-              Year in 2001 and was operated commercially by Captain Cook Cruises for over 10 years
-              carrying tens of thousands of passengers. Following the sale of Captain Cook Cruises
-              in 2011, the&nbsp;
-              <em>
-                <a href="https://ocius.com.au/2014/11/solar-sailor-and-marjorie-k/">Solar Sailor</a>
-                &nbsp;
-              </em>
-              vessel operated commercially on Lake Macquarie as a charter and dolphin watch vessel
-              and in 2014 was sold to a private buyer to convert into a houseboat.
-            </p>
+              <p>
+                Ocius Technology Ltd (formerly known as Solar Sailor Holdings Ltd) is an Australian
+                public unlisted company trading since June 1999. Starting with winning the Advanced
+                Technology Boat Race in Canberra in 1997, beatng the next solar boat by 5 laps of
+                6km = 30km using a new patented ‘solar sail’ Ocius has a track record of conceiving,
+                funding and delivering difficult innovative high-tech award-winning projects on time
+                and on budget.
+              </p>
+              <p>
+                Ocius has built multiple ‘solarsailor’ models and prototypes culminating in 6 high-
+                tech award winning hybrid electric commercial passenger ferries to international
+                classification requirements, which together have carried tens of thousands of
+                passengers. Today, four OCIUS hybrid electric ferries run in HK today from Sai Kung
+                to Kau Sai Chau 364 days of the year 14 hours a day saving half the fuel of the
+                conventional ferries they replaced. Dozens of subcontractors have built, commissioned
+                and tested our commercial ferries and tens of thousands of passengers have travelled
+                on our ferries without incident. 
+              </p>
+              <p>
+                In the last 8 years, Ocius has focused on building multiple unmanned surface vessel
+                scale models and working prototypes initially under a DST CTD contract and then a DST
+                DIH contract, culminating in participating and exceeding all TPMs at the Autonomous
+                Warrior War games in Jervis Bay in November 2019. Ocius is now under its second DST
+                Group Innovation contract to build a network of intelligent persistent unmanned surface
+                vessels.
+              </p>
             <p>
               Solar Sailor built 5 other commercial solar sailor vessels providing valuable
               experience to OCIUS on the commercial maritime and technical applications of its
@@ -521,6 +534,25 @@ export default ({ data }) => (
               <Col xs={12} md={6} lg={6}>
                 <p>
                   Ocius has 20 years’ experience developing and commercialising patented technology.
+                </p>
+                <p>
+                  <strong>2019 April</strong> - Successful Seatrials of next-gen 18-foot Bluebottle USV off NSW coast
+                </p>
+                <p>
+                  <strong>2018 Nov</strong> - Success at{' '}
+                  <GatsbyLink to="/blog/ocius-demonstrates-man-portable-usv-prototype-at-aw18/">
+                    Autonomous Warrior Wargames 
+                  </GatsbyLink>{' '}
+                  with control of two USVs, two UUVs, networking to UK MAPLE C2 system and operations in all conditions during three week wargames.
+                </p>
+                <p>
+                  <strong>2018 Sept</strong> - Awarded{' '}
+                  <GatsbyLink to="blog/defence-connect-ocius-technology-awarded-defence-innovation-hub-contract/">
+                    $1.6M DST Group Defence Innovation Hub contract
+                  </GatsbyLink>{' '}
+                    to demonstrate a network of intelligent persistent unmanned surface vessels
+                    Australian Maritime Innovation Award: Defence SME
+                  - With a $10 000 grant
                 </p>
                 <p>
                   <strong>2017</strong> - Awarded{' '}
@@ -680,10 +712,6 @@ export default ({ data }) => (
 
 export const query = graphql`
   query getImages {
-    MarkBethwaite: file(relativePath: { eq: "pages/about/Mark-Bethwaite.jpg" }) {
-      ...imageSharpAvatar
-    }
-
     RobertDane: file(relativePath: { eq: "pages/about/Robert-Dane.png" }) {
       ...imageSharpAvatar
     }
@@ -692,7 +720,7 @@ export const query = graphql`
       ...imageSharpAvatar
     }
 
-    DavidSaxelby: file(relativePath: { eq: "pages/about/David-Saxelby.jpg" }) {
+    GeoffZuber: file(relativePath: { eq: "pages/about/Geoff-Zuber.png" }) {
       ...imageSharpAvatar
     }
 
@@ -707,6 +735,11 @@ export const query = graphql`
     TraceySharah: file(relativePath: { eq: "pages/about/Tracey-Sharah.jpg" }) {
       ...imageSharpAvatar
     }
+
+    AndrewAtkin: file(relativePath: { eq: "pages/about/Andrew-Atkin.png" }) {
+      ...imageSharpAvatar
+    }
+
 
     AustralianGovernment: file(relativePath: { eq: "pages/about/australiangovernment.png" }) {
       ...imageSharpLogotype
