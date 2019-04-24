@@ -442,10 +442,7 @@ export default ({ data }) => (
               <li>
                 <strong>
                   <em>
-                    “
-                    <a href="https://ocius.com.au/wp-content/uploads/2014/09/ck63.jpg">
-                      SolarSailor
-                    </a>
+                    “<a href="/ck63.jpg">SolarSailor</a>
                     ”&nbsp;
                   </em>
                 </strong>
@@ -458,9 +455,7 @@ export default ({ data }) => (
                 </strong>
                 In July 2008, with oil at $140/ barrel, the Hong Kong Jockey Club ordered the
                 construction of four&nbsp;
-                <a href="https://ocius.com.au/wp-content/uploads/2014/09/120116-b4-solarsails-outbound-at-sai-kung.jpg">
-                  commuter ferries
-                </a>
+                <a href="/120116-b4-solarsails-outbound-at-sai-kung.jpg">commuter ferries</a>
                 &nbsp;to operate a service to transport players, staff and supplies from the
                 mainland at Sai Kung to the island of Kau Sai Chau where the HKJC has three 18 hole
                 golf courses. The ferries alternate two routes of five and seven mile round trips
@@ -535,7 +530,7 @@ export default ({ data }) => (
                 </p>
                 <p>
                   <strong>2017</strong> – Successfully completed{' '}
-                  <a href="https://ocius.com.au/wp-content/uploads/2015/09/150914OCIUSCTDPressRelease.pdf">
+                  <a href="/150914OCIUSCTDPressRelease.pdf">
                     Capability Technology Demonstrator (CTD) Contract
                   </a>{' '}
                   for development of Anti-Submarine Unmanned Surface Vessel (ASW-USV)
