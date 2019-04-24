@@ -8,4 +8,4 @@ author: "Ocius Administrator"
 
 This contract is the first part of an eighteen month effort to complete a detailed design of an open-ocean unlimited endurance autonomous vehicle for ocean surveillance and other unmanned missions. The company is pleased to be teaming with the Engineering Department of Villanova University and Trident Systems, Inc. to provide experience in hardware design, rugged C4ISR technology, and sensor systems.
 
-For more information,**visit [www.uovehicles.com](http://www.uovehicles.com/)**
+For more information, **visit [www.uovehicles.com](http://www.uovehicles.com/)**
