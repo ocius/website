@@ -12,3 +12,10 @@
 - gatsby serve
 
 For hotloading, run `gatsby develop`
+
+## Contributing 
+
+- check out the `development` branch 
+- commit your changes 
+- run `git push origin development`
+

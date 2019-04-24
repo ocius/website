@@ -2,7 +2,7 @@ body {
     margin: 0;
     padding: 0;
     color: #001826;
-    font-family: 'aktiv-grotesk-std',Helvetica Neue,Helvetica,Arial,sans-serif;
+    font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
     font-size: 17px;
     line-height: 1.5;
 }
@@ -44,7 +44,7 @@ strong, b {
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'Effra', sans-serif;
+    font-family: sans-serif;
     font-weight: bold;
 }
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled, { css, keyframes } from 'styled-components';
+import styled, { css } from 'styled-components';
 import { switchProp } from 'styled-tools';
 import cn from 'classnames';
 import { Link as GatsbyLink } from 'gatsby';
@@ -53,16 +53,6 @@ const roundedStyle = css`
 const fullStyle = css`
   display: block;
   width: 100%;
-`;
-
-const Zebra = keyframes`
-  from {
-    background-position: 0px 0px;
-  }
-  
-  to {
-    background-position: 2rem 4rem;
-  }
 `;
 
 const ButtonLink = styled(GatsbyLink)`
@@ -120,17 +110,6 @@ const ButtonLink = styled(GatsbyLink)`
       :active {
         color: ${colors.textPrimary};
         background-color: ${colors.bgAccent};
-        background-image: linear-gradient(
-          135deg,
-          rgba(38, 82, 96, 0.1) 25%,
-          transparent 25%,
-          transparent 50%,
-          rgba(38, 82, 96, 0.1) 50%,
-          rgba(38, 82, 96, 0.1) 75%,
-          transparent 75%,
-          transparent
-        );
-        animation: 2.8s linear 0s infinite normal none running ${Zebra};
       }
     `,
 

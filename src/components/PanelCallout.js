@@ -16,7 +16,7 @@ const PanelContainer = styled.div`
   display: flex;
   flex-direction: column;
   flex-grow: 1;
-  font-family: ${font('effra')};
+  font-family: ${font('main')};
   justify-content: baseline;
   max-width: ${containerMaxWidth};
   min-height: 350px;
@@ -49,7 +49,7 @@ const PanelHeading = styled(Heading)`
   z-index: 1;
 
   ${PanelContainer}:hover & {
-    transform: translateY(-5px);
+    text-decoration: underline;
   }
 
   @media (max-width: ${mq.max[480]}) {
@@ -61,7 +61,7 @@ const PanelHeading = styled(Heading)`
 
 const PanelBody = styled.div`
   font-size: 1em;
-  font-family: ${font('grotesk')};
+  font-family: ${font('main')};
   line-height: ${24 / 16};
   margin-right: auto;
   margin-top: 11px;

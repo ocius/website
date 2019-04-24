@@ -9,7 +9,7 @@ import Heading from './Heading';
 import mq from '../common/mq';
 
 const Container = styled.article`
-  font-family: ${font('grotesk')};
+  font-family: ${font('main')};
   color: #001826;
   background-color: #ffffff;
   max-width: 540px;
@@ -31,7 +31,9 @@ const Paragraph = styled.p`
 const StyledLink = styled(GatsbyLink)`
   color: inherit;
   display: block;
-  text-decoration: none;
+  :hover {
+    text-decoration: none;
+  }
 `;
 
 const StyledLinkMargin = styled(StyledLink)`
@@ -41,6 +43,9 @@ const StyledLinkMargin = styled(StyledLink)`
 const StyledHeading = styled(Heading)`
   font-size: 24px;
   line-height: ${32 / 24};
+  :hover {
+    text-decoration: underline;
+  }
 `;
 
 const ImageContainer = styled.figure`

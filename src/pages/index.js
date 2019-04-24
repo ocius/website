@@ -67,7 +67,7 @@ export default ({ data }) => (
               BlueBottle offers economic and operational advantages over conventional methods in a
               multitude of industries, below are just some of the solutions we offer...
             </p>
-            <Button color="white" size="medium" href="/bluebottle" border>
+            <Button color="white" size="medium" href="/usv" border>
               What is a USV?
               <Icon.ArrowRight
                 fill="#000000"
@@ -83,7 +83,7 @@ export default ({ data }) => (
       </Segmented>
     </Container>
 
-    <div id="solutions" style={{ backgroundColor: '#efefef' }}>
+    <div id="solutions" style={{ backgroundColor: '#efefef', paddingBottom: '20px' }}>
       <Segmented borderBottom="">
         <PanelCalloutGroup>
           {data.DefenceTile && (
