@@ -1,0 +1,30 @@
+---
+title: "City ports and air pollution"
+date: "2007-02-26"
+author: "Ocius Administrator"
+---
+
+**PACIFIC MARITIME**  
+26 February 2007By Captain Kelly Sweeney
+
+In October I flew to Long Beach for two weeks of book signings and appearances for my book From the Bridge. As the Alaska Airlines jet began to make its approach I looked out the window at the brown haze in the air. The thick layer of smog ranged from the mountains to the coast, and out to sea far beyond Santa Catalina Island. The role of California ports in contributing to air quality problems has not been overlooked. In fact, the chairman of the South Coast Air Quality Management District, Mr. William A. Burke, has said that just **the ports of Los Angeles and Long Beach alone “are responsible for more than 100 tons per day of smog and particulate-forming nitrogen oxides (NOx) – more than the daily emissions from all 6 million cars in the region.”**
+
+Smog in Southern California is a given, but on the return trip home as we were making our approach into SeaTac Airport, what I saw jarred me. A brown layer of smog hung over Puget Sound. Having grown up in Washington, it’s hard for me to accept that Seattle has a smog problem as well, but from what I saw that day, it does.
+
+A few minutes before we touched down in Seattle, the plane flew over Elliott Bay. The port was busy with ships, boats, and ferries. There are many vessels working in harbors that move from one berth to another, or move throughout the port all day. These vessels are generically known as harbor craft, and have been identified as a significant source of port air pollution. I have worked as a mate on high-speed passenger vessels in Puget Sound, and know how much diesel exhaust they put into the air. That’s why I am impressed with some of the innovative ways currently being utilized to minimize or eliminate air pollution from harbor craft.
+
+Around seven years ago I was on a tanker coming into Houston, Texas, enroute to the British Petroleum refinery to take on a load of toluene. As the watch officer on the bridge I navigated, updated the logbook, kept a lookout, and monitored the helmsman while the pilot expertly directed our 600-foot ship up the Houston Ship Channel. Near the end of my four hours on the bridge, while scanning ahead with my binoculars a stationary vessel came into view. It was close to shore, and the dayshapes it had hoisted in accordance with the Navigation Rules of the Road showed that it was a dredge. I asked the pilot why there was no diesel exhaust, even though it was obviously working. He replied, “That’s an electric dredge. They’re using it because of pollution concerns in this area.”
+
+Before then I had never seen an electric dredge at work, but have since found out that they’ve been used with success not only in the Houston area, but in waterways throughout the United States. In fact, the ports of Los Angeles and Long Beach have utilized electric dredges since the late 1980s as a way to reduce exhaust pollution. The Great Lakes Dredging Company has two electric dredges, the Florida and the California. The Florida has worked in LA/LB deepening the main channel, as has Manson’s HR Morris, which can be plugged into shore power directly while working. Electric dredges have proven to be so reliable that a recent newbuild, the Waymon Boyd, was put into service in an environmentally sensitive area in the Gulf of Mexico just one day after it came out of the shipyard last September.
+
+Tour boats and passenger ferries are some of the other types of harbor craft that can add to port air pollution. In an effort to reduce these vessel emissions, a number of small, fully electric tour boats have been operated successfully since the 1990s in such diverse markets as Newport Beach, California, Seattle and Long Island, New York. Utilizing batteries, which are charged each night, these electrically powered tour boats produce zero emissions while underway.
+
+Expanding far beyond these small electric powered tour boats, a new generation of hybrid-powered passenger ferries has also emerged. Dr. Robert Dane, Chief Executive Officer of Solar Sailor Holdings, Ltd. recently told me that the 100 passenger ferry Solar Sailor utilizes a hybrid power system, and after years of working as a charter vessel is now on a regular ten hour per day ferry run in Australia. Solar panels made by British Petroleum charge batteries on the vessel, while wind power and biodiesel-compatible engines can be employed if needed. Under solar and wind power the vessel puts out no emissions – eliminating worries of air pollution violations or fines.
+
+Due to the great success the hybrid power system has had in reducing air emissions, Solar Sailor Holdings recently won bids for seven 100-passenger hybrid-powered ferries on Australia’s Gold Coast, and a 100-passenger hybrid-powered ferry in Germany. The company is also in negotiations to provide a 600-passenger ferry in San Francisco Bay, to run between the City and Alcatraz Island. The National Park Service mandated specific environmental requirements for the company that was awarded the new ferry contract, encouraging the use of “multiple propulsion systems, supplemented by solar and wind power” in the vessel’s design. From an environmental point of view, Solar Sailor’s hybrid technology appears to be a perfect fit for the new Alcatraz Ferry.
+
+Few people outside the industry realize how much air pollution comes from the vessels working in port. Though the public is generally unaware, however, government agencies are not. In fact, many ports are considering updating their regulations regarding harbor craft emissions, and in California even more stringent requirements will soon take effect. The use of electric dredges, battery powered passenger vessels, and hybrid electric power systems have all been proven effective and reliable. In my opinion, companies operating harbor craft should fully consider embracing these technologies – now.
+
+‘Till next time… smooth sailin’.
+
+kelly@pacmar.com
