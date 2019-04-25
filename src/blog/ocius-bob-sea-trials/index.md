@@ -24,4 +24,4 @@ Also, particularly pleasing was that algorithms and software functions developed
 
 We have a busy schedule planned for the next 12 weeks and we look forward to updating you.
 
-![](./DSC02477.jpg)
+![OCIUS Bob](./DSC02477.jpg)

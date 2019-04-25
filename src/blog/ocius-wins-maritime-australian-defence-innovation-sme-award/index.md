@@ -6,16 +6,11 @@ category: "Defence"
 featuredImage: DSC_9138.jpg
 ---
 
-![](./7c6c2bee-f841-4f31-b135-fa87d6206678.jpg)
-
-**_PRESS RELEASE_**
+![PRESS RELEASE](./ocius-logo.jpg)
 
 “The judges recommended this award go to OCIUS Technology Limited. The company is building unmanned ocean drones or unmanned surface vessels (USVs) called Bluebottles that run on the energy available at sea – solar, wind and wave energy. This results in a disruptive, autonomous surveillance and communications platform that can remain at sea for weeks or months at a time. OCIUS was awarded a CTD contract in 2015 leading to a successful demonstration in August of an anti-submarine warfare variant of the Bluebottle.” ¹
 
 ![Robert Dane – CEO of OCIUS accepting award from Christopher Pyne – Minister of Defence Industry](./DSC_9138.jpg)
-<span class="caption">
-Robert Dane – CEO of OCIUS accepting award from Christopher Pyne – Minister of Defence Industry
-</span>
 
 **OCIUS Technology’s ‘Bluebottle’ ocean drones are Unmanned Surface Vessels (USVs)**. They are named after the Australian marine animal that lives at sea and uses it’s body as a sail. **They harness the energy of the ocean, solar, wind and wave action to power themselves** allowing them to stay at sea almost indefinitely and move forward under all conditions.
 
@@ -23,16 +18,13 @@ The Bluebottle’s patented ‘solar sail’ collects both solar and wind power,
 
 **The result is an autonomous data gathering and communications platform, a “satellite of the sea.”** The Bluebottle can roam the oceans almost indefinitely allowing defence, industry, and scientific personnel as well as border security and the oil and gas industry to monitor large areas of ocean at greatly reduced cost and with no one in harm’s way.
 
-![](./Innovation-awards-in-front-of-Bruce-1024x678.jpg)
-<span class="caption">
-From left to right: Air Vice Marshal Mark Skidmore AM – Spitfire Association , Mr Alan Steber – GM Steber International, Dr Alex Zelinski AO – Chief Defence Scientist, Commander Paul Hornsby – RAN Navy Strategic Command, Mr Lysle Roberts – Spitfire Association , Dr Robert Dane – OCIUS, Mr Chris Lloyd – Vice President Maritime Thales, Mr Duncan Challen – Executive Director at NSW Department of Industry. Commodore, Peter Scott CSC, RAN – Director of Defence NSW
-</span>
+![From left to right: Air Vice Marshal Mark Skidmore AM – Spitfire Association , Mr Alan Steber – GM Steber International, Dr Alex Zelinski AO – Chief Defence Scientist, Commander Paul Hornsby – RAN Navy Strategic Command, Mr Lysle Roberts – Spitfire Association , Dr Robert Dane – OCIUS, Mr Chris Lloyd – Vice President Maritime Thales, Mr Duncan Challen – Executive Director at NSW Department of Industry. Commodore, Peter Scott CSC, RAN – Director of Defence NSW](./Innovation-awards-in-front-of-Bruce-1024x678.jpg)
 
 Compared to conventional fossil fuel powered, manned and unmanned craft, **Bluebottles can operate continuously, at low cost and are almost silent.**
 
 Compared to other renewable energy powered USVs, **Bluebottles are superior having more power, payload and performance**, all in the one vessel.
 
-![](./wallpaperocius-1024x576.jpg)
+![Bluebottle](./wallpaperocius-1024x576.jpg)
 
 Bluebottles have a massive 200 – 300kg payload capacity that can accommodate a variety of sensors or more batteries. The technology has been developed with assistance of a $3 million contract from the Commonwealth’s Defence Science and Technology Group (DSTG) Strategy Policy and Intelligence group, which has transitioned since into the Defence Innovation Hub.
 

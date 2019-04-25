@@ -14,11 +14,7 @@ In September 2015, Defence invested $2.85 million in Ocius Technology to develop
 
 We were honoured to have the Chief of the Defence Force (CDF) ACM Mark Binskin in attendance for the trial. Also attending were numerous senior officers of the Royal Australian Navy. It was a hugely successful day and I’m delighted to report the Bluebottle and array combination performed above expectations. Credit must go to the Ocius and Thales engineering teams working together for putting on such an excellent day; congratulations!
 
-![image001](./image001.jpg)
-
-<span class="caption">
-CDF centre front with <span data-term="goog_383565209">Thursday’s</span> group
-</span>
+![CDF centre front with Thursday’s group](./image001.jpg)
 
 Thanks also to the Commanding Officer of HMAS Creswell, Captain Charles Huxtable for being a splendid host and to all the officers, men and women who represented our Department of Defence.
 

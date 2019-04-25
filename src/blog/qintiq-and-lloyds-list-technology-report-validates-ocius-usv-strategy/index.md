@@ -5,7 +5,7 @@ author: "Ocius Administrator"
 featuredImage: qintiq-lloys-report.jpg
 ---
 
-![qintiq lloys report](./qintiq-lloys-report.jpg)
+![Qintiq Lloys Report](./qintiq-lloys-report.jpg)
 
 #### A major new report on maritime technology trends has found that “_big data analytics, autonomous systems, sensors and communication, sustainable energy generation… are transformational in nature when used individually and when combined_“
 

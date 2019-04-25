@@ -9,7 +9,7 @@ featuredImage: unnamed.jpg
 
 In response to the announcement CEO Robert Dane said “There are some fantastic companies in this prestigious competition and we are honoured to be selected as a finalist.”
 
-![unnamed](./unnamed.jpg)
+![Austech](./unnamed.jpg)
 
 “Oceans cover 70% of the earth’s surface, control climate and weather and are critical in the defence of many nations including Australia.”
 

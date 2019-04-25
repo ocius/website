@@ -28,8 +28,4 @@ Because we strongly believe in
 
 Robert also informed the shareholders that our first commercial vessel, the multi award winning “_SolarSailor”_ was sold to a private buyer. The new owner plans to convert her to a live aboard cruising vessel to explore the East Australian coast and then SE Asia.This pragmatic business decision gives Ocius a significant cash boost at this time as well as freeing management to focus time and resources on our core business –selling technology and data for Unmanned Surface Vessels and commercial shipping.
 
-![IMG_4527](./IMG_4527.jpg)
-
-<span class="caption">
-  Photo : Scott Elice-Flint (L), Mark Bethwaite AM (C), Dr Robert Dane (R)
-</span>
+![Photo : Scott Elice-Flint (L), Mark Bethwaite AM (C), Dr Robert Dane (R)](./IMG_4527.jpg)

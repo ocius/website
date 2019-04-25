@@ -13,4 +13,4 @@ Organised by the Australian Association of Unmanned Systems (AAUS) in associatio
 
 For a full schedule of the day, please click <span style="text-decoration: underline;"><span style="color: #0000ff;">[here](http://www.civsec.com.au/conferences/conf-AAUS.asp)</span></span>.
 
-![unmanned](./unnamed.jpg)
+![CIVSEC 2016](./unnamed.jpg)

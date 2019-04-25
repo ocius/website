@@ -11,7 +11,7 @@ featuredImage: cover-page.jpg
 
 **Unmanned surface vessels:** At the time of writing, we have just finished exhibiting two versions of our unmanned surface vessels with Steber International at the Pacific 2013 Exhibition held at Darling Harbour Convention Centre on 7th to 9th October 2013.
 
-![cover page](./cover-page.jpg)
+![Cover page](./cover-page.jpg)
 
 We had excellent feedback from Pacific 2013 as well as from our general marketing activities all confirming the strong potential market for our products. We have had and are continuing numerous meetings with several  
 prime defence contractors, both local and overseas, including in the short term with Australian Government people in Canberra in November 2013.
@@ -30,7 +30,7 @@ Compared to known competitors, we believe that this is the simplest, cheapest, m
 
 **Corporate:** We have maintained our cash resources through (i) diligent cost restraint, (ii) Directors being paid in shares and (iii) senior management deferring wages ‘until such time as the Company deems it can afford to pay’. We will discuss at this year’s AGM regarding our plans to raise substantial new equity immediately following the AGM (from firstly existing shareholders and then from new third party investors) in order to fund our next 12 months exciting growth plans which includes deploying at least one autonomous oceanographic, unmanned surface vessels off the coast of Australia in 2014 and commence revenue raising activities selling data to both local and overseas oceanographic research organisations.
 
-![SolarSailorSteber](./SolarSailorSteber.jpeg)
+![SolarSailor Steber](./SolarSailorSteber.jpeg)
 
 Your Board is now in the process of appointing new Corporate Advisors to assist with our planned fund raising activities as well as our now planned listing on the ASX within the ensuing 12 to 18 months. We are also currently in the process of refreshing our Board of Directors and creating an Advisory Panel to help refine our Company’s offering and its position in the local and overseas markets. We will advise all shareholders of all appointments in this regard.
 

@@ -19,11 +19,7 @@ Robert Dane said:
 
 > “This is a highly desirable capability for a unmanned surface vessel for many applications. We are honoured to be working with the Spitfire Memorial Defence Association – this award is a great honour.”
 
-![spitfire](./spitfire_fellowship.jpg)
-
-<span class="caption">
-  On Monday 6 December 2016, His Excellency Sir Peter Cosgrove AK, MC, Governor-General of the Commonwealth of Australia, hosted a reception for Australian Defence Force Academy (ADFA) Graduands, Royal Military College (RMC) Staff Cadets and the Spitfire Association.
-</span>
+![On Monday 6 December 2016, His Excellency Sir Peter Cosgrove AK, MC, Governor-General of the Commonwealth of Australia, hosted a reception for Australian Defence Force Academy (ADFA) Graduands, Royal Military College (RMC) Staff Cadets and the Spitfire Association.](./spitfire_fellowship.jpg)
 
 Left to Right:
 

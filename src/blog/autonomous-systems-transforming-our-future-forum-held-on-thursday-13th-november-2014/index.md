@@ -10,6 +10,6 @@ The feedback from stakeholders was very positive and further engagement with the
 
 Robert Dane thanked Chris Williams, Chair of SADIG Executive, SADIG Committee members, and NSW Trade and Investment for the opportunity to present the Ocius Steber unmanned surface vessels ‘Bluebottles’ to the conference.
 
-![photo 1](./photo-1.jpg)
+![Photo 1](./photo-1.jpg)
 
-![photo 2](./photo-2.jpg)
+![Photo 2](./photo-2.jpg)

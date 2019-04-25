@@ -10,16 +10,13 @@ featuredImage: unmanned-marine-drone-designed-t.jpg
 [**By the Daily Telegraph,**](http://www.dailytelegraph.com.au/news/nsw/unmanned-marine-drone-designed-to-patrol-our-borders/news-story/d9c231c86b2cbf17d0990174e1066f8a)
 
 <iframe src="https://www.youtube.com/embed/DYb19kIa12s?feature=oembed" allowfullscreen="" width="100%" height="400" frameborder="0"></iframe>
-<span class="caption">
+<figcaption>
   ‘Bluebottle’ creating waves in NSW defence
-</span>
+</figcaption>
 
 **INTRODUCING** ro-boat cop — the unmanned marine drone capable of patrolling our borders for months at a time. The craft is creating waves around the world for its ability to revolutionise the way we patrol and monitor our seas. Dubbed Bluebottle — after the Aussie marine animal that uses its body as a windsail to drive itself — the marine drone is propelled by wind, solar and wave power through its solar sail and wave flipper.
 
-![](http://cdn.newsapi.com.au/image/v1/2f99996913e6287058b174f8738c06b4?width=650)
-<span class="caption">
-  Bluebottle is creating waves in marine defence.
-</span>
+![Bluebottle is creating waves in marine defence.](http://cdn.newsapi.com.au/image/v1/2f99996913e6287058b174f8738c06b4?width=650)
 
 Minister for Trade and Industry, Niall Blair said this technology showcases the very best of Australian ingenuity — it’s imitating life, with nature inspiring new innovation.
 

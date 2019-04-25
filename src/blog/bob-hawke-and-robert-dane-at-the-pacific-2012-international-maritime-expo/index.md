@@ -8,8 +8,4 @@ Last month Solar Sailor and Forgacs Engineering launched a prototype for the wor
 
 These will provide governments and organizations with a vessel that can spend an unlimited amount of time at sea using wind and solar energy. This offers benefits to coastal surveillance, national security, meteorology and marine science.
 
-![](http://solarsailor.com/wp-content/uploads/2012/02/Kristen-Keegan1.jpg "UOV prototype with Bill Stuart (FORGACS), Robert Dane, Bob Hawke, and Kristen Keegan of the Hunter Business Chamber")
-
-<span class="caption">
-  The UOV prototype with Bill Stuart (FORGACS), Robert Dane (SolarSailor), Bob Hawke (SolarSailor), and Kristen Keegan (CEO Hunter Business Chamber)
-</span>
+![The UOV prototype with Bill Stuart (FORGACS), Robert Dane (SolarSailor), Bob Hawke (SolarSailor), and Kristen Keegan (CEO Hunter Business Chamber)](http://solarsailor.com/wp-content/uploads/2012/02/Kristen-Keegan1.jpg "UOV prototype with Bill Stuart (FORGACS), Robert Dane, Bob Hawke, and Kristen Keegan of the Hunter Business Chamber")

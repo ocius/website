@@ -18,11 +18,7 @@ In 1996 Dr. Robert Dane, winner of the 2012 Futuremakers Award, saw a solar boat
 
 <div class="wp-caption alignleft" style="width: 262px; float: left; padding-right: 20px;">
 
-[![](http://solarsailor.com/wp-content/uploads/2012/04/eh_earth_hour_2012_awards_night_solarsailor_futuremakers_winner_800x600_7305.jpg "Earth Hour Awards")](http://solarsailor.com/wp-content/uploads/2012/04/eh_earth_hour_2012_awards_night_solarsailor_futuremakers_winner_800x600_7305.jpg)
-
-<span class="caption">
-  Tom Dane accepting the award on behalf of Robert Dane, with Clover Moore and Dermot O'Gorman
-</span>
+[![Tom Dane accepting the award on behalf of Robert Dane, with Clover Moore and Dermot O'Gorman](http://solarsailor.com/wp-content/uploads/2012/04/eh_earth_hour_2012_awards_night_solarsailor_futuremakers_winner_800x600_7305.jpg "Earth Hour Awards")](http://solarsailor.com/wp-content/uploads/2012/04/eh_earth_hour_2012_awards_night_solarsailor_futuremakers_winner_800x600_7305.jpg)
 
 </div>
 

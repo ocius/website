@@ -6,7 +6,7 @@ author: "Ocius Administrator"
 
 Steber SolarSailor is developing unmanned surface vessels (USVs) called SSS Bluebottles. These are self-sustaining marine platforms running totally on energy available at sea. They require no fuel, no supplies and no crew and one remote person, out of harms way, can control and monitor multiple platforms in a network. Each vehicle is self-deploying and retrieving, can roam widely or stay on station for months to years in all weather conditions and has a large payload capacity for customers sensors and communications.
 
-![130817 CARBON_WING_FINAL_1 copy](http://solarsailor.com/wp-content/uploads/2013/08/130817-CARBON_WING_FINAL_1-copy.jpg)
+![](http://solarsailor.com/wp-content/uploads/2013/08/130817-CARBON_WING_FINAL_1-copy.jpg)
 
 The low cost per byte of data ratio possible is described by the CSIRO as ‘disruptive’ for ocean monitoring and surveillance. SSS Blue Bottle has five times the data transmission capacity, speed, power and payload compared to known USV competitors and a lower cost per unit than that of an aerial drone or manned ship.
 

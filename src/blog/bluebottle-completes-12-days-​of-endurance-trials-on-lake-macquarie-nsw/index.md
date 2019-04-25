@@ -13,7 +13,7 @@ Chief Engineer Lloyd Breckenridge said ”Today we completed 12 days of trials o
 
 Robert Dane said “This week we proved even in the worst weather we are sustainable. What was pleasing was the amount of solar energy our solar sail could harness at dawn and dusk. After Easter we will begin trials on Jervis Bay and in the ocean.”
 
-![170407 Col, 'Bruce' and Robert](./170407-Col-Bruce-and-Robert.jpg)
+![Col, 'Bruce' and Robert](./170407-Col-Bruce-and-Robert.jpg)
 
 **2) Colin Steber from Steber Internaitonal Boat Builders with Ocius CEO Robert Dane and ‘Bruce’ in background**
 

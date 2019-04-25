@@ -19,6 +19,6 @@ Spitfire pilot Lysle Roberts said “the Spitfire Memorial Fellowship was concei
 
 Following a visit to Ocius facility at UNSW by Lysle Roberts and Les Field from the the Spitfire Memorial Fellowship committee, Ocius has been awarded a scholarship to engage four UNSW engineering and computer science undergaduates to work on the Ocius Bluebottle Unmanned Surface Vessel Stinger V1 prototype. The successful students are pictured from Left to Right in the photograph – Connor Mcleod, Tom Drainsfield, Lysle Roberts (Spitfire pilot and comittee member) Ravi Raj, Aamir Alikhan and Brett Ryall (not present).
 
-![OciusInterns](./DSC_0436-1024x683.jpg)
+![Ocius Interns](./DSC_0436-1024x683.jpg)
 
 Ocius CEO Robert Dane said, “We are honoured to meet the Spitfrie committee and privileged to be able to offer this scholarship to these five amazing young Australians. The aim is to be able to carry at 5 knots a 105kg payload, in this case a towed array and winch and be able to deploy, tow and retireve it as required . This has never been done before on such a small (450kg) unmanned vessel. The students will be designing, installing and testing subsystems and in the end researching its capability to do a number of jobs including antisubmarine warfare. This is good for us, the students, UNSW and Australia.”

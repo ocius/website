@@ -7,4 +7,4 @@ featuredImage: 161215-ocius-christening-official-photo-1024x747.png
 
 Bruce’s christening covered by the Australia Defence Magazine. You can read the article by clicking on <span style="text-decoration: underline; color: #0000ff;">[this](http://www.australiandefence.com.au/news/ocius-bluebottle-usv-set-for-trials)</span> link.
 
-![img](./161215-ocius-christening-official-photo-1024x747.png)
+![OCIUS Christening Official Photo](./161215-ocius-christening-official-photo-1024x747.png)

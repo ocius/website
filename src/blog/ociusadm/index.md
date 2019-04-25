@@ -7,8 +7,8 @@ featuredImage: ADM0.png
 
 Ocius under the spotlight in the latest Australian Defence Magazine. You can download the full spread by clicking on [ADM Aug 2016 Ocius](./ADM-Aug-2016-Ocius.pdf) – which makes for easier reading!
 
-![0](./ADM0.png)
+![Cover page](./ADM0.png)
 
-![ADM1](./ADM1.png)
+![Page 1](./ADM1.png)
 
-![ADM2](./ADM2-1.png)
+![Page 2](./ADM2-1.png)

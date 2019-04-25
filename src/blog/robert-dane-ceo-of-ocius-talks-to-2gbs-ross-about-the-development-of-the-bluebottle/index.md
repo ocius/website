@@ -5,7 +5,6 @@ author: "Kevin Chan"
 featuredImage: OCIUS-on-2GB.png
 ---
 
-
 Robert Dane, CEO of Ocius, talks to Ross about the development of the BlueBottle unmanned surface vessel which could help with the way Australia patrols its marine borders
 
 <iframe src="https://omny.fm/shows/money-news-with-ross-greenwood/how-this-nautical-drone-can-transform-border-contr/embed?style=cover&amp;size=square" width="100%" height="180px" frameborder="0"></iframe>

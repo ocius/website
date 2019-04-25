@@ -5,7 +5,7 @@ author: "Ocius Administrator"
 featuredImage: dscn3078444.jpg
 ---
 
-![dscn3078444](./dscn3078444.jpg)
+![Solar Sailor Lake Macquarie](./dscn3078444.jpg)
 
 **Solar Sailor Lake Macquarie is up for sale. This pioneering vessel is a hybrid boat that relies on LPG and solar and wind energy for propulsion.**
 
@@ -17,7 +17,7 @@ It won the Australian Design Award in 2001, among many other awards over its lif
 
 ‘We have built five of these boats, four for Hong Kong and one for Shanghai. They use 50% of the fuel of the boats they replaced and of course, the Hong Kong Jockey Club which runs them is very pleased with that.’
 
-![inline](./inline.jpg)
+![Inline](./inline.jpg)
 
 Time is running out. There have been several offers, both locally and overseas bidders, but it would be great to maintain the ongoing business.
 

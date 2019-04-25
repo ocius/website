@@ -5,11 +5,7 @@ author: "Kevin Chan"
 featuredImage: Pacific-2017.png
 ---
 
-[![Maritime Industry Innovation Award](./Maritime-Industry-Innovation-Award-1024x452.jpg)](https://pacific2017.com.au/innovation-awards/index.asp)
-
-<span class="caption">
-  The awards recognise and reward companies and individuals at the forefront of naval and maritime innovation.
-</span>
+[![The awards recognise and reward companies and individuals at the forefront of naval and maritime innovation.](./Maritime-Industry-Innovation-Award-1024x452.jpg)](https://pacific2017.com.au/innovation-awards/index.asp "Maritime Industry Innovation Award")
 
 OCIUS is honoured to be shortlisted as one of 15 Australian Companies for these prestigious awards.
 
