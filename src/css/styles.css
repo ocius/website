@@ -121,6 +121,7 @@ input[type="color"] {
     -moz-appearance: none;
     box-sizing: border-box;
     width: 100%;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
 
 .page-content {
