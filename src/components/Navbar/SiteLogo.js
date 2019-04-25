@@ -1,10 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link as GatsbyLink } from 'gatsby';
+import { Link as GatsbyLink, graphql, StaticQuery } from 'gatsby';
 import styled from 'styled-components';
 import mq from '../../common/mq';
-// Import logo image
-import Logo from '../../images/ocius-logo-header.png';
+
+const logoQuery = graphql`
+  query {
+    file(relativePath: { eq: "images/ocius-logo-header.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 200) {
+          src
+        }
+      }
+    }
+  }
+`;
 
 const LogoLink = styled(GatsbyLink)`
   display: inline-flex;
@@ -21,9 +31,14 @@ const LogoImage = styled.img`
 
 const SiteLogo = ({ href }) => {
   return (
-    <LogoLink key="brand" to={href}>
-      <LogoImage src={Logo} alt="Ocius logo" />
-    </LogoLink>
+    <StaticQuery
+      query={logoQuery}
+      render={data => (
+        <LogoLink key="brand" to={href}>
+          <LogoImage src={data.file.childImageSharp.fluid.src} alt="Website logo" />
+        </LogoLink>
+      )}
+    />
   );
 };
 
