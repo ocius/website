@@ -712,7 +712,7 @@ export const query = graphql`
       ...imageSharpLogotype
     }
 
-    Thales: file(relativePath: { eq: "pages/about/thales-logo.jpg" }) {
+    Thales: file(relativePath: { eq: "pages/about/thales-logo.png" }) {
       ...imageSharpLogotype
     }
 
