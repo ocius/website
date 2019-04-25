@@ -2,6 +2,7 @@ import React from 'react';
 import { graphql, Link as GatsbyLink } from 'gatsby';
 import Img from 'gatsby-image';
 import { Row, Col } from 'react-flexbox-grid';
+import { OutboundLink } from 'gatsby-plugin-gtag';
 import SEO from '../../components/SEO';
 import Layout from '../../layouts/Layout';
 import Container from '../../components/Container';
@@ -422,7 +423,7 @@ export default ({ data }) => (
               carrying tens of thousands of passengers. Following the sale of Captain Cook Cruises
               in 2011, the&nbsp;
               <em>
-                <a href="https://ocius.com.au/2014/11/solar-sailor-and-marjorie-k/">Solar Sailor</a>
+                <GatsbyLink to="/blog/solar-sailor-and-marjorie-k/">Solar Sailor</GatsbyLink>
                 &nbsp;
               </em>
               vessel operated commercially on Lake Macquarie as a charter and dolphin watch vessel
@@ -441,10 +442,7 @@ export default ({ data }) => (
               <li>
                 <strong>
                   <em>
-                    “
-                    <a href="https://ocius.com.au/wp-content/uploads/2014/09/ck63.jpg">
-                      SolarSailor
-                    </a>
+                    “<a href="/ck63.jpg">SolarSailor</a>
                     ”&nbsp;
                   </em>
                 </strong>
@@ -457,9 +455,7 @@ export default ({ data }) => (
                 </strong>
                 In July 2008, with oil at $140/ barrel, the Hong Kong Jockey Club ordered the
                 construction of four&nbsp;
-                <a href="https://ocius.com.au/wp-content/uploads/2014/09/120116-b4-solarsails-outbound-at-sai-kung.jpg">
-                  commuter ferries
-                </a>
+                <a href="/120116-b4-solarsails-outbound-at-sai-kung.jpg">commuter ferries</a>
                 &nbsp;to operate a service to transport players, staff and supplies from the
                 mainland at Sai Kung to the island of Kau Sai Chau where the HKJC has three 18 hole
                 golf courses. The ferries alternate two routes of five and seven mile round trips
@@ -478,9 +474,9 @@ export default ({ data }) => (
                 -metre high SolarSail with software integration, on a 250 pax VIP river cruise boat
                 vessel,&nbsp;&nbsp;‘
                 <em>
-                  <a href="https://ocius.com.au/2010/05/expo-ferry-rides-on-sun-and-wind-using-technology-based-on-the-evolution-of-insects-wings/">
+                  <GatsbyLink to="/blog/expo-ferry-rides-on-sun-and-wind-using-technology-based-on-the-evolution-of-insects-wings/">
                     Suntech Guoshung
-                  </a>
+                  </GatsbyLink>
                 </em>
                 ’ for the World Expo in Shanghai.
               </li>
@@ -534,16 +530,16 @@ export default ({ data }) => (
                 </p>
                 <p>
                   <strong>2017</strong> – Successfully completed{' '}
-                  <a href="https://ocius.com.au/wp-content/uploads/2015/09/150914OCIUSCTDPressRelease.pdf">
+                  <a href="/150914OCIUSCTDPressRelease.pdf">
                     Capability Technology Demonstrator (CTD) Contract
                   </a>{' '}
                   for development of Anti-Submarine Unmanned Surface Vessel (ASW-USV)
                 </p>
                 <p>
                   <strong>2016</strong> – Finalist{' '}
-                  <a href="http://wind-ship.org/en/innovation_awards_2016/">
+                  <OutboundLink href="http://wind-ship.org/en/innovation_awards_2016/">
                     Wind Propulsion Technology User Award
-                  </a>{' '}
+                  </OutboundLink>{' '}
                   &amp;{' '}
                   <GatsbyLink to="/blog/wind-propulsion-innovation-award/">
                     Lifetime Achievement Award,{' '}
@@ -580,9 +576,9 @@ export default ({ data }) => (
                 </p>
                 <p>
                   <strong>2012</strong>&nbsp;– Robert Dane,&nbsp;
-                  <a href="http://www.wwf.org.au/?4023/Winners-announced-for-the-WWF-Earth-Hour-Awards">
+                  <OutboundLink href="http://www.wwf.org.au/?4023/Winners-announced-for-the-WWF-Earth-Hour-Awards">
                     WWF Future Makers Award
-                  </a>
+                  </OutboundLink>
                 </p>
                 <p>
                   <strong>2011 </strong>–<strong>&nbsp;</strong>Delivery of the final vessel for
@@ -625,9 +621,9 @@ export default ({ data }) => (
                 </p>
                 <p>
                   <strong>2007</strong>&nbsp;–<strong>&nbsp;</strong>Robert Dane&nbsp;
-                  <a href="http://www.ecocitizenaustralia.com.au/solar-sailor-dr-robert-dane/">
+                  <OutboundLink href="http://www.ecocitizenaustralia.com.au/solar-sailor-dr-robert-dane/">
                     Intel Environment Laureate USA
-                  </a>
+                  </OutboundLink>
                 </p>
                 <p>
                   <strong>2004</strong>&nbsp;–<strong>&nbsp;</strong>United Nations Awards finalist
@@ -716,7 +712,7 @@ export const query = graphql`
       ...imageSharpLogotype
     }
 
-    Thales: file(relativePath: { eq: "pages/about/thales-logo.jpg" }) {
+    Thales: file(relativePath: { eq: "pages/about/thales-logo.png" }) {
       ...imageSharpLogotype
     }
 

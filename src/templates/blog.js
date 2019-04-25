@@ -14,6 +14,7 @@ import Button from '../components/Button';
 import Pagination from '../components/Pagination';
 
 const Link = styled(GatsbyLink)`
+  display: block;
   color: #001826;
 `;
 

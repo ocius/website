@@ -12,7 +12,6 @@ Robert Dane said “‘Bruce’s’ rudder flipper really proved itself yesterda
 
 ![PHOTO: Bluebottle ‘Bruce’ on VIP day holding station 500m off a lee shore in 28- 35knots winds, for 5 hours using wave power only,- see WAVE POWER FLIPPER ICON](./AW18-Demonstrations.png)
 
-
 Lloyd Breckenridge, the Ocius team and Navy lead by LEUT Harry Hubbard from Waterhen have done terrific to work to make all of this happen in the time available. “GRIM” and ‘Bruce’ have been getting along fine and proven collision avoidance means there’s no problems when on separate missions with each other or any vessel with AIS.
 
 Both ‘Bruce’ and “Grim” have underwater modems to ‘talk’ to DST UUVs doing exercises for Mine Counter measures and Counter arms smuggling.
@@ -25,4 +24,4 @@ Ocius also had on display our next generation 18′ Bluebottle ‘Bob’. The 12
 
 ![PHOTO: Ocius team with “Bob” at AW18 VIP day.](./OCIUS-with-Bob.png)
 
-You can follow ‘Bruce’ and “GRIM” live on the [‘Find Bruce’ web page https://ocius.com.au/usv/track-the-bluebottle/](https://ocius.com.au/usv/track-the-bluebottle/). On the left, toggle the button between WamV “GRIM” and Bluebottle ‘Bruce’. If you leave the page open and the boats ‘snail trails’ will grow.
+You can follow ‘Bruce’ and “GRIM” live on the [‘Find Bruce’ web page](/find-bruce). On the left, toggle the button between WamV “GRIM” and Bluebottle ‘Bruce’. If you leave the page open and the boats ‘snail trails’ will grow.

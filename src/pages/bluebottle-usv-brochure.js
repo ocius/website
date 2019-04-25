@@ -80,6 +80,31 @@ const Feedback = styled.div`
   color: #dc3545;
 `;
 
+const FormField = styled(Field)`
+  &.is-invalid,
+  &:invalid {
+    border-color: #dc3545;
+    padding-right: calc(1.5em + 0.75rem);
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='%23dc3545' viewBox='-2 -2 7 7'%3e%3cpath stroke='%23dc3545' d='M0 0l3 3m0-3L0 3'/%3e%3ccircle r='.5'/%3e%3ccircle cx='3' r='.5'/%3e%3ccircle cy='3' r='.5'/%3e%3ccircle cx='3' cy='3' r='.5'/%3e%3c/svg%3E");
+    background-repeat: no-repeat;
+    background-position: center right calc(0.375em + 0.1875rem);
+    background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
+
+    &:focus {
+      border-color: #dc3545;
+      box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25);
+    }
+  }
+`;
+
+const TextareaField = styled(FormField)`
+  &.is-invalid,
+  &:invalid {
+    padding-right: calc(1.5em + 0.75rem);
+    background-position: top calc(0.375em + 0.1875rem) right calc(0.375em + 0.1875rem);
+  }
+`;
+
 const FieldWrapper = styled.div`
   margin: 0 0 0.625em;
 `;
@@ -183,15 +208,16 @@ class TechnicalSpecificationForm extends React.Component {
                 this.handleFormSubmitError(error);
               });
           }}
-          render={({ handleSubmit, isSubmitting }) => (
+          render={({ errors, touched, handleSubmit, isSubmitting }) => (
             <form onSubmit={handleSubmit}>
               {this.state.formMessage && (
                 <Alert success={this.state.submitSuccess}>{this.state.formMessage}</Alert>
               )}
               <FieldWrapper>
-                <Field
+                <FormField
                   type="text"
                   name="fullName"
+                  className={`form-control ${errors.fullName && touched.fullName && 'is-invalid'}`}
                   validate={TechnicalSpecificationForm.validateFullName}
                   placeholder="Full Name (required)"
                 />
@@ -199,15 +225,16 @@ class TechnicalSpecificationForm extends React.Component {
               </FieldWrapper>
 
               <FieldWrapper>
-                <Field type="text" name="position" placeholder="Position" />
+                <FormField type="text" name="position" placeholder="Position" />
               </FieldWrapper>
               <FieldWrapper>
-                <Field type="text" name="company" placeholder="Company or Company Website" />
+                <FormField type="text" name="company" placeholder="Company or Company Website" />
               </FieldWrapper>
               <FieldWrapper>
-                <Field
+                <FormField
                   type="email"
                   name="email"
+                  className={`form-control ${errors.email && touched.email && 'is-invalid'}`}
                   validate={TechnicalSpecificationForm.validateEmail}
                   placeholder="Email (required)"
                 />
@@ -215,12 +242,13 @@ class TechnicalSpecificationForm extends React.Component {
               </FieldWrapper>
 
               <FieldWrapper>
-                <Field type="tel" name="phone" placeholder="Phone" />
+                <FormField type="tel" name="phone" placeholder="Phone" />
               </FieldWrapper>
               <FieldWrapper>
-                <Field
+                <TextareaField
                   name="interest"
                   component="textarea"
+                  className={`form-control ${errors.interest && touched.interest && 'is-invalid'}`}
                   validate={TechnicalSpecificationForm.validateInterest}
                   cols={40}
                   rows={10}
