@@ -1,5 +1,17 @@
 const fonts = {
-  main: ["'Helvetica Neue'", "'Helvetica'", "'Arial'", 'sans-serif']
+  main: [
+    '-apple-system',
+    'BlinkMacSystemFont',
+    '"Segoe UI"',
+    'Roboto',
+    'Oxygen',
+    'Ubuntu',
+    'Cantarell',
+    '"Fira Sans"',
+    '"Droid Sans"',
+    '"Helvetica Neue"',
+    'sans-serif'
+  ]
 };
 
 /**
