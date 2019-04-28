@@ -43,7 +43,7 @@ export default ({ data }) => (
       </Segmented>
       <Segmented>
         <Row className="centered">
-          <Col xs={12} md={8} lg={9} lgOffset={2}>
+          <Col xs={12} md={8} lg={10} lgOffset={1}>
             <header id="people" className="centered">
               <Heading level={1} size="huge" underline>
                 Our Culture
@@ -129,7 +129,7 @@ export default ({ data }) => (
       </Segmented>
       <Segmented borderBottom="">
         <Row className="primary-content">
-          <Col xs={12} md={3} lg={3}>
+          <Col xs={12} md={4} lg={4}>
             {data.LloydBreckenridge && (
               <Img fixed={data.LloydBreckenridge.childImageSharp.fixed} alt="Lloyd Breckenridge" />
             )}
@@ -152,7 +152,7 @@ export default ({ data }) => (
               Ltd he feels he has found his dream job.
             </p>
           </Col>
-          <Col xs={12} md={3} lg={3}>
+          <Col xs={12} md={4} lg={4}>
             {data.PeterWlodarczyk && (
               <Img fixed={data.PeterWlodarczyk.childImageSharp.fixed} alt="Peter Wlodarczyk" />
             )}
@@ -174,7 +174,7 @@ export default ({ data }) => (
               CSIRO and Queensland University of Technology.
             </p>
           </Col>
-          <Col xs={12} md={3} lg={3}>
+          <Col xs={12} md={4} lg={4}>
             {data.TraceySharah && (
               <Img fixed={data.TraceySharah.childImageSharp.fixed} alt="Tracey Sharah" />
             )}
@@ -195,6 +195,7 @@ export default ({ data }) => (
               tax technology apps and 90% paperless.
             </p>
           </Col>
+          {/*
           <Col xs={12} md={3} lg={3}>
             {data.AndrewAtkin && (
               <Img fixed={data.AndrewAtkin.childImageSharp.fixed} alt="David Saxelby" />
@@ -211,6 +212,7 @@ export default ({ data }) => (
               including intellectual property, shareholder agreements and commercial contracts.
             </p>
           </Col>
+          */}
         </Row>
       </Segmented>
       <header id="partners" className="centered">
