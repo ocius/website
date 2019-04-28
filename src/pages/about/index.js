@@ -21,7 +21,7 @@ export default ({ data }) => (
     <Container className="page-content">
       <Segmented>
         <Row className="centered">
-          <Col xs={12} md={8} lg={8} lgOffset={2}>
+          <Col xs={12} md={12} lg={8} lgOffset={2}>
             <Heading level={1} size="huge" underline>
               Our Mission
             </Heading>
@@ -43,7 +43,7 @@ export default ({ data }) => (
       </Segmented>
       <Segmented>
         <Row className="centered">
-          <Col xs={12} md={8} lg={10} lgOffset={1}>
+          <Col xs={12} md={12} lg={10} lgOffset={1}>
             <header id="people" className="centered">
               <Heading level={1} size="huge" underline>
                 Our Culture
