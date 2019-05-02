@@ -449,25 +449,26 @@ export default ({ data }) => (
               Following an enquiry from the USA in 2007 for a ‘self-sustaining platform at sea’,
               OCIUS began research into the development of unmanned solar/wind/wave and ballasted
               powered ocean vessels or autonomous unmanned surface vessels. Initially, a 20-foot
-              manned engineering development model (EDM) proved the 'speed of advance' in all
-              conditions, adequate power, payload and persistence for a sustainable platform able to
-              go to sea for months.
+              manned engineering development model (EDM) proved the &apos;speed of advance&apos; in
+              all conditions, adequate power, payload and persistence for a sustainable platform
+              able to go to sea for months.
             </p>
             <p>
-              In 2014, Solar Sailor changed its name to OCIUS (Latin for 'fleet') to reflect an
-              expansion of its patented technologies including the solar sail.
+              In 2014, Solar Sailor changed its name to OCIUS (Latin for &apos;fleet&apos;) to
+              reflect an expansion of its patented technologies including the solar sail.
             </p>
             <p>
               OCIUS built multiple scale models for tank and lake testing, culminating in the
-              building of the first 10' prototype called 'Nemo' (Latin for 'no one' ie unmanned)
-              which provided significant proof of concept of a solar, wind and wave powered USV
-              carrying a significant payload.
+              building of the first 10&apos; prototype called &apos;Nemo&apos; (Latin for &apos;no
+              one&apos; ie unmanned) which provided significant proof of concept of a solar, wind
+              and wave powered USV carrying a significant payload.
             </p>
             <p>
-              Based on Nemo's development, in 2015 OCIUS was awarded a Capability Technology
+              Based on Nemo&apos;s development, in 2015 OCIUS was awarded a Capability Technology
               Demonstrator (CTD) from Defence Science and Technology Group. This proved a
-              significant contract and OCIUS with our partners developed an 18' prototype 'Bruce'
-              for Antisubmarine Warfare (ASW), which demonstrated to NAVY in August 2017.
+              significant contract and OCIUS with our partners developed an 18&apos; prototype
+              &apos;Bruce&apos; for Antisubmarine Warfare (ASW), which demonstrated to NAVY in
+              August 2017.
             </p>
             <p>
               In November 2019 Bruce participated Autonomous Warrior War games in Jervis Bay. Due to
