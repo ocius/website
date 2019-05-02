@@ -86,11 +86,11 @@ export default ({ children }) => (
               }}
             />
             <p>
-              22 King St,
+              22 King St
               <br />
               Building R13
               <br />
-              UNSW Randwick Campus,
+              UNSW Randwick Campus
               <br />
               Randwick NSW 2031
               <br />
