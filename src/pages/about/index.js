@@ -15,41 +15,36 @@ export default ({ data }) => (
     <SEO
       title="About"
       description="Our Mission. To supply the world's best unmanned surface vessels with more power, payload and
-      performance supporting Defence, Industry and Science personnel to monitor large areas of ocean continuously
-      at low cost and with no one in harm's way."
+      performance."
     />
     <PageHeader>About</PageHeader>
     <Container className="page-content">
+      <header id="mission" className="centered">
+        <Heading level={1} size="huge" underline>
+          Our Mission
+        </Heading>
+      </header>
       <Segmented>
         <Row className="centered">
           <Col xs={12} md={12} lg={8} lgOffset={2}>
-            <Heading level={1} size="huge" underline>
-              Our Mission
-            </Heading>
             <p>
               Innovative Autonomous Solutions
               <br />
               for
               <br />
               Persistent Maritime Surveillance
-              <br />
-              so that
-              <br />
-              Defence, Industry and Science personnel can monitor large areas of ocean
-              <br />
-              continuously with no one in harm’s way at low cost
             </p>
           </Col>
         </Row>
       </Segmented>
+      <header id="culture" className="centered">
+        <Heading level={1} size="huge" underline>
+          Our Culture
+        </Heading>
+      </header>
       <Segmented>
         <Row className="centered">
           <Col xs={12} md={12} lg={10} lgOffset={1}>
-            <header id="people" className="centered">
-              <Heading level={1} size="huge" underline>
-                Our Culture
-              </Heading>
-            </header>
             <p>
               Agile Australian company
               <br />
@@ -420,48 +415,75 @@ export default ({ data }) => (
           </Col>
         </Row>
       </Segmented>
+      <header id="story">
+        <Heading level={1} size="huge" underline className="centered">
+          Our Story
+        </Heading>
+      </header>
       <Segmented borderBottom="">
         <Row className="primary-content">
           <Col xs={12} md={12} lg={12}>
-            <header id="story">
-              <Heading level={1} size="huge" underline className="centered">
-                Our Story
-              </Heading>
-            </header>
             <p>
-              Ocius Technology Ltd (formerly known as Solar Sailor Holdings Ltd) is an Australian
-              public unlisted company trading since June 1999. Starting with winning the Advanced
-              Technology Boat Race in Canberra in 1997, beatng the next solar boat by 5 laps of 6km
-              = 30km using a new patented ‘solar sail’ Ocius has a track record of conceiving,
+              Ocius Technology Ltd (formerly Solar Sailor Holdings Ltd) is an Australian public
+              unlisted company. In 1997 Solar Sailor won the Advanced Technology Boat Race in
+              Canberra, beating the next solar boat by 5 laps of 6km (30km) using a new patented
+              ‘solar sail’ a simple device which harnessed both solar and wind energy in a seaworthy
+              way.
+            </p>
+            <p>
+              Since then Solar Sailor / Ocius have developed a solid track record of conceiving,
               funding and delivering difficult innovative high-tech award-winning projects on time
               and on budget.
             </p>
             <p>
-              Ocius has built multiple ‘solarsailor’ models and prototypes culminating in 6 high-
+              Solar Sailor / Ocius has built multiple ‘solarsailor’ prototypes and six (6) high -
               tech award winning hybrid electric commercial passenger ferries to international
               classification requirements, which together have carried tens of thousands of
-              passengers. Today, four OCIUS hybrid electric ferries run in HK today from Sai Kung to
-              Kau Sai Chau 364 days of the year 14 hours a day saving half the fuel of the
-              conventional ferries they replaced. Dozens of subcontractors have built, commissioned
-              and tested our commercial ferries and tens of thousands of passengers have travelled
-              on our ferries without incident.
+              passengers. Today four solarsailor hybrid electric ferries operated by the HK Jockey
+              Club run 364 days of the year 14 hours a day from Sai Kung to Kau Sai Chau saving half
+              the fuel of conventional ferries. Dozens of subcontractors have built and tested our
+              commercial ferries and tens of thousands of passengers have travelled on our ferries
+              without incident.
             </p>
             <p>
-              In the last 8 years, Ocius has focused on building multiple unmanned surface vessel
-              scale models and working prototypes initially under a DST CTD contract and then a DST
-              DIH contract, culminating in participating and exceeding all TPMs at the Autonomous
-              Warrior War games in Jervis Bay in November 2019. Ocius is now under its second DST
-              Group Innovation contract to build a network of intelligent persistent unmanned
-              surface vessels.
+              Following an enquiry from the USA in 2007 for a ‘self-sustaining platform at sea’,
+              OCIUS began research into the development of unmanned solar/wind/wave and ballasted
+              powered ocean vessels or autonomous unmanned surface vessels. Initially, a 20-foot
+              manned engineering development model (EDM) proved the 'speed of advance' in all
+              conditions, adequate power, payload and persistence for a sustainable platform able to
+              go to sea for months.
             </p>
             <p>
-              Solar Sailor built 5 other commercial solar sailor vessels providing valuable
-              experience to OCIUS on the commercial maritime and technical applications of its
-              technology as well as developing an extensive network of first-class suppliers and
-              partners.
+              In 2014, Solar Sailor changed its name to OCIUS (Latin for 'fleet') to reflect an
+              expansion of its patented technologies including the solar sail.
             </p>
             <p>
-              <strong>Commercial Ferries</strong>
+              OCIUS built multiple scale models for tank and lake testing, culminating in the
+              building of the first 10' prototype called 'Nemo' (Latin for 'no one' ie unmanned)
+              which provided significant proof of concept of a solar, wind and wave powered USV
+              carrying a significant payload.
+            </p>
+            <p>
+              Based on Nemo's development, in 2015 OCIUS was awarded a Capability Technology
+              Demonstrator (CTD) from Defence Science and Technology Group. This proved a
+              significant contract and OCIUS with our partners developed an 18' prototype 'Bruce'
+              for Antisubmarine Warfare (ASW), which demonstrated to NAVY in August 2017.
+            </p>
+            <p>
+              In November 2019 Bruce participated Autonomous Warrior War games in Jervis Bay. Due to
+              extreme weather “Bruce” was often the only USV operating and our C2 system was used to
+              control another Navy WAMV catamaran and 2 DSTG UUVs.
+            </p>
+            <p>
+              Ocius is now under its second DST Group Defence Innovation Hub contract to build an
+              intelligent “C2 network” of persistent unmanned surface vessels and is testing these
+              in a designated AMSA approved ‘box’ off the NSW Coast.
+            </p>
+            <strong>Commercial Ferries</strong>
+            <p>
+              Solar Sailor built 6 commercial solar sailor vessels providing valuable experience to
+              OCIUS on the commercial maritime and technical applications of its technology as well
+              as developing an extensive network of first-class suppliers and partners.
             </p>
             <ul>
               <li>
