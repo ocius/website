@@ -8,19 +8,16 @@ import Heading from '../components/Heading';
 export default () => (
   <Layout>
     <SEO
-      title="Find Bruce"
-      description="See where Bruce is, what he is doing and see what Bruce sees at any time – LIVE. Bruce is now
-      transmitting LIVE some of his on- board sensors, cameras and data. NB Time is Greenwich Mean Time. Press
-      START button in the top right corner"
+      title="Live Feed"
+      description="Transmitting LIVE on-board sensors, cameras and data. NB Time is Greenwich Mean Time. Press START button in the top right corner"
     />
     <PageHeader>Find Bruce</PageHeader>
     <section className="page-content">
       <Container>
         <article>
           <Heading size="medium" level={3}>
-            See where Bruce is, what he is doing and see what Bruce sees at any time – LIVE.
+            Transmitting LIVE on-board sensors, cameras and data
           </Heading>
-          <p>Bruce is now transmitting LIVE some of his on- board sensors, cameras and data.</p>
           <p>NB Time is Greenwich Mean Time. Press START button in the top right corner.</p>
           <iframe
             title="See where Bruce is"
