@@ -71,7 +71,7 @@ export default ({ children }) => (
             </ul>
           </Col>
           <Col xs={12} md={2} lg={2}>
-            <FooterLink to="/find-bruce">Find Bruce</FooterLink>
+            <FooterLink to="/live">Live</FooterLink>
             <FooterLink to="/news">News</FooterLink>
             <FooterLink to="/contact">Contact</FooterLink>
             <FooterLink to="/careers">Careers</FooterLink>

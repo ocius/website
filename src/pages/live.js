@@ -8,7 +8,7 @@ import Heading from '../components/Heading';
 export default () => (
   <Layout>
     <SEO title="Live" description="See where Bluebottles are at any time – LIVE." />
-    <PageHeader>Find Bruce</PageHeader>
+    <PageHeader>Live</PageHeader>
     <section className="page-content">
       <Container>
         <article>
