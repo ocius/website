@@ -77,12 +77,12 @@ export default ({ data }) => (
               <p>
                 Robert Dane is founder and CEO. In 1996, Robert, a passionate sailor and
                 environmentalist, invented and patented the &apos;solarsail&apos; and designed the
-                first ‘solarsailor’ prototype which won the Advanced Technology Boat Race in Canberra
-                in 1997.
+                first ‘solarsailor’ prototype which won the Advanced Technology Boat Race in
+                Canberra in 1997.
               </p>
               <p>
-                The first commercial &apos;solarsailor&apos; ferry won the Australian Design Award of
-                the Year in 2001. Robert is Intel Environment Laureate and a WWF Future Maker
+                The first commercial &apos;solarsailor&apos; ferry won the Australian Design Award
+                of the Year in 2001. Robert is Intel Environment Laureate and a WWF Future Maker
                 recipient and was recently honoured to be a finalist for the International Windship
                 Awards Lifetime Achievement Award. In 2017, Robert was awarded the Spitfire Memorial
                 Defence Association Fellowship.
@@ -107,8 +107,8 @@ export default ({ data }) => (
               <p>
                 Part of the founding management team at Holocentric, a Canberra based, he draws upon
                 his extensive experience working in sales and in senior management roles for global
-                companies such as Honeywell, Microsoft and Cisco Systems to help steer the company to
-                success
+                companies such as Honeywell, Microsoft and Cisco Systems to help steer the company
+                to success
               </p>
             </div>
           </Col>
@@ -124,9 +124,7 @@ export default ({ data }) => (
                 Hon Bob Hawke was Prime Minister of Australia from 1983 to 1991. He has high-level
                 industry and government relations in Australia, China, the USA, and Europe.
               </p>
-              <p>
-                He was Chairman of OCIUS (formerly Solar Sailor) for 12 years from 2002 - 2014.
-              </p>
+              <p>He was Chairman of OCIUS (formerly Solar Sailor) for 12 years from 2002 - 2014.</p>
             </div>
           </Col>
         </Row>
@@ -145,11 +143,11 @@ export default ({ data }) => (
             <div className="left-align">
               <p>
                 Lloyd has over 30 years of experience as a software engineer working in varied roles
-                for both large organisations and small innovative companies in Australia and overseas.
-                The last 6 years has seen him primarily involved in autonomous vehicle development and
-                applications. Lloyd was a key member of Team Thunder, who successfully competed in the
-                2014 UAV Challenge Outback Rescue competition run by the CSIRO and Queensland
-                University of Technology.
+                for both large organisations and small innovative companies in Australia and
+                overseas. The last 6 years has seen him primarily involved in autonomous vehicle
+                development and applications. Lloyd was a key member of Team Thunder, who
+                successfully competed in the 2014 UAV Challenge Outback Rescue competition run by
+                the CSIRO and Queensland University of Technology.
               </p>
               <p>
                 He has had considerable sailing experience having started sailing at an early age on
@@ -171,9 +169,9 @@ export default ({ data }) => (
               <p>
                 Graduating from the University of Newcastle with a BE (Computer Engineering), Peter
                 has over 20 years experience as a computer systems/software engineer in defense, IT
-                and medical device industries. For the last 15 years, Peter has worked for ResMed as a
-                software engineer, system engineer and researcher, innovating new products for sleep
-                apnea and respiratory failure.
+                and medical device industries. For the last 15 years, Peter has worked for ResMed as
+                a software engineer, system engineer and researcher, innovating new products for
+                sleep apnea and respiratory failure.
               </p>
               <p>
                 He has developed a keen interest in UAVs, working with Lloyd in a team that
@@ -203,7 +201,7 @@ export default ({ data }) => (
                 Funds. The practice is a 100% sustainable business, adopts the latest accounting and
                 tax technology apps and 90% paperless.
               </p>
-          </div>
+            </div>
           </Col>
           <Col xs={12} md={3} lg={3}>
             {data.AndrewAitken && (
@@ -214,12 +212,13 @@ export default ({ data }) => (
               <br />
               Ocius Corporate Lawyer
             </Heading>
-            <div className ="left-align">
+            <div className="left-align">
               <p>
                 Andrew practices principally in the areas of commercial law, succession and estate
-                planning. Andrew provides advice on the sale and purchase of businesses and companies,
-                corporate governance, risk management and a wide range of issues facing SME owners,
-                including intellectual property, shareholder agreements and commercial contracts.
+                planning. Andrew provides advice on the sale and purchase of businesses and
+                companies, corporate governance, risk management and a wide range of issues facing
+                SME owners, including intellectual property, shareholder agreements and commercial
+                contracts.
               </p>
             </div>
           </Col>
