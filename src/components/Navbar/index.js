@@ -8,7 +8,7 @@ import DropdownMenu from './DropdownMenu';
 import MobileNavigation from './MobileNavigation';
 
 const navitems = [
-  { link: '/find-bruce', title: 'Find Bruce' },
+  { link: '/live', title: 'LIVE' },
   { link: '/news', title: 'News' },
   { link: '/contact', title: 'Contact' },
   { link: '/careers', title: 'Careers' }

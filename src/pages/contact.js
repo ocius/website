@@ -16,7 +16,7 @@ export default () => (
     <SEO
       title="Contact"
       description="For General Enquiries Main Phone: +61 2 9924 6400 Email: contact@ocius.com.au For Investment Enquiries
-      Email: cosecretary@ocius.com.au Address: Ainsworth Building University of New South Wales Willis Annex Kensington
+      Email: cosecretary@ocius.com.au
       NSW 2052 Phone: +61 2 9924 6400 Postal Address: Office Box 4304 Castlecrag Australia 2068"
     />
     <PageHeader>Contact</PageHeader>
@@ -44,13 +44,13 @@ export default () => (
               <Col xs={12} md={6} lg={6}>
                 <strong>Address:</strong>
                 <address style={addressStyle}>
-                  Ainsworth Building
+                  22 King St
                   <br />
-                  University of New South Wales
+                  Building R13
                   <br />
-                  Willis Annex
+                  UNSW Randwick Campus
                   <br />
-                  Kensington NSW 2052
+                  Randwick NSW 2031
                   <br />
                   Phone: <a href="callto:+61299246400">+61 2 9924 6400</a>
                 </address>

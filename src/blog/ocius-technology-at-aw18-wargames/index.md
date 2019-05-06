@@ -24,4 +24,4 @@ Ocius also had on display our next generation 18′ Bluebottle ‘Bob’. The 12
 
 ![PHOTO: Ocius team with “Bob” at AW18 VIP day.](./OCIUS-with-Bob.png)
 
-You can follow ‘Bruce’ and “GRIM” live on the [‘Find Bruce’ web page](/find-bruce). On the left, toggle the button between WamV “GRIM” and Bluebottle ‘Bruce’. If you leave the page open and the boats ‘snail trails’ will grow.
+You can follow ‘Bruce’ and “GRIM” live on the [‘Live’ web page](/live). On the left, toggle the button between WamV “GRIM” and Bluebottle ‘Bruce’. If you leave the page open and the boats ‘snail trails’ will grow.
