@@ -84,6 +84,10 @@ ul li {
     text-align: center;
 }
 
+.justify {
+    text-align: justify;
+}
+
 .left-align {
     text-align: left;
 }

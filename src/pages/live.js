@@ -7,20 +7,19 @@ import Heading from '../components/Heading';
 
 export default () => (
   <Layout>
-    <SEO
-      title="Find Bruce"
-      description="See where Bruce is, what he is doing and see what Bruce sees at any time – LIVE. Bruce is now
-      transmitting LIVE some of his on- board sensors, cameras and data. NB Time is Greenwich Mean Time. Press
-      START button in the top right corner"
-    />
-    <PageHeader>Find Bruce</PageHeader>
+    <SEO title="Live" description="See where Bluebottles are at any time – LIVE." />
+    <PageHeader>Live</PageHeader>
     <section className="page-content">
       <Container>
         <article>
           <Heading size="medium" level={3}>
-            See where Bruce is, what he is doing and see what Bruce sees at any time – LIVE.
+            See where Bluebottles are at any time – LIVE. USVs are transmitting LIVE some of their
+            on- board sensors, cameras and data.
           </Heading>
-          <p>Bruce is now transmitting LIVE some of his on- board sensors, cameras and data.</p>
+          <p>
+            For camera - Press boat desired and mast or rudder camera and then START button in the
+            top right corner.
+          </p>
           <p>NB Time is Greenwich Mean Time. Press START button in the top right corner.</p>
           <iframe
             title="See where Bruce is"

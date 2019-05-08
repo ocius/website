@@ -71,7 +71,7 @@ export default ({ children }) => (
             </ul>
           </Col>
           <Col xs={12} md={2} lg={2}>
-            <FooterLink to="/find-bruce">Find Bruce</FooterLink>
+            <FooterLink to="/live">Live</FooterLink>
             <FooterLink to="/news">News</FooterLink>
             <FooterLink to="/contact">Contact</FooterLink>
             <FooterLink to="/careers">Careers</FooterLink>
@@ -86,11 +86,11 @@ export default ({ children }) => (
               }}
             />
             <p>
-              22 King St,
+              22 King St
               <br />
               Building R13
               <br />
-              UNSW Randwick Campus,
+              UNSW Randwick Campus
               <br />
               Randwick NSW 2031
               <br />
