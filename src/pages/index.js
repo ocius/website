@@ -139,7 +139,7 @@ export default ({ data }) => (
 
 export const query = graphql`
   query getHomepageImages {
-    HeroBackground: file(relativePath: { eq: "images/wallpaperocius-768x432.jpg" }) {
+    HeroBackground: file(relativePath: { eq: "images/wallpaper.jpg" }) {
       childImageSharp {
         fluid(quality: 90, maxWidth: 1200) {
           ...GatsbyImageSharpFluid_withWebp

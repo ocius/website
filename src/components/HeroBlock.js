@@ -18,6 +18,10 @@ const HeroContainer = styled(BackgroundImage)`
   position: relative;
   overflow: hidden;
 
+  &:before {
+    background-position: center top !important;
+  }
+
   @media (max-width: ${mq.max[720]}) {
     max-height: 592px;
   }
