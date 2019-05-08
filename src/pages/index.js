@@ -39,8 +39,15 @@ export default ({ data }) => (
   <Layout>
     <SEO title="OCIUS - Satellites of the Sea" />
     <Segmented borderBottom="">
-      {data.HeroBackground && (
-        <HeroBlock image={data.HeroBackground.childImageSharp.fluid} gradient="leftCorner">
+      {data.HeroBackground1 && data.HeroBackground2 && data.HeroBackground3 && (
+        <HeroBlock
+          images={[
+            data.HeroBackground1.childImageSharp.fluid.src,
+            data.HeroBackground2.childImageSharp.fluid.src,
+            data.HeroBackground3.childImageSharp.fluid.src
+          ]}
+          gradient="leftCorner"
+        >
           <Callout className="HeroBlock-callout">
             <Heading level={1} size="huge" weight="thick">
               Innovative Autonomous Solutions
@@ -139,12 +146,16 @@ export default ({ data }) => (
 
 export const query = graphql`
   query getHomepageImages {
-    HeroBackground: file(relativePath: { eq: "images/wallpaper.jpg" }) {
-      childImageSharp {
-        fluid(quality: 90, maxWidth: 1200) {
-          ...GatsbyImageSharpFluid_withWebp
-        }
-      }
+    HeroBackground1: file(relativePath: { eq: "images/wallpaper1.jpg" }) {
+      ...imageSharpHeroBackground
+    }
+
+    HeroBackground2: file(relativePath: { eq: "images/wallpaper2.jpg" }) {
+      ...imageSharpHeroBackground
+    }
+
+    HeroBackground3: file(relativePath: { eq: "images/wallpaper3.jpg" }) {
+      ...imageSharpHeroBackground
     }
 
     ScienceTile: file(relativePath: { eq: "images/Science-Home-Tile-Background.jpg" }) {
@@ -157,6 +168,14 @@ export const query = graphql`
 
     DefenceTile: file(relativePath: { eq: "images/Defence-Home-Tile-Background.jpg" }) {
       ...imageSharpTile
+    }
+  }
+
+  fragment imageSharpHeroBackground on File {
+    childImageSharp {
+      fluid(quality: 95, maxWidth: 1200) {
+        ...GatsbyImageSharpFluid_withWebp
+      }
     }
   }
 
