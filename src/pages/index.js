@@ -7,7 +7,7 @@ import SEO from '../components/SEO';
 import Container from '../components/Container';
 import Segmented from '../components/Segmented';
 import Button from '../components/Button';
-import HeroBlock from '../components/HeroBlock';
+import HeroBlockSlider from '../components/HeroBlockSlider';
 import Heading from '../components/Heading';
 import PanelCallout from '../components/PanelCallout';
 import PanelCalloutGroup from '../components/PanelCalloutGroup';
@@ -40,7 +40,7 @@ export default ({ data }) => (
     <SEO title="OCIUS - Satellites of the Sea" />
     <Segmented borderBottom="">
       {data.HeroBackground1 && data.HeroBackground2 && data.HeroBackground3 && (
-        <HeroBlock
+        <HeroBlockSlider
           images={[
             data.HeroBackground1.childImageSharp.fluid.src,
             data.HeroBackground2.childImageSharp.fluid.src,
@@ -56,7 +56,7 @@ export default ({ data }) => (
               For persistent maritime surveillance
             </Heading>
           </Callout>
-        </HeroBlock>
+        </HeroBlockSlider>
       )}
     </Segmented>
     <Container className="centered">
@@ -173,7 +173,7 @@ export const query = graphql`
 
   fragment imageSharpHeroBackground on File {
     childImageSharp {
-      fluid(quality: 95, maxWidth: 1200) {
+      fluid(quality: 91, maxWidth: 1320) {
         ...GatsbyImageSharpFluid_withWebp
       }
     }

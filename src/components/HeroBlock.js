@@ -1,14 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled, { css } from 'styled-components';
-import BackgroundSlider from 'react-background-slider';
+import BackgroundImage from 'gatsby-background-image';
+
 import mq from '../common/mq';
 import font from '../common/font';
 
 import GradientOverlay from './GradientOverlay';
 import Container from './Container';
 
-const HeroContainer = styled.div`
+export const ContainerStyle = css`
   color: #ffffff;
   font-family: ${font('main')};
   height: calc(100vh - 4em);
@@ -17,13 +18,13 @@ const HeroContainer = styled.div`
   position: relative;
   overflow: hidden;
 
-  &:before {
-    background-position: center top !important;
-  }
-
   @media (max-width: ${mq.max[720]}) {
     max-height: 592px;
   }
+`;
+
+const HeroContainer = styled(BackgroundImage)`
+  ${ContainerStyle}
 
   ${props =>
     props.constrained &&
@@ -40,7 +41,7 @@ const HeroContainer = styled.div`
     `}
 `;
 
-const StyledContainer = styled(Container)`
+export const InnerContainer = styled(Container)`
   height: 100%;
   position: relative;
   z-index: 2;
@@ -48,17 +49,16 @@ const StyledContainer = styled(Container)`
 
 HeroContainer.defaultProps = {};
 
-const HeroBlock = ({ children, images, constrained, gradient }) => (
-  <HeroContainer Tag="section" className="HeroBlock" constrained={constrained}>
-    <BackgroundSlider images={images} duration={10} transition={2} />
-    <StyledContainer>{children}</StyledContainer>
+const HeroBlock = ({ children, image, constrained, gradient }) => (
+  <HeroContainer Tag="section" className="HeroBlock" fluid={image} constrained={constrained}>
+    <InnerContainer>{children}</InnerContainer>
 
     {gradient && <GradientOverlay gradientType={gradient} />}
   </HeroContainer>
 );
 
 HeroBlock.propTypes = {
-  images: PropTypes.arrayOf(PropTypes.string).isRequired,
+  image: PropTypes.objectOf(PropTypes.any).isRequired,
   constrained: PropTypes.bool,
   gradient: PropTypes.string
 };
