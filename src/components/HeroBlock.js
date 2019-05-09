@@ -50,7 +50,12 @@ export const InnerContainer = styled(Container)`
 HeroContainer.defaultProps = {};
 
 const HeroBlock = ({ children, image, constrained, gradient }) => (
-  <HeroContainer Tag="section" className="HeroBlock" fluid={image} constrained={constrained}>
+  <HeroContainer
+    Tag="section"
+    className="HeroBlock"
+    fluid={image}
+    constrained={constrained || undefined}
+  >
     <InnerContainer>{children}</InnerContainer>
 
     {gradient && <GradientOverlay gradientType={gradient} />}
