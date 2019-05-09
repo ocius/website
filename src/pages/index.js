@@ -7,7 +7,7 @@ import SEO from '../components/SEO';
 import Container from '../components/Container';
 import Segmented from '../components/Segmented';
 import Button from '../components/Button';
-import HeroBlockSlider from '../components/HeroBlockSlider';
+import HeroBlock from '../components/HeroBlock';
 import Heading from '../components/Heading';
 import PanelCallout from '../components/PanelCallout';
 import PanelCalloutGroup from '../components/PanelCalloutGroup';
@@ -39,15 +39,8 @@ export default ({ data }) => (
   <Layout>
     <SEO title="OCIUS - Satellites of the Sea" />
     <Segmented borderBottom="">
-      {data.HeroBackground1 && data.HeroBackground2 && data.HeroBackground3 && (
-        <HeroBlockSlider
-          images={[
-            data.HeroBackground1.childImageSharp.fluid.src,
-            data.HeroBackground2.childImageSharp.fluid.src,
-            data.HeroBackground3.childImageSharp.fluid.src
-          ]}
-          gradient="leftCorner"
-        >
+      {data.HeroBackground && (
+        <HeroBlock image={data.HeroBackground.childImageSharp.fluid} gradient="leftCorner">
           <Callout className="HeroBlock-callout">
             <Heading level={1} size="huge" weight="thick">
               Innovative Autonomous Solutions
@@ -56,7 +49,7 @@ export default ({ data }) => (
               For persistent maritime surveillance
             </Heading>
           </Callout>
-        </HeroBlockSlider>
+        </HeroBlock>
       )}
     </Segmented>
     <Container className="centered">
@@ -146,15 +139,7 @@ export default ({ data }) => (
 
 export const query = graphql`
   query getHomepageImages {
-    HeroBackground1: file(relativePath: { eq: "images/wallpaper1.jpg" }) {
-      ...imageSharpHeroBackground
-    }
-
-    HeroBackground2: file(relativePath: { eq: "images/wallpaper2.jpg" }) {
-      ...imageSharpHeroBackground
-    }
-
-    HeroBackground3: file(relativePath: { eq: "images/wallpaper3.jpg" }) {
+    HeroBackground: file(relativePath: { eq: "images/wallpaper3.jpg" }) {
       ...imageSharpHeroBackground
     }
 
