@@ -218,7 +218,7 @@ export default ({ data }) => (
                 planning. Andrew provides advice on the sale and purchase of businesses and
                 companies, corporate governance, risk management and a wide range of issues facing
                 SME owners, including intellectual property, shareholder agreements and commercial
-                contracts.
+                contracts. He is a Principal with Russell Kennedy Aitken Lawyers.
               </p>
             </div>
           </Col>
