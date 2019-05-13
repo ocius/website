@@ -9,7 +9,7 @@ import font from '../common/font';
 import GradientOverlay from './GradientOverlay';
 import Container from './Container';
 
-const HeroContainer = styled(BackgroundImage)`
+export const ContainerStyle = css`
   color: #ffffff;
   font-family: ${font('main')};
   height: calc(100vh - 4em);
@@ -21,6 +21,10 @@ const HeroContainer = styled(BackgroundImage)`
   @media (max-width: ${mq.max[720]}) {
     max-height: 592px;
   }
+`;
+
+const HeroContainer = styled(BackgroundImage)`
+  ${ContainerStyle}
 
   ${props =>
     props.constrained &&
@@ -37,7 +41,7 @@ const HeroContainer = styled(BackgroundImage)`
     `}
 `;
 
-const StyledContainer = styled(Container)`
+export const InnerContainer = styled(Container)`
   height: 100%;
   position: relative;
   z-index: 2;
@@ -46,8 +50,13 @@ const StyledContainer = styled(Container)`
 HeroContainer.defaultProps = {};
 
 const HeroBlock = ({ children, image, constrained, gradient }) => (
-  <HeroContainer Tag="section" className="HeroBlock" fluid={image} constrained={constrained}>
-    <StyledContainer>{children}</StyledContainer>
+  <HeroContainer
+    Tag="section"
+    className="HeroBlock"
+    fluid={image}
+    constrained={constrained || undefined}
+  >
+    <InnerContainer>{children}</InnerContainer>
 
     {gradient && <GradientOverlay gradientType={gradient} />}
   </HeroContainer>

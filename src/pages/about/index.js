@@ -218,7 +218,7 @@ export default ({ data }) => (
                 planning. Andrew provides advice on the sale and purchase of businesses and
                 companies, corporate governance, risk management and a wide range of issues facing
                 SME owners, including intellectual property, shareholder agreements and commercial
-                contracts.
+                contracts. He is a Principal with Russell Kennedy Aitken Lawyers.
               </p>
             </div>
           </Col>
@@ -757,7 +757,7 @@ export default ({ data }) => (
 
 export const query = graphql`
   query getImages {
-    RobertDane: file(relativePath: { eq: "pages/about/Robert-Dane.png" }) {
+    RobertDane: file(relativePath: { eq: "pages/about/Robert-Dane-Grayscale.png" }) {
       ...imageSharpAvatar
     }
 
@@ -816,7 +816,7 @@ export const query = graphql`
 
   fragment imageSharpAvatar on File {
     childImageSharp {
-      fixed(width: 200) {
+      fixed(width: 150, height: 150) {
         ...GatsbyImageSharpFixed
       }
     }

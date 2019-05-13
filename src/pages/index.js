@@ -139,12 +139,8 @@ export default ({ data }) => (
 
 export const query = graphql`
   query getHomepageImages {
-    HeroBackground: file(relativePath: { eq: "images/wallpaperocius-768x432.jpg" }) {
-      childImageSharp {
-        fluid(quality: 90, maxWidth: 1200) {
-          ...GatsbyImageSharpFluid_withWebp
-        }
-      }
+    HeroBackground: file(relativePath: { eq: "images/wallpaper1.jpg" }) {
+      ...imageSharpHeroBackground
     }
 
     ScienceTile: file(relativePath: { eq: "images/Science-Home-Tile-Background.jpg" }) {
@@ -157,6 +153,14 @@ export const query = graphql`
 
     DefenceTile: file(relativePath: { eq: "images/Defence-Home-Tile-Background.jpg" }) {
       ...imageSharpTile
+    }
+  }
+
+  fragment imageSharpHeroBackground on File {
+    childImageSharp {
+      fluid(quality: 91, maxWidth: 1320) {
+        ...GatsbyImageSharpFluid_withWebp
+      }
     }
   }
 
