@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react';
 import { Link } from 'gatsby';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
+import { OutboundLink } from 'gatsby-plugin-gtag';
 import { Row, Col } from 'react-flexbox-grid';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
@@ -9,10 +10,18 @@ import Icon from '../components/Icon';
 import SocialLink from '../components/SocialLink';
 import '../css/styles.css';
 
-const FooterLink = styled(Link)`
+const LinkStyles = css`
   display: block;
   padding: 8px 0;
   font-size: 17px;
+`;
+
+const FooterLink = styled(Link)`
+  ${LinkStyles}
+`;
+
+const ExternalLink = styled(OutboundLink)`
+  ${LinkStyles}
 `;
 
 export default ({ children }) => (
@@ -71,7 +80,13 @@ export default ({ children }) => (
             </ul>
           </Col>
           <Col xs={12} md={2} lg={2}>
-            <FooterLink to="/live">Live</FooterLink>
+            <ExternalLink
+              href="https://usvna.ocius.com.au/usvna/oc_server"
+              target="_blank"
+              rel="noreferrer noopener"
+            >
+              Live
+            </ExternalLink>
             <FooterLink to="/news">News</FooterLink>
             <FooterLink to="/contact">Contact</FooterLink>
             <FooterLink to="/careers">Careers</FooterLink>

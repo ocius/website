@@ -8,7 +8,7 @@ import DropdownMenu from './DropdownMenu';
 import MobileNavigation from './MobileNavigation';
 
 const navitems = [
-  { link: '/live', title: 'LIVE' },
+  { link: 'https://usvna.ocius.com.au/usvna/oc_server', title: 'LIVE', blank: true },
   { link: '/news', title: 'News' },
   { link: '/contact', title: 'Contact' },
   { link: '/careers', title: 'Careers' }
@@ -49,7 +49,14 @@ export default () => (
         />
       </NavbarDropdown>
       {navitems.map(item => {
-        return <NavbarItem key={navitems.indexOf(item)} link={item.link} title={item.title} />;
+        return (
+          <NavbarItem
+            key={navitems.indexOf(item)}
+            link={item.link}
+            title={item.title}
+            blank={item.blank ? item.blank : undefined}
+          />
+        );
       })}
     </NavbarItems>
   </Navbar>

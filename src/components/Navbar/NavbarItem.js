@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { Link as GatsbyLink } from 'gatsby';
+import { OutboundLink } from 'gatsby-plugin-gtag';
 
 const Item = styled.li`
   position: relative;
@@ -12,7 +13,7 @@ const Item = styled.li`
   line-height: 1.4;
 `;
 
-const Link = styled(GatsbyLink)`
+const LinkStyles = css`
   display: inline-block;
   padding: 1.5em 1.2em;
   font-size: 1em;
@@ -31,25 +32,51 @@ const Link = styled(GatsbyLink)`
   }
 `;
 
+const InternalLink = styled(GatsbyLink)`
+  ${LinkStyles}
+`;
+
+const ExternalLink = styled(OutboundLink)`
+  ${LinkStyles}
+`;
+
 const styles = {
   active: {
     backgroundColor: '#f7f7f7'
   }
 };
 
-const NavbarItem = ({ link, title }) => {
+const NavbarItem = ({ link, title, blank }) => {
   return (
     <Item className="list">
-      <Link className="link" to={link} activeStyle={styles.active}>
-        {title}
-      </Link>
+      {(() => {
+        // Check if the link should be opened in the new tab
+        if (blank) {
+          return (
+            <ExternalLink className="link" href={link} target="_blank" rel="noreferrer noopener">
+              {title}
+            </ExternalLink>
+          );
+        }
+
+        return (
+          <InternalLink className="link" to={link} activeStyle={styles.active}>
+            {title}
+          </InternalLink>
+        );
+      })()}
     </Item>
   );
 };
 
 NavbarItem.propTypes = {
   link: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired
+  title: PropTypes.string.isRequired,
+  blank: PropTypes.bool
+};
+
+NavbarItem.defaultProps = {
+  blank: false
 };
 
 export default NavbarItem;
