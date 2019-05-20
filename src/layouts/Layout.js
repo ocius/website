@@ -1,7 +1,6 @@
 import React, { Fragment } from 'react';
 import { Link } from 'gatsby';
 import styled, { css } from 'styled-components';
-import { OutboundLink } from 'gatsby-plugin-gtag';
 import { Row, Col } from 'react-flexbox-grid';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
@@ -20,7 +19,7 @@ const FooterLink = styled(Link)`
   ${LinkStyles}
 `;
 
-const ExternalLink = styled(OutboundLink)`
+const ExternalLink = styled.a`
   ${LinkStyles}
 `;
 
