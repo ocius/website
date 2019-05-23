@@ -57,11 +57,11 @@ export default ({ data }) => (
         <Row>
           <Col xs={12} md={8} lg={8} lgOffset={2}>
             <Heading size="medium" level={3}>
-              Persistent USVs are being seen as strategic in Defence as force multipliers
+              Persistent USVs are seen by Defence as strategic force multipliers
             </Heading>
             <Heading size="medium" level={3}>
               <strong>
-                Bluebottles have more power payload and performance making them the superior
+                Bluebottles have more power, payload and performance making them the superior
                 persistent USV for defence
               </strong>
             </Heading>

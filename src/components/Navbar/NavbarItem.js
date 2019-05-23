@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled, { css } from 'styled-components';
 import { Link as GatsbyLink } from 'gatsby';
-import { OutboundLink } from 'gatsby-plugin-gtag';
 
 const Item = styled.li`
   position: relative;
@@ -36,7 +35,7 @@ const InternalLink = styled(GatsbyLink)`
   ${LinkStyles}
 `;
 
-const ExternalLink = styled(OutboundLink)`
+const ExternalLink = styled.a`
   ${LinkStyles}
 `;
 
