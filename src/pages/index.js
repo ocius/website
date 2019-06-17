@@ -137,7 +137,7 @@ export default ({ data }) => (
 
 export const query = graphql`
   query getHomepageImages {
-    HeroBackground: file(relativePath: { eq: "images/wallpaper1.jpg" }) {
+    HeroBackground: file(relativePath: { eq: "images/drone_boat_32.jpg" }) {
       ...imageSharpHeroBackground
     }
 
