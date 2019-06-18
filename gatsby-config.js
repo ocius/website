@@ -26,7 +26,7 @@ module.exports = {
               // Add captions to images
               showCaptions: true,
               // Add custom styles to the div wrapping the responsive images
-              wrapperStyle: 'margin-left: unset !important;',
+              wrapperStyle: 'margin-left: unset !important;margin-right: unset !important;',
               // Add webp version
               withWebp: true
             }
