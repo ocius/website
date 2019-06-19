@@ -27,6 +27,7 @@ const Callout = styled.div`
   text-align: center;
 
   @media (max-width: ${mq.max[480]}) {
+    top: 6%;
     padding: 0 ${gutterWidth / 2}px;
   }
 
