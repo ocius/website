@@ -20,18 +20,19 @@ import Icon from '../components/Icon';
 const gutterWidth = 30;
 
 const Callout = styled.div`
-  bottom: 110px;
+  top: 10%;
   left: 0;
   right: 0;
   position: absolute;
+  text-align: center;
 
   @media (max-width: ${mq.max[480]}) {
     padding: 0 ${gutterWidth / 2}px;
   }
 
   @media (min-width: ${mq.min[1024]}) {
-    margin-right: ${add([span(2), gutter()])};
-    width: ${span(10)};
+    /*margin-right: ${add([span(2), gutter()])};*/
+    width: ${span(12)};
   }
 `;
 
