@@ -2,7 +2,7 @@
 title: "Ocius successfully completes seatrials off NSW South Coast 3 months ahead of contract program"
 date: "2019-06-25"
 author: "Ocius Administrator"
-featuredImage: bob.png
+featuredImage: kioloaroute.png
 ---
 
 Dear Shareholders of Ocius, Friends and Colleagues,
