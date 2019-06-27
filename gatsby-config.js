@@ -10,8 +10,8 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `src`,
-        path: `${__dirname}/src/`,
-      },
+        path: `${__dirname}/src/`
+      }
     },
 
     // Parse all markdown files (each plugin add/parse some data into GraphQL layer)
@@ -19,6 +19,13 @@ module.exports = {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
+          {
+            resolve: 'gatsby-remark-images-grid',
+            options: {
+              gridGap: '0',
+              margin: '20px auto'
+            }
+          },
           {
             resolve: `gatsby-remark-images`,
             options: {
@@ -44,7 +51,7 @@ module.exports = {
         trackingId: 'UA-96773019-1',
         // Puts tracking script in the head instead of the body
         head: false
-      },
+      }
     },
 
     // Add manifest
@@ -60,8 +67,8 @@ module.exports = {
         // see https://developers.google.com/web/fundamentals/web-app-manifest/#display
         display: `standalone`,
         icon: `static/favicon.ico`, // This path is relative to the root of the site.
-        include_favicon: true, // Include favicon
-      },
+        include_favicon: true // Include favicon
+      }
     },
 
     // Enable styled components support
@@ -69,7 +76,7 @@ module.exports = {
       resolve: `gatsby-plugin-styled-components`,
       options: {
         // Add any options here
-      },
+      }
     },
 
     `gatsby-plugin-react-helmet`,
