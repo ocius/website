@@ -1,3 +1,5 @@
+const path = require('path');
+
 module.exports = {
   siteMetadata: {
     title: `OCIUS`,
@@ -79,6 +81,21 @@ module.exports = {
       }
     },
 
+    // Add SASS support
+    {
+      resolve: 'gatsby-plugin-sass',
+      options: {
+        includePaths: [path.resolve(__dirname, 'node_modules')]
+      }
+    },
+
+    // These resources get shared with every css module
+    {
+      resolve: `gatsby-plugin-sass-resources`,
+      options: {
+        resources: [require.resolve('./src/scss/resources.scss')]
+      }
+    },
     `gatsby-plugin-react-helmet`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
