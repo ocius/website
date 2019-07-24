@@ -1,7 +1,17 @@
-const React = require(`react`);
+import React from 'react';
+import { ThemeProvider } from 'styled-components';
+import { NavContextProvider } from './src/common/context/NavContext';
 
-exports.onRenderBody = ({ setHeadComponents }) => {
-  setHeadComponents([
+const theme = {};
+
+export const wrapRootElement = ({ element }) => (
+  <NavContextProvider>
+    <ThemeProvider theme={theme}>{element}</ThemeProvider>
+  </NavContextProvider>
+);
+
+export const onRenderBody = ({ setHeadComponents }) => {
+  return setHeadComponents([
     <link
       rel="preconnect dns-prefetch"
       key="preconnect-google-analytics"
