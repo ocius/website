@@ -13,6 +13,7 @@ import { Fade16 } from '@carbon/icons-react';
 import SEO from '../components/SEO';
 import UIHeader from '../components/UIHeader';
 import LeftNav from '../components/LeftNav';
+import GMap from '../components/GMap';
 import '../scss/index.scss';
 
 export default () => (
@@ -56,5 +57,12 @@ export default () => (
         </SideNavLink>
       </SideNavItems>
     </LeftNav>
+    <GMap
+      isMarkerShown
+      googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places"
+      loadingElement={<div style={{ height: `100%` }} />}
+      containerElement={<div style={{ height: `100vh` }} />}
+      mapElement={<div style={{ height: `100%` }} />}
+    />
   </>
 );
