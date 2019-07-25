@@ -15,7 +15,7 @@ import { useScrollDirection } from '../../common/hooks';
 
 import NavContext from '../../common/context/NavContext';
 
-import { hidden, header, icon } from './UIHeader.module.scss';
+import { hidden, header, icon } from './Header.module.scss';
 
 const Header = ({ children, shouldHideHeader }) => {
   const { leftNavIsOpen, toggleNavState, switcherIsOpen } = useContext(NavContext);

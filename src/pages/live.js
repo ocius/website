@@ -11,16 +11,16 @@ import {
 } from 'carbon-components-react/lib/components/UIShell';
 import { Fade16 } from '@carbon/icons-react';
 import SEO from '../components/SEO';
-import UIHeader from '../components/UIHeader';
+import Header from '../components/Header';
 import LeftNav from '../components/LeftNav';
 import GMap from '../components/GMap';
 import '../scss/index.scss';
 
-export default () => (
+export default ({ shouldHideHeader }) => (
   <>
     <SEO title="Live" description="See where Bluebottles are at any time – LIVE." />
-    <UIHeader />
-    <LeftNav>
+    <Header shouldHideHeader={shouldHideHeader} />
+    <LeftNav shouldHideHeader={shouldHideHeader}>
       <SideNavItems>
         <HeaderSideNavItems hasDivider>
           <HeaderMenuItem href="#">Link 1</HeaderMenuItem>
