@@ -1,10 +1,10 @@
 /* eslint-disable no-script-url */
 import React from 'react';
 import styled from 'styled-components';
-import StyledDropdown from '../components/Dropdown';
 import SEO from '../components/SEO';
-import Header from '../components/Header';
-import LeftNav from '../components/LeftNav';
+import StyledDropdown from '../components/carbon/Dropdown';
+import Header from '../components/carbon/Header';
+import LeftNav from '../components/carbon/LeftNav';
 import GMap from '../components/GMap';
 import '../scss/index.scss';
 
