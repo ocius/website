@@ -1,15 +1,7 @@
 /* eslint-disable no-script-url */
 import React from 'react';
-import {
-  HeaderSideNavItems,
-  SideNavItems,
-  HeaderMenuItem,
-  HeaderMenu,
-  SideNavMenu,
-  SideNavMenuItem,
-  SideNavLink
-} from 'carbon-components-react/lib/components/UIShell';
-import { Fade16 } from '@carbon/icons-react';
+import styled from 'styled-components';
+import StyledDropdown from '../components/Dropdown';
 import SEO from '../components/SEO';
 import Header from '../components/Header';
 import LeftNav from '../components/LeftNav';
@@ -19,46 +11,85 @@ import '../scss/index.scss';
 // Google Maps key
 const apiKey = `AIzaSyC18SYECJZXKTOG6Ljm8W68mENW1uEmTAg`;
 
+const FormWrapper = styled.div`
+  padding: 1rem;
+  flex: 1 1;
+`;
+
+const FormItem = styled.div`
+  margin: 0 0 1rem;
+`;
+
+const items = [
+  {
+    id: 'option-1',
+    text: 'Option 1'
+  },
+  {
+    id: 'option-2',
+    text: 'Option 2'
+  },
+  {
+    id: 'option-3',
+    text: 'Option 3'
+  },
+  {
+    id: 'option-4',
+    text: 'Option 4'
+  }
+];
+
 export default ({ shouldHideHeader }) => (
   <>
     <SEO title="Live" description="See where Bluebottles are at any time – LIVE." />
     <Header shouldHideHeader={shouldHideHeader} />
     <LeftNav shouldHideHeader={shouldHideHeader}>
-      <SideNavItems>
-        <HeaderSideNavItems hasDivider>
-          <HeaderMenuItem href="#">Link 1</HeaderMenuItem>
-          <HeaderMenuItem href="#">Link 2</HeaderMenuItem>
-          <HeaderMenuItem href="#">Link 3</HeaderMenuItem>
-          <HeaderMenu aria-label="Link 4" menuLinkName="Link 4">
-            <HeaderMenuItem href="#">Sub-link 1</HeaderMenuItem>
-            <HeaderMenuItem href="#">Sub-link 2</HeaderMenuItem>
-            <HeaderMenuItem href="#">Sub-link 3</HeaderMenuItem>
-          </HeaderMenu>
-        </HeaderSideNavItems>
-        <SideNavMenu renderIcon={Fade16} title="Category title">
-          <SideNavMenuItem href="javascript:void(0)">Link</SideNavMenuItem>
-          <SideNavMenuItem href="javascript:void(0)">Link</SideNavMenuItem>
-          <SideNavMenuItem href="javascript:void(0)">Link</SideNavMenuItem>
-        </SideNavMenu>
-        <SideNavMenu renderIcon={Fade16} title="Category title">
-          <SideNavMenuItem href="javascript:void(0)">Link</SideNavMenuItem>
-          <SideNavMenuItem href="javascript:void(0)">Link</SideNavMenuItem>
-          <SideNavMenuItem href="javascript:void(0)">Link</SideNavMenuItem>
-        </SideNavMenu>
-        <SideNavMenu renderIcon={Fade16} title="Category title" isActive>
-          <SideNavMenuItem href="javascript:void(0)">Link</SideNavMenuItem>
-          <SideNavMenuItem aria-current="page" href="javascript:void(0)">
-            Link
-          </SideNavMenuItem>
-          <SideNavMenuItem href="javascript:void(0)">Link</SideNavMenuItem>
-        </SideNavMenu>
-        <SideNavLink renderIcon={Fade16} href="javascript:void(0)">
-          Link
-        </SideNavLink>
-        <SideNavLink renderIcon={Fade16} href="javascript:void(0)">
-          Link
-        </SideNavLink>
-      </SideNavItems>
+      <FormWrapper>
+        <FormItem>
+          <StyledDropdown
+            id="carbon-dropdown-example"
+            type="default"
+            label="MAVLink"
+            ariaLabel="Dropdown"
+            titleText="Link Type:"
+            items={items}
+            itemToString={item => (item ? item.text : '')}
+          />
+        </FormItem>
+        <FormItem>
+          <StyledDropdown
+            id="carbon-dropdown-example"
+            type="default"
+            label="Bob"
+            ariaLabel="Dropdown"
+            titleText="Vessel:"
+            items={items}
+            itemToString={item => (item ? item.text : '')}
+          />
+        </FormItem>
+        <FormItem>
+          <StyledDropdown
+            id="carbon-dropdown-example"
+            type="default"
+            label="1Hz"
+            ariaLabel="Dropdown"
+            titleText="Frequency:"
+            items={items}
+            itemToString={item => (item ? item.text : '')}
+          />
+        </FormItem>
+        <FormItem>
+          <StyledDropdown
+            id="carbon-dropdown-example"
+            type="default"
+            label="Vessel Status"
+            ariaLabel="Dropdown"
+            titleText="Chart Mode:"
+            items={items}
+            itemToString={item => (item ? item.text : '')}
+          />
+        </FormItem>
+      </FormWrapper>
     </LeftNav>
     <GMap
       isMarkerShown
