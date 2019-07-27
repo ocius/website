@@ -46,7 +46,7 @@ exports.createPages = ({ graphql, actions }) => {
     _.each(allPosts, ({ node: post }) => {
       // Create the Gatsby page for this WordPress post
       createPage({
-        path: `/${post.fields.slug}/`,
+        path: post.fields.slug,
         component: postTemplate,
         context: {
           // Data passed to context is available
