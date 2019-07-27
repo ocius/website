@@ -11,9 +11,9 @@ import {
 import { AppSwitcher20, Close20 } from '@carbon/icons-react';
 import cx from 'classnames';
 
-import { useScrollDirection } from '../../common/hooks';
+import { useScrollDirection } from '../../../common/hooks';
 
-import NavContext from '../../common/context/NavContext';
+import NavContext from '../../../common/context/NavContext';
 
 import { hidden, header, icon } from './Header.module.scss';
 

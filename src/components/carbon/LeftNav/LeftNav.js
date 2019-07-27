@@ -4,8 +4,8 @@ import classnames from 'classnames';
 import { SideNav } from 'carbon-components-react/lib/components/UIShell';
 
 import LeftNavWrapper from './LeftNavWrapper';
-import NavContext from '../../common/context/NavContext';
-import { useWindowSize } from '../../common/hooks';
+import NavContext from '../../../common/context/NavContext';
+import { useWindowSize } from '../../../common/hooks';
 
 const LeftNav = ({ children, homepage, shouldHideHeader }) => {
   const { leftNavIsOpen, toggleNavState } = useContext(NavContext);
