@@ -89,6 +89,12 @@ export default ({ shouldHideHeader }) => (
             itemToString={item => (item ? item.text : '')}
           />
         </FormItem>
+        <hr />
+        <FormItem>Latitude: -33.90594</FormItem>
+        <FormItem>Longitude: 151.23461</FormItem>
+        <FormItem>Num Sats: 10</FormItem>
+        <FormItem>HDOP: 1.10</FormItem>
+        <FormItem>Heading: 287.3</FormItem>
       </FormWrapper>
     </LeftNav>
     <GMap
