@@ -3,6 +3,7 @@ import React from 'react';
 import styled from 'styled-components';
 import SEO from '../components/SEO';
 import StyledDropdown from '../components/carbon/Dropdown';
+import Switcher from '../components/carbon/Switcher';
 import Header from '../components/carbon/Header';
 import LeftNav from '../components/carbon/LeftNav';
 import GMap from '../components/GMap';
@@ -19,7 +20,7 @@ const FormWrapper = styled.div`
     border: 0;
     height: 1px;
     background: #8c8c8c;
-    margin: 2rem 0;
+    margin: 32px 0rem 8px;
   }
 
   .bx--label {
@@ -65,6 +66,7 @@ export default ({ shouldHideHeader }) => (
   <>
     <SEO title="Live" description="See where Bluebottles are at any time – LIVE." />
     <Header shouldHideHeader={shouldHideHeader} />
+    <Switcher />
     <LeftNav shouldHideHeader={shouldHideHeader}>
       <FormWrapper>
         <FormItem>
@@ -80,7 +82,7 @@ export default ({ shouldHideHeader }) => (
         </FormItem>
         <FormItem>
           <StyledDropdown
-            id="carbon-dropdown-example"
+            id="carbon-dropdown-example1"
             type="default"
             label="Bob"
             ariaLabel="Dropdown"
@@ -91,7 +93,7 @@ export default ({ shouldHideHeader }) => (
         </FormItem>
         <FormItem>
           <StyledDropdown
-            id="carbon-dropdown-example"
+            id="carbon-dropdown-example2"
             type="default"
             label="1Hz"
             ariaLabel="Dropdown"
@@ -102,7 +104,7 @@ export default ({ shouldHideHeader }) => (
         </FormItem>
         <FormItem>
           <StyledDropdown
-            id="carbon-dropdown-example"
+            id="carbon-dropdown-example3"
             type="default"
             label="Vessel Status"
             ariaLabel="Dropdown"
