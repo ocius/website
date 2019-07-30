@@ -14,9 +14,31 @@ const apiKey = `AIzaSyC18SYECJZXKTOG6Ljm8W68mENW1uEmTAg`;
 const FormWrapper = styled.div`
   padding: 1rem;
   flex: 1 1;
+
+  hr {
+    border: 0;
+    height: 1px;
+    background: #8c8c8c;
+    margin: 2rem 0;
+  }
+
+  .bx--label {
+    font-size: 0.9rem;
+    font-weight: 400;
+    line-height: 1rem;
+    letter-spacing: 0.32px;
+    color: #565656;
+    font-weight: 400;
+    display: inline-block;
+    vertical-align: baseline;
+    margin-bottom: 0.5rem;
+    line-height: 1rem;
+    pointer-events: none;
+  }
 `;
 
 const FormItem = styled.div`
+  font-size: 0.9rem;
   margin: 0 0 1rem;
 `;
 
