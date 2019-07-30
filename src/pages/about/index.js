@@ -74,15 +74,15 @@ export default ({ data }) => (
               Chairman
             </Heading>
             <div className="left-align">
-              <p>	
-                Now a professional director, Mark has been a shareholder in OCIUS since 2000. He has a	
-                degree in Engineering and an MBA and has been Managing Director of two large mining	
-                companies and one of Australia’s leading industry associations.	
-              </p>	
-              <p>	
-                Mark represented Australia in sailing in the 1972 and 1976 Olympic Games and has won	
-                World Championships in three international classes. Mark was made a Member of the	
-                Order of Australia (AM) in early 2011 for services to industry and to sailing.	
+              <p>
+                Now a professional director, Mark has been a shareholder in OCIUS since 2000. He has
+                a degree in Engineering and an MBA and has been Managing Director of two large
+                mining companies and one of Australia’s leading industry associations.
+              </p>
+              <p>
+                Mark represented Australia in sailing in the 1972 and 1976 Olympic Games and has won
+                World Championships in three international classes. Mark was made a Member of the
+                Order of Australia (AM) in early 2011 for services to industry and to sailing.
               </p>
             </div>
           </Col>
