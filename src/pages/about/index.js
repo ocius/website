@@ -64,7 +64,29 @@ export default ({ data }) => (
       </header>
       <Segmented borderBottom="">
         <Row className="primary-content centered">
-          <Col xs={12} md={4} lg={4}>
+          <Col xs={12} md={6} lg={3}>
+            {data.MarkBethwaite && (
+              <Img fixed={data.MarkBethwaite.childImageSharp.fixed} alt="Mark Bethwaite" />
+            )}
+            <Heading level={3} size="medium">
+              Mark Bethwaite
+              <br />
+              Chairman
+            </Heading>
+            <div className="left-align">
+              <p>	
+                Now a professional director, Mark has been a shareholder in OCIUS since 2000. He has a	
+                degree in Engineering and an MBA and has been Managing Director of two large mining	
+                companies and one of Australia’s leading industry associations.	
+              </p>	
+              <p>	
+                Mark represented Australia in sailing in the 1972 and 1976 Olympic Games and has won	
+                World Championships in three international classes. Mark was made a Member of the	
+                Order of Australia (AM) in early 2011 for services to industry and to sailing.	
+              </p>
+            </div>
+          </Col>
+          <Col xs={12} md={6} lg={3}>
             {data.RobertDane && (
               <Img fixed={data.RobertDane.childImageSharp.fixed} alt="Robert Dane" />
             )}
@@ -89,7 +111,7 @@ export default ({ data }) => (
               </p>
             </div>
           </Col>
-          <Col xs={12} md={4} lg={4}>
+          <Col xs={12} md={6} lg={3}>
             {data.GeoffZuber && (
               <Img fixed={data.GeoffZuber.childImageSharp.fixed} alt="Geoff Zuber" />
             )}
@@ -112,26 +134,30 @@ export default ({ data }) => (
               </p>
             </div>
           </Col>
-          <Col xs={12} md={4} lg={4}>
-            {data.BobHawke && <Img fixed={data.BobHawke.childImageSharp.fixed} alt="Bob Hawke" />}
+          <Col xs={12} md={6} lg={3}>
+            {data.AndrewAitken && (
+              <Img fixed={data.AndrewAitken.childImageSharp.fixed} alt="Andrew Aitken" />
+            )}
             <Heading level={3} size="medium">
-              The Hon. Bob Hawke AC
+              Andrew Aitken
               <br />
-              Chairman of Advisory Board
+              Director and Ocius Corporate Lawyer
             </Heading>
             <div className="left-align">
               <p>
-                Hon Bob Hawke was Prime Minister of Australia from 1983 to 1991. He has high-level
-                industry and government relations in Australia, China, the USA, and Europe.
+                Andrew practices principally in the areas of commercial law, succession and estate
+                planning. Andrew provides advice on the sale and purchase of businesses and
+                companies, corporate governance, risk management and a wide range of issues facing
+                SME owners, including intellectual property, shareholder agreements and commercial
+                contracts.
               </p>
-              <p>He was Chairman of OCIUS (formerly Solar Sailor) for 12 years from 2002 - 2014.</p>
             </div>
           </Col>
         </Row>
       </Segmented>
       <Segmented borderBottom="">
         <Row className="primary-content centered">
-          <Col xs={12} md={3} lg={3}>
+          <Col xs={12} md={6} lg={4}>
             {data.LloydBreckenridge && (
               <Img fixed={data.LloydBreckenridge.childImageSharp.fixed} alt="Lloyd Breckenridge" />
             )}
@@ -156,7 +182,7 @@ export default ({ data }) => (
               </p>
             </div>
           </Col>
-          <Col xs={12} md={3} lg={3}>
+          <Col xs={12} md={6} lg={4}>
             {data.PeterWlodarczyk && (
               <Img fixed={data.PeterWlodarczyk.childImageSharp.fixed} alt="Peter Wlodarczyk" />
             )}
@@ -180,7 +206,7 @@ export default ({ data }) => (
               </p>
             </div>
           </Col>
-          <Col xs={12} md={3} lg={3}>
+          <Col xs={12} md={6} lg={4}>
             {data.TraceySharah && (
               <Img fixed={data.TraceySharah.childImageSharp.fixed} alt="Tracey Sharah" />
             )}
@@ -200,25 +226,6 @@ export default ({ data }) => (
                 engagements, Business Taxation, Accounting, Advisory and Self-Managed Superannuation
                 Funds. The practice is a 100% sustainable business, adopts the latest accounting and
                 tax technology apps and 90% paperless.
-              </p>
-            </div>
-          </Col>
-          <Col xs={12} md={3} lg={3}>
-            {data.AndrewAitken && (
-              <Img fixed={data.AndrewAitken.childImageSharp.fixed} alt="Andrew Aitken" />
-            )}
-            <Heading level={3} size="medium">
-              Andrew Aitken
-              <br />
-              Ocius Corporate Lawyer
-            </Heading>
-            <div className="left-align">
-              <p>
-                Andrew practices principally in the areas of commercial law, succession and estate
-                planning. Andrew provides advice on the sale and purchase of businesses and
-                companies, corporate governance, risk management and a wide range of issues facing
-                SME owners, including intellectual property, shareholder agreements and commercial
-                contracts. He is a Principal with Russell Kennedy Aitken Lawyers.
               </p>
             </div>
           </Col>
@@ -757,11 +764,11 @@ export default ({ data }) => (
 
 export const query = graphql`
   query getImages {
-    RobertDane: file(relativePath: { eq: "pages/about/Robert-Dane-Grayscale.png" }) {
+    MarkBethwaite: file(relativePath: { eq: "pages/about/Mark-Bethwaite.jpg" }) {
       ...imageSharpAvatar
     }
 
-    BobHawke: file(relativePath: { eq: "pages/about/Bob-Hawke.jpg" }) {
+    RobertDane: file(relativePath: { eq: "pages/about/Robert-Dane-Grayscale.png" }) {
       ...imageSharpAvatar
     }
 
