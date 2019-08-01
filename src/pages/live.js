@@ -118,6 +118,18 @@ export default ({ shouldHideHeader }) => (
         <FormItem>Num Sats: 10</FormItem>
         <FormItem>HDOP: 1.10</FormItem>
         <FormItem>Heading: 287.3</FormItem>
+        <FormItem>Throttle: 0.0</FormItem>
+        <FormItem>Boat Speed: 0.0</FormItem>
+        <FormItem>Wind Dir: 306.4</FormItem>
+        <FormItem>Wind Speed: 0.8</FormItem>
+        <FormItem>Water Speed: 1.1</FormItem>
+        <FormItem>Water Temp: 24.8</FormItem>
+        <FormItem>Water Depth: 0.0</FormItem>
+        <FormItem>Next WP: 0</FormItem>
+        <FormItem>WP Dist: 24</FormItem>
+        <FormItem>Status: Disarmed</FormItem>
+        <FormItem>Mode: MANUAL</FormItem>
+        <FormItem>Sail Mode: Motor Only</FormItem>
       </FormWrapper>
     </LeftNav>
     <GMap
