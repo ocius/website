@@ -20,7 +20,7 @@ const StyledShellHeader = styled(ShellHeader)`
   top: 0;
   left: 0;
   right: 0;
-  height: 3rem;
+  height: 5rem;
   background-color: #171717;
   border-bottom: 1px solid #3d3d3d;
   z-index: 10000;
@@ -44,14 +44,14 @@ const StyledShellHeader = styled(ShellHeader)`
       top: 0;
       left: 0;
       width: auto;
-      height: 3rem;
+      height: 5rem;
       clip: auto;
       border: 4px solid #0062ff;
       z-index: 9999;
       background-color: #171717;
       color: #f3f3f3;
       outline: none;
-      padding: 0 1rem;
+      padding: 0 1.6rem;
     }
   }
 
@@ -70,9 +70,9 @@ const StyledShellHeader = styled(ShellHeader)`
     padding: 0;
     cursor: pointer;
     width: 100%;
-    width: 3rem;
-    height: 3rem;
-    border: 0.125rem solid transparent;
+    width: 5rem;
+    height: 5rem;
+    border: 0.2rem solid transparent;
     transition: background-color 110ms, border-color 110ms;
 
     &:focus {
@@ -104,35 +104,35 @@ const StyledShellHeader = styled(ShellHeader)`
       border-width: 2px;
       display: block;
 
-      @media (min-width: 66rem) {
+      @media (min-width: 100rem) {
         display: none;
       }
     }
   }
 
   .bx--header__menu-trigger {
-    margin-right: -0.5rem;
+    margin-right: -0.8rem;
 
-    @media (min-width: 66rem) {
+    @media (min-width: 100rem) {
       display: none;
     }
   }
 
   a.bx--header__name {
-    font-size: 0.875rem;
+    font-size: 1.4rem;
     font-weight: 400;
-    line-height: 1.125rem;
+    line-height: 2rem;
     letter-spacing: 0.16px;
     display: flex;
     align-items: center;
     height: 100%;
-    padding: 0 2rem 0 1rem;
-    padding-left: 1rem;
+    padding: 0 3.2rem 0 1.6rem;
+    padding-left: 1.5rem;
     text-decoration: none;
     letter-spacing: 0.1px;
     line-height: 20px;
     user-select: none;
-    border: 0.125rem solid transparent;
+    border: 0.2rem solid transparent;
     transition: border-color 110ms;
     outline: none;
     white-space: nowrap;
@@ -151,7 +151,7 @@ const StyledShellHeader = styled(ShellHeader)`
   }
 
   button svg {
-    margin-top: 0.25rem;
+    margin-top: 0.4rem;
   }
 
   :global(.bx--header__name):focus {

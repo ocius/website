@@ -11,7 +11,7 @@ const StyledDropdown = styled(Dropdown)`
   border: none;
   border-bottom: 1px solid #8c8c8c;
   width: 100%;
-  height: 2.5rem;
+  height: 4rem;
   cursor: pointer;
   color: #171717;
   transition: background-color 70ms cubic-bezier(0.2, 0, 0.38, 0.9);
@@ -37,8 +37,8 @@ const StyledDropdown = styled(Dropdown)`
     display: inline-flex;
     align-items: center;
     vertical-align: top;
-    height: 2.5rem;
-    padding: 0 3rem 0 1rem;
+    height: 4rem;
+    padding: 0 4.8rem 0 1.6rem;
     cursor: pointer;
     outline: none;
     white-space: nowrap;
@@ -47,9 +47,9 @@ const StyledDropdown = styled(Dropdown)`
   }
 
   .bx--list-box__label {
-    font-size: 0.875rem;
+    font-size: 1.4rem;
     font-weight: 400;
-    line-height: 1.125rem;
+    line-height: 1.8rem;
     letter-spacing: 0.16px;
     color: #171717;
     user-select: none;
@@ -60,7 +60,7 @@ const StyledDropdown = styled(Dropdown)`
 
   .bx--list-box__menu-icon {
     position: absolute;
-    right: 1rem;
+    right: 1.6rem;
     height: 100%;
     transition: transform 110ms cubic-bezier(0.2, 0, 0.38, 0.9),
       -webkit-transform 110ms cubic-bezier(0.2, 0, 0.38, 0.9);
@@ -83,17 +83,17 @@ const StyledDropdown = styled(Dropdown)`
     right: 0;
     width: 100%;
     background-color: #f3f3f3;
-    max-height: 8.75rem;
+    max-height: 14rem;
     overflow-y: auto;
     z-index: 9100;
   }
 
   .bx--list-box__menu-item {
-    font-size: 0.875rem;
+    font-size: 1.4rem;
     font-weight: 400;
-    line-height: 1.125rem;
+    line-height: 1.8rem;
     letter-spacing: 0.16px;
-    height: 2.5rem;
+    height: 4rem;
     color: #565656;
     cursor: pointer;
     user-select: none;
@@ -126,13 +126,13 @@ const StyledDropdown = styled(Dropdown)`
     outline: 2px solid transparent;
     outline-offset: -2px;
     display: block;
-    height: 2.5rem;
+    height: 4rem;
     color: #565656;
     text-decoration: none;
     font-weight: normal;
-    line-height: 1rem;
-    padding: 0.6875rem 0;
-    margin: 0 1rem;
+    line-height: 1.6rem;
+    padding: 1.1rem 0;
+    margin: 0 1.6rem;
     border-top: 1px solid transparent;
     border-bottom: 1px solid transparent;
     border-top-color: #dcdcdc;

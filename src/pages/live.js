@@ -13,7 +13,7 @@ import '../scss/index.scss';
 const apiKey = `AIzaSyC18SYECJZXKTOG6Ljm8W68mENW1uEmTAg`;
 
 const FormWrapper = styled.div`
-  padding: 1rem;
+  padding: 1.5rem;
   flex: 1 1;
 
   hr {
@@ -24,22 +24,21 @@ const FormWrapper = styled.div`
   }
 
   .bx--label {
-    font-size: 0.9rem;
+    font-size: 1.5rem;
     font-weight: 400;
-    line-height: 1rem;
+    line-height: 1.6rem;
     letter-spacing: 0.32px;
     color: #565656;
     font-weight: 400;
     display: inline-block;
     vertical-align: baseline;
-    margin-bottom: 0.5rem;
-    line-height: 1rem;
+    margin-bottom: 0.8rem;
     pointer-events: none;
   }
 `;
 
 const FormItem = styled.div`
-  font-size: 0.9rem;
+  font-size: 1.5rem;
   margin: 0 0 1rem;
 `;
 

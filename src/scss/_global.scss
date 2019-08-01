@@ -11,9 +11,5 @@ $feature-flags: (
 // Carbon globals/helpers
 @import '~carbon-components/scss/globals/scss/layout';
 
-// Carbon components
-@import '~carbon-components/scss/components/ui-shell/ui-shell';
-@import '~@carbon/addons-website/scss/components/website-side-nav';
-
 // special characters (arrows)
 @import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans&text=←→↑↓↔↕↖↗↘↙↚↛↮⟵⟶⟷↰↱↲↳⬐⬎⬑⬏↴↵');
