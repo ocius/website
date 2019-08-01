@@ -12,8 +12,8 @@ const SideNav = styled(SideNavUnstyled)`
   top: 5rem;
   bottom: 0;
   left: 0;
-  width: 25rem;
-  max-width: 25rem;
+  width: 25.6rem;
+  max-width: 25.6rem;
   color: #565656;
   background-color: #ffffff;
   will-change: width;
@@ -26,8 +26,8 @@ const SideNav = styled(SideNavUnstyled)`
   }
 
   &:not(.bx--side-nav--fixed):hover,
-  &--expanded {
-    width: 25rem;
+  &.bx--side-nav--expanded {
+    width: 25.6rem;
   }
 
   &.bx--side-nav__navigation {
