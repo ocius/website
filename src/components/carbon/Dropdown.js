@@ -20,11 +20,6 @@ const StyledDropdown = styled(Dropdown)`
     background-color: #e5e5e5;
   }
 
-  &:focus {
-    outline: 2px solid #0062ff;
-    outline-offset: -2px;
-  }
-
   .bx--list-box__field {
     display: inline-block;
     background: none;
@@ -44,6 +39,11 @@ const StyledDropdown = styled(Dropdown)`
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+
+    &:focus {
+      outline: 2px solid #0062ff;
+      outline-offset: -2px;
+    }
   }
 
   .bx--list-box__label {
