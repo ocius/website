@@ -7,6 +7,7 @@ import Switcher from '../components/carbon/Switcher';
 import Header from '../components/carbon/Header';
 import LeftNav from '../components/carbon/LeftNav';
 import GMap from '../components/GMap';
+import VesselStatus from '../components/VesselStatus';
 import '../scss/index.scss';
 
 // Google Maps key
@@ -113,23 +114,7 @@ export default ({ shouldHideHeader }) => (
           />
         </FormItem>
         <hr />
-        <FormItem>Latitude: -33.90594</FormItem>
-        <FormItem>Longitude: 151.23461</FormItem>
-        <FormItem>Num Sats: 10</FormItem>
-        <FormItem>HDOP: 1.10</FormItem>
-        <FormItem>Heading: 287.3</FormItem>
-        <FormItem>Throttle: 0.0</FormItem>
-        <FormItem>Boat Speed: 0.0</FormItem>
-        <FormItem>Wind Dir: 306.4</FormItem>
-        <FormItem>Wind Speed: 0.8</FormItem>
-        <FormItem>Water Speed: 1.1</FormItem>
-        <FormItem>Water Temp: 24.8</FormItem>
-        <FormItem>Water Depth: 0.0</FormItem>
-        <FormItem>Next WP: 0</FormItem>
-        <FormItem>WP Dist: 24</FormItem>
-        <FormItem>Status: Disarmed</FormItem>
-        <FormItem>Mode: MANUAL</FormItem>
-        <FormItem>Sail Mode: Motor Only</FormItem>
+        <VesselStatus />
       </FormWrapper>
     </LeftNav>
     <GMap
