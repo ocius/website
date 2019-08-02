@@ -71,13 +71,12 @@ export default ({ shouldHideHeader }) => (
       <FormWrapper>
         <FormItem>
           <StyledDropdown
-            id="carbon-dropdown-example"
+            id="link-type"
             type="default"
-            label="MAVLink"
+            label="Choose link type"
             ariaLabel="Dropdown"
             titleText="Link Type:"
-            items={items}
-            itemToString={item => (item ? item.text : '')}
+            items={['MAVLink', 'Satellite']}
           />
         </FormItem>
         <FormItem>
@@ -93,24 +92,38 @@ export default ({ shouldHideHeader }) => (
         </FormItem>
         <FormItem>
           <StyledDropdown
-            id="carbon-dropdown-example2"
+            id="frequency"
             type="default"
-            label="1Hz"
+            label="Choose frequency"
             ariaLabel="Dropdown"
             titleText="Frequency:"
-            items={items}
-            itemToString={item => (item ? item.text : '')}
+            items={[
+              '5Hz',
+              '2Hz',
+              '1 Hz',
+              '2 Seconds',
+              '5 Seconds',
+              '10 Seconds',
+              '30 Seconds',
+              '1 Minute'
+            ]}
           />
         </FormItem>
         <FormItem>
           <StyledDropdown
-            id="carbon-dropdown-example3"
+            id="chart-mode"
             type="default"
-            label="Vessel Status"
+            label="Choose chart mode"
             ariaLabel="Dropdown"
             titleText="Chart Mode:"
-            items={items}
-            itemToString={item => (item ? item.text : '')}
+            items={[
+              'Vessel Status',
+              'Power Monitor',
+              'AIS Info',
+              'Replay Sat Data',
+              'Solar Calculator',
+              'History Display'
+            ]}
           />
         </FormItem>
         <hr />
