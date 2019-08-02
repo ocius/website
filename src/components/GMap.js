@@ -1,5 +1,9 @@
 import React from 'react';
 import { withScriptjs, withGoogleMap, GoogleMap, Marker } from 'react-google-maps';
+import BoatMarker from '../../public/boat00.png';
+
+// Make an icon object
+const icon = { url: BoatMarker, scaledSize: { width: 34, height: 34 } };
 
 const GMap = withScriptjs(
   withGoogleMap(props => (
@@ -11,7 +15,7 @@ const GMap = withScriptjs(
         mapTypeId: 'satellite'
       }}
     >
-      {props.isMarkerShown && <Marker position={{ lat: -33.90594, lng: 151.23461 }} />}
+      {props.isMarkerShown && <Marker position={{ lat: -33.90594, lng: 151.23461 }} icon={icon} />}
     </GoogleMap>
   ))
 );
