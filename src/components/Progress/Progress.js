@@ -48,7 +48,7 @@ Progress.propTypes = {
 
 Progress.defaultProps = {
   percent: 0,
-  status: STATUSES.SUCCESS,
+  status: STATUSES.ACTIVE,
   theme: {},
   style: {},
   className: ''
