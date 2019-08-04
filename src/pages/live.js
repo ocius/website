@@ -1,5 +1,5 @@
 /* eslint-disable no-script-url */
-import React from 'react';
+import React, { Component } from 'react';
 import styled from 'styled-components';
 import SEO from '../components/SEO';
 import StyledDropdown from '../components/carbon/Dropdown';
@@ -8,6 +8,7 @@ import Header from '../components/carbon/Header';
 import LeftNav from '../components/carbon/LeftNav';
 import GMap from '../components/GMap';
 import VesselStatus from '../components/VesselStatus';
+import PowerMonitor from '../components/PowerMonitor';
 import '../scss/index.scss';
 
 // Google Maps key
@@ -62,80 +63,116 @@ const items = [
   }
 ];
 
-export default ({ shouldHideHeader }) => (
-  <>
-    <SEO title="Live" description="See where Bluebottles are at any time – LIVE." />
-    <Header shouldHideHeader={shouldHideHeader} />
-    <Switcher />
-    <LeftNav shouldHideHeader={shouldHideHeader}>
-      <FormWrapper>
-        <FormItem>
-          <StyledDropdown
-            id="link-type"
-            type="default"
-            label="Choose link type"
-            ariaLabel="Dropdown"
-            titleText="Link Type:"
-            items={['MAVLink', 'Satellite']}
-          />
-        </FormItem>
-        <FormItem>
-          <StyledDropdown
-            id="carbon-dropdown-example1"
-            type="default"
-            label="Bob"
-            ariaLabel="Dropdown"
-            titleText="Vessel:"
-            items={items}
-            itemToString={item => (item ? item.text : '')}
-          />
-        </FormItem>
-        <FormItem>
-          <StyledDropdown
-            id="frequency"
-            type="default"
-            label="Choose frequency"
-            ariaLabel="Dropdown"
-            titleText="Frequency:"
-            items={[
-              '5Hz',
-              '2Hz',
-              '1 Hz',
-              '2 Seconds',
-              '5 Seconds',
-              '10 Seconds',
-              '30 Seconds',
-              '1 Minute'
-            ]}
-          />
-        </FormItem>
-        <FormItem>
-          <StyledDropdown
-            id="chart-mode"
-            type="default"
-            label="Choose chart mode"
-            ariaLabel="Dropdown"
-            titleText="Chart Mode:"
-            items={[
-              'Vessel Status',
-              'Power Monitor',
-              'AIS Info',
-              'Replay Sat Data',
-              'Solar Calculator',
-              'History Display'
-            ]}
-          />
-        </FormItem>
-        <hr />
-        <VesselStatus />
-      </FormWrapper>
-    </LeftNav>
-    <GMap
-      isMarkerShown
-      googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=${apiKey}`}
-      loadingElement={<div style={{ height: `100%` }} />}
-      containerElement={<div style={{ height: `100vh` }} />}
-      mapElement={<div style={{ height: `100%` }} />}
-    />
-  </>
-);
+class LivePage extends Component {
+  constructor() {
+    super();
+
+    // Set default chart mode
+    this.state = {
+      chartMode: 'Vessel Status'
+    };
+
+    // Set this (with bind)
+    this.handleChartModeChange = this.handleChartModeChange.bind(this);
+  }
+
+  /*
+    Attach an event handler to chart mode dropdown
+   */
+  handleChartModeChange(e) {
+    this.setState({ chartMode: e.selectedItem });
+  }
+
+  render() {
+    const { shouldHideHeader } = this.props;
+    const { chartMode } = this.state;
+    let panelInformation;
+
+    if (chartMode === 'Vessel Status') {
+      panelInformation = <VesselStatus />;
+    } else if (chartMode === 'Power Monitor') {
+      panelInformation = <PowerMonitor />;
+    }
+
+    return (
+      <>
+        <SEO title="Live" description="See where Bluebottles are at any time – LIVE." />
+        <Header shouldHideHeader={shouldHideHeader} />
+        <Switcher />
+        <LeftNav shouldHideHeader={shouldHideHeader}>
+          <FormWrapper>
+            <FormItem>
+              <StyledDropdown
+                id="link-type"
+                type="default"
+                label="Choose link type"
+                ariaLabel="Dropdown"
+                titleText="Link Type:"
+                items={['MAVLink', 'Satellite']}
+              />
+            </FormItem>
+            <FormItem>
+              <StyledDropdown
+                id="carbon-dropdown-example1"
+                type="default"
+                label="Bob"
+                ariaLabel="Dropdown"
+                titleText="Vessel:"
+                items={items}
+                itemToString={item => (item ? item.text : '')}
+              />
+            </FormItem>
+            <FormItem>
+              <StyledDropdown
+                id="frequency"
+                type="default"
+                label="Choose frequency"
+                ariaLabel="Dropdown"
+                titleText="Frequency:"
+                items={[
+                  '5Hz',
+                  '2Hz',
+                  '1 Hz',
+                  '2 Seconds',
+                  '5 Seconds',
+                  '10 Seconds',
+                  '30 Seconds',
+                  '1 Minute'
+                ]}
+              />
+            </FormItem>
+            <FormItem>
+              <StyledDropdown
+                id="chart-mode"
+                type="default"
+                label="Choose chart mode"
+                ariaLabel="Dropdown"
+                titleText="Chart Mode:"
+                onChange={this.handleChartModeChange}
+                items={[
+                  'Vessel Status',
+                  'Power Monitor',
+                  'AIS Info',
+                  'Replay Sat Data',
+                  'Solar Calculator',
+                  'History Display'
+                ]}
+              />
+            </FormItem>
+            <hr />
+            {panelInformation}
+          </FormWrapper>
+        </LeftNav>
+        <GMap
+          isMarkerShown
+          googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=${apiKey}`}
+          loadingElement={<div style={{ height: `100%` }} />}
+          containerElement={<div style={{ height: `100vh` }} />}
+          mapElement={<div style={{ height: `100%` }} />}
+        />
+      </>
+    );
+  }
+}
+
+export default LivePage;
