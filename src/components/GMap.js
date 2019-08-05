@@ -2,9 +2,11 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import { withScriptjs, withGoogleMap, GoogleMap, Marker } from 'react-google-maps';
 import BoatMarker from '../../public/boat00.png';
+import BoatMarker1 from '../../public/boat02.png';
 
 // Make an icon object
 const icon = { url: BoatMarker, scaledSize: { width: 34, height: 34 } };
+const icon1 = { url: BoatMarker1, scaledSize: { width: 34, height: 34 } };
 
 const MapWithMarkers = withScriptjs(
   withGoogleMap(props => (
@@ -16,11 +18,11 @@ const MapWithMarkers = withScriptjs(
         mapTypeId: 'satellite'
       }}
     >
-      {props.markers.map(marker => (
+      {props.markers.map((marker, index) => (
         <Marker
           key={marker.Name}
           position={{ lat: parseFloat(marker.Lat), lng: parseFloat(marker.Lon) }}
-          icon={icon}
+          icon={index % 2 ? icon : icon1}
         />
       ))}
     </GoogleMap>
