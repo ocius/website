@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import Progress from './Progress';
+import Progress from '../Progress';
 
 const MonitorWrapper = styled.div`
   font-size: 1.5rem;
