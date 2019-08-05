@@ -7,9 +7,7 @@ import Switcher from '../components/carbon/Switcher';
 import Header from '../components/carbon/Header';
 import LeftNav from '../components/carbon/LeftNav';
 import GMap from '../components/GMap';
-import VesselStatus from '../components/VesselStatus';
-import PowerMonitor from '../components/PowerMonitor';
-import AISInfo from '../components/AISInfo';
+import { VesselStatus, PowerMonitor, AISInfo } from '../components/InfoPanel';
 import '../scss/index.scss';
 
 // Google Maps key
