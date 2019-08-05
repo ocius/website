@@ -25,9 +25,11 @@ const StyledTable = styled.table`
 
   tr {
     background-color: #f3f3f3;
+    border: 1px solid #ddd;
     border-bottom: 3px solid #ddd;
     display: block;
     margin-bottom: 0.625em;
+    padding: 0.35em;
   }
 
   td {
