@@ -6,7 +6,7 @@ export const STATUSES = {
   DEFAULT: 'default'
 };
 export const COLOR_MAP = {
-  [STATUSES.ACTIVE]: '#138ce4',
+  [STATUSES.ACTIVE]: '#0062ff',
   [STATUSES.SUCCESS]: '#049e51',
   [STATUSES.ERROR]: '#e23f33'
 };
