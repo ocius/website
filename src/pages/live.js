@@ -9,6 +9,7 @@ import LeftNav from '../components/carbon/LeftNav';
 import GMap from '../components/GMap';
 import VesselStatus from '../components/VesselStatus';
 import PowerMonitor from '../components/PowerMonitor';
+import AISInfo from '../components/AISInfo';
 import '../scss/index.scss';
 
 // Google Maps key
@@ -92,6 +93,8 @@ class LivePage extends Component {
       panelInformation = <VesselStatus />;
     } else if (chartMode === 'Power Monitor') {
       panelInformation = <PowerMonitor />;
+    } else if (chartMode === 'AIS Info') {
+      panelInformation = <AISInfo />;
     }
 
     return (

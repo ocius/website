@@ -18,7 +18,8 @@ const SideNav = styled(SideNavUnstyled)`
   background-color: #ffffff;
   will-change: width;
   transition: width 0.11s cubic-bezier(0.2, 0, 1, 0.9);
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
   z-index: 6000;
 
   @media (max-width: 100rem) {
