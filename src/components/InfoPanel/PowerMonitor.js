@@ -12,17 +12,28 @@ const MonitorWrapper = styled.div`
 
 const Label = styled.span`
   display: block;
+  margin-bottom: 0.5rem;
+`;
+
+const ItemWrapper = styled.div`
+  margin: 0 0 1rem;
 `;
 
 const PowerMonitor = () => {
   return (
     <MonitorWrapper>
-      <Label>Battery: Voltage 28.4</Label>
-      <Progress percent={96} />
-      <Label>Charge/Discharge Power: -44 watts</Label>
-      <Progress percent={4.3} />
-      <Label>Solar Charge: 24.16 watts</Label>
-      <Progress percent={3.9} />
+      <ItemWrapper>
+        <Label>Battery: Voltage 28.4</Label>
+        <Progress percent={96} />
+      </ItemWrapper>
+      <ItemWrapper>
+        <Label>Charge/Discharge Power: -44W</Label>
+        <Progress percent={4.3} />
+      </ItemWrapper>
+      <ItemWrapper>
+        <Label>Solar Charge: 24.16W</Label>
+        <Progress percent={3.9} />
+      </ItemWrapper>
     </MonitorWrapper>
   );
 };
