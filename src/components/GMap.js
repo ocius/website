@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { withScriptjs, withGoogleMap, GoogleMap, Marker } from 'react-google-maps';
+import { MarkerClusterer } from 'react-google-maps/lib/components/addons/MarkerClusterer';
+
 import BoatMarker from '../../public/boat00.png';
 import BoatMarker1 from '../../public/boat02.png';
 
@@ -18,13 +20,20 @@ const MapWithMarkers = withScriptjs(
         mapTypeId: 'satellite'
       }}
     >
-      {props.markers.map((marker, index) => (
-        <Marker
-          key={marker.Name}
-          position={{ lat: parseFloat(marker.Lat), lng: parseFloat(marker.Lon) }}
-          icon={index % 2 ? icon : icon1}
-        />
-      ))}
+      <MarkerClusterer
+        onClick={props.onMarkerClustererClick}
+        averageCenter
+        enableRetinaIcons
+        gridSize={5}
+      >
+        {props.markers.map((marker, index) => (
+          <Marker
+            key={marker.Name}
+            position={{ lat: parseFloat(marker.Lat), lng: parseFloat(marker.Lon) }}
+            icon={index % 2 ? icon : icon1}
+          />
+        ))}
+      </MarkerClusterer>
     </GoogleMap>
   ))
 );
@@ -52,10 +61,25 @@ class GMap extends Component {
       });
   }
 
+  /*
+    Handle on Marker click event
+   */
+  static onMarkerClustererClick(markerClusterer) {
+    const clickedMarkers = markerClusterer.getMarkers();
+    console.log(`Current clicked markers length: ${clickedMarkers.length}`);
+    console.log(clickedMarkers);
+  }
+
   render() {
     const { ...rest } = this.props;
 
-    return <MapWithMarkers markers={this.state.markers} {...rest} />;
+    return (
+      <MapWithMarkers
+        markers={this.state.markers}
+        onMarkerClustererClick={this.onMarkerClustererClick}
+        {...rest}
+      />
+    );
   }
 }
 

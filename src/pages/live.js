@@ -169,6 +169,7 @@ class LivePage extends Component {
           loadingElement={<div style={{ height: `100%` }} />}
           containerElement={<div style={{ height: `100vh` }} />}
           mapElement={<div style={{ height: `100%` }} />}
+          onMarkerClustererClick={this.onMarkerClustererClick}
         />
       </>
     );
