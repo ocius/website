@@ -9,6 +9,15 @@ const LineWrapper = styled.div`
   border-radius: 100px;
   background-color: #efefef;
   vertical-align: middle;
+  overflow: hidden;
+
+  progress {
+    position: absolute;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    left: -777px;
+  }
 `;
 
 const ActiveAnim = keyframes`
@@ -65,6 +74,7 @@ function Line({ percent, className, status, background, trailColor }) {
 
   return (
     <LineWrapper className={className} style={trailStyle}>
+      <progress value={percent} max={100} />
       <LineInner status={status} style={progressStyle} />
     </LineWrapper>
   );
