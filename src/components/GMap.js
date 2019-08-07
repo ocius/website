@@ -1,6 +1,7 @@
+/* eslint-disable react/jsx-no-bind */
 import React, { Component } from 'react';
 import axios from 'axios';
-import { withScriptjs, withGoogleMap, GoogleMap, Marker } from 'react-google-maps';
+import { withScriptjs, withGoogleMap, GoogleMap, Marker, InfoWindow } from 'react-google-maps';
 import { MarkerClusterer } from 'react-google-maps/lib/components/addons/MarkerClusterer';
 
 import BoatMarker from '../../public/boat00.png';
@@ -26,21 +27,51 @@ const MapWithMarkers = withScriptjs(
         enableRetinaIcons
         gridSize={5}
       >
-        {props.markers.map((marker, index) => (
-          <Marker
-            key={marker.Name}
-            position={{ lat: parseFloat(marker.Lat), lng: parseFloat(marker.Lon) }}
-            icon={index % 2 ? icon : icon1}
-          />
-        ))}
+        {props.markers.map((marker, index) => {
+          const onClick = props.onClick.bind(this, marker);
+
+          return (
+            <Marker
+              key={marker.id}
+              position={{ lat: parseFloat(marker.Lat), lng: parseFloat(marker.Lon) }}
+              icon={index % 2 ? icon : icon1}
+              onClick={onClick}
+            >
+              {props.selectedMarker === marker && (
+                <InfoWindow>
+                  <>
+                    <p>
+                      <strong>Name</strong>: {marker.Name}
+                    </p>
+                    <p>
+                      <strong>Latitude</strong>: {marker.Lat}
+                    </p>
+                    <p>
+                      <strong>Longitude</strong>: {marker.Lon}
+                    </p>
+                  </>
+                </InfoWindow>
+              )}
+            </Marker>
+          );
+        })}
       </MarkerClusterer>
     </GoogleMap>
   ))
 );
 
 class GMap extends Component {
-  componentWillMount() {
-    this.setState({ markers: [] });
+  constructor() {
+    super();
+
+    // Set default chart mode
+    this.state = {
+      markers: [],
+      selectedMarker: false
+    };
+
+    // Set this (with bind)
+    this.handleClick = this.handleClick.bind(this);
   }
 
   componentDidMount() {
@@ -70,11 +101,18 @@ class GMap extends Component {
     console.log(clickedMarkers);
   }
 
+  handleClick = marker => {
+    // console.log({ marker })
+    this.setState({ selectedMarker: marker });
+  };
+
   render() {
     const { ...rest } = this.props;
 
     return (
       <MapWithMarkers
+        selectedMarker={this.state.selectedMarker}
+        onClick={this.handleClick}
         markers={this.state.markers}
         onMarkerClustererClick={this.onMarkerClustererClick}
         {...rest}
