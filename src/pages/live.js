@@ -9,6 +9,7 @@ import LeftNav from '../components/carbon/LeftNav';
 import GMap from '../components/GMap';
 import { VesselStatus, PowerMonitor, AISInfo } from '../components/InfoPanel';
 import '../scss/index.scss';
+import DroneService from '../common/api/droneService';
 
 // Google Maps key
 const apiKey = `AIzaSyC18SYECJZXKTOG6Ljm8W68mENW1uEmTAg`;
@@ -43,36 +44,34 @@ const FormItem = styled.div`
   margin: 0 0 1rem;
 `;
 
-const items = [
-  {
-    id: 'option-1',
-    text: 'Option 1'
-  },
-  {
-    id: 'option-2',
-    text: 'Option 2'
-  },
-  {
-    id: 'option-3',
-    text: 'Option 3'
-  },
-  {
-    id: 'option-4',
-    text: 'Option 4'
-  }
-];
-
 class LivePage extends Component {
   constructor() {
     super();
 
     // Set default chart mode
     this.state = {
-      chartMode: 'Vessel Status'
+      chartMode: 'Vessel Status',
+      drones: {},
+      currentVessel: 0
     };
 
     // Set this (with bind)
+    this.droneService = new DroneService();
     this.handleChartModeChange = this.handleChartModeChange.bind(this);
+    this.handleVesselChange = this.handleVesselChange.bind(this);
+  }
+
+  componentDidMount() {
+    this.getData();
+  }
+
+  /*
+    Fetch the data from lambda backend.
+   */
+  getData() {
+    this.droneService.retrieveData().then(drones => {
+      this.setState({ drones });
+    });
   }
 
   /*
@@ -82,13 +81,36 @@ class LivePage extends Component {
     this.setState({ chartMode: e.selectedItem });
   }
 
+  /*
+    Attach an event handler to vessel dropdown
+   */
+  handleVesselChange(e) {
+    this.setState({ currentVessel: e.selectedItem.id });
+  }
+
   render() {
     const { shouldHideHeader } = this.props;
-    const { chartMode } = this.state;
+    const { chartMode, drones, currentVessel } = this.state;
+
+    let droneNames = [];
+
+    // Map all the drones to array
+    if (typeof drones === 'object') {
+      droneNames = Object.keys(drones).map(index => {
+        // Get drone object for this particular index
+        const drone = drones[index];
+        // Check if name property exists
+        if (drone && drone.Name) {
+          return { name: drone.Name, id: index };
+        }
+        return false;
+      });
+    }
+
     let panelInformation;
 
     if (chartMode === 'Vessel Status') {
-      panelInformation = <VesselStatus />;
+      panelInformation = <VesselStatus data={this.state.drones[currentVessel]} />;
     } else if (chartMode === 'Power Monitor') {
       panelInformation = <PowerMonitor />;
     } else if (chartMode === 'AIS Info') {
@@ -114,13 +136,14 @@ class LivePage extends Component {
             </FormItem>
             <FormItem>
               <StyledDropdown
-                id="carbon-dropdown-example1"
+                id="vessel"
                 type="default"
-                label="Bob"
+                label="Choose vessel"
                 ariaLabel="Dropdown"
                 titleText="Vessel:"
-                items={items}
-                itemToString={item => (item ? item.text : '')}
+                onChange={this.handleVesselChange}
+                items={droneNames}
+                itemToString={drone => (drone ? drone.name : '')}
               />
             </FormItem>
             <FormItem>

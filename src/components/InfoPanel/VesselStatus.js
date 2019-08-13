@@ -30,10 +30,6 @@ const VesselStatus = () => {
       <dd>-33.90594</dd>
       <dt>Longitude:</dt>
       <dd>151.23461</dd>
-      <dt>Num Sats:</dt>
-      <dd>10</dd>
-      <dt>HDOP:</dt>
-      <dd>1.10</dd>
       <dt>Heading:</dt>
       <dd>287.3</dd>
       <dt>Throttle:</dt>
