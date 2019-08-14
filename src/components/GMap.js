@@ -18,7 +18,8 @@ const MapWithMarkers = withScriptjs(
       defaultCenter={{ lat: -33.90594, lng: 151.23461 }}
       defaultOptions={{
         disableDefaultUI: false,
-        mapTypeId: 'satellite'
+        mapTypeId: 'satellite',
+        streetViewControl: false
       }}
     >
       <MarkerClusterer
