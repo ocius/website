@@ -151,25 +151,6 @@ class LivePage extends Component {
             </FormItem>
             <FormItem>
               <StyledDropdown
-                id="frequency"
-                type="default"
-                label="Choose frequency"
-                ariaLabel="Dropdown"
-                titleText="Frequency:"
-                items={[
-                  '5Hz',
-                  '2Hz',
-                  '1 Hz',
-                  '2 Seconds',
-                  '5 Seconds',
-                  '10 Seconds',
-                  '30 Seconds',
-                  '1 Minute'
-                ]}
-              />
-            </FormItem>
-            <FormItem>
-              <StyledDropdown
                 id="chart-mode"
                 type="default"
                 label="Choose chart mode"
