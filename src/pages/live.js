@@ -173,14 +173,7 @@ class LivePage extends Component {
                 ariaLabel="Dropdown"
                 titleText="Chart Mode:"
                 onChange={this.handleChartModeChange}
-                items={[
-                  'Vessel Status',
-                  'Power Monitor',
-                  'AIS Info',
-                  'Replay Sat Data',
-                  'Solar Calculator',
-                  'History Display'
-                ]}
+                items={['Vessel Status', 'Power Monitor', 'AIS Info']}
               />
             </FormItem>
             <hr />
