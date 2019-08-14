@@ -1,8 +1,8 @@
 /* eslint-disable react/jsx-no-bind */
 import React, { Component } from 'react';
-import axios from 'axios';
 import { withScriptjs, withGoogleMap, GoogleMap, Marker, InfoWindow } from 'react-google-maps';
 import { MarkerClusterer } from 'react-google-maps/lib/components/addons/MarkerClusterer';
+import DroneService from '../common/api/droneService';
 
 import BoatMarker from '../../public/boat00.png';
 import BoatMarker1 from '../../public/boat02.png';
@@ -72,25 +72,12 @@ class GMap extends Component {
     };
 
     // Set this (with bind)
+    this.droneService = new DroneService();
     this.handleClick = this.handleClick.bind(this);
   }
 
   componentDidMount() {
-    // Watch this, here goes the real magic
-    const proxy = 'https://cors-anywhere.herokuapp.com/';
-    // API to get drones locations
-    const url = `${proxy}https://api.ocius.com.au/drones/locations`;
-
-    // Fetch data and set the state
-    axios
-      .get(url, { crossdomain: true })
-      .then(response => {
-        this.setState({ markers: response.data });
-      })
-      .catch(error => {
-        // eslint-disable-next-line no-console
-        console.log(error);
-      });
+    this.getData();
   }
 
   /*
@@ -100,6 +87,18 @@ class GMap extends Component {
     const clickedMarkers = markerClusterer.getMarkers();
     console.log(`Current clicked markers length: ${clickedMarkers.length}`);
     console.log(clickedMarkers);
+  }
+
+  /*
+    Fetch current location of drones from lambda backend.
+ */
+  getData() {
+    const pointer = this;
+    setInterval(() => {
+      this.droneService.getLocation().then(drones => {
+        pointer.setState({ markers: drones });
+      });
+    }, 2000);
   }
 
   handleClick = marker => {

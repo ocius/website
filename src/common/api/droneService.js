@@ -15,7 +15,7 @@ class DroneService {
    * @returns {Promise<[] | Promise<[]>>}
    */
   async retrieveData() {
-    // Fetch data and set the state
+    // Fetch and return the data
     return axios
       .get(this.config.DRONE_COLLECTION_URL)
       .then(response => {
@@ -23,7 +23,25 @@ class DroneService {
       })
       .catch(error => {
         // eslint-disable-next-line no-console
-        console.log(`😱 retrive data request failed: ${error}`);
+        console.log(`😱 retriveData() request failed: ${error}`);
+      });
+  }
+
+  /**
+   * Retrieve current location of drones
+   *
+   * @returns {Promise<AxiosResponse<T> | Promise<AxiosResponse<T>>>}
+   */
+  async getLocation() {
+    // Fetch and return location
+    return axios
+      .get(`${this.config.DRONE_COLLECTION_URL}/locations`)
+      .then(response => {
+        return response.data;
+      })
+      .catch(error => {
+        // eslint-disable-next-line no-console
+        console.log(`😱 getLocation() request failed: ${error}`);
       });
   }
 }
