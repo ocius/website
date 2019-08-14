@@ -23,39 +23,92 @@ const StatusList = styled.dl`
   }
 `;
 
-const VesselStatus = () => {
+// Match all properties with its string label
+const StatusNames = {
+  Status: 'Status',
+  Mode: 'Mode',
+  Sail_mode: 'Sail Mode',
+  Wp_dist: 'WP Dist',
+  Next_wp: 'Next WP',
+  Water_depth: 'Water Depth',
+  Water_temp: 'Water Temp',
+  Water_speed: 'Water Speed',
+  Wind_speed: 'Wind Speed',
+  Wind_direction: 'Wind Dir',
+  Boat_speed: 'Boat Speed',
+  Throttle: 'Throttle',
+  // Num_Sats: 'Num Sats'
+  // Hdop: 'HDOP'
+  Heading: 'Heading',
+  Lat: 'Latitude',
+  Lon: 'Longitude'
+};
+
+/**
+ * Flatten a multidimensional object
+ *
+ * For example:
+ *   flattenObject({ a: 1, b: { c: 2 } })
+ * Returns:
+ *   { a: 1, c: 2}
+ */
+const flattenObject = obj => {
+  const flattened = {};
+
+  if (typeof obj === 'object') {
+    Object.keys(obj).forEach(key => {
+      if (typeof obj[key] === 'object' && obj[key] !== null) {
+        Object.assign(flattened, flattenObject(obj[key]));
+      } else {
+        flattened[key] = obj[key];
+      }
+    });
+  }
+
+  return flattened;
+};
+
+/**
+ * Replace shortened properties with strings.
+ *
+ * For example:
+ *  addLabelsToValues({ Water_temp: "30.709999", Wind_Speed: "0.252078" })
+ *
+ * Returns:
+ *  [ "Water Temp": "30.709999", "Wind Speed": "0.252078" ]
+ *
+ */
+const addLabelsToValues = data => {
+  // Variable to hold array with statuses
+  const statuses = [];
+  const flattened = flattenObject(data);
+
+  if (Object.entries(flattened).length !== 0) {
+    // eslint-disable-next-line no-restricted-syntax
+    for (const [key, value] of Object.entries(flattened)) {
+      if (value !== null) {
+        // We have a value, display it
+        if (typeof StatusNames[key] !== 'undefined') {
+          statuses[StatusNames[key]] = value;
+        }
+      }
+    }
+  }
+
+  return statuses;
+};
+
+const VesselStatus = ({ data }) => {
+  const statuses = addLabelsToValues(data);
+
   return (
     <StatusList>
-      <dt>Latitude:</dt>
-      <dd>-33.90594</dd>
-      <dt>Longitude:</dt>
-      <dd>151.23461</dd>
-      <dt>Heading:</dt>
-      <dd>287.3</dd>
-      <dt>Throttle:</dt>
-      <dd>0.0</dd>
-      <dt>Boat Speed:</dt>
-      <dd>0.0</dd>
-      <dt>Wind Dir:</dt>
-      <dd>306.4</dd>
-      <dt>Wind Speed:</dt>
-      <dd>0.8</dd>
-      <dt>Water Speed:</dt>
-      <dd>1.1</dd>
-      <dt>Water Temp:</dt>
-      <dd>24.8</dd>
-      <dt>Water Depth:</dt>
-      <dd>0.0</dd>
-      <dt>Next WP:</dt>
-      <dd>0</dd>
-      <dt>WP Dist:</dt>
-      <dd>24</dd>
-      <dt>Status:</dt>
-      <dd>Disarmed</dd>
-      <dt>Mode:</dt>
-      <dd>MANUAL</dd>
-      <dt>Sail Mode:</dt>
-      <dd>Motor Only</dd>
+      {Object.keys(statuses).map(index => (
+        <>
+          <dt>{index}</dt>
+          <dd>{statuses[index]}</dd>
+        </>
+      ))}
     </StatusList>
   );
 };
