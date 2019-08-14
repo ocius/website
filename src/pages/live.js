@@ -69,9 +69,12 @@ class LivePage extends Component {
     Fetch the data from lambda backend.
    */
   getData() {
-    this.droneService.retrieveData().then(drones => {
-      this.setState({ drones });
-    });
+    const pointer = this;
+    setInterval(() => {
+      this.droneService.retrieveData().then(drones => {
+        pointer.setState({ drones });
+      });
+    }, 2000);
   }
 
   /*
