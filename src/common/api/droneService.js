@@ -24,6 +24,8 @@ class DroneService {
       .catch(error => {
         // eslint-disable-next-line no-console
         console.log(`😱 retriveData() request failed: ${error}`);
+        // Stop execute javascript
+        return false;
       });
   }
 
@@ -42,6 +44,8 @@ class DroneService {
       .catch(error => {
         // eslint-disable-next-line no-console
         console.log(`😱 getLocation() request failed: ${error}`);
+        // Stop execute javascript
+        return false;
       });
   }
 }

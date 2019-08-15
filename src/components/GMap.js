@@ -78,7 +78,11 @@ class GMap extends Component {
   }
 
   componentDidMount() {
-    this.getData();
+    this.intervalId = setInterval(this.getData.bind(this), 2000);
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.intervalId);
   }
 
   /*
@@ -94,12 +98,9 @@ class GMap extends Component {
     Fetch current location of drones from lambda backend.
  */
   getData() {
-    const pointer = this;
-    setInterval(() => {
-      this.droneService.getLocation().then(drones => {
-        pointer.setState({ markers: drones });
-      });
-    }, 2000);
+    this.droneService.getLocation().then(drones => {
+      this.setState({ markers: drones });
+    });
   }
 
   handleClick = marker => {

@@ -62,19 +62,20 @@ class LivePage extends Component {
   }
 
   componentDidMount() {
-    this.getData();
+    this.intervalId = setInterval(this.getData.bind(this), 2000);
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.intervalId);
   }
 
   /*
     Fetch the data from lambda backend.
    */
   getData() {
-    const pointer = this;
-    setInterval(() => {
-      this.droneService.retrieveData().then(drones => {
-        pointer.setState({ drones });
-      });
-    }, 2000);
+    this.droneService.retrieveData().then(drones => {
+      this.setState({ drones });
+    });
   }
 
   /*
