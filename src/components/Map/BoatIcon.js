@@ -1,11 +1,11 @@
-import BoatMarker from './boat_icons/boat00.png';
-import BoatMarker1 from './boat_icons/boat01.png';
-import BoatMarker2 from './boat_icons/boat02.png';
-import BoatMarker3 from './boat_icons/boat03.png';
-import BoatMarker4 from './boat_icons/boat04.png';
-import BoatMarker5 from './boat_icons/boat05.png';
-import BoatMarker6 from './boat_icons/boat06.png';
-import BoatMarker7 from './boat_icons/boat07.png';
+import BoatMarker from './boat_icons/boat00.svg';
+import BoatMarker1 from './boat_icons/boat01.svg';
+import BoatMarker2 from './boat_icons/boat02.svg';
+import BoatMarker3 from './boat_icons/boat03.svg';
+import BoatMarker4 from './boat_icons/boat04.svg';
+import BoatMarker5 from './boat_icons/boat05.svg';
+import BoatMarker6 from './boat_icons/boat06.svg';
+import BoatMarker7 from './boat_icons/boat07.svg';
 
 const BoatIcon = index => {
   const boatNumber = index % 8;
@@ -41,7 +41,7 @@ const BoatIcon = index => {
       return null;
   }
 
-  return { url: icon, scaledSize: { width: 34, height: 34 } };
+  return { url: icon, scaledSize: { width: 38, height: 38 } };
 };
 
 export default BoatIcon;
