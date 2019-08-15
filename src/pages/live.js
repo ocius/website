@@ -6,7 +6,7 @@ import StyledDropdown from '../components/carbon/Dropdown';
 import Switcher from '../components/carbon/Switcher';
 import Header from '../components/carbon/Header';
 import LeftNav from '../components/carbon/LeftNav';
-import GMap from '../components/GMap';
+import GMap from '../components/Map/GMap';
 import { VesselStatus, PowerMonitor, AISInfo } from '../components/InfoPanel';
 import '../scss/index.scss';
 import DroneService from '../common/api/droneService';

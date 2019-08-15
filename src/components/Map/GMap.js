@@ -3,14 +3,8 @@ import React, { Component } from 'react';
 import { uid } from 'react-uid';
 import { withScriptjs, withGoogleMap, GoogleMap, Marker, InfoWindow } from 'react-google-maps';
 import { MarkerClusterer } from 'react-google-maps/lib/components/addons/MarkerClusterer';
-import DroneService from '../common/api/droneService';
-
-import BoatMarker from '../../public/boat00.png';
-import BoatMarker1 from '../../public/boat02.png';
-
-// Make an icon object
-const icon = { url: BoatMarker, scaledSize: { width: 34, height: 34 } };
-const icon1 = { url: BoatMarker1, scaledSize: { width: 34, height: 34 } };
+import DroneService from '../../common/api/droneService';
+import BoatIcon from './BoatIcon';
 
 const MapWithMarkers = withScriptjs(
   withGoogleMap(props => (
@@ -36,7 +30,7 @@ const MapWithMarkers = withScriptjs(
             <Marker
               key={uid(marker)}
               position={{ lat: parseFloat(marker.Lat), lng: parseFloat(marker.Lon) }}
-              icon={index % 2 ? icon : icon1}
+              icon={BoatIcon(index)}
               onClick={onClick}
             >
               {props.selectedMarker === marker && (
