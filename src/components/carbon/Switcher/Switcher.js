@@ -24,13 +24,12 @@ const Switcher = ({ children }) => {
 const DefaultChildren = () => (
   <>
     <StyledDropdown
-      id="carbon-dropdown-example"
+      id="image-quality"
       type="default"
       label="Image quality"
       ariaLabel="Dropdown"
       titleText="Link Type:"
       items={['100%', '90%', '80%', '70%', '60%', '50%', '40%', '30%', '20%', '10%']}
-      itemToString={item => (item ? item.text : '')}
     />
   </>
 );
