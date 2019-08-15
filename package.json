@@ -49,6 +49,7 @@
     "react-google-maps": "^9.4.5",
     "react-helmet": "^5.2.1",
     "react-slick": "^0.24.0",
+    "react-uid": "^2.2.0",
     "sharp": "^0.22.1",
     "styled-components": "^4.3.2",
     "styled-tools": "^1.7.1"

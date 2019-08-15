@@ -1,5 +1,6 @@
 /* eslint-disable react/jsx-no-bind */
 import React, { Component } from 'react';
+import { uid } from 'react-uid';
 import { withScriptjs, withGoogleMap, GoogleMap, Marker, InfoWindow } from 'react-google-maps';
 import { MarkerClusterer } from 'react-google-maps/lib/components/addons/MarkerClusterer';
 import DroneService from '../common/api/droneService';
@@ -33,7 +34,7 @@ const MapWithMarkers = withScriptjs(
 
           return (
             <Marker
-              key={marker.id}
+              key={uid(marker)}
               position={{ lat: parseFloat(marker.Lat), lng: parseFloat(marker.Lon) }}
               icon={index % 2 ? icon : icon1}
               onClick={onClick}

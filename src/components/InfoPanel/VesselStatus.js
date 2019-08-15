@@ -1,4 +1,5 @@
 import React from 'react';
+import { uid } from 'react-uid';
 import styled from 'styled-components';
 
 const StatusList = styled.dl`
@@ -103,11 +104,11 @@ const VesselStatus = ({ data }) => {
 
   return (
     <StatusList>
-      {Object.keys(statuses).map(index => (
-        <>
+      {Object.keys(statuses).map((index, id) => (
+        <React.Fragment key={uid(index, id)}>
           <dt>{index}</dt>
           <dd>{statuses[index]}</dd>
-        </>
+        </React.Fragment>
       ))}
     </StatusList>
   );
