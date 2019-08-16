@@ -10,7 +10,7 @@
     "lint": "eslint src"
   },
   "dependencies": {
-    "axios": "^0.18.0",
+    "axios": "^0.18.1",
     "babel-plugin-styled-components": "^1.10.0",
     "classnames": "^2.2.6",
     "color": "^3.1.1",
@@ -31,7 +31,7 @@
     "gatsby-source-filesystem": "^2.0.32",
     "gatsby-transformer-remark": "^2.3.11",
     "gatsby-transformer-sharp": "^2.1.18",
-    "lodash": "^4.17.11",
+    "lodash": "^4.17.15",
     "object-assign": "^4.1.1",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",

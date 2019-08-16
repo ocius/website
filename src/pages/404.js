@@ -9,7 +9,7 @@ import Container from '../components/Container';
 export default ({ data }) => (
   <Layout>
     <SEO title="Not Found" description="That page does not exist" />
-    <PageHeader>Not Found</PageHeader>
+    <PageHeader>404 Not Found</PageHeader>
     <Container>
       <p>That page does not exist</p>
       <Img

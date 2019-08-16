@@ -19,7 +19,7 @@ export default () => (
       title="Careers"
       description="Working with Ocius &#8211; &#8220;Oceans is us&#8221; Ocius is an Australian public unlisted
       Sydney-based SME (small to medium enterprise) operating at the cutting edge of technology to design and
-      build autonomous robots"
+      build autonomous robots."
     />
     <PageHeader>Careers</PageHeader>
     <section className="page-content">
@@ -31,14 +31,12 @@ export default () => (
                 Working with Ocius – “Oceans is us”
               </Heading>
               <p>
-                Ocius is an Australian public unlisted Sydney-based SME (small to medium enterprise)
-                operating at the cutting edge of technology to design and build autonomous robots
-                that can ‘live’ in the ocean using the energy of the weather on the ocean – sun wind
+                Ocius is an Australian company that builds autonomous ocean robots. These drones
+                use the energy of the weather – sun wind
                 and waves – to act as monitoring and communications platforms.
               </p>
               <p>
-                If you like a challenge, can work in a team, love the ocean and believe in a
-                positive future you could be part of our exciting future.
+                If you like a challenge, can work in a team, and love the ocean you could be part of our exciting future.
               </p>
               <Heading level={3} size="medium">
                 Featured Jobs
