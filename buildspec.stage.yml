@@ -11,11 +11,11 @@ phases:
   pre_build:
     commands:
       - 'gatsby serve &'
-      - "lighthouse-ci http://localhost:9000/ --performance=95 --best-practices=93 --accessibility=93 --seo=100"
+      #- "lighthouse-ci http://localhost:9000/ --performance=95 --best-practices=93 --accessibility=93 --seo=100"
   build:
     commands:
-      - 'aws s3 sync "public/" "s3://ocius-static-website" --delete --acl "public-read"'
-      - 'aws cloudfront create-invalidation --distribution-id E32IQDBZLB1XOB --paths "/*"'
+      - 'aws s3 sync "public/" "s3://ocius-website-stage" --delete --acl "public-read"'
+      - 'aws cloudfront create-invalidation --distribution-id E1JEKOH1D5HL11 --paths "/*"'
 artifacts:
   base-directory: public
   files:
