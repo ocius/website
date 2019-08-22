@@ -99,20 +99,6 @@ const LivePage = ({ shouldHideHeader }) => {
         <FormWrapper>
           <FormItem>
             {isLoading ? (
-              <DropdownSkeleton label="Link Type:" />
-            ) : (
-              <Dropdown
-                id="link-type"
-                type="default"
-                label="Choose link type"
-                ariaLabel="Dropdown"
-                titleText="Link Type:"
-                items={['MAVLink', 'Satellite']}
-              />
-            )}
-          </FormItem>
-          <FormItem>
-            {isLoading ? (
               <DropdownSkeleton label="Vessel:" />
             ) : (
               <Dropdown
