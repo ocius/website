@@ -50,10 +50,9 @@ const NavWrapper = styled.div`
   }
 `;
 
-const LeftNavWrapper = ({ expanded, shouldHideHeader, ...rest }) => {
+const LeftNavWrapper = ({ expanded, ...rest }) => {
   const className = cx({
-    expanded,
-    shouldHideHeader
+    expanded
   });
   return <NavWrapper className={className} {...rest} />;
 };

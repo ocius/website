@@ -50,7 +50,7 @@ const SideNav = styled(SideNavUnstyled)`
   }
 `;
 
-const LeftNav = ({ children, shouldHideHeader }) => {
+const LeftNav = ({ children }) => {
   const { leftNavIsOpen, toggleNavState } = useContext(NavContext);
   const windowSize = useWindowSize();
 
@@ -59,7 +59,7 @@ const LeftNav = ({ children, shouldHideHeader }) => {
   }
 
   return (
-    <LeftNavWrapper expanded={leftNavIsOpen} shouldHideHeader={shouldHideHeader}>
+    <LeftNavWrapper expanded={leftNavIsOpen}>
       <SideNav
         expanded
         defaultExpanded

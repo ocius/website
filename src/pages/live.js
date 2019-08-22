@@ -38,7 +38,7 @@ const FormItem = styled.div`
   margin: 0 0 1rem;
 `;
 
-const LivePage = ({ shouldHideHeader }) => {
+const LivePage = () => {
   // Add state handlers
   const [chartMode, setChartMode] = useState('Vessel Status');
   const [currentVessel, setCurrentVessel] = useState(0);
@@ -86,9 +86,9 @@ const LivePage = ({ shouldHideHeader }) => {
   return (
     <>
       <SEO title="Live" description="See where Bluebottles are at any time – LIVE." />
-      <Header shouldHideHeader={shouldHideHeader} />
+      <Header />
       <Switcher />
-      <LeftNav shouldHideHeader={shouldHideHeader}>
+      <LeftNav>
         <FormWrapper>
           <FormItem>
             {isLoading ? (
