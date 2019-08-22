@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import SEO from '../components/SEO';
-import StyledDropdown from '../components/carbon/Dropdown';
+import Dropdown from '../components/carbon/Dropdown';
 import Switcher from '../components/carbon/Switcher';
 import Header from '../components/carbon/Header';
 import LeftNav from '../components/carbon/LeftNav';
@@ -97,7 +97,7 @@ const LivePage = ({ shouldHideHeader }) => {
       <LeftNav shouldHideHeader={shouldHideHeader}>
         <FormWrapper>
           <FormItem>
-            <StyledDropdown
+            <Dropdown
               id="link-type"
               type="default"
               label="Choose link type"
@@ -107,7 +107,7 @@ const LivePage = ({ shouldHideHeader }) => {
             />
           </FormItem>
           <FormItem>
-            <StyledDropdown
+            <Dropdown
               id="vessel"
               type="default"
               label="Choose vessel"
@@ -119,7 +119,7 @@ const LivePage = ({ shouldHideHeader }) => {
             />
           </FormItem>
           <FormItem>
-            <StyledDropdown
+            <Dropdown
               id="chart-mode"
               type="default"
               label="Choose chart mode"
