@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import SEO from '../components/SEO';
+import TextSkeleton from '../components/carbon/TextSkeleton';
 import DropdownSkeleton from '../components/carbon/DropdownSkeleton';
 import Dropdown from '../components/carbon/Dropdown';
 import Switcher from '../components/carbon/Switcher';
@@ -11,6 +12,7 @@ import { VesselStatus, PowerMonitor, AISInfo } from '../components/InfoPanel';
 import '../scss/index.scss';
 import configuration from '../common/api/configuration';
 import useHttp from '../common/api/useHttp';
+import { bxLabel } from '../components/carbon/shared';
 
 // Google Maps key
 const apiKey = `AIzaSyC18SYECJZXKTOG6Ljm8W68mENW1uEmTAg`;
@@ -27,16 +29,7 @@ const FormWrapper = styled.div`
   }
 
   .bx--label {
-    font-size: 1.5rem;
-    font-weight: 400;
-    line-height: 1.6rem;
-    letter-spacing: 0.32px;
-    color: #565656;
-    font-weight: 400;
-    display: inline-block;
-    vertical-align: baseline;
-    margin-bottom: 0.8rem;
-    pointer-events: none;
+    ${bxLabel}
   }
 `;
 
@@ -129,7 +122,7 @@ const LivePage = ({ shouldHideHeader }) => {
             )}
           </FormItem>
           <hr />
-          {panelInformation}
+          {isLoading ? <TextSkeleton count={8} /> : panelInformation}
         </FormWrapper>
       </LeftNav>
       <GMap
