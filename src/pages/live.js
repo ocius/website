@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import SEO from '../components/SEO';
+import DropdownSkeleton from '../components/carbon/DropdownSkeleton';
 import Dropdown from '../components/carbon/Dropdown';
 import Switcher from '../components/carbon/Switcher';
 import Header from '../components/carbon/Header';
@@ -64,7 +65,7 @@ const LivePage = ({ shouldHideHeader }) => {
   };
 
   // Fetch data periodically
-  const [, fetchedData] = useHttp(configuration.DRONE_COLLECTION_URL, 2000);
+  const [isLoading, fetchedData] = useHttp(configuration.DRONE_COLLECTION_URL, 2000);
 
   let droneNames = [];
   // Extract drone names from fetched data
@@ -97,37 +98,49 @@ const LivePage = ({ shouldHideHeader }) => {
       <LeftNav shouldHideHeader={shouldHideHeader}>
         <FormWrapper>
           <FormItem>
-            <Dropdown
-              id="link-type"
-              type="default"
-              label="Choose link type"
-              ariaLabel="Dropdown"
-              titleText="Link Type:"
-              items={['MAVLink', 'Satellite']}
-            />
+            {isLoading ? (
+              <DropdownSkeleton label="Link Type:" />
+            ) : (
+              <Dropdown
+                id="link-type"
+                type="default"
+                label="Choose link type"
+                ariaLabel="Dropdown"
+                titleText="Link Type:"
+                items={['MAVLink', 'Satellite']}
+              />
+            )}
           </FormItem>
           <FormItem>
-            <Dropdown
-              id="vessel"
-              type="default"
-              label="Choose vessel"
-              ariaLabel="Dropdown"
-              titleText="Vessel:"
-              onChange={handleVesselChange}
-              items={droneNames}
-              itemToString={drone => (drone ? drone.name : '')}
-            />
+            {isLoading ? (
+              <DropdownSkeleton label="Vessel:" />
+            ) : (
+              <Dropdown
+                id="vessel"
+                type="default"
+                label="Choose vessel"
+                ariaLabel="Dropdown"
+                titleText="Vessel:"
+                onChange={handleVesselChange}
+                items={droneNames}
+                itemToString={drone => (drone ? drone.name : '')}
+              />
+            )}
           </FormItem>
           <FormItem>
-            <Dropdown
-              id="chart-mode"
-              type="default"
-              label="Choose chart mode"
-              ariaLabel="Dropdown"
-              titleText="Chart Mode:"
-              onChange={handleChartModeChange}
-              items={['Vessel Status', 'Power Monitor', 'AIS Info']}
-            />
+            {isLoading ? (
+              <DropdownSkeleton label="Chart Mode:" />
+            ) : (
+              <Dropdown
+                id="chart-mode"
+                type="default"
+                label="Choose chart mode"
+                ariaLabel="Dropdown"
+                titleText="Chart Mode:"
+                onChange={handleChartModeChange}
+                items={['Vessel Status', 'Power Monitor', 'AIS Info']}
+              />
+            )}
           </FormItem>
           <hr />
           {panelInformation}

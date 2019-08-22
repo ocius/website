@@ -3,11 +3,11 @@ import axios from 'axios';
 import useInterval from '../hooks/useInterval';
 
 const useHttp = (url, interval = null, dependencies = []) => {
-  const [isLoading, setIsLoading] = useState(false);
+  // Set isLoading to true by default to indicate that data is loading
+  const [isLoading, setIsLoading] = useState(true);
   const [fetchedData, setFetchedData] = useState([]);
 
   const fetchData = () => {
-    setIsLoading(true);
     // Fetch and return the data
     axios
       .get(url)
