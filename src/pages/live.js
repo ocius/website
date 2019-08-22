@@ -1,5 +1,4 @@
-/* eslint-disable no-script-url */
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import SEO from '../components/SEO';
 import StyledDropdown from '../components/carbon/Dropdown';
@@ -9,7 +8,8 @@ import LeftNav from '../components/carbon/LeftNav';
 import GMap from '../components/Map/GMap';
 import { VesselStatus, PowerMonitor, AISInfo } from '../components/InfoPanel';
 import '../scss/index.scss';
-import DroneService from '../common/api/droneService';
+import configuration from '../common/api/configuration';
+import useHttp from '../common/api/useHttp';
 
 // Google Maps key
 const apiKey = `AIzaSyC18SYECJZXKTOG6Ljm8W68mENW1uEmTAg`;
@@ -44,137 +44,103 @@ const FormItem = styled.div`
   margin: 0 0 1rem;
 `;
 
-class LivePage extends Component {
-  constructor() {
-    super();
-
-    // Set default chart mode
-    this.state = {
-      chartMode: 'Vessel Status',
-      drones: {},
-      currentVessel: 0
-    };
-
-    // Set this (with bind)
-    this.droneService = new DroneService();
-    this.handleChartModeChange = this.handleChartModeChange.bind(this);
-    this.handleVesselChange = this.handleVesselChange.bind(this);
-  }
-
-  componentDidMount() {
-    this.intervalId = setInterval(this.getData.bind(this), 2000);
-  }
-
-  componentWillUnmount() {
-    clearInterval(this.intervalId);
-  }
-
-  /*
-    Fetch the data from lambda backend.
-   */
-  getData() {
-    this.droneService.retrieveData().then(drones => {
-      this.setState({ drones });
-    });
-  }
+const LivePage = ({ shouldHideHeader }) => {
+  // Add state handlers
+  const [chartMode, setChartMode] = useState('Vessel Status');
+  const [currentVessel, setCurrentVessel] = useState(0);
 
   /*
     Attach an event handler to chart mode dropdown
    */
-  handleChartModeChange(e) {
-    this.setState({ chartMode: e.selectedItem });
-  }
+  const handleChartModeChange = e => {
+    setChartMode(e.selectedItem);
+  };
 
   /*
     Attach an event handler to vessel dropdown
    */
-  handleVesselChange(e) {
-    this.setState({ currentVessel: e.selectedItem.id });
+  const handleVesselChange = e => {
+    setCurrentVessel(e.selectedItem.id);
+  };
+
+  // Fetch data periodically
+  const [, fetchedData] = useHttp(configuration.DRONE_COLLECTION_URL, 2000);
+
+  let droneNames = [];
+  // Extract drone names from fetched data
+  if (typeof fetchedData === 'object') {
+    droneNames = Object.keys(fetchedData).map(index => {
+      // Get drone object for this particular index
+      const drone = fetchedData[index];
+      // Check if name property exists
+      if (drone && drone.Name) {
+        return { name: drone.Name, id: index };
+      }
+      return false;
+    });
   }
 
-  render() {
-    const { shouldHideHeader } = this.props;
-    const { chartMode, drones, currentVessel } = this.state;
-
-    let droneNames = [];
-
-    // Map all the drones to array
-    if (typeof drones === 'object') {
-      droneNames = Object.keys(drones).map(index => {
-        // Get drone object for this particular index
-        const drone = drones[index];
-        // Check if name property exists
-        if (drone && drone.Name) {
-          return { name: drone.Name, id: index };
-        }
-        return false;
-      });
-    }
-
-    let panelInformation;
-
-    if (chartMode === 'Vessel Status') {
-      panelInformation = <VesselStatus data={this.state.drones[currentVessel]} />;
-    } else if (chartMode === 'Power Monitor') {
-      panelInformation = <PowerMonitor />;
-    } else if (chartMode === 'AIS Info') {
-      panelInformation = <AISInfo />;
-    }
-
-    return (
-      <>
-        <SEO title="Live" description="See where Bluebottles are at any time – LIVE." />
-        <Header shouldHideHeader={shouldHideHeader} />
-        <Switcher />
-        <LeftNav shouldHideHeader={shouldHideHeader}>
-          <FormWrapper>
-            <FormItem>
-              <StyledDropdown
-                id="link-type"
-                type="default"
-                label="Choose link type"
-                ariaLabel="Dropdown"
-                titleText="Link Type:"
-                items={['MAVLink', 'Satellite']}
-              />
-            </FormItem>
-            <FormItem>
-              <StyledDropdown
-                id="vessel"
-                type="default"
-                label="Choose vessel"
-                ariaLabel="Dropdown"
-                titleText="Vessel:"
-                onChange={this.handleVesselChange}
-                items={droneNames}
-                itemToString={drone => (drone ? drone.name : '')}
-              />
-            </FormItem>
-            <FormItem>
-              <StyledDropdown
-                id="chart-mode"
-                type="default"
-                label="Choose chart mode"
-                ariaLabel="Dropdown"
-                titleText="Chart Mode:"
-                onChange={this.handleChartModeChange}
-                items={['Vessel Status', 'Power Monitor', 'AIS Info']}
-              />
-            </FormItem>
-            <hr />
-            {panelInformation}
-          </FormWrapper>
-        </LeftNav>
-        <GMap
-          googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=${apiKey}`}
-          loadingElement={<div style={{ height: `100%` }} />}
-          containerElement={<div style={{ height: `100vh` }} />}
-          mapElement={<div style={{ height: `100%` }} />}
-          onMarkerClustererClick={this.onMarkerClustererClick}
-        />
-      </>
-    );
+  let panelInformation;
+  if (chartMode === 'Vessel Status') {
+    panelInformation = <VesselStatus data={fetchedData[currentVessel]} />;
+  } else if (chartMode === 'Power Monitor') {
+    panelInformation = <PowerMonitor />;
+  } else if (chartMode === 'AIS Info') {
+    panelInformation = <AISInfo />;
   }
-}
+
+  return (
+    <>
+      <SEO title="Live" description="See where Bluebottles are at any time – LIVE." />
+      <Header shouldHideHeader={shouldHideHeader} />
+      <Switcher />
+      <LeftNav shouldHideHeader={shouldHideHeader}>
+        <FormWrapper>
+          <FormItem>
+            <StyledDropdown
+              id="link-type"
+              type="default"
+              label="Choose link type"
+              ariaLabel="Dropdown"
+              titleText="Link Type:"
+              items={['MAVLink', 'Satellite']}
+            />
+          </FormItem>
+          <FormItem>
+            <StyledDropdown
+              id="vessel"
+              type="default"
+              label="Choose vessel"
+              ariaLabel="Dropdown"
+              titleText="Vessel:"
+              onChange={handleVesselChange}
+              items={droneNames}
+              itemToString={drone => (drone ? drone.name : '')}
+            />
+          </FormItem>
+          <FormItem>
+            <StyledDropdown
+              id="chart-mode"
+              type="default"
+              label="Choose chart mode"
+              ariaLabel="Dropdown"
+              titleText="Chart Mode:"
+              onChange={handleChartModeChange}
+              items={['Vessel Status', 'Power Monitor', 'AIS Info']}
+            />
+          </FormItem>
+          <hr />
+          {panelInformation}
+        </FormWrapper>
+      </LeftNav>
+      <GMap
+        googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=${apiKey}`}
+        loadingElement={<div style={{ height: `100%` }} />}
+        containerElement={<div style={{ height: `100vh` }} />}
+        mapElement={<div style={{ height: `100%` }} />}
+      />
+    </>
+  );
+};
 
 export default LivePage;

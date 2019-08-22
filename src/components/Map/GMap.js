@@ -1,10 +1,11 @@
 /* eslint-disable react/jsx-no-bind */
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import { uid } from 'react-uid';
 import { withScriptjs, withGoogleMap, GoogleMap, Marker, InfoWindow } from 'react-google-maps';
 import { MarkerClusterer } from 'react-google-maps/lib/components/addons/MarkerClusterer';
-import DroneService from '../../common/api/droneService';
+import useHttp from '../../common/api/useHttp';
 import BoatIcon from './BoatIcon';
+import configuration from '../../common/api/configuration';
 
 const MapWithMarkers = withScriptjs(
   withGoogleMap(props => (
@@ -56,65 +57,33 @@ const MapWithMarkers = withScriptjs(
   ))
 );
 
-class GMap extends Component {
-  constructor() {
-    super();
+const GMap = props => {
+  // Add state handlers
+  const [selectedMarker, setSelectedMarker] = useState(false);
 
-    // Set default chart mode
-    this.state = {
-      markers: [],
-      selectedMarker: false
-    };
-
-    // Set this (with bind)
-    this.droneService = new DroneService();
-    this.handleClick = this.handleClick.bind(this);
-  }
-
-  componentDidMount() {
-    this.intervalId = setInterval(this.getData.bind(this), 2000);
-  }
-
-  componentWillUnmount() {
-    clearInterval(this.intervalId);
-  }
-
-  /*
-    Handle on Marker click event
-   */
-  static onMarkerClustererClick(markerClusterer) {
+  // Handle on Marker click event
+  const onMarkerClustererClick = markerClusterer => {
     const clickedMarkers = markerClusterer.getMarkers();
     console.log(`Current clicked markers length: ${clickedMarkers.length}`);
     console.log(clickedMarkers);
-  }
-
-  /*
-    Fetch current location of drones from lambda backend.
- */
-  getData() {
-    this.droneService.getLocation().then(drones => {
-      this.setState({ markers: drones });
-    });
-  }
-
-  handleClick = marker => {
-    // console.log({ marker })
-    this.setState({ selectedMarker: marker });
   };
 
-  render() {
-    const { ...rest } = this.props;
+  const handleClick = marker => {
+    setSelectedMarker(marker);
+  };
 
-    return (
-      <MapWithMarkers
-        selectedMarker={this.state.selectedMarker}
-        onClick={this.handleClick}
-        markers={this.state.markers}
-        onMarkerClustererClick={this.onMarkerClustererClick}
-        {...rest}
-      />
-    );
-  }
-}
+  // Fetch data periodically
+  const [, fetchedData] = useHttp(`${configuration.DRONE_COLLECTION_URL}/locations`, 2000);
+
+  return (
+    <MapWithMarkers
+      selectedMarker={selectedMarker}
+      onClick={handleClick}
+      markers={fetchedData}
+      onMarkerClustererClick={onMarkerClustererClick}
+      {...props}
+    />
+  );
+};
 
 export default GMap;
