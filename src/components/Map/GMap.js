@@ -1,89 +1,155 @@
-/* eslint-disable react/jsx-no-bind */
 import React, { useState } from 'react';
 import { uid } from 'react-uid';
-import { withScriptjs, withGoogleMap, GoogleMap, Marker, InfoWindow } from 'react-google-maps';
-import { MarkerClusterer } from 'react-google-maps/lib/components/addons/MarkerClusterer';
+import PropTypes from 'prop-types';
+import {
+  GoogleMap,
+  useLoadScript,
+  Marker,
+  InfoWindow,
+  MarkerClusterer
+} from '@react-google-maps/api';
 import useHttp from '../../common/api/useHttp';
 import BoatIcon from './BoatIcon';
 import configuration from '../../common/api/configuration';
 
-const MapWithMarkers = withScriptjs(
-  withGoogleMap(props => (
-    <GoogleMap
-      defaultZoom={12}
-      defaultCenter={{ lat: -33.90594, lng: 151.23461 }}
-      defaultOptions={{
-        disableDefaultUI: false,
-        mapTypeId: 'satellite',
-        streetViewControl: false
-      }}
-    >
-      <MarkerClusterer
-        onClick={props.onMarkerClustererClick}
-        averageCenter
-        enableRetinaIcons
-        gridSize={5}
-      >
-        {props.markers.map((marker, index) => {
-          const onClick = props.onClick.bind(this, marker);
+// Reference for options:
+// https://developers.google.com/maps/documentation/javascript/reference/map#MapOptions
 
-          return (
-            <Marker
-              key={uid(marker)}
-              position={{ lat: parseFloat(marker.Lat), lng: parseFloat(marker.Lon) }}
-              icon={BoatIcon(index)}
-              onClick={onClick}
-            >
-              {props.selectedMarker === marker && (
-                <InfoWindow>
-                  <>
-                    <p>
-                      <strong>Name</strong>: {marker.Name}
-                    </p>
-                    <p>
-                      <strong>Latitude</strong>: {marker.Lat}
-                    </p>
-                    <p>
-                      <strong>Longitude</strong>: {marker.Lon}
-                    </p>
-                  </>
-                </InfoWindow>
-              )}
-            </Marker>
-          );
-        })}
-      </MarkerClusterer>
-    </GoogleMap>
-  ))
-);
+const options = {
+  disableDefaultUI: false,
+  mapTypeId: 'satellite',
+  streetViewControl: false
+};
 
-const GMap = props => {
-  // Add state handlers
-  const [selectedMarker, setSelectedMarker] = useState(false);
+const center = {
+  lat: -33.90594,
+  lng: 151.23461
+};
 
-  // Handle on Marker click event
-  const onMarkerClustererClick = markerClusterer => {
-    const clickedMarkers = markerClusterer.getMarkers();
-    console.log(`Current clicked markers length: ${clickedMarkers.length}`);
-    console.log(clickedMarkers);
-  };
+const GMap = ({ apiKey }) => {
+  // Load the Google maps scripts
+  const { isLoaded } = useLoadScript({
+    // Get Google Maps API key from props
+    googleMapsApiKey: apiKey
+  });
 
-  const handleClick = marker => {
-    setSelectedMarker(marker);
-  };
+  // The things we need to track in state
+  const [mapRef, setMapRef] = useState(null);
+  const [selectedBoat, setSelectedBoat] = useState(null);
+  const [markerMap, setMarkerMap] = useState({});
+  const [zoom, setZoom] = useState(12);
+  const [infoOpen, setInfoOpen] = useState(false);
 
   // Fetch data periodically
-  const [, fetchedData] = useHttp(`${configuration.DRONE_COLLECTION_URL}/locations`, 2000);
+  const [isLoading, fetchedData] = useHttp(`${configuration.DRONE_COLLECTION_URL}/locations`, 2000);
 
-  return (
-    <MapWithMarkers
-      selectedMarker={selectedMarker}
-      onClick={handleClick}
-      markers={fetchedData}
-      onMarkerClustererClick={onMarkerClustererClick}
-      {...props}
-    />
-  );
+  // Iterate myPlaces to size, center, and zoom map to contain all markers
+  const fitBounds = map => {
+    const bounds = new window.google.maps.LatLngBounds();
+    if (!isLoading) {
+      fetchedData.map(boat => {
+        bounds.extend({ lat: parseFloat(boat.Lat), lng: parseFloat(boat.Lon) });
+        return uid(boat);
+      });
+      map.fitBounds(bounds);
+    }
+  };
+
+  const loadHandler = map => {
+    // Store a reference to the google map instance in state
+    setMapRef(map);
+    // Fit map bounds to contain all markers
+    fitBounds(map);
+  };
+
+  const onZoomChange = () => {
+    if (mapRef) {
+      // Set zoom accordingly
+      setZoom(mapRef.getZoom());
+    }
+  };
+
+  // We have to create a mapping of our boats to actual Marker objects
+  const markerLoadHandler = (marker, index) => {
+    return setMarkerMap(prevState => {
+      return { ...prevState, [index]: marker };
+    });
+  };
+
+  const markerClickHandler = (event, index) => {
+    // Remember which boat was clicked
+    setSelectedBoat(index);
+
+    // Required so clicking a 2nd marker works as expected
+    if (infoOpen) {
+      setInfoOpen(false);
+    }
+
+    setInfoOpen(true);
+
+    // Zoom in a little on marker click
+    if (zoom < 15) {
+      setZoom(15);
+    }
+  };
+
+  const renderMap = () => {
+    return (
+      <GoogleMap
+        id="google-map"
+        mapContainerStyle={{
+          height: `100vh`,
+          width: `100%`
+        }}
+        zoom={zoom}
+        onZoomChanged={onZoomChange}
+        center={center}
+        options={options}
+        // Do stuff on map initial load
+        onLoad={loadHandler}
+      >
+        <MarkerClusterer averageCenter enableRetinaIcons gridSize={5}>
+          {clusterer =>
+            fetchedData.map((boat, index) => (
+              <Marker
+                key={uid(boat)}
+                position={{ lat: parseFloat(boat.Lat), lng: parseFloat(boat.Lon) }}
+                icon={BoatIcon(index)}
+                onLoad={marker => markerLoadHandler(marker, index)}
+                onClick={event => markerClickHandler(event, index)}
+                clusterer={clusterer}
+              >
+                {infoOpen && (
+                  <InfoWindow
+                    anchor={markerMap[selectedBoat]}
+                    onCloseClick={() => setInfoOpen(false)}
+                  >
+                    <>
+                      <p>
+                        <strong>Name</strong>: {boat.Name}
+                      </p>
+                      <p>
+                        <strong>Latitude</strong>: {boat.Lat}
+                      </p>
+                      <p>
+                        <strong>Longitude</strong>: {boat.Lon}
+                      </p>
+                    </>
+                  </InfoWindow>
+                )}
+              </Marker>
+            ))
+          }
+        </MarkerClusterer>
+      </GoogleMap>
+    );
+  };
+
+  return isLoaded ? renderMap() : null;
+};
+
+GMap.propTypes = {
+  apiKey: PropTypes.string.isRequired
 };
 
 export default GMap;
