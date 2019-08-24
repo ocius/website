@@ -155,7 +155,12 @@ const GMap = ({ apiKey, currentVessel }) => {
 };
 
 GMap.propTypes = {
-  apiKey: PropTypes.string.isRequired
+  apiKey: PropTypes.string.isRequired,
+  currentVessel: PropTypes.number
+};
+
+GMap.defaultProps = {
+  currentVessel: 0
 };
 
 export default GMap;
