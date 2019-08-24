@@ -133,9 +133,7 @@ const GMap = ({ apiKey, currentVessel }) => {
                     onCloseClick={() => setInfoOpen(false)}
                   >
                     <>
-                      <p>
-                        <strong>Name</strong>: {boat.Name}
-                      </p>
+                      <h2>{boat.Name}</h2>
                       <p>
                         <strong>Latitude</strong>: {boat.Lat}
                       </p>
