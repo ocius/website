@@ -68,7 +68,7 @@ const LivePage = () => {
       const drone = fetchedData[index];
       // Check if name property exists
       if (drone && drone.Name) {
-        return { name: drone.Name, id: index };
+        return { name: drone.Name, id: Number(index) };
       }
       return false;
     });
@@ -103,6 +103,7 @@ const LivePage = () => {
                 onChange={handleVesselChange}
                 items={droneNames}
                 itemToString={drone => (drone ? drone.name : '')}
+                selectedItem={droneNames[currentVessel]}
               />
             )}
           </FormItem>
@@ -118,6 +119,7 @@ const LivePage = () => {
                 titleText="Chart Mode:"
                 onChange={handleChartModeChange}
                 items={['Vessel Status', 'Power Monitor', 'AIS Info']}
+                initialSelectedItem={chartMode}
               />
             )}
           </FormItem>
