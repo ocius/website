@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { uid } from 'react-uid';
 import PropTypes from 'prop-types';
 import {
@@ -26,7 +26,7 @@ const center = {
   lng: 151.23461
 };
 
-const GMap = ({ apiKey }) => {
+const GMap = ({ apiKey, currentVessel }) => {
   // Load the Google maps scripts
   const { isLoaded } = useLoadScript({
     // Get Google Maps API key from props
@@ -35,7 +35,7 @@ const GMap = ({ apiKey }) => {
 
   // The things we need to track in state
   const [mapRef, setMapRef] = useState(null);
-  const [selectedBoat, setSelectedBoat] = useState(null);
+  const [selectedBoat, setSelectedBoat] = useState(currentVessel);
   const [markerMap, setMarkerMap] = useState({});
   const [zoom, setZoom] = useState(12);
   const [infoOpen, setInfoOpen] = useState(false);
@@ -80,18 +80,26 @@ const GMap = ({ apiKey }) => {
     // Remember which boat was clicked
     setSelectedBoat(index);
 
-    // Required so clicking a 2nd marker works as expected
-    if (infoOpen) {
-      setInfoOpen(false);
-    }
+    // Only if map is loaded
+    if (isLoaded) {
+      // Required so clicking a 2nd marker works as expected
+      if (infoOpen) {
+        setInfoOpen(false);
+      }
 
-    setInfoOpen(true);
+      setInfoOpen(true);
 
-    // Zoom in a little on marker click
-    if (zoom < 15) {
-      setZoom(15);
+      // Zoom in a little on marker click
+      if (zoom < 15) {
+        setZoom(15);
+      }
     }
   };
+
+  // When user selects vessel in dropdown, update selectedBoat state accordingly
+  useEffect(() => {
+    markerClickHandler(null, currentVessel);
+  }, [currentVessel]);
 
   const renderMap = () => {
     return (
