@@ -1,3 +1,4 @@
+/* eslint-disable react/no-array-index-key */
 import React, { useState, useEffect } from 'react';
 import { uid } from 'react-uid';
 import PropTypes from 'prop-types';
@@ -120,7 +121,7 @@ const GMap = ({ apiKey, currentVessel }) => {
           {clusterer =>
             fetchedData.map((boat, index) => (
               <Marker
-                key={uid(boat)}
+                key={index}
                 position={{ lat: parseFloat(boat.Lat), lng: parseFloat(boat.Lon) }}
                 icon={BoatIcon(index)}
                 onLoad={marker => markerLoadHandler(marker, index)}
