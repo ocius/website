@@ -9,7 +9,6 @@ import Header from '../components/carbon/Header';
 import LeftNav from '../components/carbon/LeftNav';
 import GMap from '../components/Map/GMap';
 import { VesselStatus, PowerMonitor, AISInfo } from '../components/InfoPanel';
-import '../scss/index.scss';
 import configuration from '../common/api/configuration';
 import useHttp from '../common/api/useHttp';
 import { bxLabel } from '../components/carbon/shared';
