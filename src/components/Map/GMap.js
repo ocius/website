@@ -128,7 +128,7 @@ const GMap = ({ apiKey, currentVessel }) => {
                 onClick={event => markerClickHandler(event, index)}
                 clusterer={clusterer}
               >
-                {infoOpen && (
+                {infoOpen && index === selectedBoat && (
                   <InfoWindow
                     anchor={markerMap[selectedBoat]}
                     onCloseClick={() => setInfoOpen(false)}
