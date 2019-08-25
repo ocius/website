@@ -24,14 +24,23 @@ const useHttp = (url, interval = null, dependencies = []) => {
       });
   };
 
+  // Check if component was unmounted to prevent memory leaks
+  const effectCallback = () => {
+    // New stuff here
+    let unmounted = false;
+    if (!unmounted) {
+      fetchData();
+    }
+    return () => {
+      // Bye bye!
+      unmounted = true;
+    };
+  };
+
   if (!interval) {
-    useEffect(() => {
-      fetchData();
-    }, dependencies);
+    useEffect(effectCallback, dependencies);
   } else {
-    useInterval(() => {
-      fetchData();
-    }, interval);
+    useInterval(effectCallback, interval);
   }
 
   return [isLoading, fetchedData];
