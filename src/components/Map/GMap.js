@@ -1,5 +1,5 @@
 /* eslint-disable react/no-array-index-key */
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { uid } from 'react-uid';
 import PropTypes from 'prop-types';
 import {
@@ -12,6 +12,7 @@ import {
 import useHttp from '../../common/api/useHttp';
 import BoatIcon from './BoatIcon';
 import configuration from '../../common/api/configuration';
+import NavContext from '../../common/context/NavContext';
 
 // Reference for options:
 // https://developers.google.com/maps/documentation/javascript/reference/map#MapOptions
@@ -40,6 +41,8 @@ const GMap = ({ apiKey, currentVessel }) => {
   const [markerMap, setMarkerMap] = useState({});
   const [zoom, setZoom] = useState(12);
   const [infoOpen, setInfoOpen] = useState(false);
+  // Navigation state to open/close right panel
+  const { toggleNavState } = useContext(NavContext);
 
   // Fetch data periodically
   const [isLoading, fetchedData] = useHttp(`${configuration.DRONE_COLLECTION_URL}/locations`, 2000);
@@ -80,6 +83,8 @@ const GMap = ({ apiKey, currentVessel }) => {
   const markerClickHandler = (event, index) => {
     // Remember which boat was clicked
     setSelectedBoat(index);
+    // Open right panel
+    toggleNavState('switcherIsOpen', 'open');
 
     // Only if map is loaded
     if (isLoaded) {
@@ -131,7 +136,10 @@ const GMap = ({ apiKey, currentVessel }) => {
                 {infoOpen && index === selectedBoat && (
                   <InfoWindow
                     anchor={markerMap[selectedBoat]}
-                    onCloseClick={() => setInfoOpen(false)}
+                    onCloseClick={() => {
+                      setInfoOpen(false);
+                      toggleNavState('switcherIsOpen', 'close');
+                    }}
                   >
                     <>
                       <h2>{boat.Name}</h2>
