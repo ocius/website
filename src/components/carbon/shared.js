@@ -1,4 +1,4 @@
-import { keyframes, css } from 'styled-components';
+import styled, { keyframes, css } from 'styled-components';
 
 export const skeletonAnimation = keyframes`
   0% {
@@ -70,4 +70,25 @@ export const bxLabel = css`
   vertical-align: baseline;
   margin-bottom: 0.8rem;
   pointer-events: none;
+`;
+
+export const FormWrapper = styled.div`
+  padding: 1.5rem;
+  flex: 1 1;
+
+  hr {
+    border: 0;
+    height: 1px;
+    background: #8c8c8c;
+    margin: 32px 0rem 8px;
+  }
+
+  .bx--label {
+    ${bxLabel}
+  }
+`;
+
+export const FormItem = styled.div`
+  font-size: 1.5rem;
+  margin: 0 0 1rem;
 `;

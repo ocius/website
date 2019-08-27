@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import styled from 'styled-components';
 import SEO from '../components/SEO';
 import TextSkeleton from '../components/carbon/TextSkeleton';
 import DropdownSkeleton from '../components/carbon/DropdownSkeleton';
@@ -11,31 +10,10 @@ import GMap from '../components/Map/GMap';
 import { VesselStatus, PowerMonitor, AISInfo } from '../components/InfoPanel';
 import configuration from '../common/api/configuration';
 import useHttp from '../common/api/useHttp';
-import { bxLabel } from '../components/carbon/shared';
+import { FormWrapper, FormItem } from '../components/carbon/shared';
 
 // Google Maps key
 const apiKey = `AIzaSyC18SYECJZXKTOG6Ljm8W68mENW1uEmTAg`;
-
-const FormWrapper = styled.div`
-  padding: 1.5rem;
-  flex: 1 1;
-
-  hr {
-    border: 0;
-    height: 1px;
-    background: #8c8c8c;
-    margin: 32px 0rem 8px;
-  }
-
-  .bx--label {
-    ${bxLabel}
-  }
-`;
-
-const FormItem = styled.div`
-  font-size: 1.5rem;
-  margin: 0 0 1rem;
-`;
 
 const LivePage = () => {
   // Add state handlers

@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import cx from 'classnames';
 import NavContext from '../../../common/context/NavContext';
 import StyledDropdown from '../Dropdown';
+import { FormWrapper } from '../shared';
 import { nav, open } from './Switcher.module.scss';
 
 const Switcher = ({ children }) => {
@@ -14,15 +15,17 @@ const Switcher = ({ children }) => {
       aria-expanded={switcherIsOpen}
       id="switcher-navigation"
     >
-      <ul hidden={!switcherIsOpen} aria-labelledby="switcher-navigation">
-        {children}
-      </ul>
+      <FormWrapper>{children}</FormWrapper>
     </nav>
   );
 };
 
 const DefaultChildren = () => (
   <>
+    <img
+      src="https://usvna.ocius.com.au/usvna/oc_server?getliveimage&camera=Bob%20Mast"
+      alt="Webcam view"
+    />
     <StyledDropdown
       id="image-quality"
       type="default"
