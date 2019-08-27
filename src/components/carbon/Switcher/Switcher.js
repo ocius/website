@@ -1,8 +1,7 @@
 import React, { useContext } from 'react';
 import cx from 'classnames';
+import PropTypes from 'prop-types';
 import NavContext from '../../../common/context/NavContext';
-import StyledDropdown from '../Dropdown';
-import { FormWrapper } from '../shared';
 import { nav, open } from './Switcher.module.scss';
 
 const Switcher = ({ children }) => {
@@ -15,30 +14,13 @@ const Switcher = ({ children }) => {
       aria-expanded={switcherIsOpen}
       id="switcher-navigation"
     >
-      <FormWrapper>{children}</FormWrapper>
+      {children}
     </nav>
   );
 };
 
-const DefaultChildren = () => (
-  <>
-    <img
-      src="https://usvna.ocius.com.au/usvna/oc_server?getliveimage&camera=Bob%20Mast"
-      alt="Webcam view"
-    />
-    <StyledDropdown
-      id="image-quality"
-      type="default"
-      label="Image quality"
-      ariaLabel="Dropdown"
-      titleText="Link Type:"
-      items={['100%', '90%', '80%', '70%', '60%', '50%', '40%', '30%', '20%', '10%']}
-    />
-  </>
-);
-
-Switcher.defaultProps = {
-  children: <DefaultChildren />
+Switcher.propTypes = {
+  children: PropTypes.node.isRequired
 };
 
 export default Switcher;

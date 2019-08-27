@@ -10,6 +10,7 @@ import GMap from '../components/Map/GMap';
 import { VesselStatus, PowerMonitor, AISInfo } from '../components/InfoPanel';
 import configuration from '../common/api/configuration';
 import useHttp from '../common/api/useHttp';
+import useInterval from '../common/hooks/useInterval';
 import { FormWrapper, FormItem } from '../components/carbon/shared';
 
 // Google Maps key
@@ -19,6 +20,16 @@ const LivePage = () => {
   // Add state handlers
   const [chartMode, setChartMode] = useState('Vessel Status');
   const [currentVessel, setCurrentVessel] = useState(0);
+  const [timestamp, setTimestamp] = useState(Date.now());
+
+  /*
+    Update timestamp periodically, so that webcam img will be updated as well
+   */
+  const updateTimestamp = () => {
+    const currentTime = Date.now();
+    setTimestamp(currentTime);
+  };
+  useInterval(updateTimestamp, 2000);
 
   /*
     Attach an event handler to chart mode dropdown
@@ -64,7 +75,22 @@ const LivePage = () => {
     <>
       <SEO title="Live" description="See where Bluebottles are at any time – LIVE." />
       <Header />
-      <Switcher />
+      <Switcher>
+        <FormWrapper>
+          <img
+            src={`https://usvna.ocius.com.au/usvna/oc_server?getliveimage&camera=Bob%20Mast&time=${timestamp}`}
+            alt="Live camera view"
+          />
+          <Dropdown
+            id="image-quality"
+            type="default"
+            label="Image quality"
+            ariaLabel="Dropdown"
+            titleText="Link Type:"
+            items={['100%', '90%', '80%', '70%', '60%', '50%', '40%', '30%', '20%', '10%']}
+          />
+        </FormWrapper>
+      </Switcher>
       <LeftNav>
         <FormWrapper>
           <FormItem>
