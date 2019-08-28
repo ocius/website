@@ -83,6 +83,14 @@ export const FormWrapper = styled.div`
     margin: 32px 0rem 8px;
   }
 
+  .bx--dropdown__wrapper--inline .bx--label {
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 1.8rem;
+    letter-spacing: 0.16px;
+    margin: 0 0.8rem 0 0;
+  }
+
   .bx--label {
     ${bxLabel}
   }

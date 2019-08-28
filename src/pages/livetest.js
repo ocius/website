@@ -81,14 +81,26 @@ const LivePage = () => {
             src={`https://usvna.ocius.com.au/usvna/oc_server?getliveimage&camera=Bob%20Mast&time=${timestamp}`}
             alt="Live camera view"
           />
-          <Dropdown
-            id="image-quality"
-            type="default"
-            label="Image quality"
-            ariaLabel="Dropdown"
-            titleText="Link Type:"
-            items={['100%', '90%', '80%', '70%', '60%', '50%', '40%', '30%', '20%', '10%']}
-          />
+          <FormItem>
+            <Dropdown
+              id="image-quality"
+              type="inline"
+              ariaLabel="Dropdown"
+              titleText="Image quality:"
+              items={['100%', '90%', '80%', '70%', '60%', '50%', '40%', '30%', '20%', '10%']}
+              initialSelectedItem="100%"
+            />
+          </FormItem>
+          <FormItem>
+            <Dropdown
+              id="camera-rate"
+              type="inline"
+              ariaLabel="Dropdown"
+              titleText="Update every:"
+              items={['10 seconds', '20 seconds', '30 seconds', '60 seconds']}
+              initialSelectedItem="10 seconds"
+            />
+          </FormItem>
         </FormWrapper>
       </Switcher>
       <LeftNav>

@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import Dropdown from 'carbon-components-react/lib/components/Dropdown';
 
 const StyledDropdown = styled(Dropdown)`
@@ -15,6 +15,19 @@ const StyledDropdown = styled(Dropdown)`
   cursor: pointer;
   color: #171717;
   transition: background-color 70ms cubic-bezier(0.2, 0, 0.38, 0.9);
+
+  ${props =>
+    props.type === 'inline' &&
+    css`
+      justify-self: start;
+      display: inline-block;
+      border-bottom-color: transparent;
+      width: auto;
+      height: 3.2rem;
+      border-width: 0;
+      background-color: #ffffff;
+      transition: background 70ms cubic-bezier(0, 0, 0.38, 0.9);
+    `}
 
   &:hover {
     background-color: #e5e5e5;
@@ -39,6 +52,13 @@ const StyledDropdown = styled(Dropdown)`
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+
+    ${props =>
+      props.type === 'inline' &&
+      css`
+        padding: 0 3.2rem 0 0.8rem;
+        height: 3.2rem;
+      `}
 
     &:focus {
       outline: 2px solid #0062ff;
@@ -65,6 +85,12 @@ const StyledDropdown = styled(Dropdown)`
     transition: transform 110ms cubic-bezier(0.2, 0, 0.38, 0.9),
       -webkit-transform 110ms cubic-bezier(0.2, 0, 0.38, 0.9);
     cursor: pointer;
+
+    ${props =>
+      props.type === 'inline' &&
+      css`
+        right: 0.8rem;
+      `}
 
     > svg {
       fill: #171717;
@@ -139,6 +165,12 @@ const StyledDropdown = styled(Dropdown)`
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;
+
+    ${props =>
+      props.type === 'inline' &&
+      css`
+        margin: 0 0.8rem;
+      `}
 
     &:hover {
       color: #171717;
