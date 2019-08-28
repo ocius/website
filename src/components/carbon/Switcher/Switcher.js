@@ -1,21 +1,42 @@
 import React, { useContext } from 'react';
-import cx from 'classnames';
+import styled, { css } from 'styled-components';
 import PropTypes from 'prop-types';
 import NavContext from '../../../common/context/NavContext';
-import { nav, open } from './Switcher.module.scss';
+
+const Nav = styled.nav`
+  color: #ffffff;
+  z-index: 10000;
+  position: fixed;
+  right: 0;
+  top: 50px;
+  height: 100%;
+  padding: 1.6rem 0;
+  width: 35rem;
+  background-color: #171717;
+  border-left: 1px solid #3d3d3d;
+  transform: translateX(35rem);
+  transition: transform 150ms cubic-bezier(0.2, 0, 0.38, 0.9);
+
+  ${props =>
+    props.open &&
+    css`
+      transform: translateX(0);
+      box-shadow: -2px 2px 6px rgba(0, 0, 0, 0.2);
+    `}
+`;
 
 const Switcher = ({ children }) => {
   const { switcherIsOpen } = useContext(NavContext);
 
   return (
-    <nav
-      className={cx(nav, { [open]: switcherIsOpen })}
+    <Nav
+      open={switcherIsOpen}
       aria-label="OCIUS Camera Controls"
       aria-expanded={switcherIsOpen}
       id="switcher-navigation"
     >
       {children}
-    </nav>
+    </Nav>
   );
 };
 
