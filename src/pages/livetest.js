@@ -21,6 +21,7 @@ const LivePage = () => {
   const [chartMode, setChartMode] = useState('Vessel Status');
   const [currentVessel, setCurrentVessel] = useState(0);
   const [timestamp, setTimestamp] = useState(Date.now());
+  const [cameraUpdateRate, setCameraUpdateRate] = useState(10000);
 
   /*
     Update timestamp periodically, so that webcam img will be updated as well
@@ -29,7 +30,7 @@ const LivePage = () => {
     const currentTime = Date.now();
     setTimestamp(currentTime);
   };
-  useInterval(updateTimestamp, 2000);
+  useInterval(updateTimestamp, cameraUpdateRate);
 
   /*
     Attach an event handler to chart mode dropdown
@@ -43,6 +44,13 @@ const LivePage = () => {
    */
   const handleVesselChange = e => {
     setCurrentVessel(e.selectedItem.id);
+  };
+
+  /*
+    Attach an event handler to camera rate dropdown
+   */
+  const handleCameraRateChange = e => {
+    setCameraUpdateRate(e.selectedItem);
   };
 
   // Fetch data periodically
@@ -86,6 +94,7 @@ const LivePage = () => {
               id="image-quality"
               type="inline"
               ariaLabel="Dropdown"
+              label="Quality"
               titleText="Image quality:"
               items={['100%', '90%', '80%', '70%', '60%', '50%', '40%', '30%', '20%', '10%']}
               initialSelectedItem="100%"
@@ -96,9 +105,12 @@ const LivePage = () => {
               id="camera-rate"
               type="inline"
               ariaLabel="Dropdown"
+              label="Rate"
               titleText="Update every:"
-              items={['10 seconds', '20 seconds', '30 seconds', '60 seconds']}
-              initialSelectedItem="10 seconds"
+              itemToString={update => (update ? `${update / 1000} seconds` : '')}
+              items={[10000, 20000, 30000, 60000]}
+              onChange={handleCameraRateChange}
+              initialSelectedItem={String(cameraUpdateRate)}
             />
           </FormItem>
         </FormWrapper>
