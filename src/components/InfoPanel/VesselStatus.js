@@ -76,20 +76,41 @@ const flattenObject = obj => {
  *  addLabelsToValues({ Water_temp: "30.709999", Wind_Speed: "0.252078" })
  *
  * Returns:
- *  [ "Water Temp": "30.709999", "Wind Speed": "0.252078" ]
+ *  [ "Water Temp": "17.7°C", "Wind Speed": "2.5m/s" ]
  *
  */
-const addLabelsToValues = data => {
+const formatVesselStatusData = data => {
   // Variable to hold array with statuses
   const statuses = [];
   const flattened = flattenObject(data);
+
+  // Add degrees to the end - 17.7°C
+  const formatTemperature = temperature => {
+    return `${parseFloat(temperature).toFixed(1)}\xB0C`;
+  };
+
+  // Add m/s to the end - 2.5m/s
+  const formatSpeed = speed => {
+    return `${parseFloat(speed).toFixed(2)}m/s`;
+  };
+
+  // Add degree to the end - 10°
+  const formatDirection = direction => {
+    return `${parseFloat(direction).toFixed(1)}\xB0`;
+  };
 
   if (Object.entries(flattened).length !== 0) {
     // eslint-disable-next-line no-restricted-syntax
     for (const [key, value] of Object.entries(flattened)) {
       if (value !== null) {
         // We have a value, display it
-        if (typeof StatusNames[key] !== 'undefined') {
+        if (key === 'Water_temp') {
+          statuses[StatusNames[key]] = formatTemperature(value);
+        } else if (key === 'Wind_speed' || key === 'Water_speed') {
+          statuses[StatusNames[key]] = formatSpeed(value);
+        } else if (key === 'Wind_direction' || key === 'Heading') {
+          statuses[StatusNames[key]] = formatDirection(value);
+        } else if (typeof StatusNames[key] !== 'undefined') {
           statuses[StatusNames[key]] = value;
         }
       }
@@ -100,7 +121,7 @@ const addLabelsToValues = data => {
 };
 
 const VesselStatus = ({ data }) => {
-  const statuses = addLabelsToValues(data);
+  const statuses = formatVesselStatusData(data);
 
   return (
     <StatusList>
