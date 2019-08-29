@@ -22,6 +22,7 @@ const LivePage = () => {
   const [currentVessel, setCurrentVessel] = useState(0);
   const [timestamp, setTimestamp] = useState(Date.now());
   const [cameraUpdateRate, setCameraUpdateRate] = useState(10000);
+  const [cameraQuality, setCameraQuality] = useState(100);
 
   /*
     Update timestamp periodically, so that webcam img will be updated as well
@@ -51,6 +52,10 @@ const LivePage = () => {
    */
   const handleCameraRateChange = e => {
     setCameraUpdateRate(e.selectedItem);
+  };
+
+  const handleCameraQualityChange = e => {
+    setCameraQuality(e.selectedItem);
   };
 
   // Fetch data periodically
@@ -86,7 +91,7 @@ const LivePage = () => {
       <Switcher>
         <FormWrapper>
           <img
-            src={`https://usvna.ocius.com.au/usvna/oc_server?getliveimage&camera=Bob%20Mast&time=${timestamp}`}
+            src={`https://usvna.ocius.com.au/usvna/oc_server?getliveimage&camera=Bob%20Mast&time=${timestamp}&quality=${cameraQuality}`}
             alt="Live camera view"
           />
           <FormItem>
@@ -96,8 +101,10 @@ const LivePage = () => {
               ariaLabel="Dropdown"
               label="Quality"
               titleText="Image quality:"
-              items={['100%', '90%', '80%', '70%', '60%', '50%', '40%', '30%', '20%', '10%']}
-              initialSelectedItem="100%"
+              itemToString={quality => (quality ? `${quality}%` : '')}
+              items={[100, 90, 80, 70, 60, 50, 40, 30, 20, 10]}
+              onChange={handleCameraQualityChange}
+              initialSelectedItem={String(cameraQuality)}
             />
           </FormItem>
           <FormItem>
