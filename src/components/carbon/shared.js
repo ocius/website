@@ -64,7 +64,6 @@ export const bxLabel = css`
   font-weight: 400;
   line-height: 1.6rem;
   letter-spacing: 0.32px;
-  color: #565656;
   font-weight: 400;
   display: inline-block;
   vertical-align: baseline;
