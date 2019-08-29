@@ -146,6 +146,12 @@ const formatVesselStatusData = data => {
     return `${longitude} ${longitudeCardinal}`;
   };
 
+  // Convert MANUAL --> Manual
+  const capitalizeFirstLetter = string => {
+    const lowerCase = string.toLowerCase();
+    return lowerCase.charAt(0).toUpperCase() + lowerCase.slice(1);
+  };
+
   if (Object.entries(flattened).length !== 0) {
     // eslint-disable-next-line no-restricted-syntax
     for (const [key, value] of Object.entries(flattened)) {
@@ -164,6 +170,8 @@ const formatVesselStatusData = data => {
         } else if (key === 'Status') {
           statuses[StatusNames[key]] =
             value === 'MAV_STATE_ACTIVE' ? <StatusTag type="green">Active</StatusTag> : value;
+        } else if (key === 'Mode') {
+          statuses[StatusNames[key]] = capitalizeFirstLetter(value);
         } else if (typeof StatusNames[key] !== 'undefined') {
           statuses[StatusNames[key]] = value;
         }
