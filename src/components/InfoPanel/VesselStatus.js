@@ -99,6 +99,37 @@ const formatVesselStatusData = data => {
     return `${parseFloat(direction).toFixed(1)}\xB0`;
   };
 
+  /*
+    Convert coordinate to degree, minutes, seconds
+    For example:
+      -33°54.35'
+   */
+  const toDegreesMinutesAndSeconds = coordinate => {
+    const absolute = Math.abs(coordinate);
+    const degrees = Math.floor(absolute);
+    const minutesNotTruncated = (absolute - degrees) * 60;
+    const minutes = Math.floor(minutesNotTruncated);
+    const seconds = Math.floor((minutesNotTruncated - minutes) * 60);
+
+    return `${degrees}°${minutes}.${seconds}'`;
+  };
+
+  // Convert latitude to degree, minutes, seconds
+  const formatLatitude = lat => {
+    const latitude = toDegreesMinutesAndSeconds(lat);
+    const latitudeCardinal = lat >= 0 ? 'N' : 'S';
+
+    return `${latitude} ${latitudeCardinal}`;
+  };
+
+  // Convert longitude to degree, minutes, seconds
+  const formatLongitude = lng => {
+    const longitude = toDegreesMinutesAndSeconds(lng);
+    const longitudeCardinal = lng >= 0 ? 'E' : 'W';
+
+    return `${longitude} ${longitudeCardinal}`;
+  };
+
   if (Object.entries(flattened).length !== 0) {
     // eslint-disable-next-line no-restricted-syntax
     for (const [key, value] of Object.entries(flattened)) {
@@ -110,6 +141,10 @@ const formatVesselStatusData = data => {
           statuses[StatusNames[key]] = formatSpeed(value);
         } else if (key === 'Wind_direction' || key === 'Heading') {
           statuses[StatusNames[key]] = formatDirection(value);
+        } else if (key === 'Lat') {
+          statuses[StatusNames[key]] = formatLatitude(value);
+        } else if (key === 'Lon') {
+          statuses[StatusNames[key]] = formatLongitude(value);
         } else if (typeof StatusNames[key] !== 'undefined') {
           statuses[StatusNames[key]] = value;
         }
