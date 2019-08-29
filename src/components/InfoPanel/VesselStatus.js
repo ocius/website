@@ -1,6 +1,6 @@
 import React from 'react';
 import { uid } from 'react-uid';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 const StatusList = styled.dl`
   font-size: 1.5rem;
@@ -22,6 +22,22 @@ const StatusList = styled.dl`
     padding: 0;
     margin: 0;
   }
+`;
+
+const StatusTag = styled.span`
+  letter-spacing: 0.32px;
+  display: inline-flex;
+  align-items: center;
+  padding: 0 0.8rem;
+  height: 2.4rem;
+  border-radius: 1.5rem;
+
+  ${props =>
+    props.type === 'green' &&
+    css`
+      background-color: #9deeb2;
+      color: #049e51;
+    `}
 `;
 
 // Match all properties with its string label
@@ -145,6 +161,9 @@ const formatVesselStatusData = data => {
           statuses[StatusNames[key]] = formatLatitude(value);
         } else if (key === 'Lon') {
           statuses[StatusNames[key]] = formatLongitude(value);
+        } else if (key === 'Status') {
+          statuses[StatusNames[key]] =
+            value === 'MAV_STATE_ACTIVE' ? <StatusTag type="green">Active</StatusTag> : value;
         } else if (typeof StatusNames[key] !== 'undefined') {
           statuses[StatusNames[key]] = value;
         }
