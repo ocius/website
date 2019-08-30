@@ -129,6 +129,7 @@ const GMap = ({ apiKey, currentVessel }) => {
                 key={index}
                 position={{ lat: parseFloat(boat.Lat), lng: parseFloat(boat.Lon) }}
                 icon={BoatIcon(index)}
+                label={{ text: boat.Name, color: '#ffff00', fontSize: '16px', fontWeight: 'bold' }}
                 onLoad={marker => markerLoadHandler(marker, index)}
                 onClick={event => markerClickHandler(event, index)}
                 clusterer={clusterer}

@@ -41,7 +41,7 @@ const BoatIcon = index => {
       return null;
   }
 
-  return { url: icon, scaledSize: { width: 38, height: 38 } };
+  return { url: icon, scaledSize: { width: 38, height: 38 }, labelOrigin: { x: 16, y: -10 } };
 };
 
 export default BoatIcon;
