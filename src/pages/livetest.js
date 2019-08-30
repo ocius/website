@@ -55,26 +55,40 @@ const LivePage = () => {
     setCameraUpdateRate(e.selectedItem);
   };
 
+  /*
+    Attach an event handler to camera quality dropdown
+   */
   const handleCameraQualityChange = e => {
     setCameraQuality(e.selectedItem);
   };
 
+  // Make an array of names out of fetched data
+  const extractDroneNames = data => {
+    let names = [];
+    // Extract drone names from data
+    if (typeof data === 'object') {
+      names = Object.keys(data).map(index => {
+        // Get drone object for this particular index
+        const drone = data[index];
+        // Check if name property exists
+        if (drone && drone.Name) {
+          return { name: drone.Name, id: Number(index) };
+        }
+        return false;
+      });
+    }
+
+    return names;
+  };
+
+  // Check if name property exists
+  const droneName = data => {
+    return data && typeof data.name !== 'undefined' ? data.name : '';
+  };
+
   // Fetch data periodically
   const [isLoading, fetchedData] = useHttp(configuration.DRONE_COLLECTION_URL, 2000);
-
-  let droneNames = [];
-  // Extract drone names from fetched data
-  if (typeof fetchedData === 'object') {
-    droneNames = Object.keys(fetchedData).map(index => {
-      // Get drone object for this particular index
-      const drone = fetchedData[index];
-      // Check if name property exists
-      if (drone && drone.Name) {
-        return { name: drone.Name, id: Number(index) };
-      }
-      return false;
-    });
-  }
+  const droneNames = extractDroneNames(fetchedData);
 
   let panelInformation;
   if (chartMode === 'Vessel Status') {
@@ -95,7 +109,9 @@ const LivePage = () => {
             <PictureSkeleton />
           ) : (
             <img
-              src={`https://usvna.ocius.com.au/usvna/oc_server?getliveimage&camera=Bob%20Mast&time=${timestamp}&quality=${cameraQuality}`}
+              src={`https://usvna.ocius.com.au/usvna/oc_server?getliveimage&camera=${droneName(
+                droneNames[currentVessel]
+              )}%20Mast&time=${timestamp}&quality=${cameraQuality}`}
               alt="Live camera view"
             />
           )}
@@ -141,7 +157,7 @@ const LivePage = () => {
                 titleText="Vessel:"
                 onChange={handleVesselChange}
                 items={droneNames}
-                itemToString={drone => (drone ? drone.name : '')}
+                itemToString={droneName}
                 selectedItem={droneNames[currentVessel]}
               />
             )}
