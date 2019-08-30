@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import SEO from '../components/SEO';
+import PictureSkeleton from '../components/carbon/PictureSkeleton';
 import TextSkeleton from '../components/carbon/TextSkeleton';
 import DropdownSkeleton from '../components/carbon/DropdownSkeleton';
 import Dropdown from '../components/carbon/Dropdown';
@@ -90,10 +91,14 @@ const LivePage = () => {
       <Header />
       <Switcher>
         <FormWrapper>
-          <img
-            src={`https://usvna.ocius.com.au/usvna/oc_server?getliveimage&camera=Bob%20Mast&time=${timestamp}&quality=${cameraQuality}`}
-            alt="Live camera view"
-          />
+          {isLoading ? (
+            <PictureSkeleton />
+          ) : (
+            <img
+              src={`https://usvna.ocius.com.au/usvna/oc_server?getliveimage&camera=Bob%20Mast&time=${timestamp}&quality=${cameraQuality}`}
+              alt="Live camera view"
+            />
+          )}
           <FormItem>
             <Dropdown
               id="image-quality"
