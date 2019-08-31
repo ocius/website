@@ -122,41 +122,48 @@ const GMap = ({ apiKey, currentVessel }) => {
         // Do stuff on map initial load
         onLoad={loadHandler}
       >
-        <MarkerClusterer averageCenter enableRetinaIcons gridSize={5}>
-          {clusterer =>
-            fetchedData.map((boat, index) => (
-              <Marker
-                key={index}
-                position={{ lat: parseFloat(boat.Lat), lng: parseFloat(boat.Lon) }}
-                icon={BoatIcon(index, boat.Heading)}
-                label={{ text: boat.Name, color: '#ffff00', fontSize: '16px', fontWeight: 'bold' }}
-                onLoad={marker => markerLoadHandler(marker, index)}
-                onClick={event => markerClickHandler(event, index)}
-                clusterer={clusterer}
-              >
-                {infoOpen && index === selectedBoat && (
-                  <InfoWindow
-                    anchor={markerMap[selectedBoat]}
-                    onCloseClick={() => {
-                      setInfoOpen(false);
-                      toggleNavState('switcherIsOpen', 'close');
-                    }}
-                  >
-                    <>
-                      <h2>{boat.Name}</h2>
-                      <p>
-                        <strong>Latitude</strong>: {boat.Lat}
-                      </p>
-                      <p>
-                        <strong>Longitude</strong>: {boat.Lon}
-                      </p>
-                    </>
-                  </InfoWindow>
-                )}
-              </Marker>
-            ))
-          }
-        </MarkerClusterer>
+        {Object.entries(fetchedData).length > 0 && fetchedData.constructor === Object && (
+          <MarkerClusterer averageCenter enableRetinaIcons gridSize={5}>
+            {clusterer => {
+              fetchedData.map((boat, index) => (
+                <Marker
+                  key={index}
+                  position={{ lat: parseFloat(boat.Lat), lng: parseFloat(boat.Lon) }}
+                  icon={BoatIcon(index, boat.Heading)}
+                  label={{
+                    text: boat.Name,
+                    color: '#ffff00',
+                    fontSize: '16px',
+                    fontWeight: 'bold'
+                  }}
+                  onLoad={marker => markerLoadHandler(marker, index)}
+                  onClick={event => markerClickHandler(event, index)}
+                  clusterer={clusterer}
+                >
+                  {infoOpen && index === selectedBoat && (
+                    <InfoWindow
+                      anchor={markerMap[selectedBoat]}
+                      onCloseClick={() => {
+                        setInfoOpen(false);
+                        toggleNavState('switcherIsOpen', 'close');
+                      }}
+                    >
+                      <>
+                        <h2>{boat.Name}</h2>
+                        <p>
+                          <strong>Latitude</strong>: {boat.Lat}
+                        </p>
+                        <p>
+                          <strong>Longitude</strong>: {boat.Lon}
+                        </p>
+                      </>
+                    </InfoWindow>
+                  )}
+                </Marker>
+              ));
+            }}
+          </MarkerClusterer>
+        )}
       </GoogleMap>
     );
   };
