@@ -124,7 +124,7 @@ const GMap = ({ apiKey, currentVessel }) => {
       >
         {fetchedData.length > 0 && (
           <MarkerClusterer averageCenter enableRetinaIcons gridSize={5}>
-            {clusterer => {
+            {clusterer =>
               fetchedData.map((boat, index) => (
                 <Marker
                   key={index}
@@ -160,8 +160,8 @@ const GMap = ({ apiKey, currentVessel }) => {
                     </InfoWindow>
                   )}
                 </Marker>
-              ));
-            }}
+              ))
+            }
           </MarkerClusterer>
         )}
       </GoogleMap>
