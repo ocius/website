@@ -10,7 +10,7 @@ import {
   MarkerClusterer
 } from '@react-google-maps/api';
 import useHttp from '../../common/api/useHttp';
-import BoatIcon from './BoatIcon';
+import { inlineSvgBoatIcon } from './BoatIcon';
 import configuration from '../../common/api/configuration';
 import NavContext from '../../common/context/NavContext';
 
@@ -122,14 +122,14 @@ const GMap = ({ apiKey, currentVessel }) => {
         // Do stuff on map initial load
         onLoad={loadHandler}
       >
-        {Object.entries(fetchedData).length > 0 && fetchedData.constructor === Object && (
+        {fetchedData.length > 0 && (
           <MarkerClusterer averageCenter enableRetinaIcons gridSize={5}>
             {clusterer => {
               fetchedData.map((boat, index) => (
                 <Marker
                   key={index}
                   position={{ lat: parseFloat(boat.Lat), lng: parseFloat(boat.Lon) }}
-                  icon={BoatIcon(index, boat.Heading)}
+                  icon={inlineSvgBoatIcon(index, boat.Heading)}
                   label={{
                     text: boat.Name,
                     color: '#ffff00',

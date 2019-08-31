@@ -80,7 +80,7 @@ Boat.defaultProps = {
   height: 70
 };
 
-const BoatIcon = (index, rotation) => {
+export const inlineSvgBoatIcon = (index, rotation) => {
   const svgToDataURL = svgStr => {
     const encoded = encodeURIComponent(svgStr)
       .replace(/'/g, '%27')
@@ -95,5 +95,3 @@ const BoatIcon = (index, rotation) => {
 
   return { url: encodedSvg, scaledSize: { width: 38, height: 38 }, labelOrigin: { x: 16, y: -10 } };
 };
-
-export default BoatIcon;
