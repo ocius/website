@@ -7,10 +7,11 @@ import {
   useLoadScript,
   Marker,
   InfoWindow,
+  Polyline,
   MarkerClusterer
 } from '@react-google-maps/api';
 import useHttp from '../../common/api/useHttp';
-import { inlineSvgBoatIcon } from './BoatIcon';
+import { inlineSvgBoatIcon, getColorVariation } from './BoatIcon';
 import configuration from '../../common/api/configuration';
 import NavContext from '../../common/context/NavContext';
 
@@ -46,6 +47,34 @@ const GMap = ({ apiKey, currentVessel }) => {
 
   // Fetch data periodically
   const [isLoading, fetchedData] = useHttp(`${configuration.DRONE_COLLECTION_URL}/locations`, 2000);
+  const [, trailData] = useHttp(`${configuration.DRONE_COLLECTION_URL}?timespan=day`, null, []);
+
+  // Iterate through the JSON data and extract distinct coordinates for each drone
+  const makeTrailCoordinates = data => {
+    const lookup = {};
+
+    if (data.length > 0) {
+      data.map(item => {
+        const name = item.Name;
+        if (!(name in lookup)) {
+          lookup[name] = [];
+          lookup[name].push({
+            lat: Number(item.Props.Location.Coordinates.Lat),
+            lng: Number(item.Props.Location.Coordinates.Lon)
+          });
+        } else {
+          lookup[name].push({
+            lat: Number(item.Props.Location.Coordinates.Lat),
+            lng: Number(item.Props.Location.Coordinates.Lon)
+          });
+        }
+        return false;
+      });
+    }
+    return lookup;
+  };
+
+  const trailCoordinates = makeTrailCoordinates(trailData);
 
   // Iterate myPlaces to size, center, and zoom map to contain all markers
   const fitBounds = map => {
@@ -164,6 +193,31 @@ const GMap = ({ apiKey, currentVessel }) => {
             }
           </MarkerClusterer>
         )}
+        {Object.keys(trailCoordinates).map((key, index) => {
+          // Generate unique color for this vessel
+          const lineColor = getColorVariation(index)[0];
+
+          return (
+            <Polyline
+              key={index}
+              path={trailCoordinates[key]}
+              options={{
+                strokeColor: lineColor,
+                strokeOpacity: 0.8,
+                strokeWeight: 3,
+                fillColor: lineColor,
+                fillOpacity: 0.5,
+                clickable: false,
+                draggable: false,
+                editable: false,
+                visible: true,
+                radius: 30000,
+                paths: trailCoordinates[key],
+                zIndex: 1
+              }}
+            />
+          );
+        })}
       </GoogleMap>
     );
   };

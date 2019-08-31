@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
 
-export const Boat = ({ index, className, height, width, viewBox, rotation }) => {
+export const getColorVariation = index => {
   const colorVariations = [
     ['#35b5e5', 'red'],
     ['#ffff00', '#2f292d'],
@@ -17,7 +17,11 @@ export const Boat = ({ index, className, height, width, viewBox, rotation }) => 
 
   // Make boat number based on index
   const boatNumber = Math.round(index % 8);
-  const boatColors = colorVariations[boatNumber];
+  return colorVariations[boatNumber];
+};
+
+export const Boat = ({ index, className, height, width, viewBox, rotation }) => {
+  const colors = getColorVariation(index);
 
   return (
     <svg
@@ -38,12 +42,12 @@ export const Boat = ({ index, className, height, width, viewBox, rotation }) => 
           d="M246 671c-17-19-17-21 5-50 21-29 27-31 87-31 57 0 68 3 88 26 28 30 29 37 8 58-11 12-36 16-93 16-64 0-81-3-95-19zm-1-286c1-208 2-223 24-273 13-29 36-62 50-73l26-21 36 41c26 29 40 57 49 98 17 80 26 443 11 443-8 0-11-45-11-149 0-144-1-151-22-165-27-19-93-21-128-3-25 12-25 15-31 167-5 141-6 135-4-65zm122-201c3-8-1-22-9-30-13-14-17-14-31 1-9 8-14 22-11 30 8 20 43 19 51-1zm-32-4c-3-5-1-10 4-10 6 0 11 5 11 10 0 6-2 10-4 10-3 0-8-4-11-10zm-65 292c0-124-1-122 80-122 64 0 72 14 68 133l-3 92-145 6V472zm2-149c8-41 128-41 136 1 3 15 0 17-20 10-12-5-34-8-48-8s-36 3-48 8c-20 7-23 5-20-11z"
           fill="#085f61"
         />
-        <g fill={boatColors[1]}>
+        <g fill={colors[1]}>
           <use xlinkHref="#B" />
           <use xlinkHref="#C" />
           <path d="M270 472c0-124-1-122 80-122 64 0 72 14 68 133l-3 92-145 6V472z" />
         </g>
-        <g fill={boatColors[0]}>
+        <g fill={colors[0]}>
           <use xlinkHref="#B" />
           <use xlinkHref="#C" />
         </g>
