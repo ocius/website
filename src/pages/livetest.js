@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import EmptyLayout from '../layouts/EmptyLayout';
 import SEO from '../components/SEO';
 import PictureSkeleton from '../components/carbon/PictureSkeleton';
 import TextSkeleton from '../components/carbon/TextSkeleton';
@@ -100,7 +101,7 @@ const LivePage = () => {
   }
 
   return (
-    <>
+    <EmptyLayout>
       <SEO title="Live" description="See where Bluebottles are at any time – LIVE." />
       <Header />
       <Switcher>
@@ -183,7 +184,7 @@ const LivePage = () => {
         </FormWrapper>
       </LeftNav>
       <GMap apiKey={apiKey} currentVessel={currentVessel} />
-    </>
+    </EmptyLayout>
   );
 };
 
