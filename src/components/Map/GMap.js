@@ -1,6 +1,5 @@
 /* eslint-disable react/no-array-index-key */
 import React, { useState, useEffect, useContext } from 'react';
-import { uid } from 'react-uid';
 import PropTypes from 'prop-types';
 import {
   GoogleMap,
