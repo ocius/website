@@ -105,14 +105,19 @@ const formatVesselStatusData = data => {
     return `${parseFloat(temperature).toFixed(1)}\xB0C`;
   };
 
-  // Add m/s to the end - 2.5m/s
+  // Add kts to the end - 2.5kts
   const formatSpeed = speed => {
-    return `${parseFloat(speed).toFixed(2)}m/s`;
+    return `${parseFloat(speed).toFixed(2)}kts`;
   };
 
   // Add degree to the end - 10°
   const formatDirection = direction => {
     return `${parseFloat(direction).toFixed(1)}\xB0`;
+  };
+
+  // Add depth units to the end
+  const formatDepth = depth => {
+    return `${parseFloat(depth).toFixed(2)}m`;
   };
 
   /*
@@ -159,7 +164,9 @@ const formatVesselStatusData = data => {
         // We have a value, display it
         if (key === 'Water_temp') {
           statuses[StatusNames[key]] = formatTemperature(value);
-        } else if (key === 'Wind_speed' || key === 'Water_speed') {
+        } else if (key === 'Water_depth') {
+          statuses[StatusNames[key]] = formatDepth(value);
+        } else if (key === 'Boat_speed' || key === 'Wind_speed' || key === 'Water_speed') {
           statuses[StatusNames[key]] = formatSpeed(value);
         } else if (key === 'Wind_direction' || key === 'Heading') {
           statuses[StatusNames[key]] = formatDirection(value);
