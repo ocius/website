@@ -24,11 +24,6 @@ const options = {
   streetViewControl: false
 };
 
-const center = {
-  lat: -33.90594,
-  lng: 151.23461
-};
-
 const GMap = ({ apiKey, currentVessel }) => {
   // Load the Google maps scripts
   const { isLoaded } = useLoadScript({
@@ -38,6 +33,7 @@ const GMap = ({ apiKey, currentVessel }) => {
 
   // The things we need to track in state
   const [mapRef, setMapRef] = useState(null);
+  const [center, setCenter] = useState({ lat: -33.90594, lng: 151.23461 });
   const [selectedBoat, setSelectedBoat] = useState(currentVessel);
   const [markerMap, setMarkerMap] = useState({});
   const [zoom, setZoom] = useState(12);
@@ -109,7 +105,7 @@ const GMap = ({ apiKey, currentVessel }) => {
     });
   };
 
-  const markerClickHandler = (event, index) => {
+  const markerClickHandler = (event, boat, index) => {
     // Remember which boat was clicked
     setSelectedBoat(index);
     // Open right panel
@@ -128,12 +124,15 @@ const GMap = ({ apiKey, currentVessel }) => {
       if (zoom < 15) {
         setZoom(15);
       }
+
+      // Center the selected marker
+      setCenter({ lat: parseFloat(boat.Lat), lng: parseFloat(boat.Lon) });
     }
   };
 
   // When user selects vessel in dropdown, update selectedBoat state accordingly
   useEffect(() => {
-    markerClickHandler(null, currentVessel);
+    markerClickHandler(null, fetchedData[currentVessel], currentVessel);
   }, [currentVessel]);
 
   const renderMap = () => {
@@ -166,7 +165,7 @@ const GMap = ({ apiKey, currentVessel }) => {
                     fontWeight: 'bold'
                   }}
                   onLoad={marker => markerLoadHandler(marker, index)}
-                  onClick={event => markerClickHandler(event, index)}
+                  onClick={event => markerClickHandler(event, boat, index)}
                   clusterer={clusterer}
                 >
                   {infoOpen && index === selectedBoat && (
