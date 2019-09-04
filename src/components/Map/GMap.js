@@ -37,12 +37,13 @@ const GMap = ({ apiKey, currentVessel }) => {
   const [selectedBoat, setSelectedBoat] = useState(currentVessel);
   const [markerMap, setMarkerMap] = useState({});
   const [zoom, setZoom] = useState(12);
+  const [areBoundsSet, setBounds] = useState(false);
   const [infoOpen, setInfoOpen] = useState(false);
   // Navigation state to open/close right panel
   const { toggleNavState } = useContext(NavContext);
 
   // Fetch data periodically
-  const [isLoading, fetchedData] = useHttp(`${configuration.DRONE_COLLECTION_URL}/locations`, 2000);
+  const [, fetchedData] = useHttp(`${configuration.DRONE_COLLECTION_URL}/locations`, 2000);
   const [, trailData] = useHttp(`${configuration.DRONE_COLLECTION_URL}?timespan=day`, null, []);
 
   // Iterate through the JSON data and extract distinct coordinates for each drone
@@ -72,27 +73,34 @@ const GMap = ({ apiKey, currentVessel }) => {
 
   const trailCoordinates = makeTrailCoordinates(trailData);
 
-  // Iterate myPlaces to size, center, and zoom map to contain all markers
-  const fitBounds = map => {
-    const bounds = new window.google.maps.LatLngBounds();
-    if (!isLoading) {
-      fetchedData.map(boat => {
-        bounds.extend({ lat: parseFloat(boat.Lat), lng: parseFloat(boat.Lon) });
-        return uid(boat);
-      });
-      map.fitBounds(bounds);
-    }
+  // Iterate fetched data to size, center, and zoom map to contain all markers
+  const fitBoatsOnMap = (map, data = []) => {
+    const newBounds = new window.google.maps.LatLngBounds();
+
+    data.map(boat => {
+      const { Lat, Lon } = boat;
+      const latLng = new window.google.maps.LatLng(parseFloat(Lat), parseFloat(Lon));
+      newBounds.extend(latLng);
+      return latLng;
+    });
+    map.fitBounds(newBounds);
+    return newBounds;
   };
+
+  // Fit map bounds to contain all markers
+  if (fetchedData.length > 0 && !areBoundsSet) {
+    fitBoatsOnMap(mapRef, fetchedData);
+    setBounds(true);
+  }
 
   const loadHandler = map => {
     // Store a reference to the google map instance in state
     setMapRef(map);
-    // Fit map bounds to contain all markers
-    fitBounds(map);
   };
 
   const onZoomChange = () => {
-    if (mapRef) {
+    // Check if bounds set to se
+    if (mapRef && areBoundsSet) {
       // Set zoom accordingly
       setZoom(mapRef.getZoom());
     }
