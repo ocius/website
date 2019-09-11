@@ -11,15 +11,17 @@ const ProgressWrapper = styled.div`
   width: 100%;
 `;
 
-const Progress = ({ percent, status, theme, style, className }) => {
+const Progress = ({ percent, theme, style, className }) => {
   let progressStatus = null;
 
-  if (percent === 0) {
-    progressStatus = STATUSES.DEFAULT;
-  } else if (percent >= 100 && !status) {
+  if (percent <= 25) {
+    progressStatus = STATUSES.DANGER;
+  } else if (percent <= 50) {
+    progressStatus = STATUSES.WARNING;
+  } else if (percent <= 75) {
     progressStatus = STATUSES.SUCCESS;
-  } else {
-    progressStatus = status || STATUSES.ACTIVE;
+  } else if (percent <= 100) {
+    progressStatus = STATUSES.ACTIVE;
   }
 
   const themeProgress = theme && theme[progressStatus];
@@ -40,7 +42,6 @@ const Progress = ({ percent, status, theme, style, className }) => {
 
 Progress.propTypes = {
   percent: PropTypes.number,
-  status: PropTypes.oneOf([STATUSES.ACTIVE, STATUSES.SUCCESS, STATUSES.DEFAULT, STATUSES.ERROR]),
   theme: PropTypes.objectOf(PropTypes.object),
   style: PropTypes.objectOf(PropTypes.object),
   className: PropTypes.string
@@ -48,7 +49,6 @@ Progress.propTypes = {
 
 Progress.defaultProps = {
   percent: 0,
-  status: STATUSES.ACTIVE,
   theme: {},
   style: {},
   className: ''

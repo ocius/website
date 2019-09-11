@@ -27,8 +27,8 @@ const PowerMonitor = ({ data }) => {
   // Extract the battery voltage
   const [BatteryA, BatteryB] = [Number(data.Props.BatteryA), Number(data.Props.BatteryB)];
   // Calculate percentage of charge
-  const BatteryAPercentage = getWholePercent(BatteryA, 30);
-  const BatteryBPercentage = getWholePercent(BatteryB, 30);
+  const BatteryAPercentage = getWholePercent(BatteryA - 22, 8);
+  const BatteryBPercentage = getWholePercent(BatteryB - 22, 8);
 
   return (
     <MonitorWrapper>
