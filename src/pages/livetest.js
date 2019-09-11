@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import EmptyLayout from '../layouts/EmptyLayout';
 import SEO from '../components/SEO';
-import PictureSkeleton from '../components/carbon/PictureSkeleton';
 import TextSkeleton from '../components/carbon/TextSkeleton';
 import DropdownSkeleton from '../components/carbon/DropdownSkeleton';
 import Dropdown from '../components/carbon/Dropdown';
@@ -12,7 +11,6 @@ import GMap from '../components/Map/GMap';
 import { VesselStatus, PowerMonitor, AISInfo } from '../components/InfoPanel';
 import configuration from '../common/api/configuration';
 import useHttp from '../common/api/useHttp';
-import useInterval from '../common/hooks/useInterval';
 import { FormWrapper, FormItem } from '../components/carbon/shared';
 
 // Google Maps key
@@ -22,18 +20,6 @@ const LivePage = () => {
   // Add state handlers
   const [chartMode, setChartMode] = useState('Vessel Status');
   const [currentVessel, setCurrentVessel] = useState(0);
-  const [timestamp, setTimestamp] = useState(Date.now());
-  const [cameraUpdateRate, setCameraUpdateRate] = useState(10000);
-  const [cameraQuality, setCameraQuality] = useState(100);
-
-  /*
-    Update timestamp periodically, so that webcam img will be updated as well
-   */
-  const updateTimestamp = () => {
-    const currentTime = Date.now();
-    setTimestamp(currentTime);
-  };
-  useInterval(updateTimestamp, cameraUpdateRate);
 
   /*
     Attach an event handler to chart mode dropdown
@@ -47,20 +33,6 @@ const LivePage = () => {
    */
   const handleVesselChange = e => {
     setCurrentVessel(e.selectedItem.id);
-  };
-
-  /*
-    Attach an event handler to camera rate dropdown
-   */
-  const handleCameraRateChange = e => {
-    setCameraUpdateRate(e.selectedItem);
-  };
-
-  /*
-    Attach an event handler to camera quality dropdown
-   */
-  const handleCameraQualityChange = e => {
-    setCameraQuality(e.selectedItem);
   };
 
   // Make an array of names out of fetched data
@@ -104,46 +76,7 @@ const LivePage = () => {
     <EmptyLayout>
       <SEO title="Live" description="See where Bluebottles are at any time – LIVE." />
       <Header />
-      <Switcher>
-        <FormWrapper>
-          {isLoading ? (
-            <PictureSkeleton />
-          ) : (
-            <img
-              src={`https://usvna.ocius.com.au/usvna/oc_server?getliveimage&camera=${droneName(
-                droneNames[currentVessel]
-              )}%20Mast&time=${timestamp}&quality=${cameraQuality}`}
-              alt="Live camera view"
-            />
-          )}
-          <FormItem>
-            <Dropdown
-              id="image-quality"
-              type="inline"
-              ariaLabel="Dropdown"
-              label="Quality"
-              titleText="Image quality:"
-              itemToString={quality => (quality ? `${quality}%` : '')}
-              items={[100, 90, 80, 70, 60, 50, 40, 30, 20, 10]}
-              onChange={handleCameraQualityChange}
-              initialSelectedItem={String(cameraQuality)}
-            />
-          </FormItem>
-          <FormItem>
-            <Dropdown
-              id="camera-rate"
-              type="inline"
-              ariaLabel="Dropdown"
-              label="Rate"
-              titleText="Update every:"
-              itemToString={update => (update ? `${update / 1000} seconds` : '')}
-              items={[10000, 20000, 30000, 60000]}
-              onChange={handleCameraRateChange}
-              initialSelectedItem={String(cameraUpdateRate)}
-            />
-          </FormItem>
-        </FormWrapper>
-      </Switcher>
+      <Switcher />
       <LeftNav>
         <FormWrapper>
           <FormItem>

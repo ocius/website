@@ -1,5 +1,6 @@
 /* eslint-disable react/no-array-index-key */
 import React, { useState, useEffect, useContext } from 'react';
+import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import {
   GoogleMap,
@@ -13,6 +14,12 @@ import useHttp from '../../common/api/useHttp';
 import { inlineSvgBoatIcon, getColorVariation } from './BoatIcon';
 import configuration from '../../common/api/configuration';
 import NavContext from '../../common/context/NavContext';
+import useInterval from '../../common/hooks/useInterval';
+
+const WebcamView = styled.img`
+  width: 250px;
+  height: auto;
+`;
 
 // Reference for options:
 // https://developers.google.com/maps/documentation/javascript/reference/map#MapOptions
@@ -38,12 +45,24 @@ const GMap = ({ apiKey, currentVessel }) => {
   const [zoom, setZoom] = useState(12);
   const [areBoundsSet, setBounds] = useState(false);
   const [infoOpen, setInfoOpen] = useState(false);
+  const [timestamp, setTimestamp] = useState(Date.now());
+  const [cameraUpdateRate] = useState(10000);
+  const [cameraQuality] = useState(100);
   // Navigation state to open/close right panel
   const { toggleNavState } = useContext(NavContext);
 
   // Fetch data periodically
   const [, fetchedData] = useHttp(`${configuration.DRONE_COLLECTION_URL}/locations`, 2000);
   const [, trailData] = useHttp(`${configuration.DRONE_COLLECTION_URL}?timespan=day`, null, []);
+
+  /*
+    Update timestamp periodically, so that webcam img will be updated as well
+   */
+  const updateTimestamp = () => {
+    const currentTime = Date.now();
+    setTimestamp(currentTime);
+  };
+  useInterval(updateTimestamp, cameraUpdateRate);
 
   // Iterate through the JSON data and extract distinct coordinates for each drone
   const makeTrailCoordinates = data => {
@@ -83,6 +102,10 @@ const GMap = ({ apiKey, currentVessel }) => {
       return latLng;
     });
     map.fitBounds(newBounds);
+    // Fix zoom value
+    const currentZoom = map.getZoom();
+    setZoom(currentZoom);
+
     return newBounds;
   };
 
@@ -184,13 +207,11 @@ const GMap = ({ apiKey, currentVessel }) => {
                       }}
                     >
                       <>
-                        <h2>{boat.Name}</h2>
-                        <p>
-                          <strong>Latitude</strong>: {boat.Lat}
-                        </p>
-                        <p>
-                          <strong>Longitude</strong>: {boat.Lon}
-                        </p>
+                        <h3>Live View from {boat.Name}</h3>
+                        <WebcamView
+                          src={`https://usvna.ocius.com.au/usvna/oc_server?getliveimage&camera=${boat.Name}%20Mast&time=${timestamp}&quality=${cameraQuality}`}
+                          alt="Live camera view"
+                        />
                       </>
                     </InfoWindow>
                   )}
