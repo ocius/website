@@ -1,9 +1,7 @@
 import React, { useContext } from 'react';
-import { Link } from 'gatsby';
 import {
   Header as ShellHeader,
   HeaderMenuButton,
-  HeaderName,
   SkipToContent,
   HeaderGlobalBar,
   HeaderGlobalAction
@@ -12,6 +10,20 @@ import { AppSwitcher20, Close20 } from '@carbon/icons-react';
 import styled from 'styled-components';
 
 import NavContext from '../../common/context/NavContext';
+import SiteLogo from '../Navbar/SiteLogo';
+
+const Logo = styled(SiteLogo)`
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding: 0 3.2rem 0 1.6rem;
+  padding-left: 1.5rem;
+  user-select: none;
+  border: 0.2rem solid transparent;
+  transition: border-color 110ms;
+  outline: none;
+  white-space: nowrap;
+`;
 
 const StyledShellHeader = styled(ShellHeader)`
   display: flex;
@@ -118,31 +130,6 @@ const StyledShellHeader = styled(ShellHeader)`
     }
   }
 
-  a.bx--header__name {
-    font-size: 1.4rem;
-    font-weight: 400;
-    line-height: 2rem;
-    letter-spacing: 0.16px;
-    display: flex;
-    align-items: center;
-    height: 100%;
-    padding: 0 3.2rem 0 1.6rem;
-    padding-left: 1.5rem;
-    text-decoration: none;
-    letter-spacing: 0.1px;
-    line-height: 20px;
-    user-select: none;
-    border: 0.2rem solid transparent;
-    transition: border-color 110ms;
-    outline: none;
-    white-space: nowrap;
-
-    &,
-    &:hover {
-      color: #f3f3f3;
-    }
-  }
-
   .bx--header__global {
     display: flex;
     justify-content: flex-end;
@@ -175,9 +162,7 @@ const Header = ({ children }) => {
           }}
           isActive={leftNavIsOpen}
         />
-        <HeaderName prefix="" to="/" element={Link}>
-          {children}
-        </HeaderName>
+        {children}
         <HeaderGlobalBar>
           <HeaderGlobalAction
             className="icon"
@@ -195,7 +180,7 @@ const Header = ({ children }) => {
   );
 };
 
-const DefaultHeaderText = () => <>OCIUS</>;
+const DefaultHeaderText = () => <Logo maxHeight="20px" />;
 
 Header.defaultProps = {
   children: <DefaultHeaderText />
