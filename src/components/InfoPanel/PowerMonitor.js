@@ -19,20 +19,26 @@ const ItemWrapper = styled.div`
   margin: 0 0 1rem;
 `;
 
-const PowerMonitor = () => {
+const PowerMonitor = ({ data }) => {
+  const getWholePercent = (percentFor, percentOf) => {
+    return Math.floor((percentFor / percentOf) * 100);
+  };
+
+  // Extract the battery voltage
+  const [BatteryA, BatteryB] = [Number(data.Props.BatteryA), Number(data.Props.BatteryB)];
+  // Calculate percentage of charge
+  const BatteryAPercentage = getWholePercent(BatteryA, 30);
+  const BatteryBPercentage = getWholePercent(BatteryB, 30);
+
   return (
     <MonitorWrapper>
       <ItemWrapper>
-        <Label>Battery: Voltage 28.4</Label>
-        <Progress percent={96} />
+        <Label>Battery A: Voltage {BatteryA}</Label>
+        <Progress percent={BatteryAPercentage} />
       </ItemWrapper>
       <ItemWrapper>
-        <Label>Charge/Discharge Power: -44W</Label>
-        <Progress percent={4.3} />
-      </ItemWrapper>
-      <ItemWrapper>
-        <Label>Solar Charge: 24.16W</Label>
-        <Progress percent={3.9} />
+        <Label>Battery B: Voltage {BatteryB}</Label>
+        <Progress percent={BatteryBPercentage} />
       </ItemWrapper>
     </MonitorWrapper>
   );

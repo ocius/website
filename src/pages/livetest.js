@@ -95,7 +95,7 @@ const LivePage = () => {
   if (chartMode === 'Vessel Status') {
     panelInformation = <VesselStatus data={fetchedData[currentVessel]} />;
   } else if (chartMode === 'Power Monitor') {
-    panelInformation = <PowerMonitor />;
+    panelInformation = <PowerMonitor data={fetchedData[currentVessel]} />;
   } else if (chartMode === 'AIS Info') {
     panelInformation = <AISInfo />;
   }
