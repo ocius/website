@@ -1,6 +1,6 @@
 /* eslint-disable react/no-array-index-key */
 import React, { useState, useEffect, useContext } from 'react';
-import styled from 'styled-components';
+import ImageZoom from 'react-medium-image-zoom';
 import PropTypes from 'prop-types';
 import {
   GoogleMap,
@@ -15,11 +15,6 @@ import { inlineSvgBoatIcon, getColorVariation } from './BoatIcon';
 import configuration from '../../common/api/configuration';
 import NavContext from '../../common/context/NavContext';
 import useInterval from '../../common/hooks/useInterval';
-
-const WebcamView = styled.img`
-  width: 250px;
-  height: auto;
-`;
 
 // Reference for options:
 // https://developers.google.com/maps/documentation/javascript/reference/map#MapOptions
@@ -208,9 +203,13 @@ const GMap = ({ apiKey, currentVessel }) => {
                     >
                       <>
                         <h3>Live View from {boat.Name}</h3>
-                        <WebcamView
-                          src={`https://usvna.ocius.com.au/usvna/oc_server?getliveimage&camera=${boat.Name}%20Mast&time=${timestamp}&quality=${cameraQuality}`}
-                          alt="Live camera view"
+                        <ImageZoom
+                          image={{
+                            src: `https://usvna.ocius.com.au/usvna/oc_server?getliveimage&camera=${boat.Name}%20Mast&time=${timestamp}&quality=${cameraQuality}`,
+                            alt: 'Live camera view',
+                            className: 'webcam-img',
+                            style: { width: '250px', height: 'auto' }
+                          }}
                         />
                       </>
                     </InfoWindow>
