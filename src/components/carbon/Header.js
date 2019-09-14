@@ -112,7 +112,7 @@ const StyledShellHeader = styled(ShellHeader)`
       border-width: 2px;
       display: block;
 
-      @media (min-width: 100rem) {
+      @media (min-width: 1054px) {
         display: none;
       }
     }
@@ -121,7 +121,7 @@ const StyledShellHeader = styled(ShellHeader)`
   .bx--header__menu-trigger {
     margin-right: -0.8rem;
 
-    @media (min-width: 100rem) {
+    @media (min-width: 1054px) {
       display: none;
     }
   }
