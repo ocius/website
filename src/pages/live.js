@@ -4,7 +4,6 @@ import SEO from '../components/SEO';
 import TextSkeleton from '../components/carbon/TextSkeleton';
 import DropdownSkeleton from '../components/carbon/DropdownSkeleton';
 import Dropdown from '../components/carbon/Dropdown';
-import Switcher from '../components/carbon/Switcher';
 import Header from '../components/carbon/Header';
 import LeftNav from '../components/carbon/LeftNav';
 import GMap from '../components/Map/GMap';
@@ -76,7 +75,6 @@ const LivePage = () => {
     <EmptyLayout>
       <SEO title="Live" description="See where Bluebottles are at any time – LIVE." />
       <Header />
-      <Switcher />
       <LeftNav>
         <FormWrapper>
           <FormItem>

@@ -2,11 +2,8 @@ import React, { useContext } from 'react';
 import {
   Header as ShellHeader,
   HeaderMenuButton,
-  SkipToContent,
-  HeaderGlobalBar,
-  HeaderGlobalAction
+  SkipToContent
 } from 'carbon-components-react/lib/components/UIShell';
-import { AppSwitcher20, Close20 } from '@carbon/icons-react';
 import styled from 'styled-components';
 
 import NavContext from '../../common/context/NavContext';
@@ -106,9 +103,9 @@ const StyledShellHeader = styled(ShellHeader)`
     }
 
     &--active {
-      border-left: 1px solid #3d3d3d;
-      border-right: 1px solid #3d3d3d;
-      border-bottom: 1px solid #171717;
+      border-left: 1px solid #4bb4e6;
+      border-right: 1px solid #4bb4e6;
+      border-bottom: 1px solid #4bb4e6;
     }
 
     &--menu {
@@ -146,7 +143,7 @@ const StyledShellHeader = styled(ShellHeader)`
 `;
 
 const Header = ({ children }) => {
-  const { leftNavIsOpen, toggleNavState, switcherIsOpen } = useContext(NavContext);
+  const { leftNavIsOpen, toggleNavState } = useContext(NavContext);
 
   return (
     <>
@@ -157,23 +154,10 @@ const Header = ({ children }) => {
           aria-label="Open menu"
           onClick={() => {
             toggleNavState('leftNavIsOpen');
-            toggleNavState('switcherIsOpen', 'close');
           }}
           isActive={leftNavIsOpen}
         />
         {children}
-        <HeaderGlobalBar>
-          <HeaderGlobalAction
-            className="icon"
-            aria-label="Switch"
-            onClick={() => {
-              toggleNavState('switcherIsOpen');
-              toggleNavState('leftNavIsOpen', 'close');
-            }}
-          >
-            {switcherIsOpen ? <Close20 /> : <AppSwitcher20 />}
-          </HeaderGlobalAction>
-        </HeaderGlobalBar>
       </StyledShellHeader>
     </>
   );

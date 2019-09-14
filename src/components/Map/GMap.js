@@ -43,8 +43,6 @@ const GMap = ({ apiKey, currentVessel }) => {
   const [timestamp, setTimestamp] = useState(Date.now());
   const [cameraUpdateRate] = useState(10000);
   const [cameraQuality] = useState(100);
-  // Navigation state to open/close right panel
-  const { toggleNavState } = useContext(NavContext);
 
   // Fetch data periodically
   const [, fetchedData] = useHttp(`${configuration.DRONE_COLLECTION_URL}/locations`, 2000);
@@ -133,8 +131,6 @@ const GMap = ({ apiKey, currentVessel }) => {
   const markerClickHandler = (event, boat, index) => {
     // Remember which boat was clicked
     setSelectedBoat(index);
-    // Open right panel
-    toggleNavState('switcherIsOpen', 'open');
 
     // Only if map is loaded
     if (isLoaded) {
@@ -198,7 +194,6 @@ const GMap = ({ apiKey, currentVessel }) => {
                       anchor={markerMap[selectedBoat]}
                       onCloseClick={() => {
                         setInfoOpen(false);
-                        toggleNavState('switcherIsOpen', 'close');
                       }}
                     >
                       <>
