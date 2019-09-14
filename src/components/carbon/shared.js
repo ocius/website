@@ -78,8 +78,8 @@ export const FormWrapper = styled.div`
   hr {
     border: 0;
     height: 1px;
-    background: #8c8c8c;
-    margin: 32px 0rem 8px;
+    background: rgba(0, 0, 0, 0.1);
+    margin: 30px 0rem 16px;
   }
 
   .bx--dropdown__wrapper--inline .bx--label {
