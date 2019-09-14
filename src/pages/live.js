@@ -114,7 +114,7 @@ const LivePage = () => {
           {isLoading ? <TextSkeleton count={8} /> : panelInformation}
         </FormWrapper>
       </LeftNav>
-      <GMap apiKey={apiKey} currentVessel={currentVessel} />
+      <GMap apiKey={apiKey} currentVessel={currentVessel} droneData={fetchedData} />
     </EmptyLayout>
   );
 };

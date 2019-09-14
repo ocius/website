@@ -24,7 +24,7 @@ const options = {
   streetViewControl: false
 };
 
-const GMap = ({ apiKey, currentVessel }) => {
+const GMap = ({ apiKey, currentVessel, droneData }) => {
   // Load the Google maps scripts
   const { isLoaded } = useLoadScript({
     // Get Google Maps API key from props
@@ -44,7 +44,6 @@ const GMap = ({ apiKey, currentVessel }) => {
   const [cameraQuality] = useState(100);
 
   // Fetch data periodically
-  const [, fetchedData] = useHttp(`${configuration.DRONE_COLLECTION_URL}/locations`, 2000);
   const [, trailData] = useHttp(`${configuration.DRONE_COLLECTION_URL}?timespan=day`, null, []);
 
   /*
@@ -88,8 +87,10 @@ const GMap = ({ apiKey, currentVessel }) => {
     const newBounds = new window.google.maps.LatLngBounds();
 
     data.map(boat => {
-      const { Lat, Lon } = boat;
-      const latLng = new window.google.maps.LatLng(parseFloat(Lat), parseFloat(Lon));
+      const latLng = new window.google.maps.LatLng(
+        parseFloat(boat.Props.Location.Coordinates.Lat),
+        parseFloat(boat.Props.Location.Coordinates.Lon)
+      );
       newBounds.extend(latLng);
       return latLng;
     });
@@ -102,8 +103,8 @@ const GMap = ({ apiKey, currentVessel }) => {
   };
 
   // Fit map bounds to contain all markers
-  if (fetchedData.length > 0 && !areBoundsSet) {
-    fitBoatsOnMap(mapRef, fetchedData);
+  if (droneData.length > 0 && !areBoundsSet) {
+    fitBoatsOnMap(mapRef, droneData);
     setBounds(true);
   }
 
@@ -146,13 +147,16 @@ const GMap = ({ apiKey, currentVessel }) => {
       }
 
       // Center the selected marker
-      setCenter({ lat: parseFloat(boat.Lat), lng: parseFloat(boat.Lon) });
+      setCenter({
+        lat: parseFloat(boat.Props.Location.Coordinates.Lat),
+        lng: parseFloat(boat.Props.Location.Coordinates.Lon)
+      });
     }
   };
 
   // When user selects vessel in dropdown, update selectedBoat state accordingly
   useEffect(() => {
-    markerClickHandler(null, fetchedData[currentVessel], currentVessel);
+    markerClickHandler(null, droneData[currentVessel], currentVessel);
   }, [currentVessel]);
 
   const renderMap = () => {
@@ -170,13 +174,16 @@ const GMap = ({ apiKey, currentVessel }) => {
         // Do stuff on map initial load
         onLoad={loadHandler}
       >
-        {fetchedData.length > 0 && (
+        {droneData.length > 0 && (
           <MarkerClusterer averageCenter enableRetinaIcons gridSize={5}>
             {clusterer =>
-              fetchedData.map((boat, index) => (
+              droneData.map((boat, index) => (
                 <Marker
                   key={index}
-                  position={{ lat: parseFloat(boat.Lat), lng: parseFloat(boat.Lon) }}
+                  position={{
+                    lat: parseFloat(boat.Props.Location.Coordinates.Lat),
+                    lng: parseFloat(boat.Props.Location.Coordinates.Lon)
+                  }}
                   icon={inlineSvgBoatIcon(index, boat.Heading)}
                   label={{
                     text: boat.Name,
