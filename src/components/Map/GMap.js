@@ -1,5 +1,5 @@
 /* eslint-disable react/no-array-index-key */
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useEffect } from 'react';
 import ImageZoom from 'react-medium-image-zoom';
 import PropTypes from 'prop-types';
 import {
@@ -13,7 +13,6 @@ import {
 import useHttp from '../../common/api/useHttp';
 import { inlineSvgBoatIcon, getColorVariation } from './BoatIcon';
 import configuration from '../../common/api/configuration';
-import NavContext from '../../common/context/NavContext';
 import useInterval from '../../common/hooks/useInterval';
 
 // Reference for options:
