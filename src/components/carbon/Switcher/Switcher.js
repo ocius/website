@@ -12,8 +12,7 @@ const Nav = styled.nav`
   height: 100%;
   padding: 1.6rem 0;
   width: 35rem;
-  background-color: #171717;
-  border-left: 1px solid #3d3d3d;
+  background-color: #efefef;
   transform: translateX(35rem);
   transition: transform 150ms cubic-bezier(0.2, 0, 0.38, 0.9);
 

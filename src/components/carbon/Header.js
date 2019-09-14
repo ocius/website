@@ -33,8 +33,7 @@ const StyledShellHeader = styled(ShellHeader)`
   left: 0;
   right: 0;
   height: 5rem;
-  background-color: #171717;
-  border-bottom: 1px solid #3d3d3d;
+  background-color: #efefef;
   z-index: 10000;
   transition: top 110ms;
 
@@ -103,7 +102,7 @@ const StyledShellHeader = styled(ShellHeader)`
     }
 
     > svg {
-      fill: #ffffff;
+      fill: #171717;
     }
 
     &--active {
