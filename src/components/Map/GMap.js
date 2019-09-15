@@ -165,7 +165,8 @@ const GMap = ({ apiKey, currentVessel, droneData }) => {
         id="google-map"
         mapContainerStyle={{
           height: `100vh`,
-          width: `100%`
+          width: `100%`,
+          paddingTop: '5rem'
         }}
         zoom={zoom}
         onZoomChanged={onZoomChange}
