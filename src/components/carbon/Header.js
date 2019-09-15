@@ -31,6 +31,7 @@ const StyledShellHeader = styled(ShellHeader)`
   right: 0;
   height: 5rem;
   background-color: #efefef;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   z-index: 10000;
   transition: top 110ms;
 
