@@ -31,12 +31,13 @@ export default () => (
                 Working with Ocius – “Oceans is us”
               </Heading>
               <p>
-                Ocius is an Australian company that builds autonomous ocean robots. These drones
-                use the energy of the weather – sun wind
-                and waves – to act as monitoring and communications platforms.
+                Ocius is an Australian company that builds autonomous ocean robots. These drones use
+                the energy of the weather – sun wind and waves – to act as monitoring and
+                communications communications platforms.
               </p>
               <p>
-                If you like a challenge, can work in a team, and love the ocean you could be part of our exciting future.
+                If you like a challenge, can work in a team, and love the ocean you could be part of
+                our exciting future.
               </p>
               <Heading level={3} size="medium">
                 Featured Jobs
