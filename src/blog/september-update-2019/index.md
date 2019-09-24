@@ -20,7 +20,7 @@ Bob and Bruce created a great deal of interest from WIN TV, Ch 2 TV, Canberra Ti
 
 We’ll post links on our Latest News webpage when the links become available, but meantime please see [this great article in the ADM magazine interviewing Ocius, Commander Paul Hornsby, Navy’s lead for autonomous warfare systems and Gary Dawson, Thales Australia’s Vice President Strategy.]( https://www.australiandefence.com.au/news/ocius-bob-and-bruce-come-to-canberra)
 
-**Testing ‘bistatic sonar’ capability in Ulladulla 2 – 6 Sept.**
+### Testing ‘bistatic sonar’ capability in Ulladulla 2 – 6 Sept.
 Once again, Thales and Ocius deployed to beautiful Ulladulla on the South Coast. We are grateful once more to Ulladulla Marine Rescue who acted as a support vessel and the illegal or suspicious vessel.
 
 In one test (demonstrating 100% Australian sovereign capability) Thales played AC/DC from a test source and this was picked up kms away by Bruce’s array.
@@ -37,7 +37,7 @@ Finally, we successfully tested Thales’ new innovative underwater comms protoc
 
 ![Array deploying out aft of keel, Underwater shot courtesy Bruce Heggie](./array.png)
 
-**Pacific 2019 Expo Darling Harbour Oct 8 -10:**
+### Pacific 2019 Expo Darling Harbour Oct 8 -10:
 All this testing is in preparation for Pac 2019. Thales and Ocius will have two Bluebottles on the harbour or off the coast beaming LIVE data and camera footage back to our display on the NSW Government Stand 2B2.  This development has been the result of a long-term collaboration between Ocius, Thales and Defence, with all parties committed to the advancement of autonomous sonar solutions as part of their respective development programs. Without this level of collaborative commitment between partners such projects would not be possible.
 
 We’ll be presenting this testing and our recent Intelligent Network trials off the NSW coast at the Australian Association for Unmanned Systems’ (AAUS) “Autonomy in the Maritime Domain” conference and the Defence Innovation Network conferences - both held within the Expo.
