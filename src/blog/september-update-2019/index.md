@@ -1,12 +1,15 @@
 ---
-title: "September 2019 Update"
+title: "September Update 2019"
 date: "2019-09-24"
 author: "Robert Dane"
+featuredImage: ./parliament.jpg
 ---
 
 Last week, we were honoured to be invited by the Australian Maritime Safety Authority (AMSA) and approved by the National Capital Authority (NCA) to operate 2 Bluebottle Unmanned Surface Vessels (USVs) on Lake Burley Griffin in the week leading up to an AMSA and Trusted Autonomous Cooperative Research Centre (TASCRC) conference at the National Museum of Australia.
 
 Just like at Autonomous Warrior Wargames in November, the weather was terrible. But, despite overcast conditions, freezing winds, rain and snow on the mountains, Bob & Bruce happily performed their duties.
+
+![Unpleasant weather for humans, Bob and Bruce don't care](./parliament.jpg)
 Unpleasant weather for humans … Bob and Bruce don’t care
 
 We’d like to thank AMSA, National Capital Authority, Lake Users Group, Southern Cross Sailing Club, Canberra Rowing Club and Rowing ACT, owners and skippers of the MV Southern Cross, Lake Burley Griffin Cruises & Go Boats and all mariners for helping make this a safe and educational mission.
