@@ -16,16 +16,16 @@ We’d like to thank AMSA, National Capital Authority, Lake Users Group, Souther
 
 Bob and Bruce created a great deal of interest from WIN TV, Ch 2 TV, Canberra Times, ADM magazine and Navy news.
 
-![In a nicer moment: Bruce selfie photobombed by Bob](./selfie.png)
+![In a nicer moment: Bruce selfie photobombed by Bob](./selfie.jpg)
 
-We’ll post links on our Latest News webpage when the links become available, but meantime please see link to a great article in the ADM magazine interviewing Ocius, Commander Paul Hornsby, Navy’s lead for autonomous warfare systems and Gary Dawson, Thales Australia’s Vice President Strategy. https://www.australiandefence.com.au/news/ocius-bob-and-bruce-come-to-canberra
+We’ll post links on our Latest News webpage when the links become available, but meantime please see [this great article in the ADM magazine interviewing Ocius, Commander Paul Hornsby, Navy’s lead for autonomous warfare systems and Gary Dawson, Thales Australia’s Vice President Strategy.]( https://www.australiandefence.com.au/news/ocius-bob-and-bruce-come-to-canberra)
 
 **Testing ‘bistatic sonar’ capability in Ulladulla 2 – 6 Sept.**
 Once again, Thales and Ocius deployed to beautiful Ulladulla on the South Coast. We are grateful once more to Ulladulla Marine Rescue who acted as a support vessel and the illegal or suspicious vessel.
 
 In one test (demonstrating 100% Australian sovereign capability) Thales played AC/DC from a test source and this was picked up kms away by Bruce’s array.
 
-[![Download to listen Audio courtesy of Thales Underwater Systems](./audio.png)](./audio.wav)
+[![Click here to listen. Audio courtesy of Thales Underwater Systems](./audio.png)](./audio.wav)
 
 For those who are musically inclined, you may be able to hear the ‘reverb’ building as the ping goes on, which is the sound bouncing off the ocean floor.
 
