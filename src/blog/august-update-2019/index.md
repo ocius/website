@@ -1,7 +1,8 @@
 ---
-title: "August 2019 Update"
+title: "August Update 2019"
 date: "2019-08-31"
 author: "Robert Dane"
+featuredImage: ./exiting-bobbin-head.png
 ---
 
 Since we finished our trials off the NSW Coast and our last update.
