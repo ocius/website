@@ -6,6 +6,7 @@ import {
 } from 'carbon-components-react/lib/components/UIShell';
 import styled from 'styled-components';
 
+import Button from '../Button';
 import NavContext from '../../common/context/NavContext';
 import SiteLogo from '../Navbar/SiteLogo';
 
@@ -143,6 +144,13 @@ const StyledShellHeader = styled(ShellHeader)`
   }
 `;
 
+const RightControls = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  flex: 1 1;
+  padding-right: 0.8rem;
+`;
+
 const Header = ({ children }) => {
   const { leftNavIsOpen, toggleNavState } = useContext(NavContext);
 
@@ -159,6 +167,17 @@ const Header = ({ children }) => {
           isActive={leftNavIsOpen}
         />
         {children}
+        <RightControls>
+          <Button
+            as="a"
+            href="https://usvna.ocius.com.au/usvna/oc_server"
+            color="white"
+            size="small"
+            border
+          >
+            Advanced View
+          </Button>
+        </RightControls>
       </StyledShellHeader>
     </>
   );
