@@ -51,7 +51,7 @@ const StatusNames = {
   Water_temp: 'Water Temp',
   Water_speed: 'Water Speed',
   Wind_speed: 'Wind Speed',
-  Wind_direction: 'Wind Dir',
+  Wind_direction: 'Wind Direction',
   Boat_speed: 'Boat Speed',
   Throttle: 'Throttle',
   // Num_Sats: 'Num Sats'
