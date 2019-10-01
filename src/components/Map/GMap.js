@@ -210,7 +210,7 @@ const GMap = ({ apiKey, currentVessel, droneData }) => {
                             src: `https://usvna.ocius.com.au/usvna/oc_server?getliveimage&camera=${boat.Name}%20Mast&time=${timestamp}&quality=${cameraQuality}`,
                             alt: 'Live camera view',
                             className: 'webcam-img',
-                            style: { width: '250px', height: 'auto' }
+                            style: { width: '320px', height: 'auto', maxWidth: '100%' }
                           }}
                         />
                       </>
