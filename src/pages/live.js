@@ -7,7 +7,7 @@ import Dropdown from '../components/carbon/Dropdown';
 import Header from '../components/carbon/Header';
 import LeftNav from '../components/carbon/LeftNav';
 import GMap from '../components/Map/GMap';
-import { VesselStatus, PowerMonitor, AISInfo } from '../components/InfoPanel';
+import { VesselStatus } from '../components/InfoPanel';
 import configuration from '../common/api/configuration';
 import useHttp from '../common/api/useHttp';
 import { FormWrapper, FormItem } from '../components/carbon/shared';
@@ -17,15 +17,7 @@ const apiKey = `AIzaSyC18SYECJZXKTOG6Ljm8W68mENW1uEmTAg`;
 
 const LivePage = () => {
   // Add state handlers
-  const [chartMode, setChartMode] = useState('Vessel Status');
   const [currentVessel, setCurrentVessel] = useState(0);
-
-  /*
-    Attach an event handler to chart mode dropdown
-   */
-  const handleChartModeChange = e => {
-    setChartMode(e.selectedItem);
-  };
 
   /*
     Attach an event handler to vessel dropdown
@@ -62,15 +54,6 @@ const LivePage = () => {
   const [isLoading, fetchedData] = useHttp(configuration.DRONE_COLLECTION_URL, 2000);
   const droneNames = extractDroneNames(fetchedData);
 
-  let panelInformation;
-  if (chartMode === 'Vessel Status') {
-    panelInformation = <VesselStatus data={fetchedData[currentVessel]} />;
-  } else if (chartMode === 'Power Monitor') {
-    panelInformation = <PowerMonitor data={fetchedData[currentVessel]} />;
-  } else if (chartMode === 'AIS Info') {
-    panelInformation = <AISInfo />;
-  }
-
   return (
     <EmptyLayout>
       <SEO title="Live" description="See where Bluebottles are at any time – LIVE." />
@@ -94,24 +77,11 @@ const LivePage = () => {
               />
             )}
           </FormItem>
-          <FormItem>
-            {isLoading ? (
-              <DropdownSkeleton label="Chart Mode:" />
-            ) : (
-              <Dropdown
-                id="chart-mode"
-                type="default"
-                label="Choose chart mode"
-                ariaLabel="Dropdown"
-                titleText="Chart Mode:"
-                onChange={handleChartModeChange}
-                items={['Vessel Status', 'Power Monitor', 'AIS Info']}
-                initialSelectedItem={chartMode}
-              />
-            )}
-          </FormItem>
-          <hr />
-          {isLoading ? <TextSkeleton count={8} /> : panelInformation}
+          {isLoading ? (
+            <TextSkeleton count={8} />
+          ) : (
+            <VesselStatus data={fetchedData[currentVessel]} />
+          )}
         </FormWrapper>
       </LeftNav>
       <GMap apiKey={apiKey} currentVessel={currentVessel} droneData={fetchedData} />

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import Progress from '../Progress';
 
@@ -19,13 +20,11 @@ const ItemWrapper = styled.div`
   margin: 0 0 1rem;
 `;
 
-const PowerMonitor = ({ data }) => {
+const PowerMonitor = ({ BatteryA, BatteryB }) => {
   const getWholePercent = (percentFor, percentOf) => {
     return Math.floor((percentFor / percentOf) * 100);
   };
 
-  // Extract the battery voltage
-  const [BatteryA, BatteryB] = [Number(data.Props.BatteryA), Number(data.Props.BatteryB)];
   // Calculate percentage of charge
   const BatteryAPercentage = getWholePercent(BatteryA - 22, 8);
   const BatteryBPercentage = getWholePercent(BatteryB - 22, 8);
@@ -42,6 +41,16 @@ const PowerMonitor = ({ data }) => {
       </ItemWrapper>
     </MonitorWrapper>
   );
+};
+
+PowerMonitor.propTypes = {
+  BatteryA: PropTypes.number,
+  BatteryB: PropTypes.number
+};
+
+PowerMonitor.defaultProps = {
+  BatteryA: 0,
+  BatteryB: 0
 };
 
 export default PowerMonitor;

@@ -1,6 +1,7 @@
 import React from 'react';
 import { uid } from 'react-uid';
 import styled, { css } from 'styled-components';
+import PowerMonitor from './PowerMonitor';
 
 const StatusList = styled.dl`
   font-size: 1.5rem;
@@ -38,6 +39,16 @@ const StatusTag = styled.span`
       background-color: #9deeb2;
       color: #049e51;
     `}
+`;
+
+const H3Heading = styled.h3`
+  font-family: inherit;
+  font-weight: 400;
+  border-bottom: 1px solid #e9e9e9;
+  color: #171717;
+  margin-top: 3.2rem;
+  padding-bottom: 0.8rem;
+  margin-bottom: 1.6rem;
 `;
 
 // Match all properties with its string label
@@ -192,16 +203,21 @@ const formatVesselStatusData = data => {
 const VesselStatus = ({ data }) => {
   const statuses = formatVesselStatusData(data);
 
-  return (
-    <StatusList>
-      {Object.keys(statuses).map((index, id) => (
-        <React.Fragment key={uid(index, id)}>
-          <dt>{index}</dt>
-          <dd>{statuses[index]}</dd>
-        </React.Fragment>
-      ))}
-    </StatusList>
-  );
+  return data ? (
+    <>
+      <H3Heading>Sensors Data</H3Heading>
+      <StatusList>
+        {Object.keys(statuses).map((index, id) => (
+          <React.Fragment key={uid(index, id)}>
+            <dt>{index}</dt>
+            <dd>{statuses[index]}</dd>
+          </React.Fragment>
+        ))}
+      </StatusList>
+      <H3Heading>Power Status</H3Heading>
+      <PowerMonitor BatteryA={Number(data.Props.BatteryA)} BatteryB={Number(data.Props.BatteryB)} />
+    </>
+  ) : null;
 };
 
 export default VesselStatus;
