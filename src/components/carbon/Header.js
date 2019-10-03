@@ -149,6 +149,10 @@ const RightControls = styled.div`
   justify-content: flex-end;
   flex: 1 1;
   padding-right: 0.8rem;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
 `;
 
 const Header = ({ children }) => {
