@@ -83,7 +83,7 @@ function Line({ percent, className, status, background, trailColor }) {
 Line.propTypes = {
   percent: PropTypes.number,
   className: PropTypes.string,
-  status: PropTypes.oneOf([STATUSES.ACTIVE, STATUSES.SUCCESS, STATUSES.DEFAULT, STATUSES.ERROR]),
+  status: PropTypes.oneOf([STATUSES.DANGER, STATUSES.WARNING, STATUSES.SUCCESS, STATUSES.ACTIVE]),
   background: PropTypes.string,
   trailColor: PropTypes.string
 };
