@@ -470,44 +470,50 @@ export default ({ data }) => (
               Ocius Technology Ltd (formerly Solar Sailor Holdings Ltd) is an Australian public
               unlisted company with Research and Development facilities at the University of NSW.
             </p>
+
             <p>
               In 1997 Solar Sailor won the Advanced Technology Boat Race in Canberra, beating the
-              next solar boat by 5 laps of 6km (30km) using a new patented ‘solar sail’ a simple
-              device which harnessed both solar and wind energy in a seaworthy way.
+              next solar boat by 5 laps of 6km (30km) using a new patented &apos;solar sail&apos; a
+              simple device which harnessed both solar and wind energy in a seaworthy way.
             </p>
+
             <p>
-              Since then Solar Sailor / Ocius have developed a solid track record of conceiving,
+              Since then Solar Sailor / Ocius have proven a solid track record of conceiving,
               funding and delivering difficult innovative high-tech award-winning projects on time
               and on budget.
             </p>
+
             <p>
-              Solar Sailor / Ocius has built multiple ‘solarsailor’ prototypes and six (6) high -
-              tech award winning hybrid electric commercial passenger ferries to international
-              classification requirements, which together have carried tens of thousands of
-              passengers. Today four solarsailor hybrid electric ferries operated by the HK Jockey
-              Club run 364 days of the year 14 hours a day from Sai Kung to Kau Sai Chau saving half
-              the fuel of conventional ferries. Dozens of subcontractors have built and tested our
-              commercial ferries and tens of thousands of passengers have travelled on our ferries
-              without incident.
+              Solar Sailor / Ocius has built multiple &apos;solarsailor&apos; prototypes and six
+              high - tech award winning hybrid electric commercial passenger ferries to
+              international classification requirements, which together have carried tens of
+              thousands of passengers. Today four solarsailor hybrid electric ferries operated by
+              the HK Jockey Club operate 364 days of the year, 14 hours a day, from Sai Kung to Kau
+              Sai Chau saving half the fuel of conventional ferries.
             </p>
+
             <p>
-              Following an enquiry from the USA in 2007 for a ‘self-sustaining platform at sea’,
-              OCIUS began research into the development of unmanned solar/wind/wave and ballasted
+              Following an enquiry from the USA in 2007 for a &apos;platform that could go to sea
+              forever&apos;, OCIUS began research into the development of unmanned solar/wind/wave
               powered ocean vessels or autonomous unmanned surface vessels. Initially, a 20-foot
               manned engineering development model (EDM) proved the &apos;speed of advance&apos; in
               all conditions, adequate power, payload and persistence for a sustainable platform go
               to sea for months.
             </p>
+
             <p>
               In 2014, Solar Sailor changed its name to OCIUS (Latin for &apos;fleet&apos;) to
-              reflect an expansion of its patented technologies including the solar sail.
+              reflect an expansion of its patented technologies and a pivot in direction for the
+              Company.
             </p>
+
             <p>
               OCIUS built multiple scale models for tank and lake testing, culminating in the
               building of the first 10&apos; prototype called &apos;Nemo&apos; (Latin for &apos;no
               one&apos; ie unmanned) which provided significant proof of concept of a solar, wind
               and wave powered USV carrying a significant payload.
             </p>
+
             <p>
               Based on Nemo&apos;s development, in 2015 OCIUS was awarded a Capability Technology
               Demonstrator (CTD) from Defence Science and Technology Group. This proved a
@@ -515,21 +521,32 @@ export default ({ data }) => (
               &apos;Bruce&apos; for Antisubmarine Warfare (ASW), which demonstrated to NAVY in
               August 2017.
             </p>
+
             <p>
               In Sept 2018, Ocius was awarded its second defence contract under the Defence
               Innovation Hub to build an intelligent “Command and Control (C2) network” of
               intelligent persistent unmanned surface vessels.
             </p>
+
             <p>
-              In November 2019 Bruce participated Autonomous Warrior War games in Jervis Bay. Due to
-              extreme weather “Bruce” was often the only USV operating. Ocius&apos; intelligent C2
-              system was used to control another Navy WAMV catamaran and 2 DSTG UUVs.
+              In November 2019 &apos;Bruce&apos; participated Autonomous Warrior War games in Jervis
+              Bay. Due to extreme weather &apos;Bruce&apos; was often the only USV operating.
+              Ocius&apos; intelligent C2 system was used to control another Navy WAMV catamaran and
+              2 DSTG UUVs.
             </p>
+
             <p>
-              In early 2019, Ocius completed 6 weeks endurance and intelligent networking trials in
-              a designated AMSA approved ‘box’ off the NSW Coast . These have successfully been
-              completed.
+              From May - June 2019, Ocius completed 6 week endurance and intelligent networking
+              trials in a designated AMSA approved &apos;box&apos; off the NSW Coast, successfully
+              completing the DIH contract 3 months ahead of schedule.
             </p>
+
+            <p>
+              Ocius is continuing its work with Thales, testing a new Thales thin line array
+              deployed from the Bluebottle keel winch to significant and varying depths, which is
+              being demonstrated at Pacific 2019 Expo at Darling Harbour 8-10 October.
+            </p>
+
             <strong>Commercial Ferries</strong>
             <p>
               Solar Sailor built 6 commercial solar sailor vessels providing valuable experience to
