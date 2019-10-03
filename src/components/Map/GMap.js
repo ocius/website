@@ -46,7 +46,11 @@ const GMap = ({ apiKey, currentVessel, droneData }) => {
   const [cameraQuality] = useState(100);
 
   // Fetch data periodically
-  const [, trailData] = useHttp(`${configuration.DRONE_COLLECTION_URL}?timespan=day`, null, []);
+  const [, trailData] = useHttp(
+    `${configuration.DRONE_COLLECTION_URL}/locations?timespan=hour`,
+    null,
+    []
+  );
 
   /*
     Update timestamp periodically, so that webcam img will be updated as well
@@ -67,13 +71,13 @@ const GMap = ({ apiKey, currentVessel, droneData }) => {
         if (!(name in lookup)) {
           lookup[name] = [];
           lookup[name].push({
-            lat: Number(item.Props.Location.Coordinates.Lat),
-            lng: Number(item.Props.Location.Coordinates.Lon)
+            lat: Number(item.Lat),
+            lng: Number(item.Lon)
           });
         } else {
           lookup[name].push({
-            lat: Number(item.Props.Location.Coordinates.Lat),
-            lng: Number(item.Props.Location.Coordinates.Lon)
+            lat: Number(item.Lat),
+            lng: Number(item.Lon)
           });
         }
         return false;
