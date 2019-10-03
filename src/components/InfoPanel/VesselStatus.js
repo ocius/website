@@ -205,7 +205,7 @@ const VesselStatus = ({ data }) => {
 
   return data ? (
     <>
-      <H3Heading>Sensors Data</H3Heading>
+      <H3Heading>Sensor Data</H3Heading>
       <StatusList>
         {Object.keys(statuses).map((index, id) => (
           <React.Fragment key={uid(index, id)}>
