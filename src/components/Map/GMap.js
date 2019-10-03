@@ -21,7 +21,8 @@ import useInterval from '../../common/hooks/useInterval';
 const options = {
   disableDefaultUI: false,
   mapTypeId: 'satellite',
-  streetViewControl: false
+  streetViewControl: false,
+  gestureHandling: 'greedy'
 };
 
 const GMap = ({ apiKey, currentVessel, droneData }) => {
