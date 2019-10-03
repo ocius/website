@@ -20,6 +20,7 @@
     "carbon-components-react": "^7.4.1",
     "classnames": "^2.2.6",
     "color": "^3.1.2",
+    "dotenv": "^8.1.0",
     "formik": "^1.5.8",
     "gatsby": "^2.13.33",
     "gatsby-awesome-pagination": "^0.3.4",

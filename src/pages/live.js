@@ -16,7 +16,7 @@ import useOnClickOutside from '../common/hooks/useOnClickOutside';
 import { FormWrapper, FormItem } from '../components/carbon/shared';
 
 // Google Maps key
-const apiKey = `AIzaSyC18SYECJZXKTOG6Ljm8W68mENW1uEmTAg`;
+const apiKey = process.env.GOOGLE_MAPS_API_KEY;
 
 const LivePage = () => {
   // Save ref of navbar + leftnav for future reference
