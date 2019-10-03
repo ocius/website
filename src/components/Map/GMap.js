@@ -21,6 +21,7 @@ import useInterval from '../../common/hooks/useInterval';
 const options = {
   disableDefaultUI: false,
   mapTypeId: 'satellite',
+  mapTypeControl: false,
   streetViewControl: false,
   gestureHandling: 'greedy'
 };
