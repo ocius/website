@@ -155,31 +155,29 @@ const Header = ({ children }) => {
   const { leftNavIsOpen, toggleNavState } = useContext(NavContext);
 
   return (
-    <>
-      <StyledShellHeader aria-label="Header">
-        <SkipToContent />
-        <HeaderMenuButton
-          className="bx--header__action--menu"
-          aria-label="Open menu"
-          onClick={() => {
-            toggleNavState('leftNavIsOpen');
-          }}
-          isActive={leftNavIsOpen}
-        />
-        {children}
-        <RightControls>
-          <Button
-            as="a"
-            href="https://usvna.ocius.com.au/usvna/oc_server"
-            color="white"
-            size="small"
-            border
-          >
-            Advanced View
-          </Button>
-        </RightControls>
-      </StyledShellHeader>
-    </>
+    <StyledShellHeader aria-label="Header">
+      <SkipToContent />
+      <HeaderMenuButton
+        className="bx--header__action--menu"
+        aria-label="Open menu"
+        onClick={() => {
+          toggleNavState('leftNavIsOpen');
+        }}
+        isActive={leftNavIsOpen}
+      />
+      {children}
+      <RightControls>
+        <Button
+          as="a"
+          href="https://usvna.ocius.com.au/usvna/oc_server"
+          color="white"
+          size="small"
+          border
+        >
+          Advanced View
+        </Button>
+      </RightControls>
+    </StyledShellHeader>
   );
 };
 

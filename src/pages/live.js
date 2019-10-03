@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useContext } from 'react';
 import EmptyLayout from '../layouts/EmptyLayout';
 import SEO from '../components/SEO';
 import TextSkeleton from '../components/carbon/TextSkeleton';
@@ -10,14 +10,21 @@ import GMap from '../components/Map/GMap';
 import { VesselStatus } from '../components/InfoPanel';
 import configuration from '../common/api/configuration';
 import useHttp from '../common/api/useHttp';
+import NavContext from '../common/context/NavContext';
+import { useWindowSize } from '../common/hooks';
+import useOnClickOutside from '../common/hooks/useOnClickOutside';
 import { FormWrapper, FormItem } from '../components/carbon/shared';
 
 // Google Maps key
 const apiKey = `AIzaSyC18SYECJZXKTOG6Ljm8W68mENW1uEmTAg`;
 
 const LivePage = () => {
+  // Save ref of navbar + leftnav for future reference
+  const node = useRef();
   // Add state handlers
   const [currentVessel, setCurrentVessel] = useState(0);
+  const { leftNavIsOpen, toggleNavState } = useContext(NavContext);
+  const windowSize = useWindowSize();
 
   /*
     Attach an event handler to vessel dropdown
@@ -54,36 +61,46 @@ const LivePage = () => {
   const [isLoading, fetchedData] = useHttp(configuration.DRONE_COLLECTION_URL, 2000);
   const droneNames = extractDroneNames(fetchedData);
 
+  // Hide left nav when user clicks outside of container
+  useOnClickOutside(node, () => {
+    // Only if left nav is open
+    if (windowSize.innerWidth <= 1056 && leftNavIsOpen) {
+      toggleNavState('leftNavIsOpen', 'close');
+    }
+  });
+
   return (
     <EmptyLayout>
       <SEO title="Live" description="See where Bluebottles are at any time – LIVE." />
-      <Header />
-      <LeftNav>
-        <FormWrapper>
-          <FormItem>
+      <main ref={node}>
+        <Header />
+        <LeftNav>
+          <FormWrapper>
+            <FormItem>
+              {isLoading ? (
+                <DropdownSkeleton label="Vessel:" />
+              ) : (
+                <Dropdown
+                  id="vessel"
+                  type="default"
+                  label="Choose vessel"
+                  ariaLabel="Dropdown"
+                  titleText="Vessel:"
+                  onChange={handleVesselChange}
+                  items={droneNames}
+                  itemToString={droneName}
+                  selectedItem={droneNames[currentVessel]}
+                />
+              )}
+            </FormItem>
             {isLoading ? (
-              <DropdownSkeleton label="Vessel:" />
+              <TextSkeleton count={8} />
             ) : (
-              <Dropdown
-                id="vessel"
-                type="default"
-                label="Choose vessel"
-                ariaLabel="Dropdown"
-                titleText="Vessel:"
-                onChange={handleVesselChange}
-                items={droneNames}
-                itemToString={droneName}
-                selectedItem={droneNames[currentVessel]}
-              />
+              <VesselStatus data={fetchedData[currentVessel]} />
             )}
-          </FormItem>
-          {isLoading ? (
-            <TextSkeleton count={8} />
-          ) : (
-            <VesselStatus data={fetchedData[currentVessel]} />
-          )}
-        </FormWrapper>
-      </LeftNav>
+          </FormWrapper>
+        </LeftNav>
+      </main>
       <GMap apiKey={apiKey} currentVessel={currentVessel} droneData={fetchedData} />
     </EmptyLayout>
   );
