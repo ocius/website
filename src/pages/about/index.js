@@ -473,8 +473,8 @@ export default ({ data }) => (
 
             <p>
               In 1997, Solar Sailor won the Advanced Technology Boat Race in Canberra, beating the
-              next solar boat by 5 laps of 6km (30km) using a new patented &apos;solar sail&apos;
-              simple device which harnessed both solar and wind energy in a seaworthy manner.
+              next solar boat by 5 laps of 6km (30km) using a new patented &apos;solar sail&apos; -
+              a simple device which harnessed both solar and wind energy in a seaworthy manner.
             </p>
 
             <p>
