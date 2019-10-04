@@ -472,24 +472,23 @@ export default ({ data }) => (
             </p>
 
             <p>
-              In 1997 Solar Sailor won the Advanced Technology Boat Race in Canberra, beating the
-              next solar boat by 5 laps of 6km (30km) using a new patented &apos;solar sail&apos; a
-              simple device which harnessed both solar and wind energy in a seaworthy way.
+              In 1997, Solar Sailor won the Advanced Technology Boat Race in Canberra, beating the
+              next solar boat by 5 laps of 6km (30km) using a new patented &apos;solar sail&apos;
+              simple device which harnessed both solar and wind energy in a seaworthy manner.
             </p>
 
             <p>
-              Since then Solar Sailor / Ocius have proven a solid track record of conceiving,
-              funding and delivering difficult innovative high-tech award-winning projects on time
-              and on budget.
+              Since then, the company has proven a solid track record of conceiving, difficult,
+              innovative, high-tech award-winning projects on time and on and on budget.
             </p>
 
             <p>
-              Solar Sailor / Ocius has built multiple &apos;solarsailor&apos; prototypes and six
-              high - tech award winning hybrid electric commercial passenger ferries to
-              international classification requirements, which together have carried tens of
-              thousands of passengers. Today four solarsailor hybrid electric ferries operated by
-              the HK Jockey Club operate 364 days of the year, 14 hours a day, from Sai Kung to Kau
-              Sai Chau saving half the fuel of conventional ferries.
+              The company has built multiple &apos;solarsailor&apos; prototypes and six high-tech,
+              award winning, hybrid electric, commercial passenger ferries to classification
+              requirements, which together have carried tens of thousands of passengers. Today, four
+              solarsailor hybrid electric ferries operated by the HK Jockey Club operate 364 days of
+              the year, 14 hours a day, from Sai Kung to Kau Sai Chau half the fuel of conventional
+              ferries.
             </p>
 
             <p>
@@ -504,7 +503,7 @@ export default ({ data }) => (
             <p>
               In 2014, Solar Sailor changed its name to OCIUS (Latin for &apos;fleet&apos;) to
               reflect an expansion of its patented technologies and a pivot in direction for the
-              Company.
+              company.
             </p>
 
             <p>
@@ -515,11 +514,11 @@ export default ({ data }) => (
             </p>
 
             <p>
-              Based on Nemo&apos;s development, in 2015 OCIUS was awarded a Capability Technology
+              Based on Nemo&apos;s development, in 2015, OCIUS was awarded a Capability Technology
               Demonstrator (CTD) from Defence Science and Technology Group. This proved a
               significant contract and OCIUS with our partner Thales developed an 18&apos; prototype
-              &apos;Bruce&apos; for Antisubmarine Warfare (ASW), which demonstrated to NAVY in
-              August 2017.
+              &apos;Bruce&apos; for Antisubmarine Warfare (ASW), which was demonstrated to the NAVY 
+              in August 2017.
             </p>
 
             <p>
@@ -530,7 +529,7 @@ export default ({ data }) => (
 
             <p>
               In November 2019 &apos;Bruce&apos; participated Autonomous Warrior War games in Jervis
-              Bay. Due to extreme weather &apos;Bruce&apos; was often the only USV operating.
+              Bay. Due to extreme weather, &apos;Bruce&apos; was often the only USV operating.
               Ocius&apos; intelligent C2 system was used to control another Navy WAMV catamaran and
               2 DSTG UUVs.
             </p>
