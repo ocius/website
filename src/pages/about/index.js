@@ -474,30 +474,31 @@ export default ({ data }) => (
             <p>
               In 1997, Solar Sailor won the Advanced Technology Boat Race in Canberra, beating the
               next solar boat by 5 laps of 6km (30km) using a new patented &apos;solar sail&apos; -
-              a simple device which harnessed both solar and wind energy in a seaworthy manner.
+              a simple device which harnesses both solar and wind energy in a seaworthy manner.
             </p>
 
             <p>
-              Since then, the company has proven a solid track record of conceiving, difficult,
-              innovative, high-tech award-winning projects on time and on and on budget.
+              Since then, the company has proven a solid track record of conceiving, funding, and
+              delivering difficult, innovative, high-tech award-winning projects on time and on and
+              on budget.
             </p>
 
             <p>
               The company has built multiple &apos;solarsailor&apos; prototypes and six high-tech,
               award winning, hybrid electric, commercial passenger ferries to classification
               requirements, which together have carried tens of thousands of passengers. Today, four
-              solarsailor hybrid electric ferries operated by the HK Jockey Club operate 364 days of
-              the year, 14 hours a day, from Sai Kung to Kau Sai Chau half the fuel of conventional
+              solarsailor hybrid electric ferries operated by the Hong Kong Jockey Club operate 364
+              days of days of the year, 14 hours a day, from Sai Kung to Kau Sai Chau half the fuel
               ferries.
             </p>
 
             <p>
               Following an enquiry from the USA in 2007 for a &apos;platform that could go to sea
-              forever&apos;, OCIUS began research into the development of unmanned solar/wind/wave
-              powered ocean vessels or autonomous unmanned surface vessels. Initially, a 20-foot
-              manned engineering development model (EDM) proved the &apos;speed of advance&apos; in
-              all conditions, adequate power, payload and persistence for a sustainable platform go
-              to sea for months.
+              forever&apos;, the company began research into the development of unmanned
+              solar/wind/wave powered ocean vessels or autonomous unmanned surface vessels.
+              Initially, a 20-foot manned engineering development model (EDM) proved the &apos;speed
+              of advance&apos; in all conditions, adequate power, payload and persistence for a
+              sustainable platform go to sea for months.
             </p>
 
             <p>
