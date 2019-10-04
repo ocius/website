@@ -517,7 +517,7 @@ export default ({ data }) => (
               Based on Nemo&apos;s development, in 2015, OCIUS was awarded a Capability Technology
               Demonstrator (CTD) from Defence Science and Technology Group. This proved a
               significant contract and OCIUS with our partner Thales developed an 18&apos; prototype
-              &apos;Bruce&apos; for Antisubmarine Warfare (ASW), which was demonstrated to the NAVY 
+              &apos;Bruce&apos; for Antisubmarine Warfare (ASW), which was demonstrated to the NAVY
               in August 2017.
             </p>
 
