@@ -18,6 +18,8 @@ import { FormWrapper, FormItem } from '../components/carbon/shared';
 // Google Maps key
 const apiKey = process.env.GOOGLE_MAPS_API_KEY;
 
+console.log("API KEY: " + apiKey.substring(0,10));
+
 const LivePage = () => {
   // Save ref of navbar + leftnav for future reference
   const node = useRef();
