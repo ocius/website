@@ -485,8 +485,8 @@ export default ({ data }) => (
 
             <p>
               The company has built multiple &apos;solarsailor&apos; prototypes and six high-tech,
-              award winning, hybrid electric, commercial passenger ferries to international 
-              classification requirements, which together have carried tens of thousands of 
+              award winning, hybrid electric, commercial passenger ferries to international
+              classification requirements, which together have carried tens of thousands of
               passengers. Today, four solarsailor hybrid electric ferries operated by the Hong Kong
               Jockey Club operate 364 days of days of the year, 14 hours a day, from Sai Kung to Kau
               Sai Chau half the fuel ferries.
@@ -498,7 +498,7 @@ export default ({ data }) => (
               solar/wind/wave powered ocean vessels or autonomous unmanned surface vessels.
               Initially, a 20-foot manned engineering development model (EDM) proved the &apos;speed
               of advance&apos; in all conditions, adequate power, payload and persistence for a
-              sustainable platform at sea for months at a tome.
+              sustainable platform go to sea for months.
             </p>
 
             <p>
