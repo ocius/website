@@ -18,9 +18,13 @@ import { FormWrapper, FormItem } from '../components/carbon/shared';
 // Google Maps key
 const apiKey = process.env.GOOGLE_MAPS_API_KEY;
 const apiKeyOld = process.env.GOOGLE_MAPS_API_KEY_OLD;
+const branch = process.env.AWS_BRANCH; //default amplify var which should be present
+const gastbyTest = process.env.GATSBY_TEST; //attempt to use prefix based off https://stackoverflow.com/questions/56677811/how-to-use-aws-amplify-env-vars-in-gatsby-config-js
 
 console.log("API KEY: " + apiKey.substring(0,10));
 console.log("API KEY OLD: " + apiKeyOld.substring(0,10));
+console.log("BRANCH: " + branch);
+console.log("GATSBY TEST: " + gastbyTest);
 
 const LivePage = () => {
   // Save ref of navbar + leftnav for future reference
