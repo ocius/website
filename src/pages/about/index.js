@@ -488,7 +488,7 @@ export default ({ data }) => (
               award winning, hybrid electric, commercial passenger ferries to international
               classification requirements, which together have carried tens of thousands of
               passengers. Today, four solarsailor hybrid electric ferries operated by the Hong Kong
-              Jockey Club operate 364 days of days of the year, 14 hours a day, from Sai Kung to Kau
+              Jockey Club operate 364 days of year, 14 hours a day, from Sai Kung to Kau
               Sai Chau half the fuel ferries.
             </p>
 
