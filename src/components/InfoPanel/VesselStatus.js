@@ -23,6 +23,10 @@ const StatusList = styled.dl`
     padding: 0;
     margin: 0;
   }
+
+  dt {
+    clear: both;
+  }
 `;
 
 const StatusTag = styled.span`
