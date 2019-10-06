@@ -1,6 +1,5 @@
 /* eslint-disable react/no-array-index-key */
 import React, { useState, useEffect } from 'react';
-import ImageZoom from 'react-medium-image-zoom';
 import PropTypes from 'prop-types';
 import {
   GoogleMap,
@@ -12,8 +11,8 @@ import {
 } from '@react-google-maps/api';
 import useHttp from '../../common/api/useHttp';
 import { inlineSvgBoatIcon, getColorVariation } from './BoatIcon';
+import CameraSlider from '../CameraImageSlider';
 import configuration from '../../common/api/configuration';
-import useInterval from '../../common/hooks/useInterval';
 
 // Reference for options:
 // https://developers.google.com/maps/documentation/javascript/reference/map#MapOptions
@@ -41,9 +40,6 @@ const GMap = ({ apiKey, currentVessel, droneData }) => {
   const [zoom, setZoom] = useState(12);
   const [areBoundsSet, setBounds] = useState(false);
   const [infoOpen, setInfoOpen] = useState(false);
-  const [timestamp, setTimestamp] = useState(Date.now());
-  const [cameraUpdateRate] = useState(10000);
-  const [cameraQuality] = useState(100);
 
   // Fetch data periodically
   const [, trailData] = useHttp(
@@ -51,15 +47,6 @@ const GMap = ({ apiKey, currentVessel, droneData }) => {
     null,
     []
   );
-
-  /*
-    Update timestamp periodically, so that webcam img will be updated as well
-   */
-  const updateTimestamp = () => {
-    const currentTime = Date.now();
-    setTimestamp(currentTime);
-  };
-  useInterval(updateTimestamp, cameraUpdateRate);
 
   // Iterate through the JSON data and extract distinct coordinates for each drone
   const makeTrailCoordinates = data => {
@@ -209,17 +196,10 @@ const GMap = ({ apiKey, currentVessel, droneData }) => {
                         setInfoOpen(false);
                       }}
                     >
-                      <>
-                        <h3>Live View from {boat.Name}</h3>
-                        <ImageZoom
-                          image={{
-                            src: `https://usvna.ocius.com.au/usvna/oc_server?getliveimage&camera=${boat.Name}%20Mast&time=${timestamp}&quality=${cameraQuality}`,
-                            alt: 'Live camera view',
-                            className: 'webcam-img',
-                            style: { width: '320px', height: 'auto', maxWidth: '100%' }
-                          }}
-                        />
-                      </>
+                      <CameraSlider
+                        images={boat.Props.Cameras}
+                        title={`Live View from ${boat.Name}`}
+                      />
                     </InfoWindow>
                   )}
                 </Marker>
