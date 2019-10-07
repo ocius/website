@@ -238,6 +238,31 @@ export default ({ data }) => (
       </header>
       <Segmented borderBottom="">
         <Row className="primary-content">
+          <Col xs={6} md={6} lg={6} lgOffset={3}>
+            {data.DefenceInnovationHub && (
+              <div className="centered">
+                <Img
+                  style={{ maxWidth: '100%' }}
+                  imgStyle={{ objectFit: 'contain' }}
+                  fixed={data.DefenceInnovationHub.childImageSharp.fixed}
+                  alt="Defence Innovation Hub"
+                />
+              </div>
+            )}
+            <p>
+              The Defence Innovation Hub is an initiative of the 2016 Defence Industry Policy
+              Statement and will invest around $640 million over the decade to 2025-26 in maturing
+              and further developing technologies that have moved from the early science stages into
+              the engineering and development stages of the innovation process. It is an exciting
+              initiative that will pull together research institutions, academia, industry and
+              innovative technologies. The Defence Innovation Hub facilitates innovation activities
+              from initial concept, through prototyping and integrated testing.
+            </p>
+          </Col>
+        </Row>
+      </Segmented>
+      <Segmented borderBottom="">
+        <Row className="primary-content">
           <Col xs={12} md={6} lg={6}>
             {data.AustralianGovernment && (
               <div className="centered">
@@ -304,14 +329,12 @@ export default ({ data }) => (
               </div>
             )}
             <p>
-              Thales is part of a leading international electronics and systems group serving the
-              defence, aerospace and space, security, and transport markets in Australia and
-              throughout the world.Thales’ expertise ranges across protected mobility vehicles,
-              naval support services and integrated communications solutions for defence through to
-              air traffic management systems, cybersecurity solutions and transport systems for the
-              commercial sector. OCIUS and Thales have paired to demonstrate a low-cost, long-range,
-              persistent detection capability that enhances the ability of Navy surface forces to
-              detect and track modern submarines and torpedoes at realistic standoff distances.
+              Thales develops, manufactures and exports world leading underwater sonar sensors and
+              towed arrays in Australia. Since 2013 Thales has had an ongoing contribution to the
+              OCIUS project combining its advanced underwater sensors with OCIUS autonomous
+              Bluebottle USV to demonstrate the capability of autonomous maritime surveillance.
+              Thales is the maritime lead for the Trusted Autonomous Systems Defence Co-operative
+              Research Centre.
             </p>
           </Col>
           <Col xs={12} md={6} lg={6}>
@@ -351,11 +374,11 @@ export default ({ data }) => (
             )}
             <p>
               UNSW Australia (The University of New South Wales) is one of Australia’s leading
-              research and teaching universities. OCIUS have a contract for research into autonomous
-              sailing and collision avoidance with the University of New South Wales. UNSW provide
-              OCIUS with a design facility in UNSW’s Mechanical Engineering and Robotics Buildings.
-              Additionally, OCIUS has hired a software engineer from UNSW, and four students from
-              UNSW’s Sunswift solar car team under a scholarship program.
+              research and teaching universities. OCIUS have a contract for research into
+              intelligent networks and machine learning with the University of New South Wales. UNSW
+              provide OCIUS with a Research & Development facility in UNSW’s Randwick Campus.
+              Additionally, OCIUS hires multiple computer science and mechatronics engineers from
+              UNSW, and students from UNSW under intern programs.
             </p>
           </Col>
           <Col xs={12} md={6} lg={6}>
@@ -445,61 +468,85 @@ export default ({ data }) => (
           <Col xs={12} md={12} lg={12}>
             <p>
               Ocius Technology Ltd (formerly Solar Sailor Holdings Ltd) is an Australian public
-              unlisted company. In 1997 Solar Sailor won the Advanced Technology Boat Race in
-              Canberra, beating the next solar boat by 5 laps of 6km (30km) using a new patented
-              ‘solar sail’ a simple device which harnessed both solar and wind energy in a seaworthy
-              way.
+              unlisted company with Research and Development facilities at the University of NSW.
             </p>
+
             <p>
-              Since then Solar Sailor / Ocius have developed a solid track record of conceiving,
-              funding and delivering difficult innovative high-tech award-winning projects on time
-              and on budget.
+              In 1997, Solar Sailor won the Advanced Technology Boat Race in Canberra, beating the
+              next solar boat by 5 laps of 6km (30km) using a new patented &apos;solar sail&apos; -
+              a simple device which harnesses both solar and wind energy in a seaworthy manner.
             </p>
+
             <p>
-              Solar Sailor / Ocius has built multiple ‘solarsailor’ prototypes and six (6) high -
-              tech award winning hybrid electric commercial passenger ferries to international
+              Since then, the company has proven a solid track record of conceiving, funding, and
+              delivering difficult, innovative, high-tech, award-winning projects on time and on
+              budget.
+            </p>
+
+            <p>
+              The company has built multiple &apos;solarsailor&apos; prototypes and six high-tech,
+              award winning, hybrid electric, commercial passenger ferries to international
               classification requirements, which together have carried tens of thousands of
-              passengers. Today four solarsailor hybrid electric ferries operated by the HK Jockey
-              Club run 364 days of the year 14 hours a day from Sai Kung to Kau Sai Chau saving half
-              the fuel of conventional ferries. Dozens of subcontractors have built and tested our
-              commercial ferries and tens of thousands of passengers have travelled on our ferries
-              without incident.
+              passengers. Today, four solarsailor hybrid electric ferries operated by the Hong Kong
+              Jockey Club operate 364 days of year, 14 hours a day, from Sai Kung to Kau Sai Chau
+              half the fuel ferries.
             </p>
+
             <p>
-              Following an enquiry from the USA in 2007 for a ‘self-sustaining platform at sea’,
-              OCIUS began research into the development of unmanned solar/wind/wave and ballasted
-              powered ocean vessels or autonomous unmanned surface vessels. Initially, a 20-foot
-              manned engineering development model (EDM) proved the &apos;speed of advance&apos; in
-              all conditions, adequate power, payload and persistence for a sustainable platform
-              able to go to sea for months.
+              Following an enquiry from the USA in 2007 for a &apos;platform that could go to sea
+              forever&apos;, the company began research into the development of unmanned
+              solar/wind/wave powered ocean vessels or autonomous unmanned surface vessels.
+              Initially, a 20-foot manned engineering development model (EDM) proved the &apos;speed
+              of advance&apos; in all conditions, adequate power, payload and persistence for a
+              sustainable platform go to sea for months.
             </p>
+
             <p>
               In 2014, Solar Sailor changed its name to OCIUS (Latin for &apos;fleet&apos;) to
-              reflect an expansion of its patented technologies including the solar sail.
+              reflect an expansion of its patented technologies and a pivot in direction for the
+              company.
             </p>
+
             <p>
               OCIUS built multiple scale models for tank and lake testing, culminating in the
               building of the first 10&apos; prototype called &apos;Nemo&apos; (Latin for &apos;no
               one&apos; ie unmanned) which provided significant proof of concept of a solar, wind
               and wave powered USV carrying a significant payload.
             </p>
+
             <p>
-              Based on Nemo&apos;s development, in 2015 OCIUS was awarded a Capability Technology
+              Based on Nemo&apos;s development, in 2015, OCIUS was awarded a Capability Technology
               Demonstrator (CTD) from Defence Science and Technology Group. This proved a
-              significant contract and OCIUS with our partners developed an 18&apos; prototype
-              &apos;Bruce&apos; for Antisubmarine Warfare (ASW), which demonstrated to NAVY in
-              August 2017.
+              significant contract and OCIUS with our partner Thales developed an 18&apos; prototype
+              &apos;Bruce&apos; for Antisubmarine Warfare (ASW), which was demonstrated to the NAVY
+              in August 2017.
             </p>
+
             <p>
-              In November 2019 Bruce participated Autonomous Warrior War games in Jervis Bay. Due to
-              extreme weather “Bruce” was often the only USV operating and our C2 system was used to
-              control another Navy WAMV catamaran and 2 DSTG UUVs.
+              In Sept 2018, Ocius was awarded its second defence contract under the Defence
+              Innovation Hub to build an intelligent “Command and Control (C2) network” of
+              intelligent persistent unmanned surface vessels.
             </p>
+
             <p>
-              Ocius is now under its second DST Group Defence Innovation Hub contract to build an
-              intelligent “C2 network” of persistent unmanned surface vessels and is testing these
-              in a designated AMSA approved ‘box’ off the NSW Coast.
+              In November 2019 &apos;Bruce&apos; participated Autonomous Warrior War games in Jervis
+              Bay. Due to extreme weather, &apos;Bruce&apos; was often the only USV operating.
+              Ocius&apos; intelligent C2 system was used to control another Navy WAMV catamaran and
+              2 DSTG UUVs.
             </p>
+
+            <p>
+              From May - June 2019, Ocius completed 6 week endurance and intelligent networking
+              trials in a designated AMSA approved &apos;box&apos; off the NSW Coast, successfully
+              completing the DIH contract 3 months ahead of schedule.
+            </p>
+
+            <p>
+              Ocius is continuing its work with Thales, testing a new Thales thin line array
+              deployed from the Bluebottle keel winch to significant and varying depths, which is
+              being demonstrated at Pacific 2019 Expo at Darling Harbour 8-10 October.
+            </p>
+
             <strong>Commercial Ferries</strong>
             <p>
               Solar Sailor built 6 commercial solar sailor vessels providing valuable experience to
@@ -800,6 +847,9 @@ export const query = graphql`
       ...imageSharpLogotype
     }
 
+    DefenceInnovationHub: file(relativePath: { eq: "pages/about/Defence-Innovation-Hub.png" }) {
+      ...imageSharpLogotype
+    }
     Thales: file(relativePath: { eq: "pages/about/thales-logo.png" }) {
       ...imageSharpLogotype
     }
