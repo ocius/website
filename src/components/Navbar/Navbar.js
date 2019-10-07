@@ -19,13 +19,11 @@ const FlexContainer = styled(Container)`
   min-height: 60px;
 `;
 
-const Navbar = ({ children }) => {
-  return (
-    <StyledNavbar className="primary">
-      <FlexContainer>{children}</FlexContainer>
-    </StyledNavbar>
-  );
-};
+const Navbar = ({ children }) => (
+  <StyledNavbar className="primary">
+    <FlexContainer>{children}</FlexContainer>
+  </StyledNavbar>
+);
 
 Navbar.propTypes = {
   children: PropTypes.node.isRequired

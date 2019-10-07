@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { prop } from 'styled-tools';
@@ -38,24 +38,17 @@ const Link = styled(GatsbyLink)`
   }
 `;
 
-class DropdownMenu extends Component {
-  render() {
-    const { open, menuItems, setRef } = this.props;
-    return (
-      <Menu ref={setRef} display={open ? 'block' : 'none'}>
-        {menuItems.map(item => {
-          return (
-            <li key={menuItems.indexOf(item)}>
-              <Link key={item.name} to={item.href}>
-                {item.name}
-              </Link>
-            </li>
-          );
-        })}
-      </Menu>
-    );
-  }
-}
+const DropdownMenu = ({ open, menuItems, setRef }) => (
+  <Menu ref={setRef} display={open ? 'block' : 'none'}>
+    {menuItems.map(item => (
+      <li key={menuItems.indexOf(item)}>
+        <Link key={item.name} to={item.href}>
+          {item.name}
+        </Link>
+      </li>
+    ))}
+  </Menu>
+);
 
 DropdownMenu.propTypes = {
   menuItems: PropTypes.arrayOf(

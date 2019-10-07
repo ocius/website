@@ -34,7 +34,6 @@ const SideNav = styled(SideNavUnstyled)`
   &.bx--side-nav__navigation {
     display: flex;
     flex-direction: column;
-    height: 100%;
     padding-top: 1.6rem;
   }
 
