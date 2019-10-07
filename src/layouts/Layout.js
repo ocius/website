@@ -19,10 +19,6 @@ const FooterLink = styled(Link)`
   ${LinkStyles}
 `;
 
-const ExternalLink = styled.a`
-  ${LinkStyles}
-`;
-
 export default ({ children }) => (
   <Fragment>
     <Navbar />
@@ -79,13 +75,7 @@ export default ({ children }) => (
             </ul>
           </Col>
           <Col xs={12} md={2} lg={2}>
-            <ExternalLink
-              href="https://usvna.ocius.com.au/usvna/oc_server"
-              target="_blank"
-              rel="noreferrer noopener"
-            >
-              Live
-            </ExternalLink>
+            <FooterLink to="/live">Live</FooterLink>
             <FooterLink to="/news">News</FooterLink>
             <FooterLink to="/contact">Contact</FooterLink>
             <FooterLink to="/careers">Careers</FooterLink>

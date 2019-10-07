@@ -8,7 +8,7 @@ import DropdownMenu from './DropdownMenu';
 import MobileNavigation from './MobileNavigation';
 
 const navitems = [
-  { link: 'https://usvna.ocius.com.au/usvna/oc_server', title: 'LIVE', blank: true },
+  { link: '/live', title: 'LIVE' },
   { link: '/news', title: 'News' },
   { link: '/contact', title: 'Contact' },
   { link: '/careers', title: 'Careers' }

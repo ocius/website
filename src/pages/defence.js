@@ -190,7 +190,7 @@ export default ({ data }) => (
         </Row>
       </Segmented>
       <Segmented borderBottom="">
-        <Button color="white" size="medium" href="/contact" border>
+        <Button color="white" size="medium" to="/contact" border>
           Contact Us Now
         </Button>
       </Segmented>

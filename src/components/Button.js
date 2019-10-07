@@ -172,10 +172,10 @@ ButtonLink.defaultProps = {};
  * Button component
  *
  * @usage
- * <Button href="/foo">Bar</Button>
+ * <Button to="/foo">Bar</Button>
  */
 function Button({
-  href,
+  to,
   children,
   onClick,
   color,
@@ -191,7 +191,7 @@ function Button({
     <ButtonLink
       className={cn('Button', className)}
       style={customStyles}
-      to={href}
+      to={to}
       onClick={onClick}
       color={color}
       size={size}
@@ -207,9 +207,9 @@ function Button({
 
 Button.propTypes = {
   /**
-   * Pass an href prop to make the button an `a` element instead of a `button`
+   * Pass an to prop to make the button an `a` element instead of a `button`
    */
-  href: PropTypes.string,
+  to: PropTypes.string,
 
   /**
    * Content for the button
@@ -263,7 +263,7 @@ Button.propTypes = {
 };
 
 Button.defaultProps = {
-  href: null,
+  to: null,
   onClick: null,
   color: 'transparent',
   size: 'medium',

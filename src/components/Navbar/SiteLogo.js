@@ -29,13 +29,17 @@ const LogoImage = styled.img`
   align-self: center;
 `;
 
-const SiteLogo = ({ href }) => {
+const SiteLogo = ({ className, href, maxHeight }) => {
   return (
     <StaticQuery
       query={logoQuery}
       render={data => (
-        <LogoLink key="brand" to={href}>
-          <LogoImage src={data.file.childImageSharp.fluid.src} alt="Website logo" />
+        <LogoLink className={className} key="brand" to={href}>
+          <LogoImage
+            style={{ maxHeight }}
+            src={data.file.childImageSharp.fluid.src}
+            alt="Website logo"
+          />
         </LogoLink>
       )}
     />
@@ -43,11 +47,15 @@ const SiteLogo = ({ href }) => {
 };
 
 SiteLogo.propTypes = {
-  href: PropTypes.string
+  className: PropTypes.string,
+  href: PropTypes.string,
+  maxHeight: PropTypes.string
 };
 
 SiteLogo.defaultProps = {
-  href: '/'
+  className: '',
+  href: '/',
+  maxHeight: 'auto'
 };
 
 export default SiteLogo;
