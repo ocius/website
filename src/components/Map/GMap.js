@@ -13,6 +13,7 @@ import useHttp from '../../common/api/useHttp';
 import { inlineSvgBoatIcon, getColorVariation } from './BoatIcon';
 import CameraSlider from '../CameraImageSlider';
 import configuration from '../../common/api/configuration';
+import { useWindowSize } from '../../common/hooks';
 
 // Reference for options:
 // https://developers.google.com/maps/documentation/javascript/reference/map#MapOptions
@@ -40,6 +41,9 @@ const GMap = ({ apiKey, currentVessel, droneData }) => {
   const [zoom, setZoom] = useState(12);
   const [areBoundsSet, setBounds] = useState(false);
   const [infoOpen, setInfoOpen] = useState(false);
+
+  // Get window size
+  const windowSize = useWindowSize();
 
   // Fetch data periodically
   const [, trailData] = useHttp(
@@ -127,12 +131,15 @@ const GMap = ({ apiKey, currentVessel, droneData }) => {
 
     // Only if map is loaded
     if (isLoaded) {
-      // Required so clicking a 2nd marker works as expected
-      if (infoOpen) {
-        setInfoOpen(false);
-      }
+      // Don't open the info window on mobile if vessel was chosen in dropdown
+      if (!(!event && windowSize.innerWidth <= 1056)) {
+        // Required so clicking a 2nd marker works as expected
+        if (infoOpen) {
+          setInfoOpen(false);
+        }
 
-      setInfoOpen(true);
+        setInfoOpen(true);
+      }
 
       // Zoom in a little on marker click
       if (zoom < 15) {
