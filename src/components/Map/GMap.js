@@ -176,69 +176,71 @@ const GMap = ({ apiKey, currentVessel, droneData }) => {
         onLoad={loadHandler}
       >
         {droneData.length > 0 && (
-          <MarkerClusterer averageCenter enableRetinaIcons gridSize={5}>
-            {clusterer =>
-              droneData.map((boat, index) => (
-                <Marker
-                  key={index}
-                  position={{
-                    lat: parseFloat(boat.Props.Location.Coordinates.Lat),
-                    lng: parseFloat(boat.Props.Location.Coordinates.Lon)
-                  }}
-                  icon={inlineSvgBoatIcon(index, boat.Props.Heading)}
-                  label={{
-                    text: boat.Name,
-                    color: '#ffff00',
-                    fontSize: '16px',
-                    fontWeight: 'bold'
-                  }}
-                  onLoad={marker => markerLoadHandler(marker, index)}
-                  onClick={event => markerClickHandler(event, boat, index)}
-                  clusterer={clusterer}
-                >
-                  {infoOpen && index === selectedBoat && (
-                    <InfoWindow
-                      anchor={markerMap[selectedBoat]}
-                      onCloseClick={() => {
-                        setInfoOpen(false);
-                      }}
-                    >
-                      <CameraSlider
-                        images={boat.Props.Cameras}
-                        title={`Live View from ${boat.Name}`}
-                      />
-                    </InfoWindow>
-                  )}
-                </Marker>
-              ))
-            }
-          </MarkerClusterer>
-        )}
-        {Object.keys(trailCoordinates).map((key, index) => {
-          // Generate unique color for this vessel
-          const lineColor = getColorVariation(index)[0];
+          <>
+            <MarkerClusterer averageCenter enableRetinaIcons gridSize={5}>
+              {clusterer =>
+                droneData.map((boat, index) => (
+                  <Marker
+                    key={index}
+                    position={{
+                      lat: parseFloat(boat.Props.Location.Coordinates.Lat),
+                      lng: parseFloat(boat.Props.Location.Coordinates.Lon)
+                    }}
+                    icon={inlineSvgBoatIcon(index, boat.Props.Heading)}
+                    label={{
+                      text: boat.Name,
+                      color: '#ffff00',
+                      fontSize: '16px',
+                      fontWeight: 'bold'
+                    }}
+                    onLoad={marker => markerLoadHandler(marker, index)}
+                    onClick={event => markerClickHandler(event, boat, index)}
+                    clusterer={clusterer}
+                  >
+                    {infoOpen && index === selectedBoat && (
+                      <InfoWindow
+                        anchor={markerMap[selectedBoat]}
+                        onCloseClick={() => {
+                          setInfoOpen(false);
+                        }}
+                      >
+                        <CameraSlider
+                          images={boat.Props.Cameras}
+                          title={`Live View from ${boat.Name}`}
+                        />
+                      </InfoWindow>
+                    )}
+                  </Marker>
+                ))
+              }
+            </MarkerClusterer>
+            {droneData.map((boat, index) => {
+              // Generate unique color for this vessel
+              const lineColor = getColorVariation(index)[0];
 
-          return (
-            <Polyline
-              key={index}
-              path={trailCoordinates[key]}
-              options={{
-                strokeColor: lineColor,
-                strokeOpacity: 0.8,
-                strokeWeight: 3,
-                fillColor: lineColor,
-                fillOpacity: 0.5,
-                clickable: false,
-                draggable: false,
-                editable: false,
-                visible: true,
-                radius: 30000,
-                paths: trailCoordinates[key],
-                zIndex: 1
-              }}
-            />
-          );
-        })}
+              return (
+                <Polyline
+                  key={index}
+                  path={trailCoordinates[boat.Name]}
+                  options={{
+                    strokeColor: lineColor,
+                    strokeOpacity: 0.8,
+                    strokeWeight: 3,
+                    fillColor: lineColor,
+                    fillOpacity: 0.5,
+                    clickable: false,
+                    draggable: false,
+                    editable: false,
+                    visible: true,
+                    radius: 30000,
+                    paths: trailCoordinates[boat.Name],
+                    zIndex: 1
+                  }}
+                />
+              );
+            })}
+          </>
+        )}
       </GoogleMap>
     );
   };
