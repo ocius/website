@@ -33,23 +33,46 @@ const LivePage = () => {
     setCurrentVessel(e.selectedItem.id);
   };
 
-  // Make an array of names out of fetched data
-  const extractDroneNames = data => {
-    let names = [];
-    // Extract drone names from data
-    if (typeof data === 'object') {
-      names = Object.keys(data).map(index => {
-        // Get drone object for this particular index
-        const drone = data[index];
-        // Check if name property exists
-        if (drone && drone.Name) {
-          return { name: drone.Name, id: Number(index) };
-        }
-        return false;
+  /*
+    Custom walker for drone data, to retrieve properties from nested objects.
+   */
+  const objectWalker = (propertyRetriever, obj) => {
+    let result = [];
+    // Extract values from data
+    if (typeof obj === 'object') {
+      result = Object.keys(obj).map(index => {
+        // Get property for this particular index
+        return propertyRetriever(obj[index]);
       });
     }
 
-    return names;
+    return result;
+  };
+
+  // Retrieve a name and id
+  const droneNamesAndIdsRetriever = obj => {
+    return { name: obj.Name, id: obj.Id };
+  };
+
+  // Retrieve drone name
+  const droneNamesRetriever = obj => {
+    return obj.Name;
+  };
+
+  /*
+    Function to add custom unique Ids to fetched data.
+    So that we can use them later.
+   */
+  const addIdsToFetchedData = data => {
+    // Extract drone names from data
+    const names = objectWalker(droneNamesRetriever, data);
+
+    return names.sort().map((name, index) => {
+      const filtered = data.filter(drone => drone.Name === name)[0];
+      filtered.Id = index;
+
+      return filtered;
+    });
   };
 
   // Check if name property exists
@@ -59,7 +82,8 @@ const LivePage = () => {
 
   // Fetch data periodically
   const [isLoading, fetchedData] = useHttp(configuration.DRONE_COLLECTION_URL, 2000);
-  const droneNames = extractDroneNames(fetchedData);
+  const orderedDrones = addIdsToFetchedData(fetchedData);
+  const droneNames = objectWalker(droneNamesAndIdsRetriever, orderedDrones);
 
   // Hide left nav when user clicks outside of container
   useOnClickOutside(node, () => {
@@ -96,12 +120,12 @@ const LivePage = () => {
             {isLoading ? (
               <TextSkeleton count={8} />
             ) : (
-              <VesselStatus data={fetchedData[currentVessel]} />
+              <VesselStatus data={orderedDrones[currentVessel]} />
             )}
           </FormWrapper>
         </LeftNav>
       </main>
-      <GMap apiKey={apiKey} currentVessel={currentVessel} droneData={fetchedData} />
+      <GMap apiKey={apiKey} currentVessel={currentVessel} droneData={orderedDrones} />
     </EmptyLayout>
   );
 };

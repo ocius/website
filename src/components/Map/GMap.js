@@ -1,4 +1,3 @@
-/* eslint-disable react/no-array-index-key */
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import {
@@ -125,12 +124,12 @@ const GMap = ({ apiKey, currentVessel, droneData }) => {
     });
   };
 
-  const markerClickHandler = (event, boat, index) => {
-    // Remember which boat was clicked
-    setSelectedBoat(index);
-
+  const markerClickHandler = (event, boat) => {
     // Only if map is loaded
     if (isLoaded) {
+      // Remember which boat was clicked
+      setSelectedBoat(boat.Id);
+
       // Don't open the info window on mobile if vessel was chosen in dropdown
       if (!(!event && windowSize.innerWidth <= 1056)) {
         // Required so clicking a 2nd marker works as expected
@@ -156,7 +155,7 @@ const GMap = ({ apiKey, currentVessel, droneData }) => {
 
   // When user selects vessel in dropdown, update selectedBoat state accordingly
   useEffect(() => {
-    markerClickHandler(null, droneData[currentVessel], currentVessel);
+    markerClickHandler(null, droneData[currentVessel]);
   }, [currentVessel]);
 
   const renderMap = () => {
@@ -179,25 +178,25 @@ const GMap = ({ apiKey, currentVessel, droneData }) => {
           <>
             <MarkerClusterer averageCenter enableRetinaIcons gridSize={5}>
               {clusterer =>
-                droneData.map((boat, index) => (
+                droneData.map(boat => (
                   <Marker
-                    key={index}
+                    key={boat.Id}
                     position={{
                       lat: parseFloat(boat.Props.Location.Coordinates.Lat),
                       lng: parseFloat(boat.Props.Location.Coordinates.Lon)
                     }}
-                    icon={inlineSvgBoatIcon(index, boat.Props.Heading)}
+                    icon={inlineSvgBoatIcon(boat.Id, boat.Props.Heading)}
                     label={{
                       text: boat.Name,
                       color: '#ffff00',
                       fontSize: '16px',
                       fontWeight: 'bold'
                     }}
-                    onLoad={marker => markerLoadHandler(marker, index)}
-                    onClick={event => markerClickHandler(event, boat, index)}
+                    onLoad={marker => markerLoadHandler(marker, boat.Id)}
+                    onClick={event => markerClickHandler(event, boat)}
                     clusterer={clusterer}
                   >
-                    {infoOpen && index === selectedBoat && (
+                    {infoOpen && boat.Id === selectedBoat && (
                       <InfoWindow
                         anchor={markerMap[selectedBoat]}
                         onCloseClick={() => {
@@ -214,13 +213,13 @@ const GMap = ({ apiKey, currentVessel, droneData }) => {
                 ))
               }
             </MarkerClusterer>
-            {droneData.map((boat, index) => {
+            {droneData.map(boat => {
               // Generate unique color for this vessel
-              const lineColor = getColorVariation(index)[0];
+              const lineColor = getColorVariation(boat.Id)[0];
 
               return (
                 <Polyline
-                  key={index}
+                  key={boat.Id}
                   path={trailCoordinates[boat.Name]}
                   options={{
                     strokeColor: lineColor,
