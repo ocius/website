@@ -61,8 +61,9 @@ const StyledDropdown = styled(Dropdown)`
       `}
 
     &:focus {
-      outline: 2px solid #0062ff;
-      outline-offset: -2px;
+      outline-color: rgba(14,190,255,.4);
+      outline-style: auto;
+      outline-width: 4px;
     }
   }
 
