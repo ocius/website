@@ -105,9 +105,9 @@ const StyledShellHeader = styled(ShellHeader)`
     }
 
     &--active {
-      border-left: 1px solid #4bb4e6;
-      border-right: 1px solid #4bb4e6;
-      border-bottom: 1px solid #4bb4e6;
+      border-left: 1px solid rgba(14, 190, 255, 0.4);
+      border-right: 1px solid rgba(14, 190, 255, 0.4);
+      border-bottom: 1px solid rgba(14, 190, 255, 0.4);
     }
 
     &--menu {
