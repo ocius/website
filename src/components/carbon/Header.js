@@ -1,12 +1,12 @@
 import React, { useContext } from 'react';
 import {
   Header as ShellHeader,
-  HeaderMenuButton,
   SkipToContent
 } from 'carbon-components-react/lib/components/UIShell';
 import styled from 'styled-components';
 
 import Button from '../Button';
+import HeaderMenuButton from './HeaderMenuButton';
 import NavContext from '../../common/context/NavContext';
 import SiteLogo from '../Navbar/SiteLogo';
 
@@ -65,69 +65,6 @@ const StyledShellHeader = styled(ShellHeader)`
     }
   }
 
-  .bx--header__action {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font-size: 100%;
-    font-family: inherit;
-    vertical-align: baseline;
-    display: inline-block;
-    background: none;
-    appearance: none;
-    border: 0;
-    padding: 0;
-    cursor: pointer;
-    width: 100%;
-    width: 5rem;
-    height: 5rem;
-    border: 0.2rem solid transparent;
-    transition: background-color 110ms, border-color 110ms;
-
-    &:focus {
-      border-color: #ffffff;
-      outline: none;
-    }
-
-    > *,
-    > ::before,
-    > ::after {
-      box-sizing: inherit;
-    }
-
-    &::-moz-focus-inner {
-      border: 0;
-    }
-
-    > svg {
-      fill: #171717;
-    }
-
-    &--active {
-      border-left: 1px solid rgba(14, 190, 255, 0.4);
-      border-right: 1px solid rgba(14, 190, 255, 0.4);
-      border-bottom: 1px solid rgba(14, 190, 255, 0.4);
-    }
-
-    &--menu {
-      border-width: 2px;
-      display: block;
-
-      @media (min-width: 1054px) {
-        display: none;
-      }
-    }
-  }
-
-  .bx--header__menu-trigger {
-    margin-right: -0.8rem;
-
-    @media (min-width: 1054px) {
-      display: none;
-    }
-  }
-
   .bx--header__global {
     display: flex;
     justify-content: flex-end;
@@ -162,7 +99,6 @@ const Header = ({ children }) => {
     <StyledShellHeader aria-label="Header">
       <SkipToContent />
       <HeaderMenuButton
-        className="bx--header__action--menu"
         aria-label="Open menu"
         onClick={() => {
           toggleNavState('leftNavIsOpen');
