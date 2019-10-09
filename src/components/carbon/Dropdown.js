@@ -61,7 +61,7 @@ const StyledDropdown = styled(Dropdown)`
       `}
 
     &:focus {
-      outline-color: rgba(14,190,255,.4);
+      outline-color: rgba(14, 190, 255, 0.4);
       outline-style: auto;
       outline-width: 4px;
     }
