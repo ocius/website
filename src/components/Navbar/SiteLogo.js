@@ -24,7 +24,7 @@ const LogoLink = styled(GatsbyLink)`
   user-select: none;
 
   @media (max-width: ${mq.max[768]}) {
-    max-width: 130px;
+    max-width: 120px;
   }
 `;
 

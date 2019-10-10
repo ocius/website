@@ -158,15 +158,26 @@ const GMap = ({ apiKey, currentVessel, droneData }) => {
     markerClickHandler(null, droneData[currentVessel]);
   }, [currentVessel]);
 
+  let mapContainerStyle;
+  if (windowSize.innerWidth <= 767) {
+    mapContainerStyle = {
+      height: `calc(100vh - 6rem)`,
+      width: `100%`,
+      paddingTop: '5rem'
+    };
+  } else {
+    mapContainerStyle = {
+      height: `100vh`,
+      width: `100%`,
+      paddingTop: '5rem'
+    };
+  }
+
   const renderMap = () => {
     return (
       <GoogleMap
         id="google-map"
-        mapContainerStyle={{
-          height: `100vh`,
-          width: `100%`,
-          paddingTop: '5rem'
-        }}
+        mapContainerStyle={mapContainerStyle}
         zoom={zoom}
         onZoomChanged={onZoomChange}
         center={center}
