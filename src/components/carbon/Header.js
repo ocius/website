@@ -11,16 +11,7 @@ import NavContext from '../../common/context/NavContext';
 import SiteLogo from '../Navbar/SiteLogo';
 
 const Logo = styled(SiteLogo)`
-  display: flex;
-  align-items: center;
-  height: 100%;
-  padding: 0 3.2rem 0 1.6rem;
   padding-left: 1.5rem;
-  user-select: none;
-  border: 0.2rem solid transparent;
-  transition: border-color 110ms;
-  outline: none;
-  white-space: nowrap;
 `;
 
 const StyledShellHeader = styled(ShellHeader)`

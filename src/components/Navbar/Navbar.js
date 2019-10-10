@@ -16,7 +16,7 @@ const FlexContainer = styled(Container)`
   display: flex;
   justify-content: space-between;
   align-content: center;
-  min-height: 60px;
+  min-height: 5rem;
 `;
 
 const Navbar = ({ children }) => (
