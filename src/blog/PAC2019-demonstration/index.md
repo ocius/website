@@ -5,4 +5,4 @@ author: "Robert Dane"
 featuredImage: ./thumbnail.png
 ---
 
-<iframe width="100%" height="auto" src="https://www.youtube.com/embed/7vhvKcc-UPk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><
+<iframe width="100%" height="390" src="https://www.youtube.com/embed/7vhvKcc-UPk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
