@@ -25,17 +25,15 @@ const H1 = styled(Heading)`
   }
 `;
 
-const PageHeader = ({ children }) => {
-  return (
-    <HeaderContainer className="page-header">
-      <Container>
-        <H1 level={1} size="huge">
-          {children}
-        </H1>
-      </Container>
-    </HeaderContainer>
-  );
-};
+const PageHeader = ({ children }) => (
+  <HeaderContainer className="page-header">
+    <Container>
+      <H1 level={1} size="huge">
+        {children}
+      </H1>
+    </Container>
+  </HeaderContainer>
+);
 
 PageHeader.propTypes = {
   children: PropTypes.node.isRequired

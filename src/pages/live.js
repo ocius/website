@@ -7,6 +7,7 @@ import Dropdown from '../components/carbon/Dropdown';
 import Header from '../components/carbon/Header';
 import LeftNav from '../components/carbon/LeftNav';
 import GMap from '../components/Map/GMap';
+import MobileNavigation from '../components/Navbar/MobileNavigation';
 import { VesselStatus } from '../components/InfoPanel';
 import configuration from '../common/api/configuration';
 import useHttp from '../common/api/useHttp';
@@ -98,6 +99,7 @@ const LivePage = () => {
       <SEO title="Live" description="See where Bluebottles are at any time – LIVE." />
       <main ref={node}>
         <Header />
+        <MobileNavigation />
         <LeftNav>
           <FormWrapper>
             <FormItem>

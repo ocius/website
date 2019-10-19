@@ -17,11 +17,14 @@ const logoQuery = graphql`
 `;
 
 const LogoLink = styled(GatsbyLink)`
-  display: inline-flex;
+  display: flex;
+  align-items: center;
   max-width: 200px;
+  white-space: nowrap;
+  user-select: none;
 
   @media (max-width: ${mq.max[768]}) {
-    max-width: 130px;
+    max-width: 120px;
   }
 `;
 
