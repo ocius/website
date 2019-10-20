@@ -1,109 +1,11 @@
 import React from 'react';
-import { Formik, Field, ErrorMessage } from 'formik';
+import { Formik, ErrorMessage } from 'formik';
 import axios from 'axios';
-import styled, { css } from 'styled-components';
-import { ifProp } from 'styled-tools';
+import styled from 'styled-components';
 import { Col } from 'react-flexbox-grid';
+import { Feedback, Alert, FormField, TextareaField } from '../components/Form';
 import Heading from '../components/Heading';
-
-const SubmitButton = styled.button`
-  appearance: none;
-  backface-visibility: hidden;
-  border: 0;
-  border-radius: 0;
-  cursor: pointer;
-  display: inline-flex;
-  flex-shrink: 0;
-  -moz-box-align: center;
-  align-items: center;
-  font-weight: 600;
-  line-height: 1;
-  overflow: hidden;
-  padding-left: ${30 / 13}em;
-  padding-right: ${30 / 13}em;
-  padding-bottom: ${21 / 13}em;
-  padding-top: ${26 / 13}em;
-  font-size: 13px;
-  text-align: center;
-  text-decoration: none;
-  text-overflow: ellipsis;
-  letter-spacing: 0.6px;
-  text-transform: uppercase;
-  transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1) 0s;
-  vertical-align: middle;
-  white-space: nowrap;
-  background-color: #001826;
-  color: #ffffff;
-
-  &:hover,
-  &:active,
-  &:focus {
-    background-color: #003859;
-  }
-
-  &:disabled,
-  &[disabled] {
-    border: 1px solid #999999;
-    background-color: #cccccc;
-    color: #666666;
-  }
-`;
-
-const Alert = styled.span`
-  display: block;
-  position: relative;
-  padding: 0.75rem 1.25rem;
-  margin-bottom: 1rem;
-  border: 1px solid transparent;
-  border-radius: 0.25rem;
-
-  ${ifProp(
-    'success',
-    css`
-      color: #155724;
-      background-color: #d4edda;
-      border-color: #c3e6cb;
-    `,
-    css`
-      color: #721c24;
-      background-color: #f8d7da;
-      border-color: #f5c6cb;
-    `
-  )};
-`;
-
-const Feedback = styled.div`
-  display: block;
-  width: 100%;
-  margin-bottom: 0.25rem;
-  font-size: 80%;
-  color: #dc3545;
-`;
-
-const FormField = styled(Field)`
-  &.is-invalid,
-  &:invalid {
-    border-color: #dc3545;
-    padding-right: calc(1.5em + 0.75rem);
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='%23dc3545' viewBox='-2 -2 7 7'%3e%3cpath stroke='%23dc3545' d='M0 0l3 3m0-3L0 3'/%3e%3ccircle r='.5'/%3e%3ccircle cx='3' r='.5'/%3e%3ccircle cy='3' r='.5'/%3e%3ccircle cx='3' cy='3' r='.5'/%3e%3c/svg%3E");
-    background-repeat: no-repeat;
-    background-position: center right calc(0.375em + 0.1875rem);
-    background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
-
-    &:focus {
-      border-color: #dc3545;
-      box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25);
-    }
-  }
-`;
-
-const TextareaField = styled(FormField)`
-  &.is-invalid,
-  &:invalid {
-    padding-right: calc(1.5em + 0.75rem);
-    background-position: top calc(0.375em + 0.1875rem) right calc(0.375em + 0.1875rem);
-  }
-`;
+import Button from '../components/Button';
 
 const FieldWrapper = styled.div`
   margin: 0 0 0.625em;
@@ -257,9 +159,9 @@ class TechnicalSpecificationForm extends React.Component {
                 <ErrorMessage name="interest">{msg => <Feedback>{msg}</Feedback>}</ErrorMessage>
               </FieldWrapper>
 
-              <SubmitButton type="submit" disabled={isSubmitting}>
+              <Button type="submit" size="medium" color="blue" disabled={isSubmitting}>
                 Submit
-              </SubmitButton>
+              </Button>
             </form>
           )}
         />

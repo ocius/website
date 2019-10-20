@@ -12,6 +12,8 @@ import Heading from '../components/Heading';
 import PanelCallout from '../components/PanelCallout';
 import PanelCalloutGroup from '../components/PanelCalloutGroup';
 import ArticlePreviewBlock from '../components/ArticlePreviewBlock';
+import Sidebar from '../components/Sidebar';
+import SidebarWidget from '../components/SidebarWidget';
 import RecentNews from '../components/RecentNews';
 import { add, gutter, span } from '../common/grid';
 import mq from '../common/mq';
@@ -131,7 +133,11 @@ export default ({ data }) => (
       </Container>
 
       <Container>
-        <RecentNews />
+        <Sidebar>
+          <SidebarWidget className="recent-news">
+            <RecentNews />
+          </SidebarWidget>
+        </Sidebar>
       </Container>
     </div>
   </Layout>

@@ -5,7 +5,7 @@ import Layout from '../layouts/Layout';
 import SEO from '../components/SEO';
 import PageHeader from '../components/PageHeader';
 import Container from '../components/Container';
-import RecentNews from '../components/RecentNews';
+import Sidebar from '../components/Sidebar';
 import SocialShareContainer from '../components/SocialShareContainer';
 import SocialShare from '../components/SocialShare';
 import Heading from '../components/Heading';
@@ -38,7 +38,7 @@ export default ({ data }) => {
               )}
             </Col>
             <Col className="secondary-content" xs={12} md={5} lg={4} lgOffset={1}>
-              <RecentNews />
+              <Sidebar />
             </Col>
           </Row>
         </Container>

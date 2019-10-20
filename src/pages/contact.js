@@ -4,7 +4,7 @@ import Layout from '../layouts/Layout';
 import SEO from '../components/SEO';
 import PageHeader from '../components/PageHeader';
 import Container from '../components/Container';
-import RecentNews from '../components/RecentNews';
+import Sidebar from '../components/Sidebar';
 
 const addressStyle = {
   padding: '1em 0',
@@ -68,7 +68,7 @@ export default () => (
             </Row>
           </Col>
           <Col className="secondary-content" xs={12} md={5} lg={4} lgOffset={1}>
-            <RecentNews />
+            <Sidebar />
           </Col>
         </Row>
       </Container>
