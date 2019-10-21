@@ -10,12 +10,12 @@ export const wrapRootElement = ({ element }) => (
   </NavContextProvider>
 );
 
-export const onServiceWorkerUpdateReady = () => {
-  // eslint-disable-next-line func-names
-  navigator.serviceWorker.getRegistrations().then(function(registrations) {
-    // eslint-disable-next-line no-restricted-syntax
-    for (const registration of registrations) {
-      registration.unregister();
-    }
-  });
-};
+export async function unregisterAndClearCaches() {
+  const registrations = await navigator.serviceWorker.getRegistrations();
+  const unregisterPromises = registrations.map(registration => registration.unregister());
+
+  const allCaches = await caches.keys();
+  const cacheDeletionPromises = allCaches.map(cache => caches.delete(cache));
+
+  await Promise.all([...unregisterPromises, ...cacheDeletionPromises]);
+}
