@@ -29,6 +29,7 @@ export default () => (
           ]}
         />
       </NavbarDropdown>
+      <NavbarItem link="/media-coverage" title="In the news" />
       <NavbarDropdown name="Solutions" link="/#solutions">
         <DropdownMenu
           menuItems={[

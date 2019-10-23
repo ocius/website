@@ -67,6 +67,17 @@ module.exports = {
       }
     },
 
+    // Add Mailchimp integration
+    {
+      resolve: 'gatsby-plugin-mailchimp',
+      options: {
+        endpoint:
+          'https://ocius.us15.list-manage.com/subscribe/post?u=deb7a39f82191f618b8d5ab5d&amp;id=bcb37462eb'
+      }
+    },
+
+    `gatsby-transformer-screenshot`,
+    `gatsby-transformer-yaml`,
     `gatsby-plugin-react-helmet`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`
