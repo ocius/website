@@ -93,6 +93,8 @@ module.exports = {
       }
     },
 
+    `gatsby-transformer-screenshot`,
+    `gatsby-transformer-yaml`,
     `gatsby-plugin-react-helmet`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
