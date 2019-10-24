@@ -27,9 +27,7 @@
     "gatsby-background-image": "^0.8.15",
     "gatsby-image": "^2.2.29",
     "gatsby-plugin-gtag": "^1.0.11",
-    "gatsby-plugin-manifest": "^2.2.23",
     "gatsby-plugin-react-helmet": "^3.1.13",
-    "gatsby-plugin-remove-serviceworker": "^1.0.0",
     "gatsby-plugin-sharp": "^2.2.32",
     "gatsby-plugin-styled-components": "^3.1.11",
     "gatsby-remark-copy-linked-files": "^2.1.28",
@@ -52,7 +50,8 @@
     "react-uid": "^2.2.0",
     "sharp": "^0.23.1",
     "styled-components": "^4.4.0",
-    "styled-tools": "^1.7.1"
+    "styled-tools": "^1.7.1",
+    "gatsby-plugin-remove-serviceworker": "^1.0.0"
   },
   "repository": {
     "type": "git",
