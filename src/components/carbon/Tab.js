@@ -110,7 +110,6 @@ export default class Tab extends React.Component {
       this.props.handleTabAnchorFocus(this.props.index - 1);
     } else if (evt.which === rightKey) {
       this.props.handleTabAnchorFocus(this.props.index + 1);
-    } else {
     }
   }
 

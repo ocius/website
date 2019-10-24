@@ -12,7 +12,6 @@ import Segmented from '../../components/Segmented';
 import Heading from '../../components/Heading';
 import Tabs from '../../components/carbon/Tabs';
 import Tab from '../../components/carbon/Tab';
-import Sidebar from '../../components/Sidebar';
 
 const Hero = styled(Row)`
   border-bottom: 1px solid #c7c7c7;
