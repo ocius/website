@@ -701,7 +701,7 @@ export default ({ data }) => {
             </Row>
           </Tab>
           <Tab label="Awards">
-            <Row className="primary-content">
+            <Row>
               <Col xs={12} md={12} lg={12}>
                 <header id="awards">
                   <Heading level={1} size="huge" underline className="centered">
