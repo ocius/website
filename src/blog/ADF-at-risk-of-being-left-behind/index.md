@@ -1,6 +1,6 @@
 ---
 title: "7News: Australia's defence forces risk being left behind"
-date: "2019-10-17"
+date: "2019-10-19"
 author: "Robert Dane"
 featuredImage: ./7News.png
 ---
