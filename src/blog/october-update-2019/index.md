@@ -27,7 +27,7 @@ On Day One we started at dawn, deploying two Bluebottle Unmanned Surface Vessels
 
 The Ocius team was on the NSW Government stand receiving live data back from two Bluebottles. We noted an increased presence of people in uniform attending as well as from government and taking a greater interest in all the exhibitor’s stands. As Peter Jenkins, founder and Managing Director of JEDS, Vice President of AIDN NSW and a veteran of the industry for over 40 years declared on the final evening that this was “the best Pac ever!” We agree.
 
-![Pacific 2019 Day One 1530hrs Bob and Bruce heading to Pac 2019 ](./PAC-2019-1530.png)
+![Pacific 2019 Day One 1530hrs: Bob and Bruce heading to Pac 2019 ](./PAC-2019-1530.png)
 
 We thank AMSA, Transport NSW Roads & Maritime Services Division and all commercial mariners who helped make this exercise run smoothly and safely.
  
