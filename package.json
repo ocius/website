@@ -50,8 +50,7 @@
     "react-uid": "^2.2.0",
     "sharp": "^0.23.1",
     "styled-components": "^4.4.0",
-    "styled-tools": "^1.7.1",
-    "gatsby-plugin-remove-serviceworker": "^1.0.0"
+    "styled-tools": "^1.7.1"
   },
   "repository": {
     "type": "git",
