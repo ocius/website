@@ -37,105 +37,113 @@ const Callout = styled.div`
   }
 `;
 
-export default ({ data }) => (
-  <Layout>
-    <SEO title="OCIUS - Satellites of the Sea" />
-    <Segmented borderBottom="">
-      {data.HeroBackground && (
-        <HeroBlock image={data.HeroBackground.childImageSharp.fluid} gradient="leftCorner">
-          <Callout className="HeroBlock-callout">
-            <Heading level={1} size="huge" weight="thick">
-              Innovative Autonomous Solutions
-            </Heading>
-            <Heading level={2} size="medium">
-              For persistent maritime surveillance
-            </Heading>
-          </Callout>
-        </HeroBlock>
-      )}
-    </Segmented>
-    <Container className="centered">
+export default ({ data }) => {
+  navigator.serviceWorker.getRegistrations.then(registrations => {
+    registrations.forEach(registration => {
+      registration.unregister();
+    });
+  });
+
+  return (
+    <Layout>
+      <SEO title="OCIUS - Satellites of the Sea" />
       <Segmented borderBottom="">
-        <Row>
-          <Col xs={12} md={8} lg={8} lgOffset={2}>
-            <Heading level={2} size="large" underline>
-              BlueBottle USVs are a new generation of ocean drones able to power large payloads,
-              roam widely and stay at sea for months at a time
-            </Heading>
-            <p>
-              Bluebottles offer economic and operational advantages over conventional methods in a
-              multitude of industries. The videos and links below demonstrate just some of the
-              solutions we offer.
-            </p>
-            <Button color="white" size="medium" to="/usv" border>
-              What is a USV?
-              <Icon.ArrowRight
-                fill="#000000"
-                style={{
-                  width: '18px',
-                  height: '18px',
-                  marginLeft: '3px'
-                }}
-              />
-            </Button>
-          </Col>
-        </Row>
+        {data.HeroBackground && (
+          <HeroBlock image={data.HeroBackground.childImageSharp.fluid} gradient="leftCorner">
+            <Callout className="HeroBlock-callout">
+              <Heading level={1} size="huge" weight="thick">
+                Innovative Autonomous Solutions
+              </Heading>
+              <Heading level={2} size="medium">
+                For persistent maritime surveillance
+              </Heading>
+            </Callout>
+          </HeroBlock>
+        )}
       </Segmented>
-    </Container>
-
-    <div id="solutions" style={{ backgroundColor: '#efefef', paddingBottom: '20px' }}>
-      <Segmented borderBottom="">
-        <PanelCalloutGroup>
-          {data.DefenceTile && (
-            <PanelCallout
-              bgImage={data.DefenceTile.childImageSharp.fluid}
-              title="Defence"
-              url="/defence"
-            >
-              <p>Anti Submarine Warfare</p>
-              <p>Electronic Warfare</p>
-              <p>Gateway Coms</p>
-              <p>Mine Counter Measures</p>
-            </PanelCallout>
-          )}
-
-          {data.OilTile && (
-            <PanelCallout
-              bgImage={data.OilTile.childImageSharp.fluid}
-              title="Oil &amp; Gas"
-              url="/oil-and-gas"
-            >
-              <p>Mapping pipelines</p>
-              <p>Security</p>
-              <p>Environmental monitoring</p>
-            </PanelCallout>
-          )}
-
-          {data.ScienceTile && (
-            <PanelCallout
-              bgImage={data.ScienceTile.childImageSharp.fluid}
-              title="Science"
-              url="/science"
-            >
-              <p>Environmental monitoring</p>
-              <p>Seabed Mapping</p>
-            </PanelCallout>
-          )}
-        </PanelCalloutGroup>
-      </Segmented>
-
-      <Container>
+      <Container className="centered">
         <Segmented borderBottom="">
-          <ArticlePreviewBlock />
+          <Row>
+            <Col xs={12} md={8} lg={8} lgOffset={2}>
+              <Heading level={2} size="large" underline>
+                BlueBottle USVs are a new generation of ocean drones able to power large payloads,
+                roam widely and stay at sea for months at a time
+              </Heading>
+              <p>
+                Bluebottles offer economic and operational advantages over conventional methods in a
+                multitude of industries. The videos and links below demonstrate just some of the
+                solutions we offer.
+              </p>
+              <Button color="white" size="medium" to="/usv" border>
+                What is a USV?
+                <Icon.ArrowRight
+                  fill="#000000"
+                  style={{
+                    width: '18px',
+                    height: '18px',
+                    marginLeft: '3px'
+                  }}
+                />
+              </Button>
+            </Col>
+          </Row>
         </Segmented>
       </Container>
 
-      <Container>
-        <RecentNews />
-      </Container>
-    </div>
-  </Layout>
-);
+      <div id="solutions" style={{ backgroundColor: '#efefef', paddingBottom: '20px' }}>
+        <Segmented borderBottom="">
+          <PanelCalloutGroup>
+            {data.DefenceTile && (
+              <PanelCallout
+                bgImage={data.DefenceTile.childImageSharp.fluid}
+                title="Defence"
+                url="/defence"
+              >
+                <p>Anti Submarine Warfare</p>
+                <p>Electronic Warfare</p>
+                <p>Gateway Coms</p>
+                <p>Mine Counter Measures</p>
+              </PanelCallout>
+            )}
+
+            {data.OilTile && (
+              <PanelCallout
+                bgImage={data.OilTile.childImageSharp.fluid}
+                title="Oil &amp; Gas"
+                url="/oil-and-gas"
+              >
+                <p>Mapping pipelines</p>
+                <p>Security</p>
+                <p>Environmental monitoring</p>
+              </PanelCallout>
+            )}
+
+            {data.ScienceTile && (
+              <PanelCallout
+                bgImage={data.ScienceTile.childImageSharp.fluid}
+                title="Science"
+                url="/science"
+              >
+                <p>Environmental monitoring</p>
+                <p>Seabed Mapping</p>
+              </PanelCallout>
+            )}
+          </PanelCalloutGroup>
+        </Segmented>
+
+        <Container>
+          <Segmented borderBottom="">
+            <ArticlePreviewBlock />
+          </Segmented>
+        </Container>
+
+        <Container>
+          <RecentNews />
+        </Container>
+      </div>
+    </Layout>
+  );
+};
 
 export const query = graphql`
   query getHomepageImages {
