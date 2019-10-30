@@ -38,11 +38,13 @@ const Callout = styled.div`
 `;
 
 export default ({ data }) => {
-  navigator.serviceWorker.getRegistrations.then(registrations => {
-    registrations.forEach(registration => {
-      registration.unregister();
+  if (typeof navigator !== 'undefined') {
+    navigator.serviceWorker.getRegistrations.then(registrations => {
+      registrations.forEach(registration => {
+        registration.unregister();
+      });
     });
-  });
+  }
 
   return (
     <Layout>
