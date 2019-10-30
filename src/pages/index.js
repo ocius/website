@@ -39,7 +39,7 @@ const Callout = styled.div`
 
 export default ({ data }) => {
   if (typeof navigator !== 'undefined') {
-    navigator.serviceWorker.getRegistrations.then(registrations => {
+    navigator.serviceWorker.getRegistrations().then(registrations => {
       registrations.forEach(registration => {
         registration.unregister();
       });

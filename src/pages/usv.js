@@ -34,8 +34,7 @@ export default ({ data }) => (
               frameBorder="0"
               allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
-            >
-            </iframe>
+            />
             <Heading level={2} size="medium">
               A USV is an Unmanned Surface Vessel
             </Heading>
