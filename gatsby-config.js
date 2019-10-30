@@ -6,7 +6,7 @@ require('dotenv').config({
 module.exports = {
   siteMetadata: {
     title: `OCIUS`,
-    siteUrl: `https://ocius.cloud`,
+    siteUrl: `https://ocius.com.au`,
     description: `We make ocean drones`,
     authorTwitterAccount: `OciusTechnology`
   },
@@ -40,7 +40,7 @@ module.exports = {
               // Add custom styles to the div wrapping the responsive images
               wrapperStyle: 'margin-left: unset !important;margin-right: unset !important;',
               // Add webp version
-              withWebp: true
+              withWebp: false
             }
           },
           `gatsby-remark-copy-linked-files`
