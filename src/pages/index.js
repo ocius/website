@@ -38,14 +38,6 @@ const Callout = styled.div`
 `;
 
 export default ({ data }) => {
-  if (typeof navigator !== 'undefined') {
-    navigator.serviceWorker.getRegistrations().then(registrations => {
-      registrations.forEach(registration => {
-        registration.unregister();
-      });
-    });
-  }
-
   return (
     <Layout>
       <SEO title="OCIUS - Satellites of the Sea" />
@@ -68,8 +60,8 @@ export default ({ data }) => {
           <Row>
             <Col xs={12} md={8} lg={8} lgOffset={2}>
               <Heading level={2} size="large" underline>
-                A new generation of ocean drones able to power large payloads,
-                roam widely and stay at sea for months at a time
+                A new generation of ocean drones. Power large payloads,
+                roam widely, and stay at sea for months at a time.
               </Heading>
               <p>
                 USVs offer economic and operational advantages over conventional methods in a
