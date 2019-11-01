@@ -1,0 +1,17 @@
+version: 0.1
+phases:
+  install:
+    commands:
+      - "npm install"
+      - "npm install -g gatsby"
+      - "apt update"
+      - "gatsby build"
+  build:
+    commands:
+      - 'aws s3 sync "public/" "s3://ocius-static-website" --delete'
+      - 'aws cloudfront create-invalidation --distribution-id E3DSYTEJZITXF6 --paths "/*"'
+artifacts:
+  base-directory: public
+  files:
+    - '../{1}'
+  discard-paths: yes
