@@ -68,11 +68,11 @@ export default ({ data }) => {
           <Row>
             <Col xs={12} md={8} lg={8} lgOffset={2}>
               <Heading level={2} size="large" underline>
-                BlueBottle USVs are a new generation of ocean drones able to power large payloads,
+                A new generation of ocean drones able to power large payloads,
                 roam widely and stay at sea for months at a time
               </Heading>
               <p>
-                Bluebottles offer economic and operational advantages over conventional methods in a
+                USVs offer economic and operational advantages over conventional methods in a
                 multitude of industries. The videos and links below demonstrate just some of the
                 solutions we offer.
               </p>
