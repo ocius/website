@@ -31,4 +31,4 @@ ViDAR is deployed with the Australian Navy, the Australian Maritime Safety Autho
 
 Sentient Vision Systems develops and deploys computer vision solutions for defence and civil applications. Since 1999 Sentient has specialised in video analytics with a primary focus on the development of automated detection software for full motion video. With nearly 2,000 systems deployed, Sentient’s solutions enhance the performance of EO/IR operations for many agencies and forces in more than 30 countries.
 
-For more information, see [www.sentientvision.com](www.sentientvision.com)
+For more information, see [www.sentientvision.com](http://www.sentientvision.com)
