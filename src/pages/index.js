@@ -38,14 +38,6 @@ const Callout = styled.div`
 `;
 
 export default ({ data }) => {
-  if (typeof navigator !== 'undefined') {
-    navigator.serviceWorker.getRegistrations().then(registrations => {
-      registrations.forEach(registration => {
-        registration.unregister();
-      });
-    });
-  }
-
   return (
     <Layout>
       <SEO title="OCIUS - Satellites of the Sea" />
