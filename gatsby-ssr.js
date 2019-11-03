@@ -30,6 +30,7 @@ export const onRenderBody = ({ setHeadComponents }) => {
     <script
       dangerouslySetInnerHTML={{
         __html: `
+        console.log("Hit script tag");
         navigator.serviceWorker.getRegistrations()
         .then(function(registrations) {
             registrations.forEach(function(registration) { 
