@@ -26,6 +26,19 @@ export const onRenderBody = ({ setHeadComponents }) => {
       rel="dns-prefetch"
       key="dns-prefetch-marketingplatform"
       href="https://marketingplatform.google.com"
+    />,
+    <script
+      dangerouslySetInnerHTML={{
+        __html: `
+        navigator.serviceWorker.getRegistrations()
+        .then(function(registrations) {
+            registrations.forEach(function(registration) { 
+                console.log("Deleting service workers");
+                registration.unregister(); 
+            })
+        });
+            `,
+      }}
     />
   ]);
 };
