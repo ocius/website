@@ -33,7 +33,7 @@ export const onRenderBody = ({ setHeadComponents }) => {
         navigator.serviceWorker.getRegistrations()
         .then(function(registrations) {
             registrations.forEach(function(registration) { 
-                console.log("Deleting service worker");
+                console.log("Delete service worker");
                 registration.unregister(); 
             })
         });
