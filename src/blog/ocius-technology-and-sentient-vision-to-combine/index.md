@@ -4,6 +4,10 @@ date: "2019-11-04"
 featuredImage: "./sentient-vision.png"
 ---
 
+
+[Official Press Release Document](./Ocius-Sentient-Media-Release-DIH.pdf)
+
+
 **Ocius Technology and Sentient Vision Systems, two of Australia’s most recognised innovative autonomous solution providers, today announced at the 2019 Defence Innovation Hub Annual Industry Conference, their collaboration to combine optical object detection onto the world leading BlueBottle unmanned surface vessel (USV).**
 
 Both companies have been individually recognised for their autonomous solution capabilities and awarded separate multi-million dollar contracts by the Australian Government’s Defence Innovation Hub in November 2018, to further enhance those capabilities. Now, through natural collaboration, they are working together to combine them.
