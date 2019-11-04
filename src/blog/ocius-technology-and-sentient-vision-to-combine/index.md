@@ -1,7 +1,7 @@
 ---
 title: "Ocius Technology and Sentient Vision to combine innovative autonomous solutions"
 date: "2019-11-04"
-featuredImage: "./sentient-vision.png"
+featuredImage: "./ocius-technology-sentient-vision.png"
 ---
 
 
