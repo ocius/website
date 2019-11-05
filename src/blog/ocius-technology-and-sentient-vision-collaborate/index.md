@@ -1,10 +1,10 @@
 ---
-title: "Ocius Technology and Sentient Vision to combine innovative autonomous solutions"
+title: "Ocius Technology + Sentient Vision collaborate"
 date: "2019-11-04"
-featuredImage: "./sentient-vision.png"
+featuredImage: "./ocius-technology-sentient-vision.png"
 ---
 
-
+![](./ocius-technology-sentient-vision.png)
 [Official Press Release Document](./Ocius-Sentient-Media-Release-DIH.pdf)
 
 
@@ -31,6 +31,7 @@ In June, Ocius completed its second Defence contract with the Defence Innovation
 ViDAR is deployed with the Australian Navy, the Australian Maritime Safety Authority, the US Coast Guard, and the US State Department, and has been lauded as fundamentally changing the success rate and way of conducting operations for broad area maritime surveillance.
 
 ![](./sentient-vision.png)
+
 **About Sentient Vision Systems:**
 
 Sentient Vision Systems develops and deploys computer vision solutions for defence and civil applications. Since 1999 Sentient has specialised in video analytics with a primary focus on the development of automated detection software for full motion video. With nearly 2,000 systems deployed, Sentient’s solutions enhance the performance of EO/IR operations for many agencies and forces in more than 30 countries.
