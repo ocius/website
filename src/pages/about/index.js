@@ -348,7 +348,6 @@ export default ({ data }) => (
               excellent customer service.
             </p>
           </Col>
-
         </Row>
       </Segmented>
       <Segmented borderBottom="">
