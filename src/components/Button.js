@@ -4,8 +4,8 @@ import styled, { css } from 'styled-components';
 import { switchProp } from 'styled-tools';
 import cn from 'classnames';
 import { Link as GatsbyLink } from 'gatsby';
+import { OutboundLink } from 'gatsby-plugin-gtag';
 import propTypes from '../common/propTypes';
-import { OutboundLink } from 'gatsby-plugin-gtag'
 
 const colors = {
   // Background colors
@@ -169,7 +169,6 @@ const ButtonLink = styled(GatsbyLink)`
 
 ButtonLink.defaultProps = {};
 
-
 const OutboundButtonLink = styled(OutboundLink)`
   appearance: none;
   backface-visibility: hidden;
@@ -201,7 +200,7 @@ const OutboundButtonLink = styled(OutboundLink)`
   }
 
   ${switchProp('color', {
-  gray: css`
+    gray: css`
       background-color: ${colors.bgSecondary};
       color: ${colors.textSecondary};
       box-shadow: 0 0 0 2px ${colors.borderPrimary} inset;
@@ -214,7 +213,7 @@ const OutboundButtonLink = styled(OutboundLink)`
       }
     `,
 
-  white: css`
+    white: css`
       background-color: ${colors.bgPrimary};
       background-size: 4rem 4rem;
       color: ${colors.borderPrimary};
@@ -228,7 +227,7 @@ const OutboundButtonLink = styled(OutboundLink)`
       }
     `,
 
-  transparent: css`
+    transparent: css`
       background-color: transparent;
       color: ${colors.textOverlay};
       box-shadow: 0 0 0 2px ${colors.bgPrimary} inset;
@@ -240,42 +239,41 @@ const OutboundButtonLink = styled(OutboundLink)`
         color: ${colors.textPrimary};
       }
     `
-})}
+  })}
 
   ${switchProp('size', {
     tiny: css`
-        font-size: 9px;
-        padding-bottom: ${9 / 9}em;
-        padding-left: ${19 / 9}em;
-        padding-right: ${19 / 9}em;
-        padding-top: ${12 / 9}em;
-      `,
+      font-size: 9px;
+      padding-bottom: ${9 / 9}em;
+      padding-left: ${19 / 9}em;
+      padding-right: ${19 / 9}em;
+      padding-top: ${12 / 9}em;
+    `,
 
     small: css`
-        font-size: 11px;
-        padding-bottom: ${15 / 11}em;
-        padding-top: ${18 / 11}em;
-      `,
+      font-size: 11px;
+      padding-bottom: ${15 / 11}em;
+      padding-top: ${18 / 11}em;
+    `,
 
     medium: css`
-        font-size: 13px;
-        padding-bottom: ${21 / 13}em;
-        padding-top: ${26 / 13}em;
-      `,
+      font-size: 13px;
+      padding-bottom: ${21 / 13}em;
+      padding-top: ${26 / 13}em;
+    `,
 
     large: css`
-        font-size: 15px;
-        padding-bottom: ${23 / 15}em;
-        padding-top: ${28 / 15}em;
-      `,
+      font-size: 15px;
+      padding-bottom: ${23 / 15}em;
+      padding-top: ${28 / 15}em;
+    `,
 
     huge: css`
-        font-size: 17px;
-        padding-bottom: ${25 / 17}em;
-        padding-top: ${30 / 17}em;
-      `
-  }
-)}
+      font-size: 17px;
+      padding-bottom: ${25 / 17}em;
+      padding-top: ${30 / 17}em;
+    `
+  })}
     
   ${props => props.rounded && roundedStyle}
   ${props => props.full && fullStyle}
