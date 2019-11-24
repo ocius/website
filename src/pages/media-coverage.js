@@ -7,7 +7,6 @@ import Layout from '../layouts/Layout';
 import SEO from '../components/SEO';
 import PageHeader from '../components/PageHeader';
 import Container from '../components/Container';
-import Sidebar from '../components/Sidebar';
 import Heading from '../components/Heading';
 
 const ImageHolder = styled(Img)`
@@ -58,10 +57,10 @@ export default ({ data }) => {
       <section className="page-content">
         <Container>
           <Row>
-            <Col className="primary-content" xs={12} md={7} lg={7}>
+            <Col className="primary-content" xs={12} md={12} lg={12}>
               <Row>
                 {sites.map(({ node }) => (
-                  <Col xs={12} md={6} lg={6} key={node.id}>
+                  <Col xs={12} md={6} lg={4} key={node.id}>
                     <Card>
                       <Link href={node.url}>
                         <ImageHolder
@@ -79,9 +78,6 @@ export default ({ data }) => {
                 ))}
               </Row>
             </Col>
-            <Col className="secondary-content" xs={12} md={5} lg={4} lgOffset={1}>
-              <Sidebar />
-            </Col>
           </Row>
         </Container>
       </section>
@@ -91,7 +87,7 @@ export default ({ data }) => {
 
 export const query = graphql`
   query MediaCoverageQuery {
-    allSitesYaml {
+    allSitesYaml(sort: {fields:date, order: DESC}) {
       edges {
         node {
           id

@@ -29,7 +29,6 @@ export default () => (
           ]}
         />
       </NavbarDropdown>
-      <NavbarItem link="/media-coverage" title="In the news" />
       <NavbarDropdown name="Solutions" link="/#solutions">
         <DropdownMenu
           menuItems={[
@@ -49,7 +48,12 @@ export default () => (
         />
       </NavbarDropdown>
       <NavbarDropdown name="News" link="/news">
-        <DropdownMenu menuItems={[{ href: '/press-kit', name: 'Press Kit' }]} />
+        <DropdownMenu
+          menuItems={[
+            { href: '/press-kit', name: 'Press Kit' },
+            { href: '/media-coverage', name: 'Media Coverage' }
+          ]}
+        />
       </NavbarDropdown>
       {navitems.map(item => {
         return (
