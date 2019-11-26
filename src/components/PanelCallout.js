@@ -26,12 +26,13 @@ const PanelContainer = styled.div`
   transition: ease 1s;
   background: black;
 
-  ${PanelContainer}:hover {
+  &:hover {
     -webkit-box-shadow: 0 13px 27px -5px rgba(50, 50, 93, 0.25), 0 8px 16px -8px rgba(0, 0, 0, 0.3),
       0 -6px 16px -6px rgba(0, 0, 0, 0.025);
     box-shadow: 0 13px 27px -5px rgba(50, 50, 93, 0.25), 0 8px 16px -8px rgba(0, 0, 0, 0.3),
       0 -6px 16px -6px rgba(0, 0, 0, 0.025);
   }
+
   @media (max-width: ${mq.max[960]}) {
     min-height: 200px;
     flex: 1 1 calc(100%);
@@ -72,7 +73,7 @@ const PanelBody = styled.div`
   margin-top: 11px;
   z-index: 1;
 
-  ${PanelBody} > p {
+  & > p {
     font-weight: 600;
   }
 
