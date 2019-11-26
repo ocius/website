@@ -44,7 +44,7 @@ const ResponsiveIframe = ({ src, id, className, style }) => (
 );
 
 ResponsiveIframe.propTypes = {
-  URL: PropTypes.string.isRequired,
+  src: PropTypes.string.isRequired,
   id: PropTypes.string,
   className: PropTypes.string,
   style: PropTypes.objectOf(PropTypes.object)
