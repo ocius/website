@@ -27,8 +27,10 @@ const PanelContainer = styled.div`
   background: black;
 
   ${PanelContainer}:hover {
-    -webkit-box-shadow: 0 13px 27px -5px rgba(50,50,93,.25), 0 8px 16px -8px rgba(0,0,0,.3), 0 -6px 16px -6px rgba(0,0,0,.025);
-    box-shadow: 0 13px 27px -5px rgba(50,50,93,.25), 0 8px 16px -8px rgba(0,0,0,.3), 0 -6px 16px -6px rgba(0,0,0,.025);
+    -webkit-box-shadow: 0 13px 27px -5px rgba(50, 50, 93, 0.25), 0 8px 16px -8px rgba(0, 0, 0, 0.3),
+      0 -6px 16px -6px rgba(0, 0, 0, 0.025);
+    box-shadow: 0 13px 27px -5px rgba(50, 50, 93, 0.25), 0 8px 16px -8px rgba(0, 0, 0, 0.3),
+      0 -6px 16px -6px rgba(0, 0, 0, 0.025);
   }
   @media (max-width: ${mq.max[960]}) {
     min-height: 200px;
@@ -90,7 +92,7 @@ const BackgroundImage = styled(Img)`
   opacity: 0.8;
   transition: all 1s;
   background: solid black;
-   ${PanelContainer}:hover & {
+  ${PanelContainer}:hover & {
     opacity: 1;
   }
 `;
