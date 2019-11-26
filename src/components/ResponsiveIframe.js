@@ -37,9 +37,9 @@ const StyledIframeContainer = styled.div`
  * 3:2	66.66%
  * 8:5	62.5% */
 
-const ResponsiveIframe = ({ src, id, className, style }) => (
+const ResponsiveIframe = ({ src, id, className, style, ...rest }) => (
   <StyledIframeContainer id={id} className={className} style={style}>
-    <StyledIframe src={src}/>
+    <StyledIframe src={src} {...rest}/>
   </StyledIframeContainer>
 );
 
