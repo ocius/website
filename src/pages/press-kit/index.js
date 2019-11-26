@@ -11,6 +11,7 @@ import PageHeader from '../../components/PageHeader';
 import Button from '../../components/Button';
 import Icon from '../../components/Icon';
 import DownloadableImage from '../../components/DownloadableImage';
+import ResponsiveIframe from '../../components/ResponsiveIframe';
 
 export default ({ data }) => (
   <Layout>
@@ -51,19 +52,25 @@ export default ({ data }) => (
       </Segmented>
 
       <Segmented borderBottom="">
-        <Row>
           <Col xs={12} md={12} lg={12}>
             <Heading level={2} size="large">
               Media Library
             </Heading>
           </Col>
-        </Row>
+      </Segmented>
+      <Segmented borderBottom="">
         <Row>
-          {data.media.edges.map(item => {
+	  <ResponsiveIframe src={"https://drive.google.com/file/d/1F-YD7TEncGH1nmrOJj3nMGHG8oRqVaim/preview"}/>
+        </Row>
+      </Segmented>
+      <Segmented borderBottom="">
+        <Row>
+	  {data.media.edges.map(item => {
             return <DownloadableImage node={item.node} key={item.node.id} />;
           })}
         </Row>
-        <Row>
+      </Segmented>
+      <Segmented borderBottom="">
           <Col xs={12} md={12} lg={12}>
             <Button
               color="white"
@@ -83,7 +90,6 @@ export default ({ data }) => (
               />
             </Button>
           </Col>
-        </Row>
       </Segmented>
     </Container>
   </Layout>
