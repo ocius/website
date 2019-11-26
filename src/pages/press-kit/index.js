@@ -52,44 +52,47 @@ export default ({ data }) => (
       </Segmented>
 
       <Segmented borderBottom="">
-          <Col xs={12} md={12} lg={12}>
-            <Heading level={2} size="large">
-              Media Library
-            </Heading>
-          </Col>
+        <Col xs={12} md={12} lg={12}>
+          <Heading level={2} size="large">
+            Media Library
+          </Heading>
+        </Col>
       </Segmented>
       <Segmented borderBottom="">
         <Row>
-	  <ResponsiveIframe src={"https://drive.google.com/file/d/1F-YD7TEncGH1nmrOJj3nMGHG8oRqVaim/preview"}/>
+          <ResponsiveIframe
+            src="https://drive.google.com/file/d/1F-YD7TEncGH1nmrOJj3nMGHG8oRqVaim/preview"
+            title="PAC2019 Overview"
+          />
         </Row>
       </Segmented>
       <Segmented borderBottom="">
         <Row>
-	  {data.media.edges.map(item => {
+          {data.media.edges.map(item => {
             return <DownloadableImage node={item.node} key={item.node.id} />;
           })}
         </Row>
       </Segmented>
       <Segmented borderBottom="">
-          <Col xs={12} md={12} lg={12}>
-            <Button
-              color="white"
-              to="https://drive.google.com/drive/folders/1beCdCnYaKyE4455mAd4kJKjPJWBAgSfb?usp=sharing"
-              size="medium"
-              border
-              outbound
-            >
-              View the full library
-              <Icon.ArrowRight
-                fill="#000000"
-                style={{
-                  width: '18px',
-                  height: '18px',
-                  marginLeft: '3px'
-                }}
-              />
-            </Button>
-          </Col>
+        <Col xs={12} md={12} lg={12}>
+          <Button
+            color="white"
+            to="https://drive.google.com/drive/folders/1beCdCnYaKyE4455mAd4kJKjPJWBAgSfb?usp=sharing"
+            size="medium"
+            border
+            outbound
+          >
+            View the full library
+            <Icon.ArrowRight
+              fill="#000000"
+              style={{
+                width: '18px',
+                height: '18px',
+                marginLeft: '3px'
+              }}
+            />
+          </Button>
+        </Col>
       </Segmented>
     </Container>
   </Layout>
