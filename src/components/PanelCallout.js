@@ -23,7 +23,13 @@ const PanelContainer = styled.div`
   text-align: left;
   position: relative;
   padding: calc(${gutter('static')} * 2);
+  transition: ease 1s;
+  background: black;
 
+  ${PanelContainer}:hover {
+    -webkit-box-shadow: 0 13px 27px -5px rgba(50,50,93,.25), 0 8px 16px -8px rgba(0,0,0,.3), 0 -6px 16px -6px rgba(0,0,0,.025);
+    box-shadow: 0 13px 27px -5px rgba(50,50,93,.25), 0 8px 16px -8px rgba(0,0,0,.3), 0 -6px 16px -6px rgba(0,0,0,.025);
+  }
   @media (max-width: ${mq.max[960]}) {
     min-height: 200px;
     flex: 1 1 calc(100%);
@@ -47,10 +53,7 @@ const PanelHeading = styled(Heading)`
   margin-top: 33px;
   transition: transform 200ms ease-in-out;
   z-index: 1;
-
-  ${PanelContainer}:hover & {
-    text-decoration: underline;
-  }
+  font-weight: 600;
 
   @media (max-width: ${mq.max[480]}) {
     font-size: 30px;
@@ -67,6 +70,10 @@ const PanelBody = styled.div`
   margin-top: 11px;
   z-index: 1;
 
+  ${PanelBody} > p {
+    font-weight: 600;
+  }
+
   @media (max-width: ${mq.max[960]}) {
     p {
       margin: 0.8em 0;
@@ -80,6 +87,12 @@ const BackgroundImage = styled(Img)`
   top: 0;
   width: 100%;
   height: 100%;
+  opacity: 0.8;
+  transition: all 1s;
+  background: solid black;
+   ${PanelContainer}:hover & {
+    opacity: 1;
+  }
 `;
 
 function PanelCallout({ children, bgImage, title, url }) {
