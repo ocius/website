@@ -68,7 +68,7 @@ const Date = styled.p`
 `;
 
 export default ({ data }) => {
-  const { edges: sites } = data.allSitesYaml;
+  const { edges } = data.allLinksYaml;
 
   return (
     <Layout>
@@ -896,14 +896,11 @@ export default ({ data }) => {
               </Heading>
             </header>
             <Row style={{ padding: '2.5rem 0' }}>
-              {sites.map(({ node }) => (
+              {edges.map(({ node }) => (
                 <Col xs={12} md={4} lg={4} key={node.id}>
                   <Card>
                     <Link href={node.url}>
-                      <ImageHolder
-                        fluid={node.childScreenshot.screenshotFile.childImageSharp.fluid}
-                        alt={node.title}
-                      />
+                      <ImageHolder fluid={node.thumbnail.childImageSharp.fluid} alt={node.title} />
                       <Heading level={2} size="small" weight="thick">
                         {node.title}
                       </Heading>
@@ -982,7 +979,7 @@ export const query = graphql`
       ...imageSharpLogotype
     }
 
-    allSitesYaml {
+    allLinksYaml {
       edges {
         node {
           id
@@ -990,12 +987,10 @@ export const query = graphql`
           title
           source
           date(formatString: "DD MMMM, YYYY")
-          childScreenshot {
-            screenshotFile {
-              childImageSharp {
-                fluid(maxWidth: 700, maxHeight: 500) {
-                  ...GatsbyImageSharpFluid
-                }
+          thumbnail {
+            childImageSharp {
+              fluid {
+                ...GatsbyImageSharpFluid
               }
             }
           }
