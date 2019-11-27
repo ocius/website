@@ -77,7 +77,11 @@ export default ({ data }) => {
         description="Our Mission. To supply the world's best unmanned surface vessels with more power, payload and
       performance."
       />
-      <PageHeader>About</PageHeader>
+      <PageHeader>
+        <Heading level={1} size="huge" header>
+          About
+        </Heading>
+      </PageHeader>
       <Container className="page-content">
         <Tabs style={{ marginTop: 20 }}>
           <Tab label="People">

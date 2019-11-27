@@ -21,7 +21,11 @@ export default () => (
       Sydney-based SME (small to medium enterprise) operating at the cutting edge of technology to design and
       build autonomous robots."
     />
-    <PageHeader>Careers</PageHeader>
+    <PageHeader>
+      <Heading level={1} size="huge" header>
+        Careers
+      </Heading>
+    </PageHeader>
     <section className="page-content">
       <Container>
         <Row>

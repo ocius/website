@@ -18,7 +18,11 @@ export default ({ data }) => (
       unmanned. They have limited time and range at sea and are acoustically noisy. Renewable energy powered vessels
       which are unmanned."
     />
-    <PageHeader>Drones</PageHeader>
+    <PageHeader>
+      <Heading level={1} size="huge" header>
+        Drones
+      </Heading>
+    </PageHeader>
     <Container className="page-content">
       <Row>
         <Col className="primary-content" xs={12} md={12} lg={12}>

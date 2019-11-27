@@ -5,6 +5,7 @@ import SEO from '../components/SEO';
 import PageHeader from '../components/PageHeader';
 import Container from '../components/Container';
 import Sidebar from '../components/Sidebar';
+import Heading from '../components/Heading';
 
 const addressStyle = {
   padding: '1em 0',
@@ -19,7 +20,11 @@ export default () => (
       Email: cosecretary@ocius.com.au
       NSW 2052 Phone: +61 2 9924 6400 Postal Address: Office Box 4304 Castlecrag Australia 2068"
     />
-    <PageHeader>Contact</PageHeader>
+    <PageHeader>
+      <Heading level={1} size="huge" header>
+        Contact
+      </Heading>
+    </PageHeader>
     <section className="page-content">
       <Container>
         <Row>
