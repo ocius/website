@@ -23,10 +23,10 @@ export default () => (
         <DropdownMenu
           menuItems={[
             { href: '/about', name: 'Mission' },
-            { href: '/about#people', name: 'People' },
-            { href: '/about#partners', name: 'Partners' },
-            { href: '/about#story', name: 'Our Story' },
-            { href: '/about#awards', name: 'Awards' }
+            { href: '/about', name: 'People' },
+            { href: '/about/partners', name: 'Partners' },
+            { href: '/about/our-story', name: 'Our Story' },
+            { href: '/about/awards', name: 'Awards' }
           ]}
         />
       </NavbarDropdown>
