@@ -1,9 +1,9 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import Img from 'gatsby-image';
 import { Row, Col } from 'react-flexbox-grid';
 import { Router } from '@reach/router';
 import styled from 'styled-components';
+import BackgroundImage from 'gatsby-background-image';
 import SEO from '../../components/SEO';
 import Layout from '../../layouts/Layout';
 import Container from '../../components/Container';
@@ -16,7 +16,8 @@ import Prizes from './prizes';
 import Partners from './partners';
 import OurStory from './our-story';
 
-const ImageHolder = styled(Img)`
+const CardThumbnail = styled(BackgroundImage)`
+  height: 250px;
   border-radius: 2px;
   box-shadow: rgba(46, 41, 51, 0.08) 0px 1px 2px, rgba(71, 63, 79, 0.08) 0px 2px 4px;
   transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1) 0s;
@@ -30,7 +31,7 @@ const Card = styled.div`
   max-width: 100%;
   position: relative;
 
-  &:hover ${ImageHolder} {
+  &:hover ${CardThumbnail} {
     transform: translateY(-0.25rem);
     box-shadow: rgba(46, 41, 51, 0.08) 0px 4px 8px, rgba(71, 63, 79, 0.16) 0px 8px 16px;
   }
@@ -69,7 +70,7 @@ const MediaCoverage = ({ data }) => {
           <Col xs={12} md={4} lg={4} key={node.id}>
             <Card>
               <ExternalLink href={node.url}>
-                <ImageHolder fluid={node.thumbnail.childImageSharp.fluid} alt={node.title} />
+                <CardThumbnail fluid={node.thumbnail.childImageSharp.fluid} />
                 <Heading level={2} size="small" weight="thick">
                   {node.title}
                 </Heading>
