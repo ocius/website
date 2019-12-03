@@ -70,6 +70,12 @@ const TabsTrigger = styled.div`
   border-bottom: 1px solid #8d8d8d;
   background-color: #f4f4f4;
 
+  &:focus,
+  &:active {
+    outline: 2px solid #60d2f6;
+    outline-offset: -2px;
+  }
+
   @media (min-width: 67.2rem) {
     display: none;
   }

@@ -911,11 +911,21 @@ export default ({ data }) => {
           About
         </Heading>
         <NavTabs>
-          <NavTab to="about">People</NavTab>
-          <NavTab to="about/partners">Our Partners</NavTab>
-          <NavTab to="about/our-story">Our Story</NavTab>
-          <NavTab to="about/awards">Awards</NavTab>
-          <NavTab to="about/in-the-news">In The News</NavTab>
+          <NavTab label="People" to="about">
+            People
+          </NavTab>
+          <NavTab label="Our Partners" to="about/partners">
+            Our Partners
+          </NavTab>
+          <NavTab label="Our Story" to="about/our-story">
+            Our Story
+          </NavTab>
+          <NavTab label="Awards" to="about/awards">
+            Awards
+          </NavTab>
+          <NavTab label="In The News" to="about/in-the-news">
+            In The News
+          </NavTab>
         </NavTabs>
       </PageHeader>
       <Container className="page-content">
