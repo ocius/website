@@ -43,9 +43,22 @@ const ExternalLink = styled.a`
   transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1) 0s;
 `;
 
+const CardBody = styled.div`
+  position: relative;
+`;
+
 const Source = styled.p`
   font-size: 1em;
   margin: 0 0 0.25em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #60d2f6;
+  border-radius: 20px;
+  padding: 4px 20px;
+  position: absolute;
+  top: -20px;
+  left: 0;
 `;
 
 const Date = styled.p`
@@ -69,14 +82,16 @@ const MediaCoverage = ({ data }) => {
         {edges.map(({ node }) => (
           <Col xs={12} md={4} lg={4} key={node.id}>
             <Card>
-              <ExternalLink href={node.url}>
+              <ExternalLink target="_blank" href={node.url}>
                 <CardThumbnail fluid={node.thumbnail.childImageSharp.fluid} />
+              </ExternalLink>
+              <CardBody>
                 <Heading level={2} size="small" weight="thick">
                   {node.title}
                 </Heading>
-              </ExternalLink>
-              <Source>{node.source}</Source>
-              <Date>{node.date}</Date>
+                <Source>{node.source}</Source>
+                <Date>{node.date}</Date>
+              </CardBody>
             </Card>
           </Col>
         ))}
