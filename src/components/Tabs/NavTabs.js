@@ -109,7 +109,6 @@ const NavTabs = ({
 }) => {
   const [dropdownHidden, setDropdownHidden] = useState(true);
   const [selectedDropdown, setSelectedDropdown] = useState(selected);
-  const tabIndexes = [];
 
   const handleDropdownClick = () => {
     setDropdownHidden(!dropdownHidden);
@@ -129,11 +128,7 @@ const NavTabs = ({
   };
 
   const getTabAt = (index, useFresh) => {
-    return (!useFresh && tabIndexes[`tab${index}`]) || React.Children.toArray(children)[index];
-  };
-
-  const setTabAt = (index, tabRef) => {
-    tabIndexes[`tab${index}`] = tabRef;
+    return !useFresh || React.Children.toArray(children)[index];
   };
 
   // following functions (handle*) are Props on Tab.js, see Tab.js for parameters
@@ -199,9 +194,6 @@ const NavTabs = ({
       handleTabClick: handleTabClick(onSelectionChange),
       handleTabAnchorFocus: handleTabAnchorFocus(onSelectionChange),
       tabIndex,
-      ref: e => {
-        setTabAt(index, e);
-      },
       handleTabKeyDown: handleTabKeyDown(onSelectionChange)
     });
   });
@@ -221,7 +213,7 @@ const NavTabs = ({
         <TabsTriggerText tabIndex={-1} href={triggerHref} onClick={handleDropdownClick}>
           {selectedLabel}
         </TabsTriggerText>
-        <ChevronDownGlyph aria-hidden>
+        <ChevronDownGlyph aria-hidden="true">
           {iconDescription && <title>{iconDescription}</title>}
         </ChevronDownGlyph>
       </TabsTrigger>

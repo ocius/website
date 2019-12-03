@@ -109,7 +109,8 @@ const NavTab = ({
   onKeyDown,
   handleTabClick,
   handleTabKeyDown,
-  handleTabAnchorFocus
+  handleTabAnchorFocus,
+  ...other
 }) => {
   const setTabFocus = evt => {
     const leftKey = 37;
@@ -123,6 +124,7 @@ const NavTab = ({
 
   return (
     <NavItem
+      tabIndex={-1}
       onKeyDown={evt => {
         setTabFocus(evt);
         handleTabKeyDown(index, label, evt);
@@ -134,8 +136,11 @@ const NavTab = ({
       }}
       role="presentation"
       selected={selected}
+      {...other}
     >
-      <StyledLink to={to}>{children}</StyledLink>
+      <StyledLink to={to} tabIndex={0}>
+        {label}
+      </StyledLink>
     </NavItem>
   );
 };
@@ -179,6 +184,9 @@ NavTab.propTypes = {
    */
   onKeyDown: PropTypes.func,
 
+  /**
+   * Link target
+   */
   to: PropTypes.oneOfType([PropTypes.string, PropTypes.object]).isRequired
 };
 
