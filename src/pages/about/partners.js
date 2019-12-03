@@ -3,10 +3,12 @@ import { Col, Row } from 'react-flexbox-grid';
 import Img from 'gatsby-image';
 import Segmented from '../../components/Segmented';
 import Heading from '../../components/Heading';
+import SEO from '../../components/SEO';
 
 const Partners = ({ data }) => {
   return (
     <>
+      <SEO title="Our Partners" />
       <header id="partners" className="centered">
         <Heading level={1} size="huge" underline>
           Our Partners

@@ -109,7 +109,7 @@ export default ({ data }) => {
       performance."
       />
       <PageHeader>
-        <Heading level={1} size="huge" header>
+        <Heading level={1} size="large" header>
           About
         </Heading>
         <NavTabs>

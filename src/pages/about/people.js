@@ -4,6 +4,7 @@ import Img from 'gatsby-image';
 import styled from 'styled-components';
 import Segmented from '../../components/Segmented';
 import Heading from '../../components/Heading';
+import SEO from '../../components/SEO';
 
 const Hero = styled(Row)`
   border-bottom: 1px solid #c7c7c7;
@@ -24,6 +25,7 @@ const HeroBlock = styled(Col)`
 const People = ({ data }) => {
   return (
     <>
+      <SEO title="Our Mission, Our Culture, People" />
       <Hero>
         <HeroBlock xs={12} md={6} lg={6}>
           <Heading level={2} size="large">

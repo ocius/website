@@ -2,10 +2,12 @@ import React from 'react';
 import { Col, Row } from 'react-flexbox-grid';
 import { Link as GatsbyLink } from 'gatsby';
 import Heading from '../../components/Heading';
+import SEO from '../../components/SEO';
 
 const OurStory = () => {
   return (
     <>
+      <SEO title="Our Story" />
       <header id="story">
         <Heading level={1} size="huge" underline className="centered">
           Our Story
