@@ -4,7 +4,7 @@ import { OutboundLink } from 'gatsby-plugin-gtag';
 import { Col, Row } from 'react-flexbox-grid';
 import Heading from '../../components/Heading';
 
-const Awards = () => {
+const Prizes = () => {
   return (
     <Row>
       <Col xs={12} md={12} lg={12}>
@@ -192,4 +192,4 @@ const Awards = () => {
   );
 };
 
-export default Awards;
+export default Prizes;

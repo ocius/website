@@ -12,7 +12,7 @@ import Heading from '../../components/Heading';
 import NavTabs from '../../components/Tabs/NavTabs';
 import NavTab from '../../components/Tabs/NavTab';
 import People from './people';
-import Awards from './awards';
+import Prizes from './prizes';
 import Partners from './partners';
 import OurStory from './our-story';
 
@@ -108,8 +108,8 @@ export default ({ data }) => {
         <Router>
           <People path="about" data={data} />
           <Partners path="about/partners" data={data} />
+          <Prizes path="about/awards" data={data} />
           <OurStory path="about/our-story" data={data} />
-          <Awards path="about/awards" data={data} />
           <MediaCoverage path="about/in-the-news" data={data} />
         </Router>
       </Container>
