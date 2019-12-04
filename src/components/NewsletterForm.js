@@ -116,7 +116,7 @@ const NewsletterForm = () => {
         <>
           <Form onSubmit={handleSubmit}>
             <Heading size="medium" weight="thick" level={3}>
-              We invite you to subscribe to our newsletter
+              Be the first to hear our latest news and updates
             </Heading>
             <FormGroup>
               {/* Real people should not fill this in and expect good things - do not remove this or risk form bot signups */}
