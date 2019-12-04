@@ -12,6 +12,8 @@ import Heading from '../components/Heading';
 import Segmented from '../components/Segmented';
 import Button from '../components/Button';
 import Pagination from '../components/Pagination';
+import NavTabs from '../components/Tabs/NavTabs';
+import NavTab from '../components/Tabs/NavTab';
 
 const Link = styled(GatsbyLink)`
   display: block;
@@ -29,7 +31,15 @@ export default ({ data, pageContext }) => {
         vessels and today launched a &#8216;man-portable&#8217; version of the Bluebottle USV. &#8220;We&#8217;ve
         had a number of enquiries for small self sustaining USVs that can be deployed easily from a deck or beach."
       />
-      <PageHeader>News</PageHeader>
+      <PageHeader>
+        <Heading level={1} size="large" header>
+          News
+        </Heading>
+        <NavTabs>
+          <NavTab label="Blog" to="news" />
+          <NavTab label="Media Coverage" to="media-coverage" />
+        </NavTabs>
+      </PageHeader>
       <section className="page-content">
         <Container>
           <Row>
@@ -96,6 +106,25 @@ export const query = graphql`
             slug
           }
           excerpt(pruneLength: 160)
+        }
+      }
+    }
+
+    allLinksYaml {
+      edges {
+        node {
+          id
+          url
+          title
+          source
+          date(formatString: "DD MMMM, YYYY")
+          thumbnail {
+            childImageSharp {
+              fluid {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
         }
       }
     }

@@ -16,7 +16,11 @@ export default ({ data }) => {
   return (
     <Layout>
       <SEO title={title} description={post.excerpt} />
-      <PageHeader>News</PageHeader>
+      <PageHeader>
+        <Heading level={1} size="huge" header>
+          News
+        </Heading>
+      </PageHeader>
       <section className="page-content">
         <Container>
           <Row>
