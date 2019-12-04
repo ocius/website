@@ -110,7 +110,8 @@ class TechnicalSpecificationForm extends React.Component {
                 this.handleFormSubmitError(error);
               });
           }}
-          render={({ errors, touched, handleSubmit, isSubmitting }) => (
+        >
+          {({ errors, touched, handleSubmit, isSubmitting }) => (
             <form onSubmit={handleSubmit}>
               {this.state.formMessage && (
                 <Alert success={this.state.submitSuccess}>{this.state.formMessage}</Alert>
@@ -164,7 +165,7 @@ class TechnicalSpecificationForm extends React.Component {
               </Button>
             </form>
           )}
-        />
+        </Formik>
       </Col>
     );
   }

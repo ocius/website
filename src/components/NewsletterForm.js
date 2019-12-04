@@ -112,7 +112,8 @@ const NewsletterForm = () => {
             handleFormSubmitError(error);
           });
       }}
-      render={({ errors, touched, handleSubmit, isSubmitting }) => (
+    >
+      {({ errors, touched, handleSubmit, isSubmitting }) => (
         <>
           <Form onSubmit={handleSubmit}>
             <Heading size="medium" weight="thick" level={3}>
@@ -157,7 +158,7 @@ const NewsletterForm = () => {
           )}
         </>
       )}
-    />
+    </Formik>
   );
 };
 
