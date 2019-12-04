@@ -22,7 +22,6 @@ export default () => (
       <NavbarDropdown name="About" link="/about">
         <DropdownMenu
           menuItems={[
-            { href: '/about', name: 'Mission' },
             { href: '/about', name: 'People' },
             { href: '/about/partners', name: 'Partners' },
             { href: '/about/our-story', name: 'Our Story' },
