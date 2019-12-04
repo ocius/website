@@ -67,6 +67,41 @@ const Partners = ({ data }) => {
             </p>
           </Col>
           <Col xs={12} md={6} lg={6}>
+            {data.UNSW && (
+              <div className="centered">
+                <Img
+                  style={{ maxWidth: '100%' }}
+                  imgStyle={{ objectFit: 'contain' }}
+                  fixed={data.UNSW.childImageSharp.fixed}
+                  alt="The University of New South Wales"
+                />
+              </div>
+            )}
+            <p>
+              UNSW Australia (The University of New South Wales) is one of Australia’s leading
+              research and teaching universities. OCIUS have a contract for research into
+              intelligent networks and machine learning with the University of New South Wales. UNSW
+              provide OCIUS with a Research & Development facility in UNSW’s Randwick Campus.
+              Additionally, OCIUS hires multiple computer science and mechatronics engineers from
+              UNSW, and students from UNSW under intern programs.
+            </p>
+          </Col>
+          <Col xs={12} md={6} lg={6}>
+            <div className="centered">
+              <Heading level={3} size="medium">
+                Ulladulla Engineering and Fibreglass.
+              </Heading>
+            </div>
+            <p>
+              Bruce Heggie and Graham ‘Butch’ Johnson are well known on the NSW South Coast as
+              suppliers of innovative machine and fibreglass products. They have supplied fibreglass
+              and mechanical engineering since the successful winning of the International boat race
+              in 1997. They have provided equipment for all solar sailor ferries, scale models and
+              prototypes including our Bluebottles&apos; steering mechanisms, patented rudder
+              flipper appendages and patented solarsails & mechanisms.
+            </p>
+          </Col>
+          <Col xs={12} md={6} lg={6}>
             {data.SteberInternational && (
               <div className="centered">
                 <Img
@@ -133,45 +168,6 @@ const Partners = ({ data }) => {
               line honours in the Sydney to Hobart yacht race. They will review Bruce’s seakeeping
               ability in a range of conditions to provide several improvements in design, tracking,
               helm, payload bay & performance for the next prototypes.
-            </p>
-          </Col>
-        </Row>
-      </Segmented>
-      <Segmented borderBottom="">
-        <Row className="primary-content">
-          <Col xs={12} md={6} lg={6}>
-            {data.UNSW && (
-              <div className="centered">
-                <Img
-                  style={{ maxWidth: '100%' }}
-                  imgStyle={{ objectFit: 'contain' }}
-                  fixed={data.UNSW.childImageSharp.fixed}
-                  alt="The University of New South Wales"
-                />
-              </div>
-            )}
-            <p>
-              UNSW Australia (The University of New South Wales) is one of Australia’s leading
-              research and teaching universities. OCIUS have a contract for research into
-              intelligent networks and machine learning with the University of New South Wales. UNSW
-              provide OCIUS with a Research & Development facility in UNSW’s Randwick Campus.
-              Additionally, OCIUS hires multiple computer science and mechatronics engineers from
-              UNSW, and students from UNSW under intern programs.
-            </p>
-          </Col>
-          <Col xs={12} md={6} lg={6}>
-            <div className="centered">
-              <Heading level={3} size="medium">
-                Ulladulla Engineering and Fibreglass.
-              </Heading>
-            </div>
-            <p>
-              Bruce Heggie and Graham ‘Butch’ Johnson are well known on the NSW South Coast as
-              suppliers of innovative machine and fibreglass products. They have supplied fibreglass
-              and mechanical engineering since the successful winning of the International boat race
-              in 1997. They have provided equipment for all solar sailor ferries, scale models and
-              prototypes including our Bluebottles&apos; steering mechanisms, patented rudder
-              flipper appendages and patented solarsails & mechanisms.
             </p>
           </Col>
         </Row>
