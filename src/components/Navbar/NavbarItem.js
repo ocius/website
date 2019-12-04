@@ -25,6 +25,11 @@ const LinkStyles = css`
     text-decoration: none;
   }
 
+  :focus {
+    outline-offset: -2px;
+    outline-width: 2px;
+  }
+
   ${Item}:hover & {
     color: #60d2f6;
     background-color: #ffffff;

@@ -208,37 +208,6 @@ figcaption {
     font-size: .9em;
 }
 
-aside.recent-news a {
-    font-weight: bold;
-}
-
-aside.recent-news ul {
-    margin: 1em 0;
-    padding: 0;
-}
-
-aside.recent-news ul li {
-    list-style: none;
-    margin-bottom: 10px;
-    padding-top: 15px;
-    border-top: 1px solid #efefef;
-}
-
-aside.recent-news ul li:first-child {
-    border-top: none;
-}
-
-aside.recent-news .excerpt {
-    font-size: 1em;
-}
-
-aside.recent-news .date {
-    font-size: .9em;
-    font-weight: 300;
-    margin-top: -10px;
-    color: #164194;
-}
-
 footer.footer p,
 footer.footer a {
     color: #ffffff;

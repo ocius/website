@@ -1,25 +1,47 @@
 import React from 'react';
+import { Link as UnstyledLink, graphql, StaticQuery } from 'gatsby';
 import styled from 'styled-components';
-import { Link, graphql, StaticQuery } from 'gatsby';
-import mq from '../common/mq';
 
-const gutter = 30;
-const NewsContainer = styled.aside`
-  padding: 15px 20px;
-  background-color: #fff;
+/*
+  Change color of sidebar links
+ */
+const Link = styled(UnstyledLink)`
+  color: #001826;
+  font-weight: bold;
+`;
 
-  a {
-    color: #001826;
+/*
+  A styled list of links to articles
+ */
+const List = styled.ul`
+  margin: 1em 0;
+  padding: 0;
+
+  li {
+    list-style: none;
+    margin-bottom: 10px;
+    padding-top: 15px;
+    border-top: 1px solid #efefef;
+
+    &:first-child {
+      border-top: none;
+    }
   }
 
-  @media (max-width: ${mq.min[480]}) {
-    margin-left: -${gutter / 2}px;
-    margin-right: -${gutter / 2}px;
+  .excerpt {
+    font-size: 1em;
+  }
+
+  .date {
+    font-size: 0.9em;
+    font-weight: 300;
+    margin-top: -10px;
+    color: #164194;
   }
 `;
 
 const RecentNews = () => (
-  <NewsContainer className="aside recent-news">
+  <>
     <Link to="/news">Latest news...</Link>
     <StaticQuery
       query={graphql`
@@ -42,7 +64,7 @@ const RecentNews = () => (
         }
       `}
       render={data => (
-        <ul>
+        <List>
           {data.allMarkdownRemark.edges.map(({ node }) => (
             <li key={node.id}>
               <Link to={node.fields.slug}>{node.frontmatter.title}</Link>
@@ -50,10 +72,10 @@ const RecentNews = () => (
               <p className="date">{node.frontmatter.date}</p>
             </li>
           ))}
-        </ul>
+        </List>
       )}
     />
-  </NewsContainer>
+  </>
 );
 
 export default RecentNews;
