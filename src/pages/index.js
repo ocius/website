@@ -2,6 +2,7 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import { Row, Col } from 'react-flexbox-grid';
 import styled from 'styled-components';
+import FadeIn from 'react-fade-in';
 import Layout from '../layouts/Layout';
 import SEO from '../components/SEO';
 import Container from '../components/Container';
@@ -47,12 +48,14 @@ export default ({ data }) => {
         {data.HeroBackground && (
           <HeroBlock image={data.HeroBackground.childImageSharp.fluid} gradient="leftCorner">
             <Callout className="HeroBlock-callout">
-              <Heading level={1} size="huge" weight="thick">
-                Innovative Autonomous Solutions
-              </Heading>
-              <Heading level={2} size="medium">
-                For persistent maritime surveillance
-              </Heading>
+              <FadeIn>
+                <Heading level={1} size="huge" weight="thick">
+                  Innovative Autonomous Solutions
+                </Heading>
+                <Heading level={2} size="medium">
+                  For persistent maritime surveillance
+                </Heading>
+              </FadeIn>
             </Callout>
           </HeroBlock>
         )}
