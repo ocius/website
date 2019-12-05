@@ -274,3 +274,31 @@ ul.menu-secondary li:before {
         padding: 10px;
     }
 }
+
+/*
+  Animations
+ */
+
+.fade-enter {
+  opacity: 0.01;
+}
+
+.fade-enter.fade-enter-active {
+  opacity: 1;
+  transition: opacity 500ms ease-in;
+}
+
+.fade-leave {
+  opacity: 1;
+}
+
+.fade-leave.fade-leave-active {
+  animation: animLoadedLoader 0.5s cubic-bezier(0.7,0,0.3,1) forwards;
+}
+
+@keyframes animLoadedLoader {
+  to {
+    opacity: 0;
+    transform: translate3d(0,-100%,0) scale3d(0.3,0.3,1);
+  }
+}
