@@ -1,11 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import BackgroundImage from 'gatsby-background-image';
 import styled from 'styled-components';
-import Loadable from '@loadable/component';
 import Heading from './Heading';
-
-// Lazy load libs
-const BackgroundImage = Loadable.lib(() => import('gatsby-background-image'));
 
 const CardThumbnail = styled(BackgroundImage)`
   height: 250px;
