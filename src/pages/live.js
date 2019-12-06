@@ -1,12 +1,9 @@
 import React, { useState, useRef, useContext } from 'react';
+import Loadable from '@loadable/component';
 import EmptyLayout from '../layouts/EmptyLayout';
 import SEO from '../components/SEO';
 import TextSkeleton from '../components/carbon/TextSkeleton';
 import DropdownSkeleton from '../components/carbon/DropdownSkeleton';
-import Dropdown from '../components/carbon/Dropdown';
-import Header from '../components/carbon/Header';
-import LeftNav from '../components/carbon/LeftNav';
-import GMap from '../components/Map/GMap';
 import MobileNavigation from '../components/Navbar/MobileNavigation';
 import { VesselStatus } from '../components/InfoPanel';
 import configuration from '../common/api/configuration';
@@ -15,7 +12,13 @@ import NavContext from '../common/context/NavContext';
 import { useWindowSize } from '../common/hooks';
 import useOnClickOutside from '../common/hooks/useOnClickOutside';
 import { FormWrapper, FormItem } from '../components/carbon/shared';
-import SplashScreen from '../components/SplashScreen';
+
+// Lazy load components
+const Header = Loadable(() => import(`../components/carbon/Header`));
+const Dropdown = Loadable(() => import(`../components/carbon/Dropdown`));
+const LeftNav = Loadable(() => import(`../components/carbon/LeftNav`));
+const GMap = Loadable(() => import(`../components/Map/GMap`));
+const SplashScreen = Loadable(() => import(`../components/SplashScreen`));
 
 // Google Maps key
 const apiKey = process.env.GOOGLE_MAPS_API_KEY;

@@ -1,14 +1,19 @@
 import React from 'react';
 import { Col, Row } from 'react-flexbox-grid';
-import Img from 'gatsby-image';
 import { graphql } from 'gatsby';
+import Loadable from '@loadable/component';
 import Layout from '../layouts/Layout';
 import SEO from '../components/SEO';
 import Container from '../components/Container';
 import BluebottleImage from '../../static/wallpaperocius-768x432.jpg';
-import Heading from '../components/Heading';
-import PageHeader from '../components/PageHeader';
-import TechnicalSpecificationForm from './bluebottle-usv-brochure';
+
+// Lazy load libs
+const Img = Loadable.lib(() => import('gatsby-image'));
+
+// Lazy load components
+const Heading = Loadable(() => import(`../components/Heading`));
+const PageHeader = Loadable(() => import(`../components/PageHeader`));
+const TechnicalSpecificationForm = Loadable(() => import(`./bluebottle-usv-brochure`));
 
 export default ({ data }) => (
   <Layout>
