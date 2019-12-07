@@ -2,10 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import FadeIn from 'react-fade-in';
-import Lottie from 'react-lottie';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import Heading from './Heading';
-import * as loadingIndicator from '../images/11724-chernobyl-loading';
+import Ellipsis from './EllipsisLoader';
 
 const Overlay = styled.div`
   display: flex;
@@ -20,15 +19,6 @@ const Overlay = styled.div`
   z-index: 10;
 `;
 
-const defaultOptions = {
-  loop: true,
-  autoplay: true,
-  animationData: loadingIndicator.default,
-  rendererSettings: {
-    preserveAspectRatio: 'xMidYMid slice'
-  }
-};
-
 const SplashScreen = ({ isLoading, text }) => {
   return (
     <ReactCSSTransitionGroup
@@ -37,12 +27,12 @@ const SplashScreen = ({ isLoading, text }) => {
       transitionLeaveTimeout={300}
     >
       {isLoading && (
-        <Overlay>
+        <Overlay className="center-xs">
           <FadeIn>
             <Heading size="medium" weight="thick" level={1} style={{ marginBottom: 0 }}>
               {text}
             </Heading>
-            <Lottie options={defaultOptions} width={82} height={82} />
+            <Ellipsis color="#125192" />
           </FadeIn>
         </Overlay>
       )}
