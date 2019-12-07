@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { throttle as _throttle } from 'lodash';
+import throttle from 'lodash/throttle';
 
 const getWindowSize = () => {
   if (typeof window !== 'undefined') {
@@ -28,7 +28,7 @@ function useWindowSize() {
 
   // set resize handler once on mount and clean before unmount
   useEffect(() => {
-    const handleResize = _throttle(() => {
+    const handleResize = throttle(() => {
       setWindowSize(getWindowSize());
     }, 100);
     window.addEventListener('resize', handleResize);
