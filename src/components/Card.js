@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Img from 'gatsby-image';
 import BackgroundImage from 'gatsby-background-image';
 import styled from 'styled-components';
 import Heading from './Heading';
@@ -35,7 +36,7 @@ const CardBody = styled.div`
   position: relative;
 `;
 
-const Source = styled.p`
+const Source = styled.div`
   font-size: 1em;
   margin: 0 0 0.25em;
   display: flex;
@@ -56,7 +57,7 @@ const Date = styled.p`
   color: rgb(22, 65, 148);
 `;
 
-const Card = ({ url, thumbnail, title, source, date }) => {
+const Card = ({ url, thumbnail, title, source, logo, date }) => {
   return (
     <CardWrapper>
       <ExternalLink target="_blank" href={url}>
@@ -66,7 +67,10 @@ const Card = ({ url, thumbnail, title, source, date }) => {
         <Heading level={2} size="small" weight="thick">
           {title}
         </Heading>
-        <Source>{source}</Source>
+        <Source>
+          {logo && <Img style={{ width: 25, marginRight: 5 }} fluid={logo.childImageSharp.fluid} />}
+          {source}
+        </Source>
         <Date>{date}</Date>
       </CardBody>
     </CardWrapper>
@@ -78,9 +82,15 @@ Card.propTypes = {
   thumbnail: PropTypes.shape({
     alt: PropTypes.string,
     childImageSharp: PropTypes.object,
-    image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]).isRequired,
+    image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
     style: PropTypes.object
   }).isRequired,
+  logo: PropTypes.shape({
+    alt: PropTypes.string,
+    childImageSharp: PropTypes.object,
+    image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+    style: PropTypes.object
+  }),
   source: PropTypes.string,
   date: PropTypes.string
 };
@@ -88,7 +98,8 @@ Card.propTypes = {
 Card.defaultProps = {
   url: '#',
   source: '',
-  date: ''
+  date: '',
+  logo: {}
 };
 
 export default Card;

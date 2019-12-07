@@ -39,6 +39,7 @@ export default ({ data }) => {
                   title={node.title}
                   source={node.source}
                   date={node.date}
+                  logo={node.logo}
                 />
               </Col>
             ))}
@@ -62,6 +63,13 @@ export const query = graphql`
           thumbnail {
             childImageSharp {
               fluid(maxWidth: 400) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
+          logo {
+            childImageSharp {
+              fluid {
                 ...GatsbyImageSharpFluid
               }
             }
