@@ -12,7 +12,6 @@
   "dependencies": {
     "@carbon/addons-website": "0.0.1-alpha.21",
     "@carbon/elements": "^10.7.0",
-    "@carbon/icons-react": "^10.6.1",
     "@loadable/babel-plugin": "^5.11.0",
     "@loadable/component": "^5.11.0",
     "@loadable/webpack-plugin": "^5.7.1",
