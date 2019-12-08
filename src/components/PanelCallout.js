@@ -23,12 +23,10 @@ const PanelContainer = styled.div`
   text-align: left;
   position: relative;
   padding: calc(${gutter('static')} * 2);
-  transition: ease 1s;
+  transition: box-shadow ease 1s;
   background: black;
 
   &:hover {
-    -webkit-box-shadow: 0 13px 27px -5px rgba(50, 50, 93, 0.25), 0 8px 16px -8px rgba(0, 0, 0, 0.3),
-      0 -6px 16px -6px rgba(0, 0, 0, 0.025);
     box-shadow: 0 13px 27px -5px rgba(50, 50, 93, 0.25), 0 8px 16px -8px rgba(0, 0, 0, 0.3),
       0 -6px 16px -6px rgba(0, 0, 0, 0.025);
   }
@@ -54,7 +52,6 @@ const StyledLink = styled(GatsbyLink)`
 
 const PanelHeading = styled(Heading)`
   margin-top: 33px;
-  transition: transform 200ms ease-in-out;
   z-index: 1;
   font-weight: 600;
 
@@ -91,7 +88,7 @@ const BackgroundImage = styled(Img)`
   width: 100%;
   height: 100%;
   opacity: 0.8;
-  transition: all 1s;
+  transition: opacity 1s;
   background: solid black;
   ${PanelContainer}:hover & {
     opacity: 1;
