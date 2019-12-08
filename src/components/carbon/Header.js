@@ -1,8 +1,6 @@
 import React, { useContext } from 'react';
-import {
-  Header as ShellHeader,
-  SkipToContent
-} from 'carbon-components-react/lib/components/UIShell';
+import SkipToContent from 'carbon-components-react/lib/components/UIShell/SkipToContent';
+import Header from 'carbon-components-react/lib/components/UIShell/Header';
 import styled from 'styled-components';
 
 import Button from '../Button';
@@ -14,7 +12,7 @@ const Logo = styled(SiteLogo)`
   padding-left: 1.5rem;
 `;
 
-const StyledShellHeader = styled(ShellHeader)`
+const ShellHeader = styled(Header)`
   display: flex;
   align-items: center;
   position: fixed;
@@ -83,11 +81,11 @@ const RightControls = styled.div`
   }
 `;
 
-const Header = ({ children }) => {
+const WebsiteHeader = () => {
   const { leftNavIsOpen, toggleNavState } = useContext(NavContext);
 
   return (
-    <StyledShellHeader aria-label="Header">
+    <ShellHeader aria-label="Header">
       <SkipToContent />
       <HeaderMenuButton
         aria-label="Open menu"
@@ -96,7 +94,7 @@ const Header = ({ children }) => {
         }}
         isActive={leftNavIsOpen}
       />
-      {children}
+      <Logo maxHeight="20px" />
       <RightControls>
         <Button
           as="a"
@@ -108,14 +106,8 @@ const Header = ({ children }) => {
           Advanced View
         </Button>
       </RightControls>
-    </StyledShellHeader>
+    </ShellHeader>
   );
 };
 
-const DefaultHeaderText = () => <Logo maxHeight="20px" />;
-
-Header.defaultProps = {
-  children: <DefaultHeaderText />
-};
-
-export default Header;
+export default WebsiteHeader;
