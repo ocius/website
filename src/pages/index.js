@@ -58,7 +58,7 @@ export default ({ data }) => {
       <Container className="centered">
         <Segmented borderBottom="">
           <Row>
-            <Col xs={12} md={8} lg={8} lgOffset={2}>
+            <Col xs={12} md={8} lg={8} mdOffset={2}>
               <Heading level={2} size="large" underline>
                 A new generation of ocean drones. Power large payloads, roam widely, and stay at sea
                 for months at a time.
