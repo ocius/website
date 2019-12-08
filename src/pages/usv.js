@@ -1,14 +1,12 @@
 import React from 'react';
 import { Col, Row } from 'react-flexbox-grid';
 import { graphql } from 'gatsby';
+import Img from 'gatsby-image';
 import Loadable from '@loadable/component';
 import Layout from '../layouts/Layout';
 import SEO from '../components/SEO';
 import Container from '../components/Container';
 import BluebottleImage from '../../static/wallpaperocius-768x432.jpg';
-
-// Lazy load libs
-const Img = Loadable.lib(() => import('gatsby-image'));
 
 // Lazy load components
 const Heading = Loadable(() => import(`../components/Heading`));
