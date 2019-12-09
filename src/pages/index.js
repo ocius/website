@@ -12,6 +12,8 @@ import Heading from '../components/Heading';
 import PanelCallout from '../components/PanelCallout';
 import PanelCalloutGroup from '../components/PanelCalloutGroup';
 import ArticlePreviewBlock from '../components/ArticlePreviewBlock';
+import Sidebar from '../components/Sidebar';
+import SidebarWidget from '../components/SidebarWidget';
 import RecentNews from '../components/RecentNews';
 import { add, gutter, span } from '../common/grid';
 import mq from '../common/mq';
@@ -48,7 +50,7 @@ export default ({ data }) => {
               <Heading level={1} size="huge" weight="thick">
                 Innovative Autonomous Solutions
               </Heading>
-              <Heading level={2} size="medium">
+              <Heading level={2} size="medium" weight="thick">
                 For persistent maritime surveillance
               </Heading>
             </Callout>
@@ -59,7 +61,7 @@ export default ({ data }) => {
         <Segmented borderBottom="">
           <Row>
             <Col xs={12} md={8} lg={8} mdOffset={2}>
-              <Heading level={2} size="large" underline>
+              <Heading level={2} size="large" >
                 A new generation of ocean drones. Power large payloads, roam widely, and stay at sea
                 for months at a time.
               </Heading>

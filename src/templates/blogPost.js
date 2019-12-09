@@ -5,7 +5,7 @@ import Layout from '../layouts/Layout';
 import SEO from '../components/SEO';
 import PageHeader from '../components/PageHeader';
 import Container from '../components/Container';
-import RecentNews from '../components/RecentNews';
+import Sidebar from '../components/Sidebar';
 import SocialShareContainer from '../components/SocialShareContainer';
 import SocialShare from '../components/SocialShare';
 import Heading from '../components/Heading';
@@ -16,7 +16,11 @@ export default ({ data }) => {
   return (
     <Layout>
       <SEO title={title} description={post.excerpt} />
-      <PageHeader>News</PageHeader>
+      <PageHeader>
+        <Heading level={1} size="huge" header>
+          News
+        </Heading>
+      </PageHeader>
       <section className="page-content">
         <Container>
           <Row>
@@ -38,7 +42,7 @@ export default ({ data }) => {
               )}
             </Col>
             <Col className="secondary-content" xs={12} md={5} lg={4} lgOffset={1}>
-              <RecentNews />
+              <Sidebar />
             </Col>
           </Row>
         </Container>

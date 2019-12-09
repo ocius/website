@@ -38,6 +38,16 @@ const Underline = css`
   }
 `;
 
+const Header = css`
+  color: #60d2f6;
+  padding-top: 80px;
+  margin-top: 0;
+
+  @media (max-width: ${mq.max[768]}) {
+    padding-top: 20px;
+  }
+`;
+
 const StyledHeading = styled.h3`
   font-family: ${font('main')};
   line-height: 1.2;
@@ -119,6 +129,7 @@ const StyledHeading = styled.h3`
    ${props => props.caps && VariantCaps}
    ${props => props.truncate && Truncate}
    ${props => props.underline && Underline}
+   ${props => props.header && Header}
 `;
 
 StyledHeading.defaultProps = {};
@@ -196,7 +207,12 @@ Heading.propTypes = {
   /**
    * Whether or not to add underline to the heading
    */
-  underline: PropTypes.bool
+  underline: PropTypes.bool,
+
+  /**
+   * Whether or not heading is a page header
+   */
+  header: PropTypes.bool
 };
 
 Heading.defaultProps = {
@@ -204,7 +220,8 @@ Heading.defaultProps = {
   tracking: 'normal',
   truncate: false,
   caps: false,
-  underline: false
+  underline: false,
+  header: false
 };
 
 export default Heading;
