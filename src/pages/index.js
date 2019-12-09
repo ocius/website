@@ -53,7 +53,7 @@ const slideOut = keyframes`
 const SeeMore = styled(Icon.ChevronDoubleDown)`
   position: absolute;
   display: block;
-  bottom: 1em;
+  bottom: 60px;
   left: 50%;
   animation 1.5s ease-out ${slideOut} infinite;
 `;
@@ -64,12 +64,12 @@ export default ({ data }) => {
       <SEO title="OCIUS - Satellites of the Sea" />
       <Segmented borderBottom="">
         {data.HeroBackground && (
-          <HeroBlock image={data.HeroBackground.childImageSharp.fluid} gradient="leftCorner">
+          <HeroBlock image={data.HeroBackground.childImageSharp.fluid}>
             <Callout className="HeroBlock-callout">
-              <Heading level={1} size="huge" weight="thick">
+              <Heading level={1} size="huge" weight="thick" shadow>
                 Innovative Autonomous Solutions
               </Heading>
-              <Heading level={2} size="medium" weight="thick">
+              <Heading level={2} size="medium" weight="thick" shadow>
                 For persistent maritime surveillance
               </Heading>
             </Callout>
@@ -186,7 +186,7 @@ export const query = graphql`
 
   fragment imageSharpHeroBackground on File {
     childImageSharp {
-      fluid(quality: 91, maxWidth: 1320) {
+      fluid(quality: 100, maxWidth: 1920) {
         ...GatsbyImageSharpFluid_withWebp
       }
     }
