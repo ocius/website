@@ -61,7 +61,7 @@ export default ({ data }) => {
         <Segmented borderBottom="">
           <Row>
             <Col xs={12} md={8} lg={8} mdOffset={2}>
-              <Heading level={2} size="large" >
+              <Heading level={2} size="large">
                 A new generation of ocean drones. Power large payloads, roam widely, and stay at sea
                 for months at a time.
               </Heading>
@@ -134,7 +134,11 @@ export default ({ data }) => {
         </Container>
 
         <Container>
-          <RecentNews />
+          <Sidebar>
+            <SidebarWidget className="recent-news">
+              <RecentNews />
+            </SidebarWidget>
+          </Sidebar>
         </Container>
       </div>
     </Layout>
