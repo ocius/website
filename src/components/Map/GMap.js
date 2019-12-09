@@ -189,7 +189,9 @@ const GMap = ({ apiKey, currentVessel, droneData }) => {
           <>
             <MarkerClusterer averageCenter enableRetinaIcons gridSize={5}>
               {clusterer =>
-                droneData.map(boat => (
+                droneData.map(boat => {
+                  const color = getColorVariation(boat.Id)[1];
+                  return (
                   <Marker
                     key={boat.Id}
                     position={{
@@ -199,7 +201,7 @@ const GMap = ({ apiKey, currentVessel, droneData }) => {
                     icon={inlineSvgBoatIcon(boat.Id, boat.Props.Heading)}
                     label={{
                       text: boat.Name,
-                      color: '#ffff00',
+                      color: color,
                       fontSize: '16px',
                       fontWeight: 'bold'
                     }}
@@ -221,12 +223,13 @@ const GMap = ({ apiKey, currentVessel, droneData }) => {
                       </InfoWindow>
                     )}
                   </Marker>
-                ))
+                  );
+                })
               }
             </MarkerClusterer>
             {droneData.map(boat => {
               // Generate unique color for this vessel
-              const lineColor = getColorVariation(boat.Id)[0];
+              const lineColor = getColorVariation(boat.Id)[1];
 
               return (
                 <Polyline

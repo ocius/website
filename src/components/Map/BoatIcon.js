@@ -6,7 +6,7 @@ import { renderToStaticMarkup } from 'react-dom/server';
 export const getColorVariation = index => {
   const colorVariations = [
     ['#35b5e5', 'red'],
-    ['#ffff00', '#2f292d'],
+    ['#35b5e5', '#ff00e7'],
     ['#ff0000', '#2f292d'],
     ['#ff8000', '#2f292d'],
     ['#35b5e5', '#fcff00'],
