@@ -232,7 +232,7 @@ const Partners = ({ data }) => {
       </header>
       <Segmented borderBottom="">
         <Row className="primary-content">
-          <Col xs={6} md={6} lg={6} lgOffset={3}>
+          <Col xs={12} md={6} lg={6} lgOffset={3}>
             {data.DefenceInnovationHub && (
               <div className="centered">
                 <Img
