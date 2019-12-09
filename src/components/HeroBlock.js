@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled, { css } from 'styled-components';
+import styled, { keyframes, css } from 'styled-components';
 import BackgroundImage from 'gatsby-background-image';
 
 import mq from '../common/mq';
@@ -8,6 +8,7 @@ import font from '../common/font';
 
 import GradientOverlay from './GradientOverlay';
 import Container from './Container';
+import Icon from './Icon';
 
 export const ContainerStyle = css`
   color: #ffffff;
@@ -47,6 +48,25 @@ export const InnerContainer = styled(Container)`
   z-index: 2;
 `;
 
+const slideOut = keyframes`
+      0% {
+        transform: translate(-50%, -10px);
+        opacity: 1;
+      }
+      100% {
+        transform: translate(-50%, 10px);
+        opacity: 0;
+      }
+`;
+
+const SeeMore = styled(Icon.ChevronDoubleDown)`
+  position: absolute;
+  display: block;
+  bottom: 1em;
+  left: 50%;
+  animation 1.5s ease-out ${slideOut} infinite;
+`;
+
 HeroContainer.defaultProps = {};
 
 const HeroBlock = ({ children, image, constrained, gradient }) => (
@@ -56,9 +76,13 @@ const HeroBlock = ({ children, image, constrained, gradient }) => (
     fluid={image}
     constrained={constrained || undefined}
   >
-    <InnerContainer>{children}</InnerContainer>
+    <InnerContainer>
+      {children}
+      <SeeMore fill="#ffffff" height="3em" width="3em"/>
+    </InnerContainer>
 
     {gradient && <GradientOverlay gradientType={gradient} />}
+ 
   </HeroContainer>
 );
 
