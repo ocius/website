@@ -316,8 +316,8 @@ OutboundButtonLink.defaultProps = {};
  * Button component
  *
  * @usage
- * <Button to="/foo">Bar</Button>
- * <Button to="https://foo" type="outbound">Bar</Button>
+ * <Button href="/foo">Bar</Button>
+ * <Button href="https://foo" type="outbound">Bar</Button>
  */
 function Button({
   href,
@@ -333,14 +333,13 @@ function Button({
   type,
   ...rest
 }) {
-  if (type && href) throw new Error("A button shouldn't have a href if it has a type!");
   switch(type){
     case "outbound":
     return (
       <OutboundButtonLink
         className={cn('Button', className)}
         style={customStyles}
-        href={to}
+        href={href}
         onClick={onClick}
         color={color}
         size={size}

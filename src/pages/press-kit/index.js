@@ -19,7 +19,11 @@ export default ({ data }) => (
       description="Our latest high resolution media resources available for download"
     />
     <Segmented borderBottom="">
-      <PageHeader>Press Kit</PageHeader>
+      <PageHeader>
+        <Heading level={1} size="huge" header>
+          Press Kit
+      </Heading>
+      </PageHeader>
     </Segmented>
     <Container className="page-content centered">
       <Segmented borderBottom="">
@@ -69,10 +73,10 @@ export default ({ data }) => (
         <Col xs={12} md={12} lg={12}>
           <Button
             color="white"
-            to="https://drive.google.com/drive/folders/1beCdCnYaKyE4455mAd4kJKjPJWBAgSfb?usp=sharing"
+            href="https://drive.google.com/drive/folders/1beCdCnYaKyE4455mAd4kJKjPJWBAgSfb?usp=sharing"
             size="medium"
+            type="outbound"
             border
-            outbound
           >
             View the full library
             <Icon.ArrowRight
