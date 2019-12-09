@@ -1,7 +1,7 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import { Row, Col } from 'react-flexbox-grid';
-import styled from 'styled-components';
+import styled, {keyframes} from 'styled-components';
 import Layout from '../layouts/Layout';
 import SEO from '../components/SEO';
 import Container from '../components/Container';
@@ -39,6 +39,25 @@ const Callout = styled.div`
   }
 `;
 
+const slideOut = keyframes`
+      0% {
+        transform: translate(-50%, -10px);
+        opacity: 1;
+      }
+      100% {
+        transform: translate(-50%, 10px);
+        opacity: 0;
+      }
+`;
+
+const SeeMore = styled(Icon.ChevronDoubleDown)`
+  position: absolute;
+  display: block;
+  bottom: 1em;
+  left: 50%;
+  animation 1.5s ease-out ${slideOut} infinite;
+`;
+
 export default ({ data }) => {
   return (
     <Layout>
@@ -54,6 +73,7 @@ export default ({ data }) => {
                 For persistent maritime surveillance
               </Heading>
             </Callout>
+            <SeeMore fill="#ffffff" height="3em" width="3em"/>
           </HeroBlock>
         )}
       </Segmented>

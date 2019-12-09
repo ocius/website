@@ -47,26 +47,6 @@ export const InnerContainer = styled(Container)`
   position: relative;
   z-index: 2;
 `;
-
-const slideOut = keyframes`
-      0% {
-        transform: translate(-50%, -10px);
-        opacity: 1;
-      }
-      100% {
-        transform: translate(-50%, 10px);
-        opacity: 0;
-      }
-`;
-
-const SeeMore = styled(Icon.ChevronDoubleDown)`
-  position: absolute;
-  display: block;
-  bottom: 1em;
-  left: 50%;
-  animation 1.5s ease-out ${slideOut} infinite;
-`;
-
 HeroContainer.defaultProps = {};
 
 const HeroBlock = ({ children, image, constrained, gradient }) => (
@@ -78,7 +58,6 @@ const HeroBlock = ({ children, image, constrained, gradient }) => (
   >
     <InnerContainer>
       {children}
-      <SeeMore fill="#ffffff" height="3em" width="3em"/>
     </InnerContainer>
 
     {gradient && <GradientOverlay gradientType={gradient} />}
