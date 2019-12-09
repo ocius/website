@@ -10,7 +10,6 @@ import Heading from '../../components/Heading';
 import PageHeader from '../../components/PageHeader';
 import Button from '../../components/Button';
 import Icon from '../../components/Icon';
-import DownloadableImage from '../../components/DownloadableImage';
 import ResponsiveIframe from '../../components/ResponsiveIframe';
 
 export default ({ data }) => (
@@ -64,13 +63,6 @@ export default ({ data }) => (
             src="https://drive.google.com/file/d/1F-YD7TEncGH1nmrOJj3nMGHG8oRqVaim/preview"
             title="PAC2019 Overview"
           />
-        </Row>
-      </Segmented>
-      <Segmented borderBottom="">
-        <Row>
-          {data.media.edges.map(item => {
-            return <DownloadableImage node={item.node} key={item.node.id} />;
-          })}
         </Row>
       </Segmented>
       <Segmented borderBottom="">
