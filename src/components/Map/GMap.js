@@ -198,7 +198,7 @@ const GMap = ({ apiKey, currentVessel, droneData }) => {
                         lat: parseFloat(boat.Props.Location.Coordinates.Lat),
                         lng: parseFloat(boat.Props.Location.Coordinates.Lon)
                       }}
-                      icon={inlineSvgBoatIcon(boat.Id, boat.Props.Heading)}
+                      icon={inlineSvgBoatIcon(boat.Id, boat.Props.Heading, colorPallete)}
                       label={{
                         text: boat.Name,
                         color: colorPallete[1],
