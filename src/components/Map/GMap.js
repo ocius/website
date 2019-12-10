@@ -190,39 +190,39 @@ const GMap = ({ apiKey, currentVessel, droneData }) => {
             <MarkerClusterer averageCenter enableRetinaIcons gridSize={5}>
               {clusterer =>
                 droneData.map(boat => {
-                  const color = getColorVariation(boat.Id)[1];
+                  const colorPallete = getColorVariation(boat.Id);
                   return (
-                  <Marker
-                    key={boat.Id}
-                    position={{
-                      lat: parseFloat(boat.Props.Location.Coordinates.Lat),
-                      lng: parseFloat(boat.Props.Location.Coordinates.Lon)
-                    }}
-                    icon={inlineSvgBoatIcon(boat.Id, boat.Props.Heading)}
-                    label={{
-                      text: boat.Name,
-                      color: color,
-                      fontSize: '16px',
-                      fontWeight: 'bold'
-                    }}
-                    onLoad={marker => markerLoadHandler(marker, boat.Id)}
-                    onClick={event => markerClickHandler(event, boat)}
-                    clusterer={clusterer}
-                  >
-                    {infoOpen && boat.Id === selectedBoat && (
-                      <InfoWindow
-                        anchor={markerMap[selectedBoat]}
-                        onCloseClick={() => {
-                          setInfoOpen(false);
-                        }}
-                      >
-                        <CameraSlider
-                          images={boat.Props.Cameras}
-                          title={`Live View from ${boat.Name}`}
-                        />
-                      </InfoWindow>
-                    )}
-                  </Marker>
+                    <Marker
+                      key={boat.Id}
+                      position={{
+                        lat: parseFloat(boat.Props.Location.Coordinates.Lat),
+                        lng: parseFloat(boat.Props.Location.Coordinates.Lon)
+                      }}
+                      icon={inlineSvgBoatIcon(boat.Id, boat.Props.Heading)}
+                      label={{
+                        text: boat.Name,
+                        color: colorPallete[1],
+                        fontSize: '16px',
+                        fontWeight: 'bold'
+                      }}
+                      onLoad={marker => markerLoadHandler(marker, boat.Id)}
+                      onClick={event => markerClickHandler(event, boat)}
+                      clusterer={clusterer}
+                    >
+                      {infoOpen && boat.Id === selectedBoat && (
+                        <InfoWindow
+                          anchor={markerMap[selectedBoat]}
+                          onCloseClick={() => {
+                            setInfoOpen(false);
+                          }}
+                        >
+                          <CameraSlider
+                            images={boat.Props.Cameras}
+                            title={`Live View from ${boat.Name}`}
+                          />
+                        </InfoWindow>
+                      )}
+                    </Marker>
                   );
                 })
               }
