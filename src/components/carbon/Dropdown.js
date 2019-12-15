@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import Dropdown from 'carbon-components-react/lib/components/Dropdown';
+import { Dropdown } from 'carbon-components-react';
 
 const StyledDropdown = styled(Dropdown)`
   outline: 2px solid transparent;
