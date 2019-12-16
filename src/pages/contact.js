@@ -1,10 +1,14 @@
 import React from 'react';
 import { Row, Col } from 'react-flexbox-grid';
+import Loadable from '@loadable/component';
 import Layout from '../layouts/Layout';
 import SEO from '../components/SEO';
 import PageHeader from '../components/PageHeader';
 import Container from '../components/Container';
-import RecentNews from '../components/RecentNews';
+import Heading from '../components/Heading';
+
+// Lazy load components
+const Sidebar = Loadable(() => import(`../components/Sidebar`));
 
 const addressStyle = {
   padding: '1em 0',
@@ -19,7 +23,11 @@ export default () => (
       Email: cosecretary@ocius.com.au
       NSW 2052 Phone: +61 2 9924 6400 Postal Address: Office Box 4304 Castlecrag Australia 2068"
     />
-    <PageHeader>Contact</PageHeader>
+    <PageHeader>
+      <Heading level={1} size="huge" header>
+        Contact
+      </Heading>
+    </PageHeader>
     <section className="page-content">
       <Container>
         <Row>
@@ -68,7 +76,7 @@ export default () => (
             </Row>
           </Col>
           <Col className="secondary-content" xs={12} md={5} lg={4} lgOffset={1}>
-            <RecentNews />
+            <Sidebar />
           </Col>
         </Row>
       </Container>

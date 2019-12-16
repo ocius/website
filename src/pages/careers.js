@@ -1,11 +1,14 @@
 import React from 'react';
 import { Row, Col } from 'react-flexbox-grid';
+import Loadable from '@loadable/component';
 import SEO from '../components/SEO';
 import Layout from '../layouts/Layout';
 import PageHeader from '../components/PageHeader';
 import Container from '../components/Container';
 import Heading from '../components/Heading';
-import RecentNews from '../components/RecentNews';
+
+// Lazy load components
+const Sidebar = Loadable(() => import(`../components/Sidebar`));
 
 const styles = {
   underline: {
@@ -21,7 +24,11 @@ export default () => (
       Sydney-based SME (small to medium enterprise) operating at the cutting edge of technology to design and
       build autonomous robots."
     />
-    <PageHeader>Careers</PageHeader>
+    <PageHeader>
+      <Heading level={1} size="huge" header>
+        Careers
+      </Heading>
+    </PageHeader>
     <section className="page-content">
       <Container>
         <Row>
@@ -77,7 +84,7 @@ export default () => (
             </article>
           </Col>
           <Col className="secondary-content" xs={12} md={5} lg={4} lgOffset={1}>
-            <RecentNews />
+            <Sidebar />
           </Col>
         </Row>
       </Container>

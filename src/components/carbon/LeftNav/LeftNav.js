@@ -1,13 +1,13 @@
 import React, { useContext } from 'react';
 import styled from 'styled-components';
 
-import { SideNav as SideNavUnstyled } from 'carbon-components-react/lib/components/UIShell';
+import SideNav from 'carbon-components-react/lib/components/UIShell/SideNav';
 
 import LeftNavWrapper from './LeftNavWrapper';
 import NavContext from '../../../common/context/NavContext';
 import { useWindowSize } from '../../../common/hooks';
 
-const SideNav = styled(SideNavUnstyled)`
+const SideNavStyled = styled(SideNav)`
   position: fixed;
   top: 5rem;
   bottom: 0;
@@ -59,14 +59,14 @@ const LeftNav = ({ children }) => {
 
   return (
     <LeftNavWrapper expanded={leftNavIsOpen}>
-      <SideNav
+      <SideNavStyled
         expanded
         defaultExpanded
         aria-label="Side navigation"
         className="bx--side-nav--website bx--side-nav--website--light"
       >
         {children}
-      </SideNav>
+      </SideNavStyled>
     </LeftNavWrapper>
   );
 };

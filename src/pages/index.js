@@ -1,7 +1,9 @@
 import React from 'react';
 import { graphql } from 'gatsby';
+import Loadable from '@loadable/component';
 import { Row, Col } from 'react-flexbox-grid';
 import styled from 'styled-components';
+import FadeIn from 'react-fade-in';
 import Layout from '../layouts/Layout';
 import SEO from '../components/SEO';
 import Container from '../components/Container';
@@ -9,13 +11,17 @@ import Segmented from '../components/Segmented';
 import Button from '../components/Button';
 import HeroBlock from '../components/HeroBlock';
 import Heading from '../components/Heading';
-import PanelCallout from '../components/PanelCallout';
-import PanelCalloutGroup from '../components/PanelCalloutGroup';
-import ArticlePreviewBlock from '../components/ArticlePreviewBlock';
-import RecentNews from '../components/RecentNews';
 import { add, gutter, span } from '../common/grid';
 import mq from '../common/mq';
 import Icon from '../components/Icon';
+
+// Lazy load all the components
+const SidebarWidget = Loadable(() => import(`../components/SidebarWidget`));
+const PanelCallout = Loadable(() => import(`../components/PanelCallout`));
+const PanelCalloutGroup = Loadable(() => import(`../components/PanelCalloutGroup`));
+const ArticlePreviewBlock = Loadable(() => import(`../components/ArticlePreviewBlock`));
+const RecentNews = Loadable(() => import(`../components/RecentNews`));
+const Sidebar = Loadable(() => import(`../components/Sidebar`));
 
 const gutterWidth = 30;
 
@@ -45,12 +51,14 @@ export default ({ data }) => {
         {data.HeroBackground && (
           <HeroBlock image={data.HeroBackground.childImageSharp.fluid} gradient="leftCorner">
             <Callout className="HeroBlock-callout">
-              <Heading level={1} size="huge" weight="thick">
-                Innovative Autonomous Solutions
-              </Heading>
-              <Heading level={2} size="medium">
-                For persistent maritime surveillance
-              </Heading>
+              <FadeIn>
+                <Heading level={1} size="huge" weight="thick">
+                  Innovative Autonomous Solutions
+                </Heading>
+                <Heading level={2} size="medium">
+                  For persistent maritime surveillance
+                </Heading>
+              </FadeIn>
             </Callout>
           </HeroBlock>
         )}
@@ -60,8 +68,8 @@ export default ({ data }) => {
           <Row>
             <Col xs={12} md={8} lg={8} lgOffset={2}>
               <Heading level={2} size="large" underline>
-                A new generation of ocean drones. Power large payloads,
-                roam widely, and stay at sea for months at a time.
+                A new generation of ocean drones. Power large payloads, roam widely, and stay at sea
+                for months at a time.
               </Heading>
               <p>
                 USVs offer economic and operational advantages over conventional methods in a
@@ -132,7 +140,11 @@ export default ({ data }) => {
         </Container>
 
         <Container>
-          <RecentNews />
+          <Sidebar>
+            <SidebarWidget className="recent-news">
+              <RecentNews />
+            </SidebarWidget>
+          </Sidebar>
         </Container>
       </div>
     </Layout>

@@ -23,10 +23,6 @@ PanelCalloutGroup.propTypes = {
     let error = null;
 
     React.Children.forEach(prop, child => {
-      if (child.type.displayName !== 'PanelCallout') {
-        error = new Error(`${componentName} children should be of type "PanelCallout".`);
-      }
-
       if (child.type.displayName === 'PanelCallout' && React.Children.count.length > 4) {
         error = new Error(`${componentName} should have no more than 4 children.`);
       }

@@ -15,6 +15,7 @@ import NavContext from '../common/context/NavContext';
 import { useWindowSize } from '../common/hooks';
 import useOnClickOutside from '../common/hooks/useOnClickOutside';
 import { FormWrapper, FormItem } from '../components/carbon/shared';
+import SplashScreen from '../components/SplashScreen';
 
 // Google Maps key
 const apiKey = process.env.GOOGLE_MAPS_API_KEY;
@@ -127,6 +128,7 @@ const LivePage = () => {
           </FormWrapper>
         </LeftNav>
       </main>
+      <SplashScreen isLoading={isLoading} text="Connecting to drones" />
       <GMap apiKey={apiKey} currentVessel={currentVessel} droneData={orderedDrones} />
     </EmptyLayout>
   );

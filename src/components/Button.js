@@ -14,6 +14,7 @@ const colors = {
   bgSecondary: '#efefef',
   textSecondary: '#7a96a2',
   accent: '#003859',
+  accentSecondary: '#001826',
   bgAccent: 'rgba(126, 130, 126, 0.1)'
 };
 
@@ -55,7 +56,7 @@ const fullStyle = css`
   width: 100%;
 `;
 
-const ButtonLink = styled(GatsbyLink)`
+const ButtonStyles = css`
   appearance: none;
   backface-visibility: hidden;
   border: 0;
@@ -96,6 +97,19 @@ const ButtonLink = styled(GatsbyLink)`
       :active {
         background-color: ${colors.accent};
         color: ${colors.bgPrimary};
+      }
+    `,
+
+    blue: css`
+      background-color: ${colors.accentSecondary};
+      color: ${colors.bgPrimary};
+      box-shadow: 0 0 0 2px ${colors.borderPrimary} inset;
+
+      :focus,
+      :hover,
+      :active {
+        background-color: ${colors.accent};
+        color: ${colors.bgSecondary};
       }
     `,
 
@@ -166,7 +180,23 @@ const ButtonLink = styled(GatsbyLink)`
   ${props => !props.border && borderStyle}
 `;
 
-ButtonLink.defaultProps = {};
+const ButtonLink = styled(GatsbyLink)`
+  ${ButtonStyles}
+`;
+
+/**
+ * Button-specific styles
+ */
+const FormButton = styled.button`
+  ${ButtonStyles}
+
+  &:disabled,
+  &[disabled] {
+    border: 1px solid #999999;
+    background-color: #cccccc;
+    color: #666666;
+  }
+`;
 
 /**
  * Button component
@@ -175,7 +205,7 @@ ButtonLink.defaultProps = {};
  * <Button to="/foo">Bar</Button>
  */
 function Button({
-  to,
+  href,
   children,
   onClick,
   color,
@@ -185,13 +215,31 @@ function Button({
   border,
   customStyles,
   className,
+  type,
   ...rest
 }) {
-  return (
+  if (type && href) throw new Error("A button shouldn't have a href if it has a type!");
+
+  return type ? (
+    <FormButton
+      className={cn('Button', className)}
+      style={customStyles}
+      type={type}
+      onClick={onClick}
+      color={color}
+      size={size}
+      rounded={rounded ? 1 : undefined}
+      full={full ? 1 : undefined}
+      border={border ? 1 : undefined}
+      {...rest}
+    >
+      {children}
+    </FormButton>
+  ) : (
     <ButtonLink
       className={cn('Button', className)}
       style={customStyles}
-      to={to}
+      to={href}
       onClick={onClick}
       color={color}
       size={size}
@@ -204,12 +252,11 @@ function Button({
     </ButtonLink>
   );
 }
-
 Button.propTypes = {
   /**
    * Pass an to prop to make the button an `a` element instead of a `button`
    */
-  to: PropTypes.string,
+  href: PropTypes.string,
 
   /**
    * Content for the button
@@ -224,7 +271,7 @@ Button.propTypes = {
   /**
    * Color of the button
    */
-  color: PropTypes.oneOf(['white', 'gray', 'transparent']),
+  color: PropTypes.oneOf(['white', 'gray', 'blue', 'transparent']),
 
   /**
    * Size of the button
@@ -259,11 +306,16 @@ Button.propTypes = {
   /**
    * Add classname to button
    */
-  className: PropTypes.string
+  className: PropTypes.string,
+
+  /**
+   * Add type of the button
+   */
+  type: PropTypes.string
 };
 
 Button.defaultProps = {
-  to: null,
+  href: null,
   onClick: null,
   color: 'transparent',
   size: 'medium',
@@ -271,7 +323,8 @@ Button.defaultProps = {
   full: false,
   border: false,
   customStyles: null,
-  className: null
+  className: null,
+  type: null
 };
 
 export default Button;

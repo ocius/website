@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link as GatsbyLink } from 'gatsby';
 import styled from 'styled-components';
+import detectActive from '../../common/detectActive';
 import font from '../../common/font';
 import mq from '../../common/mq';
 import iconFromString from '../../common/iconFromString';
@@ -44,18 +45,8 @@ const Link = styled(GatsbyLink)`
   }
 `;
 
-const getProps = ({ isCurrent }) => {
-  return {
-    ...(isCurrent
-      ? {
-          'data-active': true
-        }
-      : {})
-  };
-};
-
 const MobileNavItem = ({ linkTo, label, icon }) => (
-  <Link getProps={getProps} to={linkTo}>
+  <Link getProps={detectActive} to={linkTo}>
     {iconFromString(icon, { width: '32px' })}
     <div>{label}</div>
   </Link>

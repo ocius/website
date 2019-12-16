@@ -4,6 +4,14 @@ const path = require(`path`);
 const { createFilePath } = require(`gatsby-source-filesystem`);
 const { paginate } = require('gatsby-awesome-pagination');
 
+const LoadablePlugin = require('@loadable/webpack-plugin');
+
+exports.onCreateWebpackConfig = ({ stage, getConfig, rules, loaders, plugins, actions }) => {
+  actions.setWebpackConfig({
+    plugins: [new LoadablePlugin()]
+  });
+};
+
 exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions;
 
@@ -14,6 +22,19 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
       node,
       value
     });
+  }
+};
+
+exports.onCreatePage = async ({ page, actions }) => {
+  const { createPage } = actions;
+
+  // page.matchPath is a special key that's used for matching pages
+  // only on the client.
+  if (page.path.match(/^\/about/)) {
+    page.matchPath = `/about/*`;
+
+    // Update the page.
+    createPage(page);
   }
 };
 
