@@ -1,6 +1,6 @@
 ---
 title: "December Update 2019"
-date: "2019-12-15"
+date: "2019-12-17"
 featuredImage: "./summerfest-2019-autonomy-trials.png"
 ---
 
