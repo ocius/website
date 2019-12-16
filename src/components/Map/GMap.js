@@ -184,6 +184,9 @@ const GMap = ({ apiKey, currentVessel, droneData }) => {
         options={options}
         // Do stuff on map initial load
         onLoad={loadHandler}
+        onClick={() => {
+          setInfoOpen(false);
+        }}
       >
         {droneData.length > 0 && (
           <>
