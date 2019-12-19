@@ -9,7 +9,6 @@ import MobileNavigation from './MobileNavigation';
 
 const navitems = [
   { link: '/live', title: 'LIVE' },
-  { link: '/news', title: 'News' },
   { link: '/contact', title: 'Contact' },
   { link: '/careers', title: 'Careers' }
 ];
@@ -44,6 +43,15 @@ export default () => (
             { href: '/usv', name: 'USV' },
             { href: '/usv#overview', name: 'BlueBottle' },
             { href: '/usv#technical', name: 'Tech Specs' }
+          ]}
+        />
+      </NavbarDropdown>
+      <NavbarDropdown name="News" link="/news">
+        <DropdownMenu
+          menuItems={[
+            { href: '/news', name: 'Blog' },
+            { href: '/news/media-coverage', name: 'Media Coverage' },
+            { href: 'https://drive.google.com/drive/folders/1HGGwwxXzV-lKZyB3fbfwq2rs11JLbN7D', name: 'Press Kit', outbound: true }
           ]}
         />
       </NavbarDropdown>
