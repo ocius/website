@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { prop } from 'styled-tools';
 import { Link as GatsbyLink } from 'gatsby';
+import { OutboundLink } from 'gatsby-plugin-gtag';
+import { css } from 'styled-components'
 
 const Menu = styled.ul`
   display: ${prop('display', 'none')};
@@ -18,7 +20,7 @@ const Menu = styled.ul`
   list-style: none;
 `;
 
-const Link = styled(GatsbyLink)`
+const MenuItemStyle = css`
   display: block;
   padding: 10px 20px;
   clear: both;
@@ -38,15 +40,33 @@ const Link = styled(GatsbyLink)`
   }
 `;
 
+const Link = styled(GatsbyLink)`
+  ${MenuItemStyle}
+`;
+
+const StyledOutboundLink = styled(OutboundLink)`
+  ${MenuItemStyle}
+`;
+
 const DropdownMenu = ({ open, menuItems, setRef }) => (
   <Menu ref={setRef} display={open ? 'block' : 'none'}>
-    {menuItems.map(item => (
-      <li key={menuItems.indexOf(item)}>
-        <Link key={item.name} to={item.href}>
-          {item.name}
-        </Link>
-      </li>
-    ))}
+    {menuItems.map(item => {
+      if (item.outbound)
+        return (
+          <li key={menuItems.indexOf(item)}>
+            <StyledOutboundLink key={item.name} href={item.href}>
+              {item.name}
+            </StyledOutboundLink>
+          </li>
+        );
+      return (
+        <li key={menuItems.indexOf(item)}>
+          <Link key={item.name} to={item.href}>
+            {item.name}
+          </Link>
+        </li>
+      );
+    })}
   </Menu>
 );
 
