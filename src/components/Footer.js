@@ -132,7 +132,7 @@ Footer.defaultProps = {
           <FooterLink to="/news">News</FooterLink>
           <ul className="menu-secondary">
             <li>
-              <FooterLink to="/news">USV</FooterLink>
+              <FooterLink to="/news">Blog</FooterLink>
             </li>
             <li>
               <FooterLink to="/news/media-coverage">Tech Specs</FooterLink>
