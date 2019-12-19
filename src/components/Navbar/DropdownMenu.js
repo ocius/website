@@ -1,10 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { prop } from 'styled-tools';
 import { Link as GatsbyLink } from 'gatsby';
 import { OutboundLink } from 'gatsby-plugin-gtag';
-import { css } from 'styled-components'
 
 const Menu = styled.ul`
   display: ${prop('display', 'none')};

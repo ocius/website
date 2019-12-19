@@ -51,7 +51,11 @@ export default () => (
           menuItems={[
             { href: '/news', name: 'Blog' },
             { href: '/media-coverage', name: 'Media Coverage' },
-            { href: 'https://drive.google.com/drive/folders/1HGGwwxXzV-lKZyB3fbfwq2rs11JLbN7D', name: 'Press Kit', outbound: true }
+            {
+              href: 'https://drive.google.com/drive/folders/1HGGwwxXzV-lKZyB3fbfwq2rs11JLbN7D',
+              name: 'Press Kit',
+              outbound: true
+            }
           ]}
         />
       </NavbarDropdown>
