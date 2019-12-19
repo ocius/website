@@ -50,7 +50,7 @@ export default () => (
         <DropdownMenu
           menuItems={[
             { href: '/news', name: 'Blog' },
-            { href: '/news/media-coverage', name: 'Media Coverage' },
+            { href: '/media-coverage', name: 'Media Coverage' },
             { href: 'https://drive.google.com/drive/folders/1HGGwwxXzV-lKZyB3fbfwq2rs11JLbN7D', name: 'Press Kit', outbound: true }
           ]}
         />
