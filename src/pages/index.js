@@ -1,5 +1,6 @@
 import React from 'react';
 import { graphql } from 'gatsby';
+import Loadable from '@loadable/component';
 import { Row, Col } from 'react-flexbox-grid';
 import styled, {keyframes} from 'styled-components';
 import Layout from '../layouts/Layout';
@@ -9,15 +10,17 @@ import Segmented from '../components/Segmented';
 import Button from '../components/Button';
 import HeroBlock from '../components/HeroBlock';
 import Heading from '../components/Heading';
-import PanelCallout from '../components/PanelCallout';
-import PanelCalloutGroup from '../components/PanelCalloutGroup';
-import ArticlePreviewBlock from '../components/ArticlePreviewBlock';
-import Sidebar from '../components/Sidebar';
-import SidebarWidget from '../components/SidebarWidget';
-import RecentNews from '../components/RecentNews';
 import { add, gutter, span } from '../common/grid';
 import mq from '../common/mq';
 import Icon from '../components/Icon';
+
+// Lazy load all the components
+const SidebarWidget = Loadable(() => import(`../components/SidebarWidget`));
+const PanelCallout = Loadable(() => import(`../components/PanelCallout`));
+const PanelCalloutGroup = Loadable(() => import(`../components/PanelCalloutGroup`));
+const ArticlePreviewBlock = Loadable(() => import(`../components/ArticlePreviewBlock`));
+const RecentNews = Loadable(() => import(`../components/RecentNews`));
+const Sidebar = Loadable(() => import(`../components/Sidebar`));
 
 const gutterWidth = 30;
 
@@ -81,7 +84,7 @@ export default ({ data }) => {
         <Segmented borderBottom="">
           <Row>
             <Col xs={12} md={8} lg={8} mdOffset={2}>
-              <Heading level={2} size="large">
+              <Heading level={2} size="large" underline>
                 A new generation of ocean drones. Power large payloads, roam widely, and stay at sea
                 for months at a time.
               </Heading>

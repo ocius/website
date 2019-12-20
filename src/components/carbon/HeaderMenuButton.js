@@ -1,4 +1,3 @@
-import Close20 from '@carbon/icons-react/lib/close/20';
 import styled, { css } from 'styled-components';
 import React from 'react';
 import PropTypes from 'prop-types';
@@ -77,7 +76,13 @@ const HeaderMenuButton = ({
       isActive={isActive ? 1 : undefined}
     >
       {isActive ? (
-        <Close20 />
+        <Icon.Close20
+          style={{
+            height: 20,
+            width: 20,
+            marginBottom: '5px'
+          }}
+        />
       ) : (
         <Icon.Sliders
           style={{

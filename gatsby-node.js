@@ -4,6 +4,14 @@ const path = require(`path`);
 const { createFilePath } = require(`gatsby-source-filesystem`);
 const { paginate } = require('gatsby-awesome-pagination');
 
+const LoadablePlugin = require('@loadable/webpack-plugin');
+
+exports.onCreateWebpackConfig = ({ stage, getConfig, rules, loaders, plugins, actions }) => {
+  actions.setWebpackConfig({
+    plugins: [new LoadablePlugin()]
+  });
+};
+
 exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions;
 

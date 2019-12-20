@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from '@reach/router';
 import styled, { css } from 'styled-components';
+import detectActive from '../../common/detectActive';
 
 const NavItem = styled.li`
   box-sizing: border-box;
@@ -77,6 +78,7 @@ const StyledLink = styled(Link)`
     border-bottom: none;
   }
 
+  &[data-active],
   &[aria-current*='page'] {
     background-color: #f4f4f4;
     box-shadow: inset 0 2px 0 0 #60d2f6;
@@ -138,7 +140,7 @@ const NavTab = ({
       selected={selected}
       {...other}
     >
-      <StyledLink to={to} tabIndex={0}>
+      <StyledLink getProps={detectActive} to={to} tabIndex={0}>
         {label}
       </StyledLink>
     </NavItem>

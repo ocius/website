@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { throttle as _throttle } from 'lodash';
+import throttle from 'lodash/throttle';
 
 let passiveListenerSupported;
 
@@ -33,7 +33,7 @@ const useScrollPosition = () => {
   const [position, setPosition] = useState(getPosition());
 
   useEffect(() => {
-    const handleScroll = _throttle(() => {
+    const handleScroll = throttle(() => {
       setPosition(getPosition());
     }, 100);
 
