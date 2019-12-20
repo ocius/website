@@ -4,6 +4,7 @@ import styled, { css } from 'styled-components';
 import { switchProp } from 'styled-tools';
 import cn from 'classnames';
 import { Link as GatsbyLink } from 'gatsby';
+import { OutboundLink } from 'gatsby-plugin-gtag';
 import propTypes from '../common/propTypes';
 
 const colors = {
@@ -198,11 +199,125 @@ const FormButton = styled.button`
   }
 `;
 
+const OutboundButtonLink = styled(OutboundLink)`
+  appearance: none;
+  backface-visibility: hidden;
+  border: 0;
+  border-radius: 0;
+  cursor: pointer;
+  display: inline-flex;
+  flex-shrink: 0;
+  -moz-box-align: center;
+  align-items: center;
+  font-weight: 600;
+  line-height: 1;
+  overflow: hidden;
+  padding-left: ${30 / 13}em;
+  padding-right: ${30 / 13}em;
+  text-align: center;
+  text-decoration: none;
+  text-overflow: ellipsis;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1) 0s;
+  vertical-align: middle;
+  white-space: nowrap;
+
+  :active,
+  :hover,
+  :focus {
+    text-decoration: none;
+  }
+
+  ${switchProp('color', {
+    gray: css`
+      background-color: ${colors.bgSecondary};
+      color: ${colors.textSecondary};
+      box-shadow: 0 0 0 2px ${colors.borderPrimary} inset;
+
+      :focus,
+      :hover,
+      :active {
+        background-color: ${colors.accent};
+        color: ${colors.bgPrimary};
+      }
+    `,
+
+    white: css`
+      background-color: ${colors.bgPrimary};
+      background-size: 4rem 4rem;
+      color: ${colors.borderPrimary};
+      box-shadow: 0 0 0 2px ${colors.borderPrimary} inset;
+
+      :focus,
+      :hover,
+      :active {
+        color: ${colors.textPrimary};
+        background-color: ${colors.bgAccent};
+      }
+    `,
+
+    transparent: css`
+      background-color: transparent;
+      color: ${colors.textOverlay};
+      box-shadow: 0 0 0 2px ${colors.bgPrimary} inset;
+
+      :focus,
+      :hover,
+      :active {
+        background-color: transparent;
+        color: ${colors.textPrimary};
+      }
+    `
+  })}
+
+  ${switchProp('size', {
+    tiny: css`
+      font-size: 9px;
+      padding-bottom: ${9 / 9}em;
+      padding-left: ${19 / 9}em;
+      padding-right: ${19 / 9}em;
+      padding-top: ${12 / 9}em;
+    `,
+
+    small: css`
+      font-size: 11px;
+      padding-bottom: ${15 / 11}em;
+      padding-top: ${18 / 11}em;
+    `,
+
+    medium: css`
+      font-size: 13px;
+      padding-bottom: ${21 / 13}em;
+      padding-top: ${26 / 13}em;
+    `,
+
+    large: css`
+      font-size: 15px;
+      padding-bottom: ${23 / 15}em;
+      padding-top: ${28 / 15}em;
+    `,
+
+    huge: css`
+      font-size: 17px;
+      padding-bottom: ${25 / 17}em;
+      padding-top: ${30 / 17}em;
+    `
+  })}
+    
+  ${props => props.rounded && roundedStyle}
+  ${props => props.full && fullStyle}
+  ${props => !props.border && borderStyle}
+`;
+
+OutboundButtonLink.defaultProps = {};
+
 /**
  * Button component
  *
  * @usage
- * <Button to="/foo">Bar</Button>
+ * <Button href="/foo">Bar</Button>
+ * <Button href="https://foo" type="outbound">Bar</Button>
  */
 function Button({
   href,
@@ -218,39 +333,59 @@ function Button({
   type,
   ...rest
 }) {
-  if (type && href) throw new Error("A button shouldn't have a href if it has a type!");
-
-  return type ? (
-    <FormButton
-      className={cn('Button', className)}
-      style={customStyles}
-      type={type}
-      onClick={onClick}
-      color={color}
-      size={size}
-      rounded={rounded ? 1 : undefined}
-      full={full ? 1 : undefined}
-      border={border ? 1 : undefined}
-      {...rest}
-    >
-      {children}
-    </FormButton>
-  ) : (
-    <ButtonLink
-      className={cn('Button', className)}
-      style={customStyles}
-      to={href}
-      onClick={onClick}
-      color={color}
-      size={size}
-      rounded={rounded ? 1 : undefined}
-      full={full ? 1 : undefined}
-      border={border ? 1 : undefined}
-      {...rest}
-    >
-      {children}
-    </ButtonLink>
-  );
+  switch(type){
+    case "outbound":
+    return (
+      <OutboundButtonLink
+        className={cn('Button', className)}
+        style={customStyles}
+        href={href}
+        onClick={onClick}
+        color={color}
+        size={size}
+        rounded={rounded ? 1 : undefined}
+        full={full ? 1 : undefined}
+        border={border ? 1 : undefined}
+        {...rest}
+      >
+        {children}
+      </OutboundButtonLink>
+    );
+    case "form":
+      return (
+        <FormButton
+          className={cn('Button', className)}
+          style={customStyles}
+          type={type}
+          onClick={onClick}
+          color={color}
+          size={size}
+          rounded={rounded ? 1 : undefined}
+          full={full ? 1 : undefined}
+          border={border ? 1 : undefined}
+          {...rest}
+        >
+          {children}
+        </FormButton>
+      );
+    default:
+      return (
+      <ButtonLink
+        className={cn('Button', className)}
+        style={customStyles}
+        to={href}
+        onClick={onClick}
+        color={color}
+        size={size}
+        rounded={rounded ? 1 : undefined}
+        full={full ? 1 : undefined}
+        border={border ? 1 : undefined}
+        {...rest}
+      >
+        {children}
+      </ButtonLink>
+    );
+  }
 }
 Button.propTypes = {
   /**

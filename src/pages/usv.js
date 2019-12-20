@@ -12,6 +12,7 @@ import BluebottleImage from '../../static/wallpaperocius-768x432.jpg';
 const Heading = Loadable(() => import(`../components/Heading`));
 const PageHeader = Loadable(() => import(`../components/PageHeader`));
 const TechnicalSpecificationForm = Loadable(() => import(`./bluebottle-usv-brochure`));
+const ResponsiveIframe = Loadable(() => import(`../components/ResponsiveIframe`));
 
 export default ({ data }) => (
   <Layout>
@@ -33,10 +34,8 @@ export default ({ data }) => (
             <Heading level={1} size="huge" underline>
               What is a USV?
             </Heading>
-            <iframe
+            <ResponsiveIframe
               title="PAC2019 Overview"
-              width="100%"
-              height="390"
               src="https://www.youtube.com/embed/7vhvKcc-UPk"
               frameBorder="0"
               allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
