@@ -333,25 +333,25 @@ function Button({
   type,
   ...rest
 }) {
-  switch(type){
-    case "outbound":
-    return (
-      <OutboundButtonLink
-        className={cn('Button', className)}
-        style={customStyles}
-        href={href}
-        onClick={onClick}
-        color={color}
-        size={size}
-        rounded={rounded ? 1 : undefined}
-        full={full ? 1 : undefined}
-        border={border ? 1 : undefined}
-        {...rest}
-      >
-        {children}
-      </OutboundButtonLink>
-    );
-    case "form":
+  switch (type) {
+    case 'outbound':
+      return (
+        <OutboundButtonLink
+          className={cn('Button', className)}
+          style={customStyles}
+          href={href}
+          onClick={onClick}
+          color={color}
+          size={size}
+          rounded={rounded ? 1 : undefined}
+          full={full ? 1 : undefined}
+          border={border ? 1 : undefined}
+          {...rest}
+        >
+          {children}
+        </OutboundButtonLink>
+      );
+    case 'form':
       return (
         <FormButton
           className={cn('Button', className)}
@@ -370,21 +370,21 @@ function Button({
       );
     default:
       return (
-      <ButtonLink
-        className={cn('Button', className)}
-        style={customStyles}
-        to={href}
-        onClick={onClick}
-        color={color}
-        size={size}
-        rounded={rounded ? 1 : undefined}
-        full={full ? 1 : undefined}
-        border={border ? 1 : undefined}
-        {...rest}
-      >
-        {children}
-      </ButtonLink>
-    );
+        <ButtonLink
+          className={cn('Button', className)}
+          style={customStyles}
+          to={href}
+          onClick={onClick}
+          color={color}
+          size={size}
+          rounded={rounded ? 1 : undefined}
+          full={full ? 1 : undefined}
+          border={border ? 1 : undefined}
+          {...rest}
+        >
+          {children}
+        </ButtonLink>
+      );
   }
 }
 Button.propTypes = {

@@ -2,7 +2,7 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import Loadable from '@loadable/component';
 import { Row, Col } from 'react-flexbox-grid';
-import styled, {keyframes} from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import Layout from '../layouts/Layout';
 import SEO from '../components/SEO';
 import Container from '../components/Container';
@@ -76,7 +76,7 @@ export default ({ data }) => {
                 For persistent maritime surveillance
               </Heading>
             </Callout>
-            <SeeMore fill="#ffffff" height="3em" width="3em"/>
+            <SeeMore fill="#ffffff" height="3em" width="3em" />
           </HeroBlock>
         )}
       </Segmented>

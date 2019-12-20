@@ -39,7 +39,7 @@ const Underline = css`
 `;
 
 const Shadow = css`
-  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 `;
 
 const Header = css`

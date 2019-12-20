@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled, { keyframes, css } from 'styled-components';
+import styled, { css } from 'styled-components';
 import BackgroundImage from 'gatsby-background-image';
 
 import mq from '../common/mq';
@@ -8,7 +8,6 @@ import font from '../common/font';
 
 import GradientOverlay from './GradientOverlay';
 import Container from './Container';
-import Icon from './Icon';
 
 export const ContainerStyle = css`
   color: #ffffff;
@@ -56,12 +55,9 @@ const HeroBlock = ({ children, image, constrained, gradient }) => (
     fluid={image}
     constrained={constrained || undefined}
   >
-    <InnerContainer>
-      {children}
-    </InnerContainer>
+    <InnerContainer>{children}</InnerContainer>
 
     {gradient && <GradientOverlay gradientType={gradient} />}
- 
   </HeroContainer>
 );
 
