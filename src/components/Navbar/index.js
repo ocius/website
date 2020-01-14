@@ -52,7 +52,8 @@ export default () => (
             { href: '/news', name: 'Blog' },
             { href: '/media-coverage', name: 'Media Coverage' },
             {
-              href: 'https://drive.google.com/drive/folders/1HGGwwxXzV-lKZyB3fbfwq2rs11JLbN7D',
+              href:
+                'https://drive.google.com/drive/folders/1beCdCnYaKyE4455mAd4kJKjPJWBAgSfb?usp=sharing',
               name: 'Press Kit',
               outbound: true
             }

@@ -219,28 +219,11 @@ function Button({
 }) {
   if (type && href) throw new Error("A button shouldn't have a href if it has a type!");
   if (type)
-      return (
-        <ButtonLink
-          className={cn('Button', className)}
-          style={customStyles}
-          to={href}
-          onClick={onClick}
-          color={color}
-          size={size}
-          rounded={rounded ? 1 : undefined}
-          full={full ? 1 : undefined}
-          border={border ? 1 : undefined}
-          {...rest}
-        >
-          {children}
-        </ButtonLink>
-      );
-  else
     return (
-      <FormButton
+      <ButtonLink
         className={cn('Button', className)}
         style={customStyles}
-        type={type}
+        to={href}
         onClick={onClick}
         color={color}
         size={size}
@@ -250,8 +233,24 @@ function Button({
         {...rest}
       >
         {children}
-      </FormButton>
+      </ButtonLink>
     );
+  return (
+    <FormButton
+      className={cn('Button', className)}
+      style={customStyles}
+      type={type}
+      onClick={onClick}
+      color={color}
+      size={size}
+      rounded={rounded ? 1 : undefined}
+      full={full ? 1 : undefined}
+      border={border ? 1 : undefined}
+      {...rest}
+    >
+      {children}
+    </FormButton>
+  );
 }
 
 Button.propTypes = {
