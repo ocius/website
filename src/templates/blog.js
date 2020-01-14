@@ -4,13 +4,13 @@ import Img from 'gatsby-image';
 import { Row, Col } from 'react-flexbox-grid';
 import styled from 'styled-components';
 import Layout from '../layouts/Layout';
+import mq from '../common/mq';
 import SEO from '../components/SEO';
 import PageHeader from '../components/PageHeader';
 import Container from '../components/Container';
 import Sidebar from '../components/Sidebar';
 import Heading from '../components/Heading';
 import Segmented from '../components/Segmented';
-import Button from '../components/Button';
 import Pagination from '../components/Pagination';
 import NavTabs from '../components/Tabs/NavTabs';
 import NavTab from '../components/Tabs/NavTab';
@@ -18,6 +18,12 @@ import NavTab from '../components/Tabs/NavTab';
 const Link = styled(GatsbyLink)`
   display: block;
   color: #001826;
+`;
+
+const Post = styled(Row)`
+  @media (min-width: ${mq.min[1024]}) {
+    padding-right: 1em;
+  }
 `;
 
 export default ({ data, pageContext }) => {
@@ -43,34 +49,33 @@ export default ({ data, pageContext }) => {
       <section className="page-content">
         <Container>
           <Row>
-            <Col className="primary-content" xs={12} md={7} lg={7}>
+            <Col className="primary-content" xs={12} md={7} lg={8}>
               {posts.map(({ node }) => (
                 <Segmented key={node.id}>
-                  <article className="post">
-                    {node.frontmatter.featuredImage && (
-                      <div className="img-wrap">
+                  <Post className="post">
+                    <Col lg={5}>
+                      {node.frontmatter.featuredImage && (
                         <Link to={node.fields.slug}>
                           <Img
                             fluid={node.frontmatter.featuredImage.childImageSharp.fluid}
                             alt={node.frontmatter.title}
                           />
                         </Link>
-                      </div>
-                    )}
-                    <Heading level={3} size="medium">
-                      <Link to={node.fields.slug}>{node.frontmatter.title}</Link>
-                    </Heading>
-                    <p className="date">{node.frontmatter.date}</p>
-                    <p>{node.excerpt}</p>
-                    <Button color="gray" size="small" to={node.fields.slug}>
-                      Read More
-                    </Button>
-                  </article>
+                      )}
+                    </Col>
+                    <Col lg={7}>
+                      <Heading level={3} size="medium" className="title">
+                        <Link to={node.fields.slug}>{node.frontmatter.title}</Link>
+                      </Heading>
+                      <p className="date">{node.frontmatter.date}</p>
+                      <p className="preview">{node.excerpt}</p>
+                    </Col>
+                  </Post>
                 </Segmented>
               ))}
               <Pagination pageContext={pageContext} pathPrefix="/" />
             </Col>
-            <Col className="secondary-content" xs={12} md={5} lg={4} lgOffset={1}>
+            <Col className="secondary-content" xs={12} md={5} lg={4}>
               <Sidebar />
             </Col>
           </Row>
