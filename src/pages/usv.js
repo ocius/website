@@ -33,15 +33,6 @@ export default ({ data }) => (
             <Heading level={1} size="huge" underline>
               What is a USV?
             </Heading>
-            <iframe
-              title="PAC2019 Overview"
-              width="100%"
-              height="390"
-              src="https://www.youtube.com/embed/7vhvKcc-UPk"
-              frameBorder="0"
-              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            />
             <Heading level={2} size="medium">
               A USV is an Unmanned Surface Vessel
             </Heading>
@@ -63,6 +54,15 @@ export default ({ data }) => (
           <Heading level={4} size="small">
             <strong>Bluebottle USVs are the new &apos;Satellites Of the Sea&apos;.</strong>
           </Heading>
+          <iframe
+            title="PAC2019 Overview"
+            width="100%"
+            height="390"
+            src="https://www.youtube.com/embed/7vhvKcc-UPk"
+            frameBorder="0"
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          />
           <p>
             Bluebottle USVs are autonomous data gathering &amp; communications platforms being like
             &apos;satellites of the sea&apos;. They offer&nbsp;multiple economic and operational
