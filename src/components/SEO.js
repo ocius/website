@@ -96,10 +96,11 @@ SEO.propTypes = {
 };
 
 SEO.defaultProps = {
-  description: '',
+  description:
+    "OCIUS Technology's Unmanned Surface Vessels (USVs) provide innovative autonomous solutions for persistent maritime surveillance",
   lang: `en`,
   meta: [],
-  keywords: [],
+  keywords: ['USV', 'unmmanned', 'autonomous', 'unmanned surface vessel', 'maritime', 'drones'],
   image: ''
 };
 
