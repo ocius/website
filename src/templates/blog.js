@@ -64,7 +64,7 @@ export default ({ data, pageContext }) => {
                       )}
                     </Col>
                     <Col lg={7}>
-                      <Heading level={3} size="medium" className="title">
+                      <Heading level={3} size="medium" className="title" weight="thick">
                         <Link to={node.fields.slug}>{node.frontmatter.title}</Link>
                       </Heading>
                       <p className="date">{node.frontmatter.date}</p>

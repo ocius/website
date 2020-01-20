@@ -185,13 +185,12 @@ figcaption {
 }
 
 .page-content .primary-content {
-    padding-top: 1em;
-    padding-bottom: 1em;
+    padding-top: 2.2em;
+    padding-bottom: 2.2em;
 }
 
 .page-content .primary-content .title {
-    font-weight: bold;
-    font-size: 18px;
+    margin-top: 0;
 }
 
 .page-content .primary-content .date {
