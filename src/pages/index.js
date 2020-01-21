@@ -46,7 +46,10 @@ const Callout = styled.div`
 export default ({ data }) => {
   return (
     <Layout>
-      <SEO title="OCIUS - Satellites of the Sea" />
+      <SEO
+        title="OCIUS - Satellites of the Sea"
+        description="OCIUS Technology's Unmanned Surface Vessels (USVs) provide innovative autonomous solutions for persistent maritime surveillance"
+      />
       <Segmented borderBottom="">
         {data.HeroBackground && (
           <HeroBlock image={data.HeroBackground.childImageSharp.fluid} gradient="leftCorner">
