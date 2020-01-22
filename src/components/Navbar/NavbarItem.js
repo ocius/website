@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled, { css } from 'styled-components';
 import { Link as GatsbyLink } from 'gatsby';
+import detectActive from '../../common/detectActive';
 
 const Item = styled.li`
   position: relative;
@@ -25,14 +26,13 @@ const LinkStyles = css`
     text-decoration: none;
   }
 
-  :focus {
-    outline-offset: -2px;
-    outline-width: 2px;
-  }
-
   ${Item}:hover & {
     color: #60d2f6;
     background-color: #ffffff;
+  }
+
+  &[data-active] {
+    background-color: #f7f7f7;
   }
 `;
 
@@ -43,12 +43,6 @@ const InternalLink = styled(GatsbyLink)`
 const ExternalLink = styled.a`
   ${LinkStyles}
 `;
-
-const styles = {
-  active: {
-    backgroundColor: '#f7f7f7'
-  }
-};
 
 const NavbarItem = ({ link, title, blank }) => {
   return (
@@ -64,7 +58,7 @@ const NavbarItem = ({ link, title, blank }) => {
         }
 
         return (
-          <InternalLink className="link" to={link} activeStyle={styles.active}>
+          <InternalLink className="link" to={link} getProps={detectActive}>
             {title}
           </InternalLink>
         );

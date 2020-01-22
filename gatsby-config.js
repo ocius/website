@@ -40,7 +40,7 @@ module.exports = {
               // Add custom styles to the div wrapping the responsive images
               wrapperStyle: 'margin-left: unset !important;margin-right: unset !important;',
               // Add webp version
-              withWebp: true
+              withWebp: false
             }
           },
           `gatsby-remark-copy-linked-files`
@@ -53,26 +53,9 @@ module.exports = {
       resolve: `gatsby-plugin-gtag`,
       options: {
         // Your google analytics tracking ID
-        trackingId: 'UA-96773019-1',
+        trackingId: 'UA-150544681-1',
         // Puts tracking script in the head instead of the body
         head: false
-      }
-    },
-
-    // Add manifest
-    {
-      resolve: `gatsby-plugin-manifest`,
-      options: {
-        name: `OCIUS`,
-        short_name: `OCIUS`,
-        start_url: `/`,
-        background_color: `#efefef`,
-        theme_color: `#125192`,
-        // Enables "Add to Homescreen" prompt and disables browser UI (including back button)
-        // see https://developers.google.com/web/fundamentals/web-app-manifest/#display
-        display: `standalone`,
-        icon: `static/favicon.ico`, // This path is relative to the root of the site.
-        include_favicon: true // Include favicon
       }
     },
 
@@ -97,7 +80,6 @@ module.exports = {
     `gatsby-transformer-yaml`,
     `gatsby-plugin-react-helmet`,
     `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
-    `gatsby-plugin-remove-serviceworker`
+    `gatsby-plugin-sharp`
   ]
 };

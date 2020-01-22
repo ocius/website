@@ -1,21 +1,24 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import { Row, Col } from 'react-flexbox-grid';
+import Loadable from '@loadable/component';
 import Layout from '../layouts/Layout';
 import SEO from '../components/SEO';
-import HeroBlock from '../components/HeroBlock';
 import Container from '../components/Container';
 import Icon from '../components/Icon';
+import HeroBlock from '../components/HeroBlock';
 import Heading from '../components/Heading';
 import Button from '../components/Button';
 import Segmented from '../components/Segmented';
-import TallCarousel from '../components/TallCarousel';
+
+// Lazy load components
+const TallCarousel = Loadable(() => import(`../components/TallCarousel`));
 
 export default ({ data }) => (
   <Layout>
     <SEO
       title="Defence"
-      description="Persistent USVs are being seen as strategic in Defence as force multipliers Bluebottles have more
+      description="Persistent Unmanned Surface Vessels (USVs) are being seen as strategic in Defence as force multipliers Bluebottles have more
        power payload and performance making them the superior persistent USV for defence"
     />
 

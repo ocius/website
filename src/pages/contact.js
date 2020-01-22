@@ -1,11 +1,14 @@
 import React from 'react';
 import { Row, Col } from 'react-flexbox-grid';
+import Loadable from '@loadable/component';
 import Layout from '../layouts/Layout';
 import SEO from '../components/SEO';
 import PageHeader from '../components/PageHeader';
 import Container from '../components/Container';
-import Sidebar from '../components/Sidebar';
 import Heading from '../components/Heading';
+
+// Lazy load components
+const Sidebar = Loadable(() => import(`../components/Sidebar`));
 
 const addressStyle = {
   padding: '1em 0',

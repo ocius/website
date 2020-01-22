@@ -1,22 +1,23 @@
 import React from 'react';
 import { Col, Row } from 'react-flexbox-grid';
-import Img from 'gatsby-image';
 import { graphql } from 'gatsby';
+import Img from 'gatsby-image';
+import Loadable from '@loadable/component';
 import Layout from '../layouts/Layout';
 import SEO from '../components/SEO';
 import Container from '../components/Container';
 import BluebottleImage from '../../static/wallpaperocius-768x432.jpg';
-import Heading from '../components/Heading';
-import PageHeader from '../components/PageHeader';
-import TechnicalSpecificationForm from './bluebottle-usv-brochure';
+
+// Lazy load components
+const Heading = Loadable(() => import(`../components/Heading`));
+const PageHeader = Loadable(() => import(`../components/PageHeader`));
+const TechnicalSpecificationForm = Loadable(() => import(`./bluebottle-usv-brochure`));
 
 export default ({ data }) => (
   <Layout>
     <SEO
-      title="Drones"
-      description="A USV is an Unmanned Surface Vessel There are two types: Conventional powered vessels which are
-      unmanned. They have limited time and range at sea and are acoustically noisy. Renewable energy powered vessels
-      which are unmanned."
+      title="Unmanned Surface Vessel"
+      description="A USV is an Unmanned Surface Vessel. Bluebottle USVs are autonomous data gathering communications platform, the satellites of the sea."
     />
     <PageHeader>
       <Heading level={1} size="huge" header>
@@ -30,6 +31,15 @@ export default ({ data }) => (
             <Heading level={1} size="huge" underline>
               What is a USV?
             </Heading>
+            <iframe
+              title="PAC2019 Overview"
+              width="100%"
+              height="390"
+              src="https://www.youtube.com/embed/7vhvKcc-UPk"
+              frameBorder="0"
+              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            />
             <Heading level={2} size="medium">
               A USV is an Unmanned Surface Vessel
             </Heading>

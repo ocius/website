@@ -1,11 +1,14 @@
 import React from 'react';
 import { Row, Col } from 'react-flexbox-grid';
+import Loadable from '@loadable/component';
 import SEO from '../components/SEO';
 import Layout from '../layouts/Layout';
 import PageHeader from '../components/PageHeader';
 import Container from '../components/Container';
 import Heading from '../components/Heading';
-import Sidebar from '../components/Sidebar';
+
+// Lazy load components
+const Sidebar = Loadable(() => import(`../components/Sidebar`));
 
 const styles = {
   underline: {

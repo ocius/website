@@ -1,23 +1,24 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import { Row, Col } from 'react-flexbox-grid';
+import Loadable from '@loadable/component';
 import Layout from '../layouts/Layout';
+import HeroBlock from '../components/HeroBlock';
 import SEO from '../components/SEO';
 import Container from '../components/Container';
-import Icon from '../components/Icon';
 import Segmented from '../components/Segmented';
-import HeroBlock from '../components/HeroBlock';
-import Button from '../components/Button';
-import Heading from '../components/Heading';
-import TallCarousel from '../components/TallCarousel';
+import Icon from '../components/Icon';
+
+// Lazy load components
+const Heading = Loadable(() => import(`../components/Heading`));
+const Button = Loadable(() => import(`../components/Button`));
+const TallCarousel = Loadable(() => import(`../components/TallCarousel`));
 
 export default ({ data }) => (
   <Layout>
     <SEO
       title="Science"
-      description="Science Weather 'ground truth' Hurricane Landfall Prediction Climate Change Fisheries Weather LIVE
-        Wind direction &amp; strength Solar intensity &amp; cloud Wave direction &amp; height Air pressure Water
-        temperature Camera shots."
+      description="Persistent Unmanned Surface Vessels (USVs) are valuable tools for oceanographic and climate change research. Bluebottle USVs can monitor Weather “ground truth“, Climate Change, Hurricane landfall, Fisheries."
     />
     <Segmented borderBottom="">
       <HeroBlock

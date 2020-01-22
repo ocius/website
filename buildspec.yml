@@ -4,18 +4,12 @@ phases:
     commands:
       - "npm install"
       - "npm install -g gatsby"
-      - "npm install -g lighthouse-ci"
       - "apt update"
-      - "apt install -y chromium-browser"
       - "gatsby build"
-  pre_build:
-    commands:
-      - 'gatsby serve &'
-      - "lighthouse-ci http://localhost:9000/ --performance=95 --best-practices=93 --accessibility=93 --seo=100"
   build:
     commands:
       - 'aws s3 sync "public/" "s3://ocius-static-website" --delete'
-      - 'aws cloudfront create-invalidation --distribution-id E32IQDBZLB1XOB --paths "/*"'
+      - 'aws cloudfront create-invalidation --distribution-id E3DSYTEJZITXF6 --paths "/*"'
 artifacts:
   base-directory: public
   files:
