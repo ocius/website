@@ -131,7 +131,7 @@ export default ({ data }) => (
           <br />
           For how we can support your goals...
         </Heading>
-        <Button color="white" size="medium" to="/contact" border>
+        <Button color="white" size="medium" href="/contact" border>
           Contact Us Now
         </Button>
       </Segmented>

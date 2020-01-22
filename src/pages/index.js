@@ -94,7 +94,7 @@ export default ({ data }) => {
                 multitude of industries. The videos and links below demonstrate just some of the
                 solutions we offer.
               </p>
-              <Button color="white" size="medium" to="/usv" border>
+              <Button color="white" size="medium" href="/usv" border>
                 What is a USV?
                 <Icon.ArrowRight
                   fill="#000000"

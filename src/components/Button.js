@@ -174,7 +174,7 @@ const ButtonStyles = css`
       padding-top: ${30 / 17}em;
     `
   })}
-    
+
   ${props => props.rounded && roundedStyle}
   ${props => props.full && fullStyle}
   ${props => !props.border && borderStyle}
@@ -218,7 +218,7 @@ function Button({
   ...rest
 }) {
   if (type && href) throw new Error("A button shouldn't have a href if it has a type!");
-  if (type)
+  if (!type)
     return (
       <ButtonLink
         className={cn('Button', className)}
