@@ -43,14 +43,15 @@ const Callout = styled.div`
 `;
 
 const slideOut = keyframes`
-      0% {
-        transform: translate(-50%, -10px);
-        opacity: 1;
-      }
-      100% {
-        transform: translate(-50%, 10px);
-        opacity: 0;
-      }
+  0% {
+    transform: translate(-50%, -10px);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translate(-50%, 10px);
+    opacity: 0;
+  }
 `;
 
 const SeeMore = styled(Icon.ChevronDoubleDown)`
@@ -67,12 +68,12 @@ export default ({ data }) => {
       <SEO title="OCIUS - Satellites of the Sea" />
       <Segmented borderBottom="">
         {data.HeroBackground && (
-          <HeroBlock image={data.HeroBackground.childImageSharp.fluid}>
+          <HeroBlock image={data.HeroBackground.childImageSharp.fluid} gradient="top">
             <Callout className="HeroBlock-callout">
-              <Heading level={1} size="huge" weight="thick" shadow>
+              <Heading level={1} size="huge" weight="thick">
                 Innovative Autonomous Solutions
               </Heading>
-              <Heading level={2} size="medium" weight="thick" shadow>
+              <Heading level={2} size="medium" weight="thick">
                 For persistent maritime surveillance
               </Heading>
             </Callout>
@@ -170,7 +171,7 @@ export default ({ data }) => {
 
 export const query = graphql`
   query getHomepageImages {
-    HeroBackground: file(relativePath: { eq: "images/drone_boat_32.jpg" }) {
+    HeroBackground: file(relativePath: { eq: "images/drone_boat.jpg" }) {
       ...imageSharpHeroBackground
     }
 

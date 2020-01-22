@@ -39,7 +39,7 @@ const Underline = css`
 `;
 
 const Shadow = css`
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.3);
 `;
 
 const Header = css`
@@ -101,7 +101,7 @@ const StyledHeading = styled.h3`
       }
     `
   })}
-  
+
   ${switchProp('weight', {
     extraThin: css`
       font-weight: ${fontWeightLight};
@@ -119,7 +119,7 @@ const StyledHeading = styled.h3`
       font-weight: ${fontWeightMedium};
     `
   })}
-  
+
   ${switchProp('tracking', {
     tight: css`
       letter-spacing: -1px;
@@ -129,7 +129,7 @@ const StyledHeading = styled.h3`
       letter-spacing: 1px;
     `
   })}
-     
+
    ${props => props.caps && VariantCaps}
    ${props => props.truncate && Truncate}
    ${props => props.underline && Underline}

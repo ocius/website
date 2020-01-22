@@ -39,6 +39,15 @@ const GradientContainer = styled.div`
         ${prop('color')},
         rgba(${withProp('color', color => `${rgb(color)}`)}, 0) 56%
       );
+    `,
+
+    top: css`
+      opacity: 0.67;
+      background-image: linear-gradient(
+        to bottom,
+        ${prop('color')},
+        rgba(${withProp('color', color => `${rgb(color)}`)}, 0) 70%
+      );
     `
   })}
 `;
