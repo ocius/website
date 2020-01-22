@@ -65,7 +65,7 @@ const GradientOverlay = ({ children, gradientType, color }) => {
 GradientOverlay.propTypes = {
   color: PropTypes.string,
   children: PropTypes.element,
-  gradientType: PropTypes.oneOf(['', 'linear', 'radial', 'leftCorner'])
+  gradientType: PropTypes.oneOf(['', 'top', 'linear', 'radial', 'leftCorner'])
 };
 
 GradientOverlay.defaultProps = {
