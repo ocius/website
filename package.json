@@ -28,6 +28,7 @@
     "gatsby-awesome-pagination": "^0.3.5",
     "gatsby-background-image": "^0.9.7",
     "gatsby-image": "^2.2.34",
+    "gatsby-plugin-advanced-sitemap": "^1.4.5",
     "gatsby-plugin-gtag": "^1.0.11",
     "gatsby-plugin-mailchimp": "^5.1.2",
     "gatsby-plugin-manifest": "^2.2.30",

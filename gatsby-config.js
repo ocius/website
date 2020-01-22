@@ -6,7 +6,7 @@ require('dotenv').config({
 module.exports = {
   siteMetadata: {
     title: `OCIUS`,
-    siteUrl: `https://ocius.cloud`,
+    siteUrl: `https://ocius.com.au`,
     description: `We make ocean drones`,
     authorTwitterAccount: `OciusTechnology`
   },
@@ -93,6 +93,7 @@ module.exports = {
       }
     },
 
+    `gatsby-plugin-advanced-sitemap`,
     `gatsby-transformer-yaml`,
     `gatsby-plugin-react-helmet`,
     `gatsby-transformer-sharp`,
