@@ -18,9 +18,7 @@ export default ({ data }) => (
   <Layout>
     <SEO
       title="Science"
-      description="Science Weather 'ground truth' Hurricane Landfall Prediction Climate Change Fisheries Weather LIVE
-        Wind direction &amp; strength Solar intensity &amp; cloud Wave direction &amp; height Air pressure Water
-        temperature Camera shots."
+      description="Persistent Unmanned Surface Vessels (USVs) are valuable tools for oceanographic and climate change research. Bluebottle USVs can monitor Weather “ground truth“, Climate Change, Hurricane landfall, Fisheries."
     />
     <Segmented borderBottom="">
       <HeroBlock
