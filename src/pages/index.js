@@ -2,8 +2,7 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import Loadable from '@loadable/component';
 import { Row, Col } from 'react-flexbox-grid';
-import styled from 'styled-components';
-import FadeIn from 'react-fade-in';
+import styled, { keyframes } from 'styled-components';
 import Layout from '../layouts/Layout';
 import SEO from '../components/SEO';
 import Container from '../components/Container';
@@ -43,30 +42,49 @@ const Callout = styled.div`
   }
 `;
 
+const slideOut = keyframes`
+  0% {
+    transform: translate(-50%, -10px);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translate(-50%, 10px);
+    opacity: 0;
+  }
+`;
+
+const SeeMore = styled(Icon.ChevronDoubleDown)`
+  position: absolute;
+  display: block;
+  bottom: 60px;
+  left: 50%;
+  animation 1.5s ease-out ${slideOut} infinite;
+`;
+
 export default ({ data }) => {
   return (
     <Layout>
       <SEO title="OCIUS - Satellites of the Sea" />
       <Segmented borderBottom="">
         {data.HeroBackground && (
-          <HeroBlock image={data.HeroBackground.childImageSharp.fluid} gradient="leftCorner">
+          <HeroBlock image={data.HeroBackground.childImageSharp.fluid} gradient="top">
             <Callout className="HeroBlock-callout">
-              <FadeIn>
-                <Heading level={1} size="huge" weight="thick">
-                  Innovative Autonomous Solutions
-                </Heading>
-                <Heading level={2} size="medium">
-                  For persistent maritime surveillance
-                </Heading>
-              </FadeIn>
+              <Heading level={1} size="huge" weight="thick">
+                Innovative Autonomous Solutions
+              </Heading>
+              <Heading level={2} size="medium" weight="thick">
+                For persistent maritime surveillance
+              </Heading>
             </Callout>
+            <SeeMore fill="#ffffff" height="3em" width="3em" />
           </HeroBlock>
         )}
       </Segmented>
       <Container className="centered">
         <Segmented borderBottom="">
           <Row>
-            <Col xs={12} md={8} lg={8} lgOffset={2}>
+            <Col xs={12} md={8} lg={8} mdOffset={2}>
               <Heading level={2} size="large" underline>
                 A new generation of ocean drones. Power large payloads, roam widely, and stay at sea
                 for months at a time.
@@ -76,7 +94,7 @@ export default ({ data }) => {
                 multitude of industries. The videos and links below demonstrate just some of the
                 solutions we offer.
               </p>
-              <Button color="white" size="medium" to="/usv" border>
+              <Button color="white" size="medium" href="/usv" border>
                 What is a USV?
                 <Icon.ArrowRight
                   fill="#000000"
@@ -153,7 +171,7 @@ export default ({ data }) => {
 
 export const query = graphql`
   query getHomepageImages {
-    HeroBackground: file(relativePath: { eq: "images/drone_boat_32.jpg" }) {
+    HeroBackground: file(relativePath: { eq: "images/drone_boat.jpg" }) {
       ...imageSharpHeroBackground
     }
 
@@ -172,7 +190,7 @@ export const query = graphql`
 
   fragment imageSharpHeroBackground on File {
     childImageSharp {
-      fluid(quality: 91, maxWidth: 1320) {
+      fluid(quality: 100, maxWidth: 1920) {
         ...GatsbyImageSharpFluid_withWebp
       }
     }

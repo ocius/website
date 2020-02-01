@@ -130,7 +130,7 @@ export default ({ data }) => (
             <Heading size="medium" level={3}>
               We are looking for partners to do joint venture and demonstration projects.
             </Heading>
-            <Button color="white" size="medium" to="/contact" border>
+            <Button color="white" size="medium" href="/contact" border>
               Contact Us Now
             </Button>
           </Col>

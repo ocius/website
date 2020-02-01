@@ -50,7 +50,13 @@ export default () => (
         <DropdownMenu
           menuItems={[
             { href: '/news', name: 'Blog' },
-            { href: '/media-coverage', name: 'Media Coverage' }
+            { href: '/media-coverage', name: 'Media Coverage' },
+            {
+              href:
+                'https://drive.google.com/drive/folders/1beCdCnYaKyE4455mAd4kJKjPJWBAgSfb?usp=sharing',
+              name: 'Press Kit',
+              outbound: true
+            }
           ]}
         />
       </NavbarDropdown>

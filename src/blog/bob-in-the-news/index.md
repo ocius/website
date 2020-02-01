@@ -2,6 +2,7 @@
 title: "Ocius's Bob featured in the news"
 date: "2019-07-26"
 author: "Ocius Administrator"
+featuredImage: ./9News-BlueBottle.png
 ---
 
 Ocius's Bob is ready to be showcased at the International Maritime Exposition, [Pacific 2019](https://www.pacificexpo.com.au/) with news already taking an interest.
