@@ -14,8 +14,7 @@ export default ({ data }) => (
   <Layout>
     <SEO
       title="Oil &amp; Gas"
-      description="USVs are already being used in the Oil &amp; Gas industry Bluebottles can do more. WE ARE LOOKING
-      FOR PARTNERS TO DO JOINT VENTURE AND DEMONSTRATION PROJECTS"
+      description="Unmanned Surface Vessels (USVs) are already being used in the Oil and Gas industry. Bluebottle USVs can do more. Seadbed and Pipeline Surveys, Security, Environment Monitoring, "
     />
     <HeroBlock
       image={data.HeroBackground ? data.HeroBackground.childImageSharp.fluid : ''}
@@ -26,26 +25,19 @@ export default ({ data }) => (
         Oil &amp; Gas
       </Heading>
       <Row>
-        <Col xs={12} md={6} lg={6}>
+        <Col xs={12} md={6} lg={4}>
           <Heading level={3} size="medium" weight="thick">
             Seabed and Pipeline Surveys
           </Heading>
         </Col>
-        <Col xs={12} md={6} lg={6}>
-          <Heading level={3} size="medium" weight="thick">
-            Security
-          </Heading>
-        </Col>
-      </Row>
-      <Row>
-        <Col xs={12} md={6} lg={6}>
+        <Col xs={12} md={6} lg={4}>
           <Heading level={3} size="medium" weight="thick">
             Environment Monitoring
           </Heading>
         </Col>
-        <Col xs={12} md={6} lg={6}>
+        <Col xs={12} md={6} lg={4}>
           <Heading level={3} size="medium" weight="thick">
-            Partners
+            Security
           </Heading>
         </Col>
       </Row>

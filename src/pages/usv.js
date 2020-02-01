@@ -17,10 +17,8 @@ const ResponsiveIframe = Loadable(() => import(`../components/ResponsiveIframe`)
 export default ({ data }) => (
   <Layout>
     <SEO
-      title="Drones"
-      description="A USV is an Unmanned Surface Vessel There are two types: Conventional powered vessels which are
-      unmanned. They have limited time and range at sea and are acoustically noisy. Renewable energy powered vessels
-      which are unmanned."
+      title="Unmanned Surface Vessel"
+      description="A USV is an Unmanned Surface Vessel. Bluebottle USVs are autonomous data gathering communications platform, the satellites of the sea."
     />
     <PageHeader>
       <Heading level={1} size="huge" header>
