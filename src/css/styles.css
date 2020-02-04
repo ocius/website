@@ -52,7 +52,6 @@ img {
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: sans-serif;
     font-weight: bold;
 }
 
@@ -185,20 +184,25 @@ figcaption {
 }
 
 .page-content .primary-content {
-    padding-top: 1em;
-    padding-bottom: 1em;
+    padding-top: 2.2em;
+    padding-bottom: 2.2em;
 }
 
 .page-content .primary-content .title {
-    margin-bottom: 0;
+    margin-top: 0;
 }
 
 .page-content .primary-content .date {
     text-transform: uppercase;
-    color: #001826;
+    color: #505050;
     font-size: .9em;
     font-weight: 300;
-    margin-bottom: 3px;
+    margin: 0;
+}
+
+.page-content .primary-content .preview {
+    font-size: .9em;
+    font-weight: 300;
 }
 
 .page-content .primary-content .author {

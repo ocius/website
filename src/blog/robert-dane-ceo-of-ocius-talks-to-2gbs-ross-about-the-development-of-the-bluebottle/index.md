@@ -1,5 +1,5 @@
 ---
-title: "$Robert Dane CEO, talks to 2GB’s Ross on development of BlueBottle"
+title: "Robert Dane CEO, talks to 2GB’s Ross on development of BlueBottle"
 date: "2017-10-04"
 author: "Kevin Chan"
 featuredImage: OCIUS-on-2GB.png

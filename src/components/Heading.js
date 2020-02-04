@@ -38,6 +38,10 @@ const Underline = css`
   }
 `;
 
+const Shadow = css`
+  text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.3);
+`;
+
 const Header = css`
   color: #60d2f6;
   padding-top: 80px;
@@ -97,7 +101,7 @@ const StyledHeading = styled.h3`
       }
     `
   })}
-  
+
   ${switchProp('weight', {
     extraThin: css`
       font-weight: ${fontWeightLight};
@@ -115,7 +119,7 @@ const StyledHeading = styled.h3`
       font-weight: ${fontWeightMedium};
     `
   })}
-  
+
   ${switchProp('tracking', {
     tight: css`
       letter-spacing: -1px;
@@ -125,11 +129,12 @@ const StyledHeading = styled.h3`
       letter-spacing: 1px;
     `
   })}
-     
+
    ${props => props.caps && VariantCaps}
    ${props => props.truncate && Truncate}
    ${props => props.underline && Underline}
    ${props => props.header && Header}
+   ${props => props.shadow && Shadow}
 `;
 
 StyledHeading.defaultProps = {};
@@ -147,6 +152,7 @@ function Heading({
   caps,
   underline,
   className,
+  shadow,
   ...rest
 }) {
   const HeadingLevel = `h${level}`;
@@ -161,6 +167,7 @@ function Heading({
       truncate={truncate}
       caps={caps}
       underline={underline}
+      shadow={shadow}
       {...rest}
     >
       {children}
@@ -212,7 +219,11 @@ Heading.propTypes = {
   /**
    * Whether or not heading is a page header
    */
-  header: PropTypes.bool
+  header: PropTypes.bool,
+  /**
+   * Whether or not to render a drop shadow
+   */
+  shadow: PropTypes.bool
 };
 
 Heading.defaultProps = {
@@ -221,7 +232,8 @@ Heading.defaultProps = {
   truncate: false,
   caps: false,
   underline: false,
-  header: false
+  header: false,
+  shadow: false
 };
 
 export default Heading;

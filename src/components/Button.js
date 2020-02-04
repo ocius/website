@@ -174,7 +174,7 @@ const ButtonStyles = css`
       padding-top: ${30 / 17}em;
     `
   })}
-    
+
   ${props => props.rounded && roundedStyle}
   ${props => props.full && fullStyle}
   ${props => !props.border && borderStyle}
@@ -200,9 +200,8 @@ const FormButton = styled.button`
 
 /**
  * Button component
- *
  * @usage
- * <Button to="/foo">Bar</Button>
+ * <Button href="/foo">Bar</Button>
  */
 function Button({
   href,
@@ -219,8 +218,24 @@ function Button({
   ...rest
 }) {
   if (type && href) throw new Error("A button shouldn't have a href if it has a type!");
-
-  return type ? (
+  if (!type)
+    return (
+      <ButtonLink
+        className={cn('Button', className)}
+        style={customStyles}
+        to={href}
+        onClick={onClick}
+        color={color}
+        size={size}
+        rounded={rounded ? 1 : undefined}
+        full={full ? 1 : undefined}
+        border={border ? 1 : undefined}
+        {...rest}
+      >
+        {children}
+      </ButtonLink>
+    );
+  return (
     <FormButton
       className={cn('Button', className)}
       style={customStyles}
@@ -235,23 +250,9 @@ function Button({
     >
       {children}
     </FormButton>
-  ) : (
-    <ButtonLink
-      className={cn('Button', className)}
-      style={customStyles}
-      to={href}
-      onClick={onClick}
-      color={color}
-      size={size}
-      rounded={rounded ? 1 : undefined}
-      full={full ? 1 : undefined}
-      border={border ? 1 : undefined}
-      {...rest}
-    >
-      {children}
-    </ButtonLink>
   );
 }
+
 Button.propTypes = {
   /**
    * Pass an to prop to make the button an `a` element instead of a `button`

@@ -129,8 +129,16 @@ Footer.defaultProps = {
           </ul>
         </Col>
         <Col className="full-section" xs={12} md={2} lg={2}>
-          <FooterLink to="/live">Live</FooterLink>
           <FooterLink to="/news">News</FooterLink>
+          <ul className="menu-secondary">
+            <li>
+              <FooterLink to="/news">Blog</FooterLink>
+            </li>
+            <li>
+              <FooterLink to="/news/media-coverage">Tech Specs</FooterLink>
+            </li>
+          </ul>
+          <FooterLink to="/live">Live</FooterLink>
           <FooterLink to="/contact">Contact</FooterLink>
           <FooterLink to="/careers">Careers</FooterLink>
         </Col>

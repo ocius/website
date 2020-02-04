@@ -128,7 +128,7 @@ const LivePage = () => {
           </FormWrapper>
         </LeftNav>
       </main>
-      <SplashScreen isLoading={isLoading} text="Connecting to drones" />
+      <SplashScreen isLoading={isLoading} />
       <GMap apiKey={apiKey} currentVessel={currentVessel} droneData={orderedDrones} />
     </EmptyLayout>
   );
