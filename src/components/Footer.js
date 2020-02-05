@@ -30,9 +30,16 @@ const StyledFooter = styled.footer`
     .full-section {
       display: flex;
       flex-direction: row;
-      justify-content: space-between;
+      flex-wrap: wrap;
       border-top: 1px solid rgba(255, 255, 255, 0.3);
       border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+
+      a {
+        margin-right: 15px;
+        &:last-child {
+          margin-right: 0;
+        }
+      }
     }
   }
 
@@ -130,14 +137,8 @@ Footer.defaultProps = {
         </Col>
         <Col className="full-section" xs={12} md={2} lg={2}>
           <FooterLink to="/news">News</FooterLink>
-          <ul className="menu-secondary">
-            <li>
-              <FooterLink to="/news">Blog</FooterLink>
-            </li>
-            <li>
-              <FooterLink to="/news/media-coverage">Tech Specs</FooterLink>
-            </li>
-          </ul>
+          <FooterLink to="/news">Blog</FooterLink>
+          <FooterLink to="/media-coverage">Media Coverage</FooterLink>
           <FooterLink to="/live">Live</FooterLink>
           <FooterLink to="/contact">Contact</FooterLink>
           <FooterLink to="/careers">Careers</FooterLink>
