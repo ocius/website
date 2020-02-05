@@ -137,7 +137,6 @@ Footer.defaultProps = {
         </Col>
         <Col className="full-section" xs={12} md={2} lg={2}>
           <FooterLink to="/news">News</FooterLink>
-          <FooterLink to="/news">Blog</FooterLink>
           <FooterLink to="/media-coverage">Media Coverage</FooterLink>
           <FooterLink to="/live">Live</FooterLink>
           <FooterLink to="/contact">Contact</FooterLink>
