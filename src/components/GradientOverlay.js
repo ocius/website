@@ -39,6 +39,15 @@ const GradientContainer = styled.div`
         ${prop('color')},
         rgba(${withProp('color', color => `${rgb(color)}`)}, 0) 56%
       );
+    `,
+
+    top: css`
+      opacity: 0.67;
+      background-image: linear-gradient(
+        to bottom,
+        ${prop('color')},
+        rgba(${withProp('color', color => `${rgb(color)}`)}, 0) 70%
+      );
     `
   })}
 `;
@@ -56,7 +65,7 @@ const GradientOverlay = ({ children, gradientType, color }) => {
 GradientOverlay.propTypes = {
   color: PropTypes.string,
   children: PropTypes.element,
-  gradientType: PropTypes.oneOf(['', 'linear', 'radial', 'leftCorner'])
+  gradientType: PropTypes.oneOf(['', 'top', 'linear', 'radial', 'leftCorner'])
 };
 
 GradientOverlay.defaultProps = {

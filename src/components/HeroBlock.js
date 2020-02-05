@@ -46,7 +46,6 @@ export const InnerContainer = styled(Container)`
   position: relative;
   z-index: 2;
 `;
-
 HeroContainer.defaultProps = {};
 
 const HeroBlock = ({ children, image, constrained, gradient }) => (

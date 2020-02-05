@@ -76,6 +76,7 @@ module.exports = {
       }
     },
 
+    `gatsby-plugin-advanced-sitemap`,
     `gatsby-transformer-yaml`,
     `gatsby-plugin-react-helmet`,
     `gatsby-transformer-sharp`,
