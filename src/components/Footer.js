@@ -91,19 +91,16 @@ Footer.defaultProps = {
           <FooterLink to="/about">About</FooterLink>
           <ul className="menu-secondary">
             <li>
-              <FooterLink to="/about">Mission</FooterLink>
+              <FooterLink to="/about">People</FooterLink>
             </li>
             <li>
-              <FooterLink to="/about#people">People</FooterLink>
+              <FooterLink to="/about/partners">Partners</FooterLink>
             </li>
             <li>
-              <FooterLink to="/about#partners">Partners</FooterLink>
+              <FooterLink to="/about/our-story">Our Story</FooterLink>
             </li>
             <li>
-              <FooterLink to="/about#story">Our Story</FooterLink>
-            </li>
-            <li>
-              <FooterLink to="/about#awards">Awards</FooterLink>
+              <FooterLink to="/about/awards">Awards</FooterLink>
             </li>
           </ul>
         </Col>
