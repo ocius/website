@@ -1,15 +1,15 @@
-- url: https://www.dailytelegraph.com.au/news/national/antisubmarine-aquatic-drone-on-display-in-sydney/video/f7b21193ccf0925a66537f052527feba
-  title: Anti-submarine aquatic drone on display in Sydney
-  source: The Daily Telegraph
-  date: 2019-07-25
-  thumbnail: thumbnails/thumbnail.webp
-  logo: logotypes/dt.png
 - url: https://www.abc.net.au/news/2018-11-14/autonomous-vehicles-for-navys-dirty-work/10493238
   title: Navy explores use of autonomous vehicles for dangerous, dirty and dull work
   source: ABC News
   date: 2018-11-14
   thumbnail: thumbnails/10493686-3x2-700x467.jpg
   logo: logotypes/abc.png
+- url: https://www.dailytelegraph.com.au/news/national/antisubmarine-aquatic-drone-on-display-in-sydney/video/f7b21193ccf0925a66537f052527feba
+  title: Anti-submarine aquatic drone on display in Sydney
+  source: The Daily Telegraph
+  date: 2019-07-25
+  thumbnail: thumbnails/thumbnail.webp
+  logo: logotypes/dt.png
 - url: https://www.shephardmedia.com/news/uv-online/aussie-bluebottles-show-signs-intelligence/
   title: Aussie Bluebottles show signs of intelligence
   source: Shephard Media
@@ -22,6 +22,12 @@
   date: 2019-06-26
   logo: logotypes/defenceconnect.png
   thumbnail: thumbnails/Ocius_Bluebottle_Vessels_651c.jpg
+- url: https://www.amsa.gov.au/news-community/news-and-media-releases/australian-autonomous-vessel-forum-2019
+  title: Australian Autonomous Vessel Forum 2019
+  source: Australian Maritime Safery Authority
+  date: 2019-07-10
+  logo: logotypes/amsa.jpeg
+  thumbnail: thumbnails/av-jervis-new.jpg
 - url: https://7news.com.au/politics/defence/is-bob-the-bluebottle-australias-saviour-c-365572
   title: Is Bob the Bluebottle Australia's saviour?
   source: 7News
@@ -34,3 +40,9 @@
   date: 2019-08-07
   logo: logotypes/defenceconnect.png
   thumbnail: thumbnails/Robert_Dane_OCIUS_Technologies_9b88.jpg
+- url: https://news.navy.gov.au/en/202001/Fleet/5709/Sea-trials-demonstrate-new-capability-to-manage-AUVs.htm
+  title: Sea trials demonstrate new capability to manage AUVs
+  source: Navy Daily
+  date: 2020-01-29
+  logo: logotypes/navy-daily.png
+  thumbnail: thumbnails/images|cms-image-000017482.jpg

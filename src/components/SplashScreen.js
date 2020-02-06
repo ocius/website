@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import ReactRotatingText from 'react-rotating-text';
 import FadeIn from 'react-fade-in';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import { fontSizeHeading5 } from '../common/typography';
 import Ellipsis from './EllipsisLoader';
+import TextShuffle from './TextShuffle';
 
 const Overlay = styled.div`
   display: flex;
@@ -41,7 +41,7 @@ const SplashScreen = ({ isLoading, text }) => {
       {isLoading && (
         <Overlay className="center-xs">
           <FadeIn>
-            <ReactRotatingText cursor={false} eraseMode="overwrite" items={text} />
+            <TextShuffle items={text} />
             <Ellipsis color="#125192" />
           </FadeIn>
         </Overlay>
