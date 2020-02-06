@@ -239,7 +239,7 @@ function Button({
         {children}
       </ButtonLink>
     );
-  if (type == 'outbound')
+  if (type === 'outbound')
     return (
       <OutboundLink
         className={cn('Button', className)}
