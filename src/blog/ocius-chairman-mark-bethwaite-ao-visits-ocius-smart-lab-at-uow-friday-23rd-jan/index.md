@@ -1,5 +1,5 @@
 ---
-title: "CIUS chairman Mark Bethwaite AM visits Ocius Smart lab at UOW Friday 23rd Jan"
+title: "OCIUS chairman Mark Bethwaite AM visits Ocius Smart lab at UOW Friday 23rd Jan"
 date: "2015-01-23"
 author: "Ocius Administrator"
 ---
