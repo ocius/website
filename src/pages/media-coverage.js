@@ -52,7 +52,7 @@ export default ({ data }) => {
 
 export const query = graphql`
   query MediaCoverageQuery {
-    allLinksYaml {
+    allLinksYaml(sort: { fields: [date], order: DESC }) {
       edges {
         node {
           id
