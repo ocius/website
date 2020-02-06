@@ -804,25 +804,19 @@ const People = ({ data }) => {
             </div>
           </Col>
           <Col xs={12} md={6} lg={4}>
-            {data.TraceySharah && (
-              <Img fixed={data.TraceySharah.childImageSharp.fixed} alt="Tracey Sharah" />
+            {data.ScottElliceFlint && (
+              <Img fixed={data.ScottElliceFlint.childImageSharp.fixed} alt="Scott Ellice Flint" />
             )}
             <Heading level={3} size="medium">
-              Tracey Sharah B.Com CPA DipFP
+              Scott Ellice Flint
               <br />
               Group Accountant & Company Secretary
             </Heading>
             <div className="left-align">
               <p>
-                Tracey has over 25 years’ experience in corporate and public practice accounting,
-                business advisory, tax and superannuation. 17 years of this experience is in running
-                her own CPA Public Practice Accounting Firm.
-              </p>
-              <p>
-                Specialising in Company Secretarial and outsourced Corporate Financial Officer
-                engagements, Business Taxation, Accounting, Advisory and Self-Managed Superannuation
-                Funds. The practice is a 100% sustainable business, adopts the latest accounting and
-                tax technology apps and 90% paperless.
+                Scott has over 40 years experience as a Chartered Accountant. As principal of his
+                own practice, Scott has focused on accounting, taxation and business development
+                advice for small to medium enterprises ensuring compliance and commercial outcomes.
               </p>
             </div>
           </Col>
@@ -885,7 +879,7 @@ export const query = graphql`
       ...imageSharpAvatar
     }
 
-    TraceySharah: file(relativePath: { eq: "pages/about/images/Tracey-Sharah.jpg" }) {
+    ScottElliceFlint: file(relativePath: { eq: "pages/about/images/Scott-Ellise-Flint.jpg" }) {
       ...imageSharpAvatar
     }
 
