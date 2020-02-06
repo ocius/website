@@ -1,9 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import ReactRotatingText from 'react-rotating-text';
 import FadeIn from 'react-fade-in';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
-import Heading from './Heading';
+import { fontSizeHeading5 } from '../common/typography';
 import Ellipsis from './EllipsisLoader';
 
 const Overlay = styled.div`
@@ -17,6 +18,17 @@ const Overlay = styled.div`
   top: 0;
   bottom: 0;
   z-index: 10;
+
+  // Styles for auto rotating text
+  span {
+    font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+    line-height: 1.2;
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+    font-size: ${fontSizeHeading5}px;
+    line-height: ${40 / 28};
+    font-weight: 600;
+  }
 `;
 
 const SplashScreen = ({ isLoading, text }) => {
@@ -29,9 +41,7 @@ const SplashScreen = ({ isLoading, text }) => {
       {isLoading && (
         <Overlay className="center-xs">
           <FadeIn>
-            <Heading size="medium" weight="thick" level={1} style={{ marginBottom: 0 }}>
-              {text}
-            </Heading>
+            <ReactRotatingText cursor={false} eraseMode="overwrite" items={text} />
             <Ellipsis color="#125192" />
           </FadeIn>
         </Overlay>
@@ -42,7 +52,11 @@ const SplashScreen = ({ isLoading, text }) => {
 
 SplashScreen.propTypes = {
   isLoading: PropTypes.bool.isRequired,
-  text: PropTypes.string.isRequired
+  text: PropTypes.arrayOf(PropTypes.string)
+};
+
+SplashScreen.defaultProps = {
+  text: ['Connecting to satellite', 'Connecting to drones', 'Drones sending data']
 };
 
 export default SplashScreen;
