@@ -97,7 +97,7 @@ const WebsiteHeader = () => {
       <Logo maxHeight="20px" />
       <RightControls>
         <Button
-          as="a"
+          type="outbound"
           href="https://usvna.ocius.com.au/usvna/oc_server"
           color="white"
           size="small"
