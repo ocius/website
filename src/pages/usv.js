@@ -141,9 +141,9 @@ export default ({ data }) => (
 
 export const query = graphql`
   query {
-    Overview: file(relativePath: { eq: "images/170927-OVERVIEW-FOR-WEBSITE_001.png" }) {
+    Overview: file(relativePath: { eq: "images/Bluebottle-Overview.jpg" }) {
       childImageSharp {
-        fluid(quality: 100, maxWidth: 1200) {
+        fluid(quality: 100, maxWidth: 1920) {
           ...GatsbyImageSharpFluid_withWebp
         }
       }
