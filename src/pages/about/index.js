@@ -649,8 +649,6 @@ const People = ({ data }) => {
             Respect for our stakeholders, our team and the ocean environment in which our products
             operate.
             <br />
-            Responsibility to our stakeholders, our team and the environment.
-            <br />
           </p>
         </HeroBlock>
       </Hero>
