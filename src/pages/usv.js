@@ -6,13 +6,13 @@ import Loadable from '@loadable/component';
 import Layout from '../layouts/Layout';
 import SEO from '../components/SEO';
 import Container from '../components/Container';
-import BluebottleOverview from '../components/Overview';
 
 // Lazy load components
 const Heading = Loadable(() => import(`../components/Heading`));
 const PageHeader = Loadable(() => import(`../components/PageHeader`));
 const TechnicalSpecificationForm = Loadable(() => import(`./bluebottle-usv-brochure`));
 const ResponsiveIframe = Loadable(() => import(`../components/ResponsiveIframe`));
+const BluebottleOverview = Loadable(() => import(`../components/Overview`));
 
 export default ({ data }) => (
   <Layout>
