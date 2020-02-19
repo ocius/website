@@ -2,27 +2,31 @@ import React from 'react';
 import Img from 'gatsby-image';
 import BackgroundImage from 'gatsby-background-image';
 import styled from 'styled-components';
+import mq from '../common/mq';
 
 const OverviewBackground = styled(BackgroundImage)`
-  height: 80vh;
+  min-height: 800px;
   display: block;
   margin: auto;
-  width: 101%;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: contain;
+  width: 100%;
+  @media (min-width: ${mq.max[768]}) {
+    height: 80vh;
+    min-height: 500px;
+  }
 `;
 
 const InnerContainer = styled.div`
-  height: 101%;
-  width: 101%;
-  position: relative;
+  height: 100%;
+  width: 100%;
   z-index: 2;
 `;
 
 const StyledBubble = styled.div`
   position: absolute;
-  ${props => props.pos || 'top: 5%; right: 25%;'}
+  ${props => props.md}
+  @media (min-width: ${mq.max[768]}) {
+      ${props => props.lg || 'top: 5%; right: 25%;'}
+  }
 `;
 
 const Icon = styled(Img)`
@@ -38,37 +42,37 @@ const Icon = styled(Img)`
 `;
 
 const BluebottleOverview = ({ data }) => (
-  <OverviewBackground fluid={data.Background ? data.Background.childImageSharp.fluid : ''}>
+  <OverviewBackground fluid={data.Background ? data.Background.childImageSharp.fluid : ''} style={{backgroundSize:'contain'}}>
     <InnerContainer>
-      <StyledBubble pos="top: 1%; right: 15%;">
+      <StyledBubble lg="top: 1%; right: 15%;" md="top: 0px; right: 0px;">
         <Icon fixed={data.Comms.childImageSharp.fixed} draggable={false} />
       </StyledBubble>
 
-      <StyledBubble pos="top: 15%; right: 1%;">
+      <StyledBubble lg="top: 15%; right: 1%;" md="top:140px; right: 0px;">
         <Icon fixed={data.Flipper.childImageSharp.fixed} draggable={false} />
       </StyledBubble>
 
-      <StyledBubble pos="bottom: 15%; right: 1%;">
+      <StyledBubble lg="bottom: 15%; right: 1%;" md="bottom: 140px; right: 0px;">
         <Icon fixed={data.Winch.childImageSharp.fixed} draggable={false} />
       </StyledBubble>
 
-      <StyledBubble pos="bottom: 1%; right: 15%;">
+      <StyledBubble lg="bottom: 1%; right: 15%;" md="bottom: 0px; right: 0px;">
         <Icon fixed={data.Hmi.childImageSharp.fixed} draggable={false} />
       </StyledBubble>
 
-      <StyledBubble pos="bottom: 1%; left: 15%;">
+      <StyledBubble lg="bottom: 1%; left: 15%;" md="bottom: 0px; left: 0px;">
         <Icon fixed={data.Keel.childImageSharp.fixed} draggable={false} />
       </StyledBubble>
 
-      <StyledBubble pos="bottom: 15%; left: 1%;">
+      <StyledBubble lg="bottom: 15%; left: 1%;" md="bottom: 140px; left: 0px;">
         <Icon fixed={data.Sail.childImageSharp.fixed} draggable={false} />
       </StyledBubble>
 
-      <StyledBubble pos="top: 15%; left: 1%;">
+      <StyledBubble lg="top: 15%; left: 1%;" md="top: 140px; left: 0px;">
         <Icon fixed={data.Ramp.childImageSharp.fixed} draggable={false} />
       </StyledBubble>
 
-      <StyledBubble pos="top: 1%; left: 15%;">
+      <StyledBubble lg="top: 1%; left: 15%;" md="top: 0px; left: 0px;">
         <div data-tip data-for="Team" data-event="click">
           <Icon fixed={data.Team.childImageSharp.fixed} draggable={false} />
         </div>
