@@ -1,7 +1,9 @@
 import React from 'react';
 import Img from 'gatsby-image';
 import BackgroundImage from 'gatsby-background-image';
-import styled from 'styled-components';
+import { Link as GatsbyLink } from 'gatsby';
+import styled, { css } from 'styled-components';
+import { OutboundLink as GtagLink } from 'gatsby-plugin-gtag';
 import mq from '../common/mq';
 
 const OverviewBackground = styled(BackgroundImage)`
@@ -21,12 +23,20 @@ const InnerContainer = styled.div`
   z-index: 2;
 `;
 
-const StyledBubble = styled.div`
+const LinkStyle = css`
   position: absolute;
   ${props => props.md}
   @media (min-width: ${mq.max[768]}) {
-      ${props => props.lg || 'top: 5%; right: 25%;'}
+      ${props => props.lg}
   }
+`;
+
+const Link = styled(GatsbyLink)`
+  ${LinkStyle}
+`;
+
+const OutboundLink = styled(GtagLink)`
+  ${LinkStyle}
 `;
 
 const Icon = styled(Img)`
@@ -41,42 +51,74 @@ const Icon = styled(Img)`
   }
 `;
 
+function Bubble({ lg, md, img, to, href }) {
+  if (href)
+    return (
+      <OutboundLink lg={lg} md={md} href={href}>
+        <Icon fixed={img ? img.childImageSharp.fixed : ' '} draggable={false} />
+      </OutboundLink>
+    );
+  return (
+    <Link lg={lg} md={md} to={to}>
+      <Icon fixed={img ? img.childImageSharp.fixed : ' '} draggable={false} />
+    </Link>
+  );
+}
+
 const BluebottleOverview = ({ data }) => (
-  <OverviewBackground fluid={data.Background ? data.Background.childImageSharp.fluid : ''} style={{backgroundSize:'contain'}}>
+  <OverviewBackground
+    fluid={data.Background ? data.Background.childImageSharp.fluid : ''}
+    style={{ backgroundSize: 'contain' }}
+  >
     <InnerContainer>
-      <StyledBubble lg="top: 1%; right: 15%;" md="top: 0px; right: 0px;">
-        <Icon fixed={data.Comms.childImageSharp.fixed} draggable={false} />
-      </StyledBubble>
-
-      <StyledBubble lg="top: 15%; right: 1%;" md="top:140px; right: 0px;">
-        <Icon fixed={data.Flipper.childImageSharp.fixed} draggable={false} />
-      </StyledBubble>
-
-      <StyledBubble lg="bottom: 15%; right: 1%;" md="bottom: 140px; right: 0px;">
-        <Icon fixed={data.Winch.childImageSharp.fixed} draggable={false} />
-      </StyledBubble>
-
-      <StyledBubble lg="bottom: 1%; right: 15%;" md="bottom: 0px; right: 0px;">
-        <Icon fixed={data.Hmi.childImageSharp.fixed} draggable={false} />
-      </StyledBubble>
-
-      <StyledBubble lg="bottom: 1%; left: 15%;" md="bottom: 0px; left: 0px;">
-        <Icon fixed={data.Keel.childImageSharp.fixed} draggable={false} />
-      </StyledBubble>
-
-      <StyledBubble lg="bottom: 15%; left: 1%;" md="bottom: 140px; left: 0px;">
-        <Icon fixed={data.Sail.childImageSharp.fixed} draggable={false} />
-      </StyledBubble>
-
-      <StyledBubble lg="top: 15%; left: 1%;" md="top: 140px; left: 0px;">
-        <Icon fixed={data.Ramp.childImageSharp.fixed} draggable={false} />
-      </StyledBubble>
-
-      <StyledBubble lg="top: 1%; left: 15%;" md="top: 0px; left: 0px;">
-        <div data-tip data-for="Team" data-event="click">
-          <Icon fixed={data.Team.childImageSharp.fixed} draggable={false} />
-        </div>
-      </StyledBubble>
+      <Bubble
+        lg="top: 1%; right: 15%;"
+        md="top: 0px; right: 0px;"
+        img={data.Comms}
+        href="https://youtu.be/7vhvKcc-UPk?t=120"
+      />
+      <Bubble
+        lg="top: 15%; right: 1%;"
+        md="top:140px; right: 0px;"
+        img={data.Flipper}
+        href="https://youtu.be/7vhvKcc-UPk?t=35"
+      />
+      <Bubble
+        lg="bottom: 15%; right: 1%;"
+        md="bottom: 140px; right: 0px;"
+        img={data.Winch}
+        href="https://youtu.be/7vhvKcc-UPk?t=166"
+      />
+      <Bubble
+        lg="bottom: 1%; right: 15%;"
+        md="bottom: 0px; right: 0px;"
+        img={data.Hmi}
+        to="/live"
+      />
+      <Bubble
+        lg="bottom: 1%; left: 15%;"
+        md="bottom: 0px; left: 0px;"
+        img={data.Keel}
+        href="https://youtu.be/7vhvKcc-UPk?t=270"
+      />
+      <Bubble
+        lg="bottom: 15%; left: 1%;"
+        md="bottom: 140px; left: 0px;"
+        img={data.Sail}
+        href="https://youtu.be/7vhvKcc-UPk?t=66"
+      />
+      <Bubble
+        lg="top: 15%; left: 1%;"
+        md="top: 140px; left: 0px;"
+        img={data.Ramp}
+        href="https://youtu.be/hdDNF1PueXg?t=43"
+      />
+      <Bubble
+        lg="top: 1%; left: 15%;"
+        md="top: 0px; left: 0px;"
+        img={data.Team}
+        href="https://youtu.be/7vhvKcc-UPk?t=191"
+      />
     </InnerContainer>
   </OverviewBackground>
 );
