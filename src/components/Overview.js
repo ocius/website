@@ -54,12 +54,12 @@ const Icon = styled(Img)`
 function Bubble({ lg, md, img, to, href }) {
   if (href)
     return (
-      <OutboundLink lg={lg} md={md} href={href}>
+      <OutboundLink lg={lg} md={md} href={href} target="_blank">
         <Icon fixed={img ? img.childImageSharp.fixed : ' '} draggable={false} />
       </OutboundLink>
     );
   return (
-    <Link lg={lg} md={md} to={to}>
+    <Link lg={lg} md={md} to={to} target="_blank">
       <Icon fixed={img ? img.childImageSharp.fixed : ' '} draggable={false} />
     </Link>
   );
@@ -87,7 +87,7 @@ const BluebottleOverview = ({ data }) => (
         lg="bottom: 15%; right: 1%;"
         md="bottom: 140px; right: 0px;"
         img={data.Winch}
-        href="https://youtu.be/7vhvKcc-UPk?t=166"
+        href="https://youtu.be/7vhvKcc-UPk?t=290"
       />
       <Bubble
         lg="bottom: 1%; right: 15%;"
@@ -105,13 +105,13 @@ const BluebottleOverview = ({ data }) => (
         lg="bottom: 15%; left: 1%;"
         md="bottom: 140px; left: 0px;"
         img={data.Sail}
-        href="https://youtu.be/7vhvKcc-UPk?t=66"
+        href="https://youtu.be/7vhvKcc-UPk?t=27"
       />
       <Bubble
         lg="top: 15%; left: 1%;"
         md="top: 140px; left: 0px;"
         img={data.Ramp}
-        href="https://youtu.be/hdDNF1PueXg?t=43"
+        href="https://youtu.be/cnsHagXcq-Q"
       />
       <Bubble
         lg="top: 1%; left: 15%;"
