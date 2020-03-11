@@ -1,3 +1,9 @@
+- url: https://www.australiandefence.com.au/adm/digital-editions/adm-march-2020
+  title: Rear Admiral Lee Goddard talks about the Bluebottle 
+  source: Australian Defence Magazine p56
+  date: 2020-03-12
+  logo: logotypes/adm-favicon.png
+  thumbnail: thumbnails/adm-march-2020.png
 - url: https://www.abc.net.au/news/2018-11-14/autonomous-vehicles-for-navys-dirty-work/10493238
   title: Navy explores use of autonomous vehicles for dangerous, dirty and dull work
   source: ABC News
