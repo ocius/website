@@ -46,3 +46,39 @@
   date: 2020-01-29
   logo: logotypes/navy-daily.png
   thumbnail: thumbnails/images|cms-image-000017482.jpg
+- url: https://www.facebook.com/7NEWSsydney/videos/443694862919087/
+  title: Government invests in new vessels for the defence force
+  source: 7News
+  date: 2019-10-08
+  logo: logotypes/7news.png
+  thumbnail: thumbnails/69861508_443695366252370_950092550226575360_n.jpg
+- url: https://www.youtube.com/watch?v=6Ni_Y9REScg
+  title: Channel 9 Sydney afternoon bulletin
+  source: 9News Sydney
+  date: 2019-06-26
+  thumbnail: thumbnails/hqdefault.jpg
+  logo: logotypes/9news.png
+- url: https://www.youtube.com/watch?v=V_OZPmkLI_U
+  title: Sydney Sea Defence Expo
+  source: 7News
+  date: 2019-06-26
+  thumbnail: thumbnails/sea-defence-expo.jpg
+  logo: logotypes/7news.png
+- url: https://twitter.com/9NewsSyd/status/915126661070200832
+  title: The un-manned autonomous drone expected to revolutionise how we monitor our oceans
+  source: 9News Sydney
+  date: 2017-10-03
+  thumbnail: thumbnails/DLMu192UQAA517x.jpg
+  logo: logotypes/9news.png
+- url: http://www.australiandefence.com.au/news/ocius-bluebottle-usv-set-for-trials
+  title: Bruce Christening in Australian Defence Magazine
+  source: Australia Defence Magazine
+  date: 2016-12-01
+  thumbnail: thumbnails/161215-ocius-christening-official-photo-1024x747.png
+  logo: logotypes/adm-favicon.png
+- url: /7951e6b1bfda4b684b521b1787475818/ADM-Aug-2016-Ocius.pdf
+  title: Ocius Featured in Australian Defence Magazine
+  source: Australia Defence Magazine
+  date: 2016-10-09
+  thumbnail: thumbnails/ADM1.png
+  logo: logotypes/adm-favicon.png

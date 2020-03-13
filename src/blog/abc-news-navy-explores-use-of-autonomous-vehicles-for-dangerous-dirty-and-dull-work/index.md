@@ -4,6 +4,7 @@ date: "2018-11-12"
 author: "Kevin Chan"
 category: "Defence"
 featuredImage: ABC-News.png
+draft: true
 ---
 
 > “We already use robots to go into areas where there have been chemicals or explosives,” Commander Hornsby said.

@@ -3,6 +3,7 @@ title: "7News: Australia's defence forces risk being left behind"
 date: "2019-10-19"
 author: "Robert Dane"
 featuredImage: ./7News.png
+draft: true
 ---
 
 Australia's defence forces risk being left behind with the government admitting it underestimated rapid changes in technology.
