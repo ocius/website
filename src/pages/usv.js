@@ -6,13 +6,13 @@ import Loadable from '@loadable/component';
 import Layout from '../layouts/Layout';
 import SEO from '../components/SEO';
 import Container from '../components/Container';
-import BluebottleImage from '../../static/wallpaperocius-768x432.jpg';
 
 // Lazy load components
 const Heading = Loadable(() => import(`../components/Heading`));
 const PageHeader = Loadable(() => import(`../components/PageHeader`));
 const TechnicalSpecificationForm = Loadable(() => import(`./bluebottle-usv-brochure`));
 const ResponsiveIframe = Loadable(() => import(`../components/ResponsiveIframe`));
+const BluebottleOverview = Loadable(() => import(`../components/Overview`));
 
 export default ({ data }) => (
   <Layout>
@@ -50,9 +50,16 @@ export default ({ data }) => (
               biofouling. Bluebottles are in this category.
             </li>
           </ol>
-          <Heading level={4} size="small">
-            <strong>Bluebottle USVs are the new &apos;Satellites Of the Sea&apos;.</strong>
-          </Heading>
+          <header className="centered">
+            <Heading level={1} size="huge" underline>
+              The Bluebottle USV
+            </Heading>
+            <Heading level={2} size="medium">
+              Sattelites of the Sea
+            </Heading>
+            Autonomous data gathering and communication platforms
+          </header>
+
           <ResponsiveIframe
             title="PAC2019 Overview"
             src="https://www.youtube.com/embed/7vhvKcc-UPk"
@@ -61,18 +68,48 @@ export default ({ data }) => (
             allowFullScreen
           />
           <p>
-            Bluebottle USVs are autonomous data gathering &amp; communications platforms being like
-            &apos;satellites of the sea&apos;. They offer&nbsp;multiple economic and operational
-            advantages over conventional methods of ocean surveillance such as:
+            Bluebottle USVs&nbsp;have greater <strong>power, payload and performance</strong>
+            &nbsp;compared to known competitors and are able to navigate freely and indefinitely
+            across the world’s oceans. Already Ocius is working with two major private-sector
+            partners to develop USVs capable of undertaking specific high value applications in
+            hydrography and defence.
           </p>
-          <ul>
-            <li>Continuous coverage</li>
-            <li>Wide coverage</li>
-            <li>Greatly reduced capital costs</li>
-            <li>Greatly reduced operational costs - no fuel, food or crew</li>
-            <li>Elimination of errors due to human fatigue</li>
-            <li>No people or expensive assets in harm&apos;s way</li>
-          </ul>
+        </Col>
+      </Row>
+      <Row>
+        <Col xs={12} md={12} lg={8}>
+          <BluebottleOverview data={data} />
+        </Col>
+        <Col xs={12} md={6} lg={4}>
+          <h3>Bluebottle USV</h3>
+          <li>Advance in all conditions</li>
+          <li>5 knot hull speed</li>
+          <li>Launch from boat ramp / ship</li>
+          <li>300kg modular payload</li>
+          <li>50W average payload power</li>
+          <li>Intelligent network</li>
+          <li>Team behaviours</li>
+          <li>Human on the loop, not in the loop</li>
+
+          <h3>Discriminators</h3>
+          <li>Solar + wind + wave power</li>
+          <li>Ability to get out of currents</li>
+          <li>More payload, power and presence</li>
+          <li>Unique solar-sail and rudder-flipper</li>
+          <li>Keel winch to lower sensors to variable depths</li>
+          <li>100% Australian Sovereign Capability</li>
+
+          <h3>Advantages</h3>
+          <li>Continuous coverage</li>
+          <li>Wide coverage</li>
+          <li>Greatly reduced capital costs</li>
+          <li>No fuel, food or crew</li>
+          <li>Elimination of errors due to human fatigue</li>
+          <li>No people or expensive assets in harm&apos;s way</li>
+        </Col>
+      </Row>
+      <Row>
+        <Col className="primary-content" xs={12} md={12} lg={12}>
           <p>
             Other persistent USVs carry only small payloads, have low power for the payload and
             often have low performance to manoeuvre, avoid collisions and &apos;make way&apos; out
@@ -85,14 +122,12 @@ export default ({ data }) => (
               time.&nbsp;
             </strong>
           </p>
+
           <p className="centered">
-            <strong>
-              Bluebottles have more power, payload and performance in the one USV than any known
-              persistent USV.
-            </strong>
-          </p>
-          <p className="centered">
-            <img src={BluebottleImage} alt="Bluebottle USV" />
+            <Img
+              fluid={data.BluebottleImage ? data.BluebottleImage.childImageSharp.fluid : ''}
+              alt="Bluebottle USV"
+            />
           </p>
           <p>
             Applications for USVs are myriad and measured in the billions of dollars. Major entities
@@ -105,34 +140,18 @@ export default ({ data }) => (
             .
           </p>
           <p>
-            Bluebottle USVs&nbsp;have greater <strong>power, payload and performance</strong>
-            &nbsp;compared to known competitors and are able to navigate freely and indefinitely
-            across the world’s oceans. Already Ocius is working with two major private-sector
-            partners to develop USVs capable of undertaking specific high value applications in
-            hydrography and defence.
-          </p>
-          <p>
             The team at Ocius are focusing all of our experience, networks and love of the sea to
             create a revolutionary Australian technology for the world’s oceans.
           </p>
-          <p>
-            <strong>
-              We&apos;d love to hear from you.&nbsp; Tell us what you think about our product or how
-              it could benefit your organisation.
-            </strong>
-          </p>
         </Col>
-        <Col xs={12} md={12} lg={12}>
-          <header id="overview" className="centered">
-            <Heading level={1} size="huge" underline>
-              BlueBottle Overview
-            </Heading>
-          </header>
-          <Img
-            style={{ margin: '2.25rem 0' }}
-            fluid={data.Overview ? data.Overview.childImageSharp.fluid : ''}
-          />
-        </Col>
+      </Row>
+      <Row>
+        <p>
+          <strong>
+            We&apos;d love to hear from you.&nbsp; Tell us what you think about our product or how
+            it could benefit your organisation.
+          </strong>
+        </p>
         <TechnicalSpecificationForm />
       </Row>
     </Container>
@@ -141,10 +160,73 @@ export default ({ data }) => (
 
 export const query = graphql`
   query {
-    Overview: file(relativePath: { eq: "images/Bluebottle-Overview.jpg" }) {
+    BluebottleImage: file(relativePath: { eq: "images/wallpaperocius-768x432.jpg" }) {
+      childImageSharp {
+        fluid(quality: 100, maxWidth: 768) {
+          ...GatsbyImageSharpFluid_withWebp
+        }
+      }
+    }
+    Background: file(relativePath: { eq: "images/overview/bluebottle.png" }) {
       childImageSharp {
         fluid(quality: 100, maxWidth: 1920) {
           ...GatsbyImageSharpFluid_withWebp
+        }
+      }
+    }
+    Keel: file(relativePath: { eq: "images/overview/keel.png" }) {
+      childImageSharp {
+        fixed(width: 130) {
+          ...GatsbyImageSharpFixed_withWebp
+        }
+      }
+    }
+    Comms: file(relativePath: { eq: "images/overview/comms.jpg" }) {
+      childImageSharp {
+        fixed(width: 130) {
+          ...GatsbyImageSharpFixed_withWebp
+        }
+      }
+    }
+    Flipper: file(relativePath: { eq: "images/overview/flipper.png" }) {
+      childImageSharp {
+        fixed(width: 130) {
+          ...GatsbyImageSharpFixed_withWebp
+        }
+      }
+    }
+    Hmi: file(relativePath: { eq: "images/overview/hmi.png" }) {
+      childImageSharp {
+        fixed(width: 130) {
+          ...GatsbyImageSharpFixed_withWebp
+        }
+      }
+    }
+    Ramp: file(relativePath: { eq: "images/overview/ramp.jpg" }) {
+      childImageSharp {
+        fixed(width: 130) {
+          ...GatsbyImageSharpFixed_withWebp
+        }
+      }
+    }
+    Sail: file(relativePath: { eq: "images/overview/sail.jpg" }) {
+      childImageSharp {
+        fixed(width: 130) {
+          ...GatsbyImageSharpFixed_withWebp
+        }
+      }
+    }
+    Team: file(relativePath: { eq: "images/overview/team.jpg" }) {
+      childImageSharp {
+        fixed(width: 130) {
+          ...GatsbyImageSharpFixed_withWebp
+        }
+      }
+    }
+    Winch: file(relativePath: { eq: "images/overview/winch.png" }) {
+      childImageSharp {
+        fixed(width: 130) {
+          ...GatsbyImageSharpFixed_withWebp
         }
       }
     }
