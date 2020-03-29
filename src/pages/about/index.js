@@ -803,10 +803,10 @@ const People = ({ data }) => {
           </Col>
           <Col xs={12} md={6} lg={4}>
             {data.ScottElliceFlint && (
-              <Img fixed={data.ScottElliceFlint.childImageSharp.fixed} alt="Scott Ellice Flint" />
+              <Img fixed={data.ScottElliceFlint.childImageSharp.fixed} alt="Scott Ellice-Flint" />
             )}
             <Heading level={3} size="medium">
-              Scott Ellice Flint
+              Scott Ellice-Flint
               <br />
               Group Accountant & Company Secretary
             </Heading>
@@ -861,7 +861,7 @@ export const query = graphql`
       ...imageSharpAvatar
     }
 
-    RobertDane: file(relativePath: { eq: "pages/about/images/Robert-Dane-Grayscale.png" }) {
+    RobertDane: file(relativePath: { eq: "pages/about/images/Robert-Dane-Grayscale.jpg" }) {
       ...imageSharpAvatar
     }
 
