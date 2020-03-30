@@ -2,6 +2,7 @@
 title: "2020 ADF Sales Catalogue showcases Bluebottle USV"
 date: "2020-03-20"
 featuredImage: "./adf-sales-catalogue.jpg"
+author: "Kevin Chan"
 ---
 
 
