@@ -30,9 +30,16 @@ const StyledFooter = styled.footer`
     .full-section {
       display: flex;
       flex-direction: row;
-      justify-content: space-between;
+      flex-wrap: wrap;
       border-top: 1px solid rgba(255, 255, 255, 0.3);
       border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+
+      a {
+        margin-right: 15px;
+        &:last-child {
+          margin-right: 0;
+        }
+      }
     }
   }
 
@@ -84,19 +91,16 @@ Footer.defaultProps = {
           <FooterLink to="/about">About</FooterLink>
           <ul className="menu-secondary">
             <li>
-              <FooterLink to="/about">Mission</FooterLink>
+              <FooterLink to="/about">People</FooterLink>
             </li>
             <li>
-              <FooterLink to="/about#people">People</FooterLink>
+              <FooterLink to="/about/partners">Partners</FooterLink>
             </li>
             <li>
-              <FooterLink to="/about#partners">Partners</FooterLink>
+              <FooterLink to="/about/our-story">Our Story</FooterLink>
             </li>
             <li>
-              <FooterLink to="/about#story">Our Story</FooterLink>
-            </li>
-            <li>
-              <FooterLink to="/about#awards">Awards</FooterLink>
+              <FooterLink to="/about/awards">Awards</FooterLink>
             </li>
           </ul>
         </Col>
@@ -129,8 +133,9 @@ Footer.defaultProps = {
           </ul>
         </Col>
         <Col className="full-section" xs={12} md={2} lg={2}>
-          <FooterLink to="/live">Live</FooterLink>
           <FooterLink to="/news">News</FooterLink>
+          <FooterLink to="/media-coverage">Media Coverage</FooterLink>
+          <FooterLink to="/live">Live</FooterLink>
           <FooterLink to="/contact">Contact</FooterLink>
           <FooterLink to="/careers">Careers</FooterLink>
         </Col>

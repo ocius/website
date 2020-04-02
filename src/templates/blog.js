@@ -89,6 +89,7 @@ export const query = graphql`
   query IndexQuery($limit: Int!, $skip: Int!) {
     allMarkdownRemark(
       sort: { fields: [frontmatter___date], order: DESC }
+      filter: { frontmatter: { draft: { ne: true } } }
       limit: $limit
       skip: $skip
     ) {
