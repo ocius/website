@@ -14,6 +14,8 @@ author: "Kevin Chan"
 >  
 > "In future capacity building in the region with Pacific Island countries as an example, I would rather a partner country have 10 systems which are basic balloon radars than an expensive complex single system. It just pops up for a week or so and provides a detection capability and information that is actionable. After seven days it just disappears. It could be a cheap, environmentally disposable solution. Not a billion-dollar solutions, a million-dollar solution; more reflective of scalable regional capacity building requirements, " RADM Goddard said.
 >  
-> While Defence has the Centre for Defence Industry Capabilities (CDIC) as the 'front door' to the organisation in terms of industry engagement, the ABS as the raise train, train and sustain the organisation for Home Affairs have no such avenue at this time. However there is a good chance that the organisation will make use of the already established Defence Innovation Hub as a potential Special Notice capability manager/sponsor for their needs.
+> While Defence has the Centre for Defence Industry Capabilities (CDIC) as the 'front door' to the organisation in terms of industry engagement, the ABS as the raise train, train and sustain the organisation for Home Affairs have no such avenue at this time. However there is a good chance that the organisation will make use of the already established Defence Innovation Hub as a potential Special Notice capability manager/sponsor for their needs. 
+>
+>  &#150;  Page 56 of the Australian Defence Magazine's March 2020 edition
 
-[Read the Australian Defence Magazine's March 2020 digital edition here](https://www.australiandefence.com.au/adm/digital-editions/adm-march-2020)
+[Read the full digital edition here](https://www.australiandefence.com.au/adm/digital-editions/adm-march-2020)
