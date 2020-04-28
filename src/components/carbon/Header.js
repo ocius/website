@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import PropTypes from 'prop-types';
 import SkipToContent from 'carbon-components-react/lib/components/UIShell/SkipToContent';
 import Header from 'carbon-components-react/lib/components/UIShell/Header';
 import styled from 'styled-components';
@@ -81,7 +82,7 @@ const RightControls = styled.div`
   }
 `;
 
-const WebsiteHeader = () => {
+const WebsiteHeader = ({ onRightButtonClick }) => {
   const { leftNavIsOpen, toggleNavState } = useContext(NavContext);
 
   return (
@@ -102,12 +103,21 @@ const WebsiteHeader = () => {
           color="white"
           size="small"
           border
+          onClick={onRightButtonClick}
         >
           Advanced View
         </Button>
       </RightControls>
     </ShellHeader>
   );
+};
+
+WebsiteHeader.propTypes = {
+  onRightButtonClick: PropTypes.func
+};
+
+WebsiteHeader.defaultProps = {
+  onRightButtonClick: () => {}
 };
 
 export default WebsiteHeader;
