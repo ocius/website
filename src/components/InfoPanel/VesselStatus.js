@@ -209,7 +209,7 @@ const VesselStatus = ({ data }) => {
 
   return data ? (
     <>
-      <H3Heading>Sensor Data</H3Heading>
+      <H3Heading>Vessel Status</H3Heading>
       <StatusList>
         {Object.keys(statuses).map((index, id) => (
           <React.Fragment key={uid(index, id)}>
@@ -218,7 +218,7 @@ const VesselStatus = ({ data }) => {
           </React.Fragment>
         ))}
       </StatusList>
-      <H3Heading>Power Status</H3Heading>
+      <H3Heading>Power Monitor</H3Heading>
       <PowerMonitor BatteryA={Number(data.Props.BatteryA)} BatteryB={Number(data.Props.BatteryB)} />
     </>
   ) : null;
