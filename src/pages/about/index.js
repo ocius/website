@@ -232,7 +232,7 @@ const Partners = ({ data }) => {
       </header>
       <Segmented borderBottom="">
         <Row className="primary-content">
-          <Col xs={12} md={6} lg={6} lgOffset={3}>
+          <Col xs={12} md={6} lg={6}>
             {data.DefenceInnovationHub && (
               <div className="centered">
                 <Img
@@ -253,10 +253,6 @@ const Partners = ({ data }) => {
               from initial concept, through prototyping and integrated testing.
             </p>
           </Col>
-        </Row>
-      </Segmented>
-      <Segmented borderBottom="">
-        <Row className="primary-content">
           <Col xs={12} md={6} lg={6}>
             {data.AustralianGovernment && (
               <div className="centered">
@@ -282,6 +278,8 @@ const Partners = ({ data }) => {
               Technology Demonstrator funding under the Defence Innovation Hub program.
             </p>
           </Col>
+        </Row>
+        <Row className="primary-content">
           <Col xs={12} md={6} lg={6}>
             {data.UNSW && (
               <div className="centered">
@@ -303,19 +301,59 @@ const Partners = ({ data }) => {
             </p>
           </Col>
           <Col xs={12} md={6} lg={6}>
-            <div className="centered">
-              <Heading level={3} size="medium">
-                Ulladulla Engineering and Fibreglass.
-              </Heading>
-            </div>
+            {data.Thales && (
+              <div className="centered">
+                <Img
+                  style={{ maxWidth: '100%' }}
+                  imgStyle={{ objectFit: 'contain' }}
+                  fixed={data.Thales.childImageSharp.fixed}
+                  alt="Thales"
+                />
+              </div>
+            )}
             <p>
-              Bruce Heggie and Graham ‘Butch’ Johnson are well known on the NSW South Coast as
-              suppliers of innovative machine and fibreglass products. They have supplied fibreglass
-              and mechanical engineering since the successful winning of the International boat race
-              in 1997. They have provided equipment for all solar sailor ferries, scale models and
-              prototypes including our Bluebottles&apos; steering mechanisms, patented rudder
-              flipper appendages and patented solarsails & mechanisms.
+              Thales develops, manufactures and exports world leading underwater sonar sensors and
+              towed arrays in Australia. Since 2013 Thales has had an ongoing contribution to the
+              OCIUS project combining its advanced underwater sensors with OCIUS autonomous
+              Bluebottle USV to demonstrate the capability of autonomous maritime surveillance.
+              Thales is the maritime lead for the Trusted Autonomous Systems Defence Co-operative
+              Research Centre.
             </p>
+          </Col>
+        </Row>
+        <Row className="primary-content">
+          <Col xs={12} md={6} lg={6}>
+            {data.VanMunsterBoats && (
+              <div className="centered">
+                <Img
+                  style={{ maxWidth: '100%' }}
+                  imgStyle={{ objectFit: 'contain' }}
+                  fixed={data.VanMunsterBoats.childImageSharp.fixed}
+                  alt="Thales"
+                />
+              </div>
+            )}
+            <p>
+              Van Munster Boats is a second-generation family-run business at the forefront of
+              building carbon fibre hulls and structures for race yachts
+            </p>
+            <p>
+              VMB work with the best composite engineers and industry&apos;s leading naval
+              architect’s to turn original conception into reality.
+            </p>
+            <p>
+              They deliver products that meet the highest standards and their processes and applied
+              technologies are continually refined and developed to deliver “state of the art”
+              solutions.
+            </p>
+            <p>
+              Van Munster Boats composite production facility is based in Morisset NSW Australia and
+              features an oven for high-temperature cure of pre-preg composites and post-curing
+              laminates, a climate-controlled laminating area that ensures that components are of of
+              the highest quality and consistency and a CNC machine so composite components can be
+              custom manufactured quickly and to the highest standard.
+            </p>
+            <p>The team at Van Munster Boats turn Ocius&apos; vision into a reality.</p>
           </Col>
           <Col xs={12} md={6} lg={6}>
             {data.SteberInternational && (
@@ -347,26 +385,6 @@ const Partners = ({ data }) => {
       <Segmented borderBottom="">
         <Row className="primary-content">
           <Col xs={12} md={6} lg={6}>
-            {data.Thales && (
-              <div className="centered">
-                <Img
-                  style={{ maxWidth: '100%' }}
-                  imgStyle={{ objectFit: 'contain' }}
-                  fixed={data.Thales.childImageSharp.fixed}
-                  alt="Thales"
-                />
-              </div>
-            )}
-            <p>
-              Thales develops, manufactures and exports world leading underwater sonar sensors and
-              towed arrays in Australia. Since 2013 Thales has had an ongoing contribution to the
-              OCIUS project combining its advanced underwater sensors with OCIUS autonomous
-              Bluebottle USV to demonstrate the capability of autonomous maritime surveillance.
-              Thales is the maritime lead for the Trusted Autonomous Systems Defence Co-operative
-              Research Centre.
-            </p>
-          </Col>
-          <Col xs={12} md={6} lg={6}>
             {data.OneTwoThree && (
               <div className="centered">
                 <Img
@@ -386,9 +404,22 @@ const Partners = ({ data }) => {
               helm, payload bay & performance for the next prototypes.
             </p>
           </Col>
+          <Col xs={12} md={6} lg={6}>
+            <div className="centered">
+              <Heading level={3} size="medium">
+                Ulladulla Engineering and Fibreglass.
+              </Heading>
+            </div>
+            <p>
+              Bruce Heggie and Graham ‘Butch’ Johnson are well known on the NSW South Coast as
+              suppliers of innovative machine and fibreglass products. They have supplied fibreglass
+              and mechanical engineering since the successful winning of the International boat race
+              in 1997. They have provided equipment for all solar sailor ferries, scale models and
+              prototypes including our Bluebottles&apos; steering mechanisms, patented rudder
+              flipper appendages and patented solarsails & mechanisms.
+            </p>
+          </Col>
         </Row>
-      </Segmented>
-      <Segmented borderBottom="">
         <Row className="primary-content">
           <Col xs={12} md={6} lg={6}>
             {data.ClarkIP && (
@@ -898,6 +929,9 @@ export const query = graphql`
     DefenceInnovationHub: file(
       relativePath: { eq: "pages/about/images/Defence-Innovation-Hub.png" }
     ) {
+      ...imageSharpLogotype
+    }
+    VanMunsterBoats: file(relativePath: { eq: "pages/about/images/Van-Munster-Boats.png" }) {
       ...imageSharpLogotype
     }
     Thales: file(relativePath: { eq: "pages/about/images/thales-logo.png" }) {
