@@ -712,7 +712,7 @@ const People = ({ data }) => {
               </p>
             </div>
           </Col>
-          <Col xs={12} md={6} lg={3}>
+          <Col xs={12} md={6} lg={4}>
             {data.RobertDane && (
               <Img fixed={data.RobertDane.childImageSharp.fixed} alt="Robert Dane" />
             )}
@@ -737,30 +737,7 @@ const People = ({ data }) => {
               </p>
             </div>
           </Col>
-          <Col xs={12} md={6} lg={3}>
-            {data.GeoffZuber && (
-              <Img fixed={data.GeoffZuber.childImageSharp.fixed} alt="Geoff Zuber" />
-            )}
-            <Heading level={3} size="medium">
-              Geoff Zuber
-              <br />
-              Non-Executive Director
-            </Heading>
-            <div className="left-align">
-              <p>
-                Well respected for his strategic thinking and passion for business transformation
-                programs, Geoff has earned the admiration and respect of many C- level executives
-                within leading Australian organisations in both government and private sectors.
-              </p>
-              <p>
-                Part of the founding management team at Holocentric, a Canberra based, he draws upon
-                his extensive experience working in sales and in senior management roles for global
-                companies such as Honeywell, Microsoft and Cisco Systems to help steer the company
-                to success
-              </p>
-            </div>
-          </Col>
-          <Col xs={12} md={6} lg={3}>
+          <Col xs={12} md={6} lg={4}>
             {data.AndrewAitken && (
               <Img fixed={data.AndrewAitken.childImageSharp.fixed} alt="Andrew Aitken" />
             )}
@@ -779,10 +756,6 @@ const People = ({ data }) => {
               </p>
             </div>
           </Col>
-        </Row>
-      </Segmented>
-      <Segmented borderBottom="">
-        <Row className="primary-content centered">
           <Col xs={12} md={6} lg={4}>
             {data.LloydBreckenridge && (
               <Img fixed={data.LloydBreckenridge.childImageSharp.fixed} alt="Lloyd Breckenridge" />
@@ -893,10 +866,6 @@ export const query = graphql`
     }
 
     RobertDane: file(relativePath: { eq: "pages/about/images/Robert-Dane-Grayscale.jpg" }) {
-      ...imageSharpAvatar
-    }
-
-    GeoffZuber: file(relativePath: { eq: "pages/about/images/Geoff-Zuber.png" }) {
       ...imageSharpAvatar
     }
 
