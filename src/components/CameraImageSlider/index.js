@@ -52,14 +52,14 @@ const Carousel = styled.div`
 
 const NotAvailble = styled.div`
   min-width: 100px;
-  min-height: 100px;
+  min-height: 192px;
   background-color: black;
   display: block;
   overflow: hidden;
   text-align: center;
   position: relative;
 
-  p .message {
+  p {
     color: white;
     margin: 0;
     position: absolute;
@@ -99,7 +99,7 @@ const CameraSlider = ({ images, title, settings, customSettings }) => {
         </Slider>
       ) : (
         <NotAvailble>
-          <p className="message">Video feed not available</p>
+          <p>Video feed not available</p>
         </NotAvailble>
       )}
     </Carousel>
