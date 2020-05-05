@@ -50,14 +50,33 @@ const Carousel = styled.div`
   }
 `;
 
+const NotAvailble = styled.div`
+  min-width: 100px;
+  min-height: 192px;
+  background-color: black;
+  display: block;
+  overflow: hidden;
+  text-align: center;
+  position: relative;
+
+  p {
+    color: white;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+`;
+
 const CameraSlider = ({ images, title, settings, customSettings }) => {
   // Check if we received valid data
-  if (images && images.length > 0) {
-    const renderPaginator = direction => <PaginatorButton direction={direction} />;
+  const renderPaginator = direction => <PaginatorButton direction={direction} />;
 
-    return (
-      <Carousel className="CameraSlider">
-        {title && <h3>{title}</h3>}
+  return (
+    <Carousel className="CameraSlider">
+      {title && <h3>{title}</h3>}
+      {images && images.length > 0 ? (
         <Slider
           {...settings}
           {...customSettings}
@@ -78,11 +97,13 @@ const CameraSlider = ({ images, title, settings, customSettings }) => {
             );
           })}
         </Slider>
-      </Carousel>
-    );
-  }
-
-  return null;
+      ) : (
+        <NotAvailble>
+          <p>Video feed not available</p>
+        </NotAvailble>
+      )}
+    </Carousel>
+  );
 };
 
 CameraSlider.propTypes = {
@@ -116,7 +137,7 @@ CameraSlider.defaultProps = {
     accessibility: true,
     dots: true,
     infinite: true,
-    speed: 500,
+    speed: 0,
     slidesToShow: 1,
     slidesToScroll: 1,
     centerMode: false,
