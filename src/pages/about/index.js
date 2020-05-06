@@ -936,7 +936,7 @@ export const query = graphql`
 
   fragment imageSharpLogotype on File {
     childImageSharp {
-      fixed(width: 550) {
+      fixed(height: 200) {
         ...GatsbyImageSharpFixed
       }
     }
