@@ -690,7 +690,7 @@ const People = ({ data }) => {
       </header>
       <Segmented borderBottom="">
         <Row className="primary-content centered">
-          <Col xs={12} md={6} lg={3}>
+          <Col xs={12} md={6} lg={4}>
             {data.MarkBethwaite && (
               <Img fixed={data.MarkBethwaite.childImageSharp.fixed} alt="Mark Bethwaite" />
             )}
