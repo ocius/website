@@ -1,10 +1,10 @@
 ---
 title: "Ocius awarded a $5.5M Defence Innovation Hub contract"
 date: "2020-06-16"
-featuredImage: "./dept-of-defence.jpg"
+featuredImage: "./aus-dept-of-defence.jpg"
 ---
 
-[![Department of Defence: Growing Australia's defence industry through innovation](./dept-of-defence.jpg)](https://www.minister.defence.gov.au/minister/melissa-price/media-releases/growing-australias-defence-industry-through-innovation)
+[![Department of Defence: Growing Australia's defence industry through innovation](./aus-dept-of-defence.jpg)](https://www.minister.defence.gov.au/minister/melissa-price/media-releases/growing-australias-defence-industry-through-innovation)
 
 Today Hon Melissa Price announced a $5.5 million Defence innovation Hub contract to continue developing it's autonomous unmanned surface vessels.
 
