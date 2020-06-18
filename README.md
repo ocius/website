@@ -1,7 +1,5 @@
 # Ocius Website
 
-![Build Status](https://codebuild.ap-southeast-2.amazonaws.com/badges?uuid=eyJlbmNyeXB0ZWREYXRhIjoid2Z4V2xWZzM2U3IzZmkzVE9RUnNnd3AwSk1VRzhlTkxJbUxpYUVkazFKdm80Z1E4U2NXUFFFSERnWmlpejA0UDZGbGZlc29Ta1NKZTNiVkFiUTBwMEY0PSIsIml2UGFyYW1ldGVyU3BlYyI6IjdHcU1MSEk4My9VWnZrcVoiLCJtYXRlcmlhbFNldFNlcmlhbCI6MX0%3D&branch=master)
-
 This is the official repository for Ocius website, located at https://ocius.com.au. Ocius Technology Ltd (formerly Solar Sailor Holdings Ltd) is an Australian public unlisted company with Research and Development facilities at the University of NSW. The company is widely recognized in the international marine transportation industry.
 
 ## Structure
