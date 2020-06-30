@@ -692,10 +692,10 @@ const People = ({ data }) => {
         <Row className="primary-content centered">
           <Col xs={12} md={6} lg={4}>
             {data.MarkBethwaite && (
-              <Img fixed={data.MarkBethwaite.childImageSharp.fixed} alt="Mark Bethwaite" />
+              <Img fixed={data.MarkBethwaite.childImageSharp.fixed} alt="Mark Bethwaite AM" />
             )}
             <Heading level={3} size="medium">
-              Mark Bethwaite
+              Mark Bethwaite AM
               <br />
               Chairman
             </Heading>
