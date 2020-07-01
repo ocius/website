@@ -98,7 +98,7 @@ const WebsiteHeader = () => {
       <RightControls>
         <Button
           type="outbound"
-          href="https://usvna.ocius.com.au/usvna/oc_server"
+          href="https://usvna.ocius.com.au/usvna/oc_server?page=openlayers.htm"
           color="white"
           size="small"
           border
