@@ -4,6 +4,7 @@ import styled, { css } from 'styled-components';
 import { switchProp } from 'styled-tools';
 import cn from 'classnames';
 import { Link as GatsbyLink } from 'gatsby';
+import { OutboundLink as GtagLink } from 'gatsby-plugin-gtag';
 import propTypes from '../common/propTypes';
 
 const colors = {
@@ -184,6 +185,10 @@ const ButtonLink = styled(GatsbyLink)`
   ${ButtonStyles}
 `;
 
+const OutboundLink = styled(GtagLink)`
+  ${ButtonStyles}
+`;
+
 /**
  * Button-specific styles
  */
@@ -217,7 +222,6 @@ function Button({
   type,
   ...rest
 }) {
-  if (type && href) throw new Error("A button shouldn't have a href if it has a type!");
   if (!type)
     return (
       <ButtonLink
@@ -234,6 +238,23 @@ function Button({
       >
         {children}
       </ButtonLink>
+    );
+  if (type === 'outbound')
+    return (
+      <OutboundLink
+        className={cn('Button', className)}
+        style={customStyles}
+        href={href}
+        onClick={onClick}
+        color={color}
+        size={size}
+        rounded={rounded ? 1 : undefined}
+        full={full ? 1 : undefined}
+        border={border ? 1 : undefined}
+        {...rest}
+      >
+        {children}
+      </OutboundLink>
     );
   return (
     <FormButton

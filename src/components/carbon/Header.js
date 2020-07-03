@@ -98,8 +98,8 @@ const WebsiteHeader = ({ onRightButtonClick }) => {
       <Logo maxHeight="20px" />
       <RightControls>
         <Button
-          as="a"
-          href="https://usvna.ocius.com.au/usvna/oc_server"
+          type="outbound"
+          href="https://usvna.ocius.com.au/usvna/oc_server?page=openlayers.htm"
           color="white"
           size="small"
           border
