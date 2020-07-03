@@ -46,7 +46,7 @@ const GMap = ({ apiKey, currentVessel, droneData }) => {
 
   // Fetch data periodically
   const [, trailData] = useHttp(
-    `${configuration.DRONE_COLLECTION_URL}/locations?timespan=hour`,
+    `${configuration.DRONE_COLLECTION_URL}/locations?timespan=day`,
     null,
     []
   );
