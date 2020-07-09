@@ -42,6 +42,10 @@ const Callout = styled.div`
   }
 `;
 
+const StyledHeading = styled(Heading)`
+  text-shadow: 2px 2px rgba(0, 0, 0, 0.3);
+`;
+
 export default ({ data }) => {
   return (
     <Layout>
@@ -53,12 +57,12 @@ export default ({ data }) => {
         {data.HeroBackground && (
           <HeroBlock image={data.HeroBackground.childImageSharp.fluid} gradient="top">
             <Callout className="HeroBlock-callout">
-              <Heading level={1} size="huge" weight="thick">
+              <StyledHeading level={1} size="huge" weight="thick">
                 Innovative Autonomous Solutions
-              </Heading>
-              <Heading level={2} size="medium" weight="thick">
+              </StyledHeading>
+              <StyledHeading level={2} size="medium" weight="thick">
                 For persistent maritime surveillance
-              </Heading>
+              </StyledHeading>
             </Callout>
           </HeroBlock>
         )}

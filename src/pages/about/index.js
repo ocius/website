@@ -865,7 +865,7 @@ export const query = graphql`
       ...imageSharpAvatar
     }
 
-    RobertDane: file(relativePath: { eq: "pages/about/images/Robert-Dane-Grayscale.jpg" }) {
+    RobertDane: file(relativePath: { eq: "pages/about/images/Robert-Dane.jpg" }) {
       ...imageSharpAvatar
     }
 
