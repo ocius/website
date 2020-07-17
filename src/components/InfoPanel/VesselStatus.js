@@ -38,9 +38,23 @@ const StatusTag = styled.span`
   border-radius: 1.5rem;
 
   ${(props) =>
-    props.type === 'green' &&
+    props.type === 'success' &&
     css`
       background-color: #9deeb2;
+      color: #049e51;
+    `}
+
+  ${(props) =>
+    props.type === 'danger' &&
+    css`
+      background-color: #e23f33;
+      color: #049e51;
+    `}
+    
+  ${(props) =>
+    props.type === 'warning' &&
+    css`
+      background-color: #ffc107;
       color: #049e51;
     `}
 `;
@@ -190,8 +204,35 @@ const formatVesselStatusData = (data) => {
         } else if (key === 'Lon') {
           statuses[StatusNames[key]] = formatLongitude(value);
         } else if (key === 'Status') {
-          statuses[StatusNames[key]] =
-            value === 'MAV_STATE_ACTIVE' ? <StatusTag type="green">Active</StatusTag> : value;
+          // Used default MAVLink status codes
+          switch (value) {
+            case 'MAV_STATE_ACTIVE':
+              statuses[StatusNames[key]] = <StatusTag type="success">Active</StatusTag>;
+              break;
+            case 'MAV_STATE_CRITICAL':
+              statuses[StatusNames[key]] = <StatusTag type="danger">Critical</StatusTag>;
+              break;
+            case 'MAV_STATE_EMERGENCY':
+              statuses[StatusNames[key]] = <StatusTag type="danger">Emergency</StatusTag>;
+              break;
+            case 'MAV_STATE_POWEROFF':
+              statuses[StatusNames[key]] = <StatusTag type="danger">Poweroff</StatusTag>;
+              break;
+            case 'MAV_STATE_FLIGHT_TERMINATION':
+              statuses[StatusNames[key]] = <StatusTag type="danger">Termination</StatusTag>;
+              break;
+            case 'MAV_STATE_STANDBY':
+              statuses[StatusNames[key]] = <StatusTag type="warning">Standby</StatusTag>;
+              break;
+            case 'MAV_STATE_CALIBRATING':
+              statuses[StatusNames[key]] = <StatusTag type="warning">Calibrating</StatusTag>;
+              break;
+            case 'MAV_STATE_UNINIT':
+              statuses[StatusNames[key]] = <StatusTag type="warning">Uninitialized</StatusTag>;
+              break;
+            default:
+              statuses[StatusNames[key]] = value;
+          }
         } else if (key === 'Mode') {
           statuses[StatusNames[key]] = capitalizeFirstLetter(value);
         } else if (typeof StatusNames[key] !== 'undefined') {
