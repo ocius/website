@@ -48,14 +48,14 @@ const StatusTag = styled.span`
     props.type === 'danger' &&
     css`
       background-color: #e23f33;
-      color: #049e51;
+      color: #ffffff;
     `}
     
   ${(props) =>
     props.type === 'warning' &&
     css`
-      background-color: #ffc107;
-      color: #049e51;
+      background-color: #fff3cd;
+      color: #856404;
     `}
 `;
 
