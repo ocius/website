@@ -221,6 +221,9 @@ const formatVesselStatusData = (data) => {
             case 'MAV_STATE_FLIGHT_TERMINATION':
               statuses[StatusNames[key]] = <StatusTag type="danger">Termination</StatusTag>;
               break;
+            case 'MAV_STATE_BOOT':
+              statuses[StatusNames[key]] = <StatusTag type="warning">Boot</StatusTag>;
+              break;
             case 'MAV_STATE_STANDBY':
               statuses[StatusNames[key]] = <StatusTag type="warning">Standby</StatusTag>;
               break;
