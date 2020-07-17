@@ -59,17 +59,17 @@ const LineInner = styled.div`
         content: '';
         opacity: 0;
       }
-    `
+    `,
   })}
 `;
 
 function Line({ percent, className, status, background, trailColor }) {
   const progressStyle = {
     width: `${percent}%`,
-    backgroundColor: background
+    backgroundColor: background,
   };
   const trailStyle = {
-    backgroundColor: trailColor
+    backgroundColor: trailColor,
   };
 
   return (
@@ -85,7 +85,7 @@ Line.propTypes = {
   className: PropTypes.string,
   status: PropTypes.oneOf([STATUSES.DANGER, STATUSES.WARNING, STATUSES.SUCCESS, STATUSES.ACTIVE]),
   background: PropTypes.string,
-  trailColor: PropTypes.string
+  trailColor: PropTypes.string,
 };
 
 Line.defaultProps = {
@@ -93,7 +93,7 @@ Line.defaultProps = {
   className: '',
   status: STATUSES.SUCCESS,
   background: '',
-  trailColor: ''
+  trailColor: '',
 };
 
 export default Line;

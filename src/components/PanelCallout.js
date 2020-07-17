@@ -113,11 +113,11 @@ PanelCallout.propTypes = {
   children: PropTypes.node,
   bgImage: PropTypes.objectOf(PropTypes.any).isRequired,
   title: PropTypes.string.isRequired,
-  url: PropTypes.string.isRequired
+  url: PropTypes.string.isRequired,
 };
 
 PanelCallout.defaultProps = {
-  children: ''
+  children: '',
 };
 
 export default PanelCallout;

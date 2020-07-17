@@ -12,8 +12,8 @@ const Sidebar = Loadable(() => import(`../components/Sidebar`));
 
 const styles = {
   underline: {
-    textDecoration: 'underline'
-  }
+    textDecoration: 'underline',
+  },
 };
 
 export default () => (

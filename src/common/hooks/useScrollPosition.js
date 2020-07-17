@@ -8,7 +8,7 @@ try {
     // eslint-disable-next-line getter-return
     get() {
       passiveListenerSupported = true;
-    }
+    },
   });
   window.addEventListener('testPassive', null, opts);
   window.removeEventListener('testPassive', null, opts);
@@ -20,12 +20,12 @@ const getPosition = () => {
   if (typeof window !== 'undefined') {
     return {
       x: window.pageXOffset,
-      y: window.pageYOffset
+      y: window.pageYOffset,
     };
   }
   return {
     x: null,
-    y: null
+    y: null,
   };
 };
 

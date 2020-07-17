@@ -52,7 +52,7 @@ const NavWrapper = styled.div`
 
 const LeftNavWrapper = ({ expanded, ...rest }) => {
   const className = cx({
-    expanded
+    expanded,
   });
   return <NavWrapper className={className} {...rest} />;
 };

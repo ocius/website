@@ -55,7 +55,7 @@ const Nav = styled.ul`
     width: auto;
   }
 
-  ${props => props.hidden && NavHidden}
+  ${(props) => props.hidden && NavHidden}
 `;
 
 const TabsTrigger = styled.div`
@@ -105,7 +105,7 @@ const NavTabs = ({
   ariaLabel,
   triggerHref,
   selected,
-  onSelectionChange
+  onSelectionChange,
 }) => {
   const [dropdownHidden, setDropdownHidden] = useState(true);
   const [selectedDropdown, setSelectedDropdown] = useState(selected);
@@ -124,7 +124,7 @@ const NavTabs = ({
   };
 
   const getTabs = () => {
-    return React.Children.map(children, tab => tab);
+    return React.Children.map(children, (tab) => tab);
   };
 
   const getTabAt = (index, useFresh) => {
@@ -132,7 +132,7 @@ const NavTabs = ({
   };
 
   // following functions (handle*) are Props on Tab.js, see Tab.js for parameters
-  const handleTabClick = selectionChangeHandler => {
+  const handleTabClick = (selectionChangeHandler) => {
     return (index, label, evt) => {
       evt.preventDefault();
       selectTabAt(index, selectionChangeHandler);
@@ -140,7 +140,7 @@ const NavTabs = ({
     };
   };
 
-  const handleTabKeyDown = selectionChangeHandler => {
+  const handleTabKeyDown = (selectionChangeHandler) => {
     return (index, label, evt) => {
       const key = evt.key || evt.which;
 
@@ -151,8 +151,8 @@ const NavTabs = ({
     };
   };
 
-  const handleTabAnchorFocus = selectionChangeHandler => {
-    return index => {
+  const handleTabAnchorFocus = (selectionChangeHandler) => {
+    return (index) => {
       const tabCount = React.Children.count(children) - 1;
       let tabIndex = index;
 
@@ -194,7 +194,7 @@ const NavTabs = ({
       handleTabClick: handleTabClick(onSelectionChange),
       handleTabAnchorFocus: handleTabAnchorFocus(onSelectionChange),
       tabIndex,
-      handleTabKeyDown: handleTabKeyDown(onSelectionChange)
+      handleTabKeyDown: handleTabKeyDown(onSelectionChange),
     });
   });
 
@@ -262,7 +262,7 @@ NavTabs.propTypes = {
    * changes. This method is called with the index of the tab that was
    * selected
    */
-  onSelectionChange: PropTypes.func
+  onSelectionChange: PropTypes.func,
 };
 
 NavTabs.defaultProps = {
@@ -271,7 +271,7 @@ NavTabs.defaultProps = {
   triggerHref: '#',
   selected: 0,
   onSelectionChange: () => {},
-  children: ''
+  children: '',
 };
 
 export default NavTabs;

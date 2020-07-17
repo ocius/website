@@ -10,7 +10,7 @@ import MobileNavigation from './MobileNavigation';
 const navitems = [
   { link: '/live', title: 'LIVE' },
   { link: '/contact', title: 'Contact' },
-  { link: '/careers', title: 'Careers' }
+  { link: '/careers', title: 'Careers' },
 ];
 
 export default () => (
@@ -24,7 +24,7 @@ export default () => (
             { href: '/about', name: 'People' },
             { href: '/about/partners', name: 'Partners' },
             { href: '/about/our-story', name: 'Our Story' },
-            { href: '/about/awards', name: 'Awards' }
+            { href: '/about/awards', name: 'Awards' },
           ]}
         />
       </NavbarDropdown>
@@ -33,7 +33,7 @@ export default () => (
           menuItems={[
             { href: '/defence', name: 'Defence' },
             { href: '/oil-and-gas', name: 'Oil & Gas' },
-            { href: '/science', name: 'Science' }
+            { href: '/science', name: 'Science' },
           ]}
         />
       </NavbarDropdown>
@@ -42,7 +42,7 @@ export default () => (
           menuItems={[
             { href: '/usv', name: 'USV' },
             { href: '/usv#overview', name: 'BlueBottle' },
-            { href: '/usv#technical', name: 'Tech Specs' }
+            { href: '/usv#technical', name: 'Tech Specs' },
           ]}
         />
       </NavbarDropdown>
@@ -55,12 +55,12 @@ export default () => (
               href:
                 'https://drive.google.com/drive/folders/1beCdCnYaKyE4455mAd4kJKjPJWBAgSfb?usp=sharing',
               name: 'Press Kit',
-              outbound: true
-            }
+              outbound: true,
+            },
           ]}
         />
       </NavbarDropdown>
-      {navitems.map(item => {
+      {navitems.map((item) => {
         return (
           <NavbarItem
             key={navitems.indexOf(item)}

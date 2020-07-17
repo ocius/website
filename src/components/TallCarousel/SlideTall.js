@@ -22,7 +22,7 @@ const TallCarouselSlide = styled(GatsbyLink)`
   margin: 10px;
 `;
 
-const SlideTall = node => (
+const SlideTall = (node) => (
   <TallCarouselSlide className="TallCarousel-slide" to={node.item.link}>
     <Img fluid={node.item.image} alt={node.item.title} />
     <Title>{node.item.title}</Title>
@@ -33,12 +33,12 @@ SlideTall.propTypes = {
   item: PropTypes.shape({
     link: PropTypes.string,
     image: PropTypes.objectOf(PropTypes.any),
-    title: PropTypes.string
-  })
+    title: PropTypes.string,
+  }),
 };
 
 SlideTall.defaultProps = {
-  item: {}
+  item: {},
 };
 
 export default SlideTall;

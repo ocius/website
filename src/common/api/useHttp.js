@@ -11,11 +11,11 @@ const useHttp = (url, interval = null, dependencies = []) => {
     // Fetch and return the data
     axios
       .get(url)
-      .then(response => {
+      .then((response) => {
         setIsLoading(false);
         setFetchedData(response.data);
       })
-      .catch(error => {
+      .catch((error) => {
         // eslint-disable-next-line no-console
         console.log(`😱 useHttp() request failed: ${error}`);
         setIsLoading(false);

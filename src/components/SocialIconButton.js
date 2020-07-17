@@ -13,7 +13,7 @@ const backgroundColors = {
   reddit: '#fc4220',
   twitter: '#1da1f2',
   whatsapp: '#28eb76',
-  weChat: '#7bb32e'
+  weChat: '#7bb32e',
 };
 
 const iconNames = {
@@ -24,7 +24,7 @@ const iconNames = {
   reddit: 'Reddit',
   twitter: 'Twitter',
   whatsapp: 'Whatsapp',
-  weChat: 'WeChat'
+  weChat: 'WeChat',
 };
 
 const sizeMultiplier = 2.5;
@@ -34,9 +34,9 @@ const IconButton = styled.a`
   cursor: pointer;
   display: inline-block;
   font-size: ${prop('iconSize', 16)}px;
-  width: ${withProp('iconSize', size => `${size * sizeMultiplier}`)}px;
-  height: ${withProp('iconSize', size => `${size * sizeMultiplier}`)}px;
-  line-height: ${withProp('iconSize', size => `${size * sizeMultiplier}`)}px;
+  width: ${withProp('iconSize', (size) => `${size * sizeMultiplier}`)}px;
+  height: ${withProp('iconSize', (size) => `${size * sizeMultiplier}`)}px;
+  line-height: ${withProp('iconSize', (size) => `${size * sizeMultiplier}`)}px;
   text-align: center;
   text-decoration: none;
   border-radius: 100%;
@@ -77,13 +77,13 @@ SocialIconButton.propTypes = {
     'reddit',
     'twitter',
     'whatsapp',
-    'weChat'
+    'weChat',
   ]).isRequired,
   href: PropTypes.string,
   onClick: PropTypes.func,
   iconSize: PropTypes.number,
   id: PropTypes.string,
-  className: PropTypes.string
+  className: PropTypes.string,
 };
 
 SocialIconButton.defaultProps = {
@@ -91,7 +91,7 @@ SocialIconButton.defaultProps = {
   onClick: null,
   iconSize: 16,
   id: '',
-  className: ''
+  className: '',
 };
 
 export default SocialIconButton;

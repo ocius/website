@@ -13,7 +13,7 @@ import {
   fontSizeUppercase,
   fontWeightLight,
   fontWeightRegular,
-  fontWeightMedium
+  fontWeightMedium,
 } from '../common/typography';
 import font from '../common/font';
 
@@ -99,7 +99,7 @@ const StyledHeading = styled.h3`
         font-size: ${fontSizeHeading1}px;
         line-height: ${70 / 64};
       }
-    `
+    `,
   })}
 
   ${switchProp('weight', {
@@ -117,7 +117,7 @@ const StyledHeading = styled.h3`
 
     thick: css`
       font-weight: ${fontWeightMedium};
-    `
+    `,
   })}
 
   ${switchProp('tracking', {
@@ -127,14 +127,14 @@ const StyledHeading = styled.h3`
 
     loose: css`
       letter-spacing: 1px;
-    `
+    `,
   })}
 
-   ${props => props.caps && VariantCaps}
-   ${props => props.truncate && Truncate}
-   ${props => props.underline && Underline}
-   ${props => props.header && Header}
-   ${props => props.shadow && Shadow}
+   ${(props) => props.caps && VariantCaps}
+   ${(props) => props.truncate && Truncate}
+   ${(props) => props.underline && Underline}
+   ${(props) => props.header && Header}
+   ${(props) => props.shadow && Shadow}
 `;
 
 StyledHeading.defaultProps = {};
@@ -223,7 +223,7 @@ Heading.propTypes = {
   /**
    * Whether or not to render a drop shadow
    */
-  shadow: PropTypes.bool
+  shadow: PropTypes.bool,
 };
 
 Heading.defaultProps = {
@@ -233,7 +233,7 @@ Heading.defaultProps = {
   caps: false,
   underline: false,
   header: false,
-  shadow: false
+  shadow: false,
 };
 
 export default Heading;

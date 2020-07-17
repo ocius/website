@@ -44,14 +44,14 @@ Progress.propTypes = {
   percent: PropTypes.number,
   theme: PropTypes.objectOf(PropTypes.object),
   style: PropTypes.objectOf(PropTypes.object),
-  className: PropTypes.string
+  className: PropTypes.string,
 };
 
 Progress.defaultProps = {
   percent: 0,
   theme: {},
   style: {},
-  className: ''
+  className: '',
 };
 
 export default Progress;

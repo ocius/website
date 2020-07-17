@@ -63,7 +63,7 @@ const RecentNews = () => (
           }
         }
       `}
-      render={data => (
+      render={(data) => (
         <List>
           {data.allMarkdownRemark.edges.map(({ node }) => (
             <li key={node.id}>

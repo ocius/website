@@ -36,7 +36,7 @@ const SiteLogo = ({ className, href, maxHeight }) => {
   return (
     <StaticQuery
       query={logoQuery}
-      render={data => (
+      render={(data) => (
         <LogoLink className={className} key="brand" to={href}>
           <LogoImage
             style={{ maxHeight }}
@@ -52,13 +52,13 @@ const SiteLogo = ({ className, href, maxHeight }) => {
 SiteLogo.propTypes = {
   className: PropTypes.string,
   href: PropTypes.string,
-  maxHeight: PropTypes.string
+  maxHeight: PropTypes.string,
 };
 
 SiteLogo.defaultProps = {
   className: '',
   href: '/',
-  maxHeight: 'auto'
+  maxHeight: 'auto',
 };
 
 export default SiteLogo;

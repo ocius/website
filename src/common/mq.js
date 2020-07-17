@@ -15,7 +15,7 @@ export default {
     560: '35em',
     480: '30em',
     360: '22.5em',
-    320: '20em'
+    320: '20em',
   },
 
   max: {
@@ -35,7 +35,7 @@ export default {
     560: '34.9375em',
     480: '29.9375em',
     360: '22.4375em',
-    320: '19.9375em'
+    320: '19.9375em',
   },
 
   layout: {
@@ -45,6 +45,6 @@ export default {
     tabletEnd: `${1023 / 16}em`,
     laptopStart: `${1024 / 16}em`,
     laptopEnd: `${1353 / 16}em`,
-    desktopStart: `${1354 / 16}em`
-  }
+    desktopStart: `${1354 / 16}em`,
+  },
 };

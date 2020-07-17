@@ -22,18 +22,18 @@ PanelCalloutGroup.propTypes = {
     const prop = props[propName];
     let error = null;
 
-    React.Children.forEach(prop, child => {
+    React.Children.forEach(prop, (child) => {
       if (child.type.displayName === 'PanelCallout' && React.Children.count.length > 4) {
         error = new Error(`${componentName} should have no more than 4 children.`);
       }
     });
 
     return error;
-  }
+  },
 };
 
 PanelCalloutGroup.defaultProps = {
-  children: ''
+  children: '',
 };
 
 export default PanelCalloutGroup;

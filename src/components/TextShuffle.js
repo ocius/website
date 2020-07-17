@@ -23,11 +23,11 @@ const TextShuffle = ({ items, interval }) => {
 
 TextShuffle.propTypes = {
   items: PropTypes.arrayOf(PropTypes.string).isRequired,
-  interval: PropTypes.number
+  interval: PropTypes.number,
 };
 
 TextShuffle.defaultProps = {
-  interval: 1500
+  interval: 1500,
 };
 
 export default TextShuffle;

@@ -23,11 +23,11 @@ const HeroBlockSlider = ({ children, images, gradient }) => (
 
 HeroBlockSlider.propTypes = {
   images: PropTypes.arrayOf(PropTypes.string).isRequired,
-  gradient: PropTypes.string
+  gradient: PropTypes.string,
 };
 
 HeroBlockSlider.defaultProps = {
-  gradient: ''
+  gradient: '',
 };
 
 export default HeroBlockSlider;

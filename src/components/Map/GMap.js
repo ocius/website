@@ -6,7 +6,7 @@ import {
   Marker,
   InfoWindow,
   Polyline,
-  MarkerClusterer
+  MarkerClusterer,
 } from '@react-google-maps/api';
 import useHttp from '../../common/api/useHttp';
 import { inlineSvgBoatIcon, getColorVariation } from './BoatIcon';
@@ -22,14 +22,14 @@ const options = {
   mapTypeId: 'satellite',
   mapTypeControl: false,
   streetViewControl: false,
-  gestureHandling: 'greedy'
+  gestureHandling: 'greedy',
 };
 
 const GMap = ({ apiKey, currentVessel, droneData }) => {
   // Load the Google maps scripts
   const { isLoaded } = useLoadScript({
     // Get Google Maps API key from props
-    googleMapsApiKey: apiKey
+    googleMapsApiKey: apiKey,
   });
 
   // The things we need to track in state
@@ -52,22 +52,22 @@ const GMap = ({ apiKey, currentVessel, droneData }) => {
   );
 
   // Iterate through the JSON data and extract distinct coordinates for each drone
-  const makeTrailCoordinates = data => {
+  const makeTrailCoordinates = (data) => {
     const lookup = {};
 
     if (data.length > 0) {
-      data.map(item => {
+      data.map((item) => {
         const name = item.Name;
         if (!(name in lookup)) {
           lookup[name] = [];
           lookup[name].push({
             lat: Number(item.Lat),
-            lng: Number(item.Lon)
+            lng: Number(item.Lon),
           });
         } else {
           lookup[name].push({
             lat: Number(item.Lat),
-            lng: Number(item.Lon)
+            lng: Number(item.Lon),
           });
         }
         return false;
@@ -82,7 +82,7 @@ const GMap = ({ apiKey, currentVessel, droneData }) => {
   const fitBoatsOnMap = (map, data = []) => {
     const newBounds = new window.google.maps.LatLngBounds();
 
-    data.map(boat => {
+    data.map((boat) => {
       const latLng = new window.google.maps.LatLng(
         parseFloat(boat.Props.Location.Coordinates.Lat),
         parseFloat(boat.Props.Location.Coordinates.Lon)
@@ -104,7 +104,7 @@ const GMap = ({ apiKey, currentVessel, droneData }) => {
     setBounds(true);
   }
 
-  const loadHandler = map => {
+  const loadHandler = (map) => {
     // Store a reference to the google map instance in state
     setMapRef(map);
   };
@@ -119,7 +119,7 @@ const GMap = ({ apiKey, currentVessel, droneData }) => {
 
   // We have to create a mapping of our boats to actual Marker objects
   const markerLoadHandler = (marker, index) => {
-    return setMarkerMap(prevState => {
+    return setMarkerMap((prevState) => {
       return { ...prevState, [index]: marker };
     });
   };
@@ -148,7 +148,7 @@ const GMap = ({ apiKey, currentVessel, droneData }) => {
       // Center the selected marker
       setCenter({
         lat: parseFloat(boat.Props.Location.Coordinates.Lat),
-        lng: parseFloat(boat.Props.Location.Coordinates.Lon)
+        lng: parseFloat(boat.Props.Location.Coordinates.Lon),
       });
     }
   };
@@ -163,13 +163,13 @@ const GMap = ({ apiKey, currentVessel, droneData }) => {
     mapContainerStyle = {
       height: `calc(100vh - 6rem)`,
       width: `100%`,
-      paddingTop: '5rem'
+      paddingTop: '5rem',
     };
   } else {
     mapContainerStyle = {
       height: `100vh`,
       width: `100%`,
-      paddingTop: '5rem'
+      paddingTop: '5rem',
     };
   }
 
@@ -191,23 +191,23 @@ const GMap = ({ apiKey, currentVessel, droneData }) => {
         {droneData.length > 0 && (
           <>
             <MarkerClusterer averageCenter enableRetinaIcons gridSize={5}>
-              {clusterer =>
-                droneData.map(boat => (
+              {(clusterer) =>
+                droneData.map((boat) => (
                   <Marker
                     key={boat.Id}
                     position={{
                       lat: parseFloat(boat.Props.Location.Coordinates.Lat),
-                      lng: parseFloat(boat.Props.Location.Coordinates.Lon)
+                      lng: parseFloat(boat.Props.Location.Coordinates.Lon),
                     }}
                     icon={inlineSvgBoatIcon(boat.Id, boat.Props.Heading)}
                     label={{
                       text: boat.Name,
                       color: '#ffff00',
                       fontSize: '16px',
-                      fontWeight: 'bold'
+                      fontWeight: 'bold',
                     }}
-                    onLoad={marker => markerLoadHandler(marker, boat.Id)}
-                    onClick={event => markerClickHandler(event, boat)}
+                    onLoad={(marker) => markerLoadHandler(marker, boat.Id)}
+                    onClick={(event) => markerClickHandler(event, boat)}
                     clusterer={clusterer}
                   >
                     {infoOpen && boat.Id === selectedBoat && (
@@ -227,7 +227,7 @@ const GMap = ({ apiKey, currentVessel, droneData }) => {
                 ))
               }
             </MarkerClusterer>
-            {droneData.map(boat => {
+            {droneData.map((boat) => {
               // Generate unique color for this vessel
               const lineColor = getColorVariation(boat.Id)[0];
 
@@ -247,7 +247,7 @@ const GMap = ({ apiKey, currentVessel, droneData }) => {
                     visible: true,
                     radius: 30000,
                     paths: trailCoordinates[boat.Name],
-                    zIndex: 1
+                    zIndex: 1,
                   }}
                 />
               );
@@ -263,11 +263,11 @@ const GMap = ({ apiKey, currentVessel, droneData }) => {
 
 GMap.propTypes = {
   apiKey: PropTypes.string.isRequired,
-  currentVessel: PropTypes.number
+  currentVessel: PropTypes.number,
 };
 
 GMap.defaultProps = {
-  currentVessel: 0
+  currentVessel: 0,
 };
 
 export default GMap;

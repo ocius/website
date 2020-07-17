@@ -19,7 +19,7 @@ const NavbarItems = ({ children }) => {
 };
 
 NavbarItems.propTypes = {
-  children: PropTypes.node.isRequired
+  children: PropTypes.node.isRequired,
 };
 
 export default NavbarItems;

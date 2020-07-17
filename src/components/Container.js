@@ -54,13 +54,13 @@ Container.propTypes = {
   children: PropTypes.node.isRequired,
   id: PropTypes.string,
   className: PropTypes.string,
-  style: PropTypes.objectOf(PropTypes.object)
+  style: PropTypes.objectOf(PropTypes.object),
 };
 
 Container.defaultProps = {
   id: '',
   className: '',
-  style: {}
+  style: {},
 };
 
 export default Container;

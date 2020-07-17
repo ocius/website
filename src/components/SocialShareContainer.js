@@ -6,24 +6,24 @@ class SocialShareContainer extends Component {
     return {
       facebook: {
         name: 'facebook',
-        label: 'Share on Facebook'
+        label: 'Share on Facebook',
       },
       twitter: {
         name: 'twitter',
-        label: 'Share on Twitter'
+        label: 'Share on Twitter',
       },
       facebookMessenger: {
         name: 'facebookMessenger',
-        label: 'Share on Messenger'
+        label: 'Share on Messenger',
       },
       reddit: {
         name: 'reddit',
-        label: 'Share on Reddit'
+        label: 'Share on Reddit',
       },
       email: {
         name: 'email',
-        label: 'Share by email'
-      }
+        label: 'Share by email',
+      },
     };
   }
 
@@ -38,7 +38,7 @@ class SocialShareContainer extends Component {
       popUpLeft: 0,
       popUpTop: 0,
       height: window.innerHeight,
-      width: window.innerWidth
+      width: window.innerWidth,
     };
 
     windowSettings.popUpLeft = SocialShareContainer.calculateWindowPosition(
@@ -126,7 +126,7 @@ class SocialShareContainer extends Component {
     return React.createElement(this.props.children, {
       networks: this.networksToShow(),
       onClick: SocialShareContainer.openWindow,
-      ...this.props
+      ...this.props,
     });
   }
 }
@@ -136,13 +136,13 @@ SocialShareContainer.propTypes = {
   url: PropTypes.string.isRequired,
   text: PropTypes.string,
   hide: PropTypes.arrayOf(PropTypes.oneOf(Object.keys(SocialShareContainer.defineNetworks()))),
-  via: PropTypes.string
+  via: PropTypes.string,
 };
 
 SocialShareContainer.defaultProps = {
   text: '',
   hide: null,
-  via: 'OciusTechnology'
+  via: 'OciusTechnology',
 };
 
 export default SocialShareContainer;

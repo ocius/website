@@ -1,5 +1,5 @@
 const fonts = {
-  main: ["'Helvetica Neue'", "'Helvetica'", "'Arial'", 'sans-serif']
+  main: ["'Helvetica Neue'", "'Helvetica'", "'Arial'", 'sans-serif'],
 };
 
 /**

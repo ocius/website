@@ -43,13 +43,13 @@ ResponsiveIframe.propTypes = {
   src: PropTypes.string.isRequired,
   id: PropTypes.string,
   className: PropTypes.string,
-  style: PropTypes.objectOf(PropTypes.object)
+  style: PropTypes.objectOf(PropTypes.object),
 };
 
 ResponsiveIframe.defaultProps = {
   id: '',
   className: '',
-  style: {}
+  style: {},
 };
 
 export default ResponsiveIframe;

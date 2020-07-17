@@ -58,7 +58,7 @@ const ListBoxLabel = styled.span`
   user-select: none;
 `;
 
-const DropdownSkeleton = props => {
+const DropdownSkeleton = (props) => {
   return (
     <>
       <ListBoxLabel>{props.label}</ListBoxLabel>

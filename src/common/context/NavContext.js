@@ -2,7 +2,7 @@ import React, { useReducer } from 'react';
 
 const NavContext = React.createContext({
   leftNavIsOpen: false,
-  switcherIsOpen: false
+  switcherIsOpen: false,
 });
 
 const reducer = (state, action) => {
@@ -18,7 +18,7 @@ const reducer = (state, action) => {
 export const NavContextProvider = ({ children }) => {
   const [{ leftNavIsOpen, switcherIsOpen }, dispatch] = useReducer(reducer, {
     leftNavIsOpen: false,
-    switcherIsOpen: false
+    switcherIsOpen: false,
   });
 
   const toggleNavState = (nav, type) => {
@@ -30,7 +30,7 @@ export const NavContextProvider = ({ children }) => {
       value={{
         leftNavIsOpen,
         switcherIsOpen,
-        toggleNavState
+        toggleNavState,
       }}
     >
       {children}

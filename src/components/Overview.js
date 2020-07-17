@@ -25,9 +25,9 @@ const InnerContainer = styled.div`
 
 const LinkStyle = css`
   position: absolute;
-  ${props => props.md}
+  ${(props) => props.md}
   @media (min-width: ${mq.max[768]}) {
-      ${props => props.lg}
+      ${(props) => props.lg}
   }
 `;
 

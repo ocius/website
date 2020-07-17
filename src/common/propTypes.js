@@ -5,5 +5,5 @@ export default {
   fontWeight: PropTypes.oneOf(['light', 'regular', 'medium']),
   style: PropTypes.objectOf(
     PropTypes.oneOfType([PropTypes.string, PropTypes.number, PropTypes.object])
-  )
+  ),
 };

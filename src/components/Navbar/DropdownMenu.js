@@ -49,7 +49,7 @@ const StyledOutboundLink = styled(OutboundLink)`
 
 const DropdownMenu = ({ open, menuItems, setRef }) => (
   <Menu ref={setRef} display={open ? 'block' : 'none'}>
-    {menuItems.map(item => {
+    {menuItems.map((item) => {
       if (item.outbound)
         return (
           <li key={menuItems.indexOf(item)}>
@@ -73,14 +73,14 @@ DropdownMenu.propTypes = {
   menuItems: PropTypes.arrayOf(
     PropTypes.shape({
       href: PropTypes.string.isRequired,
-      name: PropTypes.string.isRequired
+      name: PropTypes.string.isRequired,
     })
   ).isRequired,
-  open: PropTypes.bool
+  open: PropTypes.bool,
 };
 
 DropdownMenu.defaultProps = {
-  open: false
+  open: false,
 };
 
 export default DropdownMenu;

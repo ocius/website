@@ -62,7 +62,7 @@ const NewsletterForm = () => {
   const [submitSuccess, setSubmitSuccess] = useState(false);
   const [formMessage, setFormMessage] = useState('');
 
-  const validateEmail = value => {
+  const validateEmail = (value) => {
     let error;
     if (!value) {
       error = 'Please enter your email';
@@ -79,7 +79,7 @@ const NewsletterForm = () => {
     );
   };
 
-  const handleFormSubmitError = error => {
+  const handleFormSubmitError = (error) => {
     setSubmitSuccess(false);
     setFormMessage(`Oops, unexpected error occurred: ${error}`);
   };
@@ -88,7 +88,7 @@ const NewsletterForm = () => {
     <Formik
       initialValues={{
         email: '',
-        name: ''
+        name: '',
       }}
       onSubmit={({ email, name }, actions) => {
         // Honeypot for bots
@@ -98,7 +98,7 @@ const NewsletterForm = () => {
         }
 
         addToMailchimp(email)
-          .then(data => {
+          .then((data) => {
             if (data.result === 'success') {
               handleFormSubmitSuccess();
               actions.resetForm();
@@ -106,7 +106,7 @@ const NewsletterForm = () => {
               handleFormSubmitError(data.msg);
             }
           })
-          .catch(error => {
+          .catch((error) => {
             // Errors in here are client side
             // Mailchimp always returns a 200
             handleFormSubmitError(error);
@@ -133,7 +133,7 @@ const NewsletterForm = () => {
                   name="email"
                   type="email"
                 />
-                <ErrorMessage name="email">{msg => <Feedback>{msg}</Feedback>}</ErrorMessage>
+                <ErrorMessage name="email">{(msg) => <Feedback>{msg}</Feedback>}</ErrorMessage>
               </div>
               <div className="form-col-4">
                 <Button
@@ -152,7 +152,7 @@ const NewsletterForm = () => {
             <Alert
               success={submitSuccess}
               dangerouslySetInnerHTML={{
-                __html: formMessage
+                __html: formMessage,
               }}
             />
           )}

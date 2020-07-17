@@ -52,7 +52,7 @@ const MenuButton = styled.button`
     display: none;
   }
 
-  ${props => props.isActive && ActiveStyle}
+  ${(props) => props.isActive && ActiveStyle}
 `;
 
 const HeaderMenuButton = ({
@@ -64,7 +64,7 @@ const HeaderMenuButton = ({
 }) => {
   const accessibilityLabel = {
     'aria-label': ariaLabel,
-    'aria-labelledby': ariaLabelledBy
+    'aria-labelledby': ariaLabelledBy,
   };
   return (
     <MenuButton
@@ -80,13 +80,13 @@ const HeaderMenuButton = ({
           style={{
             height: 20,
             width: 20,
-            marginBottom: '5px'
+            marginBottom: '5px',
           }}
         />
       ) : (
         <Icon.Sliders
           style={{
-            marginBottom: '5px'
+            marginBottom: '5px',
           }}
         />
       )}
@@ -110,14 +110,14 @@ HeaderMenuButton.propTypes = {
   /**
    * Specify whether the action is currently active
    */
-  isActive: PropTypes.bool
+  isActive: PropTypes.bool,
 };
 
 HeaderMenuButton.defaultProps = {
   'aria-label': '',
   'aria-labelledby': '',
   onClick: null,
-  isActive: false
+  isActive: false,
 };
 
 export default HeaderMenuButton;

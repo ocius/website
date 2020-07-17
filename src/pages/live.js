@@ -32,7 +32,7 @@ const LivePage = () => {
   /*
     Attach an event handler to vessel dropdown
    */
-  const handleVesselChange = e => {
+  const handleVesselChange = (e) => {
     setCurrentVessel(e.selectedItem.id);
   };
 
@@ -43,7 +43,7 @@ const LivePage = () => {
     let result = [];
     // Extract values from data
     if (typeof obj === 'object') {
-      result = Object.keys(obj).map(index => {
+      result = Object.keys(obj).map((index) => {
         // Get property for this particular index
         return propertyRetriever(obj[index]);
       });
@@ -53,12 +53,12 @@ const LivePage = () => {
   };
 
   // Retrieve a name and id
-  const droneNamesAndIdsRetriever = obj => {
+  const droneNamesAndIdsRetriever = (obj) => {
     return { name: obj.Name, id: obj.Id };
   };
 
   // Retrieve drone name
-  const droneNamesRetriever = obj => {
+  const droneNamesRetriever = (obj) => {
     return obj.Name;
   };
 
@@ -66,12 +66,12 @@ const LivePage = () => {
     Function to add custom unique Ids to fetched data.
     So that we can use them later.
    */
-  const addIdsToFetchedData = data => {
+  const addIdsToFetchedData = (data) => {
     // Extract drone names from data
     const names = objectWalker(droneNamesRetriever, data);
 
     return names.sort().map((name, index) => {
-      const filtered = data.filter(drone => drone.Name === name)[0];
+      const filtered = data.filter((drone) => drone.Name === name)[0];
       filtered.Id = index;
 
       return filtered;
@@ -79,7 +79,7 @@ const LivePage = () => {
   };
 
   // Check if name property exists
-  const droneName = data => {
+  const droneName = (data) => {
     return data && typeof data.name !== 'undefined' ? data.name : '';
   };
 

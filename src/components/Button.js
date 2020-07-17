@@ -16,7 +16,7 @@ const colors = {
   textSecondary: '#7a96a2',
   accent: '#003859',
   accentSecondary: '#001826',
-  bgAccent: 'rgba(126, 130, 126, 0.1)'
+  bgAccent: 'rgba(126, 130, 126, 0.1)',
 };
 
 const borderStyle = css`
@@ -48,7 +48,7 @@ const roundedStyle = css`
 
     huge: css`
       padding-bottom: ${9 / 9}em;
-    `
+    `,
   })}
 `;
 
@@ -139,7 +139,7 @@ const ButtonStyles = css`
         background-color: transparent;
         color: ${colors.textPrimary};
       }
-    `
+    `,
   })}
 
   ${switchProp('size', {
@@ -173,12 +173,12 @@ const ButtonStyles = css`
       font-size: 17px;
       padding-bottom: ${25 / 17}em;
       padding-top: ${30 / 17}em;
-    `
+    `,
   })}
 
-  ${props => props.rounded && roundedStyle}
-  ${props => props.full && fullStyle}
-  ${props => !props.border && borderStyle}
+  ${(props) => props.rounded && roundedStyle}
+  ${(props) => props.full && fullStyle}
+  ${(props) => !props.border && borderStyle}
 `;
 
 const ButtonLink = styled(GatsbyLink)`
@@ -333,7 +333,7 @@ Button.propTypes = {
   /**
    * Add type of the button
    */
-  type: PropTypes.string
+  type: PropTypes.string,
 };
 
 Button.defaultProps = {
@@ -346,7 +346,7 @@ Button.defaultProps = {
   border: false,
   customStyles: null,
   className: null,
-  type: null
+  type: null,
 };
 
 export default Button;

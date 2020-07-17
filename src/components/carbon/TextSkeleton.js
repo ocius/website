@@ -39,11 +39,11 @@ const TextSkeleton = ({ count }) => {
 };
 
 TextSkeleton.propTypes = {
-  count: PropTypes.number
+  count: PropTypes.number,
 };
 
 TextSkeleton.defaultProps = {
-  count: 1
+  count: 1,
 };
 
 export default TextSkeleton;

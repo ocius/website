@@ -32,7 +32,7 @@ const Link = styled(OutboundLink)`
 const iconNames = {
   facebook: 'Facebook',
   reddit: 'Reddit',
-  twitter: 'Twitter'
+  twitter: 'Twitter',
 };
 
 const SocialLink = ({ network, href, ...rest }) => {
@@ -47,7 +47,7 @@ const SocialLink = ({ network, href, ...rest }) => {
 
 SocialLink.propTypes = {
   network: PropTypes.oneOf(['facebook', 'reddit', 'twitter']).isRequired,
-  href: PropTypes.string.isRequired
+  href: PropTypes.string.isRequired,
 };
 
 export default SocialLink;

@@ -64,7 +64,7 @@ export default ({ data }) => (
               style={{
                 height: '70px',
                 marginBottom: '3px',
-                width: 'auto'
+                width: 'auto',
               }}
             />
             <Heading level={4} size="small" weight="thick">
@@ -86,7 +86,7 @@ export default ({ data }) => (
               style={{
                 height: '70px',
                 marginBottom: '3px',
-                width: 'auto'
+                width: 'auto',
               }}
             />
             <Heading level={4} size="small" weight="thick">
@@ -106,7 +106,7 @@ export default ({ data }) => (
               style={{
                 height: '70px',
                 marginBottom: '3px',
-                width: 'auto'
+                width: 'auto',
               }}
             />
             <Heading level={4} size="small" weight="thick">

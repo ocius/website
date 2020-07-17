@@ -18,64 +18,64 @@ const detailsQuery = graphql`
 const SEO = ({ description, lang, meta, keywords, title, image }) => (
   <StaticQuery
     query={detailsQuery}
-    render={data => {
+    render={(data) => {
       const metaDescription = description || data.site.siteMetadata.description;
       return (
         <Helmet
           htmlAttributes={{
-            lang
+            lang,
           }}
           title={title}
           titleTemplate={`%s | ${data.site.siteMetadata.title}`}
           meta={[
             {
               name: `description`,
-              content: metaDescription
+              content: metaDescription,
             },
             {
               property: `og:title`,
-              content: `${title} | ${data.site.siteMetadata.title}`
+              content: `${title} | ${data.site.siteMetadata.title}`,
             },
             {
               property: `og:description`,
-              content: metaDescription
+              content: metaDescription,
             },
             {
               property: `og:type`,
-              content: `website`
+              content: `website`,
             },
             {
               property: `og:image`,
-              content: image
+              content: image,
             },
             {
               name: `twitter:card`,
-              content: `summary`
+              content: `summary`,
             },
             {
               name: `twitter:creator`,
               content: data.site.siteMetadata.authorTwitterAccount
                 ? data.site.siteMetadata.authorTwitterAccount
-                : ''
+                : '',
             },
             {
               name: `twitter:title`,
-              content: title
+              content: title,
             },
             {
               name: `twitter:image`,
-              content: image
+              content: image,
             },
             {
               name: `twitter:description`,
-              content: metaDescription
-            }
+              content: metaDescription,
+            },
           ]
             .concat(
               keywords.length > 0
                 ? {
                     name: `keywords`,
-                    content: keywords.join(`, `)
+                    content: keywords.join(`, `),
                   }
                 : []
             )
@@ -92,7 +92,7 @@ SEO.propTypes = {
   meta: PropTypes.arrayOf(PropTypes.string),
   keywords: PropTypes.arrayOf(PropTypes.string),
   title: PropTypes.string.isRequired,
-  image: PropTypes.string
+  image: PropTypes.string,
 };
 
 SEO.defaultProps = {
@@ -101,7 +101,7 @@ SEO.defaultProps = {
   lang: `en`,
   meta: [],
   keywords: ['USV', 'unmmanned', 'autonomous', 'unmanned surface vessel', 'maritime', 'drones'],
-  image: ''
+  image: '',
 };
 
 export default SEO;
