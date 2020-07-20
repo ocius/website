@@ -7,14 +7,14 @@ const getWindowSize = () => {
       innerHeight: window.innerHeight,
       innerWidth: window.innerWidth,
       outerHeight: window.outerHeight,
-      outerWidth: window.outerWidth
+      outerWidth: window.outerWidth,
     };
   }
   return {
     innerWidth: null,
     innerHeight: null,
     outerWidth: null,
-    outerHeight: null
+    outerHeight: null,
   };
 };
 

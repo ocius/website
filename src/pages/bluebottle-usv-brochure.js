@@ -42,7 +42,7 @@ class TechnicalSpecificationForm extends React.Component {
     super(props);
     this.state = {
       submitSuccess: false,
-      formMessage: null
+      formMessage: null,
     };
 
     // Bind class methods
@@ -53,14 +53,14 @@ class TechnicalSpecificationForm extends React.Component {
   handleFormSubmitSuccess() {
     this.setState({
       submitSuccess: true,
-      formMessage: 'Your message was sent successfully. You will receive a reply within 24 hours.'
+      formMessage: 'Your message was sent successfully. You will receive a reply within 24 hours.',
     });
   }
 
   handleFormSubmitError(error) {
     this.setState({
       submitSuccess: false,
-      formMessage: `Unable to submit form. ${error}. Please try again.`
+      formMessage: `Unable to submit form. ${error}. Please try again.`,
     });
   }
 
@@ -83,7 +83,7 @@ class TechnicalSpecificationForm extends React.Component {
             company: '',
             email: '',
             phone: '',
-            interest: ''
+            interest: '',
           }}
           onSubmit={({ fullName, position, company, email, phone, interest }, actions) => {
             const endPoint = 'https://c2fpksv8c0.execute-api.us-east-1.amazonaws.com/dev';
@@ -96,9 +96,9 @@ class TechnicalSpecificationForm extends React.Component {
                 company,
                 email,
                 phone,
-                interest
+                interest,
               })
-              .then(response => {
+              .then((response) => {
                 if (response.status === 200) {
                   this.handleFormSubmitSuccess();
                   actions.resetForm();
@@ -106,7 +106,7 @@ class TechnicalSpecificationForm extends React.Component {
                   this.handleFormSubmitError();
                 }
               })
-              .catch(error => {
+              .catch((error) => {
                 this.handleFormSubmitError(error);
               });
           }}
@@ -124,7 +124,7 @@ class TechnicalSpecificationForm extends React.Component {
                   validate={TechnicalSpecificationForm.validateFullName}
                   placeholder="Full Name (required)"
                 />
-                <ErrorMessage name="fullName">{msg => <Feedback>{msg}</Feedback>}</ErrorMessage>
+                <ErrorMessage name="fullName">{(msg) => <Feedback>{msg}</Feedback>}</ErrorMessage>
               </FieldWrapper>
 
               <FieldWrapper>
@@ -141,7 +141,7 @@ class TechnicalSpecificationForm extends React.Component {
                   validate={TechnicalSpecificationForm.validateEmail}
                   placeholder="Email (required)"
                 />
-                <ErrorMessage name="email">{msg => <Feedback>{msg}</Feedback>}</ErrorMessage>
+                <ErrorMessage name="email">{(msg) => <Feedback>{msg}</Feedback>}</ErrorMessage>
               </FieldWrapper>
 
               <FieldWrapper>
@@ -157,7 +157,7 @@ class TechnicalSpecificationForm extends React.Component {
                   rows={10}
                   placeholder="Reason for interest (required)"
                 />
-                <ErrorMessage name="interest">{msg => <Feedback>{msg}</Feedback>}</ErrorMessage>
+                <ErrorMessage name="interest">{(msg) => <Feedback>{msg}</Feedback>}</ErrorMessage>
               </FieldWrapper>
 
               <Button type="submit" size="medium" color="blue" disabled={isSubmitting}>

@@ -39,7 +39,7 @@ const Pagination = ({ pageContext }) => {
               style={{
                 width: '12px',
                 height: '12px',
-                marginRight: '3px'
+                marginRight: '3px',
               }}
             />
             Older posts
@@ -55,7 +55,7 @@ const Pagination = ({ pageContext }) => {
               style={{
                 width: '12px',
                 height: '12px',
-                marginLeft: '3px'
+                marginLeft: '3px',
               }}
             />
           </Link>

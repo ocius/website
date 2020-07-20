@@ -24,7 +24,7 @@ const Button = styled.button`
 
     Right: css`
       right: -28px;
-    `
+    `,
   })}
 `;
 
@@ -54,11 +54,11 @@ PaginatorButton.propTypes = {
   /**
    * Function to run when the button is clicked
    */
-  onClick: PropTypes.func
+  onClick: PropTypes.func,
 };
 
 PaginatorButton.defaultProps = {
-  onClick: null
+  onClick: null,
 };
 
 export default PaginatorButton;

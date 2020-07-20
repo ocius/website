@@ -1,3 +1,4 @@
+/* eslint-disable react/forbid-prop-types */
 import React from 'react';
 import PropTypes from 'prop-types';
 import Img from 'gatsby-image';
@@ -83,23 +84,23 @@ Card.propTypes = {
     alt: PropTypes.string,
     childImageSharp: PropTypes.object,
     image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
-    style: PropTypes.object
+    style: PropTypes.object,
   }).isRequired,
   logo: PropTypes.shape({
     alt: PropTypes.string,
     childImageSharp: PropTypes.object,
     image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
-    style: PropTypes.object
+    style: PropTypes.object,
   }),
   source: PropTypes.string,
-  date: PropTypes.string
+  date: PropTypes.string,
 };
 
 Card.defaultProps = {
   url: '#',
   source: '',
   date: '',
-  logo: {}
+  logo: {},
 };
 
 export default Card;

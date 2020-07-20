@@ -1,5 +1,16 @@
 {
   "plugins": [
-    "@loadable/babel-plugin"
+    "@loadable/babel-plugin",
+    "babel-plugin-styled-components"
+  ],
+  "presets": [
+    [
+      "babel-preset-gatsby",
+      {
+        "targets": {
+          "browsers": [">0.25%", "not dead"]
+        }
+      }
+    ]
   ]
 }

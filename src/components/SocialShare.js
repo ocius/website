@@ -11,7 +11,7 @@ const SocialShare = ({ networks, headingText, onClick }) => (
       </Heading>
     )}
 
-    {Object.keys(networks).map(network => (
+    {Object.keys(networks).map((network) => (
       <SocialIconButton
         key={networks[network].name}
         className={networks[network].name}
@@ -27,12 +27,12 @@ const SocialShare = ({ networks, headingText, onClick }) => (
 SocialShare.propTypes = {
   networks: PropTypes.objectOf(PropTypes.object).isRequired,
   headingText: PropTypes.string,
-  onClick: PropTypes.func
+  onClick: PropTypes.func,
 };
 
 SocialShare.defaultProps = {
   headingText: 'Share this post:',
-  onClick: null
+  onClick: null,
 };
 
 export default SocialShare;

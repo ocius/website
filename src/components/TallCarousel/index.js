@@ -26,7 +26,7 @@ const Carousel = styled.div`
 `;
 
 const TallCarousel = ({ slides, title, settings, customSettings }) => {
-  const renderPaginator = direction => <PaginatorButton direction={direction} />;
+  const renderPaginator = (direction) => <PaginatorButton direction={direction} />;
 
   return (
     <Carousel className="TallCarousel">
@@ -51,7 +51,7 @@ const TallCarousel = ({ slides, title, settings, customSettings }) => {
                   image: node.frontmatter.featuredImage
                     ? node.frontmatter.featuredImage.childImageSharp.fluid
                     : {},
-                  link: node.fields.slug
+                  link: node.fields.slug,
                 }}
               />
             );
@@ -73,7 +73,7 @@ TallCarousel.propTypes = {
       PropTypes.number,
       PropTypes.bool,
       PropTypes.object,
-      PropTypes.array
+      PropTypes.array,
     ])
   ),
   customSettings: PropTypes.objectOf(
@@ -82,9 +82,9 @@ TallCarousel.propTypes = {
       PropTypes.number,
       PropTypes.bool,
       PropTypes.object,
-      PropTypes.array
+      PropTypes.array,
     ])
-  )
+  ),
 };
 
 TallCarousel.defaultProps = {
@@ -111,8 +111,8 @@ TallCarousel.defaultProps = {
           centerMode: true,
           arrows: false,
           infinite: true,
-          draggable: true
-        }
+          draggable: true,
+        },
       },
       {
         breakpoint: 840,
@@ -123,12 +123,12 @@ TallCarousel.defaultProps = {
           centerMode: true,
           arrows: false,
           infinite: true,
-          draggable: true
-        }
-      }
-    ]
+          draggable: true,
+        },
+      },
+    ],
   },
-  customSettings: {}
+  customSettings: {},
 };
 
 export default TallCarousel;

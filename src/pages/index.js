@@ -87,7 +87,7 @@ export default ({ data }) => {
                   style={{
                     width: '18px',
                     height: '18px',
-                    marginLeft: '3px'
+                    marginLeft: '3px',
                   }}
                 />
               </Button>

@@ -31,7 +31,7 @@ const RecentNews = () => (
         }
       }
     `}
-    render={data => (
+    render={(data) => (
       <Row>
         {data.allMarkdownRemark.edges.map(({ node }) => (
           <Col key={node.id} xs={12} md={6} lg={6}>

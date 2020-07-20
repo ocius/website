@@ -79,7 +79,7 @@ const Footer = ({ children, footerStyle }) => (
 
 Footer.propTypes = {
   footerStyle: PropTypes.objectOf(PropTypes.object),
-  children: PropTypes.node
+  children: PropTypes.node,
 };
 
 Footer.defaultProps = {
@@ -145,7 +145,7 @@ Footer.defaultProps = {
             style={{
               height: '110px',
               marginBottom: '3px',
-              width: 'auto'
+              width: 'auto',
             }}
           />
           <div className="info">
@@ -166,7 +166,7 @@ Footer.defaultProps = {
         </Col>
       </Row>
     </Container>
-  )
+  ),
 };
 
 export default Footer;

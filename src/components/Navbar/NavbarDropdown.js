@@ -48,7 +48,7 @@ class NavbarDropdown extends Component {
     super();
 
     this.state = {
-      open: false
+      open: false,
     };
 
     this.setRef = this.setRef.bind(this);
@@ -123,10 +123,10 @@ class NavbarDropdown extends Component {
 
   renderChildren = () => {
     const { children } = this.props;
-    return React.Children.map(children, child => {
+    return React.Children.map(children, (child) => {
       return React.cloneElement(child, {
         open: this.state.open,
-        setRef: this.setRef
+        setRef: this.setRef,
       });
     });
   };
@@ -153,12 +153,12 @@ class NavbarDropdown extends Component {
 
 NavbarDropdown.propTypes = {
   name: PropTypes.string,
-  link: PropTypes.string
+  link: PropTypes.string,
 };
 
 NavbarDropdown.defaultProps = {
   name: '',
-  link: ''
+  link: '',
 };
 
 export default NavbarDropdown;

@@ -16,7 +16,7 @@ const Nav = styled.nav`
   transform: translateX(35rem);
   transition: transform 150ms cubic-bezier(0.2, 0, 0.38, 0.9);
 
-  ${props =>
+  ${(props) =>
     props.open &&
     css`
       transform: translateX(0);
@@ -40,7 +40,7 @@ const Switcher = ({ children }) => {
 };
 
 Switcher.propTypes = {
-  children: PropTypes.node.isRequired
+  children: PropTypes.node.isRequired,
 };
 
 export default Switcher;

@@ -70,11 +70,11 @@ const NavbarItem = ({ link, title, blank }) => {
 NavbarItem.propTypes = {
   link: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
-  blank: PropTypes.bool
+  blank: PropTypes.bool,
 };
 
 NavbarItem.defaultProps = {
-  blank: false
+  blank: false,
 };
 
 export default NavbarItem;

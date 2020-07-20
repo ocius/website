@@ -45,12 +45,12 @@ const PowerMonitor = ({ BatteryA, BatteryB }) => {
 
 PowerMonitor.propTypes = {
   BatteryA: PropTypes.number,
-  BatteryB: PropTypes.number
+  BatteryB: PropTypes.number,
 };
 
 PowerMonitor.defaultProps = {
   BatteryA: 0,
-  BatteryB: 0
+  BatteryB: 0,
 };
 
 export default PowerMonitor;

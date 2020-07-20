@@ -12,7 +12,7 @@ const Sidebar = Loadable(() => import(`../components/Sidebar`));
 
 const addressStyle = {
   padding: '1em 0',
-  fontStyle: 'normal'
+  fontStyle: 'normal',
 };
 
 export default () => (

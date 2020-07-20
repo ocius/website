@@ -33,7 +33,7 @@ const NavItem = styled.li`
     }
   }
 
-  ${props =>
+  ${(props) =>
     props.selected &&
     css`
       border: none;
@@ -114,7 +114,7 @@ const NavTab = ({
   handleTabAnchorFocus,
   ...other
 }) => {
-  const setTabFocus = evt => {
+  const setTabFocus = (evt) => {
     const leftKey = 37;
     const rightKey = 39;
     if (evt.which === leftKey) {
@@ -127,12 +127,12 @@ const NavTab = ({
   return (
     <NavItem
       tabIndex={-1}
-      onKeyDown={evt => {
+      onKeyDown={(evt) => {
         setTabFocus(evt);
         handleTabKeyDown(index, label, evt);
         onKeyDown(evt);
       }}
-      onClick={evt => {
+      onClick={(evt) => {
         handleTabClick(index, label, evt);
         onClick(evt);
       }}
@@ -189,7 +189,7 @@ NavTab.propTypes = {
   /**
    * Link target
    */
-  to: PropTypes.oneOfType([PropTypes.string, PropTypes.object]).isRequired
+  to: PropTypes.oneOfType([PropTypes.string, PropTypes.object]).isRequired,
 };
 
 NavTab.defaultProps = {
@@ -199,7 +199,7 @@ NavTab.defaultProps = {
   handleTabClick: () => {},
   handleTabKeyDown: () => {},
   onKeyDown: () => {},
-  onClick: () => {}
+  onClick: () => {},
 };
 
 export default NavTab;

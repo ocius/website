@@ -6,7 +6,7 @@ const useOnClickOutside = (ref, handler) => {
     const isTouchDevice = 'ontouchstart' in document.documentElement;
     const eventListener = isTouchDevice ? 'touchstart' : 'mousedown';
 
-    const listener = event => {
+    const listener = (event) => {
       if (!ref.current || ref.current.contains(event.target)) {
         return;
       }

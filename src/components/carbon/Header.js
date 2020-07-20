@@ -113,11 +113,11 @@ const WebsiteHeader = ({ onRightButtonClick }) => {
 };
 
 WebsiteHeader.propTypes = {
-  onRightButtonClick: PropTypes.func
+  onRightButtonClick: PropTypes.func,
 };
 
 WebsiteHeader.defaultProps = {
-  onRightButtonClick: () => {}
+  onRightButtonClick: () => {},
 };
 
 export default WebsiteHeader;

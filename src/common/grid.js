@@ -7,7 +7,7 @@ const settings = {
   math: 'fluid',
   output: 'float',
   staticUnit: 'px',
-  remBase: 10
+  remBase: 10,
 };
 
 function calculateGutter(multiplier = 1) {
@@ -61,7 +61,7 @@ function affixValue(number, math) {
 function getNumbers([...values], math = settings.math, unit = settings.staticUnit) {
   const numbers = [];
 
-  values.map(value => {
+  values.map((value) => {
     if (math === 'fluid') {
       numbers.push(parseFloat(value.slice(0, -1)));
     }

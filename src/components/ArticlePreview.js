@@ -81,11 +81,11 @@ ArticlePreview.propTypes = {
   title: PropTypes.string.isRequired,
   paragraph: PropTypes.string.isRequired,
   href: PropTypes.string.isRequired,
-  image: PropTypes.objectOf(PropTypes.any)
+  image: PropTypes.objectOf(PropTypes.any),
 };
 
 ArticlePreview.defaultProps = {
-  image: ''
+  image: '',
 };
 
 export default ArticlePreview;

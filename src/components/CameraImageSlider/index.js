@@ -71,7 +71,7 @@ const NotAvailble = styled.div`
 
 const CameraSlider = ({ images, title, settings, customSettings }) => {
   // Check if we received valid data
-  const renderPaginator = direction => <PaginatorButton direction={direction} />;
+  const renderPaginator = (direction) => <PaginatorButton direction={direction} />;
 
   return (
     <Carousel className="CameraSlider">
@@ -91,7 +91,7 @@ const CameraSlider = ({ images, title, settings, customSettings }) => {
                   src: image,
                   alt: 'Live camera view',
                   className: 'webcam-img',
-                  style: { width: '100%' }
+                  style: { width: '100%' },
                 }}
               />
             );
@@ -115,7 +115,7 @@ CameraSlider.propTypes = {
       PropTypes.number,
       PropTypes.bool,
       PropTypes.object,
-      PropTypes.array
+      PropTypes.array,
     ])
   ),
   customSettings: PropTypes.objectOf(
@@ -124,9 +124,9 @@ CameraSlider.propTypes = {
       PropTypes.number,
       PropTypes.bool,
       PropTypes.object,
-      PropTypes.array
+      PropTypes.array,
     ])
-  )
+  ),
 };
 
 CameraSlider.defaultProps = {
@@ -142,9 +142,9 @@ CameraSlider.defaultProps = {
     slidesToScroll: 1,
     centerMode: false,
     arrows: true,
-    draggable: true
+    draggable: true,
   },
-  customSettings: {}
+  customSettings: {},
 };
 
 export default CameraSlider;

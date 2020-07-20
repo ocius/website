@@ -11,7 +11,7 @@ import SidebarWidget from './SidebarWidget';
 const Sidebar = ({ children }) => children;
 
 Sidebar.propTypes = {
-  children: PropTypes.node
+  children: PropTypes.node,
 };
 
 Sidebar.defaultProps = {
@@ -24,7 +24,7 @@ Sidebar.defaultProps = {
         <RecentNews />
       </SidebarWidget>
     </>
-  )
+  ),
 };
 
 export default Sidebar;

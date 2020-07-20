@@ -9,9 +9,9 @@ const detectActive = ({ href, location }) => {
   return {
     ...(updatedHref === updatedPath
       ? {
-          'data-active': true
+          'data-active': true,
         }
-      : {})
+      : {}),
   };
 };
 

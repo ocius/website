@@ -16,7 +16,7 @@ const StyledDropdown = styled(Dropdown)`
   color: #171717;
   transition: background-color 70ms cubic-bezier(0.2, 0, 0.38, 0.9);
 
-  ${props =>
+  ${(props) =>
     props.type === 'inline' &&
     css`
       justify-self: start;
@@ -53,7 +53,7 @@ const StyledDropdown = styled(Dropdown)`
     overflow: hidden;
     text-overflow: ellipsis;
 
-    ${props =>
+    ${(props) =>
       props.type === 'inline' &&
       css`
         padding: 0 3.2rem 0 0.8rem;
@@ -87,7 +87,7 @@ const StyledDropdown = styled(Dropdown)`
       -webkit-transform 110ms cubic-bezier(0.2, 0, 0.38, 0.9);
     cursor: pointer;
 
-    ${props =>
+    ${(props) =>
       props.type === 'inline' &&
       css`
         right: 0.8rem;
@@ -167,7 +167,7 @@ const StyledDropdown = styled(Dropdown)`
     overflow: hidden;
     white-space: nowrap;
 
-    ${props =>
+    ${(props) =>
       props.type === 'inline' &&
       css`
         margin: 0 0.8rem;

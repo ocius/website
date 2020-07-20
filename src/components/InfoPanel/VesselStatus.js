@@ -37,11 +37,25 @@ const StatusTag = styled.span`
   height: 2.4rem;
   border-radius: 1.5rem;
 
-  ${props =>
-    props.type === 'green' &&
+  ${(props) =>
+    props.type === 'success' &&
     css`
       background-color: #9deeb2;
       color: #049e51;
+    `}
+
+  ${(props) =>
+    props.type === 'danger' &&
+    css`
+      background-color: #e23f33;
+      color: #ffffff;
+    `}
+    
+  ${(props) =>
+    props.type === 'warning' &&
+    css`
+      background-color: #fff3cd;
+      color: #856404;
     `}
 `;
 
@@ -73,7 +87,7 @@ const StatusNames = {
   // Hdop: 'HDOP'
   Heading: 'Heading',
   Lat: 'Latitude',
-  Lon: 'Longitude'
+  Lon: 'Longitude',
 };
 
 /**
@@ -84,11 +98,11 @@ const StatusNames = {
  * Returns:
  *   { a: 1, c: 2}
  */
-const flattenObject = obj => {
+const flattenObject = (obj) => {
   const flattened = {};
 
   if (typeof obj === 'object') {
-    Object.keys(obj).forEach(key => {
+    Object.keys(obj).forEach((key) => {
       if (typeof obj[key] === 'object' && obj[key] !== null) {
         Object.assign(flattened, flattenObject(obj[key]));
       } else {
@@ -110,28 +124,28 @@ const flattenObject = obj => {
  *  [ "Water Temp": "17.7°C", "Wind Speed": "2.5m/s" ]
  *
  */
-const formatVesselStatusData = data => {
+const formatVesselStatusData = (data) => {
   // Variable to hold array with statuses
   const statuses = [];
   const flattened = flattenObject(data);
 
   // Add degrees to the end - 17.7°C
-  const formatTemperature = temperature => {
+  const formatTemperature = (temperature) => {
     return `${parseFloat(temperature).toFixed(1)}\xB0C`;
   };
 
   // Add kts to the end - 2.5kts
-  const formatSpeed = speed => {
+  const formatSpeed = (speed) => {
     return `${parseFloat(speed).toFixed(2)}kts`;
   };
 
   // Add degree to the end - 10°
-  const formatDirection = direction => {
+  const formatDirection = (direction) => {
     return `${parseFloat(direction).toFixed(1)}\xB0`;
   };
 
   // Add depth units to the end
-  const formatDepth = depth => {
+  const formatDepth = (depth) => {
     return `${parseFloat(depth).toFixed(2)}m`;
   };
 
@@ -140,7 +154,7 @@ const formatVesselStatusData = data => {
     For example:
       -33°54.35'
    */
-  const toDegreesMinutesAndSeconds = coordinate => {
+  const toDegreesMinutesAndSeconds = (coordinate) => {
     const absolute = Math.abs(coordinate);
     const degrees = Math.floor(absolute);
     const minutesNotTruncated = (absolute - degrees) * 60;
@@ -151,7 +165,7 @@ const formatVesselStatusData = data => {
   };
 
   // Convert latitude to degree, minutes, seconds
-  const formatLatitude = lat => {
+  const formatLatitude = (lat) => {
     const latitude = toDegreesMinutesAndSeconds(lat);
     const latitudeCardinal = lat >= 0 ? 'N' : 'S';
 
@@ -159,7 +173,7 @@ const formatVesselStatusData = data => {
   };
 
   // Convert longitude to degree, minutes, seconds
-  const formatLongitude = lng => {
+  const formatLongitude = (lng) => {
     const longitude = toDegreesMinutesAndSeconds(lng);
     const longitudeCardinal = lng >= 0 ? 'E' : 'W';
 
@@ -167,7 +181,7 @@ const formatVesselStatusData = data => {
   };
 
   // Convert MANUAL --> Manual
-  const capitalizeFirstLetter = string => {
+  const capitalizeFirstLetter = (string) => {
     const lowerCase = string.toLowerCase();
     return lowerCase.charAt(0).toUpperCase() + lowerCase.slice(1);
   };
@@ -190,8 +204,38 @@ const formatVesselStatusData = data => {
         } else if (key === 'Lon') {
           statuses[StatusNames[key]] = formatLongitude(value);
         } else if (key === 'Status') {
-          statuses[StatusNames[key]] =
-            value === 'MAV_STATE_ACTIVE' ? <StatusTag type="green">Active</StatusTag> : value;
+          // Used default MAVLink status codes
+          switch (value) {
+            case 'MAV_STATE_ACTIVE':
+              statuses[StatusNames[key]] = <StatusTag type="success">Active</StatusTag>;
+              break;
+            case 'MAV_STATE_CRITICAL':
+              statuses[StatusNames[key]] = <StatusTag type="danger">Critical</StatusTag>;
+              break;
+            case 'MAV_STATE_EMERGENCY':
+              statuses[StatusNames[key]] = <StatusTag type="danger">Emergency</StatusTag>;
+              break;
+            case 'MAV_STATE_POWEROFF':
+              statuses[StatusNames[key]] = <StatusTag type="danger">Poweroff</StatusTag>;
+              break;
+            case 'MAV_STATE_FLIGHT_TERMINATION':
+              statuses[StatusNames[key]] = <StatusTag type="danger">Termination</StatusTag>;
+              break;
+            case 'MAV_STATE_BOOT':
+              statuses[StatusNames[key]] = <StatusTag type="warning">Boot</StatusTag>;
+              break;
+            case 'MAV_STATE_STANDBY':
+              statuses[StatusNames[key]] = <StatusTag type="warning">Standby</StatusTag>;
+              break;
+            case 'MAV_STATE_CALIBRATING':
+              statuses[StatusNames[key]] = <StatusTag type="warning">Calibrating</StatusTag>;
+              break;
+            case 'MAV_STATE_UNINIT':
+              statuses[StatusNames[key]] = <StatusTag type="warning">Uninitialized</StatusTag>;
+              break;
+            default:
+              statuses[StatusNames[key]] = value;
+          }
         } else if (key === 'Mode') {
           statuses[StatusNames[key]] = capitalizeFirstLetter(value);
         } else if (typeof StatusNames[key] !== 'undefined') {

@@ -26,7 +26,7 @@ export const ContainerStyle = css`
 const HeroContainer = styled(BackgroundImage)`
   ${ContainerStyle}
 
-  ${props =>
+  ${(props) =>
     props.constrained &&
     css`
       text-align: center;
@@ -64,12 +64,12 @@ const HeroBlock = ({ children, image, constrained, gradient }) => (
 HeroBlock.propTypes = {
   image: PropTypes.objectOf(PropTypes.any).isRequired,
   constrained: PropTypes.bool,
-  gradient: PropTypes.string
+  gradient: PropTypes.string,
 };
 
 HeroBlock.defaultProps = {
   constrained: false,
-  gradient: ''
+  gradient: '',
 };
 
 export default HeroBlock;

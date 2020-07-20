@@ -52,11 +52,11 @@ const SplashScreen = ({ isLoading, text }) => {
 
 SplashScreen.propTypes = {
   isLoading: PropTypes.bool.isRequired,
-  text: PropTypes.arrayOf(PropTypes.string)
+  text: PropTypes.arrayOf(PropTypes.string),
 };
 
 SplashScreen.defaultProps = {
-  text: ['Connecting to satellite', 'Connecting to drones', 'Drones sending data']
+  text: ['Connecting to satellite', 'Connecting to drones', 'Drones sending data'],
 };
 
 export default SplashScreen;

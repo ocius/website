@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
 
-export const getColorVariation = index => {
+export const getColorVariation = (index) => {
   const colorVariations = [
     ['#35b5e5', 'red'],
     ['#ffff00', '#2f292d'],
@@ -12,7 +12,7 @@ export const getColorVariation = index => {
     ['#35b5e5', '#fcff00'],
     ['#35b5e5', '#00f200'],
     ['#35b5e5', '#ff8600'],
-    ['#35b5e5', '#ffffff']
+    ['#35b5e5', '#ffffff'],
   ];
 
   // Make boat number based on index
@@ -72,7 +72,7 @@ Boat.propTypes = {
   rotation: PropTypes.number,
   className: PropTypes.string,
   width: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  height: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
+  height: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
 };
 
 Boat.defaultProps = {
@@ -81,14 +81,12 @@ Boat.defaultProps = {
   rotation: 0,
   className: '',
   width: 70,
-  height: 70
+  height: 70,
 };
 
 export const inlineSvgBoatIcon = (index, rotation) => {
-  const svgToDataURL = svgStr => {
-    const encoded = encodeURIComponent(svgStr)
-      .replace(/'/g, '%27')
-      .replace(/"/g, '%22');
+  const svgToDataURL = (svgStr) => {
+    const encoded = encodeURIComponent(svgStr).replace(/'/g, '%27').replace(/"/g, '%22');
 
     const header = 'data:image/svg+xml,';
     return header + encoded;

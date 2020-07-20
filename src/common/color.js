@@ -6,10 +6,7 @@ import color from 'color';
  * @return {String}        RGB values
  */
 function rgb(hex) {
-  return color(hex)
-    .rgb()
-    .array()
-    .join(',');
+  return color(hex).rgb().array().join(',');
 }
 
 export default rgb;
