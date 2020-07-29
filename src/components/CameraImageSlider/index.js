@@ -5,6 +5,9 @@ import Slider from 'react-slick';
 import styled from 'styled-components';
 import { uid } from 'react-uid';
 
+// Import medium zoom styles
+import '../../css/imagezoom.css';
+
 import PaginatorButton from './PaginatorButton';
 
 const Carousel = styled.div`
@@ -85,15 +88,14 @@ const CameraSlider = ({ images, title, settings, customSettings }) => {
         >
           {images.map((image, index) => {
             return (
-              <ImageZoom
-                key={uid(image, index)}
-                image={{
-                  src: image,
-                  alt: 'Live camera view',
-                  className: 'webcam-img',
-                  style: { width: '100%' },
-                }}
-              />
+              <ImageZoom key={uid(image, index)}>
+                <img
+                  src={image}
+                  alt="Live camera view"
+                  className="webcam-img"
+                  style={{ width: '100%' }}
+                />
+              </ImageZoom>
             );
           })}
         </Slider>
