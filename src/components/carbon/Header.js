@@ -1,16 +1,20 @@
-import React, { useContext } from 'react';
-import PropTypes from 'prop-types';
-import SkipToContent from 'carbon-components-react/lib/components/UIShell/SkipToContent';
 import Header from 'carbon-components-react/lib/components/UIShell/Header';
+import SkipToContent from 'carbon-components-react/lib/components/UIShell/SkipToContent';
+import React, { useContext } from 'react';
 import styled from 'styled-components';
 
-import Button from '../Button';
-import HeaderMenuButton from './HeaderMenuButton';
 import NavContext from '../../common/context/NavContext';
 import SiteLogo from '../Navbar/SiteLogo';
 
+import HeaderMenuButton from './HeaderMenuButton';
+
 const Logo = styled(SiteLogo)`
   padding-left: 1.5rem;
+  @media (max-width: 768px) {
+    margin: auto;
+    padding-left: 0;
+    transform: translateX(-2.5rem);
+  }
 `;
 
 const ShellHeader = styled(Header)`
@@ -71,18 +75,7 @@ const ShellHeader = styled(Header)`
   }
 `;
 
-const RightControls = styled.div`
-  display: flex;
-  justify-content: flex-end;
-  flex: 1 1;
-  padding-right: 0.8rem;
-
-  @media (max-width: 768px) {
-    display: none;
-  }
-`;
-
-const WebsiteHeader = ({ onRightButtonClick }) => {
+const WebsiteHeader = () => {
   const { leftNavIsOpen, toggleNavState } = useContext(NavContext);
 
   return (
@@ -96,28 +89,8 @@ const WebsiteHeader = ({ onRightButtonClick }) => {
         isActive={leftNavIsOpen}
       />
       <Logo maxHeight="20px" />
-      <RightControls>
-        <Button
-          type="outbound"
-          href="https://usvna.ocius.com.au/usvna/oc_server?page=openlayers.htm"
-          color="white"
-          size="small"
-          border
-          onClick={onRightButtonClick}
-        >
-          Advanced View
-        </Button>
-      </RightControls>
     </ShellHeader>
   );
-};
-
-WebsiteHeader.propTypes = {
-  onRightButtonClick: PropTypes.func,
-};
-
-WebsiteHeader.defaultProps = {
-  onRightButtonClick: () => {},
 };
 
 export default WebsiteHeader;
