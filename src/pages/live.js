@@ -25,7 +25,6 @@ const LivePage = () => {
   const node = useRef();
   // Add state handlers
   const [currentVessel, setCurrentVessel] = useState(0);
-  const [showAdvancedViewSplash, setShowAdvancedViewSplash] = useState(false);
   const { leftNavIsOpen, toggleNavState } = useContext(NavContext);
   const windowSize = useWindowSize();
 
@@ -83,11 +82,6 @@ const LivePage = () => {
     return data && typeof data.name !== 'undefined' ? data.name : '';
   };
 
-  // When user clicks on the "Advanced view" button, show the splash screen
-  const onAdvancedViewClick = () => {
-    setShowAdvancedViewSplash(true);
-  };
-
   // Fetch data periodically
   const [isLoading, fetchedData] = useHttp(configuration.DRONE_COLLECTION_URL, 2000);
   const orderedDrones = addIdsToFetchedData(fetchedData);
@@ -105,7 +99,7 @@ const LivePage = () => {
     <EmptyLayout>
       <SEO title="Live" description="See where Bluebottles are at any time – LIVE." />
       <main ref={node}>
-        <Header onRightButtonClick={onAdvancedViewClick} />
+        <Header />
         <MobileNavigation />
         <LeftNav>
           <FormWrapper>
@@ -135,12 +129,8 @@ const LivePage = () => {
         </LeftNav>
       </main>
       <SplashScreen
-        isLoading={isLoading || showAdvancedViewSplash}
-        text={
-          showAdvancedViewSplash
-            ? ['Please be patient - connecting to satellite']
-            : ['Connecting to satellite', 'Connecting to drones', 'Drones sending data']
-        }
+        isLoading={isLoading}
+        text={['Connecting to satellite', 'Connecting to drones', 'Drones sending data']}
       />
       <GMap apiKey={apiKey} currentVessel={currentVessel} droneData={orderedDrones} />
     </EmptyLayout>
