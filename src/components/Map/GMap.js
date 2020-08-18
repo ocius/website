@@ -63,16 +63,23 @@ const GMap = ({ apiKey, currentVessel, droneData }) => {
           lookup[name].push({
             lat: Number(item.Lat),
             lng: Number(item.Lon),
+            time: item.Timestamp,
           });
         } else {
           lookup[name].push({
             lat: Number(item.Lat),
             lng: Number(item.Lon),
+            time: item.Timestamp,
           });
         }
         return false;
       });
     }
+    Object.keys(lookup).forEach((name) => {
+      lookup[name].sort((a, b) => {
+        return a.time - b.time;
+      });
+    });
     return lookup;
   };
 
