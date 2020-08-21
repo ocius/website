@@ -146,6 +146,9 @@ const formatVesselStatusData = (data) => {
 
   // Add depth units to the end
   const formatDepth = (depth) => {
+    if (depth < 0 || depth > 60.0) {
+      return `> 60.0m`;
+    }
     return `${parseFloat(depth).toFixed(2)}m`;
   };
 
