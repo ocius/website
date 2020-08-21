@@ -144,9 +144,15 @@ const formatVesselStatusData = (data) => {
     return `${parseFloat(direction).toFixed(1)}\xB0`;
   };
 
-  // Add depth units to the end
+  // Add depth units to the end, Rounds to 2 decimal places
+  // If the depth is outside of the range 0<=depth<=60
+  // returns '> 60m'
   const formatDepth = (depth) => {
-    return `${parseFloat(depth).toFixed(2)}m`;
+    const depthRounded = parseFloat(depth).toFixed(2);
+    if (depthRounded < 0 || depthRounded > 60.0) {
+      return `> 60m`;
+    }
+    return `${depthRounded}m`;
   };
 
   /*
