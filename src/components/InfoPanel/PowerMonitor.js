@@ -20,37 +20,29 @@ const ItemWrapper = styled.div`
   margin: 0 0 1rem;
 `;
 
-const PowerMonitor = ({ BatteryA, BatteryB }) => {
+const PowerMonitor = ({ Batteries }) => {
   const getWholePercent = (percentFor, percentOf) => {
     return Math.floor((percentFor / percentOf) * 100);
   };
 
-  // Calculate percentage of charge
-  const BatteryAPercentage = getWholePercent(BatteryA - 22, 8);
-  const BatteryBPercentage = getWholePercent(BatteryB - 22, 8);
+  const BatteryBars = Batteries.map((BatteryLevel, index) => (
+    <ItemWrapper key={BatteryLevel.id}>
+      <Label>
+        Battery {String.fromCharCode(65 + index)}: {BatteryLevel}V
+      </Label>
+      <Progress percent={getWholePercent(BatteryLevel - 22, 8)} />
+    </ItemWrapper>
+  ));
 
-  return (
-    <MonitorWrapper>
-      <ItemWrapper>
-        <Label>Battery A: Voltage {BatteryA}</Label>
-        <Progress percent={BatteryAPercentage} />
-      </ItemWrapper>
-      <ItemWrapper>
-        <Label>Battery B: Voltage {BatteryB}</Label>
-        <Progress percent={BatteryBPercentage} />
-      </ItemWrapper>
-    </MonitorWrapper>
-  );
+  return <MonitorWrapper>{BatteryBars}</MonitorWrapper>;
 };
 
 PowerMonitor.propTypes = {
-  BatteryA: PropTypes.number,
-  BatteryB: PropTypes.number,
+  Batteries: PropTypes.arrayOf(PropTypes.number),
 };
 
 PowerMonitor.defaultProps = {
-  BatteryA: 0,
-  BatteryB: 0,
+  Batteries: [],
 };
 
 export default PowerMonitor;

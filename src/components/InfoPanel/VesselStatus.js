@@ -269,7 +269,7 @@ const VesselStatus = ({ data }) => {
         ))}
       </StatusList>
       <H3Heading>Power Monitor</H3Heading>
-      <PowerMonitor BatteryA={Number(data.Props.BatteryA)} BatteryB={Number(data.Props.BatteryB)} />
+      <PowerMonitor Batteries={data.Props.Batteries} />
     </>
   ) : null;
 };
