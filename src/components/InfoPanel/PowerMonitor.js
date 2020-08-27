@@ -26,7 +26,7 @@ const PowerMonitor = ({ Batteries }) => {
   };
 
   const BatteryBars = Batteries.map((BatteryLevel, index) => (
-    <ItemWrapper key={index}>
+    <ItemWrapper key={BatteryLevel.id}>
       <Label>
         Battery {String.fromCharCode(65 + index)}: {BatteryLevel}V
       </Label>
