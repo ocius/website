@@ -13,6 +13,7 @@ import { inlineSvgBoatIcon, getColorVariation } from './BoatIcon';
 import CameraSlider from '../CameraImageSlider';
 import configuration from '../../common/api/configuration';
 import { useWindowSize } from '../../common/hooks';
+import WaterTempLayer from './WaterTempLayer';
 
 // Reference for options:
 // https://developers.google.com/maps/documentation/javascript/reference/map#MapOptions
@@ -30,6 +31,8 @@ const GMap = ({ apiKey, currentVessel, droneData }) => {
   const { isLoaded } = useLoadScript({
     // Get Google Maps API key from props
     googleMapsApiKey: apiKey,
+    // For heatmaps
+    libraries: ['visualization'],
   });
 
   // The things we need to track in state
@@ -60,18 +63,13 @@ const GMap = ({ apiKey, currentVessel, droneData }) => {
         const name = item.Name;
         if (!(name in lookup)) {
           lookup[name] = [];
-          lookup[name].push({
-            lat: Number(item.Lat),
-            lng: Number(item.Lon),
-            time: item.Timestamp,
-          });
-        } else {
-          lookup[name].push({
-            lat: Number(item.Lat),
-            lng: Number(item.Lon),
-            time: item.Timestamp,
-          });
         }
+        lookup[name].push({
+          lat: Number(item.Lat),
+          lng: Number(item.Lon),
+          time: item.Timestamp,
+          temp: Number(item.WaterTemp), 
+        });
         return false;
       });
     }
@@ -234,6 +232,7 @@ const GMap = ({ apiKey, currentVessel, droneData }) => {
                 ))
               }
             </MarkerClusterer>
+            <WaterTempLayer temperatureData={trailCoordinates[droneData[selectedBoat].Name]}/>
             {droneData.map((boat) => {
               // Generate unique color for this vessel
               const lineColor = getColorVariation(boat.Id)[0];
@@ -245,16 +244,16 @@ const GMap = ({ apiKey, currentVessel, droneData }) => {
                   options={{
                     strokeColor: lineColor,
                     strokeOpacity: 0.8,
-                    strokeWeight: 3,
+                    strokeWeight: 1,
                     fillColor: lineColor,
                     fillOpacity: 0.5,
                     clickable: false,
                     draggable: false,
                     editable: false,
                     visible: true,
-                    radius: 30000,
+                    radius: 1000,
                     paths: trailCoordinates[boat.Name],
-                    zIndex: 1,
+                    zIndex: -1,
                   }}
                 />
               );
