@@ -1,3 +1,15 @@
+- url: https://www.forbes.com/sites/davidhambling/2020/09/02/robot-boats-patrol-australian-waters/
+  title: Robot Boats Patrol Australian Waters
+  source: Forbes
+  date: 2020-09-03
+  thumbnail: thumbnails/forbes-robot-boats-patrol-australian-waters.jpg
+  logo: logotypes/forbes.png
+- url: https://www.australiandefence.com.au/news/ocius-launches-latest-usv
+  title: Ocius launches latest USV
+  source: Australian Defence Magazine
+  date: 2020-08-27
+  thumbnail: thumbnails/adm-ocius-launches-usv.jpg
+  logo: logotypes/adm-favicon.png
 - url: https://www.defenceconnect.com.au/strike-air-combat/6414-bluebottle-usvs-green-lighted-for-autonomous-operation
   title: Bluebottle USVs green-lit for autonomous operation
   source: Defence Connect
