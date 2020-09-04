@@ -95,7 +95,6 @@ export default class VeritcalBar extends Component {
                     key={index}
                     style={{
                         position: "relative",
-                        float: "right",
                         height: `${bar.barHeight}%`,
                         fontSize: "90%",
                     }}
@@ -113,7 +112,6 @@ export default class VeritcalBar extends Component {
 
     renderBars() {
         const listBars = [];
-        const { showTextWithValue, showTextIn, showValueIn } = this.props;
 
         listBars.push(
             this.state.listBars.map((bar, index) => {
@@ -130,28 +128,6 @@ export default class VeritcalBar extends Component {
                             }}
                             y={`${bar.position}%`}
                         />
-                        {(this.props.showTextIn || this.props.showValueIn) && (
-                            <text
-                                style={{ fill: this.props.fontColor, fontSize: "90%" }}
-                                x={
-                                    this.props.outlineWidth > 0
-                                        ? `${bar.position +
-                                        (this.props.outlineWidth * 100) /
-                                        (bar.widthTotal / this.props.data.length)}%`
-                                        : `${bar.position + 1}%`
-                                }
-                                y="50%"
-                                dy="0.35em"
-                            >
-                                {showTextIn && bar.name}
-                                {bar.name && showTextIn ? ": " : ""}
-                                {(showValueIn || showTextWithValue) &&
-                                    (bar.description || bar.value || "1")}
-                            </text>
-                        )}
-                        <title>{`${bar.name || ""}${
-                            bar.name ? ": " : ""
-                            }${bar.description || bar.value || "1"}`}</title>
                     </g>
                 );
             })
@@ -196,10 +172,6 @@ VeritcalBar.propTypes = {
     data: PropTypes.array.isRequired,
     id: PropTypes.string,
     width: PropTypes.number,
-    showTextWithValue: PropTypes.bool,
-    showValueIn: PropTypes.bool,
-    showValueUp: PropTypes.bool,
-    showValueDown: PropTypes.bool,
     fontColor: PropTypes.string,
     onClick: PropTypes.func,
     outlineHeight: PropTypes.number,
@@ -209,9 +181,6 @@ VeritcalBar.propTypes = {
 VeritcalBar.defaultProps = {
     width: 30,
     showTextWithValue: true,
-    showValueIn: false,
-    showValueUp: false,
-    showValueDown: false,
     outlineHeight: 0,
     outlineColor: "black",
     fontColor: "white",
