@@ -159,6 +159,9 @@ export default class VeritcalBar extends Component {
         return listBars;
     }
 
+    /** 
+     * Always renders label on the left of the bar
+     */
     renderLabel(showTextInsteadValue) {
         return (
             <div
@@ -180,13 +183,10 @@ export default class VeritcalBar extends Component {
     render() {
         return (
             <React.Fragment>
-                {(this.props.showTextUp || this.props.showValueUp) &&
-                    this.renderLabel(this.props.showTextUp)}
                 <svg id={this.props.id} width={this.props.width} height="100%">
                     {this.renderBars()}
                 </svg>
-                {(this.props.showTextDown || this.props.showValueDown) &&
-                    this.renderLabel(this.props.showTextDown)}
+                {this.renderLabel(this.props.showTextDown)}
             </React.Fragment>
         );
     }
@@ -196,9 +196,6 @@ VeritcalBar.propTypes = {
     data: PropTypes.array.isRequired,
     id: PropTypes.string,
     width: PropTypes.number,
-    showTextIn: PropTypes.bool,
-    showTextUp: PropTypes.bool,
-    showTextDown: PropTypes.bool,
     showTextWithValue: PropTypes.bool,
     showValueIn: PropTypes.bool,
     showValueUp: PropTypes.bool,
@@ -211,9 +208,6 @@ VeritcalBar.propTypes = {
 
 VeritcalBar.defaultProps = {
     width: 30,
-    showTextIn: false,
-    showTextUp: false,
-    showTextDown: false,
     showTextWithValue: true,
     showValueIn: false,
     showValueUp: false,
