@@ -6,10 +6,9 @@ import {
   Marker,
   InfoWindow,
   MarkerClusterer,
-  Polyline
 } from '@react-google-maps/api';
 import useHttp from '../../common/api/useHttp';
-import { inlineSvgBoatIcon, getColorVariation } from './BoatIcon';
+import { inlineSvgBoatIcon } from './BoatIcon';
 import CameraSlider from '../CameraImageSlider';
 import configuration from '../../common/api/configuration';
 import { useWindowSize } from '../../common/hooks';
@@ -230,37 +229,10 @@ const GMap = ({ apiKey, currentVessel, droneData }) => {
                 ))
               }
             </MarkerClusterer>
-            {droneData.map((boat) => {
-              // Generate unique color for this vessel
-              const lineColor = getColorVariation(boat.Id)[0];
-
-              return (
-                <Polyline
-                  key={boat.Id}
-                  path={trailCoordinates[boat.Name]}
-                  options={{
-                    strokeColor: lineColor,
-                    strokeOpacity: 0.8,
-                    strokeWeight: 1,
-                    fillColor: lineColor,
-                    fillOpacity: 0.5,
-                    clickable: false,
-                    draggable: false,
-                    editable: false,
-                    visible: true,
-                    radius: 1000,
-                    paths: trailCoordinates[boat.Name],
-                    zIndex: -1,
-                  }}
-                />
-              );
-            })}
-            {droneData.map((boat) => (
-              <Trail
-                boat={droneData[boat.id]}
-                trailCoordinates={trailCoordinates[boat.Name]}
-              />
-            ))}
+            <Trail
+              boat={droneData[selectedBoat]}
+              trailCoordinates={trailCoordinates[droneData[selectedBoat].Name]}
+            />
           </>
         )}
       </GoogleMap>
