@@ -88,6 +88,7 @@ const StatusNames = {
   Heading: 'Heading',
   Lat: 'Latitude',
   Lon: 'Longitude',
+  timestamp: 'Last Updated',
 };
 
 /**
@@ -192,6 +193,26 @@ const formatVesselStatusData = (data) => {
     return lowerCase.charAt(0).toUpperCase() + lowerCase.slice(1);
   };
 
+  // Convert 1599894839305 to 5 mins ago
+  const timeSince = (timestamp) => {
+    const now = new Date();
+    const localTime = new Date(parseInt(timestamp, 10));
+    const secondsPast = (now.getTime() - localTime.getTime()) / 1000;
+    if (secondsPast < 60) {
+      return `${parseInt(secondsPast, 10)}s ago`;
+    }
+    if (secondsPast < 3600) {
+      return `${parseInt(secondsPast / 60, 10)}m ago`;
+    }
+    if (secondsPast <= 86400) {
+      return `${parseInt(secondsPast / 3600, 10)}h ago`;
+    }
+    const day = localTime.getDate();
+    const month = localTime.getMonth();
+    const year = localTime.getFullYear() === now.getFullYear() ? '' : ` ${localTime.getFullYear()}`;
+    return `${day}d ${month}m ${year}y ago`;
+  };
+
   if (Object.entries(flattened).length !== 0) {
     // eslint-disable-next-line no-restricted-syntax
     for (const [key, value] of Object.entries(flattened)) {
@@ -244,6 +265,8 @@ const formatVesselStatusData = (data) => {
           }
         } else if (key === 'Mode') {
           statuses[StatusNames[key]] = capitalizeFirstLetter(value);
+        } else if (key === 'Timestamp') {
+          statuses['Last Updated'] = timeSince(value);
         } else if (typeof StatusNames[key] !== 'undefined') {
           statuses[StatusNames[key]] = value;
         }
