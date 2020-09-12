@@ -88,7 +88,7 @@ const StatusNames = {
   Heading: 'Heading',
   Lat: 'Latitude',
   Lon: 'Longitude',
-  timestamp: 'Last Updated',
+  Timestamp: 'Last Updated',
 };
 
 /**
@@ -266,7 +266,7 @@ const formatVesselStatusData = (data) => {
         } else if (key === 'Mode') {
           statuses[StatusNames[key]] = capitalizeFirstLetter(value);
         } else if (key === 'Timestamp') {
-          statuses['Last Updated'] = timeSince(value);
+          statuses[StatusNames[key]] = timeSince(value);
         } else if (typeof StatusNames[key] !== 'undefined') {
           statuses[StatusNames[key]] = value;
         }
