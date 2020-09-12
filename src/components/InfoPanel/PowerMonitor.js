@@ -30,7 +30,7 @@ const PowerMonitor = ({ Batteries }) => {
       <Label>
         Battery {String.fromCharCode(65 + index)}: {BatteryLevel}V
       </Label>
-      <Progress percent={getWholePercent(BatteryLevel - 22, 8)} />
+      <Progress percent={getWholePercent(parseFloat(BatteryLevel) - 22, 8)} />
     </ItemWrapper>
   ));
 
@@ -38,7 +38,7 @@ const PowerMonitor = ({ Batteries }) => {
 };
 
 PowerMonitor.propTypes = {
-  Batteries: PropTypes.arrayOf(PropTypes.number),
+  Batteries: PropTypes.arrayOf(PropTypes.string),
 };
 
 PowerMonitor.defaultProps = {

@@ -256,7 +256,6 @@ const formatVesselStatusData = (data) => {
 
 const VesselStatus = ({ data }) => {
   const statuses = formatVesselStatusData(data);
-
   return data ? (
     <>
       <H3Heading>Vessel Status</H3Heading>
