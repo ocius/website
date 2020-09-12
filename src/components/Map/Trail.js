@@ -73,7 +73,7 @@ const Trail = ({ trailCoordinates }) => {
           }}
           options={{
             fillColor: ColorMap(location.temp),
-            fillOpacity: 0.1,
+            fillOpacity: 0.5,
             strokeOpacity: 0,
             clickable: false,
             draggable: false,
