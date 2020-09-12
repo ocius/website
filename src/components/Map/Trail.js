@@ -1,5 +1,5 @@
 import React from 'react';
-import { Circle } from '@react-google-maps/api';
+import { Circle, Polyline } from '@react-google-maps/api';
 
 const Trail = ({ trailCoordinates }) => {
   // Maps a water temperature Number into a RGB Hex string
@@ -62,6 +62,20 @@ const Trail = ({ trailCoordinates }) => {
     return '#805880';
   };
 
+  const coordinatePairs = (trail) => {
+    const pairs = [];
+    trail.map((coordinate, index) => {
+      if (index + 1 < trail.length) {
+        pairs.push({
+          coordinates: [coordinate, trail[index + 1]],
+          color: ColorMap((coordinate.temp + trail[index + 1].temp) / 2),
+        });
+      }
+      return false;
+    });
+    return pairs;
+  };
+
   return (
     <>
       {trailCoordinates.map((location) => (
@@ -80,6 +94,26 @@ const Trail = ({ trailCoordinates }) => {
             editable: false,
             visible: true,
             radius: 5,
+            zIndex: 1,
+          }}
+        />
+      ))}
+      {coordinatePairs(trailCoordinates).map((pair) => (
+        <Polyline
+          key={pair.id}
+          path={pair.coordinates}
+          options={{
+            strokeColor: pair.color,
+            strokeOpacity: 0.8,
+            strokeWeight: 3,
+            fillColor: pair.color,
+            fillOpacity: 0.5,
+            clickable: false,
+            draggable: false,
+            editable: false,
+            visible: true,
+            radius: 30000,
+            paths: pair.Coordinates,
             zIndex: 1,
           }}
         />
