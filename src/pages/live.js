@@ -18,7 +18,7 @@ import { FormWrapper, FormItem } from '../components/carbon/shared';
 import SplashScreen from '../components/SplashScreen';
 
 // Google Maps key
-const apiKey = process.env.GOOGLE_MAPS_API_KEY;
+const apiKey = process.env.GATSBY_GOOGLE_MAPS_API_KEY;
 
 const LivePage = () => {
   // Save ref of navbar + leftnav for future reference
