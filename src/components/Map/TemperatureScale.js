@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import VSBar from './VerticalStackedBar';
+import mq from '../..//common/mq';
 
 const ChartBarWrapper = styled.div`
   position: absolute;
@@ -9,6 +10,9 @@ const ChartBarWrapper = styled.div`
   z-index: 1;
   background: white;
   user-select: none;
+  @media (max-width: ${mq.max[768]}) {
+    display: none;
+  }
 `;
 
 const TemperatureScale = () => {
