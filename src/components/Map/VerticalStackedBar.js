@@ -1,104 +1,66 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
-import _ from 'lodash';
 
-export default class VeritcalBar extends Component {
-  constructor(props) {
-    super(props);
-    //
-    this.state = {
-      listBars: [],
-      data: this.props.data,
-    };
-    this.onClick = this.onClick.bind(this);
-  }
-
-  componentDidMount() {
-    this.setState((state) => ({
-      ...state,
-      listBars: this.getListBarWithOtherParameters(),
-      data: this.props.data,
-    }));
-  }
-
-  componentDidUpdate(prevProps, prevState) {
-    if (!_.isEqual(this.props, prevProps)) {
-      this.setState((state) => ({
-        ...state,
-        listBars: this.getListBarWithOtherParameters(),
-        data: this.props.data,
-      }));
-    }
-  }
-
-
-  /**
-   * Calculate the height of each bar
-   */
-  calcHeightTotal() {
-    let heightTotal = 0;
-    this.props.data.forEach((bar) => {
-      heightTotal += bar.value;
-    });
-    return heightTotal;
-  }
-
-  /**
-   * Returns the same list of bars with position and barHeight
-   */
-  getListBarWithOtherParameters() {
-    const heightTotal = this.calcHeightTotal();
-    let position = (this.props.outlineHeight * 2) / 100;
-    let barHeight = 0;
-    const listBars = this.props.data.map((bar) => {
-      position += barHeight;
-      barHeight =
-        (bar.value * 100) / heightTotal - (this.props.outlineHeight * 100) / bar.value / 100;
-      bar = Object.assign(
-        { position: position, barHeight: barHeight, heightTotal: heightTotal },
-        bar
-      );
-      return bar;
-    });
-    return listBars;
-  }
-
-  /**
-   * OnClick Event
-   */
-  onClick(evt, bar) {
-    Object.assign(evt, { bar: bar });
-    if (this.props.onClick) {
-      this.props.onClick(evt);
-    }
-  }
-
+const VeritcalBar = (props) => {
   /**
    * Returns a new calculated rgb color
    */
-  randomColor() {
+  const randomColor = () => {
     const r = Math.floor(Math.random() * 255);
     const g = Math.floor(Math.random() * 255);
     const b = Math.floor(Math.random() * 255);
 
     return `rgb(${r}, ${g}, ${b})`;
-  }
+  };
 
+  /**
+   * Calculate the height of each bar
+   */
+  const calcHeightTotal = (data) => {
+    let heightTotal = 0;
+    data.forEach((bar) => {
+      heightTotal += bar.value;
+    });
+    return heightTotal;
+  };
+
+  /**
+   * Returns the same list of bars with position and barHeight
+   */
+  const getListBarWithOtherParameters = (data, outlineHeight) => {
+    const heightTotal = calcHeightTotal(data);
+    let position = (outlineHeight * 2) / 100;
+    let barHeight = 0;
+    const listBars = data.map((bar) => {
+      position += barHeight;
+      barHeight = (bar.value * 100) / heightTotal - (props.outlineHeight * 100) / bar.value / 100;
+      const sizedBar = {
+        position,
+        barHeight,
+        heightTotal,
+        ...bar,
+      };
+      return sizedBar;
+    });
+    return listBars;
+  };
   /**
    * Returns a list of texts of the bars into a div component
    */
-  getListTextBar(showTextInsteadValue) {
-    const { showTextWithValue } = this.props;
-    const listText = this.state.listBars.map((bar, index) => {
+  const getListTextBar = (showTextInsteadValue) => {
+    const { showTextWithValue } = props;
+    const listText = props.data.map((bar, index) => {
       return (
         <div
+          // eslint-disable-next-line react/no-array-index-key
           key={index}
           style={{
             position: 'relative',
             height: `${bar.barHeight}%`,
-            fontSize: '90%',
+            fontSize: `${props.fontSize}`,
+            fontColor: `${props.fontColor}`,
+            flex: `1`,
           }}
-          onClick={(e) => this.onClick(e, bar)}
         >
           {showTextInsteadValue && bar.name}
           {showTextInsteadValue && bar.name && showTextWithValue ? ': ' : ''}
@@ -107,83 +69,83 @@ export default class VeritcalBar extends Component {
       );
     });
     return listText;
-  }
+  };
 
-  renderBars() {
+  const renderBars = (bars) => {
     const listBars = [];
 
     listBars.push(
-      this.state.listBars.map((bar, index) => {
-        return (
-          <g key={index} onClick={(e) => this.onClick(e, bar)}>
-            <rect
-              width={this.props.width}
-              height={`${bar.barHeight + 0.1}%`}
-              style={{
-                fill: bar.color || this.randomColor(),
-                strokeWidth: `${
-                  (this.props.outlineHeight * 100) / (bar.widthTotal / this.props.data.length)
-                }%`,
-                stroke: this.props.outlineColor,
-              }}
-              y={`${bar.position}%`}
-            />
-          </g>
-        );
-      })
+      bars.map((bar, index) => (
+        // eslint-disable-next-line react/no-array-index-key
+        <g key={index}>
+          <rect
+            width={props.width}
+            height={`${bar.barHeight + 0.1}%`}
+            style={{
+              fill: bar.color || randomColor(),
+              strokeWidth: `${(props.outlineHeight * 100) / (bar.widthTotal / props.data.length)}%`,
+              stroke: props.outlineColor,
+            }}
+            y={`${bar.position}%`}
+          />
+        </g>
+      ))
     );
     return listBars;
-  }
+  };
 
   /**
    * Always renders label on the left of the bar
    */
-  renderLabel(showTextInsteadValue) {
+  const renderLabel = (showTextInsteadValue) => {
     return (
       <div
-        id={`${this.props.id}_text`}
+        id={`${props.id}_text`}
         style={{
           textAlign: 'left',
           display: 'flex',
           height: '100%',
           flexDirection: 'column',
           float: 'left',
-          padding: '0px 5px',
+          padding: '5px',
         }}
       >
-        {this.getListTextBar(showTextInsteadValue)}
+        {getListTextBar(showTextInsteadValue)}
       </div>
     );
-  }
+  };
 
-  render() {
-    return (
-      <>
-        <svg id={this.props.id} width={this.props.width} height="100%">
-          {this.renderBars()}
-        </svg>
-        {this.renderLabel(this.props.showTextDown)}
-      </>
-    );
-  }
-}
+  const barData = getListBarWithOtherParameters(props.data, props.outlineHeight);
+  return (
+    <>
+      <svg id={props.id} width={props.width} height="100%">
+        {renderBars(barData)}
+      </svg>
+      {renderLabel()}
+    </>
+  );
+};
 
 VeritcalBar.propTypes = {
-  data: PropTypes.array.isRequired,
+  data: PropTypes.arrayOf(PropTypes.object),
   width: PropTypes.number,
-  showTextWithValue: true,
+  showTextWithValue: PropTypes.bool,
+  fontSize: PropTypes.string,
   fontColor: PropTypes.string,
-  onClick: PropTypes.func,
   outlineHeight: PropTypes.number,
   outlineColor: PropTypes.string,
   id: PropTypes.string,
 };
 
 VeritcalBar.defaultProps = {
-  width: 30,
+  data: [],
+  width: 20,
   showTextWithValue: true,
   outlineHeight: 0,
   outlineColor: 'black',
-  fontColor: 'white',
+  fontSize: '1rem',
+  fontColor: 'black',
   id: 'vsbar',
 };
+
+export default VeritcalBar;
