@@ -13,6 +13,7 @@ import CameraSlider from '../CameraImageSlider';
 import configuration from '../../common/api/configuration';
 import { useWindowSize } from '../../common/hooks';
 import Trail from './Trail';
+import TemperatureScale from './TemperatureScale';
 
 // Reference for options:
 // https://developers.google.com/maps/documentation/javascript/reference/map#MapOptions
@@ -235,6 +236,7 @@ const GMap = ({ apiKey, currentVessel, droneData }) => {
             />
           </>
         )}
+        <TemperatureScale />
       </GoogleMap>
     );
   };
