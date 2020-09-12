@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import VSBar from './VerticalStackedBar';
-import mq from '../..//common/mq';
+import mq from '../../common/mq';
 
 const ChartBarWrapper = styled.div`
   position: absolute;
@@ -19,7 +19,6 @@ const TemperatureScale = () => {
   return (
     <ChartBarWrapper>
       <VSBar
-        showTextDown
         data={[
           { value: 1, description: '28\u2103', color: '#ff9bff' },
           { value: 1, description: '27\u2103', color: '#ff00ff' },
@@ -41,6 +40,8 @@ const TemperatureScale = () => {
           { value: 1, description: '11\u2103', color: '#800080' },
           { value: 1, description: '10\u2103', color: '#805880' },
         ]}
+        outlineColor="rgba(0,0,0,0)"
+        fontSize="1.25rem"
       />
     </ChartBarWrapper>
   );

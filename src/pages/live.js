@@ -132,7 +132,7 @@ const LivePage = () => {
         isLoading={isLoading}
         text={['Connecting to satellite', 'Connecting to drones', 'Drones sending data']}
       />
-      <GMap apiKey={apiKey} currentVessel={currentVessel} droneData={orderedDrones}/>
+      <GMap apiKey={apiKey} currentVessel={currentVessel} droneData={orderedDrones} />
     </EmptyLayout>
   );
 };
