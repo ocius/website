@@ -230,10 +230,7 @@ const GMap = ({ apiKey, currentVessel, droneData }) => {
               }
             </MarkerClusterer>
             {droneData.map((boat) => (
-              <Trail
-                boat={droneData[boat.id]}
-                trailCoordinates={trailCoordinates[boat.Name]}
-              />
+              <Trail boat={droneData[boat.id]} trailCoordinates={trailCoordinates[boat.Name]} />
             ))}
           </>
         )}

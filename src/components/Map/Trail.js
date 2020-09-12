@@ -8,55 +8,55 @@ const Trail = ({ trailCoordinates }) => {
     if (waterTemp >= 28) {
       return '#ff9bff';
     }
-    if (waterTemp > 27){
+    if (waterTemp > 27) {
       return '#ff00ff';
     }
-    if (waterTemp > 26){
+    if (waterTemp > 26) {
       return '#FF8000';
     }
-    if (waterTemp > 25){
+    if (waterTemp > 25) {
       return '#FF0000';
     }
-    if (waterTemp > 24){
+    if (waterTemp > 24) {
       return '#ea3d25';
     }
-    if (waterTemp > 23){
+    if (waterTemp > 23) {
       return '#ff6600';
     }
-    if (waterTemp > 22){
+    if (waterTemp > 22) {
       return '#ffab01';
     }
-    if (waterTemp > 21){
+    if (waterTemp > 21) {
       return '#ffff00';
     }
-    if (waterTemp > 20){
+    if (waterTemp > 20) {
       return '#b5ff45';
     }
-    if (waterTemp > 19){
+    if (waterTemp > 19) {
       return '#79b831';
     }
-    if (waterTemp > 18){
+    if (waterTemp > 18) {
       return '#00aa00';
     }
-    if (waterTemp > 17){
+    if (waterTemp > 17) {
       return '#018c64';
     }
-    if (waterTemp > 16){
+    if (waterTemp > 16) {
       return '#00c3ac';
     }
-    if (waterTemp > 15){
+    if (waterTemp > 15) {
       return '#00ffff';
     }
-    if (waterTemp > 14){
+    if (waterTemp > 14) {
       return '#348fff';
     }
-    if (waterTemp > 13){
+    if (waterTemp > 13) {
       return '#0245ff';
     }
-    if (waterTemp > 12){
+    if (waterTemp > 12) {
       return '#33007f';
     }
-    if (waterTemp > 11){
+    if (waterTemp > 11) {
       return '#800080';
     }
     return '#805880';
@@ -69,7 +69,7 @@ const Trail = ({ trailCoordinates }) => {
       if (index + 1 < trail.length) {
         pairs.push({
           coordinates: [coordinate, trail[index + 1]],
-          color: ColorMap((coordinate.temp + trail[index+1].temp)/2),
+          color: ColorMap((coordinate.temp + trail[index + 1].temp) / 2),
         });
       }
       return false;
