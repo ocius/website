@@ -268,7 +268,10 @@ const VesselStatus = ({ data }) => {
         ))}
       </StatusList>
       <H3Heading>Power Monitor</H3Heading>
-      <PowerMonitor Batteries={data.Props.Batteries} />
+      <PowerMonitor
+        Batteries={data.Props.Batteries}
+        BatteryPercentages={data.Props.BatteryPercentages}
+      />
     </>
   ) : null;
 };
