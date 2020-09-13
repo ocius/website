@@ -2,6 +2,7 @@ import React from 'react';
 import { uid } from 'react-uid';
 import styled, { css } from 'styled-components';
 import PowerMonitor from './PowerMonitor';
+import FlashUpdate from './FlashUpdate';
 
 const StatusList = styled.dl`
   font-size: 1.5rem;
@@ -207,10 +208,7 @@ const formatVesselStatusData = (data) => {
     if (secondsPast <= 86400) {
       return `${parseInt(secondsPast / 3600, 10)}h ago`;
     }
-    const day = localTime.getDate();
-    const month = localTime.getMonth();
-    const year = localTime.getFullYear() === now.getFullYear() ? '' : ` ${localTime.getFullYear()}`;
-    return `${day}d ${month}m ${year}y ago`;
+    return `${localTime.toLocaleDateString('en-au')}`;
   };
 
   if (Object.entries(flattened).length !== 0) {
@@ -284,12 +282,18 @@ const VesselStatus = ({ data }) => {
     <>
       <H3Heading>Vessel Status</H3Heading>
       <StatusList>
-        {Object.keys(statuses).map((index, id) => (
-          <React.Fragment key={uid(index, id)}>
-            <dt>{index}</dt>
-            <dd>{statuses[index]}</dd>
-          </React.Fragment>
-        ))}
+        {Object.keys(statuses)
+          .filter((key) => key !== 'Last Updated')
+          .map((index, id) => (
+            <React.Fragment key={uid(index, id)}>
+              <dt>{index}</dt>
+              <dd>{statuses[index]}</dd>
+            </React.Fragment>
+          ))}
+        <dt>Last Updated</dt>
+        <dd>
+          <FlashUpdate lastUpdated={Date.now()}>{statuses['Last Updated']}</FlashUpdate>
+        </dd>
       </StatusList>
       <H3Heading>Power Monitor</H3Heading>
       <PowerMonitor Batteries={data.Props.Batteries} />
