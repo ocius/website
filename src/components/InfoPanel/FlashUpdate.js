@@ -11,27 +11,24 @@ const Wrapper = styled.span`
   }
 `;
 
-// Changes the background of the contained component when
-// a different string is passed to lastUpdated (Date.now()
-// makes the most sense with time dependent data)
+// Changes the background to green for a short amount of time when this 
+// class is updated by a parent class. 
 class FlashUpdate extends React.Component {
   constructor(props) {
     super(props);
-    // https://reactjs.org/blog/2018/06/07/you-probably-dont-need-derived-state.html
-    // state is completely controlled data, upToDate is derived from props
     this.state = { upToDate: true, lastUpdated: props.lastUpdated };
     this.timer = null;
   }
 
   // Always update after pulling from the drone collection url
-  // regardless if prop data is new or not
+  // regardless of whether props have changed or not
   static shouldComponentUpdate() {
     return true;
   }
 
-  // 2s after every update, disable the highlight
+  // Removes the background 1s after being updated by the parent
   componentDidUpdate() {
-    // start timer only if data was updated
+    // start timer only if prop data was updated
     if (this.upToDate) return;
     clearTimeout(this.timer);
     this.timer = setTimeout(() => {
@@ -39,9 +36,11 @@ class FlashUpdate extends React.Component {
     }, 1000);
   }
 
-  // if the timestamp of the data has not changed, then the update
-  // was triggered by removing the highlight
+
+  // https://reactjs.org/blog/2018/06/07/you-probably-dont-need-derived-state.html
+  // state is completely controlled data, upToDate and lastUpdated is derived from props
   static getDerivedStateFromProps(props, state) {
+    // this class is "upToDate" only when props are changed by the parent
     return {
       upToDate: state.lastUpdated !== props.lastUpdated,
       lastUpdated: props.lastUpdated,
