@@ -1,52 +1,54 @@
-import React from 'react';
-import styled from 'styled-components';
+import React, { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
+import styled, { css } from 'styled-components';
 
 const Wrapper = styled.span`
   padding: 0.5rem;
-  background: rgba(0, 0, 0, 0);
-  transition: background 1s;
-  &.highlight {
-    background: #9deeb2;
-    transition: background 0.25s;
-  }
+  background-color: rgba(0, 0, 0, 0);
+  transition: background-color 0.25s ease-in-out;
+
+  /* Highlight the button when needed */
+  ${(props) =>
+    props.highlight &&
+    css`
+      background-color: #9deeb2;
+      transition: background-color 0.25s ease-out;
+    `}
 `;
 
 // Changes the background to green for a short amount of time when this
 // class is updated by a parent class.
-class FlashUpdate extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { upToDate: true, lastUpdated: props.lastUpdated };
-    this.timer = null;
-  }
+const FlashUpdate = ({ lastUpdated, children }) => {
+  const [upToDate, setUpToDate] = useState(true);
+  const [lastUpdatedState, setLastUpdateState] = useState(null);
 
-  // Removes the background 1s after being updated by the parent
-  componentDidUpdate() {
-    // start timer only if prop data was updated
-    if (!this.state.upToDate) return;
-    clearTimeout(this.timer);
-    this.timer = setTimeout(() => {
-      this.setState({ upToDate: false });
-    }, 1000);
-  }
+  // State is completely controlled data, upToDate and lastUpdated is derived from props
+  useEffect(
+    () => {
+      // This state is "upToDate" only when lastUpdate prop is changed
+      setUpToDate(lastUpdatedState !== lastUpdated);
+      setLastUpdateState(lastUpdated);
 
-  // https://reactjs.org/blog/2018/06/07/you-probably-dont-need-derived-state.html
-  // state is completely controlled data, upToDate and lastUpdated is derived from props
-  static getDerivedStateFromProps(props, state) {
-    // this class is "upToDate" only when props are changed by the parent
-    return {
-      upToDate: state.lastUpdated !== props.lastUpdated,
-      lastUpdated: props.lastUpdated,
-    };
-  }
+      // Start timer only if prop data was updated
+      if (!upToDate) return;
+      // Removes the background 1s after being updated by the parent
+      const timer = setTimeout(() => setUpToDate(false), 1000);
 
-  render() {
-    return this.state.upToDate ? (
-      <Wrapper className="highlight">{this.props.children}</Wrapper>
-    ) : (
-      <Wrapper>{this.props.children}</Wrapper>
-    );
-  }
-}
+      // This will clear Timeout when component unmount like in willComponentUnmount
+      // eslint-disable-next-line consistent-return
+      return () => {
+        clearTimeout(timer);
+      };
+    },
+    [lastUpdated] // useEffect will be run every time when lastUpdated value changes (useEffect re-run)
+  );
+
+  return <Wrapper highlight={!!upToDate}>{children}</Wrapper>;
+};
+
+FlashUpdate.propTypes = {
+  children: PropTypes.node.isRequired,
+  lastUpdated: PropTypes.number.isRequired,
+};
 
 export default FlashUpdate;
