@@ -16,13 +16,13 @@ const Wrapper = styled.span`
     `}
 `;
 
-// Changes the background to green for a short amount of time when this
-// class is updated by a parent class.
+// Changes the background to green for a short amount of time when the
+// new data is received.
 const FlashUpdate = ({ lastUpdated, children }) => {
   const [upToDate, setUpToDate] = useState(true);
   const [lastUpdatedState, setLastUpdateState] = useState(null);
 
-  // State is completely controlled data, upToDate and lastUpdated is derived from props
+  // State is completely controlled data, lastUpdated is derived from props
   useEffect(
     () => {
       // This state is "upToDate" only when lastUpdate prop is changed
