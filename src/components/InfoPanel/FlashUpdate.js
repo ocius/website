@@ -11,8 +11,8 @@ const Wrapper = styled.span`
   }
 `;
 
-// Changes the background to green for a short amount of time when this 
-// class is updated by a parent class. 
+// Changes the background to green for a short amount of time when this
+// class is updated by a parent class.
 class FlashUpdate extends React.Component {
   constructor(props) {
     super(props);
@@ -20,22 +20,15 @@ class FlashUpdate extends React.Component {
     this.timer = null;
   }
 
-  // Always update after pulling from the drone collection url
-  // regardless of whether props have changed or not
-  static shouldComponentUpdate() {
-    return true;
-  }
-
   // Removes the background 1s after being updated by the parent
   componentDidUpdate() {
     // start timer only if prop data was updated
-    if (this.upToDate) return;
+    if (!this.state.upToDate) return;
     clearTimeout(this.timer);
     this.timer = setTimeout(() => {
       this.setState({ upToDate: false });
     }, 1000);
   }
-
 
   // https://reactjs.org/blog/2018/06/07/you-probably-dont-need-derived-state.html
   // state is completely controlled data, upToDate and lastUpdated is derived from props
