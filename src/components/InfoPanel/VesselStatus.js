@@ -256,7 +256,6 @@ const formatVesselStatusData = (data) => {
 
 const VesselStatus = ({ data }) => {
   const statuses = formatVesselStatusData(data);
-
   return data ? (
     <>
       <H3Heading>Vessel Status</H3Heading>
@@ -269,7 +268,10 @@ const VesselStatus = ({ data }) => {
         ))}
       </StatusList>
       <H3Heading>Power Monitor</H3Heading>
-      <PowerMonitor Batteries={data.Props.Batteries} />
+      <PowerMonitor
+        Batteries={data.Props.Batteries}
+        BatteryPercentages={data.Props.BatteryPercentages}
+      />
     </>
   ) : null;
 };
