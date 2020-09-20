@@ -23,7 +23,7 @@ const TemperatureScale = () => {
         data={Array(19)
           .fill()
           .map((_, i) => {
-            return { value: 1, description: `${28 - i}\u2103`, color: RainbowColor(i) };
+            return { value: 1, description: `${28 - i}\u2103`, color: RainbowColor(28 - i) };
           })}
         outlineColor="rgba(0,0,0,0)"
         fontSize="1.25rem"
