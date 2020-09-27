@@ -83,7 +83,7 @@ const LivePage = () => {
   };
 
   // Fetch data periodically
-  const [isLoading, fetchedData] = useHttp(configuration.DRONE_COLLECTION_URL, 2000);
+  const [isLoading, fetchedData] = useHttp(configuration.DRONE_COLLECTION_URL, null, []);
   const orderedDrones = addIdsToFetchedData(fetchedData);
   const droneNames = objectWalker(droneNamesAndIdsRetriever, orderedDrones);
 
