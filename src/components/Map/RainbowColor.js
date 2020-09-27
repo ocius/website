@@ -1,7 +1,9 @@
-const RainbowColor = (currentTemperature) => {
-  let i = ((28 - currentTemperature) * 255) / 18;
-  if (currentTemperature > 28) i = 0;
-  if (currentTemperature < 12) i = ((28 - 11) * 255) / 18;
+const RainbowColor = (currentTemperature, minTemperature = 10, maxTemperature = 28) => {
+  const range = maxTemperature - minTemperature;
+  let i = ((maxTemperature - currentTemperature) * 260) / range + 20;
+  // Add 20 deg color shift
+  if (currentTemperature >= maxTemperature) i = 20;
+  if (currentTemperature <= minTemperature) i = 260;
   return `hsl(${i}, 100%, 50%)`;
 };
 
