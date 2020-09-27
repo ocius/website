@@ -5,14 +5,14 @@ import {
   useLoadScript,
   Marker,
   InfoWindow,
-  Polyline,
   MarkerClusterer,
 } from '@react-google-maps/api';
 import useHttp from '../../common/api/useHttp';
-import { inlineSvgBoatIcon, getColorVariation } from './BoatIcon';
+import { inlineSvgBoatIcon } from './BoatIcon';
 import CameraSlider from '../CameraImageSlider';
 import configuration from '../../common/api/configuration';
 import { useWindowSize } from '../../common/hooks';
+import Trail from './Trail';
 import TemperatureScale from './TemperatureScale';
 
 // Reference for options:
@@ -61,18 +61,13 @@ const GMap = ({ apiKey, currentVessel, droneData }) => {
         const name = item.Name;
         if (!(name in lookup)) {
           lookup[name] = [];
-          lookup[name].push({
-            lat: Number(item.Lat),
-            lng: Number(item.Lon),
-            time: item.Timestamp,
-          });
-        } else {
-          lookup[name].push({
-            lat: Number(item.Lat),
-            lng: Number(item.Lon),
-            time: item.Timestamp,
-          });
         }
+        lookup[name].push({
+          lat: Number(item.Lat),
+          lng: Number(item.Lon),
+          time: item.Timestamp,
+          temp: item.WaterTemp ? Number(item.WaterTemp) : 0,
+        });
         return false;
       });
     }
@@ -235,31 +230,9 @@ const GMap = ({ apiKey, currentVessel, droneData }) => {
                 ))
               }
             </MarkerClusterer>
-            {droneData.map((boat) => {
-              // Generate unique color for this vessel
-              const lineColor = getColorVariation(boat.Id)[0];
-
-              return (
-                <Polyline
-                  key={boat.Id}
-                  path={trailCoordinates[boat.Name]}
-                  options={{
-                    strokeColor: lineColor,
-                    strokeOpacity: 0.8,
-                    strokeWeight: 3,
-                    fillColor: lineColor,
-                    fillOpacity: 0.5,
-                    clickable: false,
-                    draggable: false,
-                    editable: false,
-                    visible: true,
-                    radius: 30000,
-                    paths: trailCoordinates[boat.Name],
-                    zIndex: 1,
-                  }}
-                />
-              );
-            })}
+            {droneData.map((boat) => (
+              <Trail boat={boat} trailCoordinates={trailCoordinates[boat.Name]} />
+            ))}
           </>
         )}
         <TemperatureScale />
