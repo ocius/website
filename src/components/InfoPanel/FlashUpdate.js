@@ -19,20 +19,21 @@ const Wrapper = styled.span`
 // Changes the background to green for a short amount of time when the
 // new data is received.
 const FlashUpdate = ({ lastUpdated, children }) => {
-  const [upToDate, setUpToDate] = useState(true);
+  const [upToDate, setUpToDate] = useState(false);
   const [lastUpdatedState, setLastUpdateState] = useState(null);
 
   // State is completely controlled data, lastUpdated is derived from props
   useEffect(
     () => {
+      // Start timer only if prop data was updated
+      if (lastUpdatedState === lastUpdated) return;
+
       // This state is "upToDate" only when lastUpdate prop is changed
-      setUpToDate(lastUpdatedState !== lastUpdated);
+      setUpToDate(false);
       setLastUpdateState(lastUpdated);
 
-      // Start timer only if prop data was updated
-      if (!upToDate) return;
       // Removes the background 1s after being updated by the parent
-      const timer = setTimeout(() => setUpToDate(false), 1000);
+      const timer = setTimeout(() => setUpToDate(true), 1000);
 
       // This will clear Timeout when component unmount like in willComponentUnmount
       // eslint-disable-next-line consistent-return
@@ -43,7 +44,7 @@ const FlashUpdate = ({ lastUpdated, children }) => {
     [lastUpdated] // useEffect will be run every time when lastUpdated value changes (useEffect re-run)
   );
 
-  return <Wrapper highlight={!!upToDate}>{children}</Wrapper>;
+  return <Wrapper highlight={!upToDate}>{children}</Wrapper>;
 };
 
 FlashUpdate.propTypes = {
@@ -51,4 +52,4 @@ FlashUpdate.propTypes = {
   lastUpdated: PropTypes.number.isRequired,
 };
 
-export default FlashUpdate;
+export default React.memo(FlashUpdate);
