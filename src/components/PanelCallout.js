@@ -104,7 +104,7 @@ function PanelCallout({ children, bgImage, title, url }) {
       </PanelHeading>
 
       <PanelBody className="PanelBody">{children}</PanelBody>
-      <BackgroundImage sizes={bgImage} />
+      <BackgroundImage fluid={bgImage} />
     </PanelContainer>
   );
 }
