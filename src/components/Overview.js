@@ -27,7 +27,7 @@ const LinkStyle = css`
   position: absolute;
   ${(props) => props.md}
   @media (min-width: ${mq.max[768]}) {
-      ${(props) => props.lg}
+    ${(props) => props.lg}
   }
 `;
 
