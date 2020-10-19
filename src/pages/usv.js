@@ -55,7 +55,7 @@ export default ({ data }) => (
               The Bluebottle USV
             </Heading>
             <Heading level={2} size="medium">
-              Sattelites of the Sea
+              Satellites of the Sea
             </Heading>
             Autonomous data gathering and communication platforms
           </header>
