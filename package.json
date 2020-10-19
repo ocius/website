@@ -46,15 +46,15 @@
     "node-sass": "^4.14.1",
     "object-assign": "^4.1.1",
     "prop-types": "^15.7.2",
-    "react": "^16.13.1",
+    "react": "^16.14.0",
     "react-addons-css-transition-group": "^15.6.2",
     "react-background-slider": "^2.0.0",
-    "react-dom": "^16.13.1",
-    "react-fade-in": "^1.1.0",
+    "react-dom": "^16.14.0",
+    "react-fade-in": "^1.1.1",
     "react-flexbox-grid": "^2.1.2",
     "react-helmet": "^6.1.0",
     "react-medium-image-zoom": "^4.3.1",
-    "react-slick": "^0.27.0",
+    "react-slick": "^0.27.12",
     "react-uid": "^2.3.0",
     "sharp": "^0.26.2",
     "styled-components": "^5.2.0",
@@ -66,8 +66,8 @@
   },
   "devDependencies": {
     "@loadable/babel-plugin": "^5.13.0",
-    "babel-plugin-styled-components": "^1.10.7",
-    "babel-preset-gatsby": "^0.5.2",
+    "babel-plugin-styled-components": "^1.11.1",
+    "babel-preset-gatsby": "^0.5.14",
     "babel-eslint": "^10.1.0",
     "eslint": "^7.11.0",
     "eslint-config-airbnb": "^18.2.0",
@@ -76,8 +76,8 @@
     "eslint-plugin-jsx-a11y": "^6.3.1",
     "eslint-plugin-prettier": "^3.1.4",
     "eslint-plugin-react": "^7.21.4",
-    "husky": "^4.2.5",
-    "prettier": "^2.0.5"
+    "husky": "^4.3.0",
+    "prettier": "^2.1.2"
   },
   "husky": {
     "hooks": {
