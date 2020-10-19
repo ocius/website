@@ -123,12 +123,12 @@ export default ({ data }) => (
             </strong>
           </p>
 
-          <p className="centered">
+          <div className="centered">
             <Img
               fluid={data.BluebottleImage ? data.BluebottleImage.childImageSharp.fluid : ''}
               alt="Bluebottle USV"
             />
-          </p>
+          </div>
           <p>
             Applications for USVs are myriad and measured in the billions of dollars. Major entities
             in offshore energy, defence and science are investing heavily in unmanned systems for
