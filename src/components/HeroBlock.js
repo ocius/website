@@ -6,7 +6,7 @@ import BackgroundImage from 'gatsby-background-image';
 import mq from '../common/mq';
 import font from '../common/font';
 
-import GradientOverlay from './GradientOverlay';
+import MaskOverlay from './MaskOverlay';
 import Container from './Container';
 
 export const ContainerStyle = css`
@@ -48,7 +48,7 @@ export const InnerContainer = styled(Container)`
 `;
 HeroContainer.defaultProps = {};
 
-const HeroBlock = ({ children, image, constrained, gradient }) => (
+const HeroBlock = ({ children, image, constrained, masked }) => (
   <HeroContainer
     Tag="section"
     className="HeroBlock"
@@ -57,19 +57,19 @@ const HeroBlock = ({ children, image, constrained, gradient }) => (
   >
     <InnerContainer>{children}</InnerContainer>
 
-    {gradient && <GradientOverlay gradientType={gradient} />}
+    {masked && <MaskOverlay />}
   </HeroContainer>
 );
 
 HeroBlock.propTypes = {
   image: PropTypes.objectOf(PropTypes.any).isRequired,
   constrained: PropTypes.bool,
-  gradient: PropTypes.string,
+  masked: PropTypes.bool,
 };
 
 HeroBlock.defaultProps = {
   constrained: false,
-  gradient: '',
+  masked: false,
 };
 
 export default HeroBlock;

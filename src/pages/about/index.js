@@ -13,21 +13,12 @@ import Heading from '../../components/Heading';
 import NavTabs from '../../components/Tabs/NavTabs';
 import NavTab from '../../components/Tabs/NavTab';
 import Segmented from '../../components/Segmented';
+import HeroBlock from '../../components/HeroBlock';
 
 const Hero = styled(Row)`
   border-bottom: 1px solid #c7c7c7;
   padding-bottom: 4rem;
   margin-top: 4rem;
-`;
-
-const HeroBlock = styled(Col)`
-  text-align: left;
-  box-sizing: border-box;
-  padding: 2rem 5rem;
-
-  & + & {
-    border-left: 1px solid #c7c7c7;
-  }
 `;
 
 const Awards = () => {
@@ -657,32 +648,6 @@ const People = ({ data }) => {
   return (
     <>
       <SEO title="Our Mission, Our Culture, People" />
-      <Hero>
-        <HeroBlock xs={12} md={6} lg={6}>
-          <Heading level={2} size="large">
-            Our Mission
-          </Heading>
-          <p>
-            Innovative Autonomous Solutions
-            <br />
-            for
-            <br />
-            Persistent Maritime Surveillance
-          </p>
-        </HeroBlock>
-        <HeroBlock xs={12} md={6} lg={6}>
-          <Heading level={2} size="large">
-            Our Culture
-          </Heading>
-          <p>
-            Agile Australian company
-            <br />
-            Respect for our stakeholders, our team and the ocean environment in which our products
-            operate.
-            <br />
-          </p>
-        </HeroBlock>
-      </Hero>
       <header id="people" className="centered">
         <Heading level={1} size="huge" underline>
           People
@@ -836,18 +801,46 @@ export default ({ data }) => {
         description="Our Mission. To supply the world's best unmanned surface vessels with more power, payload and
       performance."
       />
-      <PageHeader>
-        <Heading level={1} size="large" header>
-          About
-        </Heading>
+      {data.HeroBackground && (
+        <HeroBlock image={data.HeroBackground.childImageSharp.fluid} masked>
+          <Heading level={1} size="large" header>
+            About
+          </Heading>
+          <Hero>
+            <Col xs={12} md={6} lg={6}>
+              <Heading level={2} size="large">
+                Our Mission
+              </Heading>
+              <p>
+                Innovative Autonomous Solutions
+                <br />
+                for
+                <br />
+                Persistent Maritime Surveillance
+              </p>
+            </Col>
+            <Col xs={12} md={6} lg={6}>
+              <Heading level={2} size="large">
+                Our Culture
+              </Heading>
+              <p>
+                Agile Australian company
+                <br />
+                Respect for our stakeholders, our team and the ocean environment in which our
+                products operate.
+                <br />
+              </p>
+            </Col>
+          </Hero>
+        </HeroBlock>
+      )}
+      <Container className="page-content">
         <NavTabs>
           <NavTab label="People" to="about" />
           <NavTab label="Our Partners" to="about/partners" />
           <NavTab label="Our Story" to="about/our-story" />
           <NavTab label="Awards" to="about/awards" />
         </NavTabs>
-      </PageHeader>
-      <Container className="page-content">
         <Router>
           <People path="about" data={data} />
           <Partners path="about/partners" data={data} />
@@ -861,6 +854,14 @@ export default ({ data }) => {
 
 export const query = graphql`
   query getAboutPageData {
+    HeroBackground: file(relativePath: { eq: "pages/about/images/ocius-about-bg.png" }) {
+      childImageSharp {
+        fluid(quality: 100, maxWidth: 1920) {
+          ...GatsbyImageSharpFluid_withWebp
+        }
+      }
+    }
+
     MarkBethwaite: file(relativePath: { eq: "pages/about/images/Mark-Bethwaite.jpg" }) {
       ...imageSharpAvatar
     }
