@@ -31,7 +31,7 @@ const Underline = css`
   &::after {
     content: '';
     display: block;
-    background-color: #60d2f6;
+    background-color: #4ab4e6;
     height: 4px;
     width: 100px;
     margin: 10px auto;
@@ -43,7 +43,7 @@ const Shadow = css`
 `;
 
 const Header = css`
-  color: #60d2f6;
+  color: #1f3643;
   padding-top: 80px;
   margin-top: 0;
 

@@ -1,7 +1,6 @@
 import React from 'react';
 import { graphql, Link as GatsbyLink } from 'gatsby';
 import { Router } from '@reach/router';
-import styled from 'styled-components';
 import { Col, Row } from 'react-flexbox-grid';
 import Img from 'gatsby-image';
 import { OutboundLink } from 'gatsby-plugin-gtag';
@@ -796,12 +795,22 @@ export default ({ data }) => {
       />
       {data.HeroBackground && (
         <HeroBlock image={data.HeroBackground.childImageSharp.fluid} masked>
-          <Heading level={1} size="large" header>
-            About
-          </Heading>
           <Row>
+            <Col xs={12} md={6} lg={4}>
+              <Heading level={1} size="huge" weight="bold" header underline>
+                About
+                <br />
+                Ocius
+              </Heading>
+              <p>
+                Find out about the history behind Ocius and the support network that has helped
+                along the journey.
+              </p>
+            </Col>
+          </Row>
+          <Row className="centered">
             <Col xs={12} md={6} lg={6}>
-              <Heading level={3} size="large" weight="bold">
+              <Heading level={3} size="large" weight="bold" underline>
                 Our Culture
               </Heading>
               <p>
@@ -810,7 +819,7 @@ export default ({ data }) => {
               </p>
             </Col>
             <Col xs={12} md={6} lg={6}>
-              <Heading level={3} size="large" weight="bold">
+              <Heading level={3} size="large" weight="bold" underline>
                 Our Mission
               </Heading>
               <p>
@@ -840,7 +849,7 @@ export default ({ data }) => {
 
 export const query = graphql`
   query getAboutPageData {
-    HeroBackground: file(relativePath: { eq: "pages/about/images/ocius-about-bg.png" }) {
+    HeroBackground: file(relativePath: { eq: "pages/about/images/ocius-about-bg1.png" }) {
       childImageSharp {
         fluid(quality: 100, maxWidth: 1920) {
           ...GatsbyImageSharpFluid_withWebp
