@@ -808,26 +808,19 @@ export default ({ data }) => {
           <Hero>
             <Col xs={12} md={6} lg={6}>
               <Heading level={2} size="large">
-                Our Mission
+                Our Culture
               </Heading>
               <p>
-                Innovative Autonomous Solutions
-                <br />
-                for
-                <br />
-                Persistent Maritime Surveillance
+                We are an agile Australian company that respects our stakeholders, our team and the
+                ocean environment in which our products operate.
               </p>
             </Col>
             <Col xs={12} md={6} lg={6}>
               <Heading level={2} size="large">
-                Our Culture
+                Our Mission
               </Heading>
               <p>
-                Agile Australian company
-                <br />
-                Respect for our stakeholders, our team and the ocean environment in which our
-                products operate.
-                <br />
+                To develop innovative, autonomous solutions for persistent, maritime surveillance.
               </p>
             </Col>
           </Hero>
