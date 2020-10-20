@@ -14,12 +14,6 @@ import NavTab from '../../components/Tabs/NavTab';
 import Segmented from '../../components/Segmented';
 import HeroBlock from '../../components/HeroBlock';
 
-const Hero = styled(Row)`
-  border-bottom: 1px solid #c7c7c7;
-  padding-bottom: 4rem;
-  margin-top: 4rem;
-`;
-
 const Awards = () => {
   return (
     <>
@@ -805,9 +799,9 @@ export default ({ data }) => {
           <Heading level={1} size="large" header>
             About
           </Heading>
-          <Hero>
+          <Row>
             <Col xs={12} md={6} lg={6}>
-              <Heading level={2} size="large">
+              <Heading level={3} size="large" weight="bold">
                 Our Culture
               </Heading>
               <p>
@@ -816,14 +810,14 @@ export default ({ data }) => {
               </p>
             </Col>
             <Col xs={12} md={6} lg={6}>
-              <Heading level={2} size="large">
+              <Heading level={3} size="large" weight="bold">
                 Our Mission
               </Heading>
               <p>
                 To develop innovative, autonomous solutions for persistent, maritime surveillance.
               </p>
             </Col>
-          </Hero>
+          </Row>
         </HeroBlock>
       )}
       <Container className="page-content">
