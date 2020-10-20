@@ -8,7 +8,6 @@ import { OutboundLink } from 'gatsby-plugin-gtag';
 import SEO from '../../components/SEO';
 import Layout from '../../layouts/Layout';
 import Container from '../../components/Container';
-import PageHeader from '../../components/PageHeader';
 import Heading from '../../components/Heading';
 import NavTabs from '../../components/Tabs/NavTabs';
 import NavTab from '../../components/Tabs/NavTab';
