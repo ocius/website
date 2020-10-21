@@ -809,7 +809,7 @@ export default ({ data }) => {
             </Col>
           </Row>
           <Row className="centered">
-            <Col xs={12} md={6} lg={6}>
+            <Col xs={12} md={5} lg={5} mdOffset={1}>
               <Heading level={3} size="large" weight="bold" underline>
                 Our Culture
               </Heading>
@@ -818,7 +818,7 @@ export default ({ data }) => {
                 ocean environment in which our products operate.
               </p>
             </Col>
-            <Col xs={12} md={6} lg={6}>
+            <Col xs={12} md={5} lg={5} mdOffset={1}>
               <Heading level={3} size="large" weight="bold" underline>
                 Our Mission
               </Heading>
@@ -857,27 +857,27 @@ export const query = graphql`
       }
     }
 
-    MarkBethwaite: file(relativePath: { eq: "pages/about/images/Mark-Bethwaite.jpg" }) {
+    MarkBethwaite: file(relativePath: { eq: "pages/about/images/mark-bethwaite.png" }) {
       ...imageSharpAvatar
     }
 
-    RobertDane: file(relativePath: { eq: "pages/about/images/Robert-Dane.jpg" }) {
+    RobertDane: file(relativePath: { eq: "pages/about/images/robert-dane.png" }) {
       ...imageSharpAvatar
     }
 
-    LloydBreckenridge: file(relativePath: { eq: "pages/about/images/Lloyd-Breckenridge.jpg" }) {
+    LloydBreckenridge: file(relativePath: { eq: "pages/about/images/lloyd-breckenridge.png" }) {
       ...imageSharpAvatar
     }
 
-    PeterWlodarczyk: file(relativePath: { eq: "pages/about/images/Peter-Wlodarczyk.jpg" }) {
+    PeterWlodarczyk: file(relativePath: { eq: "pages/about/images/peter-wlodarczyk.png" }) {
       ...imageSharpAvatar
     }
 
-    ScottElliceFlint: file(relativePath: { eq: "pages/about/images/Scott-Ellise-Flint.jpg" }) {
+    ScottElliceFlint: file(relativePath: { eq: "pages/about/images/scott-ellice-flint.png" }) {
       ...imageSharpAvatar
     }
 
-    AndrewAitken: file(relativePath: { eq: "pages/about/images/Andrew-Aitken.png" }) {
+    AndrewAitken: file(relativePath: { eq: "pages/about/images/andrew-aitken.png" }) {
       ...imageSharpAvatar
     }
 
@@ -924,7 +924,7 @@ export const query = graphql`
 
   fragment imageSharpAvatar on File {
     childImageSharp {
-      fixed(width: 150, height: 150) {
+      fixed(width: 200) {
         ...GatsbyImageSharpFixed
       }
     }
