@@ -641,8 +641,8 @@ const People = ({ data }) => {
     <>
       <SEO title="Our Mission, Our Culture, People" />
       <header id="people" className="centered">
-        <Heading level={1} size="huge" underline>
-          People
+        <Heading level={2} size="large" underline>
+          The team behind Ocius
         </Heading>
       </header>
       <Segmented borderBottom="">
