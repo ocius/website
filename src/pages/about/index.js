@@ -3,6 +3,7 @@ import { graphql, Link as GatsbyLink } from 'gatsby';
 import { Router } from '@reach/router';
 import { Col, Row } from 'react-flexbox-grid';
 import Img from 'gatsby-image';
+import styled from 'styled-components';
 import { OutboundLink } from 'gatsby-plugin-gtag';
 import SEO from '../../components/SEO';
 import Layout from '../../layouts/Layout';
@@ -636,6 +637,11 @@ const OurStory = () => {
   );
 };
 
+const SubHeading = styled.p`
+  color: #4ab4e6;
+  margin-top: 0;
+`;
+
 const People = ({ data }) => {
   return (
     <>
@@ -646,16 +652,15 @@ const People = ({ data }) => {
         </Heading>
       </header>
       <Segmented borderBottom="">
-        <Row className="primary-content centered">
+        <Row className="primary-content">
           <Col xs={12} md={6} lg={4}>
             {data.MarkBethwaite && (
               <Img fixed={data.MarkBethwaite.childImageSharp.fixed} alt="Mark Bethwaite AM" />
             )}
             <Heading level={3} size="medium">
               Mark Bethwaite AM
-              <br />
-              Chairman
             </Heading>
+            <SubHeading>Chairman</SubHeading>
             <div className="left-align">
               <p>
                 Now a professional director, Mark has been a shareholder in OCIUS since 2000. He has
@@ -675,9 +680,8 @@ const People = ({ data }) => {
             )}
             <Heading level={3} size="medium">
               Robert Dane
-              <br />
-              Chief Executive Officer
             </Heading>
+            <SubHeading>Chief Executive Officer</SubHeading>
             <div className="left-align">
               <p>
                 Robert Dane is founder and CEO. In 1996, Robert, a passionate sailor and
@@ -700,9 +704,8 @@ const People = ({ data }) => {
             )}
             <Heading level={3} size="medium">
               Andrew Aitken
-              <br />
-              Director and Ocius Corporate Lawyer
             </Heading>
+            <SubHeading>Director and Ocius Corporate Lawyer</SubHeading>
             <div className="left-align">
               <p>
                 Andrew practices principally in the areas of commercial law, succession and estate
@@ -719,9 +722,8 @@ const People = ({ data }) => {
             )}
             <Heading level={3} size="medium">
               Lloyd Breckenridge
-              <br />
-              Chief Engineer
             </Heading>
+            <SubHeading>Chief Engineer</SubHeading>
             <div className="left-align">
               <p>
                 Lloyd has over 30 years of experience as a software engineer working in varied roles
@@ -744,9 +746,8 @@ const People = ({ data }) => {
             )}
             <Heading level={3} size="medium">
               Peter Wlodarczyk
-              <br />
-              Lead Engineer
             </Heading>
+            <SubHeading>Lead Engineer</SubHeading>
             <div className="left-align">
               <p>
                 Graduating from the University of Newcastle with a BE (Computer Engineering), Peter
@@ -768,9 +769,8 @@ const People = ({ data }) => {
             )}
             <Heading level={3} size="medium">
               Scott Ellice-Flint
-              <br />
-              Group Accountant & Company Secretary
             </Heading>
+            <SubHeading>Group Accountant &amp; Company Secretary</SubHeading>
             <div className="left-align">
               <p>
                 Scott has over 40 years experience as a Chartered Accountant. As principal of his
