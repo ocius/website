@@ -642,6 +642,10 @@ const SubHeading = styled.p`
   margin-top: 0;
 `;
 
+const TeamMember = styled.div`
+  padding: 2em;
+`;
+
 const People = ({ data }) => {
   return (
     <>
@@ -653,131 +657,171 @@ const People = ({ data }) => {
       </header>
       <Segmented borderBottom="">
         <Row className="primary-content">
-          <Col xs={12} md={6} lg={4}>
-            {data.MarkBethwaite && (
-              <Img fixed={data.MarkBethwaite.childImageSharp.fixed} alt="Mark Bethwaite AM" />
-            )}
-            <Heading level={3} size="medium">
-              Mark Bethwaite AM
-            </Heading>
-            <SubHeading>Chairman</SubHeading>
-            <div className="left-align">
-              <p>
-                Now a professional director, Mark has been a shareholder in OCIUS since 2000. He has
-                a degree in Engineering and an MBA and has been Managing Director of two large
-                mining companies and one of Australia’s leading industry associations.
-              </p>
-              <p>
-                Mark represented Australia in sailing in the 1972 and 1976 Olympic Games and has won
-                World Championships in three international classes. Mark was made a Member of the
-                Order of Australia (AM) in early 2011 for services to industry and to sailing.
-              </p>
-            </div>
+          <Col xs={12} md={6} lg={6}>
+            <TeamMember>
+              {data.MarkBethwaite && (
+                <Img fixed={data.MarkBethwaite.childImageSharp.fixed} alt="Mark Bethwaite AM" />
+              )}
+              <Heading level={3} size="medium">
+                Mark Bethwaite AM
+              </Heading>
+              <SubHeading>Chairman</SubHeading>
+              <div className="left-align">
+                <p>
+                  Now a professional director, Mark has been a shareholder in OCIUS since 2000. He
+                  has a degree in Engineering and an MBA and has been Managing Director of two large
+                  mining companies and one of Australia’s leading industry associations.
+                </p>
+                <p>
+                  Mark represented Australia in sailing in the 1972 and 1976 Olympic Games and has
+                  won World Championships in three international classes. Mark was made a Member of
+                  the Order of Australia (AM) in early 2011 for services to industry and to sailing.
+                </p>
+              </div>
+            </TeamMember>
+          </Col>
+          <Col xs={12} md={6} lg={6}>
+            <TeamMember>
+              {data.RobertDane && (
+                <Img fixed={data.RobertDane.childImageSharp.fixed} alt="Robert Dane" />
+              )}
+              <Heading level={3} size="medium">
+                Robert Dane
+              </Heading>
+              <SubHeading>Chief Executive Officer</SubHeading>
+              <div className="left-align">
+                <p>
+                  Robert Dane is founder and CEO. In 1996, Robert, a passionate sailor and
+                  environmentalist, invented and patented the &apos;solarsail&apos; and designed the
+                  first ‘solarsailor’ prototype which won the Advanced Technology Boat Race in
+                  Canberra in 1997.
+                </p>
+                <p>
+                  The first commercial &apos;solarsailor&apos; ferry won the Australian Design Award
+                  of the Year in 2001. Robert is Intel Environment Laureate and a WWF Future Maker
+                  recipient and was recently honoured to be a finalist for the International
+                  Windship Awards Lifetime Achievement Award. In 2017, Robert was awarded the
+                  Spitfire Memorial Defence Association Fellowship.
+                </p>
+              </div>
+            </TeamMember>
+          </Col>
+          <Col xs={12} md={6} lg={6}>
+            <TeamMember>
+              {data.AndrewAitken && (
+                <Img fixed={data.AndrewAitken.childImageSharp.fixed} alt="Andrew Aitken" />
+              )}
+              <Heading level={3} size="medium">
+                Andrew Aitken
+              </Heading>
+              <SubHeading>Director and Ocius Corporate Lawyer</SubHeading>
+              <div className="left-align">
+                <p>
+                  Andrew practices principally in the areas of commercial law, succession and estate
+                  planning. Andrew provides advice on the sale and purchase of businesses and
+                  companies, corporate governance, risk management and a wide range of issues facing
+                  SME owners, including intellectual property, shareholder agreements and commercial
+                  contracts.
+                </p>
+              </div>
+            </TeamMember>
+          </Col>
+          <Col xs={12} md={6} lg={6}>
+            <TeamMember>
+              {data.RickTurner && (
+                <Img fixed={data.RickTurner.childImageSharp.fixed} alt="Rick Turner" />
+              )}
+              <Heading level={3} size="medium">
+                Rick Turner
+              </Heading>
+              <SubHeading>Director</SubHeading>
+              <div className="left-align">
+                <p>
+                  Rick has a strong background at operational and senior management level in the
+                  Australian manufacturing sector. He has identified, evaluated and successfully
+                  implemented new equipment and technology from Europe and the USA. He has also
+                  worked in Asia in GPS related industries.
+                </p>
+                <p>
+                  A shareholder in Solar Sailor then Ocius since 2011, Rick has been a consistent
+                  supporter of Ocius and brings to the Board his considerable manufacturing and
+                  innovation skill set.
+                </p>
+              </div>
+            </TeamMember>
           </Col>
           <Col xs={12} md={6} lg={4}>
-            {data.RobertDane && (
-              <Img fixed={data.RobertDane.childImageSharp.fixed} alt="Robert Dane" />
-            )}
-            <Heading level={3} size="medium">
-              Robert Dane
-            </Heading>
-            <SubHeading>Chief Executive Officer</SubHeading>
-            <div className="left-align">
-              <p>
-                Robert Dane is founder and CEO. In 1996, Robert, a passionate sailor and
-                environmentalist, invented and patented the &apos;solarsail&apos; and designed the
-                first ‘solarsailor’ prototype which won the Advanced Technology Boat Race in
-                Canberra in 1997.
-              </p>
-              <p>
-                The first commercial &apos;solarsailor&apos; ferry won the Australian Design Award
-                of the Year in 2001. Robert is Intel Environment Laureate and a WWF Future Maker
-                recipient and was recently honoured to be a finalist for the International Windship
-                Awards Lifetime Achievement Award. In 2017, Robert was awarded the Spitfire Memorial
-                Defence Association Fellowship.
-              </p>
-            </div>
+            <TeamMember>
+              {data.LloydBreckenridge && (
+                <Img
+                  fixed={data.LloydBreckenridge.childImageSharp.fixed}
+                  alt="Lloyd Breckenridge"
+                />
+              )}
+              <Heading level={3} size="medium">
+                Lloyd Breckenridge
+              </Heading>
+              <SubHeading>Chief Engineer</SubHeading>
+              <div className="left-align">
+                <p>
+                  Lloyd has over 30 years of experience as a software engineer working in varied
+                  roles for both large organisations and small innovative companies in Australia and
+                  overseas. The last 6 years has seen him primarily involved in autonomous vehicle
+                  development and applications. Lloyd was a key member of Team Thunder, who
+                  successfully competed in the 2014 UAV Challenge Outback Rescue competition run by
+                  the CSIRO and Queensland University of Technology.
+                </p>
+                <p>
+                  He has had considerable sailing experience having started sailing at an early age
+                  on Lake Macquarie. In his current role as Senior Systems Engineer for OCIUS
+                  Technology Ltd he feels he has found his dream job.
+                </p>
+              </div>
+            </TeamMember>
           </Col>
           <Col xs={12} md={6} lg={4}>
-            {data.AndrewAitken && (
-              <Img fixed={data.AndrewAitken.childImageSharp.fixed} alt="Andrew Aitken" />
-            )}
-            <Heading level={3} size="medium">
-              Andrew Aitken
-            </Heading>
-            <SubHeading>Director and Ocius Corporate Lawyer</SubHeading>
-            <div className="left-align">
-              <p>
-                Andrew practices principally in the areas of commercial law, succession and estate
-                planning. Andrew provides advice on the sale and purchase of businesses and
-                companies, corporate governance, risk management and a wide range of issues facing
-                SME owners, including intellectual property, shareholder agreements and commercial
-                contracts.
-              </p>
-            </div>
+            <TeamMember>
+              {data.PeterWlodarczyk && (
+                <Img fixed={data.PeterWlodarczyk.childImageSharp.fixed} alt="Peter Wlodarczyk" />
+              )}
+              <Heading level={3} size="medium">
+                Peter Wlodarczyk
+              </Heading>
+              <SubHeading>Lead Engineer</SubHeading>
+              <div className="left-align">
+                <p>
+                  Graduating from the University of Newcastle with a BE (Computer Engineering),
+                  Peter has over 20 years experience as a computer systems/software engineer in
+                  defense, IT and medical device industries. For the last 15 years, Peter has worked
+                  for ResMed as a software engineer, system engineer and researcher, innovating new
+                  products for sleep apnea and respiratory failure.
+                </p>
+                <p>
+                  He has developed a keen interest in UAVs, working with Lloyd in a team that
+                  successfully completed the 2014 UAV Challenge Outback Rescue competition run by
+                  the CSIRO and Queensland University of Technology.
+                </p>
+              </div>
+            </TeamMember>
           </Col>
           <Col xs={12} md={6} lg={4}>
-            {data.LloydBreckenridge && (
-              <Img fixed={data.LloydBreckenridge.childImageSharp.fixed} alt="Lloyd Breckenridge" />
-            )}
-            <Heading level={3} size="medium">
-              Lloyd Breckenridge
-            </Heading>
-            <SubHeading>Chief Engineer</SubHeading>
-            <div className="left-align">
-              <p>
-                Lloyd has over 30 years of experience as a software engineer working in varied roles
-                for both large organisations and small innovative companies in Australia and
-                overseas. The last 6 years has seen him primarily involved in autonomous vehicle
-                development and applications. Lloyd was a key member of Team Thunder, who
-                successfully competed in the 2014 UAV Challenge Outback Rescue competition run by
-                the CSIRO and Queensland University of Technology.
-              </p>
-              <p>
-                He has had considerable sailing experience having started sailing at an early age on
-                Lake Macquarie. In his current role as Senior Systems Engineer for OCIUS Technology
-                Ltd he feels he has found his dream job.
-              </p>
-            </div>
-          </Col>
-          <Col xs={12} md={6} lg={4}>
-            {data.PeterWlodarczyk && (
-              <Img fixed={data.PeterWlodarczyk.childImageSharp.fixed} alt="Peter Wlodarczyk" />
-            )}
-            <Heading level={3} size="medium">
-              Peter Wlodarczyk
-            </Heading>
-            <SubHeading>Lead Engineer</SubHeading>
-            <div className="left-align">
-              <p>
-                Graduating from the University of Newcastle with a BE (Computer Engineering), Peter
-                has over 20 years experience as a computer systems/software engineer in defense, IT
-                and medical device industries. For the last 15 years, Peter has worked for ResMed as
-                a software engineer, system engineer and researcher, innovating new products for
-                sleep apnea and respiratory failure.
-              </p>
-              <p>
-                He has developed a keen interest in UAVs, working with Lloyd in a team that
-                successfully completed the 2014 UAV Challenge Outback Rescue competition run by the
-                CSIRO and Queensland University of Technology.
-              </p>
-            </div>
-          </Col>
-          <Col xs={12} md={6} lg={4}>
-            {data.ScottElliceFlint && (
-              <Img fixed={data.ScottElliceFlint.childImageSharp.fixed} alt="Scott Ellice-Flint" />
-            )}
-            <Heading level={3} size="medium">
-              Scott Ellice-Flint
-            </Heading>
-            <SubHeading>Group Accountant &amp; Company Secretary</SubHeading>
-            <div className="left-align">
-              <p>
-                Scott has over 40 years experience as a Chartered Accountant. As principal of his
-                own practice, Scott has focused on accounting, taxation and business development
-                advice for small to medium enterprises ensuring compliance and commercial outcomes.
-              </p>
-            </div>
+            <TeamMember>
+              {data.ScottElliceFlint && (
+                <Img fixed={data.ScottElliceFlint.childImageSharp.fixed} alt="Scott Ellice-Flint" />
+              )}
+              <Heading level={3} size="medium">
+                Scott Ellice-Flint
+              </Heading>
+              <SubHeading>Group Accountant &amp; Company Secretary</SubHeading>
+              <div className="left-align">
+                <p>
+                  Scott has over 40 years experience as a Chartered Accountant. As principal of his
+                  own practice, Scott has focused on accounting, taxation and business development
+                  advice for small to medium enterprises ensuring compliance and commercial
+                  outcomes.
+                </p>
+              </div>
+            </TeamMember>
           </Col>
         </Row>
       </Segmented>
@@ -878,6 +922,10 @@ export const query = graphql`
     }
 
     AndrewAitken: file(relativePath: { eq: "pages/about/images/andrew-aitken.png" }) {
+      ...imageSharpAvatar
+    }
+
+    RickTurner: file(relativePath: { eq: "pages/about/images/rick-turner.png" }) {
       ...imageSharpAvatar
     }
 
