@@ -6,7 +6,7 @@ import cn from 'classnames';
 import mq from '../common/mq';
 import {
   fontSizeHeading1,
-  fontSizeHeading2,
+  fontSizeHeading3,
   fontSizeHeading4,
   fontSizeHeading5,
   fontSizeHeading7,
@@ -53,7 +53,8 @@ const Header = css`
 `;
 
 const StyledHeading = styled.h3`
-  font-family: ${font('main')};
+  color: #1f3643;
+  font-family: ${font('bold')};
   line-height: 1.2;
 
   ${switchProp('size', {
@@ -84,7 +85,7 @@ const StyledHeading = styled.h3`
       font-size: ${fontSizeHeading4}px;
 
       @media (min-width: ${mq.min[600]}) {
-        font-size: ${fontSizeHeading2 - 5}px;
+        font-size: ${fontSizeHeading3}px;
       }
     `,
 
