@@ -21,7 +21,7 @@ const Awards = () => {
       <Row>
         <Col xs={12} md={12} lg={12}>
           <header id="awards">
-            <Heading level={1} size="huge" underline className="centered">
+            <Heading level={1} size="large" underline className="centered">
               Awards and Milestones
             </Heading>
           </header>
@@ -210,7 +210,7 @@ const Partners = ({ data }) => {
     <>
       <SEO title="Our Partners" />
       <header id="partners" className="centered">
-        <Heading level={1} size="huge" underline>
+        <Heading level={1} size="large" underline>
           Our Partners
         </Heading>
       </header>
@@ -472,7 +472,7 @@ const OurStory = () => {
     <>
       <SEO title="Our Story" />
       <header id="story">
-        <Heading level={1} size="huge" underline className="centered">
+        <Heading level={1} size="large" underline className="centered">
           Our Story
         </Heading>
       </header>
@@ -875,13 +875,13 @@ export default ({ data }) => {
           </Row>
         </HeroBlock>
       )}
+      <NavTabs>
+        <NavTab label="People" to="about" />
+        <NavTab label="Our Partners" to="about/partners" />
+        <NavTab label="Our Story" to="about/our-story" />
+        <NavTab label="Awards" to="about/awards" />
+      </NavTabs>
       <Container className="page-content">
-        <NavTabs>
-          <NavTab label="People" to="about" />
-          <NavTab label="Our Partners" to="about/partners" />
-          <NavTab label="Our Story" to="about/our-story" />
-          <NavTab label="Awards" to="about/awards" />
-        </NavTabs>
         <Router>
           <People path="about" data={data} />
           <Partners path="about/partners" data={data} />

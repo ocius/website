@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { Link } from '@reach/router';
 import styled, { css } from 'styled-components';
 import detectActive from '../../common/detectActive';
+import font from '../../common/font';
 
 const NavItem = styled.li`
   box-sizing: border-box;
@@ -20,16 +21,15 @@ const NavItem = styled.li`
   transition: background-color 70ms cubic-bezier(0.2, 0, 0.38, 0.9);
 
   &:hover {
-    background-color: #cacaca;
+    background-color: #efefef;
   }
 
   @media (min-width: 67.2rem) {
-    background: #e0e0e0;
+    background: #ffffff;
     height: auto;
 
     & + & {
       margin-left: 0;
-      box-shadow: -1px 0 0 0 #8d8d8d;
     }
   }
 
@@ -50,9 +50,10 @@ const StyledLink = styled(Link)`
   outline: 2px solid transparent;
   outline-offset: -2px;
   display: inline-block;
-  color: #001826;
+  color: #4ab4e6;
   text-decoration: none;
   font-weight: 400;
+  font-family: ${font('bold')};
   padding: 1.2rem 0;
   width: calc(100% - 32px);
   height: 4rem;
@@ -62,6 +63,9 @@ const StyledLink = styled(Link)`
   line-height: 2.55rem;
   border-bottom: 1px solid #e0e0e0;
   overflow: hidden;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  box-shadow: inset 0px 0px 1px #1f3643;
   transition: color 70ms cubic-bezier(0.2, 0, 0.38, 0.9),
     border-bottom-color 70ms cubic-bezier(0.2, 0, 0.38, 0.9),
     outline 70ms cubic-bezier(0.2, 0, 0.38, 0.9);
@@ -74,16 +78,17 @@ const StyledLink = styled(Link)`
     line-height: inherit;
     display: flex;
     align-items: center;
-    height: 4.8rem;
+    justify-content: center;
+    height: 5rem;
     border-bottom: none;
   }
 
   &[data-active],
   &[aria-current*='page'] {
-    background-color: #f4f4f4;
-    box-shadow: inset 0 2px 0 0 #60d2f6;
+    color: #1f3643;
+    background-color: #edf7fa;
+    box-shadow: inset 0px 0px 1px #1f3643;
     border-bottom: none;
-    font-weight: 600;
   }
 
   &:hover {

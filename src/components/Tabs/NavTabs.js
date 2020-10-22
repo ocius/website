@@ -5,7 +5,7 @@ import Icon from '../Icon';
 
 const Wrapper = styled.div`
   box-sizing: border-box;
-  margin: 2rem 0 0;
+  margin: 4rem 0 2rem;
   padding: 0;
   border: 0;
   font-size: 100%;
@@ -38,9 +38,11 @@ const Nav = styled.ul`
   list-style: none;
   position: absolute;
   display: flex;
+  justify-content: center;
   flex-direction: column;
   z-index: 9100;
   background: #efefef;
+  border-bottom: 0.25px solid #1f3643;
   transition: max-height 70ms cubic-bezier(0.2, 0, 0.38, 0.9);
   max-height: 600px;
   width: 100%;
