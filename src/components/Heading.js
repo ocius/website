@@ -34,7 +34,16 @@ const Underline = css`
     background-color: #4ab4e6;
     height: 4px;
     width: 100px;
-    margin: 10px auto;
+
+    ${switchProp('underline', {
+      left: css`
+        margin: 10px 0;
+      `,
+
+      center: css`
+        margin: 10px auto;
+      `,
+    })}
   }
 `;
 
@@ -215,7 +224,7 @@ Heading.propTypes = {
   /**
    * Whether or not to add underline to the heading
    */
-  underline: PropTypes.bool,
+  underline: PropTypes.oneOf(['left', 'center']),
 
   /**
    * Whether or not heading is a page header
@@ -232,7 +241,7 @@ Heading.defaultProps = {
   tracking: 'normal',
   truncate: false,
   caps: false,
-  underline: false,
+  underline: null,
   header: false,
   shadow: false,
 };

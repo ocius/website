@@ -21,7 +21,7 @@ const Awards = () => {
       <Row>
         <Col xs={12} md={12} lg={12}>
           <header id="awards">
-            <Heading level={1} size="large" underline className="centered">
+            <Heading level={1} size="large" underline="center" className="centered">
               Awards and Milestones
             </Heading>
           </header>
@@ -210,7 +210,7 @@ const Partners = ({ data }) => {
     <>
       <SEO title="Our Partners" />
       <header id="partners" className="centered">
-        <Heading level={1} size="large" underline>
+        <Heading level={1} size="large" underline="center">
           Our Partners
         </Heading>
       </header>
@@ -472,7 +472,7 @@ const OurStory = () => {
     <>
       <SEO title="Our Story" />
       <header id="story">
-        <Heading level={1} size="large" underline className="centered">
+        <Heading level={1} size="large" underline="center" className="centered">
           Our Story
         </Heading>
       </header>
@@ -651,7 +651,7 @@ const People = ({ data }) => {
     <>
       <SEO title="Our Mission, Our Culture, People" />
       <header id="people" className="centered">
-        <Heading level={2} size="large" underline>
+        <Heading level={2} size="large" underline="center">
           The team behind Ocius
         </Heading>
       </header>
@@ -843,7 +843,7 @@ export default ({ data }) => {
         <HeroBlock image={data.HeroBackground.childImageSharp.fluid} masked>
           <Row>
             <Col xs={12} md={6} lg={4}>
-              <Heading level={1} size="huge" weight="bold" header underline>
+              <Heading level={1} size="huge" weight="thick" header underline="left">
                 About
                 <br />
                 Ocius
@@ -856,7 +856,7 @@ export default ({ data }) => {
           </Row>
           <Row className="centered">
             <Col xs={12} md={5} lg={5} mdOffset={1}>
-              <Heading level={3} size="large" weight="bold" underline>
+              <Heading level={3} size="large" weight="thick" underline="center">
                 Our Culture
               </Heading>
               <p>
@@ -865,7 +865,7 @@ export default ({ data }) => {
               </p>
             </Col>
             <Col xs={12} md={5} lg={5} mdOffset={1}>
-              <Heading level={3} size="large" weight="bold" underline>
+              <Heading level={3} size="large" weight="thick" underline="center">
                 Our Mission
               </Heading>
               <p>
