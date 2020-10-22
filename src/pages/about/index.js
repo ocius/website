@@ -924,7 +924,7 @@ export const query = graphql`
 
   fragment imageSharpAvatar on File {
     childImageSharp {
-      fixed(width: 200) {
+      fixed(width: 199) {
         ...GatsbyImageSharpFixed
       }
     }

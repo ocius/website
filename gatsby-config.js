@@ -19,6 +19,14 @@ module.exports = {
       }
     },
 
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `fonts`,
+        path: `${__dirname}/src/fonts/`
+      }
+    },
+
     // Parse all markdown files (each plugin add/parse some data into GraphQL layer)
     {
       resolve: `gatsby-transformer-remark`,
