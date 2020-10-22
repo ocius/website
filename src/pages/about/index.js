@@ -668,14 +668,16 @@ const People = ({ data }) => {
               <SubHeading>Chairman</SubHeading>
               <div className="left-align">
                 <p>
-                  Now a professional director, Mark has been a shareholder in OCIUS since 2000. He
-                  has a degree in Engineering and an MBA and has been Managing Director of two large
-                  mining companies and one of Australia’s leading industry associations.
+                  Mark has a degree in Engineering and an MBA and has been CEO of two large mining
+                  companies and one of Australia’s leading industry associations. Mark represented
+                  Australia in sailing in the 1972 and 1976 Olympic Games and has won World
+                  Championships in three international classes. Mark was made a Member of the Order
+                  of Australia (AM) in early 2011 for services to industry and to sailing.
                 </p>
                 <p>
-                  Mark represented Australia in sailing in the 1972 and 1976 Olympic Games and has
-                  won World Championships in three international classes. Mark was made a Member of
-                  the Order of Australia (AM) in early 2011 for services to industry and to sailing.
+                  Mark has been a shareholder in OCIUS since 2000. He In 2013 he ably took over as
+                  Chairman from the Hon Bob Hawke, adding his invaluable skills to the board and our
+                  team.
                 </p>
               </div>
             </TeamMember>
@@ -693,15 +695,14 @@ const People = ({ data }) => {
                 <p>
                   Robert Dane is founder and CEO. In 1996, Robert, a passionate sailor and
                   environmentalist, invented and patented the &apos;solarsail&apos; and designed the
-                  first ‘solarsailor’ prototype which won the Advanced Technology Boat Race in
-                  Canberra in 1997.
+                  first &apos;solarsailor&apos; prototype which won the Advanced Technology Boat
+                  Race in Canberra in 1997.
                 </p>
                 <p>
-                  The first commercial &apos;solarsailor&apos; ferry won the Australian Design Award
-                  of the Year in 2001. Robert is Intel Environment Laureate and a WWF Future Maker
-                  recipient and was recently honoured to be a finalist for the International
-                  Windship Awards Lifetime Achievement Award. In 2017, Robert was awarded the
-                  Spitfire Memorial Defence Association Fellowship.
+                  In 2001, the first commercial &apos;solarsailor&apos; ferry using the technology
+                  won the Australian Design Award of the Year. Robert is Intel Environment Laureate
+                  2007, the WWF Future Maker 2012 and in 2017 Robert was awarded the Spitfire
+                  Memorial Defence Association Fellowship. He leads a great team of engineers.
                 </p>
               </div>
             </TeamMember>
@@ -766,15 +767,14 @@ const People = ({ data }) => {
                 <p>
                   Lloyd has over 30 years of experience as a software engineer working in varied
                   roles for both large organisations and small innovative companies in Australia and
-                  overseas. The last 6 years has seen him primarily involved in autonomous vehicle
-                  development and applications. Lloyd was a key member of Team Thunder, who
-                  successfully competed in the 2014 UAV Challenge Outback Rescue competition run by
-                  the CSIRO and Queensland University of Technology.
+                  overseas. Lloyd was a key member of Team Thunder, who successfully competed in the
+                  2014 UAV Challenge Outback Rescue competition run by the CSIRO and Queensland
+                  University of Technology.
                 </p>
                 <p>
                   He has had considerable sailing experience having started sailing at an early age
-                  on Lake Macquarie. In his current role as Senior Systems Engineer for OCIUS
-                  Technology Ltd he feels he has found his dream job.
+                  on Lake Macquarie. In his current role as Chief Engineer for OCIUS Technology Ltd
+                  he feels he has found his dream job.
                 </p>
               </div>
             </TeamMember>
@@ -799,7 +799,9 @@ const People = ({ data }) => {
                 <p>
                   He has developed a keen interest in UAVs, working with Lloyd in a team that
                   successfully completed the 2014 UAV Challenge Outback Rescue competition run by
-                  the CSIRO and Queensland University of Technology.
+                  the CSIRO and Queensland University of Technology. Peter’s current role is Ocius
+                  Lead Software Engineer Peter running a team of software engineers and research
+                  projects.
                 </p>
               </div>
             </TeamMember>
@@ -818,7 +820,7 @@ const People = ({ data }) => {
                   Scott has over 40 years experience as a Chartered Accountant. As principal of his
                   own practice, Scott has focused on accounting, taxation and business development
                   advice for small to medium enterprises ensuring compliance and commercial
-                  outcomes.
+                  outcomes. Scott has been Ocius Gp Accountant and Company Secretary since
                 </p>
               </div>
             </TeamMember>
