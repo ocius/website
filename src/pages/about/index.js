@@ -907,7 +907,7 @@ export default ({ data }) => {
 
 export const query = graphql`
   query getAboutPageData {
-    HeroBackground: file(relativePath: { eq: "pages/about/images/ocius-about-bg1.png" }) {
+    HeroBackground: file(relativePath: { eq: "pages/about/images/ocius-about-bg.png" }) {
       childImageSharp {
         fluid(quality: 100, maxWidth: 1920) {
           ...GatsbyImageSharpFluid_withWebp
