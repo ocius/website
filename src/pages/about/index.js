@@ -385,7 +385,7 @@ const Partners = ({ data }) => {
               multiple times re-designed “Wild Oats“ the record-breaking maxi and 8 times winner of
               line honours in the Sydney to Hobart yacht race. They will review Bruce’s seakeeping
               ability in a range of conditions to provide several improvements in design, tracking,
-              helm, payload bay & performance for the next prototypes.
+              helm, payload bay &amp; performance for the next prototypes.
             </p>
           </Col>
           <Col xs={12} md={6} lg={6}>
@@ -400,7 +400,7 @@ const Partners = ({ data }) => {
               and mechanical engineering since the successful winning of the International boat race
               in 1997. They have provided equipment for all solar sailor ferries, scale models and
               prototypes including our Bluebottles&apos; steering mechanisms, patented rudder
-              flipper appendages and patented solarsails & mechanisms.
+              flipper appendages and patented solarsails &amp; mechanisms.
             </p>
           </Col>
         </Row>
@@ -831,6 +831,16 @@ const People = ({ data }) => {
   );
 };
 
+const HeroSubheading = styled.p`
+  color: #2d4355;
+  font-size: 2em;
+  line-height: 1.2;
+`;
+
+const Spacing = styled.div`
+  height: ${(props) => props.$value || '50px'};
+`;
+
 export default ({ data }) => {
   return (
     <Layout>
@@ -842,16 +852,18 @@ export default ({ data }) => {
       {data.HeroBackground && (
         <HeroBlock image={data.HeroBackground.childImageSharp.fluid} masked>
           <Row>
-            <Col xs={12} md={6} lg={4}>
+            <Col xs={12} md={6} lg={5}>
+              <Spacing $value="100px" />
               <Heading level={1} size="huge" weight="thick" header underline="left">
                 About
                 <br />
                 Ocius
               </Heading>
-              <p>
+              <HeroSubheading>
                 Find out about the history behind Ocius and the support network that has helped
                 along the journey.
-              </p>
+              </HeroSubheading>
+              <Spacing $value="100px" />
             </Col>
           </Row>
           <Row className="centered">
