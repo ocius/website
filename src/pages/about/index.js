@@ -841,6 +841,13 @@ const Spacing = styled.div`
   height: ${(props) => props.$value || '50px'};
 `;
 
+const FloatingImage = styled(Img)`
+  position: absolute !important;
+  top: 150px;
+  right: 0;
+  z-index: 10;
+`;
+
 export default ({ data }) => {
   return (
     <Layout>
@@ -887,6 +894,9 @@ export default ({ data }) => {
           </Row>
         </HeroBlock>
       )}
+      {data.SolarSail && (
+        <FloatingImage fixed={data.SolarSail.childImageSharp.fixed} alt="Solar Sail" />
+      )}
       <NavTabs>
         <NavTab label="People" to="about" />
         <NavTab label="Our Partners" to="about/partners" />
@@ -911,6 +921,14 @@ export const query = graphql`
       childImageSharp {
         fluid(quality: 100, maxWidth: 1920) {
           ...GatsbyImageSharpFluid_withWebp
+        }
+      }
+    }
+
+    SolarSail: file(relativePath: { eq: "pages/about/images/solar-sail.png" }) {
+      childImageSharp {
+        fixed(quality: 100, width: 441) {
+          ...GatsbyImageSharpFixed
         }
       }
     }
