@@ -2,10 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
+// Stretch the mask container at the bottom
 const MaskContainer = styled.div`
-  margin-top: -80px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 80px;
   background-color: ${(props) => props.$color || 'white'};
-  height: 100vh;
   mask: url(#wave);
 `;
 

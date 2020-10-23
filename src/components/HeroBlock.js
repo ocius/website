@@ -12,7 +12,6 @@ import Container from './Container';
 export const ContainerStyle = css`
   color: #ffffff;
   font-family: ${font('main')};
-  height: calc(100vh - 4em);
   margin-left: auto;
   margin-right: auto;
   position: relative;
@@ -39,6 +38,12 @@ const HeroContainer = styled(BackgroundImage)`
         height: auto;
       }
     `}
+
+  ${(props) =>
+    props.masked &&
+    css`
+      padding-bottom: 80px;
+    `}
 `;
 
 export const InnerContainer = styled(Container)`
@@ -54,6 +59,7 @@ const HeroBlock = ({ children, image, constrained, masked }) => (
     className="HeroBlock"
     fluid={image}
     constrained={constrained || undefined}
+    masked={masked || undefined}
   >
     <InnerContainer>{children}</InnerContainer>
 
