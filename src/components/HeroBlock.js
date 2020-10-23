@@ -55,6 +55,10 @@ export const InnerContainer = styled(Container)`
 const ScrimOverlay = styled.div`
   inset: 0px;
   position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
   z-index: 1;
   background-image: linear-gradient(-180deg, rgba(0, 99, 131, 0) 53%, rgb(0, 99, 131) 100%);
 `;
