@@ -863,11 +863,11 @@ export default ({ data }) => {
                 Find out about the history behind Ocius and the support network that has helped
                 along the journey.
               </HeroSubheading>
-              <Spacing $value="100px" />
+              <Spacing $value="250px" />
             </Col>
           </Row>
           <Row className="centered">
-            <Col xs={12} md={5} lg={5} mdOffset={1}>
+            <Col xs={12} md={4} lg={4} mdOffset={1}>
               <Heading level={3} size="large" weight="thick" underline="center">
                 Our Culture
               </Heading>
@@ -876,7 +876,7 @@ export default ({ data }) => {
                 ocean environment in which our products operate.
               </p>
             </Col>
-            <Col xs={12} md={5} lg={5} mdOffset={1}>
+            <Col xs={12} md={4} lg={4} mdOffset={2}>
               <Heading level={3} size="large" weight="thick" underline="center">
                 Our Mission
               </Heading>
