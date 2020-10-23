@@ -11,6 +11,7 @@ const MaskContainer = styled.div`
   height: 80px;
   background-color: ${(props) => props.$color || 'white'};
   mask: url(#wave);
+  z-index: 10;
 `;
 
 MaskContainer.defaultProps = {};

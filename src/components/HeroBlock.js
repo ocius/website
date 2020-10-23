@@ -51,9 +51,17 @@ export const InnerContainer = styled(Container)`
   position: relative;
   z-index: 2;
 `;
+
+const ScrimOverlay = styled.div`
+  inset: 0px;
+  position: absolute;
+  z-index: 1;
+  background-image: linear-gradient(-180deg, rgba(0, 99, 131, 0) 53%, rgb(0, 99, 131) 100%);
+`;
+
 HeroContainer.defaultProps = {};
 
-const HeroBlock = ({ children, image, constrained, masked }) => (
+const HeroBlock = ({ children, image, constrained, scrim, masked }) => (
   <HeroContainer
     Tag="section"
     className="HeroBlock"
@@ -63,6 +71,7 @@ const HeroBlock = ({ children, image, constrained, masked }) => (
   >
     <InnerContainer>{children}</InnerContainer>
 
+    {scrim && <ScrimOverlay />}
     {masked && <MaskOverlay />}
   </HeroContainer>
 );
@@ -70,11 +79,13 @@ const HeroBlock = ({ children, image, constrained, masked }) => (
 HeroBlock.propTypes = {
   image: PropTypes.objectOf(PropTypes.any).isRequired,
   constrained: PropTypes.bool,
+  scrim: PropTypes.bool,
   masked: PropTypes.bool,
 };
 
 HeroBlock.defaultProps = {
   constrained: false,
+  scrim: false,
   masked: false,
 };
 

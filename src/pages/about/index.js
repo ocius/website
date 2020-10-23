@@ -850,10 +850,10 @@ export default ({ data }) => {
       performance."
       />
       {data.HeroBackground && (
-        <HeroBlock image={data.HeroBackground.childImageSharp.fluid} masked>
+        <HeroBlock image={data.HeroBackground.childImageSharp.fluid} masked scrim>
           <Row>
             <Col xs={12} md={6} lg={5}>
-              <Spacing $value="100px" />
+              <Spacing $value="80px" />
               <Heading level={1} size="huge" weight="thick" header underline="left">
                 About
                 <br />
@@ -863,7 +863,7 @@ export default ({ data }) => {
                 Find out about the history behind Ocius and the support network that has helped
                 along the journey.
               </HeroSubheading>
-              <Spacing $value="250px" />
+              <Spacing $value="280px" />
             </Col>
           </Row>
           <Row className="centered">
