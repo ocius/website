@@ -62,7 +62,7 @@ const Header = css`
 `;
 
 const StyledHeading = styled.h3`
-  color: #1f3643;
+  color: ${(props) => props.$color || '#1f3643'};
   font-family: ${font('bold')};
   line-height: 1.2;
 
@@ -156,6 +156,7 @@ function Heading({
   children,
   level,
   size,
+  color,
   weight,
   tracking,
   truncate,
@@ -172,6 +173,7 @@ function Heading({
       className={cn('Heading', className)}
       as={HeadingLevel}
       size={size}
+      $color={color}
       weight={weight}
       tracking={tracking}
       truncate={truncate}
@@ -200,6 +202,11 @@ Heading.propTypes = {
    * Declares the font size of the heading
    */
   size: PropTypes.oneOf(['huge', 'large', 'medium', 'small', 'tiny']).isRequired,
+
+  /**
+   * Declares the color of the heading
+   */
+  color: PropTypes.string,
 
   /**
    * Adjusts the font weight of the heading
@@ -237,6 +244,7 @@ Heading.propTypes = {
 };
 
 Heading.defaultProps = {
+  color: '#1f3643',
   weight: 'normal',
   tracking: 'normal',
   truncate: false,

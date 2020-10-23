@@ -868,7 +868,7 @@ export default ({ data }) => {
           </Row>
           <Row className="centered">
             <Col xs={12} md={4} lg={4} mdOffset={1}>
-              <Heading level={3} size="large" weight="thick" underline="center">
+              <Heading level={3} color="white" size="large" weight="thick" underline="center">
                 Our Culture
               </Heading>
               <p>
@@ -877,7 +877,7 @@ export default ({ data }) => {
               </p>
             </Col>
             <Col xs={12} md={4} lg={4} mdOffset={2}>
-              <Heading level={3} size="large" weight="thick" underline="center">
+              <Heading level={3} color="white" size="large" weight="thick" underline="center">
                 Our Mission
               </Heading>
               <p>
