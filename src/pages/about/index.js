@@ -650,6 +650,10 @@ const LogoBackgroundWrapper = styled.div`
   background-position: center right;
 `;
 
+const AccentRowWrapper = styled.div`
+  background-color: #edf7fc;
+`;
+
 const TeamMember = styled.div`
   padding: 2em;
 `;
@@ -766,87 +770,96 @@ const People = ({ data }) => {
             </Row>
           </Container>
         </LogoBackgroundWrapper>
+
+        <AccentRowWrapper>
+          <Container className="page-content">
+            <Row className="primary-content">
+              <Col xs={12} md={6} lg={4}>
+                <TeamMember>
+                  {data.LloydBreckenridge && (
+                    <Img
+                      fixed={data.LloydBreckenridge.childImageSharp.fixed}
+                      alt="Lloyd Breckenridge"
+                    />
+                  )}
+                  <Heading level={3} size="medium">
+                    Lloyd Breckenridge
+                  </Heading>
+                  <SubHeading>Chief Engineer</SubHeading>
+                  <div className="left-align">
+                    <p>
+                      Lloyd has over 30 years of experience as a software engineer working in varied
+                      roles for both large organisations and small innovative companies in Australia
+                      and overseas. Lloyd was a key member of Team Thunder, who successfully
+                      competed in the 2014 UAV Challenge Outback Rescue competition run by the CSIRO
+                      and Queensland University of Technology.
+                    </p>
+                    <p>
+                      He has had considerable sailing experience having started sailing at an early
+                      age on Lake Macquarie. In his current role as Chief Engineer for OCIUS
+                      Technology Ltd he feels he has found his dream job.
+                    </p>
+                  </div>
+                </TeamMember>
+              </Col>
+              <Col xs={12} md={6} lg={4}>
+                <TeamMember>
+                  {data.PeterWlodarczyk && (
+                    <Img
+                      fixed={data.PeterWlodarczyk.childImageSharp.fixed}
+                      alt="Peter Wlodarczyk"
+                    />
+                  )}
+                  <Heading level={3} size="medium">
+                    Peter Wlodarczyk
+                  </Heading>
+                  <SubHeading>Lead Engineer</SubHeading>
+                  <div className="left-align">
+                    <p>
+                      Graduating from the University of Newcastle with a BE (Computer Engineering),
+                      Peter has over 20 years experience as a computer systems/software engineer in
+                      defense, IT and medical device industries. For the last 15 years, Peter has
+                      worked for ResMed as a software engineer, system engineer and researcher,
+                      innovating new products for sleep apnea and respiratory failure.
+                    </p>
+                    <p>
+                      He has developed a keen interest in UAVs, working with Lloyd in a team that
+                      successfully completed the 2014 UAV Challenge Outback Rescue competition run
+                      by the CSIRO and Queensland University of Technology. Peter’s current role is
+                      Ocius Lead Software Engineer Peter running a team of software engineers and
+                      research projects.
+                    </p>
+                  </div>
+                </TeamMember>
+              </Col>
+              <Col xs={12} md={6} lg={4}>
+                <TeamMember>
+                  {data.ScottElliceFlint && (
+                    <Img
+                      fixed={data.ScottElliceFlint.childImageSharp.fixed}
+                      alt="Scott Ellice-Flint"
+                    />
+                  )}
+                  <Heading level={3} size="medium">
+                    Scott Ellice-Flint
+                  </Heading>
+                  <SubHeading>Group Accountant &amp; Company Secretary</SubHeading>
+                  <div className="left-align">
+                    <p>
+                      Scott has over 40 years experience as a Chartered Accountant. As principal of
+                      his own practice, Scott has focused on accounting, taxation and business
+                      development advice for small to medium enterprises ensuring compliance and
+                      commercial outcomes. Scott has been Ocius Gp Accountant and Company Secretary
+                      since
+                    </p>
+                  </div>
+                </TeamMember>
+              </Col>
+            </Row>
+          </Container>
+        </AccentRowWrapper>
+
         <Container className="page-content">
-          <Row className="primary-content">
-            <Col xs={12} md={6} lg={4}>
-              <TeamMember>
-                {data.LloydBreckenridge && (
-                  <Img
-                    fixed={data.LloydBreckenridge.childImageSharp.fixed}
-                    alt="Lloyd Breckenridge"
-                  />
-                )}
-                <Heading level={3} size="medium">
-                  Lloyd Breckenridge
-                </Heading>
-                <SubHeading>Chief Engineer</SubHeading>
-                <div className="left-align">
-                  <p>
-                    Lloyd has over 30 years of experience as a software engineer working in varied
-                    roles for both large organisations and small innovative companies in Australia
-                    and overseas. Lloyd was a key member of Team Thunder, who successfully competed
-                    in the 2014 UAV Challenge Outback Rescue competition run by the CSIRO and
-                    Queensland University of Technology.
-                  </p>
-                  <p>
-                    He has had considerable sailing experience having started sailing at an early
-                    age on Lake Macquarie. In his current role as Chief Engineer for OCIUS
-                    Technology Ltd he feels he has found his dream job.
-                  </p>
-                </div>
-              </TeamMember>
-            </Col>
-            <Col xs={12} md={6} lg={4}>
-              <TeamMember>
-                {data.PeterWlodarczyk && (
-                  <Img fixed={data.PeterWlodarczyk.childImageSharp.fixed} alt="Peter Wlodarczyk" />
-                )}
-                <Heading level={3} size="medium">
-                  Peter Wlodarczyk
-                </Heading>
-                <SubHeading>Lead Engineer</SubHeading>
-                <div className="left-align">
-                  <p>
-                    Graduating from the University of Newcastle with a BE (Computer Engineering),
-                    Peter has over 20 years experience as a computer systems/software engineer in
-                    defense, IT and medical device industries. For the last 15 years, Peter has
-                    worked for ResMed as a software engineer, system engineer and researcher,
-                    innovating new products for sleep apnea and respiratory failure.
-                  </p>
-                  <p>
-                    He has developed a keen interest in UAVs, working with Lloyd in a team that
-                    successfully completed the 2014 UAV Challenge Outback Rescue competition run by
-                    the CSIRO and Queensland University of Technology. Peter’s current role is Ocius
-                    Lead Software Engineer Peter running a team of software engineers and research
-                    projects.
-                  </p>
-                </div>
-              </TeamMember>
-            </Col>
-            <Col xs={12} md={6} lg={4}>
-              <TeamMember>
-                {data.ScottElliceFlint && (
-                  <Img
-                    fixed={data.ScottElliceFlint.childImageSharp.fixed}
-                    alt="Scott Ellice-Flint"
-                  />
-                )}
-                <Heading level={3} size="medium">
-                  Scott Ellice-Flint
-                </Heading>
-                <SubHeading>Group Accountant &amp; Company Secretary</SubHeading>
-                <div className="left-align">
-                  <p>
-                    Scott has over 40 years experience as a Chartered Accountant. As principal of
-                    his own practice, Scott has focused on accounting, taxation and business
-                    development advice for small to medium enterprises ensuring compliance and
-                    commercial outcomes. Scott has been Ocius Gp Accountant and Company Secretary
-                    since
-                  </p>
-                </div>
-              </TeamMember>
-            </Col>
-          </Row>
           <Heading level={3} color="#36BBE7" size="large" weight="thick" underline="left">
             Contact Us
           </Heading>
