@@ -13,6 +13,8 @@ import NavTabs from '../../components/Tabs/NavTabs';
 import NavTab from '../../components/Tabs/NavTab';
 import Segmented from '../../components/Segmented';
 import HeroBlock from '../../components/HeroBlock';
+// Import logo background
+import LogoBackground from './images/ocius-logo-transparent.png';
 
 const Awards = () => {
   return (
@@ -642,6 +644,12 @@ const SubHeading = styled.p`
   margin-top: 0;
 `;
 
+const LogoBackgroundWrapper = styled.div`
+  background-image: url(${LogoBackground});
+  background-repeat: no-repeat;
+  background-position: center right;
+`;
+
 const TeamMember = styled.div`
   padding: 2em;
 `;
@@ -656,219 +664,233 @@ const People = ({ data }) => {
         </Heading>
       </header>
       <Segmented borderBottom="">
-        <Row className="primary-content">
-          <Col xs={12} md={6} lg={6}>
-            <TeamMember>
-              {data.MarkBethwaite && (
-                <Img fixed={data.MarkBethwaite.childImageSharp.fixed} alt="Mark Bethwaite AM" />
-              )}
-              <Heading level={3} size="medium">
-                Mark Bethwaite AM
-              </Heading>
-              <SubHeading>Chairman</SubHeading>
-              <div className="left-align">
-                <p>
-                  Mark has a degree in Engineering and an MBA and has been CEO of two large mining
-                  companies and one of Australia’s leading industry associations. Mark represented
-                  Australia in sailing in the 1972 and 1976 Olympic Games and has won World
-                  Championships in three international classes. Mark was made a Member of the Order
-                  of Australia (AM) in early 2011 for services to industry and to sailing.
-                </p>
-                <p>
-                  Mark has been a shareholder in OCIUS since 2000. He In 2013 he ably took over as
-                  Chairman from the Hon Bob Hawke, adding his invaluable skills to the board and our
-                  team.
-                </p>
-              </div>
-            </TeamMember>
-          </Col>
-          <Col xs={12} md={6} lg={6}>
-            <TeamMember>
-              {data.RobertDane && (
-                <Img fixed={data.RobertDane.childImageSharp.fixed} alt="Robert Dane" />
-              )}
-              <Heading level={3} size="medium">
-                Robert Dane
-              </Heading>
-              <SubHeading>Chief Executive Officer</SubHeading>
-              <div className="left-align">
-                <p>
-                  Robert Dane is founder and CEO. In 1996, Robert, a passionate sailor and
-                  environmentalist, invented and patented the &apos;solarsail&apos; and designed the
-                  first &apos;solarsailor&apos; prototype which won the Advanced Technology Boat
-                  Race in Canberra in 1997.
-                </p>
-                <p>
-                  In 2001, the first commercial &apos;solarsailor&apos; ferry using the technology
-                  won the Australian Design Award of the Year. Robert is Intel Environment Laureate
-                  2007, the WWF Future Maker 2012 and in 2017 Robert was awarded the Spitfire
-                  Memorial Defence Association Fellowship. He leads a great team of engineers.
-                </p>
-              </div>
-            </TeamMember>
-          </Col>
-          <Col xs={12} md={6} lg={6}>
-            <TeamMember>
-              {data.AndrewAitken && (
-                <Img fixed={data.AndrewAitken.childImageSharp.fixed} alt="Andrew Aitken" />
-              )}
-              <Heading level={3} size="medium">
-                Andrew Aitken
-              </Heading>
-              <SubHeading>Director and Ocius Corporate Lawyer</SubHeading>
-              <div className="left-align">
-                <p>
-                  Andrew practices principally in the areas of commercial law, succession and estate
-                  planning. Andrew provides advice on the sale and purchase of businesses and
-                  companies, corporate governance, risk management and a wide range of issues facing
-                  SME owners, including intellectual property, shareholder agreements and commercial
-                  contracts.
-                </p>
-              </div>
-            </TeamMember>
-          </Col>
-          <Col xs={12} md={6} lg={6}>
-            <TeamMember>
-              {data.RickTurner && (
-                <Img fixed={data.RickTurner.childImageSharp.fixed} alt="Rick Turner" />
-              )}
-              <Heading level={3} size="medium">
-                Rick Turner
-              </Heading>
-              <SubHeading>Director</SubHeading>
-              <div className="left-align">
-                <p>
-                  Rick has a strong background at operational and senior management level in the
-                  Australian manufacturing sector. He has identified, evaluated and successfully
-                  implemented new equipment and technology from Europe and the USA. He has also
-                  worked in Asia in GPS related industries.
-                </p>
-                <p>
-                  A shareholder in Solar Sailor then Ocius since 2011, Rick has been a consistent
-                  supporter of Ocius and brings to the Board his considerable manufacturing and
-                  innovation skill set.
-                </p>
-              </div>
-            </TeamMember>
-          </Col>
-          <Col xs={12} md={6} lg={4}>
-            <TeamMember>
-              {data.LloydBreckenridge && (
-                <Img
-                  fixed={data.LloydBreckenridge.childImageSharp.fixed}
-                  alt="Lloyd Breckenridge"
-                />
-              )}
-              <Heading level={3} size="medium">
-                Lloyd Breckenridge
-              </Heading>
-              <SubHeading>Chief Engineer</SubHeading>
-              <div className="left-align">
-                <p>
-                  Lloyd has over 30 years of experience as a software engineer working in varied
-                  roles for both large organisations and small innovative companies in Australia and
-                  overseas. Lloyd was a key member of Team Thunder, who successfully competed in the
-                  2014 UAV Challenge Outback Rescue competition run by the CSIRO and Queensland
-                  University of Technology.
-                </p>
-                <p>
-                  He has had considerable sailing experience having started sailing at an early age
-                  on Lake Macquarie. In his current role as Chief Engineer for OCIUS Technology Ltd
-                  he feels he has found his dream job.
-                </p>
-              </div>
-            </TeamMember>
-          </Col>
-          <Col xs={12} md={6} lg={4}>
-            <TeamMember>
-              {data.PeterWlodarczyk && (
-                <Img fixed={data.PeterWlodarczyk.childImageSharp.fixed} alt="Peter Wlodarczyk" />
-              )}
-              <Heading level={3} size="medium">
-                Peter Wlodarczyk
-              </Heading>
-              <SubHeading>Lead Engineer</SubHeading>
-              <div className="left-align">
-                <p>
-                  Graduating from the University of Newcastle with a BE (Computer Engineering),
-                  Peter has over 20 years experience as a computer systems/software engineer in
-                  defense, IT and medical device industries. For the last 15 years, Peter has worked
-                  for ResMed as a software engineer, system engineer and researcher, innovating new
-                  products for sleep apnea and respiratory failure.
-                </p>
-                <p>
-                  He has developed a keen interest in UAVs, working with Lloyd in a team that
-                  successfully completed the 2014 UAV Challenge Outback Rescue competition run by
-                  the CSIRO and Queensland University of Technology. Peter’s current role is Ocius
-                  Lead Software Engineer Peter running a team of software engineers and research
-                  projects.
-                </p>
-              </div>
-            </TeamMember>
-          </Col>
-          <Col xs={12} md={6} lg={4}>
-            <TeamMember>
-              {data.ScottElliceFlint && (
-                <Img fixed={data.ScottElliceFlint.childImageSharp.fixed} alt="Scott Ellice-Flint" />
-              )}
-              <Heading level={3} size="medium">
-                Scott Ellice-Flint
-              </Heading>
-              <SubHeading>Group Accountant &amp; Company Secretary</SubHeading>
-              <div className="left-align">
-                <p>
-                  Scott has over 40 years experience as a Chartered Accountant. As principal of his
-                  own practice, Scott has focused on accounting, taxation and business development
-                  advice for small to medium enterprises ensuring compliance and commercial
-                  outcomes. Scott has been Ocius Gp Accountant and Company Secretary since
-                </p>
-              </div>
-            </TeamMember>
-          </Col>
-        </Row>
-        <Heading level={3} color="#36BBE7" size="large" weight="thick" underline="left">
-          Contact Us
-        </Heading>
-        <Row>
-          <Col xs={12} md={3} lg={3}>
-            <p>
-              <strong>Ocius Headquarters</strong>
-              <br />
-              Building R13
-              <br />
-              UNSW Randwick Campus
-              <br />
-              22 King St, Randwick NSW 2031
-            </p>
-          </Col>
-          <Col xs={12} md={3} lg={3}>
-            <p>
-              <strong>Postal Address</strong>
-              <br />
-              Mail PO Box 4304 Castlecrag
-              <br />
-              NSW 2068
-            </p>
-          </Col>
-          <Col xs={12} md={3} lg={3}>
-            <p>
-              <strong>General Enquiries:</strong>
-              <br />
-              +61 2 9924 6400
-              <br />
-              contact@ocius.com.au
-            </p>
-          </Col>
-          <Col xs={12} md={3} lg={3}>
-            <p>
-              <strong>Open Hours:</strong>
-              <br />
-              Mon - Fri: 9am - 5pm
-              <br />
-              Sat - Sun: Closed
-            </p>
-          </Col>
-        </Row>
+        <LogoBackgroundWrapper>
+          <Container className="page-content">
+            <Row className="primary-content">
+              <Col xs={12} md={6} lg={6}>
+                <TeamMember>
+                  {data.MarkBethwaite && (
+                    <Img fixed={data.MarkBethwaite.childImageSharp.fixed} alt="Mark Bethwaite AM" />
+                  )}
+                  <Heading level={3} size="medium">
+                    Mark Bethwaite AM
+                  </Heading>
+                  <SubHeading>Chairman</SubHeading>
+                  <div className="left-align">
+                    <p>
+                      Mark has a degree in Engineering and an MBA and has been CEO of two large
+                      mining companies and one of Australia’s leading industry associations. Mark
+                      represented Australia in sailing in the 1972 and 1976 Olympic Games and has
+                      won World Championships in three international classes. Mark was made a Member
+                      of the Order of Australia (AM) in early 2011 for services to industry and to
+                      sailing.
+                    </p>
+                    <p>
+                      Mark has been a shareholder in OCIUS since 2000. He In 2013 he ably took over
+                      as Chairman from the Hon Bob Hawke, adding his invaluable skills to the board
+                      and our team.
+                    </p>
+                  </div>
+                </TeamMember>
+              </Col>
+              <Col xs={12} md={6} lg={6}>
+                <TeamMember>
+                  {data.RobertDane && (
+                    <Img fixed={data.RobertDane.childImageSharp.fixed} alt="Robert Dane" />
+                  )}
+                  <Heading level={3} size="medium">
+                    Robert Dane
+                  </Heading>
+                  <SubHeading>Chief Executive Officer</SubHeading>
+                  <div className="left-align">
+                    <p>
+                      Robert Dane is founder and CEO. In 1996, Robert, a passionate sailor and
+                      environmentalist, invented and patented the &apos;solarsail&apos; and designed
+                      the first &apos;solarsailor&apos; prototype which won the Advanced Technology
+                      Boat Race in Canberra in 1997.
+                    </p>
+                    <p>
+                      In 2001, the first commercial &apos;solarsailor&apos; ferry using the
+                      technology won the Australian Design Award of the Year. Robert is Intel
+                      Environment Laureate 2007, the WWF Future Maker 2012 and in 2017 Robert was
+                      awarded the Spitfire Memorial Defence Association Fellowship. He leads a great
+                      team of engineers.
+                    </p>
+                  </div>
+                </TeamMember>
+              </Col>
+              <Col xs={12} md={6} lg={6}>
+                <TeamMember>
+                  {data.AndrewAitken && (
+                    <Img fixed={data.AndrewAitken.childImageSharp.fixed} alt="Andrew Aitken" />
+                  )}
+                  <Heading level={3} size="medium">
+                    Andrew Aitken
+                  </Heading>
+                  <SubHeading>Director and Ocius Corporate Lawyer</SubHeading>
+                  <div className="left-align">
+                    <p>
+                      Andrew practices principally in the areas of commercial law, succession and
+                      estate planning. Andrew provides advice on the sale and purchase of businesses
+                      and companies, corporate governance, risk management and a wide range of
+                      issues facing SME owners, including intellectual property, shareholder
+                      agreements and commercial contracts.
+                    </p>
+                  </div>
+                </TeamMember>
+              </Col>
+              <Col xs={12} md={6} lg={6}>
+                <TeamMember>
+                  {data.RickTurner && (
+                    <Img fixed={data.RickTurner.childImageSharp.fixed} alt="Rick Turner" />
+                  )}
+                  <Heading level={3} size="medium">
+                    Rick Turner
+                  </Heading>
+                  <SubHeading>Director</SubHeading>
+                  <div className="left-align">
+                    <p>
+                      Rick has a strong background at operational and senior management level in the
+                      Australian manufacturing sector. He has identified, evaluated and successfully
+                      implemented new equipment and technology from Europe and the USA. He has also
+                      worked in Asia in GPS related industries.
+                    </p>
+                    <p>
+                      A shareholder in Solar Sailor then Ocius since 2011, Rick has been a
+                      consistent supporter of Ocius and brings to the Board his considerable
+                      manufacturing and innovation skill set.
+                    </p>
+                  </div>
+                </TeamMember>
+              </Col>
+            </Row>
+          </Container>
+        </LogoBackgroundWrapper>
+        <Container className="page-content">
+          <Row className="primary-content">
+            <Col xs={12} md={6} lg={4}>
+              <TeamMember>
+                {data.LloydBreckenridge && (
+                  <Img
+                    fixed={data.LloydBreckenridge.childImageSharp.fixed}
+                    alt="Lloyd Breckenridge"
+                  />
+                )}
+                <Heading level={3} size="medium">
+                  Lloyd Breckenridge
+                </Heading>
+                <SubHeading>Chief Engineer</SubHeading>
+                <div className="left-align">
+                  <p>
+                    Lloyd has over 30 years of experience as a software engineer working in varied
+                    roles for both large organisations and small innovative companies in Australia
+                    and overseas. Lloyd was a key member of Team Thunder, who successfully competed
+                    in the 2014 UAV Challenge Outback Rescue competition run by the CSIRO and
+                    Queensland University of Technology.
+                  </p>
+                  <p>
+                    He has had considerable sailing experience having started sailing at an early
+                    age on Lake Macquarie. In his current role as Chief Engineer for OCIUS
+                    Technology Ltd he feels he has found his dream job.
+                  </p>
+                </div>
+              </TeamMember>
+            </Col>
+            <Col xs={12} md={6} lg={4}>
+              <TeamMember>
+                {data.PeterWlodarczyk && (
+                  <Img fixed={data.PeterWlodarczyk.childImageSharp.fixed} alt="Peter Wlodarczyk" />
+                )}
+                <Heading level={3} size="medium">
+                  Peter Wlodarczyk
+                </Heading>
+                <SubHeading>Lead Engineer</SubHeading>
+                <div className="left-align">
+                  <p>
+                    Graduating from the University of Newcastle with a BE (Computer Engineering),
+                    Peter has over 20 years experience as a computer systems/software engineer in
+                    defense, IT and medical device industries. For the last 15 years, Peter has
+                    worked for ResMed as a software engineer, system engineer and researcher,
+                    innovating new products for sleep apnea and respiratory failure.
+                  </p>
+                  <p>
+                    He has developed a keen interest in UAVs, working with Lloyd in a team that
+                    successfully completed the 2014 UAV Challenge Outback Rescue competition run by
+                    the CSIRO and Queensland University of Technology. Peter’s current role is Ocius
+                    Lead Software Engineer Peter running a team of software engineers and research
+                    projects.
+                  </p>
+                </div>
+              </TeamMember>
+            </Col>
+            <Col xs={12} md={6} lg={4}>
+              <TeamMember>
+                {data.ScottElliceFlint && (
+                  <Img
+                    fixed={data.ScottElliceFlint.childImageSharp.fixed}
+                    alt="Scott Ellice-Flint"
+                  />
+                )}
+                <Heading level={3} size="medium">
+                  Scott Ellice-Flint
+                </Heading>
+                <SubHeading>Group Accountant &amp; Company Secretary</SubHeading>
+                <div className="left-align">
+                  <p>
+                    Scott has over 40 years experience as a Chartered Accountant. As principal of
+                    his own practice, Scott has focused on accounting, taxation and business
+                    development advice for small to medium enterprises ensuring compliance and
+                    commercial outcomes. Scott has been Ocius Gp Accountant and Company Secretary
+                    since
+                  </p>
+                </div>
+              </TeamMember>
+            </Col>
+          </Row>
+          <Heading level={3} color="#36BBE7" size="large" weight="thick" underline="left">
+            Contact Us
+          </Heading>
+          <Row>
+            <Col xs={12} md={3} lg={3}>
+              <p>
+                <strong>Ocius Headquarters</strong>
+                <br />
+                Building R13
+                <br />
+                UNSW Randwick Campus
+                <br />
+                22 King St, Randwick NSW 2031
+              </p>
+            </Col>
+            <Col xs={12} md={3} lg={3}>
+              <p>
+                <strong>Postal Address</strong>
+                <br />
+                Mail PO Box 4304 Castlecrag
+                <br />
+                NSW 2068
+              </p>
+            </Col>
+            <Col xs={12} md={3} lg={3}>
+              <p>
+                <strong>General Enquiries:</strong>
+                <br />
+                +61 2 9924 6400
+                <br />
+                contact@ocius.com.au
+              </p>
+            </Col>
+            <Col xs={12} md={3} lg={3}>
+              <p>
+                <strong>Open Hours:</strong>
+                <br />
+                Mon - Fri: 9am - 5pm
+                <br />
+                Sat - Sun: Closed
+              </p>
+            </Col>
+          </Row>
+        </Container>
       </Segmented>
     </>
   );
@@ -946,14 +968,12 @@ export default ({ data }) => {
         <NavTab label="Our Story" to="about/our-story" />
         <NavTab label="Awards" to="about/awards" />
       </NavTabs>
-      <Container className="page-content">
-        <Router>
-          <People path="about" data={data} />
-          <Partners path="about/partners" data={data} />
-          <Awards path="about/awards" data={data} />
-          <OurStory path="about/our-story" data={data} />
-        </Router>
-      </Container>
+      <Router>
+        <People path="about" data={data} />
+        <Partners path="about/partners" data={data} />
+        <Awards path="about/awards" data={data} />
+        <OurStory path="about/our-story" data={data} />
+      </Router>
     </Layout>
   );
 };
@@ -971,6 +991,14 @@ export const query = graphql`
     SolarSail: file(relativePath: { eq: "pages/about/images/solar-sail.png" }) {
       childImageSharp {
         fixed(quality: 100, width: 441) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+
+    OciusLogo: file(relativePath: { eq: "pages/about/images/ocius-logo-transparent.png" }) {
+      childImageSharp {
+        fixed(quality: 100, width: 762) {
           ...GatsbyImageSharpFixed
         }
       }
