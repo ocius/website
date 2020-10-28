@@ -15,9 +15,9 @@ const StyledNavbar = styled.header`
 
 const FlexContainer = styled(Container)`
   display: flex;
-  justify-content: space-between;
-  align-content: center;
-  min-height: 5rem;
+  flex-direction: column;
+  align-items: center;
+  padding: 25px 0;
 `;
 
 const Navbar = ({ children }) => (
