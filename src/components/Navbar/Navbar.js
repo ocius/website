@@ -4,10 +4,11 @@ import styled from 'styled-components';
 import Container from '../Container';
 
 const StyledNavbar = styled.header`
-  background-color: #efefef;
+  position: fixed;
+  background-color: #ffffff;
   margin: 0px;
   width: 100%;
-  z-index: 1;
+  z-index: 11;
   top: 0px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 `;
