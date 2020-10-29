@@ -212,161 +212,184 @@ const Partners = ({ data }) => {
     <>
       <SEO title="Our Partners" />
       <header id="partners" className="centered">
-        <Heading level={1} size="large" underline="center">
+        <Heading level={2} size="large" underline="center">
           Our Partners
         </Heading>
       </header>
       <Segmented borderBottom="">
-        <Row className="primary-content">
-          <Col xs={12} md={6} lg={6}>
-            {data.DefenceInnovationHub && (
-              <div className="centered">
-                <Img
-                  style={{ maxWidth: '100%' }}
-                  imgStyle={{ objectFit: 'contain' }}
-                  fixed={data.DefenceInnovationHub.childImageSharp.fixed}
-                  alt="Defence Innovation Hub"
-                />
-              </div>
-            )}
-            <p>
-              The Defence Innovation Hub is an initiative of the 2016 Defence Industry Policy
-              Statement and will invest around $640 million over the decade to 2025-26 in maturing
-              and further developing technologies that have moved from the early science stages into
-              the engineering and development stages of the innovation process. It is an exciting
-              initiative that will pull together research institutions, academia, industry and
-              innovative technologies. The Defence Innovation Hub facilitates innovation activities
-              from initial concept, through prototyping and integrated testing.
-            </p>
-          </Col>
-          <Col xs={12} md={6} lg={6}>
-            {data.AustralianGovernment && (
-              <div className="centered">
-                <Img
-                  style={{ maxWidth: '100%' }}
-                  imgStyle={{ objectFit: 'contain' }}
-                  fixed={data.AustralianGovernment.childImageSharp.fixed}
-                  alt="Australian Government Logotype"
-                />
-              </div>
-            )}
-            <p>
-              DST Group is a national leader in safeguarding Australia by delivering valued
-              scientific advice and innovative solutions for Defence and national security. OCIUS
-              Technology Limited was selected for the Capability and Technology Demonstrator Program
-              (CTD) in 2015 to develop an Anti-Submarine Warfare Unmanned Surface Vessel (ASW-USV).
-              The A$3M contract provided extensive validation of our strategy to draw on proprietary
-              technology for the development of long-range, autonomous surveillance and sensing
-              platforms. Specifically, it allowed us to develop a high-performance OCIUS Bluebottle
-              Unmanned Surface Vessel (USV) coupled with an integrated Thales Australia thin-line
-              towed array sonar system. This was demonstrated to NAVY on Aug 10, 2017, and exceeded
-              all contract performance measures. OCIUS has been invited to apply for further
-              Technology Demonstrator funding under the Defence Innovation Hub program.
-            </p>
-          </Col>
-        </Row>
-        <Row className="primary-content">
-          <Col xs={12} md={6} lg={6}>
-            {data.UNSW && (
-              <div className="centered">
-                <Img
-                  style={{ maxWidth: '100%' }}
-                  imgStyle={{ objectFit: 'contain' }}
-                  fixed={data.UNSW.childImageSharp.fixed}
-                  alt="The University of New South Wales"
-                />
-              </div>
-            )}
-            <p>
-              UNSW Australia (The University of New South Wales) is one of Australia’s leading
-              research and teaching universities. OCIUS have a contract for research into
-              intelligent networks and machine learning with the University of New South Wales. UNSW
-              provide OCIUS with a Research & Development facility in UNSW’s Randwick Campus.
-              Additionally, OCIUS hires multiple computer science and mechatronics engineers from
-              UNSW, and students from UNSW under intern programs.
-            </p>
-          </Col>
-          <Col xs={12} md={6} lg={6}>
-            {data.Thales && (
-              <div className="centered">
-                <Img
-                  style={{ maxWidth: '100%' }}
-                  imgStyle={{ objectFit: 'contain' }}
-                  fixed={data.Thales.childImageSharp.fixed}
-                  alt="Thales"
-                />
-              </div>
-            )}
-            <p>
-              Thales develops, manufactures and exports world leading underwater sonar sensors and
-              towed arrays in Australia. Since 2013 Thales has had an ongoing contribution to the
-              OCIUS project combining its advanced underwater sensors with OCIUS autonomous
-              Bluebottle USV to demonstrate the capability of autonomous maritime surveillance.
-              Thales is the maritime lead for the Trusted Autonomous Systems Defence Co-operative
-              Research Centre.
-            </p>
-          </Col>
-        </Row>
-        <Row className="primary-content">
-          <Col xs={12} md={6} lg={6}>
-            {data.VanMunsterBoats && (
-              <div className="centered">
-                <Img
-                  style={{ maxWidth: '100%' }}
-                  imgStyle={{ objectFit: 'contain' }}
-                  fixed={data.VanMunsterBoats.childImageSharp.fixed}
-                  alt="Thales"
-                />
-              </div>
-            )}
-            <p>
-              Van Munster Boats is a second-generation family-run business at the forefront of
-              building carbon fibre hulls and structures for race yachts
-            </p>
-            <p>
-              VMB work with the best composite engineers and industry&apos;s leading naval
-              architect’s to turn original conception into reality.
-            </p>
-            <p>
-              They deliver products that meet the highest standards and their processes and applied
-              technologies are continually refined and developed to deliver “state of the art”
-              solutions.
-            </p>
-            <p>
-              Van Munster Boats composite production facility is based in Morisset NSW Australia and
-              features an oven for high-temperature cure of pre-preg composites and post-curing
-              laminates, a climate-controlled laminating area that ensures that components are of of
-              the highest quality and consistency and a CNC machine so composite components can be
-              custom manufactured quickly and to the highest standard.
-            </p>
-            <p>The team at Van Munster Boats turn Ocius&apos; vision into a reality.</p>
-          </Col>
-          <Col xs={12} md={6} lg={6}>
-            {data.SteberInternational && (
-              <div className="centered">
-                <Img
-                  style={{ maxWidth: '100%' }}
-                  imgStyle={{ objectFit: 'contain' }}
-                  fixed={data.SteberInternational.childImageSharp.fixed}
-                  alt="Steber International"
-                />
-              </div>
-            )}
-            <p>
-              Stebercraft International is a leader in Australian boat manufacturing and industrial
-              composite technology since 1947. Steber manufactures high-quality boats for fishing,
-              charter, patrol, sea rescue, medical support, surveillance and general boating use.
-              All Steber boats are individually designed and built to suit their purpose, with a
-              quality of manufacture that ensures a long service life and the capability to put to
-              sea when many other vessels need to return to port. Steber&apos;s core business of
-              composite component manufacture is all undertaken in their climate controlled factory
-              ensuring all laminating is carried out within humidity and temperature parameters
-              allowing 24-hour production when required. Stebercraft is an Australian owned and
-              operated family company with a firm commitment to provide a high-quality product with
-              excellent customer service.
-            </p>
-          </Col>
-        </Row>
+        <LogoBackgroundWrapper>
+          <Container className="page-content">
+            <Row className="primary-content">
+              <Col xs={12} md={4} lg={4}>
+                {data.DefenceInnovationHub && (
+                  <div className="centered">
+                    <Img
+                      style={{ maxWidth: '100%' }}
+                      imgStyle={{ objectFit: 'contain' }}
+                      fixed={data.DefenceInnovationHub.childImageSharp.fixed}
+                      alt="Defence Innovation Hub"
+                    />
+                  </div>
+                )}
+                <Heading level={3} size="medium">
+                  Defence Innovation Hub
+                </Heading>
+                <p>
+                  The Defence Innovation Hub is an initiative of the 2016 Defence Industry Policy
+                  Statement and will invest around $640 million over the decade to 2025-26 in
+                  maturing and further developing technologies that have moved from the early
+                  science stages into the engineering and development stages of the innovation
+                  process. It is an exciting initiative that will pull together research
+                  institutions, academia, industry and innovative technologies. The Defence
+                  Innovation Hub facilitates innovation activities from initial concept, through
+                  prototyping and integrated testing.
+                </p>
+              </Col>
+              <Col xs={12} md={4} lg={4}>
+                {data.AustralianGovernment && (
+                  <div className="centered">
+                    <Img
+                      style={{ maxWidth: '100%' }}
+                      imgStyle={{ objectFit: 'contain' }}
+                      fixed={data.AustralianGovernment.childImageSharp.fixed}
+                      alt="Australian Government Logotype"
+                    />
+                  </div>
+                )}
+                <Heading level={3} size="medium">
+                  Department of Defence
+                </Heading>
+                <p>
+                  DST Group is a national leader in safeguarding Australia by delivering valued
+                  scientific advice and innovative solutions for Defence and national security.
+                  OCIUS Technology Limited was selected for the Capability and Technology
+                  Demonstrator Program (CTD) in 2015 to develop an Anti-Submarine Warfare Unmanned
+                  Surface Vessel (ASW-USV). The A$3M contract provided extensive validation of our
+                  strategy to draw on proprietary technology for the development of long-range,
+                  autonomous surveillance and sensing platforms. Specifically, it allowed us to
+                  develop a high-performance OCIUS Bluebottle Unmanned Surface Vessel (USV) coupled
+                  with an integrated Thales Australia thin-line towed array sonar system. This was
+                  demonstrated to NAVY on Aug 10, 2017, and exceeded all contract performance
+                  measures. OCIUS has been invited to apply for further Technology Demonstrator
+                  funding under the Defence Innovation Hub program.
+                </p>
+              </Col>
+              <Col xs={12} md={4} lg={4}>
+                {data.UNSW && (
+                  <div className="centered">
+                    <Img
+                      style={{ maxWidth: '100%' }}
+                      imgStyle={{ objectFit: 'contain' }}
+                      fixed={data.UNSW.childImageSharp.fixed}
+                      alt="The University of New South Wales"
+                    />
+                  </div>
+                )}
+                <Heading level={3} size="medium">
+                  The University of New South Wales
+                </Heading>
+                <p>
+                  UNSW Australia (The University of New South Wales) is one of Australia’s leading
+                  research and teaching universities. OCIUS have a contract for research into
+                  intelligent networks and machine learning with the University of New South Wales.
+                  UNSW provide OCIUS with a Research &amp; Development facility in UNSW’s Randwick
+                  Campus. Additionally, OCIUS hires multiple computer science and mechatronics
+                  engineers from UNSW, and students from UNSW under intern programs.
+                </p>
+              </Col>
+            </Row>
+            <Row className="primary-content">
+              <Col xs={12} md={4} lg={4}>
+                {data.Thales && (
+                  <div className="centered">
+                    <Img
+                      style={{ maxWidth: '100%' }}
+                      imgStyle={{ objectFit: 'contain' }}
+                      fixed={data.Thales.childImageSharp.fixed}
+                      alt="Thales"
+                    />
+                  </div>
+                )}
+                <Heading level={3} size="medium">
+                  Thales
+                </Heading>
+                <p>
+                  Thales develops, manufactures and exports world leading underwater sonar sensors
+                  and towed arrays in Australia. Since 2013 Thales has had an ongoing contribution
+                  to the OCIUS project combining its advanced underwater sensors with OCIUS
+                  autonomous Bluebottle USV to demonstrate the capability of autonomous maritime
+                  surveillance. Thales is the maritime lead for the Trusted Autonomous Systems
+                  Defence Co-operative Research Centre.
+                </p>
+              </Col>
+              <Col xs={12} md={4} lg={4}>
+                {data.VanMunsterBoats && (
+                  <div className="centered">
+                    <Img
+                      style={{ maxWidth: '100%' }}
+                      imgStyle={{ objectFit: 'contain' }}
+                      fixed={data.VanMunsterBoats.childImageSharp.fixed}
+                      alt="Thales"
+                    />
+                  </div>
+                )}
+                <Heading level={3} size="medium">
+                  Van Munster Boats
+                </Heading>
+                <p>
+                  Van Munster Boats is a second-generation family-run business at the forefront of
+                  building carbon fibre hulls and structures for race yachts
+                </p>
+                <p>
+                  VMB work with the best composite engineers and industry&apos;s leading naval
+                  architect’s to turn original conception into reality.
+                </p>
+                <p>
+                  They deliver products that meet the highest standards and their processes and
+                  applied technologies are continually refined and developed to deliver “state of
+                  the art” solutions.
+                </p>
+                <p>
+                  Van Munster Boats composite production facility is based in Morisset NSW Australia
+                  and features an oven for high-temperature cure of pre-preg composites and
+                  post-curing laminates, a climate-controlled laminating area that ensures that
+                  components are of of the highest quality and consistency and a CNC machine so
+                  composite components can be custom manufactured quickly and to the highest
+                  standard.
+                </p>
+                <p>The team at Van Munster Boats turn Ocius&apos; vision into a reality.</p>
+              </Col>
+              <Col xs={12} md={4} lg={4}>
+                {data.SteberInternational && (
+                  <div className="centered">
+                    <Img
+                      style={{ maxWidth: '100%' }}
+                      imgStyle={{ objectFit: 'contain' }}
+                      fixed={data.SteberInternational.childImageSharp.fixed}
+                      alt="Steber International"
+                    />
+                  </div>
+                )}
+                <Heading level={3} size="medium">
+                  Stebercraft International
+                </Heading>
+                <p>
+                  Stebercraft International is a leader in Australian boat manufacturing and
+                  industrial composite technology since 1947. Steber manufactures high-quality boats
+                  for fishing, charter, patrol, sea rescue, medical support, surveillance and
+                  general boating use. All Steber boats are individually designed and built to suit
+                  their purpose, with a quality of manufacture that ensures a long service life and
+                  the capability to put to sea when many other vessels need to return to port.
+                  Steber&apos;s core business of composite component manufacture is all undertaken
+                  in their climate controlled factory ensuring all laminating is carried out within
+                  humidity and temperature parameters allowing 24-hour production when required.
+                  Stebercraft is an Australian owned and operated family company with a firm
+                  commitment to provide a high-quality product with excellent customer service.
+                </p>
+              </Col>
+            </Row>
+          </Container>
+        </LogoBackgroundWrapper>
       </Segmented>
       <Segmented borderBottom="">
         <Row className="primary-content">
