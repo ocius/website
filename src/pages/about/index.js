@@ -221,291 +221,312 @@ const Partners = ({ data }) => {
           <Container className="page-content">
             <Row className="primary-content">
               <Col xs={12} md={4} lg={4}>
-                {data.DefenceInnovationHub && (
-                  <div className="centered">
-                    <Img
-                      style={{ maxWidth: '100%' }}
-                      imgStyle={{ objectFit: 'contain' }}
-                      fixed={data.DefenceInnovationHub.childImageSharp.fixed}
-                      alt="Defence Innovation Hub"
-                    />
-                  </div>
-                )}
-                <Heading level={3} size="medium">
-                  Defence Innovation Hub
-                </Heading>
-                <p>
-                  The Defence Innovation Hub is an initiative of the 2016 Defence Industry Policy
-                  Statement and will invest around $640 million over the decade to 2025-26 in
-                  maturing and further developing technologies that have moved from the early
-                  science stages into the engineering and development stages of the innovation
-                  process. It is an exciting initiative that will pull together research
-                  institutions, academia, industry and innovative technologies. The Defence
-                  Innovation Hub facilitates innovation activities from initial concept, through
-                  prototyping and integrated testing.
-                </p>
+                <PaddingWrapper>
+                  {data.DefenceInnovationHub && (
+                    <div className="centered">
+                      <Img
+                        style={{ maxWidth: '100%' }}
+                        imgStyle={{ objectFit: 'contain' }}
+                        fixed={data.DefenceInnovationHub.childImageSharp.fixed}
+                        alt="Defence Innovation Hub"
+                      />
+                    </div>
+                  )}
+                  <Heading level={3} size="medium">
+                    Defence Innovation Hub
+                  </Heading>
+                  <p>
+                    The Defence Innovation Hub is an initiative of the 2016 Defence Industry Policy
+                    Statement and will invest around $640 million over the decade to 2025-26 in
+                    maturing and further developing technologies that have moved from the early
+                    science stages into the engineering and development stages of the innovation
+                    process. It is an exciting initiative that will pull together research
+                    institutions, academia, industry and innovative technologies. The Defence
+                    Innovation Hub facilitates innovation activities from initial concept, through
+                    prototyping and integrated testing.
+                  </p>
+                </PaddingWrapper>
               </Col>
               <Col xs={12} md={4} lg={4}>
-                {data.AustralianGovernment && (
-                  <div className="centered">
-                    <Img
-                      style={{ maxWidth: '100%' }}
-                      imgStyle={{ objectFit: 'contain' }}
-                      fixed={data.AustralianGovernment.childImageSharp.fixed}
-                      alt="Australian Government Logotype"
-                    />
-                  </div>
-                )}
-                <Heading level={3} size="medium">
-                  Department of Defence
-                </Heading>
-                <p>
-                  DST Group is a national leader in safeguarding Australia by delivering valued
-                  scientific advice and innovative solutions for Defence and national security.
-                  OCIUS Technology Limited was selected for the Capability and Technology
-                  Demonstrator Program (CTD) in 2015 to develop an Anti-Submarine Warfare Unmanned
-                  Surface Vessel (ASW-USV). The A$3M contract provided extensive validation of our
-                  strategy to draw on proprietary technology for the development of long-range,
-                  autonomous surveillance and sensing platforms. Specifically, it allowed us to
-                  develop a high-performance OCIUS Bluebottle Unmanned Surface Vessel (USV) coupled
-                  with an integrated Thales Australia thin-line towed array sonar system. This was
-                  demonstrated to NAVY on Aug 10, 2017, and exceeded all contract performance
-                  measures. OCIUS has been invited to apply for further Technology Demonstrator
-                  funding under the Defence Innovation Hub program.
-                </p>
+                <PaddingWrapper>
+                  {data.AustralianGovernment && (
+                    <div className="centered">
+                      <Img
+                        style={{ maxWidth: '100%' }}
+                        imgStyle={{ objectFit: 'contain' }}
+                        fixed={data.AustralianGovernment.childImageSharp.fixed}
+                        alt="Australian Government Logotype"
+                      />
+                    </div>
+                  )}
+                  <Heading level={3} size="medium">
+                    Department of Defence
+                  </Heading>
+                  <p>
+                    DST Group is a national leader in safeguarding Australia by delivering valued
+                    scientific advice and innovative solutions for Defence and national security.
+                    OCIUS Technology Limited was selected for the Capability and Technology
+                    Demonstrator Program (CTD) in 2015 to develop an Anti-Submarine Warfare Unmanned
+                    Surface Vessel (ASW-USV). The A$3M contract provided extensive validation of our
+                    strategy to draw on proprietary technology for the development of long-range,
+                    autonomous surveillance and sensing platforms. Specifically, it allowed us to
+                    develop a high-performance OCIUS Bluebottle Unmanned Surface Vessel (USV)
+                    coupled with an integrated Thales Australia thin-line towed array sonar system.
+                    This was demonstrated to NAVY on Aug 10, 2017, and exceeded all contract
+                    performance measures. OCIUS has been invited to apply for further Technology
+                    Demonstrator funding under the Defence Innovation Hub program.
+                  </p>
+                </PaddingWrapper>
               </Col>
               <Col xs={12} md={4} lg={4}>
-                {data.UNSW && (
-                  <div className="centered">
-                    <Img
-                      style={{ maxWidth: '100%' }}
-                      imgStyle={{ objectFit: 'contain' }}
-                      fixed={data.UNSW.childImageSharp.fixed}
-                      alt="The University of New South Wales"
-                    />
-                  </div>
-                )}
-                <Heading level={3} size="medium">
-                  The University of New South Wales
-                </Heading>
-                <p>
-                  UNSW Australia (The University of New South Wales) is one of Australia’s leading
-                  research and teaching universities. OCIUS have a contract for research into
-                  intelligent networks and machine learning with the University of New South Wales.
-                  UNSW provide OCIUS with a Research &amp; Development facility in UNSW’s Randwick
-                  Campus. Additionally, OCIUS hires multiple computer science and mechatronics
-                  engineers from UNSW, and students from UNSW under intern programs.
-                </p>
+                <PaddingWrapper>
+                  {data.UNSW && (
+                    <div className="centered">
+                      <Img
+                        style={{ maxWidth: '100%' }}
+                        imgStyle={{ objectFit: 'contain' }}
+                        fixed={data.UNSW.childImageSharp.fixed}
+                        alt="The University of New South Wales"
+                      />
+                    </div>
+                  )}
+                  <Heading level={3} size="medium">
+                    The University of New South Wales
+                  </Heading>
+                  <p>
+                    UNSW Australia (The University of New South Wales) is one of Australia’s leading
+                    research and teaching universities. OCIUS have a contract for research into
+                    intelligent networks and machine learning with the University of New South
+                    Wales. UNSW provide OCIUS with a Research &amp; Development facility in UNSW’s
+                    Randwick Campus. Additionally, OCIUS hires multiple computer science and
+                    mechatronics engineers from UNSW, and students from UNSW under intern programs.
+                  </p>
+                </PaddingWrapper>
               </Col>
             </Row>
             <Row className="primary-content">
               <Col xs={12} md={4} lg={4}>
-                {data.Thales && (
-                  <div className="centered">
-                    <Img
-                      style={{ maxWidth: '100%' }}
-                      imgStyle={{ objectFit: 'contain' }}
-                      fixed={data.Thales.childImageSharp.fixed}
-                      alt="Thales"
-                    />
-                  </div>
-                )}
-                <Heading level={3} size="medium">
-                  Thales
-                </Heading>
-                <p>
-                  Thales develops, manufactures and exports world leading underwater sonar sensors
-                  and towed arrays in Australia. Since 2013 Thales has had an ongoing contribution
-                  to the OCIUS project combining its advanced underwater sensors with OCIUS
-                  autonomous Bluebottle USV to demonstrate the capability of autonomous maritime
-                  surveillance. Thales is the maritime lead for the Trusted Autonomous Systems
-                  Defence Co-operative Research Centre.
-                </p>
+                <PaddingWrapper>
+                  {data.Thales && (
+                    <div className="centered">
+                      <Img
+                        style={{ maxWidth: '100%' }}
+                        imgStyle={{ objectFit: 'contain' }}
+                        fixed={data.Thales.childImageSharp.fixed}
+                        alt="Thales"
+                      />
+                    </div>
+                  )}
+                  <Heading level={3} size="medium">
+                    Thales
+                  </Heading>
+                  <p>
+                    Thales develops, manufactures and exports world leading underwater sonar sensors
+                    and towed arrays in Australia. Since 2013 Thales has had an ongoing contribution
+                    to the OCIUS project combining its advanced underwater sensors with OCIUS
+                    autonomous Bluebottle USV to demonstrate the capability of autonomous maritime
+                    surveillance. Thales is the maritime lead for the Trusted Autonomous Systems
+                    Defence Co-operative Research Centre.
+                  </p>
+                </PaddingWrapper>
               </Col>
               <Col xs={12} md={4} lg={4}>
-                {data.VanMunsterBoats && (
-                  <div className="centered">
-                    <Img
-                      style={{ maxWidth: '100%' }}
-                      imgStyle={{ objectFit: 'contain' }}
-                      fixed={data.VanMunsterBoats.childImageSharp.fixed}
-                      alt="Thales"
-                    />
-                  </div>
-                )}
-                <Heading level={3} size="medium">
-                  Van Munster Boats
-                </Heading>
-                <p>
-                  Van Munster Boats is a second-generation family-run business at the forefront of
-                  building carbon fibre hulls and structures for race yachts
-                </p>
-                <p>
-                  VMB work with the best composite engineers and industry&apos;s leading naval
-                  architect’s to turn original conception into reality.
-                </p>
-                <p>
-                  They deliver products that meet the highest standards and their processes and
-                  applied technologies are continually refined and developed to deliver “state of
-                  the art” solutions.
-                </p>
-                <p>
-                  Van Munster Boats composite production facility is based in Morisset NSW Australia
-                  and features an oven for high-temperature cure of pre-preg composites and
-                  post-curing laminates, a climate-controlled laminating area that ensures that
-                  components are of of the highest quality and consistency and a CNC machine so
-                  composite components can be custom manufactured quickly and to the highest
-                  standard.
-                </p>
-                <p>The team at Van Munster Boats turn Ocius&apos; vision into a reality.</p>
+                <PaddingWrapper>
+                  {data.VanMunsterBoats && (
+                    <div className="centered">
+                      <Img
+                        style={{ maxWidth: '100%' }}
+                        imgStyle={{ objectFit: 'contain' }}
+                        fixed={data.VanMunsterBoats.childImageSharp.fixed}
+                        alt="Thales"
+                      />
+                    </div>
+                  )}
+                  <Heading level={3} size="medium">
+                    Van Munster Boats
+                  </Heading>
+                  <p>
+                    Van Munster Boats is a second-generation family-run business at the forefront of
+                    building carbon fibre hulls and structures for race yachts
+                  </p>
+                  <p>
+                    VMB work with the best composite engineers and industry&apos;s leading naval
+                    architect’s to turn original conception into reality.
+                  </p>
+                  <p>
+                    They deliver products that meet the highest standards and their processes and
+                    applied technologies are continually refined and developed to deliver “state of
+                    the art” solutions.
+                  </p>
+                  <p>
+                    Van Munster Boats composite production facility is based in Morisset NSW
+                    Australia and features an oven for high-temperature cure of pre-preg composites
+                    and post-curing laminates, a climate-controlled laminating area that ensures
+                    that components are of of the highest quality and consistency and a CNC machine
+                    so composite components can be custom manufactured quickly and to the highest
+                    standard.
+                  </p>
+                  <p>The team at Van Munster Boats turn Ocius&apos; vision into a reality.</p>
+                </PaddingWrapper>
               </Col>
               <Col xs={12} md={4} lg={4}>
-                {data.SteberInternational && (
-                  <div className="centered">
-                    <Img
-                      style={{ maxWidth: '100%' }}
-                      imgStyle={{ objectFit: 'contain' }}
-                      fixed={data.SteberInternational.childImageSharp.fixed}
-                      alt="Steber International"
-                    />
-                  </div>
-                )}
-                <Heading level={3} size="medium">
-                  Stebercraft International
-                </Heading>
-                <p>
-                  Stebercraft International is a leader in Australian boat manufacturing and
-                  industrial composite technology since 1947. Steber manufactures high-quality boats
-                  for fishing, charter, patrol, sea rescue, medical support, surveillance and
-                  general boating use. All Steber boats are individually designed and built to suit
-                  their purpose, with a quality of manufacture that ensures a long service life and
-                  the capability to put to sea when many other vessels need to return to port.
-                  Steber&apos;s core business of composite component manufacture is all undertaken
-                  in their climate controlled factory ensuring all laminating is carried out within
-                  humidity and temperature parameters allowing 24-hour production when required.
-                  Stebercraft is an Australian owned and operated family company with a firm
-                  commitment to provide a high-quality product with excellent customer service.
-                </p>
+                <PaddingWrapper>
+                  {data.SteberInternational && (
+                    <div className="centered">
+                      <Img
+                        style={{ maxWidth: '100%' }}
+                        imgStyle={{ objectFit: 'contain' }}
+                        fixed={data.SteberInternational.childImageSharp.fixed}
+                        alt="Steber International"
+                      />
+                    </div>
+                  )}
+                  <Heading level={3} size="medium">
+                    Stebercraft International
+                  </Heading>
+                  <p>
+                    Stebercraft International is a leader in Australian boat manufacturing and
+                    industrial composite technology since 1947. Steber manufactures high-quality
+                    boats for fishing, charter, patrol, sea rescue, medical support, surveillance
+                    and general boating use. All Steber boats are individually designed and built to
+                    suit their purpose, with a quality of manufacture that ensures a long service
+                    life and the capability to put to sea when many other vessels need to return to
+                    port. Steber&apos;s core business of composite component manufacture is all
+                    undertaken in their climate controlled factory ensuring all laminating is
+                    carried out within humidity and temperature parameters allowing 24-hour
+                    production when required. Stebercraft is an Australian owned and operated family
+                    company with a firm commitment to provide a high-quality product with excellent
+                    customer service.
+                  </p>
+                </PaddingWrapper>
               </Col>
             </Row>
           </Container>
         </LogoBackgroundWrapper>
-      </Segmented>
-      <Segmented borderBottom="">
         <Container className="page-content">
           <Row className="primary-content">
             <Col xs={12} md={4} lg={4}>
-              {data.OneTwoThree && (
-                <div className="centered">
-                  <Img
-                    style={{ maxWidth: '100%' }}
-                    imgStyle={{ objectFit: 'contain' }}
-                    fixed={data.OneTwoThree.childImageSharp.fixed}
-                    alt="One2three Naval Architects"
-                  />
-                </div>
-              )}
-              <Heading level={3} size="medium">
-                One2three Naval Architects
-              </Heading>
-              <p>
-                One2three naval architects designed our second prototype Bruce’s hull, keel, deck
-                and hatches. They are well known in the sailing world as the naval architects who
-                have multiple times re-designed “Wild Oats“ the record-breaking maxi and 8 times
-                winner of line honours in the Sydney to Hobart yacht race. They will review Bruce’s
-                seakeeping ability in a range of conditions to provide several improvements in
-                design, tracking, helm, payload bay &amp; performance for the next prototypes.
-              </p>
+              <PaddingWrapper>
+                {data.OneTwoThree && (
+                  <div className="centered">
+                    <Img
+                      style={{ maxWidth: '100%' }}
+                      imgStyle={{ objectFit: 'contain' }}
+                      fixed={data.OneTwoThree.childImageSharp.fixed}
+                      alt="One2three Naval Architects"
+                    />
+                  </div>
+                )}
+                <Heading level={3} size="medium">
+                  One2three Naval Architects
+                </Heading>
+                <p>
+                  One2three naval architects designed our second prototype Bruce’s hull, keel, deck
+                  and hatches. They are well known in the sailing world as the naval architects who
+                  have multiple times re-designed “Wild Oats“ the record-breaking maxi and 8 times
+                  winner of line honours in the Sydney to Hobart yacht race. They will review
+                  Bruce’s seakeeping ability in a range of conditions to provide several
+                  improvements in design, tracking, helm, payload bay &amp; performance for the next
+                  prototypes.
+                </p>
+              </PaddingWrapper>
             </Col>
             <Col xs={12} md={4} lg={4}>
-              {data.Ullandulla && (
-                <div className="centered">
-                  <Img
-                    style={{ maxWidth: '100%' }}
-                    imgStyle={{ objectFit: 'contain' }}
-                    fixed={data.Ullandulla.childImageSharp.fixed}
-                    alt="Ulladulla Engineering and Fibreglass"
-                  />
-                </div>
-              )}
-              <Heading level={3} size="medium">
-                Ulladulla Engineering and Fibreglass
-              </Heading>
-              <p>
-                Bruce Heggie and Graham ‘Butch’ Johnson are well known on the NSW South Coast as
-                suppliers of innovative machine and fibreglass products. They have supplied
-                fibreglass and mechanical engineering since the successful winning of the
-                International boat race in 1997. They have provided equipment for all solar sailor
-                ferries, scale models and prototypes including our Bluebottles&apos; steering
-                mechanisms, patented rudder flipper appendages and patented solarsails &amp;
-                mechanisms.
-              </p>
+              <PaddingWrapper>
+                {data.Ullandulla && (
+                  <div className="centered">
+                    <Img
+                      style={{ maxWidth: '100%' }}
+                      imgStyle={{ objectFit: 'contain' }}
+                      fixed={data.Ullandulla.childImageSharp.fixed}
+                      alt="Ulladulla Engineering and Fibreglass"
+                    />
+                  </div>
+                )}
+                <Heading level={3} size="medium">
+                  Ulladulla Engineering and Fibreglass
+                </Heading>
+                <p>
+                  Bruce Heggie and Graham ‘Butch’ Johnson are well known on the NSW South Coast as
+                  suppliers of innovative machine and fibreglass products. They have supplied
+                  fibreglass and mechanical engineering since the successful winning of the
+                  International boat race in 1997. They have provided equipment for all solar sailor
+                  ferries, scale models and prototypes including our Bluebottles&apos; steering
+                  mechanisms, patented rudder flipper appendages and patented solarsails &amp;
+                  mechanisms.
+                </p>
+              </PaddingWrapper>
             </Col>
             <Col xs={12} md={4} lg={4}>
-              {data.ClarkIP && (
-                <div className="centered">
-                  <Img
-                    style={{ maxWidth: '100%' }}
-                    imgStyle={{ objectFit: 'contain' }}
-                    fixed={data.ClarkIP.childImageSharp.fixed}
-                    alt="Clark IP"
-                  />
-                </div>
-              )}
-              <Heading level={3} size="medium">
-                Clark IP
-              </Heading>
-              <p>
-                David Clark is a registered Australian and NZ Patent Attorney with 25 years’
-                experience in mechanical engineering, mining, medical, software, digital signal
-                processing, electronic gaming, plastics, environmental, agricultural machinery and
-                more. He has been Solar Sailor’s and OCIUS&apos; patent attourney for over 15 years.
-                Prior to founding Clark IP, David successfully managed the patent practices at a
-                major first tier law firm and has a strong business acumen so he provides OCIUS with
-                not only technically accurate work but also commercially meaningful and relevant
-                advice.
-              </p>
-              <p>
-                Being a keen sailor he brings a unique mix of practical experience and technical
-                expertise to OCIUS. We enjoy working collaboratively with David to translate our R&D
-                into meaningful and quality patents, registered designs and trademarks.
-              </p>
+              <PaddingWrapper>
+                {data.ClarkIP && (
+                  <div className="centered">
+                    <Img
+                      style={{ maxWidth: '100%' }}
+                      imgStyle={{ objectFit: 'contain' }}
+                      fixed={data.ClarkIP.childImageSharp.fixed}
+                      alt="Clark IP"
+                    />
+                  </div>
+                )}
+                <Heading level={3} size="medium">
+                  Clark IP
+                </Heading>
+                <p>
+                  David Clark is a registered Australian and NZ Patent Attorney with 25 years’
+                  experience in mechanical engineering, mining, medical, software, digital signal
+                  processing, electronic gaming, plastics, environmental, agricultural machinery and
+                  more. He has been Solar Sailor’s and OCIUS&apos; patent attourney for over 15
+                  years. Prior to founding Clark IP, David successfully managed the patent practices
+                  at a major first tier law firm and has a strong business acumen so he provides
+                  OCIUS with not only technically accurate work but also commercially meaningful and
+                  relevant advice.
+                </p>
+                <p>
+                  Being a keen sailor he brings a unique mix of practical experience and technical
+                  expertise to OCIUS. We enjoy working collaboratively with David to translate our
+                  R&amp;D into meaningful and quality patents, registered designs and trademarks.
+                </p>
+              </PaddingWrapper>
             </Col>
           </Row>
           <Row className="primary-content">
             <Col xs={12} md={4} lg={4}>
-              {data.Spitfire && (
-                <div className="centered">
-                  <Img
-                    style={{ maxWidth: '100%' }}
-                    imgStyle={{ objectFit: 'contain' }}
-                    fixed={data.Spitfire.childImageSharp.fixed}
-                    alt="The Spitfire Association"
-                  />
-                </div>
-              )}
-              <Heading level={3} size="medium">
-                The Spitfire Association
-              </Heading>
-              <p>
-                During the Second World War Australian service men and women played a vital role in
-                every theatre of the conflict, leading to the successful Allied outcome in 1945. The
-                Spitfire Association, founded by many of these men and women, remains strong to this
-                day. The spirit of camaraderie, service and enjoyment of life is a hallmark of the
-                Association, bound together by a love of this iconic aeroplane the Spitfire.
-              </p>
-              <p>
-                The Spitfire Association has a &apos;living memorial&apos; being the Spitfire
-                Memorial Defence Fund which is invested and the interest of which each year goes
-                towards a competitive Scholarship and/or Fellowship for Australians doing
-                &apos;research to benefit the Defence of Australia&apos;. In 2016, OCIUS was
-                honoured to be awarded scholarships for several UNSW students to go towards the
-                design and build of hardware for Bluebottle prototype Bruce. In 2017, Robert Dane
-                was honoured to be awarded the Spitfire Fellowship for the development of the unique
-                &apos;reel in the keel&apos; winch for Bluebottles, enabling a small USV to carry
-                any number of sensors in a seaworthy way and deploy and retrieve that sensor to
-                depths of 1 - 140m as desired.
-              </p>
+              <PaddingWrapper>
+                {data.Spitfire && (
+                  <div className="centered">
+                    <Img
+                      style={{ maxWidth: '100%' }}
+                      imgStyle={{ objectFit: 'contain' }}
+                      fixed={data.Spitfire.childImageSharp.fixed}
+                      alt="The Spitfire Association"
+                    />
+                  </div>
+                )}
+                <Heading level={3} size="medium">
+                  The Spitfire Association
+                </Heading>
+                <p>
+                  During the Second World War Australian service men and women played a vital role
+                  in every theatre of the conflict, leading to the successful Allied outcome in
+                  1945. The Spitfire Association, founded by many of these men and women, remains
+                  strong to this day. The spirit of camaraderie, service and enjoyment of life is a
+                  hallmark of the Association, bound together by a love of this iconic aeroplane the
+                  Spitfire.
+                </p>
+                <p>
+                  The Spitfire Association has a &apos;living memorial&apos; being the Spitfire
+                  Memorial Defence Fund which is invested and the interest of which each year goes
+                  towards a competitive Scholarship and/or Fellowship for Australians doing
+                  &apos;research to benefit the Defence of Australia&apos;. In 2016, OCIUS was
+                  honoured to be awarded scholarships for several UNSW students to go towards the
+                  design and build of hardware for Bluebottle prototype Bruce. In 2017, Robert Dane
+                  was honoured to be awarded the Spitfire Fellowship for the development of the
+                  unique &apos;reel in the keel&apos; winch for Bluebottles, enabling a small USV to
+                  carry any number of sensors in a seaworthy way and deploy and retrieve that sensor
+                  to depths of 1 - 140m as desired.
+                </p>
+              </PaddingWrapper>
             </Col>
           </Row>
         </Container>
@@ -714,8 +735,8 @@ const AccentRowWrapper = styled.div`
   }
 `;
 
-const TeamMember = styled.div`
-  padding: 2em;
+const PaddingWrapper = styled.div`
+  padding: 1em;
 `;
 
 const People = ({ data }) => {
@@ -732,7 +753,7 @@ const People = ({ data }) => {
           <Container className="page-content">
             <Row className="primary-content">
               <Col xs={12} md={6} lg={6}>
-                <TeamMember>
+                <PaddingWrapper>
                   {data.MarkBethwaite && (
                     <Img fixed={data.MarkBethwaite.childImageSharp.fixed} alt="Mark Bethwaite AM" />
                   )}
@@ -755,10 +776,10 @@ const People = ({ data }) => {
                       and our team.
                     </p>
                   </div>
-                </TeamMember>
+                </PaddingWrapper>
               </Col>
               <Col xs={12} md={6} lg={6}>
-                <TeamMember>
+                <PaddingWrapper>
                   {data.RobertDane && (
                     <Img fixed={data.RobertDane.childImageSharp.fixed} alt="Robert Dane" />
                   )}
@@ -781,10 +802,10 @@ const People = ({ data }) => {
                       team of engineers.
                     </p>
                   </div>
-                </TeamMember>
+                </PaddingWrapper>
               </Col>
               <Col xs={12} md={6} lg={6}>
-                <TeamMember>
+                <PaddingWrapper>
                   {data.AndrewAitken && (
                     <Img fixed={data.AndrewAitken.childImageSharp.fixed} alt="Andrew Aitken" />
                   )}
@@ -801,10 +822,10 @@ const People = ({ data }) => {
                       agreements and commercial contracts.
                     </p>
                   </div>
-                </TeamMember>
+                </PaddingWrapper>
               </Col>
               <Col xs={12} md={6} lg={6}>
-                <TeamMember>
+                <PaddingWrapper>
                   {data.RickTurner && (
                     <Img fixed={data.RickTurner.childImageSharp.fixed} alt="Rick Turner" />
                   )}
@@ -825,7 +846,7 @@ const People = ({ data }) => {
                       manufacturing and innovation skill set.
                     </p>
                   </div>
-                </TeamMember>
+                </PaddingWrapper>
               </Col>
             </Row>
           </Container>
@@ -835,7 +856,7 @@ const People = ({ data }) => {
           <Container className="page-content">
             <Row className="primary-content">
               <Col xs={12} md={6} lg={4}>
-                <TeamMember>
+                <PaddingWrapper>
                   {data.LloydBreckenridge && (
                     <Img
                       fixed={data.LloydBreckenridge.childImageSharp.fixed}
@@ -860,10 +881,10 @@ const People = ({ data }) => {
                       Technology Ltd he feels he has found his dream job.
                     </p>
                   </div>
-                </TeamMember>
+                </PaddingWrapper>
               </Col>
               <Col xs={12} md={6} lg={4}>
-                <TeamMember>
+                <PaddingWrapper>
                   {data.PeterWlodarczyk && (
                     <Img
                       fixed={data.PeterWlodarczyk.childImageSharp.fixed}
@@ -890,10 +911,10 @@ const People = ({ data }) => {
                       research projects.
                     </p>
                   </div>
-                </TeamMember>
+                </PaddingWrapper>
               </Col>
               <Col xs={12} md={6} lg={4}>
-                <TeamMember>
+                <PaddingWrapper>
                   {data.ScottElliceFlint && (
                     <Img
                       fixed={data.ScottElliceFlint.childImageSharp.fixed}
@@ -913,7 +934,7 @@ const People = ({ data }) => {
                       since
                     </p>
                   </div>
-                </TeamMember>
+                </PaddingWrapper>
               </Col>
             </Row>
           </Container>
