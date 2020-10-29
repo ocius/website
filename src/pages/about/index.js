@@ -392,101 +392,123 @@ const Partners = ({ data }) => {
         </LogoBackgroundWrapper>
       </Segmented>
       <Segmented borderBottom="">
-        <Row className="primary-content">
-          <Col xs={12} md={6} lg={6}>
-            {data.OneTwoThree && (
-              <div className="centered">
-                <Img
-                  style={{ maxWidth: '100%' }}
-                  imgStyle={{ objectFit: 'contain' }}
-                  fixed={data.OneTwoThree.childImageSharp.fixed}
-                  alt="One2three Naval Architects"
-                />
-              </div>
-            )}
-            <p>
-              One2three naval architects designed our second prototype Bruce’s hull, keel, deck and
-              hatches. They are well known in the sailing world as the naval architects who have
-              multiple times re-designed “Wild Oats“ the record-breaking maxi and 8 times winner of
-              line honours in the Sydney to Hobart yacht race. They will review Bruce’s seakeeping
-              ability in a range of conditions to provide several improvements in design, tracking,
-              helm, payload bay &amp; performance for the next prototypes.
-            </p>
-          </Col>
-          <Col xs={12} md={6} lg={6}>
-            <div className="centered">
+        <Container className="page-content">
+          <Row className="primary-content">
+            <Col xs={12} md={4} lg={4}>
+              {data.OneTwoThree && (
+                <div className="centered">
+                  <Img
+                    style={{ maxWidth: '100%' }}
+                    imgStyle={{ objectFit: 'contain' }}
+                    fixed={data.OneTwoThree.childImageSharp.fixed}
+                    alt="One2three Naval Architects"
+                  />
+                </div>
+              )}
               <Heading level={3} size="medium">
-                Ulladulla Engineering and Fibreglass.
+                One2three Naval Architects
               </Heading>
-            </div>
-            <p>
-              Bruce Heggie and Graham ‘Butch’ Johnson are well known on the NSW South Coast as
-              suppliers of innovative machine and fibreglass products. They have supplied fibreglass
-              and mechanical engineering since the successful winning of the International boat race
-              in 1997. They have provided equipment for all solar sailor ferries, scale models and
-              prototypes including our Bluebottles&apos; steering mechanisms, patented rudder
-              flipper appendages and patented solarsails &amp; mechanisms.
-            </p>
-          </Col>
-        </Row>
-        <Row className="primary-content">
-          <Col xs={12} md={6} lg={6}>
-            {data.ClarkIP && (
-              <div className="centered">
-                <Img
-                  style={{ maxWidth: '100%' }}
-                  imgStyle={{ objectFit: 'contain' }}
-                  fixed={data.ClarkIP.childImageSharp.fixed}
-                  alt="Clark IP"
-                />
-              </div>
-            )}
-            <p>
-              David Clark is a registered Australian and NZ Patent Attorney with 25 years’
-              experience in mechanical engineering, mining, medical, software, digital signal
-              processing, electronic gaming, plastics, environmental, agricultural machinery and
-              more. He has been Solar Sailor’s and OCIUS&apos; patent attourney for over 15 years.
-              Prior to founding Clark IP, David successfully managed the patent practices at a major
-              first tier law firm and has a strong business acumen so he provides OCIUS with not
-              only technically accurate work but also commercially meaningful and relevant advice.
-            </p>
-            <p>
-              Being a keen sailor he brings a unique mix of practical experience and technical
-              expertise to OCIUS. We enjoy working collaboratively with David to translate our R&D
-              into meaningful and quality patents, registered designs and trademarks.
-            </p>
-          </Col>
-          <Col xs={12} md={6} lg={6}>
-            {data.Spitfire && (
-              <div className="centered">
-                <Img
-                  style={{ maxWidth: '100%' }}
-                  imgStyle={{ objectFit: 'contain' }}
-                  fixed={data.Spitfire.childImageSharp.fixed}
-                  alt="The Spitfire Association"
-                />
-              </div>
-            )}
-            <p>
-              During the Second World War Australian service men and women played a vital role in
-              every theatre of the conflict, leading to the successful Allied outcome in 1945. The
-              Spitfire Association, founded by many of these men and women, remains strong to this
-              day. The spirit of camaraderie, service and enjoyment of life is a hallmark of the
-              Association, bound together by a love of this iconic aeroplane the Spitfire.
-            </p>
-            <p>
-              The Spitfire Association has a &apos;living memorial&apos; being the Spitfire Memorial
-              Defence Fund which is invested and the interest of which each year goes towards a
-              competitive Scholarship and/or Fellowship for Australians doing &apos;research to
-              benefit the Defence of Australia&apos;. In 2016, OCIUS was honoured to be awarded
-              scholarships for several UNSW students to go towards the design and build of hardware
-              for Bluebottle prototype Bruce. In 2017, Robert Dane was honoured to be awarded the
-              Spitfire Fellowship for the development of the unique &apos;reel in the keel&apos;
-              winch for Bluebottles, enabling a small USV to carry any number of sensors in a
-              seaworthy way and deploy and retrieve that sensor to depths of 1 - 140m as desired.
-            </p>
-          </Col>
-        </Row>
+              <p>
+                One2three naval architects designed our second prototype Bruce’s hull, keel, deck
+                and hatches. They are well known in the sailing world as the naval architects who
+                have multiple times re-designed “Wild Oats“ the record-breaking maxi and 8 times
+                winner of line honours in the Sydney to Hobart yacht race. They will review Bruce’s
+                seakeeping ability in a range of conditions to provide several improvements in
+                design, tracking, helm, payload bay &amp; performance for the next prototypes.
+              </p>
+            </Col>
+            <Col xs={12} md={4} lg={4}>
+              {data.Ullandulla && (
+                <div className="centered">
+                  <Img
+                    style={{ maxWidth: '100%' }}
+                    imgStyle={{ objectFit: 'contain' }}
+                    fixed={data.Ullandulla.childImageSharp.fixed}
+                    alt="Ulladulla Engineering and Fibreglass"
+                  />
+                </div>
+              )}
+              <Heading level={3} size="medium">
+                Ulladulla Engineering and Fibreglass
+              </Heading>
+              <p>
+                Bruce Heggie and Graham ‘Butch’ Johnson are well known on the NSW South Coast as
+                suppliers of innovative machine and fibreglass products. They have supplied
+                fibreglass and mechanical engineering since the successful winning of the
+                International boat race in 1997. They have provided equipment for all solar sailor
+                ferries, scale models and prototypes including our Bluebottles&apos; steering
+                mechanisms, patented rudder flipper appendages and patented solarsails &amp;
+                mechanisms.
+              </p>
+            </Col>
+            <Col xs={12} md={4} lg={4}>
+              {data.ClarkIP && (
+                <div className="centered">
+                  <Img
+                    style={{ maxWidth: '100%' }}
+                    imgStyle={{ objectFit: 'contain' }}
+                    fixed={data.ClarkIP.childImageSharp.fixed}
+                    alt="Clark IP"
+                  />
+                </div>
+              )}
+              <Heading level={3} size="medium">
+                Clark IP
+              </Heading>
+              <p>
+                David Clark is a registered Australian and NZ Patent Attorney with 25 years’
+                experience in mechanical engineering, mining, medical, software, digital signal
+                processing, electronic gaming, plastics, environmental, agricultural machinery and
+                more. He has been Solar Sailor’s and OCIUS&apos; patent attourney for over 15 years.
+                Prior to founding Clark IP, David successfully managed the patent practices at a
+                major first tier law firm and has a strong business acumen so he provides OCIUS with
+                not only technically accurate work but also commercially meaningful and relevant
+                advice.
+              </p>
+              <p>
+                Being a keen sailor he brings a unique mix of practical experience and technical
+                expertise to OCIUS. We enjoy working collaboratively with David to translate our R&D
+                into meaningful and quality patents, registered designs and trademarks.
+              </p>
+            </Col>
+          </Row>
+          <Row className="primary-content">
+            <Col xs={12} md={4} lg={4}>
+              {data.Spitfire && (
+                <div className="centered">
+                  <Img
+                    style={{ maxWidth: '100%' }}
+                    imgStyle={{ objectFit: 'contain' }}
+                    fixed={data.Spitfire.childImageSharp.fixed}
+                    alt="The Spitfire Association"
+                  />
+                </div>
+              )}
+              <Heading level={3} size="medium">
+                The Spitfire Association
+              </Heading>
+              <p>
+                During the Second World War Australian service men and women played a vital role in
+                every theatre of the conflict, leading to the successful Allied outcome in 1945. The
+                Spitfire Association, founded by many of these men and women, remains strong to this
+                day. The spirit of camaraderie, service and enjoyment of life is a hallmark of the
+                Association, bound together by a love of this iconic aeroplane the Spitfire.
+              </p>
+              <p>
+                The Spitfire Association has a &apos;living memorial&apos; being the Spitfire
+                Memorial Defence Fund which is invested and the interest of which each year goes
+                towards a competitive Scholarship and/or Fellowship for Australians doing
+                &apos;research to benefit the Defence of Australia&apos;. In 2016, OCIUS was
+                honoured to be awarded scholarships for several UNSW students to go towards the
+                design and build of hardware for Bluebottle prototype Bruce. In 2017, Robert Dane
+                was honoured to be awarded the Spitfire Fellowship for the development of the unique
+                &apos;reel in the keel&apos; winch for Bluebottles, enabling a small USV to carry
+                any number of sensors in a seaworthy way and deploy and retrieve that sensor to
+                depths of 1 - 140m as desired.
+              </p>
+            </Col>
+          </Row>
+        </Container>
       </Segmented>
     </>
   );
@@ -1116,6 +1138,10 @@ export const query = graphql`
     }
 
     ClarkIP: file(relativePath: { eq: "pages/about/images/Clark-IP-Logo.png" }) {
+      ...imageSharpLogotype
+    }
+
+    Ullandulla: file(relativePath: { eq: "pages/about/images/ulladulla.png" }) {
       ...imageSharpLogotype
     }
 
