@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import mq from '../../common/mq';
 
 const NavItems = styled.ul`
-  margin: 0;
+  margin: 30px 0 0;
   padding: 0;
   display: flex;
   justify-content: space-between;

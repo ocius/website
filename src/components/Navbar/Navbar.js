@@ -17,7 +17,7 @@ const FlexContainer = styled(Container)`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 25px 0;
+  padding: 25px 0 15px;
 `;
 
 const Navbar = ({ children }) => (
