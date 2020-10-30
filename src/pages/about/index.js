@@ -246,6 +246,7 @@ const Partners = ({ data }) => {
                     Innovation Hub facilitates innovation activities from initial concept, through
                     prototyping and integrated testing.
                   </p>
+                  <SubHeading>www.innovationhub.defence.gov.au</SubHeading>
                   <Button
                     type="outbound"
                     href="https://www.innovationhub.defence.gov.au"
@@ -286,6 +287,7 @@ const Partners = ({ data }) => {
                     performance measures. OCIUS has been invited to apply for further Technology
                     Demonstrator funding under the Defence Innovation Hub program.
                   </p>
+                  <SubHeading>www.defence.gov.au</SubHeading>
                   <Button
                     type="outbound"
                     href="https://www.defence.gov.au"
@@ -320,6 +322,7 @@ const Partners = ({ data }) => {
                     Randwick Campus. Additionally, OCIUS hires multiple computer science and
                     mechatronics engineers from UNSW, and students from UNSW under intern programs.
                   </p>
+                  <SubHeading>www.unsw.edu.au</SubHeading>
                   <Button
                     type="outbound"
                     href="https://www.unsw.edu.au"
@@ -356,6 +359,7 @@ const Partners = ({ data }) => {
                     surveillance. Thales is the maritime lead for the Trusted Autonomous Systems
                     Defence Co-operative Research Centre.
                   </p>
+                  <SubHeading>www.thalesgroup.com</SubHeading>
                   <Button
                     type="outbound"
                     href="https://www.thalesgroup.com"
@@ -404,6 +408,7 @@ const Partners = ({ data }) => {
                     standard.
                   </p>
                   <p>The team at Van Munster Boats turn Ocius&apos; vision into a reality.</p>
+                  <SubHeading>www.vanmunsterboats.com</SubHeading>
                   <Button
                     type="outbound"
                     href="https://www.vanmunsterboats.com"
@@ -444,6 +449,7 @@ const Partners = ({ data }) => {
                     company with a firm commitment to provide a high-quality product with excellent
                     customer service.
                   </p>
+                  <SubHeading>www.steber.com.au</SubHeading>
                   <Button
                     type="outbound"
                     href="https://www.steber.com.au"
@@ -484,6 +490,7 @@ const Partners = ({ data }) => {
                   improvements in design, tracking, helm, payload bay &amp; performance for the next
                   prototypes.
                 </p>
+                <SubHeading>www.one2three.com.au</SubHeading>
                 <Button
                   type="outbound"
                   href="https://www.one2three.com.au"
@@ -519,6 +526,13 @@ const Partners = ({ data }) => {
                   mechanisms, patented rudder flipper appendages and patented solarsails &amp;
                   mechanisms.
                 </p>
+                <SubHeading>
+                  Unit 2/Lot 339 Aroo Road,
+                  <br />
+                  Ulladulla NSW 2539
+                  <br />
+                  (02) 4455 2574
+                </SubHeading>
               </PaddingWrapper>
             </Col>
             <Col xs={12} md={4} lg={4}>
@@ -551,6 +565,7 @@ const Partners = ({ data }) => {
                   expertise to OCIUS. We enjoy working collaboratively with David to translate our
                   R&amp;D into meaningful and quality patents, registered designs and trademarks.
                 </p>
+                <SubHeading>www.clarkip.com.au</SubHeading>
                 <Button
                   type="outbound"
                   href="https://www.clarkip.com.au"
@@ -599,6 +614,7 @@ const Partners = ({ data }) => {
                   carry any number of sensors in a seaworthy way and deploy and retrieve that sensor
                   to depths of 1 - 140m as desired.
                 </p>
+                <SubHeading>www.spitfireassociation.com</SubHeading>
                 <Button
                   type="outbound"
                   href="https://www.spitfireassociation.com"
