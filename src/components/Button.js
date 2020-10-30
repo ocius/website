@@ -6,9 +6,11 @@ import cn from 'classnames';
 import { Link as GatsbyLink } from 'gatsby';
 import { OutboundLink as GtagLink } from 'gatsby-plugin-gtag';
 import propTypes from '../common/propTypes';
+import font from '../common/font';
 
 const colors = {
   // Background colors
+  primaryBlue: '#4ab4e6',
   bgPrimary: '#ffffff',
   textPrimary: '#000000',
   borderPrimary: '#000000',
@@ -61,13 +63,14 @@ const ButtonStyles = css`
   appearance: none;
   backface-visibility: hidden;
   border: 0;
-  border-radius: 0;
+  border-radius: 5px;
   cursor: pointer;
   display: inline-flex;
   flex-shrink: 0;
   -moz-box-align: center;
   align-items: center;
-  font-weight: 600;
+  font-weight: 700;
+  font-family: ${font('bold')};
   line-height: 1;
   overflow: hidden;
   padding-left: ${30 / 13}em;
@@ -75,8 +78,6 @@ const ButtonStyles = css`
   text-align: center;
   text-decoration: none;
   text-overflow: ellipsis;
-  letter-spacing: 1px;
-  text-transform: uppercase;
   transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1) 0s;
   vertical-align: middle;
   white-space: nowrap;
@@ -102,7 +103,7 @@ const ButtonStyles = css`
     `,
 
     blue: css`
-      background-color: ${colors.accentSecondary};
+      background-color: ${colors.primaryBlue};
       color: ${colors.bgPrimary};
       box-shadow: 0 0 0 2px ${colors.borderPrimary} inset;
 
@@ -144,7 +145,7 @@ const ButtonStyles = css`
 
   ${switchProp('size', {
     tiny: css`
-      font-size: 9px;
+      font-size: 13px;
       padding-bottom: ${9 / 9}em;
       padding-left: ${19 / 9}em;
       padding-right: ${19 / 9}em;
@@ -152,13 +153,13 @@ const ButtonStyles = css`
     `,
 
     small: css`
-      font-size: 11px;
-      padding-bottom: ${15 / 11}em;
-      padding-top: ${18 / 11}em;
+      font-size: 16px;
+      padding-bottom: ${15 / 15}em;
+      padding-top: ${18 / 15}em;
     `,
 
     medium: css`
-      font-size: 13px;
+      font-size: 17px;
       padding-bottom: ${21 / 13}em;
       padding-top: ${26 / 13}em;
     `,

@@ -8,6 +8,7 @@ import { OutboundLink } from 'gatsby-plugin-gtag';
 import SEO from '../../components/SEO';
 import Layout from '../../layouts/Layout';
 import Container from '../../components/Container';
+import Button from '../../components/Button';
 import Heading from '../../components/Heading';
 import NavTabs from '../../components/Tabs/NavTabs';
 import NavTab from '../../components/Tabs/NavTab';
@@ -245,6 +246,15 @@ const Partners = ({ data }) => {
                     Innovation Hub facilitates innovation activities from initial concept, through
                     prototyping and integrated testing.
                   </p>
+                  <Button
+                    type="outbound"
+                    href="https://www.innovationhub.defence.gov.au"
+                    size="small"
+                    color="blue"
+                    customStyles={{ maxWidth: '100%' }}
+                  >
+                    Visit website
+                  </Button>
                 </PaddingWrapper>
               </Col>
               <Col xs={12} md={4} lg={4}>
@@ -276,6 +286,15 @@ const Partners = ({ data }) => {
                     performance measures. OCIUS has been invited to apply for further Technology
                     Demonstrator funding under the Defence Innovation Hub program.
                   </p>
+                  <Button
+                    type="outbound"
+                    href="https://www.defence.gov.au"
+                    size="small"
+                    color="blue"
+                    customStyles={{ maxWidth: '100%' }}
+                  >
+                    Visit website
+                  </Button>
                 </PaddingWrapper>
               </Col>
               <Col xs={12} md={4} lg={4}>
@@ -301,6 +320,15 @@ const Partners = ({ data }) => {
                     Randwick Campus. Additionally, OCIUS hires multiple computer science and
                     mechatronics engineers from UNSW, and students from UNSW under intern programs.
                   </p>
+                  <Button
+                    type="outbound"
+                    href="https://www.unsw.edu.au"
+                    size="small"
+                    color="blue"
+                    customStyles={{ maxWidth: '100%' }}
+                  >
+                    Visit website
+                  </Button>
                 </PaddingWrapper>
               </Col>
             </Row>
@@ -328,6 +356,15 @@ const Partners = ({ data }) => {
                     surveillance. Thales is the maritime lead for the Trusted Autonomous Systems
                     Defence Co-operative Research Centre.
                   </p>
+                  <Button
+                    type="outbound"
+                    href="https://www.thalesgroup.com"
+                    size="small"
+                    color="blue"
+                    customStyles={{ maxWidth: '100%' }}
+                  >
+                    Visit website
+                  </Button>
                 </PaddingWrapper>
               </Col>
               <Col xs={12} md={4} lg={4}>
@@ -367,6 +404,15 @@ const Partners = ({ data }) => {
                     standard.
                   </p>
                   <p>The team at Van Munster Boats turn Ocius&apos; vision into a reality.</p>
+                  <Button
+                    type="outbound"
+                    href="https://www.vanmunsterboats.com"
+                    size="small"
+                    color="blue"
+                    customStyles={{ maxWidth: '100%' }}
+                  >
+                    Visit website
+                  </Button>
                 </PaddingWrapper>
               </Col>
               <Col xs={12} md={4} lg={4}>
@@ -398,6 +444,15 @@ const Partners = ({ data }) => {
                     company with a firm commitment to provide a high-quality product with excellent
                     customer service.
                   </p>
+                  <Button
+                    type="outbound"
+                    href="https://www.steber.com.au"
+                    size="small"
+                    color="blue"
+                    customStyles={{ maxWidth: '100%' }}
+                  >
+                    Visit website
+                  </Button>
                 </PaddingWrapper>
               </Col>
             </Row>
@@ -429,6 +484,15 @@ const Partners = ({ data }) => {
                   improvements in design, tracking, helm, payload bay &amp; performance for the next
                   prototypes.
                 </p>
+                <Button
+                  type="outbound"
+                  href="https://www.one2three.com.au"
+                  size="small"
+                  color="blue"
+                  customStyles={{ maxWidth: '100%' }}
+                >
+                  Visit website
+                </Button>
               </PaddingWrapper>
             </Col>
             <Col xs={12} md={4} lg={4}>
@@ -487,6 +551,15 @@ const Partners = ({ data }) => {
                   expertise to OCIUS. We enjoy working collaboratively with David to translate our
                   R&amp;D into meaningful and quality patents, registered designs and trademarks.
                 </p>
+                <Button
+                  type="outbound"
+                  href="https://www.clarkip.com.au"
+                  size="small"
+                  color="blue"
+                  customStyles={{ maxWidth: '100%' }}
+                >
+                  Visit website
+                </Button>
               </PaddingWrapper>
             </Col>
           </Row>
@@ -526,6 +599,15 @@ const Partners = ({ data }) => {
                   carry any number of sensors in a seaworthy way and deploy and retrieve that sensor
                   to depths of 1 - 140m as desired.
                 </p>
+                <Button
+                  type="outbound"
+                  href="https://www.spitfireassociation.com"
+                  size="small"
+                  color="blue"
+                  customStyles={{ maxWidth: '100%' }}
+                >
+                  Visit website
+                </Button>
               </PaddingWrapper>
             </Col>
           </Row>
