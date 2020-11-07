@@ -9,7 +9,7 @@ import SocialLink from './SocialLink';
 import Container from './Container';
 
 const StyledFooter = styled.footer`
-  background-color: #125192;
+  background-color: #1f3643;
   width: 100%;
   clear: both;
   padding: 4.5em 0;
