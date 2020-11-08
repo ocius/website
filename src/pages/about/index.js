@@ -693,35 +693,41 @@ const OurStory = ({ data }) => {
           </Col>
         </Row>
         <Row className="primary-content">
+          <Col xs={12} md={12} lg={12}>
+            <blockquote>
+              In 2014, Solar Sailor changed its name to OCIUS (Latin for ‘fleet’) to reflect an
+              expansion of its patented technologies and a pivot in direction for the company.
+            </blockquote>
+          </Col>
+        </Row>
+        <Row className="primary-content">
           <Col xs={12} md={6} lg={6}>
-            <p>
-              Following an enquiry from the USA in 2007 for a &apos;platform that could go to sea
-              forever&apos;, the company began research into the development of unmanned
-              solar/wind/wave powered ocean vessels or autonomous unmanned surface vessels.
-              Initially, a 20-foot manned engineering development model (EDM) proved the &apos;speed
-              of advance&apos; in all conditions, adequate power, payload and persistence for a
-              sustainable platform go to sea for months.
-            </p>
+            <Heading level={3} size="medium">
+              Unmanned Surface Vessels
+            </Heading>
 
             <p>
-              In 2014, Solar Sailor changed its name to OCIUS (Latin for &apos;fleet&apos;) to
-              reflect an expansion of its patented technologies and a pivot in direction for the
-              company.
+              Following an enquiry from the USA in 2007 for a ‘platform that could go to sea
+              forever’, the company began research into the development of unmanned solar/wind/wave
+              powered ocean vessels or autonomous unmanned surface vessels. Initially, a 20-foot
+              manned engineering development model (EDM) proved ‘speed of advance’ in all
+              conditions, adequate power, payload and persistence for a sustainable platform to go
+              to sea for months.
             </p>
 
             <p>
               OCIUS built multiple scale models for tank and lake testing, culminating in the
-              building of the first 10&apos; prototype called &apos;Nemo&apos; (Latin for &apos;no
-              one&apos; ie unmanned) which provided significant proof of concept of a solar, wind
-              and wave powered USV carrying a significant payload.
+              building of the first 10’ prototype called ‘Nemo’ (Latin for ‘no one’ i.e. unmanned)
+              which provided significant proof of concept of a solar, wind and wave powered USV
+              carrying a significant payload.
             </p>
 
             <p>
-              Based on Nemo&apos;s development, in 2015, OCIUS was awarded a Capability Technology
+              Based on Nemo’s development, in 2015, OCIUS was awarded a Capability Technology
               Demonstrator (CTD) from Defence Science and Technology Group. This proved a
-              significant contract and OCIUS with our partner Thales developed an 18&apos; prototype
-              &apos;Bruce&apos; for Antisubmarine Warfare (ASW), which was demonstrated to the NAVY
-              in August 2017.
+              significant contract and OCIUS partnered with Thales to develop an 18’ prototype
+              ‘Bruce’ for Antisubmarine Warfare (ASW), which was successfully demonstrated to the
+              NAVY in August 2017.
             </p>
 
             <p>
@@ -731,16 +737,24 @@ const OurStory = ({ data }) => {
             </p>
 
             <p>
-              In November 2019 &apos;Bruce&apos; participated Autonomous Warrior War games in Jervis
-              Bay. Due to extreme weather, &apos;Bruce&apos; was often the only USV operating.
-              Ocius&apos; intelligent C2 system was used to control another Navy WAMV catamaran and
-              2 DSTG UUVs.
+              In November 2019 ‘Bruce’ participated Autonomous Warrior War games in Jervis Bay. Due
+              to extreme weather, ‘Bruce’ was often the only USV operating. Ocius’ intelligent C2
+              system was used to control another Navy WAMV catamaran and 2 DSTG UUVs.
             </p>
 
             <p>
               From May - June 2019, Ocius completed 6 week endurance and intelligent networking
-              trials in a designated AMSA approved &apos;box&apos; off the NSW Coast, successfully
-              completing the DIH contract 3 months ahead of schedule.
+              trials in a designated AMSA approved ‘box’ off the NSW Coast, successfully completing
+              the DIH contract 3 months ahead of schedule.
+            </p>
+
+            <p>
+              In 2020 Ocius was awarded a $5.5M contract to build 5 next generation Bluebottles
+              doing 3 different applications in 3 different areas of operations off WA and NT over
+              the next 2 years. Ocius is continuing its work with Thales, testing new Thales thin
+              line arrays deployed from the Bluebottle keel winch to significant and varying depths.
+              Ocius is also working with UNSW and the NSW Government Defence Innovation Network and
+              Charles Darwin University on various areas of Research and Development.{' '}
             </p>
 
             <p>
@@ -799,7 +813,6 @@ const OurStory = ({ data }) => {
               </li>
             </ul>
             <p>
-              <strong>Unmanned Surface Vessels</strong>
               <br />
               Following an enquiry from the USA in 2007 for a ‘self-sustaining platform at sea’,
               OCIUS began research into the development of unmanned solar/wind/wave and ballasted
