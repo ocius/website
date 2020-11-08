@@ -14,6 +14,7 @@ const backgroundColors = {
   twitter: '#1da1f2',
   whatsapp: '#28eb76',
   weChat: '#7bb32e',
+  linkedIn: '#4ab4e6',
 };
 
 const iconNames = {
@@ -25,6 +26,7 @@ const iconNames = {
   twitter: 'Twitter',
   whatsapp: 'Whatsapp',
   weChat: 'WeChat',
+  linkedIn: 'LinkedIn',
 };
 
 const sizeMultiplier = 2.5;
@@ -78,6 +80,7 @@ SocialIconButton.propTypes = {
     'twitter',
     'whatsapp',
     'weChat',
+    'linkedIn',
   ]).isRequired,
   href: PropTypes.string,
   onClick: PropTypes.func,

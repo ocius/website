@@ -14,6 +14,7 @@ import NavTabs from '../../components/Tabs/NavTabs';
 import NavTab from '../../components/Tabs/NavTab';
 import Segmented from '../../components/Segmented';
 import HeroBlock from '../../components/HeroBlock';
+import SocialIconButton from '../../components/SocialIconButton';
 // Import logo background
 import LogoBackground from './images/ocius-logo-transparent.png';
 
@@ -900,6 +901,10 @@ const People = ({ data }) => {
                       team of engineers.
                     </p>
                   </div>
+                  <SocialIconButton
+                    network="linkedIn"
+                    href="https://www.linkedin.com/in/robert-dane-3796a1/"
+                  />
                 </PaddingWrapper>
               </Col>
               <Col xs={12} md={6} lg={6}>
@@ -920,6 +925,10 @@ const People = ({ data }) => {
                       agreements and commercial contracts.
                     </p>
                   </div>
+                  <SocialIconButton
+                    network="linkedIn"
+                    href="https://www.linkedin.com/in/andrew-aitken-b199934b/"
+                  />
                 </PaddingWrapper>
               </Col>
               <Col xs={12} md={6} lg={6}>
@@ -979,6 +988,10 @@ const People = ({ data }) => {
                       Technology Ltd he feels he has found his dream job.
                     </p>
                   </div>
+                  <SocialIconButton
+                    network="linkedIn"
+                    href="https://www.linkedin.com/in/lloydbreckenridge/"
+                  />
                 </PaddingWrapper>
               </Col>
               <Col xs={12} md={6} lg={4}>
@@ -1009,6 +1022,10 @@ const People = ({ data }) => {
                       research projects.
                     </p>
                   </div>
+                  <SocialIconButton
+                    network="linkedIn"
+                    href="https://www.linkedin.com/in/peter-wlodarczyk/"
+                  />
                 </PaddingWrapper>
               </Col>
               <Col xs={12} md={6} lg={4}>
