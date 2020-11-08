@@ -793,86 +793,84 @@ const OurStory = ({ data }) => {
           </Col>
         </Row>
         <Row className="primary-content">
+          <Col xs={12} md={12} lg={12}>
+            <blockquote>
+              SolarSailor vessel was completed in one year and won the Australian Design Award of
+              the Year in 2001.
+            </blockquote>
+          </Col>
+        </Row>
+        <Row className="primary-content">
           <Col xs={12} md={6} lg={6}>
+            <Heading level={3} size="medium">
+              History of Commercial Ferries
+            </Heading>
+
             <p>
-              Ocius is continuing its work with Thales, testing a new Thales thin line array
-              deployed from the Bluebottle keel winch to significant and varying depths, which is
-              being demonstrated at Pacific 2019 Expo at Darling Harbour 8-10 October.
+              From 2000 -2012, Solar Sailor built 6 commercial solar sailor vessels providing
+              valuable experience to OCIUS on the commercial maritime and technical applications of
+              its technology as well as developing an extensive network of first-class suppliers and
+              partners.
             </p>
 
-            <strong>Commercial Ferries</strong>
             <p>
-              Solar Sailor built 6 commercial solar sailor vessels providing valuable experience to
-              OCIUS on the commercial maritime and technical applications of its technology as well
-              as developing an extensive network of first-class suppliers and partners.
+              <strong>“SolarSailor” (Australia).</strong> This vessel was completed in one year to
+              be ready for the Sydney Olympics and won the Australian Design Award of the Year in
+              2001.
             </p>
-            <ul>
-              <li>
-                <strong>
-                  <em>
-                    “<a href="/ck63.jpg">SolarSailor</a>
-                    ”&nbsp;
-                  </em>
-                </strong>
-                <strong>(Australia).&nbsp;</strong>This vessel was completed in one year and won the
-                Australian Design Award of the Year in 2001.
-              </li>
-              <li>
-                <strong>
-                  Hong Kong Jockey Club Charities Trust Project (Hong Kong).<em>&nbsp;</em>
-                </strong>
-                In July 2008, with oil at $140/ barrel, the Hong Kong Jockey Club ordered the
-                construction of four&nbsp;
-                <a href="/120116-b4-solarsails-outbound-at-sai-kung.jpg">commuter ferries</a>
-                &nbsp;to operate a service to transport players, staff and supplies from the
-                mainland at Sai Kung to the island of Kau Sai Chau where the HKJC has three 18 hole
-                golf courses. The ferries alternate two routes of five and seven mile round trips
-                with slow sectors at each end in a 20-minute cycle. Solar Sailor modelling predicted
-                substantial savings in fuel consumption compared to the previous ‘standard’ diesel
-                ferry service, as well as reductions in emissions.&nbsp; The boats in operation have
-                exceeded this since in independent tests since delivery and are still running 14
-                hours a day, seven days a week using half the fuel of the previous ferries.
-              </li>
-              <li>
-                <strong>
-                  Shanghai World Expo (China).<em>&nbsp;</em>
-                </strong>
-                After demonstration of the Sydney ferry to Suntech, a Wuxi-based solar panel
-                company, in 2009 OCIUS was awarded a contract to design, build and install a 12
-                -metre high SolarSail with software integration, on a 250 pax VIP river cruise boat
-                vessel,&nbsp;&nbsp;‘
-                <em>
-                  <GatsbyLink to="/blog/expo-ferry-rides-on-sun-and-wind-using-technology-based-on-the-evolution-of-insects-wings/">
-                    Suntech Guoshung
-                  </GatsbyLink>
-                </em>
-                ’ for the World Expo in Shanghai.
-              </li>
-            </ul>
             <p>
+              <strong>Hong Kong Jockey Club Charities Trust Project (Hong Kong).</strong>
+              In July 2008, with oil at $140/ barrel, the Hong Kong Jockey Club ordered the
+              construction of four commuter ferries to operate a service to transport players, staff
+              and supplies from the mainland at Sai Kung to the island of Kau Sai Chau where the
+              HKJC has three 18 hole golf courses. The ferries alternate two routes of five and
+              seven mile round trips with slow sectors at each end in a 20-minute cycle. Solar
+              Sailor modelling predicted substantial savings in fuel consumption compared to the
+              previous ‘standard’ diesel ferry service, as well as reductions in emissions. The
+              boats in operation have exceeded this since in independent tests since delivery and
+              are still running 14 hours a day, seven days a week using half the fuel of the
+              previous ferries.
+            </p>
+            <p>
+              <strong>Shanghai World Expo (China).</strong>
+              After demonstration of the Sydney ferry to Suntech, a Wuxi-based solar panel company,
+              in 2009 OCIUS was awarded a contract to design, build and install a 12 -metre high
+              SolarSail with software integration, on a 250 pax VIP river cruise boat vessel,&nbsp;‘
+              <GatsbyLink to="/blog/expo-ferry-rides-on-sun-and-wind-using-technology-based-on-the-evolution-of-insects-wings/">
+                Suntech Guoshung
+              </GatsbyLink>
+              ’ for the World Expo in Shanghai.
+            </p>
+            <p>
+              In 2014, Solar Sailor sold it’s commercial ferry the Sydney Solar Sailor and changed
+              its name to OCIUS (Latin for ‘fleet’) to reflect an expansion of its patented
+              technologies and a pivot in direction for the company from commercial hybrid ferries
+              to uncrewed vessels.
+            </p>
+          </Col>
+          <Col xs={12} md={6} lg={6}>
+            <figure>
+              {data.SolarSailor && (
+                <Img
+                  fluid={data.SolarSailor.childImageSharp.fluid}
+                  alt="Solar Sailor Vessel that was awarded Australian Design Award of the Year in 2001"
+                />
+              )}
               <br />
-              Following an enquiry from the USA in 2007 for a ‘self-sustaining platform at sea’,
-              OCIUS began research into the development of unmanned solar/wind/wave and ballasted
-              powered ocean vessels or autonomous unmanned surface vessels. Initially, a 20
-              foot&nbsp;manned engineering development model (EDM) proved the &apos;speed of
-              advance&apos; in all conditions, adequate power, payload and persistence for a
-              sustainable platform able to go to sea for months.
-            </p>
-            <p>
-              In 2014, Solar Sailor changed its name to OCIUS (Latin for &apos;fleet&apos;) to
-              reflect an expansion of its patented technologies including the solar sail. With
-              Ulladulla Fibreglass and Engineering, OCIUS built multiple scale models for tank and
-              lake testing, culminating in the building of the first 10&apos; prototype called
-              &apos;Nemo&apos; (Latin for &apos;no one&apos; ie unmanned) which provided significant
-              proof of concept of a solar, wind and wave powered USV carrying a significant payload.
-            </p>
-            <p>
-              Based on Nemo&apos;s development, in 2015 OCIUS was awarded a $3M Capability
-              Technology Demonstrator (CTD) from Defence Science and Technology Group. This proved a
-              significant contract and OCIUS with our partners developed an 18&apos; prototype
-              &apos;Bruce&apos; for Antisubmarine Warfare (ASW), which demonstrated to NAVY in
-              August 2017.
-            </p>
+              {data.SolarSails && (
+                <Img
+                  fluid={data.SolarSails.childImageSharp.fluid}
+                  alt="SolarSailor vessel that operates as a commercial ferry in Hong Kong"
+                />
+              )}
+              <figcaption>
+                <strong>Top:</strong> Solar Sailor Vessel that was awarded Australian Design Award
+                of the Year in 2001.
+                <br />
+                <strong>Above:</strong> SolarSailor vessel that operates as a commercial ferry in
+                Hong Kong.
+              </figcaption>
+            </figure>
           </Col>
         </Row>
       </Container>
@@ -1325,6 +1323,14 @@ export const query = graphql`
     }
 
     Award: file(relativePath: { eq: "pages/about/images/award-christopher-pyne.jpg" }) {
+      ...fluidImages
+    }
+
+    SolarSailor: file(relativePath: { eq: "pages/about/images/solar-sailor.jpg" }) {
+      ...fluidImages
+    }
+
+    SolarSails: file(relativePath: { eq: "pages/about/images/solarsails.jpg" }) {
       ...fluidImages
     }
 
