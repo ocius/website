@@ -680,16 +680,14 @@ const OurStory = ({ data }) => {
             </p>
           </Col>
           <Col xs={12} md={6} lg={6}>
-            <PaddingWrapper>
-              {data.Robert && (
-                <figure>
-                  <Img fixed={data.Robert.childImageSharp.fixed} alt="Robert Dane" />
-                  <figcaption>
-                    Above: Robert Dane CEO and founder of Ocius Technology pty ltd
-                  </figcaption>
-                </figure>
-              )}
-            </PaddingWrapper>
+            {data.Robert && (
+              <figure>
+                <Img fluid={data.Robert.childImageSharp.fluid} alt="Robert Dane" />
+                <figcaption>
+                  Above: Robert Dane CEO and founder of Ocius Technology pty ltd
+                </figcaption>
+              </figure>
+            )}
           </Col>
         </Row>
         <Row className="primary-content">
@@ -701,6 +699,42 @@ const OurStory = ({ data }) => {
           </Col>
         </Row>
         <Row className="primary-content">
+          <Col xs={12} md={6} lg={6}>
+            {data.Nemo && (
+              <figure>
+                <Img
+                  fluid={data.Nemo.childImageSharp.fluid}
+                  alt="Ocean research prototype vessel Nemo"
+                />
+                <figcaption>
+                  Ocean research prototype vessel ‘Nemo’ patrols Sydney Harbour Circa 2007.
+                </figcaption>
+              </figure>
+            )}
+            {data.OciusTeam && (
+              <figure>
+                <Img
+                  fluid={data.OciusTeam.childImageSharp.fluid}
+                  alt="Ocius Team wins Innovation award for BlueBottle Bruce 2017"
+                />
+                <figcaption>
+                  Ocius Team wins Innovation award for BlueBottle ‘Bruce’ 2017.
+                </figcaption>
+              </figure>
+            )}
+            {data.Award && (
+              <figure>
+                <Img
+                  fluid={data.Award.childImageSharp.fluid}
+                  alt="CEO Robert Dane accepts design award from the Honerable Christopher Pyne at APAC2017"
+                />
+                <figcaption>
+                  CEO Robert Dane accepts design award from the Honerable Christopher Pyne at
+                  APAC2017.
+                </figcaption>
+              </figure>
+            )}
+          </Col>
           <Col xs={12} md={6} lg={6}>
             <Heading level={3} size="medium">
               Unmanned Surface Vessels
@@ -754,9 +788,12 @@ const OurStory = ({ data }) => {
               the next 2 years. Ocius is continuing its work with Thales, testing new Thales thin
               line arrays deployed from the Bluebottle keel winch to significant and varying depths.
               Ocius is also working with UNSW and the NSW Government Defence Innovation Network and
-              Charles Darwin University on various areas of Research and Development.{' '}
+              Charles Darwin University on various areas of Research and Development.
             </p>
-
+          </Col>
+        </Row>
+        <Row className="primary-content">
+          <Col xs={12} md={6} lg={6}>
             <p>
               Ocius is continuing its work with Thales, testing a new Thales thin line array
               deployed from the Bluebottle keel winch to significant and varying depths, which is
@@ -1276,11 +1313,19 @@ export const query = graphql`
     }
 
     Robert: file(relativePath: { eq: "pages/about/images/robert.png" }) {
-      childImageSharp {
-        fixed(width: 508) {
-          ...GatsbyImageSharpFixed
-        }
-      }
+      ...fluidImages
+    }
+
+    Nemo: file(relativePath: { eq: "pages/about/images/nemo.jpg" }) {
+      ...fluidImages
+    }
+
+    OciusTeam: file(relativePath: { eq: "pages/about/images/ocius_team.jpg" }) {
+      ...fluidImages
+    }
+
+    Award: file(relativePath: { eq: "pages/about/images/award-christopher-pyne.jpg" }) {
+      ...fluidImages
     }
 
     AustralianGovernment: file(
@@ -1340,6 +1385,14 @@ export const query = graphql`
     childImageSharp {
       fixed(height: 200) {
         ...GatsbyImageSharpFixed
+      }
+    }
+  }
+
+  fragment fluidImages on File {
+    childImageSharp {
+      fluid(quality: 100, maxWidth: 800) {
+        ...GatsbyImageSharpFluid_withWebp
       }
     }
   }
