@@ -18,6 +18,10 @@ import SocialIconButton from '../../components/SocialIconButton';
 // Import logo background
 import LogoBackground from './images/ocius-logo-transparent.png';
 
+const PaddingWrapper = styled.div`
+  padding: 1em;
+`;
+
 const Awards = () => {
   return (
     <>
@@ -634,7 +638,7 @@ const Partners = ({ data }) => {
   );
 };
 
-const OurStory = () => {
+const OurStory = ({ data }) => {
   return (
     <>
       <SEO title="The Ocius Story" />
@@ -675,7 +679,18 @@ const OurStory = () => {
               Kau Sai Chau using half the fuel of the ferries they replaced.
             </p>
           </Col>
-          <Col xs={12} md={6} lg={6} />
+          <Col xs={12} md={6} lg={6}>
+            <PaddingWrapper>
+              {data.Robert && (
+                <figure>
+                  <Img fixed={data.Robert.childImageSharp.fixed} alt="Robert Dane" />
+                  <figcaption>
+                    Above: Robert Dane CEO and founder of Ocius Technology pty ltd
+                  </figcaption>
+                </figure>
+              )}
+            </PaddingWrapper>
+          </Col>
         </Row>
         <Row className="primary-content">
           <Col xs={12} md={6} lg={6}>
@@ -843,10 +858,6 @@ const AccentRowWrapper = styled.div`
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 70 500 60' preserveAspectRatio='none'%3E%3Crect x='0' y='0' width='500' height='500' style='stroke: none; fill: %23edf7fc;' /%3E%3Cpath d='M0,100 C150,200 350,0 500,100 L500,00 L0,0 Z' style='stroke: none; fill: %23ffffff;'%3E%3C/path%3E%3C/svg%3E");
     background-size: 100% 100%;
   }
-`;
-
-const PaddingWrapper = styled.div`
-  padding: 1em;
 `;
 
 const People = ({ data }) => {
@@ -1249,6 +1260,14 @@ export const query = graphql`
 
     RickTurner: file(relativePath: { eq: "pages/about/images/rick-turner.png" }) {
       ...imageSharpAvatar
+    }
+
+    Robert: file(relativePath: { eq: "pages/about/images/robert.png" }) {
+      childImageSharp {
+        fixed(width: 508) {
+          ...GatsbyImageSharpFixed
+        }
+      }
     }
 
     AustralianGovernment: file(
