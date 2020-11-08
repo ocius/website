@@ -61,21 +61,38 @@ blockquote, q {
 
 blockquote {
     margin: 1em 0;
-    padding: 0 0 0 4em;
-    color: #3c3c3c;
-    font-style: italic;
-    font-size: .9em;
+    padding: 2em 3em;
+    color: #6F7175;
+    border-top: 2px solid #60bde9;
+    border-bottom: 2px solid #60bde9;
+    font-family: 'Helvetica Neue LT Lite', Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-size: 2em;
+    text-align: center;
     font-weight: 300;
-    line-height: 160%;
+    line-height: 150%;
     position: relative;
 }
 
+
 blockquote::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: -25px;
+    width: 4.5em;
+    height: 2em;
+    background-color: white;
+    margin-left: -2em;
+}
+
+blockquote::after {
     content: "“";
+    color: #1f3643;
     font-size: 6em;
     position: absolute;
-    left: -5px;
-    top: 25px;
+    left: 50%;
+    top: 10px;
+    margin-left: -35px;
     font-weight: 500;
     font-family: 'Alegreya Sans';
 }
