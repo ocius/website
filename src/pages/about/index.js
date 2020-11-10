@@ -22,7 +22,7 @@ const PaddingWrapper = styled.div`
   padding: 1em;
 `;
 
-const Awards = () => {
+const Awards = ({ data }) => {
   return (
     <>
       <SEO title="Awards and Milestones" />
@@ -148,6 +148,16 @@ const Awards = () => {
                 </p>
               </Col>
               <Col xs={12} md={6} lg={6}>
+                {data.Awards && (
+                  <figure>
+                    <Img
+                      fluid={data.Awards.childImageSharp.fluid}
+                      alt="Robert Dane receiving the Intel Tech Award 2007"
+                    />
+                    <figcaption>Robert Dane receiving the Intel Tech Award 2007.</figcaption>
+                  </figure>
+                )}
+                <br />
                 <p>
                   <strong>2010</strong> – Delivery Shanghai Vessel for World Expo –{' '}
                   <em>‘Suntech Guoshung’</em>
@@ -1336,6 +1346,10 @@ export const query = graphql`
     }
 
     SolarSails: file(relativePath: { eq: "pages/about/images/solarsails.jpg" }) {
+      ...fluidImages
+    }
+
+    Awards: file(relativePath: { eq: "pages/about/images/awards.png" }) {
       ...fluidImages
     }
 
