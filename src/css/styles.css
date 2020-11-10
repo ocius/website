@@ -163,6 +163,10 @@ input[type="color"] {
     height: auto;
 }
 
+figure {
+    margin: 14px 0 28px;
+}
+
 figcaption {
     display: block;
     color: #9A9B9F;

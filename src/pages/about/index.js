@@ -834,23 +834,22 @@ const OurStory = ({ data }) => {
               2001.
             </p>
             <p>
-              <strong>Hong Kong Jockey Club Charities Trust Project (Hong Kong).</strong>
-              In July 2008, with oil at $140/ barrel, the Hong Kong Jockey Club ordered the
-              construction of four commuter ferries to operate a service to transport players, staff
-              and supplies from the mainland at Sai Kung to the island of Kau Sai Chau where the
-              HKJC has three 18 hole golf courses. The ferries alternate two routes of five and
-              seven mile round trips with slow sectors at each end in a 20-minute cycle. Solar
-              Sailor modelling predicted substantial savings in fuel consumption compared to the
-              previous ‘standard’ diesel ferry service, as well as reductions in emissions. The
-              boats in operation have exceeded this since in independent tests since delivery and
-              are still running 14 hours a day, seven days a week using half the fuel of the
-              previous ferries.
+              <strong>Hong Kong Jockey Club Charities Trust Project (Hong Kong).</strong> In July
+              2008, with oil at $140/ barrel, the Hong Kong Jockey Club ordered the construction of
+              four commuter ferries to operate a service to transport players, staff and supplies
+              from the mainland at Sai Kung to the island of Kau Sai Chau where the HKJC has three
+              18 hole golf courses. The ferries alternate two routes of five and seven mile round
+              trips with slow sectors at each end in a 20-minute cycle. Solar Sailor modelling
+              predicted substantial savings in fuel consumption compared to the previous ‘standard’
+              diesel ferry service, as well as reductions in emissions. The boats in operation have
+              exceeded this since in independent tests since delivery and are still running 14 hours
+              a day, seven days a week using half the fuel of the previous ferries.
             </p>
             <p>
-              <strong>Shanghai World Expo (China).</strong>
-              After demonstration of the Sydney ferry to Suntech, a Wuxi-based solar panel company,
-              in 2009 OCIUS was awarded a contract to design, build and install a 12 -metre high
-              SolarSail with software integration, on a 250 pax VIP river cruise boat vessel,&nbsp;‘
+              <strong>Shanghai World Expo (China).</strong> After demonstration of the Sydney ferry
+              to Suntech, a Wuxi-based solar panel company, in 2009 OCIUS was awarded a contract to
+              design, build and install a 12 -metre high SolarSail with software integration, on a
+              250 pax VIP river cruise boat vessel,&nbsp;‘
               <GatsbyLink to="/blog/expo-ferry-rides-on-sun-and-wind-using-technology-based-on-the-evolution-of-insects-wings/">
                 Suntech Guoshung
               </GatsbyLink>
