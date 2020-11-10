@@ -44,7 +44,9 @@ p {
 }
 
 strong, b {
+    font-family: 'Helvetica Neue LT Bold', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
     font-weight: bold;
+    color: #1F3643;
 }
 
 img {
