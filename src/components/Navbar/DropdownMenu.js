@@ -17,6 +17,19 @@ const Menu = styled.ul`
   z-index: 1000;
   text-align: left;
   list-style: none;
+
+  &:after {
+    content: '';
+    border: solid #cfc6c0;
+    border-width: 0 1px 1px 0;
+    display: inline-block;
+    padding: 6px;
+    transform: rotate(-135deg);
+    position: absolute;
+    top: -7px;
+    background: #fff;
+    left: 33px;
+  }
 `;
 
 const MenuItemStyle = css`
