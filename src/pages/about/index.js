@@ -3,6 +3,7 @@ import { graphql, Link as GatsbyLink } from 'gatsby';
 import { Router } from '@reach/router';
 import { Col, Row } from 'react-flexbox-grid';
 import Img from 'gatsby-image';
+import BackgroundImage from 'gatsby-background-image';
 import styled from 'styled-components';
 import { OutboundLink } from 'gatsby-plugin-gtag';
 import SEO from '../../components/SEO';
@@ -15,6 +16,8 @@ import NavTab from '../../components/Tabs/NavTab';
 import Segmented from '../../components/Segmented';
 import HeroBlock from '../../components/HeroBlock';
 import SocialIconButton from '../../components/SocialIconButton';
+import mq from '../../common/mq';
+
 // Import logo background
 import LogoBackground from './images/ocius-logo-transparent.png';
 
@@ -1115,6 +1118,16 @@ const FloatingImage = styled(Img)`
   z-index: 10;
 `;
 
+const NewsletterContainer = styled(BackgroundImage)`
+  color: #ffffff;
+  position: relative;
+  overflow: hidden;
+
+  @media (max-width: ${mq.max[720]}) {
+    max-height: 592px;
+  }
+`;
+
 export default ({ data }) => {
   return (
     <Layout>
@@ -1176,6 +1189,21 @@ export default ({ data }) => {
         <Awards path="about/awards" data={data} />
         <OurStory path="about/our-story" data={data} />
       </Router>
+      {data.NewsletterBackground && (
+        <NewsletterContainer Tag="section" fluid={data.NewsletterBackground.childImageSharp.fluid}>
+          <Container className="centered">
+            <Heading level={3} size="large" weight="thick" color="white">
+              Sign up to
+              <br />
+              our newsletter
+            </Heading>
+            <p>
+              By submitting your email address below, you agree to receive email updates on Ocius
+              Technologies and their latest projects.
+            </p>
+          </Container>
+        </NewsletterContainer>
+      )}
       <Container className="page-content">
         <Heading level={3} color="#36BBE7" size="large" weight="thick" underline="left">
           Contact Us
@@ -1228,6 +1256,14 @@ export default ({ data }) => {
 export const query = graphql`
   query getAboutPageData {
     HeroBackground: file(relativePath: { eq: "pages/about/images/ocius-about-bg.png" }) {
+      childImageSharp {
+        fluid(quality: 100, maxWidth: 1920) {
+          ...GatsbyImageSharpFluid_withWebp
+        }
+      }
+    }
+
+    NewsletterBackground: file(relativePath: { eq: "pages/about/images/newsletter-bg.jpg" }) {
       childImageSharp {
         fluid(quality: 100, maxWidth: 1920) {
           ...GatsbyImageSharpFluid_withWebp
