@@ -25,204 +25,207 @@ const Awards = ({ data }) => {
   return (
     <>
       <SEO title="Awards and Milestones" />
-      <Container className="page-content">
-        <Row>
-          <Col xs={12} md={12} lg={12}>
-            <header id="awards">
-              <Heading level={1} size="large" underline="center" className="centered">
-                Awards and Milestones
-              </Heading>
-            </header>
-            <Row>
-              <Col xs={12} md={6} lg={6}>
-                <p>
-                  Ocius has 20 years’ experience developing and commercialising patented technology.
-                </p>
-                <br />
-                <p>
-                  <strong>2020</strong> – AMSA approval to operate Bluebottles autonomously in the
-                  EEZ
-                </p>
-                <p>
-                  <strong>2020</strong> – $5.5M Australian Defence Innovation Hub contract to build
-                  5 Bluebottles for operations off WA and NT in 2021
-                </p>
-                <p>
-                  <strong>2019</strong> – Successful Seatrials of next-gen 18-foot Bluebottle USV
-                  off NSW coast, including participation in Summerfest on Jervis Bay
-                </p>
-                <p>
-                  <strong>2018</strong> – Success at{' '}
-                  <GatsbyLink to="/blog/ocius-demonstrates-man-portable-usv-prototype-at-aw18/">
-                    Autonomous Warrior Wargames
-                  </GatsbyLink>{' '}
-                  with control of two USVs, two UUVs, networking to UK MAPLE C2 system and
-                  operations in all conditions during three week wargames.
-                </p>
-                <p>
-                  <strong>2018</strong> – Awarded{' '}
-                  <GatsbyLink to="blog/defence-connect-ocius-technology-awarded-defence-innovation-hub-contract/">
-                    $1.6M DST Group Defence Innovation Hub contract
-                  </GatsbyLink>{' '}
-                  to demonstrate a network of intelligent persistent unmanned surface vessels
-                  Australian Maritime Innovation Award: Defence SME - With a $10 000 grant
-                </p>
-                <p>
-                  <strong>2017</strong> –{' '}
-                  <GatsbyLink to="/blog/ocius-wins-maritime-australian-defence-innovation-sme-award/">
-                    Australian Maritime Innovation Award: Defence SME Innovation Grant
-                  </GatsbyLink>
-                </p>
-                <p>
-                  <strong>2017</strong>&nbsp;– Robert Dane Spitfire Memorial Defence Fellowship
-                </p>
-                <p>
-                  <strong>2017</strong> – Successfully completed{' '}
-                  <a href="/150914OCIUSCTDPressRelease.pdf">
-                    Capability Technology Demonstrator (CTD) Contract
-                  </a>{' '}
-                  for development of Anti-Submarine Unmanned Surface Vessel (ASW-USV)
-                </p>
-                <p>
-                  <strong>2016</strong> – Finalist{' '}
-                  <OutboundLink href="http://wind-ship.org/en/innovation_awards_2016/">
-                    Wind Propulsion Technology User Award
-                  </OutboundLink>{' '}
-                  &amp;{' '}
-                  <GatsbyLink to="/blog/wind-propulsion-innovation-award/">
-                    Lifetime Achievement Award
-                  </GatsbyLink>
-                  , International Windship Association
-                </p>
-                <p>
-                  <strong>2016</strong> – Robert Dane, finalist in the{' '}
-                  <GatsbyLink to="/blog/wind-propulsion-innovation-award/">
-                    Lifetime Achievement Award
-                  </GatsbyLink>
-                  , International Windship Association
-                </p>
-                <p>
-                  <strong>2016</strong> – Awarded Spitfire Memorial Defence Scholarship
-                </p>
-                <p>
-                  <strong>2015</strong> – Build and successful testing of Bluebottle 10’ prototype
-                  ‘Nemo’
-                </p>
-                <p>
-                  <strong>2015</strong> –{' '}
-                  <GatsbyLink to="/blog/ocius-wins-australian-technology-competition-prize/">
-                    Winner Australian Technologies Competition
-                  </GatsbyLink>
-                  , Best Advanced Manufacturing
-                </p>
-                <p>
-                  <strong>2014</strong> – Sold 100 PAX <em>‘Sydney SolarSailor’</em> ferry to
-                  private buyer
-                </p>
-                <p>
-                  <strong>2013</strong> – Energy Globe Award for Sustainability
-                </p>
-                <p>
-                  <strong>2012</strong> – Robert Dane,&nbsp;
-                  <OutboundLink href="http://www.wwf.org.au/?4023/Winners-announced-for-the-WWF-Earth-Hour-Awards">
-                    WWF Future Makers Award
-                  </OutboundLink>
-                </p>
-                <p>
-                  <strong>2011</strong> – Delivery of the final vessel for HKJC –{' '}
-                  <em>‘Solar Albatross’</em>
-                </p>
-                <p>
-                  <strong>2010</strong> – Winner China Seatrade Award – Dalian
-                </p>
-                <p>
-                  <strong>2010</strong> – Delivery of third HK ferry – <em>‘Solar Eagle’</em>
-                </p>
-                <p>
-                  <strong>2010</strong> – Delivery of second HK ferry – <em>‘Solar Birdie’</em>
-                </p>
-                <p>
-                  <strong>2010</strong> – Winner Environmental Technology Award at the Sustainable
-                  Shipping Awards
-                </p>
-              </Col>
-              <Col xs={12} md={6} lg={6}>
-                {data.Awards && (
-                  <figure>
-                    <Img
-                      fluid={data.Awards.childImageSharp.fluid}
-                      alt="Robert Dane receiving the Intel Tech Award 2007"
-                    />
-                    <figcaption>Robert Dane receiving the Intel Tech Award 2007.</figcaption>
-                  </figure>
-                )}
-                <br />
-                <p>
-                  <strong>2010</strong> – Delivery Shanghai Vessel for World Expo –{' '}
-                  <em>‘Suntech Guoshung’</em>
-                </p>
-                <p>
-                  <strong>2010</strong> – Delivery first Hong Kong Jockey Club ferry –{' '}
-                  <em>‘Solar Golf’</em>
-                </p>
-                <p>
-                  <strong>2009</strong> – Contract Schneider Electric for SS HMP190/25 supply and
-                  warranty for Hong Kong boats
-                </p>
-                <p>
-                  <strong>2009</strong> – Italian Well Tech Design Award
-                </p>
-                <p>
-                  <strong>2007</strong> – Paper Australian Journal of Mechanical Engineers Vol 4 No
-                  2. ISSN: 1448-4846
-                </p>
-                <p>
-                  <strong>2007</strong> – Robert Dane{' '}
-                  <OutboundLink href="http://www.ecocitizenaustralia.com.au/solar-sailor-dr-robert-dane/">
-                    Intel Environment Laureate USA
-                  </OutboundLink>
-                </p>
-                <p>
-                  <strong>2004</strong> – United Nations Awards finalist - Green Ferries for Blue
-                  Highways
-                </p>
-                <p>
-                  <strong>2003</strong> – Contract Captain Cook Cruises to manage and operate the{' '}
-                  <em>‘Sydney SolarSailor’</em>
-                </p>
-                <p>
-                  <strong>2002</strong> – Hon Bob Hawke Chairman of the Company
-                </p>
-                <p>
-                  <strong>2002</strong> – Robert Dane SEDA NSW Green Ambassador
-                </p>
-                <p>
-                  <strong>2001</strong> – Winner Australian Design Award of the Year 2001
-                </p>
-                <p>
-                  <strong>2000</strong> – <em>‘Sydney SolarSailor’</em> launched
-                </p>
-                <p>
-                  <strong>2000</strong> – Winner International Cargo Handling Co-ordination
-                  Association Award
-                </p>
-                <p>
-                  <strong>2000</strong> – Winner Boating Industry Association of Australia Marine
-                  Awards
-                </p>
-                <p>
-                  <strong>1999</strong> – Winner Far Eastern Economic Review/Du Pont Asian
-                  Innovation Award
-                </p>
-                <p>
-                  <strong>1997</strong> – Winner Advanced Technology Boat Race Canberra –{' '}
-                  <em>‘Marjorie K’</em> prototype.
-                </p>
-              </Col>
-            </Row>
-          </Col>
-        </Row>
-      </Container>
+      <Segmented borderBottom="">
+        <Container className="page-content">
+          <Row>
+            <Col xs={12} md={12} lg={12}>
+              <header id="awards">
+                <Heading level={1} size="large" underline="center" className="centered">
+                  Awards and Milestones
+                </Heading>
+              </header>
+              <Row>
+                <Col xs={12} md={6} lg={6}>
+                  <p>
+                    Ocius has 20 years’ experience developing and commercialising patented
+                    technology.
+                  </p>
+                  <br />
+                  <p>
+                    <strong>2020</strong> – AMSA approval to operate Bluebottles autonomously in the
+                    EEZ
+                  </p>
+                  <p>
+                    <strong>2020</strong> – $5.5M Australian Defence Innovation Hub contract to
+                    build 5 Bluebottles for operations off WA and NT in 2021
+                  </p>
+                  <p>
+                    <strong>2019</strong> – Successful Seatrials of next-gen 18-foot Bluebottle USV
+                    off NSW coast, including participation in Summerfest on Jervis Bay
+                  </p>
+                  <p>
+                    <strong>2018</strong> – Success at{' '}
+                    <GatsbyLink to="/blog/ocius-demonstrates-man-portable-usv-prototype-at-aw18/">
+                      Autonomous Warrior Wargames
+                    </GatsbyLink>{' '}
+                    with control of two USVs, two UUVs, networking to UK MAPLE C2 system and
+                    operations in all conditions during three week wargames.
+                  </p>
+                  <p>
+                    <strong>2018</strong> – Awarded{' '}
+                    <GatsbyLink to="blog/defence-connect-ocius-technology-awarded-defence-innovation-hub-contract/">
+                      $1.6M DST Group Defence Innovation Hub contract
+                    </GatsbyLink>{' '}
+                    to demonstrate a network of intelligent persistent unmanned surface vessels
+                    Australian Maritime Innovation Award: Defence SME - With a $10 000 grant
+                  </p>
+                  <p>
+                    <strong>2017</strong> –{' '}
+                    <GatsbyLink to="/blog/ocius-wins-maritime-australian-defence-innovation-sme-award/">
+                      Australian Maritime Innovation Award: Defence SME Innovation Grant
+                    </GatsbyLink>
+                  </p>
+                  <p>
+                    <strong>2017</strong>&nbsp;– Robert Dane Spitfire Memorial Defence Fellowship
+                  </p>
+                  <p>
+                    <strong>2017</strong> – Successfully completed{' '}
+                    <a href="/150914OCIUSCTDPressRelease.pdf">
+                      Capability Technology Demonstrator (CTD) Contract
+                    </a>{' '}
+                    for development of Anti-Submarine Unmanned Surface Vessel (ASW-USV)
+                  </p>
+                  <p>
+                    <strong>2016</strong> – Finalist{' '}
+                    <OutboundLink href="http://wind-ship.org/en/innovation_awards_2016/">
+                      Wind Propulsion Technology User Award
+                    </OutboundLink>{' '}
+                    &amp;{' '}
+                    <GatsbyLink to="/blog/wind-propulsion-innovation-award/">
+                      Lifetime Achievement Award
+                    </GatsbyLink>
+                    , International Windship Association
+                  </p>
+                  <p>
+                    <strong>2016</strong> – Robert Dane, finalist in the{' '}
+                    <GatsbyLink to="/blog/wind-propulsion-innovation-award/">
+                      Lifetime Achievement Award
+                    </GatsbyLink>
+                    , International Windship Association
+                  </p>
+                  <p>
+                    <strong>2016</strong> – Awarded Spitfire Memorial Defence Scholarship
+                  </p>
+                  <p>
+                    <strong>2015</strong> – Build and successful testing of Bluebottle 10’ prototype
+                    ‘Nemo’
+                  </p>
+                  <p>
+                    <strong>2015</strong> –{' '}
+                    <GatsbyLink to="/blog/ocius-wins-australian-technology-competition-prize/">
+                      Winner Australian Technologies Competition
+                    </GatsbyLink>
+                    , Best Advanced Manufacturing
+                  </p>
+                  <p>
+                    <strong>2014</strong> – Sold 100 PAX <em>‘Sydney SolarSailor’</em> ferry to
+                    private buyer
+                  </p>
+                  <p>
+                    <strong>2013</strong> – Energy Globe Award for Sustainability
+                  </p>
+                  <p>
+                    <strong>2012</strong> – Robert Dane,&nbsp;
+                    <OutboundLink href="http://www.wwf.org.au/?4023/Winners-announced-for-the-WWF-Earth-Hour-Awards">
+                      WWF Future Makers Award
+                    </OutboundLink>
+                  </p>
+                  <p>
+                    <strong>2011</strong> – Delivery of the final vessel for HKJC –{' '}
+                    <em>‘Solar Albatross’</em>
+                  </p>
+                  <p>
+                    <strong>2010</strong> – Winner China Seatrade Award – Dalian
+                  </p>
+                  <p>
+                    <strong>2010</strong> – Delivery of third HK ferry – <em>‘Solar Eagle’</em>
+                  </p>
+                  <p>
+                    <strong>2010</strong> – Delivery of second HK ferry – <em>‘Solar Birdie’</em>
+                  </p>
+                  <p>
+                    <strong>2010</strong> – Winner Environmental Technology Award at the Sustainable
+                    Shipping Awards
+                  </p>
+                </Col>
+                <Col xs={12} md={6} lg={6}>
+                  {data.Awards && (
+                    <figure>
+                      <Img
+                        fluid={data.Awards.childImageSharp.fluid}
+                        alt="Robert Dane receiving the Intel Tech Award 2007"
+                      />
+                      <figcaption>Robert Dane receiving the Intel Tech Award 2007.</figcaption>
+                    </figure>
+                  )}
+                  <br />
+                  <p>
+                    <strong>2010</strong> – Delivery Shanghai Vessel for World Expo –{' '}
+                    <em>‘Suntech Guoshung’</em>
+                  </p>
+                  <p>
+                    <strong>2010</strong> – Delivery first Hong Kong Jockey Club ferry –{' '}
+                    <em>‘Solar Golf’</em>
+                  </p>
+                  <p>
+                    <strong>2009</strong> – Contract Schneider Electric for SS HMP190/25 supply and
+                    warranty for Hong Kong boats
+                  </p>
+                  <p>
+                    <strong>2009</strong> – Italian Well Tech Design Award
+                  </p>
+                  <p>
+                    <strong>2007</strong> – Paper Australian Journal of Mechanical Engineers Vol 4
+                    No 2. ISSN: 1448-4846
+                  </p>
+                  <p>
+                    <strong>2007</strong> – Robert Dane{' '}
+                    <OutboundLink href="http://www.ecocitizenaustralia.com.au/solar-sailor-dr-robert-dane/">
+                      Intel Environment Laureate USA
+                    </OutboundLink>
+                  </p>
+                  <p>
+                    <strong>2004</strong> – United Nations Awards finalist - Green Ferries for Blue
+                    Highways
+                  </p>
+                  <p>
+                    <strong>2003</strong> – Contract Captain Cook Cruises to manage and operate the{' '}
+                    <em>‘Sydney SolarSailor’</em>
+                  </p>
+                  <p>
+                    <strong>2002</strong> – Hon Bob Hawke Chairman of the Company
+                  </p>
+                  <p>
+                    <strong>2002</strong> – Robert Dane SEDA NSW Green Ambassador
+                  </p>
+                  <p>
+                    <strong>2001</strong> – Winner Australian Design Award of the Year 2001
+                  </p>
+                  <p>
+                    <strong>2000</strong> – <em>‘Sydney SolarSailor’</em> launched
+                  </p>
+                  <p>
+                    <strong>2000</strong> – Winner International Cargo Handling Co-ordination
+                    Association Award
+                  </p>
+                  <p>
+                    <strong>2000</strong> – Winner Boating Industry Association of Australia Marine
+                    Awards
+                  </p>
+                  <p>
+                    <strong>1999</strong> – Winner Far Eastern Economic Review/Du Pont Asian
+                    Innovation Award
+                  </p>
+                  <p>
+                    <strong>1997</strong> – Winner Advanced Technology Boat Race Canberra –{' '}
+                    <em>‘Marjorie K’</em> prototype.
+                  </p>
+                </Col>
+              </Row>
+            </Col>
+          </Row>
+        </Container>
+      </Segmented>
     </>
   );
 };
@@ -907,196 +910,190 @@ const People = ({ data }) => {
           The team behind Ocius
         </Heading>
       </header>
-      <Segmented borderBottom="">
-        <LogoBackgroundWrapper>
-          <Container className="page-content">
-            <Row className="primary-content">
-              <Col xs={12} md={6} lg={6}>
-                {data.MarkBethwaite && (
-                  <Img fixed={data.MarkBethwaite.childImageSharp.fixed} alt="Mark Bethwaite AM" />
-                )}
-                <Heading level={3} size="medium">
-                  Mark Bethwaite AM
-                </Heading>
-                <SubHeading>Chairman</SubHeading>
-                <div className="left-align">
-                  <p>
-                    Mark has a degree in Engineering and an MBA and has been CEO of two large mining
-                    companies and one of Australia’s leading industry associations. Mark represented
-                    Australia in sailing in the 1972 and 1976 Olympic Games and has won World
-                    Championships in three international classes. Mark was made a Member of the
-                    Order of Australia (AM) in early 2011 for services to industry and to sailing.
-                  </p>
-                  <p>
-                    Mark has been a shareholder in OCIUS since 2000. He In 2013 he ably took over as
-                    Chairman from the Hon Bob Hawke, adding his invaluable skills to the board and
-                    our team.
-                  </p>
-                </div>
-              </Col>
-              <Col xs={12} md={6} lg={6}>
-                {data.RobertDane && (
-                  <Img fixed={data.RobertDane.childImageSharp.fixed} alt="Robert Dane" />
-                )}
-                <Heading level={3} size="medium">
-                  Robert Dane
-                </Heading>
-                <SubHeading>Chief Executive Officer</SubHeading>
-                <div className="left-align">
-                  <p>
-                    Robert Dane is founder and CEO. In 1996, Robert, a passionate sailor and
-                    environmentalist, invented and patented the &apos;solarsail&apos; and designed
-                    the first &apos;solarsailor&apos; prototype which won the Advanced Technology
-                    Boat Race in Canberra in 1997.
-                  </p>
-                  <p>
-                    In 2001, the first commercial &apos;solarsailor&apos; ferry using the technology
-                    won the Australian Design Award of the Year. Robert is Intel Environment
-                    Laureate 2007, the WWF Future Maker 2012 and in 2017 Robert was awarded the
-                    Spitfire Memorial Defence Association Fellowship. He leads a great team of
-                    engineers.
-                  </p>
-                </div>
-                <SocialIconButton
-                  network="linkedIn"
-                  href="https://www.linkedin.com/in/robert-dane-3796a1/"
-                />
-              </Col>
-              <Col xs={12} md={6} lg={6}>
-                {data.AndrewAitken && (
-                  <Img fixed={data.AndrewAitken.childImageSharp.fixed} alt="Andrew Aitken" />
-                )}
-                <Heading level={3} size="medium">
-                  Andrew Aitken
-                </Heading>
-                <SubHeading>Director and Ocius Corporate Lawyer</SubHeading>
-                <div className="left-align">
-                  <p>
-                    Andrew practices principally in the areas of commercial law, succession and
-                    estate planning. Andrew provides advice on the sale and purchase of businesses
-                    and companies, corporate governance, risk management and a wide range of issues
-                    facing SME owners, including intellectual property, shareholder agreements and
-                    commercial contracts.
-                  </p>
-                </div>
-                <SocialIconButton
-                  network="linkedIn"
-                  href="https://www.linkedin.com/in/andrew-aitken-b199934b/"
-                />
-              </Col>
-              <Col xs={12} md={6} lg={6}>
-                {data.RickTurner && (
-                  <Img fixed={data.RickTurner.childImageSharp.fixed} alt="Rick Turner" />
-                )}
-                <Heading level={3} size="medium">
-                  Rick Turner
-                </Heading>
-                <SubHeading>Director</SubHeading>
-                <div className="left-align">
-                  <p>
-                    Rick has a strong background at operational and senior management level in the
-                    Australian manufacturing sector. He has identified, evaluated and successfully
-                    implemented new equipment and technology from Europe and the USA. He has also
-                    worked in Asia in GPS related industries.
-                  </p>
-                  <p>
-                    A shareholder in Solar Sailor then Ocius since 2011, Rick has been a consistent
-                    supporter of Ocius and brings to the Board his considerable manufacturing and
-                    innovation skill set.
-                  </p>
-                </div>
-              </Col>
-            </Row>
-          </Container>
-        </LogoBackgroundWrapper>
 
-        <AccentRowWrapper>
-          <Container className="page-content">
-            <Row className="primary-content">
-              <Col xs={12} md={6} lg={4}>
-                {data.LloydBreckenridge && (
-                  <Img
-                    fixed={data.LloydBreckenridge.childImageSharp.fixed}
-                    alt="Lloyd Breckenridge"
-                  />
-                )}
-                <Heading level={3} size="medium">
-                  Lloyd Breckenridge
-                </Heading>
-                <SubHeading>Chief Engineer</SubHeading>
-                <div className="left-align">
-                  <p>
-                    Lloyd has over 30 years of experience as a software engineer working in varied
-                    roles for both large organisations and small innovative companies in Australia
-                    and overseas. Lloyd was a key member of Team Thunder, who successfully competed
-                    in the 2014 UAV Challenge Outback Rescue competition run by the CSIRO and
-                    Queensland University of Technology.
-                  </p>
-                  <p>
-                    He has had considerable sailing experience having started sailing at an early
-                    age on Lake Macquarie. In his current role as Chief Engineer for OCIUS
-                    Technology Ltd he feels he has found his dream job.
-                  </p>
-                </div>
-                <SocialIconButton
-                  network="linkedIn"
-                  href="https://www.linkedin.com/in/lloydbreckenridge/"
+      <LogoBackgroundWrapper>
+        <Container className="page-content">
+          <Row className="primary-content">
+            <Col xs={12} md={6} lg={6}>
+              {data.MarkBethwaite && (
+                <Img fixed={data.MarkBethwaite.childImageSharp.fixed} alt="Mark Bethwaite AM" />
+              )}
+              <Heading level={3} size="medium">
+                Mark Bethwaite AM
+              </Heading>
+              <SubHeading>Chairman</SubHeading>
+              <div className="left-align">
+                <p>
+                  Mark has a degree in Engineering and an MBA and has been CEO of two large mining
+                  companies and one of Australia’s leading industry associations. Mark represented
+                  Australia in sailing in the 1972 and 1976 Olympic Games and has won World
+                  Championships in three international classes. Mark was made a Member of the Order
+                  of Australia (AM) in early 2011 for services to industry and to sailing.
+                </p>
+                <p>
+                  Mark has been a shareholder in OCIUS since 2000. He In 2013 he ably took over as
+                  Chairman from the Hon Bob Hawke, adding his invaluable skills to the board and our
+                  team.
+                </p>
+              </div>
+            </Col>
+            <Col xs={12} md={6} lg={6}>
+              {data.RobertDane && (
+                <Img fixed={data.RobertDane.childImageSharp.fixed} alt="Robert Dane" />
+              )}
+              <Heading level={3} size="medium">
+                Robert Dane
+              </Heading>
+              <SubHeading>Chief Executive Officer</SubHeading>
+              <div className="left-align">
+                <p>
+                  Robert Dane is founder and CEO. In 1996, Robert, a passionate sailor and
+                  environmentalist, invented and patented the &apos;solarsail&apos; and designed the
+                  first &apos;solarsailor&apos; prototype which won the Advanced Technology Boat
+                  Race in Canberra in 1997.
+                </p>
+                <p>
+                  In 2001, the first commercial &apos;solarsailor&apos; ferry using the technology
+                  won the Australian Design Award of the Year. Robert is Intel Environment Laureate
+                  2007, the WWF Future Maker 2012 and in 2017 Robert was awarded the Spitfire
+                  Memorial Defence Association Fellowship. He leads a great team of engineers.
+                </p>
+              </div>
+              <SocialIconButton
+                network="linkedIn"
+                href="https://www.linkedin.com/in/robert-dane-3796a1/"
+              />
+            </Col>
+            <Col xs={12} md={6} lg={6}>
+              {data.AndrewAitken && (
+                <Img fixed={data.AndrewAitken.childImageSharp.fixed} alt="Andrew Aitken" />
+              )}
+              <Heading level={3} size="medium">
+                Andrew Aitken
+              </Heading>
+              <SubHeading>Director and Ocius Corporate Lawyer</SubHeading>
+              <div className="left-align">
+                <p>
+                  Andrew practices principally in the areas of commercial law, succession and estate
+                  planning. Andrew provides advice on the sale and purchase of businesses and
+                  companies, corporate governance, risk management and a wide range of issues facing
+                  SME owners, including intellectual property, shareholder agreements and commercial
+                  contracts.
+                </p>
+              </div>
+              <SocialIconButton
+                network="linkedIn"
+                href="https://www.linkedin.com/in/andrew-aitken-b199934b/"
+              />
+            </Col>
+            <Col xs={12} md={6} lg={6}>
+              {data.RickTurner && (
+                <Img fixed={data.RickTurner.childImageSharp.fixed} alt="Rick Turner" />
+              )}
+              <Heading level={3} size="medium">
+                Rick Turner
+              </Heading>
+              <SubHeading>Director</SubHeading>
+              <div className="left-align">
+                <p>
+                  Rick has a strong background at operational and senior management level in the
+                  Australian manufacturing sector. He has identified, evaluated and successfully
+                  implemented new equipment and technology from Europe and the USA. He has also
+                  worked in Asia in GPS related industries.
+                </p>
+                <p>
+                  A shareholder in Solar Sailor then Ocius since 2011, Rick has been a consistent
+                  supporter of Ocius and brings to the Board his considerable manufacturing and
+                  innovation skill set.
+                </p>
+              </div>
+            </Col>
+          </Row>
+        </Container>
+      </LogoBackgroundWrapper>
+
+      <AccentRowWrapper>
+        <Container className="page-content">
+          <Row className="primary-content">
+            <Col xs={12} md={6} lg={4}>
+              {data.LloydBreckenridge && (
+                <Img
+                  fixed={data.LloydBreckenridge.childImageSharp.fixed}
+                  alt="Lloyd Breckenridge"
                 />
-              </Col>
-              <Col xs={12} md={6} lg={4}>
-                {data.PeterWlodarczyk && (
-                  <Img fixed={data.PeterWlodarczyk.childImageSharp.fixed} alt="Peter Wlodarczyk" />
-                )}
-                <Heading level={3} size="medium">
-                  Peter Wlodarczyk
-                </Heading>
-                <SubHeading>Lead Engineer</SubHeading>
-                <div className="left-align">
-                  <p>
-                    Graduating from the University of Newcastle with a BE (Computer Engineering),
-                    Peter has over 20 years experience as a computer systems/software engineer in
-                    defense, IT and medical device industries. For the last 15 years, Peter has
-                    worked for ResMed as a software engineer, system engineer and researcher,
-                    innovating new products for sleep apnea and respiratory failure.
-                  </p>
-                  <p>
-                    He has developed a keen interest in UAVs, working with Lloyd in a team that
-                    successfully completed the 2014 UAV Challenge Outback Rescue competition run by
-                    the CSIRO and Queensland University of Technology. Peter’s current role is Ocius
-                    Lead Software Engineer Peter running a team of software engineers and research
-                    projects.
-                  </p>
-                </div>
-                <SocialIconButton
-                  network="linkedIn"
-                  href="https://www.linkedin.com/in/peter-wlodarczyk/"
-                />
-              </Col>
-              <Col xs={12} md={6} lg={4}>
-                {data.ScottElliceFlint && (
-                  <Img
-                    fixed={data.ScottElliceFlint.childImageSharp.fixed}
-                    alt="Scott Ellice-Flint"
-                  />
-                )}
-                <Heading level={3} size="medium">
-                  Scott Ellice-Flint
-                </Heading>
-                <SubHeading>Group Accountant &amp; Company Secretary</SubHeading>
-                <div className="left-align">
-                  <p>
-                    Scott has over 40 years experience as a Chartered Accountant. As principal of
-                    his own practice, Scott has focused on accounting, taxation and business
-                    development advice for small to medium enterprises ensuring compliance and
-                    commercial outcomes. Scott has been Ocius Gp Accountant and Company Secretary
-                    since
-                  </p>
-                </div>
-              </Col>
-            </Row>
-          </Container>
-        </AccentRowWrapper>
-      </Segmented>
+              )}
+              <Heading level={3} size="medium">
+                Lloyd Breckenridge
+              </Heading>
+              <SubHeading>Chief Engineer</SubHeading>
+              <div className="left-align">
+                <p>
+                  Lloyd has over 30 years of experience as a software engineer working in varied
+                  roles for both large organisations and small innovative companies in Australia and
+                  overseas. Lloyd was a key member of Team Thunder, who successfully competed in the
+                  2014 UAV Challenge Outback Rescue competition run by the CSIRO and Queensland
+                  University of Technology.
+                </p>
+                <p>
+                  He has had considerable sailing experience having started sailing at an early age
+                  on Lake Macquarie. In his current role as Chief Engineer for OCIUS Technology Ltd
+                  he feels he has found his dream job.
+                </p>
+              </div>
+              <SocialIconButton
+                network="linkedIn"
+                href="https://www.linkedin.com/in/lloydbreckenridge/"
+              />
+            </Col>
+            <Col xs={12} md={6} lg={4}>
+              {data.PeterWlodarczyk && (
+                <Img fixed={data.PeterWlodarczyk.childImageSharp.fixed} alt="Peter Wlodarczyk" />
+              )}
+              <Heading level={3} size="medium">
+                Peter Wlodarczyk
+              </Heading>
+              <SubHeading>Lead Engineer</SubHeading>
+              <div className="left-align">
+                <p>
+                  Graduating from the University of Newcastle with a BE (Computer Engineering),
+                  Peter has over 20 years experience as a computer systems/software engineer in
+                  defense, IT and medical device industries. For the last 15 years, Peter has worked
+                  for ResMed as a software engineer, system engineer and researcher, innovating new
+                  products for sleep apnea and respiratory failure.
+                </p>
+                <p>
+                  He has developed a keen interest in UAVs, working with Lloyd in a team that
+                  successfully completed the 2014 UAV Challenge Outback Rescue competition run by
+                  the CSIRO and Queensland University of Technology. Peter’s current role is Ocius
+                  Lead Software Engineer Peter running a team of software engineers and research
+                  projects.
+                </p>
+              </div>
+              <SocialIconButton
+                network="linkedIn"
+                href="https://www.linkedin.com/in/peter-wlodarczyk/"
+              />
+            </Col>
+            <Col xs={12} md={6} lg={4}>
+              {data.ScottElliceFlint && (
+                <Img fixed={data.ScottElliceFlint.childImageSharp.fixed} alt="Scott Ellice-Flint" />
+              )}
+              <Heading level={3} size="medium">
+                Scott Ellice-Flint
+              </Heading>
+              <SubHeading>Group Accountant &amp; Company Secretary</SubHeading>
+              <div className="left-align">
+                <p>
+                  Scott has over 40 years experience as a Chartered Accountant. As principal of his
+                  own practice, Scott has focused on accounting, taxation and business development
+                  advice for small to medium enterprises ensuring compliance and commercial
+                  outcomes. Scott has been Ocius Gp Accountant and Company Secretary since
+                </p>
+              </div>
+            </Col>
+          </Row>
+        </Container>
+      </AccentRowWrapper>
     </>
   );
 };
@@ -1122,9 +1119,12 @@ const NewsletterContainer = styled(BackgroundImage)`
   color: #ffffff;
   position: relative;
   overflow: hidden;
+  padding: 3.2rem 0;
+  background-attachment: fixed;
 
   @media (max-width: ${mq.max[720]}) {
     max-height: 592px;
+    background-attachment: scroll;
   }
 `;
 
@@ -1189,66 +1189,77 @@ export default ({ data }) => {
         <Awards path="about/awards" data={data} />
         <OurStory path="about/our-story" data={data} />
       </Router>
-      {data.NewsletterBackground && (
-        <NewsletterContainer Tag="section" fluid={data.NewsletterBackground.childImageSharp.fluid}>
-          <Container className="centered">
-            <Heading level={3} size="large" weight="thick" color="white">
-              Sign up to
-              <br />
-              our newsletter
-            </Heading>
-            <p>
-              By submitting your email address below, you agree to receive email updates on Ocius
-              Technologies and their latest projects.
-            </p>
-          </Container>
-        </NewsletterContainer>
-      )}
-      <Container className="page-content">
-        <Heading level={3} color="#36BBE7" size="large" weight="thick" underline="left">
-          Contact Us
-        </Heading>
-        <Row>
-          <Col xs={12} md={3} lg={3}>
-            <p>
-              <strong>Ocius Headquarters</strong>
-              <br />
-              Building R13
-              <br />
-              UNSW Randwick Campus
-              <br />
-              22 King St, Randwick NSW 2031
-            </p>
-          </Col>
-          <Col xs={12} md={3} lg={3}>
-            <p>
-              <strong>Postal Address</strong>
-              <br />
-              Mail PO Box 4304 Castlecrag
-              <br />
-              NSW 2068
-            </p>
-          </Col>
-          <Col xs={12} md={3} lg={3}>
-            <p>
-              <strong>General Enquiries:</strong>
-              <br />
-              +61 2 9924 6400
-              <br />
-              contact@ocius.com.au
-            </p>
-          </Col>
-          <Col xs={12} md={3} lg={3}>
-            <p>
-              <strong>Open Hours:</strong>
-              <br />
-              Mon - Fri: 9am - 5pm
-              <br />
-              Sat - Sun: Closed
-            </p>
-          </Col>
-        </Row>
-      </Container>
+      <Segmented borderBottom="">
+        {data.NewsletterBackground && (
+          <NewsletterContainer
+            Tag="section"
+            fluid={data.NewsletterBackground.childImageSharp.fluid}
+          >
+            <Container className="centered">
+              <Row>
+                <Col xs={12} md={6} mdOffset={3}>
+                  <Heading level={3} size="large" weight="thick" color="white">
+                    Sign up to
+                    <br />
+                    our newsletter
+                  </Heading>
+                  <p>
+                    By submitting your email address below, you agree to receive email updates on
+                    Ocius Technologies and their latest projects.
+                  </p>
+                </Col>
+              </Row>
+            </Container>
+          </NewsletterContainer>
+        )}
+      </Segmented>
+      <Segmented borderBottom="">
+        <Container className="page-content">
+          <Heading level={3} color="#36BBE7" size="large" weight="thick" underline="left">
+            Contact Us
+          </Heading>
+          <Row>
+            <Col xs={12} md={3} lg={3}>
+              <p>
+                <strong>Ocius Headquarters</strong>
+                <br />
+                Building R13
+                <br />
+                UNSW Randwick Campus
+                <br />
+                22 King St, Randwick NSW 2031
+              </p>
+            </Col>
+            <Col xs={12} md={3} lg={3}>
+              <p>
+                <strong>Postal Address</strong>
+                <br />
+                Mail PO Box 4304 Castlecrag
+                <br />
+                NSW 2068
+              </p>
+            </Col>
+            <Col xs={12} md={3} lg={3}>
+              <p>
+                <strong>General Enquiries:</strong>
+                <br />
+                +61 2 9924 6400
+                <br />
+                contact@ocius.com.au
+              </p>
+            </Col>
+            <Col xs={12} md={3} lg={3}>
+              <p>
+                <strong>Open Hours:</strong>
+                <br />
+                Mon - Fri: 9am - 5pm
+                <br />
+                Sat - Sun: Closed
+              </p>
+            </Col>
+          </Row>
+        </Container>
+      </Segmented>
     </Layout>
   );
 };
