@@ -1154,7 +1154,7 @@ export default ({ data }) => {
                 Our Mission
               </Heading>
               <p>
-                To develop innovative, autonomous solutions for persistent, maritime surveillance.
+                To develop innovative, autonomous solutions for persistent maritime surveillance.
               </p>
             </Col>
           </Row>
