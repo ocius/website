@@ -6,7 +6,7 @@ import { Col, Row } from 'react-flexbox-grid';
 import BackgroundImage from 'gatsby-background-image';
 import addToMailchimp from 'gatsby-plugin-mailchimp';
 import Container from './Container';
-import HeadingComponent from './Heading';
+import Heading from './Heading';
 import Button from './Button';
 import { Feedback, Alert, FormField } from './Form';
 import mq from '../common/mq';
@@ -62,10 +62,6 @@ const FormGroup = styled.div`
       max-width: 66.66667%;
     }
   }
-`;
-
-const Heading = styled(HeadingComponent)`
-  margin-top: 0;
 `;
 
 const NewsletterForm = () => {
