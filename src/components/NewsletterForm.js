@@ -49,7 +49,7 @@ const FormGroup = styled.div`
 
   @media (min-width: 576px) {
     [class*='form-col'] + [class*='form-col'] {
-      padding: 0 0 0 1em;
+      padding: 0;
     }
 
     .form-col-4 {

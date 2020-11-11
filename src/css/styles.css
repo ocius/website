@@ -139,14 +139,14 @@ input[type="tel"],
 input[type="image"],
 input[type="color"] {
     display: block;
-    padding: 0.5em;
+    padding: 1em 2.111111111111111em;
     vertical-align: middle;
     border: 1px solid #fff;
     background-color: #efefef;
     outline: none;
     font-family: inherit;
-    font-size: 1em;
-    border-radius: 0;
+    font-size: 13px;
+    border-radius: 5px;
     -webkit-appearance: none;
     -moz-appearance: none;
     box-sizing: border-box;
