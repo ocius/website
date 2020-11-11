@@ -29,6 +29,7 @@ const Menu = styled.ul`
     top: -7px;
     background: #fff;
     left: 33px;
+    z-index: -1;
   }
 `;
 
