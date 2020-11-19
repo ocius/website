@@ -5,8 +5,9 @@ import mq from '../../common/mq';
 
 const NavItems = styled.ul`
   margin: 0;
-  padding: 0;
+  padding: 0 10%;
   display: flex;
+  justify-content: space-between;
   width: 100%;
   list-style: outside none none;
 

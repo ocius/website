@@ -7,9 +7,10 @@ import iconFromString from '../common/iconFromString';
 
 const backgroundColors = {
   email: '#2c3643',
-  facebook: '#3a5999',
+  facebook: '#4ab4e6',
   facebookMessenger: '#1472fb',
   pinterest: '#cb2027',
+  instagram: '#4ab4e6',
   reddit: '#fc4220',
   twitter: '#1da1f2',
   whatsapp: '#28eb76',
@@ -22,6 +23,7 @@ const iconNames = {
   facebook: 'Facebook',
   facebookMessenger: 'FacebookMessenger',
   pinterest: 'Pinterest',
+  instagram: 'Instagram',
   reddit: 'Reddit',
   twitter: 'Twitter',
   whatsapp: 'Whatsapp',
@@ -76,6 +78,7 @@ SocialIconButton.propTypes = {
     'facebook',
     'facebookMessenger',
     'pinterest',
+    'instagram',
     'reddit',
     'twitter',
     'whatsapp',

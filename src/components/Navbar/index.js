@@ -7,13 +7,19 @@ import NavbarItem from './NavbarItem';
 import NavbarDropdown from './NavbarDropdown';
 import DropdownMenu from './DropdownMenu';
 import MobileNavigation from './MobileNavigation';
+import SocialIconButton from '../SocialIconButton';
 import Button from '../Button';
 
-const NavbarContainer = styled.div`
+const NavbarContainer = styled.section`
   display: flex;
   flex-direction: row;
   width: 100%;
   margin: 30px 0 0;
+`;
+
+const SocialLinks = styled.div`
+  display: flex;
+  flex-wrap: nowrap;
 `;
 
 const navitems = [
@@ -26,6 +32,14 @@ export default () => (
     <SiteLogo />
     <MobileNavigation />
     <NavbarContainer>
+      <SocialLinks>
+        <SocialIconButton network="facebook" href="https://www.facebook.com/ociustechnology" />
+        <SocialIconButton network="instagram" href="https://www.instagram.com/ociustechnology/" />
+        <SocialIconButton
+          network="linkedIn"
+          href="https://www.linkedin.com/company/ocius-technology-limited"
+        />
+      </SocialLinks>
       <NavbarItems>
         <NavbarDropdown name="About" link="/about">
           <DropdownMenu
