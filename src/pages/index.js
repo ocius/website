@@ -60,7 +60,7 @@ export default ({ data }) => {
               {data.Computer && <Img fluid={data.Computer.childImageSharp.fluid} alt="Radar" />}
             </Col>
             <Col xs={12} md={6} lg={6}>
-              <Heading level={3} color="white" size="large" weight="thick" underline="center">
+              <Heading level={3} color="white" size="large" weight="thick" underline="left">
                 A new generation
                 <br />
                 Of autonomous
