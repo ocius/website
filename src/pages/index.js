@@ -3,6 +3,7 @@ import { graphql } from 'gatsby';
 import Loadable from '@loadable/component';
 import { Row, Col } from 'react-flexbox-grid';
 import styled from 'styled-components';
+import Img from 'gatsby-image';
 import Layout from '../layouts/Layout';
 import SEO from '../components/SEO';
 import Container from '../components/Container';
@@ -55,8 +56,10 @@ export default ({ data }) => {
             </Col>
           </Row>
           <Row>
-            <Col xs={12} md={4} lg={4} mdOffset={2} />
-            <Col xs={12} md={4} lg={4} mdOffset={1}>
+            <Col xs={12} md={6} lg={6}>
+              {data.Computer && <Img fluid={data.Computer.childImageSharp.fluid} alt="Radar" />}
+            </Col>
+            <Col xs={12} md={6} lg={6}>
               <Heading level={3} color="white" size="large" weight="thick" underline="center">
                 A new generation
                 <br />
@@ -167,6 +170,14 @@ export const query = graphql`
   query getHomepageImages {
     HeroBackground: file(relativePath: { eq: "images/ocius-bg.png" }) {
       ...imageSharpHeroBackground
+    }
+
+    Computer: file(relativePath: { eq: "images/computer.png" }) {
+      childImageSharp {
+        fluid(quality: 100, maxWidth: 800) {
+          ...GatsbyImageSharpFluid_withWebp
+        }
+      }
     }
 
     ScienceTile: file(relativePath: { eq: "images/Science-Home-Tile-Background.jpg" }) {
