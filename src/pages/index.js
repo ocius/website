@@ -10,8 +10,6 @@ import Segmented from '../components/Segmented';
 import Button from '../components/Button';
 import HeroBlock from '../components/HeroBlock';
 import Heading from '../components/Heading';
-import { add, gutter, span } from '../common/grid';
-import mq from '../common/mq';
 import Icon from '../components/Icon';
 
 // Lazy load all the components
@@ -22,28 +20,14 @@ const ArticlePreviewBlock = Loadable(() => import(`../components/ArticlePreviewB
 const RecentNews = Loadable(() => import(`../components/RecentNews`));
 const Sidebar = Loadable(() => import(`../components/Sidebar`));
 
-const gutterWidth = 30;
-
-const Callout = styled.div`
-  top: 10%;
-  left: 0;
-  right: 0;
-  position: absolute;
-  text-align: center;
-
-  @media (max-width: ${mq.max[480]}) {
-    top: 6%;
-    padding: 0 ${gutterWidth / 2}px;
-  }
-
-  @media (min-width: ${mq.min[1024]}) {
-    /*margin-right: ${add([span(2), gutter()])};*/
-    width: ${span(12)};
-  }
+const HeroSubheading = styled.p`
+  color: #2d4355;
+  font-size: 2em;
+  line-height: 1.2;
 `;
 
-const StyledHeading = styled(Heading)`
-  text-shadow: 2px 2px rgba(0, 0, 0, 0.3);
+const Spacing = styled.div`
+  height: ${(props) => props.$value || '50px'};
 `;
 
 export default ({ data }) => {
@@ -53,20 +37,44 @@ export default ({ data }) => {
         title="OCIUS - Satellites of the Sea"
         description="OCIUS Technology's Unmanned Surface Vessels (USVs) provide innovative autonomous solutions for persistent maritime surveillance"
       />
-      <Segmented borderBottom="">
-        {data.HeroBackground && (
-          <HeroBlock image={data.HeroBackground.childImageSharp.fluid} gradient="top">
-            <Callout className="HeroBlock-callout">
-              <StyledHeading level={1} size="huge" weight="thick">
-                Innovative Autonomous Solutions
-              </StyledHeading>
-              <StyledHeading level={2} size="medium" weight="thick">
-                For persistent maritime surveillance
-              </StyledHeading>
-            </Callout>
-          </HeroBlock>
-        )}
-      </Segmented>
+
+      {data.HeroBackground && (
+        <HeroBlock image={data.HeroBackground.childImageSharp.fluid} masked scrim>
+          <Row>
+            <Col xs={12} md={6} lg={5}>
+              <Spacing $value="80px" />
+              <Heading level={1} size="huge" weight="thick" header underline="left">
+                Autonomous
+                <br />
+                maritime
+                <br />
+                surveillance
+              </Heading>
+              <HeroSubheading>Intelligent, networked &amp; integrated</HeroSubheading>
+              <Spacing $value="280px" />
+            </Col>
+          </Row>
+          <Row>
+            <Col xs={12} md={4} lg={4} mdOffset={2} />
+            <Col xs={12} md={4} lg={4} mdOffset={1}>
+              <Heading level={3} color="white" size="large" weight="thick" underline="center">
+                A new generation
+                <br />
+                Of autonomous
+                <br />
+                Ocean monitoring.
+              </Heading>
+              <p>
+                Power large payloads, roam widely, and stay at sea for months at a time. Ocius USVs
+                offer economic and operational advantages over convertional methods in a multitude
+                of industries. Utilising solar, wind and wave power, these vessels can autonomously
+                monitor designated areas for lengths of time. The videos and links below demonstrate
+                just some of the solutions we offer.
+              </p>
+            </Col>
+          </Row>
+        </HeroBlock>
+      )}
       <Container className="centered">
         <Segmented borderBottom="">
           <Row>
@@ -157,7 +165,7 @@ export default ({ data }) => {
 
 export const query = graphql`
   query getHomepageImages {
-    HeroBackground: file(relativePath: { eq: "images/drone_boat.jpg" }) {
+    HeroBackground: file(relativePath: { eq: "images/ocius-bg.png" }) {
       ...imageSharpHeroBackground
     }
 
