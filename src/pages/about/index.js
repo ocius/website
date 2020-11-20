@@ -1123,7 +1123,7 @@ export default ({ data }) => {
       performance."
       />
       {data.HeroBackground && (
-        <HeroBlock image={data.HeroBackground.childImageSharp.fluid} masked scrim>
+        <HeroBlock image={data.HeroBackground.childImageSharp.fluid} masked scrim="blue">
           <Row>
             <Col xs={12} md={6} lg={5}>
               <Spacing $value="80px" />

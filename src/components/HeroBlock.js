@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled, { css } from 'styled-components';
+import { switchProp } from 'styled-tools';
 import BackgroundImage from 'gatsby-background-image';
 
 import mq from '../common/mq';
@@ -60,7 +61,22 @@ const ScrimOverlay = styled.div`
   bottom: 0;
   left: 0;
   z-index: 1;
-  background-image: linear-gradient(-180deg, rgba(0, 99, 131, 0) 53%, rgb(0, 99, 131) 100%);
+
+  ${switchProp('$color', {
+    blue: css`
+      background-image: linear-gradient(-180deg, rgba(0, 99, 131, 0) 53%, rgb(0, 99, 131) 100%);
+    `,
+
+    dark: css`
+      background-image: linear-gradient(
+        -180deg,
+        rgba(19, 29, 33, 0) 0%,
+        rgba(19, 29, 33, 0) 60%,
+        rgb(19, 29, 33) 80%,
+        rgb(19, 29, 33) 100%
+      );
+    `,
+  })}
 `;
 
 HeroContainer.defaultProps = {};
@@ -75,7 +91,7 @@ const HeroBlock = ({ children, image, constrained, scrim, masked }) => (
   >
     <InnerContainer>{children}</InnerContainer>
 
-    {scrim && <ScrimOverlay />}
+    {scrim && <ScrimOverlay $color={scrim} />}
     {masked && <MaskOverlay />}
   </HeroContainer>
 );
@@ -83,7 +99,7 @@ const HeroBlock = ({ children, image, constrained, scrim, masked }) => (
 HeroBlock.propTypes = {
   image: PropTypes.objectOf(PropTypes.any).isRequired,
   constrained: PropTypes.bool,
-  scrim: PropTypes.bool,
+  scrim: PropTypes.oneOf(['blue', 'dark']),
   masked: PropTypes.bool,
 };
 
