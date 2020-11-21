@@ -11,7 +11,6 @@ import Segmented from '../components/Segmented';
 import Button from '../components/Button';
 import HeroBlock from '../components/HeroBlock';
 import Heading from '../components/Heading';
-import Icon from '../components/Icon';
 
 // Lazy load all the components
 const SidebarWidget = Loadable(() => import(`../components/SidebarWidget`));
