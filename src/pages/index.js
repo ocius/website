@@ -76,7 +76,7 @@ export default ({ data }) => {
               </Heading>
               <p>
                 Power large payloads, roam widely, and stay at sea for months at a time. Ocius USVs
-                offer economic and operational advantages over convertional methods in a multitude
+                offer economic and operational advantages over conventional methods in a multitude
                 of industries. Utilising solar, wind and wave power, these vessels can autonomously
                 monitor designated areas for lengths of time. The videos and links below demonstrate
                 just some of the solutions we offer.
@@ -91,30 +91,64 @@ export default ({ data }) => {
           </Row>
         </HeroBlock>
       )}
-      <Container className="centered">
+      <Container>
         <Segmented borderBottom="">
-          <Row>
+          <Row className="centered">
             <Col xs={12} md={8} lg={8} mdOffset={2}>
               <Spacing $value="80px" />
               <Heading level={2} size="large" underline="center">
                 The core technology behind Ocius
               </Heading>
+            </Col>
+          </Row>
+          <Spacing $value="80px" />
+          <Row>
+            <Col xs={12} md={4} lg={4}>
+              <Heading level={3} size="medium">
+                Solar Sail
+              </Heading>
               <p>
-                USVs offer economic and operational advantages over conventional methods in a
-                multitude of industries. The videos and links below demonstrate just some of the
-                solutions we offer.
+                When deployed, the patented hard solar sail harnesses both solar and wind energy.
+                When not desired it automatically folds snuggly into the deck of the Bluebottle like
+                the wing of a bird, so 100% retracted but also not taking up precious payload space
+                within the vessel. Intelligent programming means the solar sail reacts autonomously
+                to the sea, sun &amp; wind conditions to ensure efficient and safe operation for all
+                mission requirements.
               </p>
-              <Button color="white" size="medium" href="/usv" border>
-                What is a USV?
-                <Icon.ArrowRight
-                  fill="#000000"
-                  style={{
-                    width: '18px',
-                    height: '18px',
-                    marginLeft: '3px',
-                  }}
-                />
-              </Button>
+              <Heading level={3} size="medium">
+                Rudder Flipper
+              </Heading>
+              <p>
+                The patented rudder-flipper steers, guides and powers the unmanned vessel generating
+                forward thrust from the pitching of the vessel in the waves of the ocean. The bigger
+                the sea state the stronger the forces. In seastates over Seastate 6 the solarsail
+                automatically lowers and the rudder passively propels the vessel in the desired
+                direction. If left in the mid position it passively turns the bow of the Bluebottle
+                into the oncoming seas giving Bluebottles unprecedented seakeeping and survival
+                capabilities.
+              </p>
+            </Col>
+            <Col xs={12} md={4} lg={4} />
+            <Col xs={12} md={4} lg={4}>
+              <Heading level={3} size="medium">
+                Sensors and Communication
+              </Heading>
+              <p>
+                Multiple sensors are available as options underwater, inside the hull and on the aft
+                comms mast. An Integrated and networked communication system allows live tracking.
+                All vessels can be monitored while operating autonomously or controlled remotely,
+                constantly sending data back to the control room.
+              </p>
+              <Heading level={3} size="medium">
+                Keel Winch Cassette
+              </Heading>
+              <p>
+                The patented ‘keel winch’ is a cassette that displaces water ballast in the keel -
+                so adding or changing a cassette does not interfere with the displacement or trim of
+                the Bluebottle. The cassette can be flat packed and shipped to anywhere in the world
+                for customers to install, commission and test their sensor or array on the winch
+                before inserting it into the payload bay of a Bluebottle - being ready to go.
+              </p>
             </Col>
           </Row>
         </Segmented>
