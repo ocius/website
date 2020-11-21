@@ -16,7 +16,7 @@ const Item = styled.li`
 const LinkStyles = css`
   display: inline-block;
   padding: 1em;
-  font-size: 1em;
+  font-size: 1.7rem;
   font-weight: 500;
   line-height: 100%;
   text-decoration: none;
