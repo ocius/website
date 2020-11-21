@@ -95,9 +95,9 @@ export default ({ data }) => {
         <Segmented borderBottom="">
           <Row>
             <Col xs={12} md={8} lg={8} mdOffset={2}>
-              <Heading level={2} size="large" underline>
-                A new generation of ocean drones. Power large payloads, roam widely, and stay at sea
-                for months at a time.
+              <Spacing $value="80px" />
+              <Heading level={2} size="large" underline="center">
+                The core technology behind Ocius
               </Heading>
               <p>
                 USVs offer economic and operational advantages over conventional methods in a
