@@ -56,7 +56,7 @@ export default ({ data }) => {
                 surveillance
               </Heading>
               <HeroSubheading>Intelligent, networked &amp; integrated</HeroSubheading>
-              <Spacing $value="400px" />
+              <Spacing $value="280px" />
             </Col>
           </Row>
           <Row>
