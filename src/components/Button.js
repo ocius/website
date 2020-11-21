@@ -13,7 +13,7 @@ const colors = {
   primaryBlue: '#4ab4e6',
   bgPrimary: '#ffffff',
   textPrimary: '#000000',
-  borderPrimary: '#000000',
+  borderPrimary: '#4ab4e6',
   bgSecondary: '#efefef',
   textSecondary: '#7a96a2',
   accent: '#003859',
@@ -82,6 +82,10 @@ const ButtonStyles = css`
   vertical-align: middle;
   white-space: nowrap;
 
+  & + & {
+    margin-left: 2em;
+  }
+
   :active,
   :hover,
   :focus {
@@ -131,14 +135,14 @@ const ButtonStyles = css`
 
     transparent: css`
       background-color: transparent;
-      color: ${colors.textOverlay};
-      box-shadow: 0 0 0 2px ${colors.bgPrimary} inset;
+      color: ${colors.bgPrimary};
+      box-shadow: 0 0 0 2px ${colors.borderPrimary} inset;
 
       :focus,
       :hover,
       :active {
         background-color: transparent;
-        color: ${colors.textPrimary};
+        color: ${colors.borderPrimary};
       }
     `,
   })}

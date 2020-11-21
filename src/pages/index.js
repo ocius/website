@@ -74,6 +74,12 @@ export default ({ data }) => {
                 monitor designated areas for lengths of time. The videos and links below demonstrate
                 just some of the solutions we offer.
               </p>
+              <Button color="blue" size="tiny" href="/usv">
+                Find out more
+              </Button>
+              <Button color="transparent" size="tiny" href="/live" border>
+                Watch live
+              </Button>
             </Col>
           </Row>
         </HeroBlock>
