@@ -5,15 +5,44 @@ import { prop } from 'styled-tools';
 import { Link as GatsbyLink } from 'gatsby';
 import { OutboundLink } from 'gatsby-plugin-gtag';
 
+const MenuItemStyle = css`
+  display: block;
+  padding: 0.6em 2em;
+  clear: both;
+  font-size: 17px;
+  font-weight: normal;
+  line-height: 1.42857143;
+  color: #333;
+  white-space: nowrap;
+  text-decoration: none;
+  box-sizing: border-box;
+  border-bottom: 1px solid rgba(51, 51, 51, 0.1);
+
+  :focus,
+  :hover {
+    background: #efefef;
+    color: #001826;
+    text-decoration: none;
+  }
+`;
+
+const Link = styled(GatsbyLink)`
+  ${MenuItemStyle}
+`;
+
+const StyledOutboundLink = styled(OutboundLink)`
+  ${MenuItemStyle}
+`;
+
 const Menu = styled.ul`
   display: ${prop('display', 'none')};
   margin: 0px;
-  padding: 0px;
+  padding: 8px;
   position: absolute;
   left: 0;
   border: 1px solid #ddd;
   box-shadow: 0px 3px 2px 0px rgba(0, 0, 0, 0.1);
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.75);
   z-index: 1000;
   text-align: left;
   list-style: none;
@@ -31,34 +60,10 @@ const Menu = styled.ul`
     left: 33px;
     z-index: -1;
   }
-`;
 
-const MenuItemStyle = css`
-  display: block;
-  padding: 10px 20px;
-  clear: both;
-  font-size: 17px;
-  font-weight: normal;
-  line-height: 1.42857143;
-  color: #333;
-  white-space: nowrap;
-  text-decoration: none;
-  box-sizing: border-box;
-
-  :focus,
-  :hover {
-    background: #efefef;
-    color: #001826;
-    text-decoration: none;
+  li:last-child ${Link} {
+    border-bottom: none;
   }
-`;
-
-const Link = styled(GatsbyLink)`
-  ${MenuItemStyle}
-`;
-
-const StyledOutboundLink = styled(OutboundLink)`
-  ${MenuItemStyle}
 `;
 
 const DropdownMenu = ({ open, menuItems, setRef }) => (
