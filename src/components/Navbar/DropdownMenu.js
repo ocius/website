@@ -7,7 +7,8 @@ import { OutboundLink } from 'gatsby-plugin-gtag';
 
 const MenuItemStyle = css`
   display: block;
-  padding: 0.6em 2em;
+  min-width: 10em;
+  padding: 0.6em 1em;
   clear: both;
   font-size: 17px;
   font-weight: normal;
@@ -38,6 +39,7 @@ const Menu = styled.ul`
   display: ${prop('display', 'none')};
   margin: 0px;
   padding: 8px;
+  min-width: 14em;
   position: absolute;
   left: 0;
   border: 1px solid #ddd;
