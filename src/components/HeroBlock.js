@@ -71,8 +71,8 @@ const ScrimOverlay = styled.div`
       background-image: linear-gradient(
         -180deg,
         rgba(19, 29, 33, 0) 0%,
-        rgba(19, 29, 33, 0) 60%,
-        rgb(19, 29, 33) 80%,
+        rgba(19, 29, 33, 0) 50%,
+        rgb(19, 29, 33) 70%,
         rgb(19, 29, 33) 100%
       );
     `,

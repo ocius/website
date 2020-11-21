@@ -31,6 +31,10 @@ const Spacing = styled.div`
   height: ${(props) => props.$value || '50px'};
 `;
 
+const RadarImage = styled(Img)`
+  margin-bottom: -6em;
+`;
+
 export default ({ data }) => {
   return (
     <Layout>
@@ -52,14 +56,17 @@ export default ({ data }) => {
                 surveillance
               </Heading>
               <HeroSubheading>Intelligent, networked &amp; integrated</HeroSubheading>
-              <Spacing $value="280px" />
+              <Spacing $value="400px" />
             </Col>
           </Row>
           <Row>
             <Col xs={12} md={6} lg={6}>
-              {data.Computer && <Img fluid={data.Computer.childImageSharp.fluid} alt="Radar" />}
+              {data.Computer && (
+                <RadarImage fluid={data.Computer.childImageSharp.fluid} alt="Radar" />
+              )}
             </Col>
             <Col xs={12} md={6} lg={6}>
+              <Spacing $value="80px" />
               <Heading level={3} color="white" size="large" weight="thick" underline="left">
                 A new generation
                 <br />
