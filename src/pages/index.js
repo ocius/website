@@ -47,6 +47,12 @@ const LogoBackgroundWrapper = styled.div`
   background-position: center right;
 `;
 
+const LogoBackgroundWrapperLeft = styled.div`
+  background-image: url(${LogoBackground});
+  background-repeat: no-repeat;
+  background-position: -30% center;
+`;
+
 const AccentRowWrapper = styled.div`
   background-color: #edf7fc;
   overflow: hidden;
@@ -355,73 +361,75 @@ export default ({ data }) => {
         </Segmented>
       </AccentRowWrapper>
 
-      <Segmented borderBottom="">
-        <Container className="page-content centered">
-          <Row className="centered">
-            <Col xs={12} md={8} lg={8} mdOffset={2}>
-              <Spacing $value="80px" />
-              <Heading level={2} size="large" underline="center">
-                Ocius Vessels
-              </Heading>
-            </Col>
-          </Row>
-          <Row className="primary-content left-align">
-            <Col xs={12} md={6} lg={4}>
-              <img src={Blueybuoy} alt="Bluey Buoy Class Vessel" />
-              <Heading level={3} size="medium">
-                Bluey Buoy Class
-              </Heading>
-              <ul>
-                <li>Self deploying, movable, self retrieving buoy</li>
-                <li>Uses solar &amp; wave energy</li>
-                <li>Scalable from 1.1m/3.6’</li>
-                <li>10kg/22lb lightship &amp; 10kg/22lb payload</li>
-              </ul>
-            </Col>
-            <Col xs={12} md={6} lg={4}>
-              <img src={BluebottleVessel} alt="Bluebottle Class Vessel" />
-              <Heading level={3} size="medium">
-                Bluebottle Class
-              </Heading>
-              <ul>
-                <li>Uses solar, wind &amp; wave energy</li>
-                <li>Up to 6.8m/22’ in length</li>
-                <li>Payload up to 600kg/1320lb</li>
-                <li>Keel cassette winch to 200m</li>
-              </ul>
-            </Col>
-            <Col xs={12} md={6} lg={4}>
-              <img src={TrimaranVessel} alt="Stinger Class Vessel" />
-              <Heading level={3} size="medium">
-                Stinger Class (Concept)
-              </Heading>
-              <ul>
-                <li>Loiter/stealth uses solar &amp; wave energy</li>
-                <li>Pursuit uses diesel power</li>
-                <li>Scalable</li>
-                <li>Mono or multihull design</li>
-              </ul>
-            </Col>
-          </Row>
-          <Button color="blue" size="tiny" href="/usv">
-            Find out more
-          </Button>
-        </Container>
-      </Segmented>
+      <LogoBackgroundWrapperLeft>
+        <Segmented borderBottom="">
+          <Container className="page-content centered">
+            <Row className="centered">
+              <Col xs={12} md={8} lg={8} mdOffset={2}>
+                <Spacing $value="80px" />
+                <Heading level={2} size="large" underline="center">
+                  Ocius Vessels
+                </Heading>
+              </Col>
+            </Row>
+            <Row className="primary-content left-align">
+              <Col xs={12} md={6} lg={4}>
+                <img src={Blueybuoy} alt="Bluey Buoy Class Vessel" />
+                <Heading level={3} size="medium">
+                  Bluey Buoy Class
+                </Heading>
+                <ul>
+                  <li>Self deploying, movable, self retrieving buoy</li>
+                  <li>Uses solar &amp; wave energy</li>
+                  <li>Scalable from 1.1m/3.6’</li>
+                  <li>10kg/22lb lightship &amp; 10kg/22lb payload</li>
+                </ul>
+              </Col>
+              <Col xs={12} md={6} lg={4}>
+                <img src={BluebottleVessel} alt="Bluebottle Class Vessel" />
+                <Heading level={3} size="medium">
+                  Bluebottle Class
+                </Heading>
+                <ul>
+                  <li>Uses solar, wind &amp; wave energy</li>
+                  <li>Up to 6.8m/22’ in length</li>
+                  <li>Payload up to 600kg/1320lb</li>
+                  <li>Keel cassette winch to 200m</li>
+                </ul>
+              </Col>
+              <Col xs={12} md={6} lg={4}>
+                <img src={TrimaranVessel} alt="Stinger Class Vessel" />
+                <Heading level={3} size="medium">
+                  Stinger Class (Concept)
+                </Heading>
+                <ul>
+                  <li>Loiter/stealth uses solar &amp; wave energy</li>
+                  <li>Pursuit uses diesel power</li>
+                  <li>Scalable</li>
+                  <li>Mono or multihull design</li>
+                </ul>
+              </Col>
+            </Row>
+            <Button color="blue" size="tiny" href="/usv">
+              Find out more
+            </Button>
+          </Container>
+        </Segmented>
 
-      <Segmented borderBottom="">
-        <Container>
-          <Row className="centered">
-            <Col xs={12} md={8} lg={8} mdOffset={2}>
-              <Spacing $value="80px" />
-              <Heading level={2} size="large" underline="center">
-                Ocius news headlines
-              </Heading>
-            </Col>
-          </Row>
-          <ArticlePreviewBlock />
-        </Container>
-      </Segmented>
+        <Segmented borderBottom="">
+          <Container>
+            <Row className="centered">
+              <Col xs={12} md={8} lg={8} mdOffset={2}>
+                <Spacing $value="80px" />
+                <Heading level={2} size="large" underline="center">
+                  Ocius news headlines
+                </Heading>
+              </Col>
+            </Row>
+            <ArticlePreviewBlock />
+          </Container>
+        </Segmented>
+      </LogoBackgroundWrapperLeft>
 
       <Container>
         <Sidebar>
