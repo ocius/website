@@ -13,6 +13,9 @@ import HeroBlock from '../components/HeroBlock';
 import Heading from '../components/Heading';
 import Icon from '../components/Icon';
 
+// Import bluebottle illustration
+import Bluebottle from '../images/bluebottle.svg';
+
 // Lazy load all the components
 const SidebarWidget = Loadable(() => import(`../components/SidebarWidget`));
 const PanelCallout = Loadable(() => import(`../components/PanelCallout`));
@@ -103,7 +106,7 @@ export default ({ data }) => {
           </Row>
           <Spacing $value="80px" />
           <Row>
-            <Col xs={12} md={4} lg={4}>
+            <Col xs={12} md={3} lg={3}>
               <Icon.SolarSun
                 fill="#0fb0e1"
                 style={{
@@ -167,8 +170,10 @@ export default ({ data }) => {
                 capabilities.
               </p>
             </Col>
-            <Col xs={12} md={4} lg={4} />
-            <Col xs={12} md={4} lg={4}>
+            <Col xs={12} md={6} lg={6}>
+              <img src={Bluebottle} alt="Bluebottle Ocius" />
+            </Col>
+            <Col xs={12} md={3} lg={3}>
               <Icon.SensorCommunication
                 fill="#0fb0e1"
                 style={{
