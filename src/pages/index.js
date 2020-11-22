@@ -20,8 +20,6 @@ import LogoBackground from './about/images/ocius-logo-transparent.png';
 
 // Lazy load all the components
 const SidebarWidget = Loadable(() => import(`../components/SidebarWidget`));
-const PanelCallout = Loadable(() => import(`../components/PanelCallout`));
-const PanelCalloutGroup = Loadable(() => import(`../components/PanelCalloutGroup`));
 const ArticlePreviewBlock = Loadable(() => import(`../components/ArticlePreviewBlock`));
 const RecentNews = Loadable(() => import(`../components/RecentNews`));
 const Sidebar = Loadable(() => import(`../components/Sidebar`));
