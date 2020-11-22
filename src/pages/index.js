@@ -22,10 +22,8 @@ import BluebottleVessel from '../images/vessel-bluebottle.svg';
 import LogoBackground from './about/images/ocius-logo-transparent.png';
 
 // Lazy load all the components
-const SidebarWidget = Loadable(() => import(`../components/SidebarWidget`));
 const ArticlePreviewBlock = Loadable(() => import(`../components/ArticlePreviewBlock`));
-const RecentNews = Loadable(() => import(`../components/RecentNews`));
-const Sidebar = Loadable(() => import(`../components/Sidebar`));
+const NewsletterForm = Loadable(() => import(`../components/NewsletterForm`));
 
 const HeroSubheading = styled.p`
   color: #2d4355;
@@ -431,13 +429,56 @@ export default ({ data }) => {
         </Segmented>
       </LogoBackgroundWrapperLeft>
 
-      <Container>
-        <Sidebar>
-          <SidebarWidget className="recent-news">
-            <RecentNews />
-          </SidebarWidget>
-        </Sidebar>
-      </Container>
+      <Segmented borderBottom="">
+        <NewsletterForm />
+      </Segmented>
+      <Segmented borderBottom="">
+        <Container className="page-content">
+          <Heading level={3} color="#36BBE7" size="large" weight="thick" underline="left">
+            Contact Us
+          </Heading>
+          <Row>
+            <Col xs={12} md={3} lg={3}>
+              <p>
+                <strong>Ocius Headquarters</strong>
+                <br />
+                Building R13
+                <br />
+                UNSW Randwick Campus
+                <br />
+                22 King St, Randwick NSW 2031
+              </p>
+            </Col>
+            <Col xs={12} md={3} lg={3}>
+              <p>
+                <strong>Postal Address</strong>
+                <br />
+                Mail PO Box 4304 Castlecrag
+                <br />
+                NSW 2068
+              </p>
+            </Col>
+            <Col xs={12} md={3} lg={3}>
+              <p>
+                <strong>General Enquiries:</strong>
+                <br />
+                +61 2 9924 6400
+                <br />
+                contact@ocius.com.au
+              </p>
+            </Col>
+            <Col xs={12} md={3} lg={3}>
+              <p>
+                <strong>Open Hours:</strong>
+                <br />
+                Mon - Fri: 9am - 5pm
+                <br />
+                Sat - Sun: Closed
+              </p>
+            </Col>
+          </Row>
+        </Container>
+      </Segmented>
     </Layout>
   );
 };
