@@ -11,6 +11,7 @@ import Segmented from '../components/Segmented';
 import Button from '../components/Button';
 import HeroBlock from '../components/HeroBlock';
 import Heading from '../components/Heading';
+import Icon from '../components/Icon';
 
 // Lazy load all the components
 const SidebarWidget = Loadable(() => import(`../components/SidebarWidget`));
@@ -103,6 +104,29 @@ export default ({ data }) => {
           <Spacing $value="80px" />
           <Row>
             <Col xs={12} md={4} lg={4}>
+              <Icon.SolarSun
+                fill="#0fb0e1"
+                style={{
+                  width: '62px',
+                  height: '62px',
+                }}
+              />
+              <Icon.SolarFlare
+                fill="#0fb0e1"
+                style={{
+                  width: '62px',
+                  height: '62px',
+                  marginLeft: '5px',
+                }}
+              />
+              <Icon.SolarPower
+                fill="#0fb0e1"
+                style={{
+                  width: '62px',
+                  height: '62px',
+                  marginLeft: '5px',
+                }}
+              />
               <Heading level={3} size="medium">
                 Solar Sail
               </Heading>
@@ -114,6 +138,22 @@ export default ({ data }) => {
                 to the sea, sun &amp; wind conditions to ensure efficient and safe operation for all
                 mission requirements.
               </p>
+
+              <Icon.RudderCurrent
+                fill="#0fb0e1"
+                style={{
+                  width: '62px',
+                  height: '62px',
+                }}
+              />
+              <Icon.RudderNav
+                fill="#0fb0e1"
+                style={{
+                  width: '62px',
+                  height: '62px',
+                  marginLeft: '5px',
+                }}
+              />
               <Heading level={3} size="medium">
                 Rudder Flipper
               </Heading>
@@ -129,6 +169,27 @@ export default ({ data }) => {
             </Col>
             <Col xs={12} md={4} lg={4} />
             <Col xs={12} md={4} lg={4}>
+              <Icon.SensorCommunication
+                fill="#0fb0e1"
+                style={{
+                  width: '62px',
+                  height: '62px',
+                }}
+              />
+              <Icon.SensorLocation
+                fill="#0fb0e1"
+                style={{
+                  width: '62px',
+                  height: '62px',
+                }}
+              />
+              <Icon.SensorTravel
+                fill="#0fb0e1"
+                style={{
+                  width: '62px',
+                  height: '62px',
+                }}
+              />
               <Heading level={3} size="medium">
                 Sensors and Communication
               </Heading>
@@ -138,6 +199,20 @@ export default ({ data }) => {
                 All vessels can be monitored while operating autonomously or controlled remotely,
                 constantly sending data back to the control room.
               </p>
+              <Icon.KeelWinch
+                fill="#0fb0e1"
+                style={{
+                  width: '62px',
+                  height: '62px',
+                }}
+              />
+              <Icon.KeelLength
+                fill="#0fb0e1"
+                style={{
+                  width: '62px',
+                  height: '62px',
+                }}
+              />
               <Heading level={3} size="medium">
                 Keel Winch Cassette
               </Heading>
