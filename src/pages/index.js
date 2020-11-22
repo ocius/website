@@ -16,6 +16,9 @@ import Icon from '../components/Icon';
 
 // Import bluebottle illustration
 import Bluebottle from '../images/bluebottle.svg';
+import Blueybuoy from '../images/vessel-blueybuoy.svg';
+import TrimaranVessel from '../images/vessel-trimaran.svg';
+import BluebottleVessel from '../images/vessel-bluebottle.svg';
 import LogoBackground from './about/images/ocius-logo-transparent.png';
 
 // Lazy load all the components
@@ -281,87 +284,144 @@ export default ({ data }) => {
       </LogoBackgroundWrapper>
 
       <AccentRowWrapper>
-        <Container className="page-content">
+        <Segmented borderBottom="">
+          <Container className="page-content">
+            <Row className="centered">
+              <Col xs={12} md={8} lg={8} mdOffset={2}>
+                <Spacing $value="80px" />
+                <Heading level={2} size="large" underline="center">
+                  How Ocius is changing the world
+                </Heading>
+              </Col>
+            </Row>
+            <Row className="primary-content">
+              <Col xs={12} md={6} lg={4}>
+                {data.DefenceIcon && (
+                  <Img fixed={data.DefenceIcon.childImageSharp.fixed} alt="Defence Solutions" />
+                )}
+                <Heading level={3} size="medium" underline="left">
+                  Defence
+                </Heading>
+                <ul>
+                  <li>Anti-Submarine Warfare</li>
+                  <li>Intelligence, Surveillance &amp; Reconnaissance</li>
+                  <li>Electronic Warfare</li>
+                  <li>Mine Counter Measures</li>
+                  <li>Gateway Communications</li>
+                </ul>
+                <Button color="blue" size="tiny" href="/defence">
+                  Find out more
+                </Button>
+              </Col>
+              <Col xs={12} md={6} lg={4}>
+                {data.OilAndGasIcon && (
+                  <Img
+                    fixed={data.OilAndGasIcon.childImageSharp.fixed}
+                    alt="Oil and Gas Solutions"
+                  />
+                )}
+                <Heading level={3} size="medium" underline="left">
+                  Oil &amp; Gas
+                </Heading>
+                <ul>
+                  <li>Seabed and Pipeline Surveys</li>
+                  <li>Environment Monitoring</li>
+                  <li>Security</li>
+                </ul>
+                <Button color="blue" size="tiny" href="/oil-and-gas">
+                  Find out more
+                </Button>
+              </Col>
+              <Col xs={12} md={6} lg={4}>
+                {data.ScienceIcon && (
+                  <Img fixed={data.ScienceIcon.childImageSharp.fixed} alt="Science Solutions" />
+                )}
+                <Heading level={3} size="medium" underline="left">
+                  Science
+                </Heading>
+                <ul>
+                  <li>Weather “ground truth“</li>
+                  <li>Current profiling</li>
+                  <li>Climate Change</li>
+                  <li>Hurricane Landfall Prediction</li>
+                  <li>Fisheries</li>
+                </ul>
+                <Button color="blue" size="tiny" href="/science">
+                  Find out more
+                </Button>
+              </Col>
+            </Row>
+          </Container>
+        </Segmented>
+      </AccentRowWrapper>
+
+      <Segmented borderBottom="">
+        <Container className="page-content centered">
           <Row className="centered">
             <Col xs={12} md={8} lg={8} mdOffset={2}>
               <Spacing $value="80px" />
               <Heading level={2} size="large" underline="center">
-                How Ocius is changing the world
+                Ocius Vessels
               </Heading>
             </Col>
           </Row>
-          <Row className="primary-content">
+          <Row className="primary-content left-align">
             <Col xs={12} md={6} lg={4}>
-              {data.DefenceIcon && (
-                <Img fixed={data.DefenceIcon.childImageSharp.fixed} alt="Defence Solutions" />
-              )}
-              <Heading level={3} size="medium" underline="left">
-                Defence
+              <img src={Blueybuoy} alt="Bluey Buoy Class Vessel" />
+              <Heading level={3} size="medium">
+                Bluey Buoy Class
               </Heading>
               <ul>
-                <li>Anti-Submarine Warfare</li>
-                <li>Intelligence, Surveillance &amp; Reconnaissance</li>
-                <li>Electronic Warfare</li>
-                <li>Mine Counter Measures</li>
-                <li>Gateway Communications</li>
+                <li>Self deploying, movable, self retrieving buoy</li>
+                <li>Uses solar &amp; wave energy</li>
+                <li>Scalable from 1.1m/3.6’</li>
+                <li>10kg/22lb lightship &amp; 10kg/22lb payload</li>
               </ul>
-              <Button color="blue" size="tiny" href="/defence">
-                Find out more
-              </Button>
             </Col>
             <Col xs={12} md={6} lg={4}>
-              {data.OilAndGasIcon && (
-                <Img fixed={data.OilAndGasIcon.childImageSharp.fixed} alt="Oil and Gas Solutions" />
-              )}
-              <Heading level={3} size="medium" underline="left">
-                Oil &amp; Gas
+              <img src={BluebottleVessel} alt="Bluebottle Class Vessel" />
+              <Heading level={3} size="medium">
+                Bluebottle Class
               </Heading>
               <ul>
-                <li>Seabed and Pipeline Surveys</li>
-                <li>Environment Monitoring</li>
-                <li>Security</li>
+                <li>Uses solar, wind &amp; wave energy</li>
+                <li>Up to 6.8m/22’ in length</li>
+                <li>Payload up to 600kg/1320lb</li>
+                <li>Keel cassette winch to 200m</li>
               </ul>
-              <Button color="blue" size="tiny" href="/oil-and-gas">
-                Find out more
-              </Button>
             </Col>
             <Col xs={12} md={6} lg={4}>
-              {data.ScienceIcon && (
-                <Img fixed={data.ScienceIcon.childImageSharp.fixed} alt="Science Solutions" />
-              )}
-              <Heading level={3} size="medium" underline="left">
-                Science
+              <img src={TrimaranVessel} alt="Stinger Class Vessel" />
+              <Heading level={3} size="medium">
+                Stinger Class (Concept)
               </Heading>
               <ul>
-                <li>Weather “ground truth“</li>
-                <li>Current profiling</li>
-                <li>Climate Change</li>
-                <li>Hurricane Landfall Prediction</li>
-                <li>Fisheries</li>
+                <li>Loiter/stealth uses solar &amp; wave energy</li>
+                <li>Pursuit uses diesel power</li>
+                <li>Scalable</li>
+                <li>Mono or multihull design</li>
               </ul>
-              <Button color="blue" size="tiny" href="/science">
-                Find out more
-              </Button>
             </Col>
           </Row>
+          <Button color="blue" size="tiny" href="/usv">
+            Find out more
+          </Button>
         </Container>
-      </AccentRowWrapper>
+      </Segmented>
 
-      <div id="solutions" style={{ backgroundColor: '#efefef', paddingBottom: '20px' }}>
-        <Container>
-          <Segmented borderBottom="">
-            <ArticlePreviewBlock />
-          </Segmented>
-        </Container>
+      <Container>
+        <Segmented borderBottom="">
+          <ArticlePreviewBlock />
+        </Segmented>
+      </Container>
 
-        <Container>
-          <Sidebar>
-            <SidebarWidget className="recent-news">
-              <RecentNews />
-            </SidebarWidget>
-          </Sidebar>
-        </Container>
-      </div>
+      <Container>
+        <Sidebar>
+          <SidebarWidget className="recent-news">
+            <RecentNews />
+          </SidebarWidget>
+        </Sidebar>
+      </Container>
     </Layout>
   );
 };
