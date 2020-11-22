@@ -109,9 +109,15 @@ blockquote::after {
     font-family: 'Alegreya Sans';
 }
 
+ul, ol {
+    padding-left: 1em;
+    margin: 2em 0;
+}
+
 ol li,
 ul li {
-    font-size: 1.125em;
+    font-size: 1.2em;
+    line-height: 1.45;
     font-weight: 300;
     list-style-position: outside;
 }

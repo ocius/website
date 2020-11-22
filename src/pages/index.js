@@ -298,15 +298,16 @@ export default ({ data }) => {
               <Heading level={3} size="medium" underline="left">
                 Defence
               </Heading>
-              <div className="left-align">
-                <ul>
-                  <li>Anti-Submarine Warfare</li>
-                  <li>Intelligence, Surveillance &amp; Reconnaissance</li>
-                  <li>Electronic Warfare</li>
-                  <li>Mine Counter Measures</li>
-                  <li>Gateway Communications</li>
-                </ul>
-              </div>
+              <ul>
+                <li>Anti-Submarine Warfare</li>
+                <li>Intelligence, Surveillance &amp; Reconnaissance</li>
+                <li>Electronic Warfare</li>
+                <li>Mine Counter Measures</li>
+                <li>Gateway Communications</li>
+              </ul>
+              <Button color="blue" size="tiny" href="/defence">
+                Find out more
+              </Button>
             </Col>
             <Col xs={12} md={6} lg={4}>
               {data.OilAndGasIcon && (
@@ -315,13 +316,14 @@ export default ({ data }) => {
               <Heading level={3} size="medium" underline="left">
                 Oil &amp; Gas
               </Heading>
-              <div className="left-align">
-                <ul>
-                  <li>Seabed and Pipeline Surveys</li>
-                  <li>Environment Monitoring</li>
-                  <li>Security</li>
-                </ul>
-              </div>
+              <ul>
+                <li>Seabed and Pipeline Surveys</li>
+                <li>Environment Monitoring</li>
+                <li>Security</li>
+              </ul>
+              <Button color="blue" size="tiny" href="/oil-and-gas">
+                Find out more
+              </Button>
             </Col>
             <Col xs={12} md={6} lg={4}>
               {data.ScienceIcon && (
@@ -330,15 +332,16 @@ export default ({ data }) => {
               <Heading level={3} size="medium" underline="left">
                 Science
               </Heading>
-              <div className="left-align">
-                <ul>
-                  <li>Weather “ground truth“</li>
-                  <li>Current profiling</li>
-                  <li>Climate Change</li>
-                  <li>Hurricane Landfall Prediction</li>
-                  <li>Fisheries</li>
-                </ul>
-              </div>
+              <ul>
+                <li>Weather “ground truth“</li>
+                <li>Current profiling</li>
+                <li>Climate Change</li>
+                <li>Hurricane Landfall Prediction</li>
+                <li>Fisheries</li>
+              </ul>
+              <Button color="blue" size="tiny" href="/science">
+                Find out more
+              </Button>
             </Col>
           </Row>
         </Container>
