@@ -46,6 +46,25 @@ const LogoBackgroundWrapper = styled.div`
   background-position: center right;
 `;
 
+const AccentRowWrapper = styled.div`
+  background-color: #edf7fc;
+  overflow: hidden;
+
+  &:before {
+    content: '';
+    position: relative;
+    left: 0;
+    top: 0;
+    float: left;
+    display: block;
+    height: 4rem;
+    width: 100vw;
+    background: hsla(0, 0%, 100%, 0.5);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 70 500 60' preserveAspectRatio='none'%3E%3Crect x='0' y='0' width='500' height='500' style='stroke: none; fill: %23edf7fc;' /%3E%3Cpath d='M0,100 C150,200 350,0 500,100 L500,00 L0,0 Z' style='stroke: none; fill: %23ffffff;'%3E%3C/path%3E%3C/svg%3E");
+    background-size: 100% 100%;
+  }
+`;
+
 export default ({ data }) => {
   return (
     <Layout>
@@ -263,47 +282,71 @@ export default ({ data }) => {
         </Container>
       </LogoBackgroundWrapper>
 
+      <AccentRowWrapper>
+        <Container className="page-content">
+          <Row className="centered">
+            <Col xs={12} md={8} lg={8} mdOffset={2}>
+              <Spacing $value="80px" />
+              <Heading level={2} size="large" underline="center">
+                How Ocius is changing the world
+              </Heading>
+            </Col>
+          </Row>
+          <Row className="primary-content">
+            <Col xs={12} md={6} lg={4}>
+              {data.DefenceIcon && (
+                <Img fixed={data.DefenceIcon.childImageSharp.fixed} alt="Defence Solutions" />
+              )}
+              <Heading level={3} size="medium" underline="left">
+                Defence
+              </Heading>
+              <div className="left-align">
+                <ul>
+                  <li>Anti-Submarine Warfare</li>
+                  <li>Intelligence, Surveillance &amp; Reconnaissance</li>
+                  <li>Electronic Warfare</li>
+                  <li>Mine Counter Measures</li>
+                  <li>Gateway Communications</li>
+                </ul>
+              </div>
+            </Col>
+            <Col xs={12} md={6} lg={4}>
+              {data.OilAndGasIcon && (
+                <Img fixed={data.OilAndGasIcon.childImageSharp.fixed} alt="Oil and Gas Solutions" />
+              )}
+              <Heading level={3} size="medium" underline="left">
+                Oil &amp; Gas
+              </Heading>
+              <div className="left-align">
+                <ul>
+                  <li>Seabed and Pipeline Surveys</li>
+                  <li>Environment Monitoring</li>
+                  <li>Security</li>
+                </ul>
+              </div>
+            </Col>
+            <Col xs={12} md={6} lg={4}>
+              {data.ScienceIcon && (
+                <Img fixed={data.ScienceIcon.childImageSharp.fixed} alt="Science Solutions" />
+              )}
+              <Heading level={3} size="medium" underline="left">
+                Science
+              </Heading>
+              <div className="left-align">
+                <ul>
+                  <li>Weather “ground truth“</li>
+                  <li>Current profiling</li>
+                  <li>Climate Change</li>
+                  <li>Hurricane Landfall Prediction</li>
+                  <li>Fisheries</li>
+                </ul>
+              </div>
+            </Col>
+          </Row>
+        </Container>
+      </AccentRowWrapper>
+
       <div id="solutions" style={{ backgroundColor: '#efefef', paddingBottom: '20px' }}>
-        <Segmented borderBottom="">
-          <PanelCalloutGroup>
-            {data.DefenceTile && (
-              <PanelCallout
-                bgImage={data.DefenceTile.childImageSharp.fluid}
-                title="Defence"
-                url="/defence"
-              >
-                <p>Anti Submarine Warfare</p>
-                <p>Electronic Warfare</p>
-                <p>Gateway Coms</p>
-                <p>Mine Counter Measures</p>
-              </PanelCallout>
-            )}
-
-            {data.OilTile && (
-              <PanelCallout
-                bgImage={data.OilTile.childImageSharp.fluid}
-                title="Oil &amp; Gas"
-                url="/oil-and-gas"
-              >
-                <p>Mapping pipelines</p>
-                <p>Security</p>
-                <p>Environmental monitoring</p>
-              </PanelCallout>
-            )}
-
-            {data.ScienceTile && (
-              <PanelCallout
-                bgImage={data.ScienceTile.childImageSharp.fluid}
-                title="Science"
-                url="/science"
-              >
-                <p>Environmental monitoring</p>
-                <p>Seabed Mapping</p>
-              </PanelCallout>
-            )}
-          </PanelCalloutGroup>
-        </Segmented>
-
         <Container>
           <Segmented borderBottom="">
             <ArticlePreviewBlock />
@@ -336,16 +379,24 @@ export const query = graphql`
       }
     }
 
-    ScienceTile: file(relativePath: { eq: "images/Science-Home-Tile-Background.jpg" }) {
-      ...imageSharpTile
+    DefenceIcon: file(relativePath: { eq: "images/solutions-defence.png" }) {
+      ...imageSharpIcons
     }
 
-    OilTile: file(relativePath: { eq: "images/Oil-Home-Tile-Background.jpg" }) {
-      ...imageSharpTile
+    OilAndGasIcon: file(relativePath: { eq: "images/solutions-oilandgas.png" }) {
+      ...imageSharpIcons
     }
 
-    DefenceTile: file(relativePath: { eq: "images/Defence-Home-Tile-Background.jpg" }) {
-      ...imageSharpTile
+    ScienceIcon: file(relativePath: { eq: "images/solutions-science.png" }) {
+      ...imageSharpIcons
+    }
+  }
+
+  fragment imageSharpIcons on File {
+    childImageSharp {
+      fixed(width: 199) {
+        ...GatsbyImageSharpFixed
+      }
     }
   }
 
