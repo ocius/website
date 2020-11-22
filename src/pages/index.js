@@ -42,7 +42,7 @@ const RadarImage = styled(Img)`
 const LogoBackgroundWrapper = styled.div`
   background-image: url(${LogoBackground});
   background-repeat: no-repeat;
-  background-position: center right;
+  background-position: 130% center;
 `;
 
 const LogoBackgroundWrapperLeft = styled.div`
