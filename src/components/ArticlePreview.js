@@ -6,6 +6,7 @@ import Img from 'gatsby-image';
 
 import font from '../common/font';
 import Heading from './Heading';
+import Button from './Button';
 import mq from '../common/mq';
 
 const Container = styled.article`
@@ -21,11 +22,15 @@ const Container = styled.article`
 `;
 
 const Paragraph = styled.p`
+  color: #75767b;
   font-size: 1em;
   font-weight: 300;
-  line-height: ${28 / 16};
-  margin-bottom: 0;
+  line-height: ${28 / 19};
   margin-top: 13px;
+`;
+
+const Wrapper = styled.div`
+  padding: 0 16px 16px;
 `;
 
 const StyledLink = styled(GatsbyLink)`
@@ -41,15 +46,16 @@ const StyledLinkMargin = styled(StyledLink)`
 `;
 
 const StyledHeading = styled(Heading)`
-  font-size: 24px;
-  line-height: ${32 / 24};
-  :hover {
-    text-decoration: underline;
-  }
+  color: #2b2e34;
+  font-size: 18px;
+  line-height: ${32 / 22};
 `;
 
 const ImageContainer = styled.figure`
-  margin: 22px 0 0;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  margin: 0 0 26px;
+  overflow: hidden;
 `;
 
 const Image = styled(Img)`
@@ -61,18 +67,24 @@ function ArticlePreview({ title, paragraph, image, href }) {
   return (
     <Container className="ArticlePreview">
       <StyledLinkMargin to={href}>
-        <StyledHeading level={3} size="medium" weight="thick">
-          {title}
-        </StyledHeading>
-
-        <Paragraph>{paragraph}</Paragraph>
-
         {image && (
           <ImageContainer className="ArticlePreview-image">
             <Image fluid={image} alt="" />
           </ImageContainer>
         )}
       </StyledLinkMargin>
+
+      <Wrapper>
+        <StyledHeading level={3} size="medium" weight="thick">
+          {title}
+        </StyledHeading>
+
+        <Paragraph>{paragraph}</Paragraph>
+
+        <Button color="blue" size="tiny" href={href}>
+          Read more
+        </Button>
+      </Wrapper>
     </Container>
   );
 }

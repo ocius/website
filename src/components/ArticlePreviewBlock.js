@@ -8,7 +8,7 @@ const RecentNews = () => (
   <StaticQuery
     query={graphql`
       query {
-        allMarkdownRemark(limit: 2, sort: { fields: [frontmatter___date], order: DESC }) {
+        allMarkdownRemark(limit: 3, sort: { fields: [frontmatter___date], order: DESC }) {
           edges {
             node {
               id
@@ -25,7 +25,7 @@ const RecentNews = () => (
               fields {
                 slug
               }
-              excerpt(pruneLength: 210)
+              excerpt(pruneLength: 130)
             }
           }
         }
@@ -34,7 +34,7 @@ const RecentNews = () => (
     render={(data) => (
       <Row>
         {data.allMarkdownRemark.edges.map(({ node }) => (
-          <Col key={node.id} xs={12} md={6} lg={6}>
+          <Col key={node.id} xs={12} md={4} lg={4}>
             <ArticlePreview
               href={node.fields.slug}
               title={node.frontmatter.title}
