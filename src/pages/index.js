@@ -409,11 +409,19 @@ export default ({ data }) => {
         </Container>
       </Segmented>
 
-      <Container>
-        <Segmented borderBottom="">
+      <Segmented borderBottom="">
+        <Container>
+          <Row className="centered">
+            <Col xs={12} md={8} lg={8} mdOffset={2}>
+              <Spacing $value="80px" />
+              <Heading level={2} size="large" underline="center">
+                Ocius news headlines
+              </Heading>
+            </Col>
+          </Row>
           <ArticlePreviewBlock />
-        </Segmented>
-      </Container>
+        </Container>
+      </Segmented>
 
       <Container>
         <Sidebar>
