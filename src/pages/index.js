@@ -15,6 +15,7 @@ import Icon from '../components/Icon';
 
 // Import bluebottle illustration
 import Bluebottle from '../images/bluebottle.svg';
+import LogoBackground from './about/images/ocius-logo-transparent.png';
 
 // Lazy load all the components
 const SidebarWidget = Loadable(() => import(`../components/SidebarWidget`));
@@ -36,6 +37,12 @@ const Spacing = styled.div`
 
 const RadarImage = styled(Img)`
   margin-bottom: -6em;
+`;
+
+const LogoBackgroundWrapper = styled.div`
+  background-image: url(${LogoBackground});
+  background-repeat: no-repeat;
+  background-position: center right;
 `;
 
 export default ({ data }) => {
@@ -94,144 +101,147 @@ export default ({ data }) => {
           </Row>
         </HeroBlock>
       )}
-      <Container>
-        <Segmented borderBottom="">
-          <Row className="centered">
-            <Col xs={12} md={8} lg={8} mdOffset={2}>
-              <Spacing $value="80px" />
-              <Heading level={2} size="large" underline="center">
-                The core technology behind Ocius
-              </Heading>
-            </Col>
-          </Row>
-          <Spacing $value="80px" />
-          <Row>
-            <Col xs={12} md={3} lg={3}>
-              <Icon.SolarSun
-                fill="#0fb0e1"
-                style={{
-                  width: '62px',
-                  height: '62px',
-                }}
-              />
-              <Icon.SolarFlare
-                fill="#0fb0e1"
-                style={{
-                  width: '62px',
-                  height: '62px',
-                  marginLeft: '5px',
-                }}
-              />
-              <Icon.SolarPower
-                fill="#0fb0e1"
-                style={{
-                  width: '62px',
-                  height: '62px',
-                  marginLeft: '5px',
-                }}
-              />
-              <Heading level={3} size="medium">
-                Solar Sail
-              </Heading>
-              <p>
-                When deployed, the patented hard solar sail harnesses both solar and wind energy.
-                When not desired it automatically folds snuggly into the deck of the Bluebottle like
-                the wing of a bird, so 100% retracted but also not taking up precious payload space
-                within the vessel. Intelligent programming means the solar sail reacts autonomously
-                to the sea, sun &amp; wind conditions to ensure efficient and safe operation for all
-                mission requirements.
-              </p>
+      <LogoBackgroundWrapper>
+        <Container>
+          <Segmented borderBottom="">
+            <Row className="centered">
+              <Col xs={12} md={8} lg={8} mdOffset={2}>
+                <Spacing $value="80px" />
+                <Heading level={2} size="large" underline="center">
+                  The core technology behind Ocius
+                </Heading>
+              </Col>
+            </Row>
+            <Spacing $value="80px" />
+            <Row>
+              <Col xs={12} md={3} lg={3}>
+                <Icon.SolarSun
+                  fill="#0fb0e1"
+                  style={{
+                    width: '62px',
+                    height: '62px',
+                  }}
+                />
+                <Icon.SolarFlare
+                  fill="#0fb0e1"
+                  style={{
+                    width: '62px',
+                    height: '62px',
+                    marginLeft: '5px',
+                  }}
+                />
+                <Icon.SolarPower
+                  fill="#0fb0e1"
+                  style={{
+                    width: '62px',
+                    height: '62px',
+                    marginLeft: '5px',
+                  }}
+                />
+                <Heading level={3} size="medium">
+                  Solar Sail
+                </Heading>
+                <p>
+                  When deployed, the patented hard solar sail harnesses both solar and wind energy.
+                  When not desired it automatically folds snuggly into the deck of the Bluebottle
+                  like the wing of a bird, so 100% retracted but also not taking up precious payload
+                  space within the vessel. Intelligent programming means the solar sail reacts
+                  autonomously to the sea, sun &amp; wind conditions to ensure efficient and safe
+                  operation for all mission requirements.
+                </p>
 
-              <Icon.RudderCurrent
-                fill="#0fb0e1"
-                style={{
-                  width: '62px',
-                  height: '62px',
-                }}
-              />
-              <Icon.RudderNav
-                fill="#0fb0e1"
-                style={{
-                  width: '62px',
-                  height: '62px',
-                  marginLeft: '5px',
-                }}
-              />
-              <Heading level={3} size="medium">
-                Rudder Flipper
-              </Heading>
-              <p>
-                The patented rudder-flipper steers, guides and powers the unmanned vessel generating
-                forward thrust from the pitching of the vessel in the waves of the ocean. The bigger
-                the sea state the stronger the forces. In seastates over Seastate 6 the solarsail
-                automatically lowers and the rudder passively propels the vessel in the desired
-                direction. If left in the mid position it passively turns the bow of the Bluebottle
-                into the oncoming seas giving Bluebottles unprecedented seakeeping and survival
-                capabilities.
-              </p>
-            </Col>
-            <Col xs={12} md={6} lg={6}>
-              <img src={Bluebottle} alt="Bluebottle Ocius" />
-            </Col>
-            <Col xs={12} md={3} lg={3}>
-              <Icon.SensorCommunication
-                fill="#0fb0e1"
-                style={{
-                  width: '62px',
-                  height: '62px',
-                }}
-              />
-              <Icon.SensorLocation
-                fill="#0fb0e1"
-                style={{
-                  width: '62px',
-                  height: '62px',
-                }}
-              />
-              <Icon.SensorTravel
-                fill="#0fb0e1"
-                style={{
-                  width: '62px',
-                  height: '62px',
-                }}
-              />
-              <Heading level={3} size="medium">
-                Sensors and Communication
-              </Heading>
-              <p>
-                Multiple sensors are available as options underwater, inside the hull and on the aft
-                comms mast. An Integrated and networked communication system allows live tracking.
-                All vessels can be monitored while operating autonomously or controlled remotely,
-                constantly sending data back to the control room.
-              </p>
-              <Icon.KeelWinch
-                fill="#0fb0e1"
-                style={{
-                  width: '62px',
-                  height: '62px',
-                }}
-              />
-              <Icon.KeelLength
-                fill="#0fb0e1"
-                style={{
-                  width: '62px',
-                  height: '62px',
-                }}
-              />
-              <Heading level={3} size="medium">
-                Keel Winch Cassette
-              </Heading>
-              <p>
-                The patented ‘keel winch’ is a cassette that displaces water ballast in the keel -
-                so adding or changing a cassette does not interfere with the displacement or trim of
-                the Bluebottle. The cassette can be flat packed and shipped to anywhere in the world
-                for customers to install, commission and test their sensor or array on the winch
-                before inserting it into the payload bay of a Bluebottle - being ready to go.
-              </p>
-            </Col>
-          </Row>
-        </Segmented>
-      </Container>
+                <Icon.RudderCurrent
+                  fill="#0fb0e1"
+                  style={{
+                    width: '62px',
+                    height: '62px',
+                  }}
+                />
+                <Icon.RudderNav
+                  fill="#0fb0e1"
+                  style={{
+                    width: '62px',
+                    height: '62px',
+                    marginLeft: '5px',
+                  }}
+                />
+                <Heading level={3} size="medium">
+                  Rudder Flipper
+                </Heading>
+                <p>
+                  The patented rudder-flipper steers, guides and powers the unmanned vessel
+                  generating forward thrust from the pitching of the vessel in the waves of the
+                  ocean. The bigger the sea state the stronger the forces. In seastates over
+                  Seastate 6 the solarsail automatically lowers and the rudder passively propels the
+                  vessel in the desired direction. If left in the mid position it passively turns
+                  the bow of the Bluebottle into the oncoming seas giving Bluebottles unprecedented
+                  seakeeping and survival capabilities.
+                </p>
+              </Col>
+              <Col xs={12} md={6} lg={6}>
+                <img src={Bluebottle} alt="Bluebottle Ocius" />
+              </Col>
+              <Col xs={12} md={3} lg={3}>
+                <Icon.SensorCommunication
+                  fill="#0fb0e1"
+                  style={{
+                    width: '62px',
+                    height: '62px',
+                  }}
+                />
+                <Icon.SensorLocation
+                  fill="#0fb0e1"
+                  style={{
+                    width: '62px',
+                    height: '62px',
+                  }}
+                />
+                <Icon.SensorTravel
+                  fill="#0fb0e1"
+                  style={{
+                    width: '62px',
+                    height: '62px',
+                  }}
+                />
+                <Heading level={3} size="medium">
+                  Sensors and Communication
+                </Heading>
+                <p>
+                  Multiple sensors are available as options underwater, inside the hull and on the
+                  aft comms mast. An Integrated and networked communication system allows live
+                  tracking. All vessels can be monitored while operating autonomously or controlled
+                  remotely, constantly sending data back to the control room.
+                </p>
+                <Icon.KeelWinch
+                  fill="#0fb0e1"
+                  style={{
+                    width: '62px',
+                    height: '62px',
+                  }}
+                />
+                <Icon.KeelLength
+                  fill="#0fb0e1"
+                  style={{
+                    width: '62px',
+                    height: '62px',
+                  }}
+                />
+                <Heading level={3} size="medium">
+                  Keel Winch Cassette
+                </Heading>
+                <p>
+                  The patented ‘keel winch’ is a cassette that displaces water ballast in the keel -
+                  so adding or changing a cassette does not interfere with the displacement or trim
+                  of the Bluebottle. The cassette can be flat packed and shipped to anywhere in the
+                  world for customers to install, commission and test their sensor or array on the
+                  winch before inserting it into the payload bay of a Bluebottle - being ready to
+                  go.
+                </p>
+              </Col>
+            </Row>
+          </Segmented>
+        </Container>
+      </LogoBackgroundWrapper>
 
       <div id="solutions" style={{ backgroundColor: '#efefef', paddingBottom: '20px' }}>
         <Segmented borderBottom="">
