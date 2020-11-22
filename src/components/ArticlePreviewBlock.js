@@ -14,6 +14,7 @@ const RecentNews = () => (
               id
               frontmatter {
                 title
+                date(formatString: "DD MMMM, YYYY")
                 featuredImage {
                   childImageSharp {
                     fluid(maxWidth: 540, maxHeight: 320) {
@@ -38,6 +39,7 @@ const RecentNews = () => (
             <ArticlePreview
               href={node.fields.slug}
               title={node.frontmatter.title}
+              date={node.frontmatter.date}
               paragraph={node.excerpt}
               image={
                 node.frontmatter.featuredImage

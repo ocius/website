@@ -51,6 +51,14 @@ const StyledHeading = styled(Heading)`
   line-height: ${32 / 22};
 `;
 
+const SubHeading = styled.p`
+  color: #4ab4e6;
+  font-size: 0.9em;
+  font-weight: 300;
+  line-height: ${28 / 19};
+  margin-top: 0;
+`;
+
 const ImageContainer = styled.figure`
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
@@ -63,7 +71,7 @@ const Image = styled(Img)`
   max-width: 100%;
 `;
 
-function ArticlePreview({ title, paragraph, image, href }) {
+function ArticlePreview({ title, date, paragraph, image, href }) {
   return (
     <Container className="ArticlePreview">
       <StyledLinkMargin to={href}>
@@ -78,6 +86,7 @@ function ArticlePreview({ title, paragraph, image, href }) {
         <StyledHeading level={3} size="medium" weight="thick">
           {title}
         </StyledHeading>
+        <SubHeading>{date}</SubHeading>
 
         <Paragraph>{paragraph}</Paragraph>
 
@@ -91,6 +100,7 @@ function ArticlePreview({ title, paragraph, image, href }) {
 
 ArticlePreview.propTypes = {
   title: PropTypes.string.isRequired,
+  date: PropTypes.string.isRequired,
   paragraph: PropTypes.string.isRequired,
   href: PropTypes.string.isRequired,
   image: PropTypes.objectOf(PropTypes.any),
