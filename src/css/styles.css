@@ -38,11 +38,19 @@ a {
     text-decoration: none;
 }
 
-p {
+.display-text-group, p {
     margin: 1em 0;
     font-weight: 300;
     font-size: 1.2em;
     line-height: 1.45;
+}
+
+.read-more-button {
+    font-family: 'Helvetica Neue LT Bold', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+    font-weight: bold;
+    color: #0fb0e1;
+    margin: 1em 0;
+    cursor: pointer;
 }
 
 strong, b {
