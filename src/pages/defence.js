@@ -9,7 +9,6 @@ import Container from '../components/Container';
 import Icon from '../components/Icon';
 import HeroBlock from '../components/HeroBlock';
 import Heading from '../components/Heading';
-import Button from '../components/Button';
 import Segmented from '../components/Segmented';
 
 // Lazy load components
