@@ -52,18 +52,13 @@ export default ({ data }) => (
       </HeroBlock>
     )}
 
-    <Container className="centered">
+    <Container>
       <Segmented borderBottom="">
-        <Row>
-          <Col xs={12} md={8} lg={8} lgOffset={2}>
-            <Heading size="medium" level={3}>
-              Persistent USVs are seen by Defence as strategic force multipliers
-            </Heading>
-            <Heading size="medium" level={3}>
-              <strong>
-                Bluebottles have more power, payload and performance making them the superior
-                persistent USV for defence
-              </strong>
+        <Row className="centered">
+          <Col xs={12} md={8} lg={8} mdOffset={2}>
+            <Spacing $value="80px" />
+            <Heading level={2} size="large" underline="center">
+              Ocius key defence features
             </Heading>
           </Col>
         </Row>
@@ -79,11 +74,11 @@ export default ({ data }) => (
                 width: 'auto',
               }}
             />
-            <Heading level={4} size="small" weight="thick">
+            <Heading level={4} color="#2b2e34" size="medium" weight="thick" underline="left">
               Anti-Submarine Warfare
             </Heading>
             <ul className="left-align">
-              <li>Silent</li>
+              <li>Silent operation</li>
               <li>“Reel in keel“ winch</li>
               <li>50W average / kW bursts</li>
               <li>Active &amp; passive arrays</li>
@@ -101,7 +96,7 @@ export default ({ data }) => (
                 width: 'auto',
               }}
             />
-            <Heading level={4} size="small" weight="thick">
+            <Heading level={4} color="#2b2e34" size="medium" weight="thick" underline="left">
               Electronic Warfare
             </Heading>
             <ul className="left-align">
@@ -120,7 +115,7 @@ export default ({ data }) => (
                 width: 'auto',
               }}
             />
-            <Heading level={4} size="small" weight="thick">
+            <Heading level={4} color="#2b2e34" size="medium" weight="thick" underline="left">
               Gateway Communications
             </Heading>
             <ul className="left-align">
@@ -130,6 +125,7 @@ export default ({ data }) => (
             </ul>
           </Col>
         </Row>
+        <Spacing />
         <Row>
           <Col xs={12} md={4} lg={4}>
             <Icon.ConnectDevelop
@@ -140,7 +136,7 @@ export default ({ data }) => (
                 width: 'auto',
               }}
             />
-            <Heading level={4} size="small" weight="thick">
+            <Heading level={4} color="#2b2e34" size="medium" weight="thick" underline="left">
               Multiple sensors
             </Heading>
             <ul className="left-align">
@@ -158,7 +154,7 @@ export default ({ data }) => (
                 width: 'auto',
               }}
             />
-            <Heading level={4} size="small" weight="thick">
+            <Heading level={4} color="#2b2e34" size="medium" weight="thick" underline="left">
               Mine Counter Measures
             </Heading>
             <ul className="left-align">
@@ -176,7 +172,7 @@ export default ({ data }) => (
                 width: 'auto',
               }}
             />
-            <Heading level={4} size="small" weight="thick">
+            <Heading level={4} color="#2b2e34" size="medium" weight="thick" underline="left">
               Other
             </Heading>
             <ul className="left-align">
@@ -188,11 +184,6 @@ export default ({ data }) => (
             </ul>
           </Col>
         </Row>
-      </Segmented>
-      <Segmented borderBottom="">
-        <Button color="white" size="medium" href="/contact" border>
-          Contact Us Now
-        </Button>
       </Segmented>
       <TallCarousel title="Ocius in Defence" slides={data.allMarkdownRemark.edges} />
     </Container>
