@@ -1,5 +1,6 @@
 import React from 'react';
 import { graphql } from 'gatsby';
+import styled from 'styled-components';
 import { Row, Col } from 'react-flexbox-grid';
 import Loadable from '@loadable/component';
 import Layout from '../layouts/Layout';
@@ -14,6 +15,16 @@ import Segmented from '../components/Segmented';
 // Lazy load components
 const TallCarousel = Loadable(() => import(`../components/TallCarousel`));
 
+const Spacing = styled.div`
+  height: ${(props) => props.$value || '50px'};
+`;
+
+const HeroSubheading = styled.p`
+  color: #ffffff;
+  font-size: 2em;
+  line-height: 1.2;
+`;
+
 export default ({ data }) => (
   <Layout>
     <SEO
@@ -22,38 +33,24 @@ export default ({ data }) => (
        power payload and performance making them the superior persistent USV for defence"
     />
 
-    <HeroBlock
-      image={data.HeroBackground ? data.HeroBackground.childImageSharp.fluid : ''}
-      constrained
-    >
-      <Heading level={2} size="large" weight="thick">
-        Defence
-      </Heading>
-      <Row>
-        <Col xs={12} md={6} lg={6}>
-          <Heading level={3} size="medium" weight="thick">
-            Anti-Submarine Warfare
-          </Heading>
-        </Col>
-        <Col xs={12} md={6} lg={6}>
-          <Heading level={3} size="medium" weight="thick">
-            Electronic Warfare
-          </Heading>
-        </Col>
-      </Row>
-      <Row>
-        <Col xs={12} md={6} lg={6}>
-          <Heading level={3} size="medium" weight="thick">
-            Mine Counter Measures
-          </Heading>
-        </Col>
-        <Col xs={12} md={6} lg={6}>
-          <Heading level={3} size="medium" weight="thick">
-            Gateway Communications
-          </Heading>
-        </Col>
-      </Row>
-    </HeroBlock>
+    {data.HeroBackground && (
+      <HeroBlock image={data.HeroBackground.childImageSharp.fluid} masked scrim="blue">
+        <Row>
+          <Col xs={12} md={6} lg={6}>
+            <Spacing $value="280px" />
+            <Heading level={1} color="white" size="huge" weight="thick" underline="left">
+              Defence
+            </Heading>
+            <HeroSubheading>
+              Persistent USVs are seen by defence as strategic force multipliers. Bluebottles have
+              more power, payload and performance making them the superior persistent USV for
+              defence.
+            </HeroSubheading>
+            <Spacing $value="80px" />
+          </Col>
+        </Row>
+      </HeroBlock>
+    )}
 
     <Container className="centered">
       <Segmented borderBottom="">
@@ -204,7 +201,7 @@ export default ({ data }) => (
 
 export const query = graphql`
   query {
-    HeroBackground: file(relativePath: { eq: "images/submarine.jpg" }) {
+    HeroBackground: file(relativePath: { eq: "images/solutions-defence-bg.png" }) {
       childImageSharp {
         fluid(quality: 90, maxWidth: 1200) {
           ...GatsbyImageSharpFluid_withWebp
