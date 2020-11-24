@@ -91,6 +91,9 @@ export default ({ data }) => {
                 surveillance
               </Heading>
               <HeroSubheading>Intelligent, networked &amp; integrated</HeroSubheading>
+              <Button color="blue" size="tiny" href="/usv">
+                Find out more
+              </Button>
               <Spacing $value="280px" />
             </Col>
           </Row>
