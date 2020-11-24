@@ -82,7 +82,7 @@ export default ({ data }) => {
         <HeroBlock image={data.HeroBackground.childImageSharp.fluid} masked scrim="dark">
           <Row>
             <Col xs={12} md={6} lg={5}>
-              <Spacing $value="80px" />
+              <Spacing $value="160px" />
               <Heading level={1} size="huge" weight="thick" header underline="left">
                 Autonomous
                 <br />
