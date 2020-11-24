@@ -5,7 +5,6 @@ import mq from '../common/mq';
 import Container from './Container';
 
 const HeaderContainer = styled.header`
-  background-color: #125192;
   min-height: 180px;
 
   @media (max-width: ${mq.max[768]}) {
