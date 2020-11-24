@@ -1,4 +1,5 @@
 import React, { useState, useRef, useContext } from 'react';
+import styled from 'styled-components';
 import EmptyLayout from '../layouts/EmptyLayout';
 import SEO from '../components/SEO';
 import TextSkeleton from '../components/carbon/TextSkeleton';
@@ -16,6 +17,10 @@ import { useWindowSize } from '../common/hooks';
 import useOnClickOutside from '../common/hooks/useOnClickOutside';
 import { FormWrapper, FormItem } from '../components/carbon/shared';
 import SplashScreen from '../components/SplashScreen';
+
+const Main = styled.main`
+  margin-top: -145px; /* removing padding from body */
+`;
 
 /** Google Maps key */
 const apiKey = process.env.GATSBY_GOOGLE_MAPS_API_KEY;
@@ -104,7 +109,7 @@ const LivePage = () => {
   return (
     <EmptyLayout>
       <SEO title="Live" description="See where Bluebottles are at any time – LIVE." />
-      <main ref={node}>
+      <Main ref={node}>
         <Header />
         <MobileNavigation />
         <LeftNav>
@@ -133,7 +138,7 @@ const LivePage = () => {
             )}
           </FormWrapper>
         </LeftNav>
-      </main>
+      </Main>
       <SplashScreen
         isLoading={isLoading}
         text={['Connecting to satellite', 'Connecting to drones', 'Drones sending data']}
