@@ -17,9 +17,7 @@ import HeroBlock from '../../components/HeroBlock';
 import NewsletterForm from '../../components/NewsletterForm';
 import ContactUs from '../../components/ContactUs';
 import SocialIconButton from '../../components/SocialIconButton';
-
-// Import logo background
-import LogoBackground from './images/ocius-logo-transparent.png';
+import { Spacing, LogoBackgroundWrapper } from '../../components/common';
 
 const Awards = ({ data }) => {
   return (
@@ -876,12 +874,6 @@ const SubHeading = styled.p`
   margin-top: 0;
 `;
 
-const LogoBackgroundWrapper = styled.div`
-  background-image: url(${LogoBackground});
-  background-repeat: no-repeat;
-  background-position: center right;
-`;
-
 const AccentRowWrapper = styled.div`
   background-color: #edf7fc;
   overflow: hidden;
@@ -1102,10 +1094,6 @@ const HeroSubheading = styled.p`
   color: #2d4355;
   font-size: 2em;
   line-height: 1.2;
-`;
-
-const Spacing = styled.div`
-  height: ${(props) => props.$value || '50px'};
 `;
 
 const FloatingImage = styled(Img)`

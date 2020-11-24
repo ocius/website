@@ -13,13 +13,13 @@ import Button from '../components/Button';
 import HeroBlock from '../components/HeroBlock';
 import Heading from '../components/Heading';
 import Icon from '../components/Icon';
+import { Spacing, LogoBackgroundWrapper } from '../components/common';
 
 // Import bluebottle illustration
 import Bluebottle from '../images/bluebottle.svg';
 import Blueybuoy from '../images/vessel-blueybuoy.svg';
 import TrimaranVessel from '../images/vessel-trimaran.svg';
 import BluebottleVessel from '../images/vessel-bluebottle.svg';
-import LogoBackground from './about/images/ocius-logo-transparent.png';
 
 // Lazy load all the components
 const ArticlePreviewBlock = Loadable(() => import(`../components/ArticlePreviewBlock`));
@@ -32,24 +32,8 @@ const HeroSubheading = styled.p`
   line-height: 1.2;
 `;
 
-const Spacing = styled.div`
-  height: ${(props) => props.$value || '50px'};
-`;
-
 const RadarImage = styled(Img)`
   margin-bottom: -6em;
-`;
-
-const LogoBackgroundWrapper = styled.div`
-  background-image: url(${LogoBackground});
-  background-repeat: no-repeat;
-  background-position: 130% center;
-`;
-
-const LogoBackgroundWrapperLeft = styled.div`
-  background-image: url(${LogoBackground});
-  background-repeat: no-repeat;
-  background-position: -30% center;
 `;
 
 const AccentRowWrapper = styled.div`
@@ -360,7 +344,7 @@ export default ({ data }) => {
         </Segmented>
       </AccentRowWrapper>
 
-      <LogoBackgroundWrapperLeft>
+      <LogoBackgroundWrapper position="left">
         <Segmented borderBottom="">
           <Container className="page-content centered">
             <Row className="centered">

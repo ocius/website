@@ -12,10 +12,7 @@ import Heading from '../components/Heading';
 import ArticlePreviewBlock from '../components/ArticlePreviewBlock';
 import NewsletterForm from '../components/NewsletterForm';
 import ContactUs from '../components/ContactUs';
-
-const Spacing = styled.div`
-  height: ${(props) => props.$value || '50px'};
-`;
+import { Spacing } from '../components/common';
 
 const HeroSubheading = styled.p`
   color: #ffffff;
