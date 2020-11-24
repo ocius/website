@@ -28,6 +28,11 @@ const LivePage = () => {
   const { leftNavIsOpen, toggleNavState } = useContext(NavContext);
   const windowSize = useWindowSize();
 
+  const deselect = {
+    id: -1,
+    name: 'View all',
+  };
+
   /*
     Attach an event handler to vessel dropdown
    */
@@ -114,9 +119,9 @@ const LivePage = () => {
                   ariaLabel="Dropdown"
                   titleText="Vessel:"
                   onChange={handleVesselChange}
-                  items={droneNames}
+                  items={droneNames.concat(deselect)}
                   itemToString={droneName}
-                  selectedItem={droneNames[currentVessel]}
+                  selectedItem={currentVessel >= 0 ? droneNames[currentVessel] : deselect}
                 />
               )}
             </FormItem>

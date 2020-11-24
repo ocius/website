@@ -84,12 +84,16 @@ const GMap = ({ apiKey, currentVessel, droneData }) => {
   };
 
   const trailCoordinates = makeTrailCoordinates(trailData);
-
-  // Iterate fetched data to size, center, and zoom map to contain all markers
-  const fitBoatsOnMap = (map, data = []) => {
+  // keeps the map centered on the selected vessel
+  if (mapRef && droneData.length > 0 && currentVessel >= 0) {
+    mapRef.panTo({
+      lat: parseFloat(droneData[currentVessel].Props.Location.Coordinates.Lat),
+      lng: parseFloat(droneData[currentVessel].Props.Location.Coordinates.Lon),
+    });
+    // Fit map bounds to contain all markers if no vessel is selected
+  } else if (droneData.length > 0 && !areBoundsSet) {
     const newBounds = new window.google.maps.LatLngBounds();
-
-    data.map((boat) => {
+    droneData.map((boat) => {
       const latLng = new window.google.maps.LatLng(
         parseFloat(boat.Props.Location.Coordinates.Lat),
         parseFloat(boat.Props.Location.Coordinates.Lon)
@@ -97,17 +101,7 @@ const GMap = ({ apiKey, currentVessel, droneData }) => {
       newBounds.extend(latLng);
       return latLng;
     });
-    map.fitBounds(newBounds);
-    // Fix zoom value
-    const currentZoom = map.getZoom();
-    setZoom(currentZoom);
-
-    return newBounds;
-  };
-
-  // Fit map bounds to contain all markers
-  if (droneData.length > 0 && !areBoundsSet) {
-    fitBoatsOnMap(mapRef, droneData);
+    mapRef.fitBounds(newBounds);
     setBounds(true);
   }
 
@@ -162,6 +156,8 @@ const GMap = ({ apiKey, currentVessel, droneData }) => {
 
   // When user selects vessel in dropdown, update selectedBoat state accordingly
   useEffect(() => {
+    if (currentVessel < 0) return;
+    setBounds(false);
     markerClickHandler(null, droneData[currentVessel]);
   }, [currentVessel]);
 
