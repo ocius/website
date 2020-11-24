@@ -412,7 +412,7 @@ export default ({ data }) => {
             <ArticlePreviewBlock />
           </Container>
         </Segmented>
-      </LogoBackgroundWrapperLeft>
+      </LogoBackgroundWrapper>
 
       <Segmented borderBottom="">
         <NewsletterForm />
