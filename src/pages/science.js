@@ -26,29 +26,29 @@ export default ({ data }) => (
         gradient="linear"
         constrained
       >
-        <Heading size="large" level={2} weight="thick">
+        <Heading level={3} size="large" weight="thick" color="white">
           Science
         </Heading>
         <Row>
           <Col xs={12} md={6} lg={6}>
-            <Heading level={3} size="medium" weight="thick">
+            <Heading level={3} size="medium" weight="thick" color="white">
               Weather “ground truth“
             </Heading>
           </Col>
           <Col sm={12} md={6} lg={6}>
-            <Heading level={3} size="medium" weight="thick">
+            <Heading level={3} size="medium" weight="thick" color="white">
               Climate Change
             </Heading>
           </Col>
         </Row>
         <Row>
           <Col xs={12} md={6} lg={6}>
-            <Heading level={3} size="medium" weight="thick">
+            <Heading level={3} size="medium" weight="thick" color="white">
               Hurricane Landfall Prediction
             </Heading>
           </Col>
           <Col sm={12} md={6} lg={6}>
-            <Heading level={3} size="medium" weight="thick">
+            <Heading level={3} size="medium" weight="thick" color="white">
               Fisheries
             </Heading>
           </Col>

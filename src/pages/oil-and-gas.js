@@ -21,22 +21,22 @@ export default ({ data }) => (
       gradient="linear"
       constrained
     >
-      <Heading level={2} size="large" weight="thick">
+      <Heading level={2} size="large" weight="thick" color="white">
         Oil &amp; Gas
       </Heading>
       <Row>
         <Col xs={12} md={6} lg={4}>
-          <Heading level={3} size="medium" weight="thick">
+          <Heading level={3} size="medium" weight="thick" color="white">
             Seabed and Pipeline Surveys
           </Heading>
         </Col>
         <Col xs={12} md={6} lg={4}>
-          <Heading level={3} size="medium" weight="thick">
+          <Heading level={3} size="medium" weight="thick" color="white">
             Environment Monitoring
           </Heading>
         </Col>
         <Col xs={12} md={6} lg={4}>
-          <Heading level={3} size="medium" weight="thick">
+          <Heading level={3} size="medium" weight="thick" color="white">
             Security
           </Heading>
         </Col>
