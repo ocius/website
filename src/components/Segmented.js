@@ -1,13 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { prop, withProp } from 'styled-tools';
+import { withProp } from 'styled-tools';
 
 // Import media queries
 import mq from '../common/mq';
 
 const SegmentedContainer = styled.div`
-  border-bottom: ${prop('borderbottom', '1px solid #efefef')};
   padding-bottom: ${withProp('multiplier', (multiplier) => `${multiplier * 2.25}rem`)};
   margin-bottom: ${withProp('multiplier', (multiplier) => `${multiplier * 2.25}rem`)};
 
@@ -18,24 +17,17 @@ const SegmentedContainer = styled.div`
 `;
 
 const Segmented = ({ children, borderBottom, multiplier, ...rest }) => (
-  <SegmentedContainer
-    className="Segmented"
-    borderbottom={borderBottom}
-    multiplier={multiplier}
-    {...rest}
-  >
+  <SegmentedContainer className="Segmented" multiplier={multiplier} {...rest}>
     {children}
   </SegmentedContainer>
 );
 
 Segmented.propTypes = {
   children: PropTypes.node.isRequired,
-  borderBottom: PropTypes.string,
   multiplier: PropTypes.number,
 };
 
 Segmented.defaultProps = {
-  borderBottom: '1px solid #efefef',
   multiplier: 1,
 };
 

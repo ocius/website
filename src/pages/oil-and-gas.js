@@ -45,7 +45,7 @@ export default ({ data }) => (
     )}
 
     <Container>
-      <Segmented borderBottom="">
+      <Segmented>
         <Row className="centered">
           <Col xs={12} md={12} lg={12}>
             <Spacing $value="80px" />
@@ -123,7 +123,7 @@ export default ({ data }) => (
       </Segmented>
     </Container>
 
-    <Segmented borderBottom="">
+    <Segmented>
       <Container>
         <Row className="centered">
           <Col xs={12} md={8} lg={8} mdOffset={2}>
@@ -136,10 +136,10 @@ export default ({ data }) => (
       </Container>
     </Segmented>
 
-    <Segmented borderBottom="">
+    <Segmented>
       <NewsletterForm />
     </Segmented>
-    <Segmented borderBottom="">
+    <Segmented>
       <ContactUs />
     </Segmented>
   </Layout>

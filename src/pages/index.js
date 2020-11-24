@@ -113,7 +113,7 @@ export default ({ data }) => {
       )}
       <LogoBackgroundWrapper>
         <Container>
-          <Segmented borderBottom="">
+          <Segmented>
             <Row className="centered">
               <Col xs={12} md={8} lg={8} mdOffset={2}>
                 <Spacing $value="80px" />
@@ -273,7 +273,7 @@ export default ({ data }) => {
       </LogoBackgroundWrapper>
 
       <AccentRowWrapper>
-        <Segmented borderBottom="">
+        <Segmented>
           <Container className="page-content">
             <Row className="centered">
               <Col xs={12} md={8} lg={8} mdOffset={2}>
@@ -345,7 +345,7 @@ export default ({ data }) => {
       </AccentRowWrapper>
 
       <LogoBackgroundWrapper position="left">
-        <Segmented borderBottom="">
+        <Segmented>
           <Container className="page-content centered">
             <Row className="centered">
               <Col xs={12} md={8} lg={8} mdOffset={2}>
@@ -399,7 +399,7 @@ export default ({ data }) => {
           </Container>
         </Segmented>
 
-        <Segmented borderBottom="">
+        <Segmented>
           <Container>
             <Row className="centered">
               <Col xs={12} md={8} lg={8} mdOffset={2}>
@@ -414,10 +414,10 @@ export default ({ data }) => {
         </Segmented>
       </LogoBackgroundWrapper>
 
-      <Segmented borderBottom="">
+      <Segmented>
         <NewsletterForm />
       </Segmented>
-      <Segmented borderBottom="">
+      <Segmented>
         <ContactUs />
       </Segmented>
     </Layout>
