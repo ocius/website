@@ -259,30 +259,5 @@ export const query = graphql`
         }
       }
     }
-
-    allMarkdownRemark(
-      limit: 10
-      sort: { fields: [frontmatter___date], order: DESC }
-      filter: { frontmatter: { category: { in: "Defence" } } }
-    ) {
-      edges {
-        node {
-          id
-          frontmatter {
-            title
-            featuredImage {
-              childImageSharp {
-                fluid(maxWidth: 272, maxHeight: 164, quality: 100) {
-                  ...GatsbyImageSharpFluid_withWebp
-                }
-              }
-            }
-          }
-          fields {
-            slug
-          }
-        }
-      }
-    }
   }
 `;
