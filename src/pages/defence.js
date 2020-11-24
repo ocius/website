@@ -65,11 +65,11 @@ export default ({ data }) => (
       <Segmented borderBottom="">
         <Row>
           <Col xs={12} md={4} lg={4}>
-            <Icon.Ship
+            <Icon.OciusGlobeAlt
               fill="#4db4e6"
               style={{
-                height: '70px',
-                marginBottom: '3px',
+                height: '120px',
+                marginBottom: '10px',
                 width: 'auto',
               }}
             />
@@ -87,11 +87,11 @@ export default ({ data }) => (
             </ul>
           </Col>
           <Col xs={12} md={4} lg={4}>
-            <Icon.Podcast
+            <Icon.OciusGlobeAlt
               fill="#4db4e6"
               style={{
-                height: '70px',
-                marginBottom: '3px',
+                height: '120px',
+                marginBottom: '10px',
                 width: 'auto',
               }}
             />
@@ -106,11 +106,11 @@ export default ({ data }) => (
             </ul>
           </Col>
           <Col xs={12} md={4} lg={4}>
-            <Icon.Link
+            <Icon.OciusGlobeAlt
               fill="#4db4e6"
               style={{
-                height: '70px',
-                marginBottom: '3px',
+                height: '120px',
+                marginBottom: '10px',
                 width: 'auto',
               }}
             />
@@ -127,11 +127,11 @@ export default ({ data }) => (
         <Spacing />
         <Row>
           <Col xs={12} md={4} lg={4}>
-            <Icon.ConnectDevelop
+            <Icon.OciusGlobeAlt
               fill="#4db4e6"
               style={{
-                height: '70px',
-                marginBottom: '3px',
+                height: '120px',
+                marginBottom: '10px',
                 width: 'auto',
               }}
             />
@@ -145,11 +145,11 @@ export default ({ data }) => (
             </ul>
           </Col>
           <Col xs={12} md={4} lg={4}>
-            <Icon.Bomb
+            <Icon.OciusGlobeAlt
               fill="#4db4e6"
               style={{
-                height: '70px',
-                marginBottom: '3px',
+                height: '120px',
+                marginBottom: '10px',
                 width: 'auto',
               }}
             />
@@ -163,11 +163,11 @@ export default ({ data }) => (
             </ul>
           </Col>
           <Col xs={12} md={4} lg={4}>
-            <Icon.Anchor
+            <Icon.OciusGlobeAlt
               fill="#4db4e6"
               style={{
-                height: '70px',
-                marginBottom: '3px',
+                height: '120px',
+                marginBottom: '10px',
                 width: 'auto',
               }}
             />
