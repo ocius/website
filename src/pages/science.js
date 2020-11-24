@@ -1,4 +1,5 @@
 import React from 'react';
+import styled from 'styled-components';
 import { graphql } from 'gatsby';
 import { Row, Col } from 'react-flexbox-grid';
 import Loadable from '@loadable/component';
@@ -14,47 +15,41 @@ const Heading = Loadable(() => import(`../components/Heading`));
 const Button = Loadable(() => import(`../components/Button`));
 const TallCarousel = Loadable(() => import(`../components/TallCarousel`));
 
+const Spacing = styled.div`
+  height: ${(props) => props.$value || '50px'};
+`;
+
+const HeroSubheading = styled.p`
+  color: #ffffff;
+  font-size: 2em;
+  line-height: 1.2;
+`;
+
 export default ({ data }) => (
   <Layout>
     <SEO
       title="Science"
       description="Persistent Unmanned Surface Vessels (USVs) are valuable tools for oceanographic and climate change research. Bluebottle USVs can monitor Weather “ground truth“, Climate Change, Hurricane landfall, Fisheries."
     />
-    <Segmented borderBottom="">
-      <HeroBlock
-        image={data.HeroBackground ? data.HeroBackground.childImageSharp.fluid : ''}
-        gradient="linear"
-        constrained
-      >
-        <Heading size="large" level={2} weight="thick">
-          Science
-        </Heading>
+    {data.HeroBackground && (
+      <HeroBlock image={data.HeroBackground.childImageSharp.fluid} masked scrim="blue">
         <Row>
           <Col xs={12} md={6} lg={6}>
-            <Heading level={3} size="medium" weight="thick">
-              Weather “ground truth“
+            <Spacing $value="80px" />
+            <Heading level={1} color="white" size="huge" weight="thick" underline="left">
+              Science
             </Heading>
-          </Col>
-          <Col sm={12} md={6} lg={6}>
-            <Heading level={3} size="medium" weight="thick">
-              Climate Change
-            </Heading>
-          </Col>
-        </Row>
-        <Row>
-          <Col xs={12} md={6} lg={6}>
-            <Heading level={3} size="medium" weight="thick">
-              Hurricane Landfall Prediction
-            </Heading>
-          </Col>
-          <Col sm={12} md={6} lg={6}>
-            <Heading level={3} size="medium" weight="thick">
-              Fisheries
-            </Heading>
+            <HeroSubheading>
+              Persistent USVs are valuable tools for oceanographic and climate change research.
+              <br />
+              Find out how Ocius can help you do more.
+            </HeroSubheading>
+            <Spacing $value="280px" />
           </Col>
         </Row>
       </HeroBlock>
-    </Segmented>
+    )}
+
     <Container className="centered">
       <Segmented>
         <Row>
@@ -140,7 +135,7 @@ export default ({ data }) => (
 
 export const query = graphql`
   query {
-    HeroBackground: file(relativePath: { eq: "images/Elevation.jpg" }) {
+    HeroBackground: file(relativePath: { eq: "images/solutions-science-bg.jpg" }) {
       childImageSharp {
         fluid(quality: 90, maxWidth: 1200) {
           ...GatsbyImageSharpFluid_withWebp
