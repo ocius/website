@@ -2,18 +2,15 @@ import React from 'react';
 import styled from 'styled-components';
 import { graphql } from 'gatsby';
 import { Row, Col } from 'react-flexbox-grid';
-import Loadable from '@loadable/component';
 import Layout from '../layouts/Layout';
 import HeroBlock from '../components/HeroBlock';
+import Heading from '../components/Heading';
 import SEO from '../components/SEO';
 import Container from '../components/Container';
 import Segmented from '../components/Segmented';
 import Icon from '../components/Icon';
-
-// Lazy load components
-const Heading = Loadable(() => import(`../components/Heading`));
-const Button = Loadable(() => import(`../components/Button`));
-const TallCarousel = Loadable(() => import(`../components/TallCarousel`));
+import ArticlePreviewBlock from '../components/ArticlePreviewBlock';
+import NewsletterForm from '../components/NewsletterForm';
 
 const Spacing = styled.div`
   height: ${(props) => props.$value || '50px'};
@@ -50,25 +47,35 @@ export default ({ data }) => (
       </HeroBlock>
     )}
 
-    <Container className="centered">
+    <Container>
+      <Segmented borderBottom="">
+        <Row className="centered">
+          <Col xs={12} md={12} lg={12}>
+            <Spacing $value="80px" />
+            <Heading level={2} size="large" underline="center">
+              How Ocius can help monitor our natural environment
+            </Heading>
+          </Col>
+        </Row>
+      </Segmented>
       <Segmented>
         <Row>
           <Col xs={12} md={4} lg={4}>
-            <Icon.Bolt
+            <Icon.OciusGlobeAlt
               fill="#4db4e6"
               style={{
-                height: '70px',
-                marginBottom: '3px',
+                height: '120px',
+                marginBottom: '10px',
                 width: 'auto',
               }}
             />
-            <Heading level={4} size="small" weight="thick">
+            <Heading level={4} color="#2b2e34" size="medium" weight="thick" underline="left">
               Weather LIVE
             </Heading>
             <ul className="left-align">
-              <li>Wind direction & strength</li>
-              <li>Solar intensity & cloud</li>
-              <li>Wave direction & height</li>
+              <li>Wind direction &amp; strength</li>
+              <li>Solar intensity &amp; cloud</li>
+              <li>Wave direction &amp; height</li>
               <li>Air pressure</li>
               <li>Water temperature</li>
               <li>Camera shots</li>
@@ -76,16 +83,16 @@ export default ({ data }) => (
             </ul>
           </Col>
           <Col xs={12} md={4} lg={4}>
-            <Icon.StackOverflow
+            <Icon.OciusGlobeAlt
               fill="#4db4e6"
               style={{
-                height: '70px',
-                marginBottom: '3px',
+                height: '120px',
+                marginBottom: '10px',
                 width: 'auto',
               }}
             />
-            <Heading level={4} size="small" weight="thick">
-              Data storage on board for later use
+            <Heading level={4} color="#2b2e34" size="medium" weight="thick" underline="left">
+              Data Storage On-Board
             </Heading>
             <ul className="left-align">
               <li>
@@ -96,40 +103,91 @@ export default ({ data }) => (
             </ul>
           </Col>
           <Col xs={12} md={4} lg={4}>
-            <Icon.Handshake
+            <Icon.OciusGlobeAlt
               fill="#4db4e6"
               style={{
-                height: '70px',
-                marginBottom: '3px',
+                height: '120px',
+                marginBottom: '10px',
                 width: 'auto',
               }}
             />
-            <Heading level={4} size="small" weight="thick">
+            <Heading level={4} color="#2b2e34" size="medium" weight="thick" underline="left">
               Multiple options
             </Heading>
             <ul className="left-align">
               <li>Discuss with us your mission goals</li>
               <li>Replace expensive bouys with mobile platforms</li>
               <li>Configure your own modular payload</li>
-              <li>150 kg &amp;wet&amp; sensors & 150 kg &amp;dry&amp; equipment</li>
+              <li>150 kg wet sensors and 150 kg dry equipment</li>
             </ul>
           </Col>
         </Row>
       </Segmented>
-      <Segmented borderBottom="">
-        <Heading size="medium" level={3}>
-          Persistent USVs are valuable tools for oceanographic and climate change research
-          <br />
-          <strong>Let Bluebottles help you do more</strong>
-          <br />
-          For how we can support your goals...
-        </Heading>
-        <Button color="white" size="medium" href="/contact" border>
-          Contact Us Now
-        </Button>
-      </Segmented>
-      <TallCarousel title="Ocius in Research" slides={data.allMarkdownRemark.edges} />
     </Container>
+
+    <Segmented borderBottom="">
+      <Container>
+        <Row className="centered">
+          <Col xs={12} md={8} lg={8} mdOffset={2}>
+            <Heading level={2} size="large" underline="center">
+              Ocius news headlines
+            </Heading>
+          </Col>
+        </Row>
+        <ArticlePreviewBlock />
+      </Container>
+    </Segmented>
+
+    <Segmented borderBottom="">
+      <NewsletterForm />
+    </Segmented>
+    <Segmented borderBottom="">
+      <Container className="page-content">
+        <Heading level={3} color="#36BBE7" size="large" weight="thick" underline="left">
+          Contact Us
+        </Heading>
+        <Row>
+          <Col xs={12} md={3} lg={3}>
+            <p>
+              <strong>Ocius Headquarters</strong>
+              <br />
+              Building R13
+              <br />
+              UNSW Randwick Campus
+              <br />
+              22 King St, Randwick NSW 2031
+            </p>
+          </Col>
+          <Col xs={12} md={3} lg={3}>
+            <p>
+              <strong>Postal Address</strong>
+              <br />
+              Mail PO Box 4304 Castlecrag
+              <br />
+              NSW 2068
+            </p>
+          </Col>
+          <Col xs={12} md={3} lg={3}>
+            <p>
+              <strong>General Enquiries:</strong>
+              <br />
+              +61 2 9924 6400
+              <br />
+              contact@ocius.com.au
+            </p>
+          </Col>
+          <Col xs={12} md={3} lg={3}>
+            <p>
+              <strong>Open Hours:</strong>
+              <br />
+              Mon - Fri: 9am - 5pm
+              <br />
+              Sat - Sun: Closed
+            </p>
+          </Col>
+        </Row>
+      </Container>
+    </Segmented>
   </Layout>
 );
 
