@@ -9,7 +9,8 @@ import Icon from '../components/Icon';
 import Segmented from '../components/Segmented';
 import HeroBlock from '../components/HeroBlock';
 import Heading from '../components/Heading';
-import Button from '../components/Button';
+import ArticlePreviewBlock from '../components/ArticlePreviewBlock';
+import NewsletterForm from '../components/NewsletterForm';
 
 const Spacing = styled.div`
   height: ${(props) => props.$value || '50px'};
@@ -45,27 +46,30 @@ export default ({ data }) => (
       </HeroBlock>
     )}
 
-    <Container className="centered">
+    <Container>
       <Segmented borderBottom="">
-        <Heading level={3} size="medium">
-          USVs are already being used in the Oil &amp; Gas industry
-          <br />
-          <strong>Bluebottles can do more</strong>
-        </Heading>
+        <Row className="centered">
+          <Col xs={12} md={12} lg={12}>
+            <Spacing $value="80px" />
+            <Heading level={2} size="large" underline="center">
+              Ocius can do more for the oil &amp; gas industry
+            </Heading>
+          </Col>
+        </Row>
       </Segmented>
       <Segmented>
         <Row>
           <Col xs={12} md={4} lg={4}>
-            <Icon.Compass
+            <Icon.OciusGlobeAlt
               fill="#4db4e6"
               style={{
-                height: '70px',
-                marginBottom: '3px',
+                height: '120px',
+                marginBottom: '10px',
                 width: 'auto',
               }}
             />
-            <Heading level={4} size="small" weight="thick">
-              Seabed & Pipeline Surveys
+            <Heading level={4} color="#2b2e34" size="medium" weight="thick" underline="left">
+              Seabed &amp; Pipeline Surveys
             </Heading>
             <ul className="left-align">
               <li>GPS mapping</li>
@@ -77,15 +81,15 @@ export default ({ data }) => (
             </ul>
           </Col>
           <Col xs={12} md={4} lg={4}>
-            <Icon.Envira
+            <Icon.OciusGlobeAlt
               fill="#4db4e6"
               style={{
-                height: '70px',
-                marginBottom: '3px',
+                height: '120px',
+                marginBottom: '10px',
                 width: 'auto',
               }}
             />
-            <Heading level={4} size="small" weight="thick">
+            <Heading level={4} color="#2b2e34" size="medium" weight="thick" underline="left">
               Environmental Monitoring
             </Heading>
             <ul className="left-align">
@@ -97,15 +101,15 @@ export default ({ data }) => (
             </ul>
           </Col>
           <Col sm={12} md={4} lg={4}>
-            <Icon.Lock
+            <Icon.OciusGlobeAlt
               fill="#4db4e6"
               style={{
-                height: '70px',
-                marginBottom: '3px',
+                height: '120px',
+                marginBottom: '10px',
                 width: 'auto',
               }}
             />
-            <Heading level={4} size="small" weight="thick">
+            <Heading level={4} color="#2b2e34" size="medium" weight="thick" underline="left">
               Security
             </Heading>
             <ul className="left-align">
@@ -119,19 +123,71 @@ export default ({ data }) => (
           </Col>
         </Row>
       </Segmented>
-      <Segmented borderBottom="">
-        <Row>
-          <Col xs={12} md={12} lg={12}>
-            <Heading size="medium" level={3}>
-              We are looking for partners to do joint venture and demonstration projects.
+    </Container>
+
+    <Segmented borderBottom="">
+      <Container>
+        <Row className="centered">
+          <Col xs={12} md={8} lg={8} mdOffset={2}>
+            <Heading level={2} size="large" underline="center">
+              Ocius news headlines
             </Heading>
-            <Button color="white" size="medium" href="/contact" border>
-              Contact Us Now
-            </Button>
           </Col>
         </Row>
-      </Segmented>
-    </Container>
+        <ArticlePreviewBlock />
+      </Container>
+    </Segmented>
+
+    <Segmented borderBottom="">
+      <NewsletterForm />
+    </Segmented>
+    <Segmented borderBottom="">
+      <Container className="page-content">
+        <Heading level={3} color="#36BBE7" size="large" weight="thick" underline="left">
+          Contact Us
+        </Heading>
+        <Row>
+          <Col xs={12} md={3} lg={3}>
+            <p>
+              <strong>Ocius Headquarters</strong>
+              <br />
+              Building R13
+              <br />
+              UNSW Randwick Campus
+              <br />
+              22 King St, Randwick NSW 2031
+            </p>
+          </Col>
+          <Col xs={12} md={3} lg={3}>
+            <p>
+              <strong>Postal Address</strong>
+              <br />
+              Mail PO Box 4304 Castlecrag
+              <br />
+              NSW 2068
+            </p>
+          </Col>
+          <Col xs={12} md={3} lg={3}>
+            <p>
+              <strong>General Enquiries:</strong>
+              <br />
+              +61 2 9924 6400
+              <br />
+              contact@ocius.com.au
+            </p>
+          </Col>
+          <Col xs={12} md={3} lg={3}>
+            <p>
+              <strong>Open Hours:</strong>
+              <br />
+              Mon - Fri: 9am - 5pm
+              <br />
+              Sat - Sun: Closed
+            </p>
+          </Col>
+        </Row>
+      </Container>
+    </Segmented>
   </Layout>
 );
 
