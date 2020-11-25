@@ -10,6 +10,8 @@ import Layout from '../../layouts/Layout';
 import Container from '../../components/Container';
 import Button from '../../components/Button';
 import Heading from '../../components/Heading';
+import NavTabs from '../../components/Tabs/NavTabs';
+import NavTab from '../../components/Tabs/NavTab';
 import Segmented from '../../components/Segmented';
 import HeroBlock from '../../components/HeroBlock';
 import NewsletterForm from '../../components/NewsletterForm';
@@ -1174,6 +1176,12 @@ export default ({ data }) => {
       {data.SolarSail && (
         <FloatingImage fixed={data.SolarSail.childImageSharp.fixed} alt="Solar Sail" />
       )}
+      <NavTabs>
+        <NavTab label="People" to="about#people" />
+        <NavTab label="Our Partners" to="about/partners#partners" />
+        <NavTab label="Our Story" to="about/our-story#story" />
+        <NavTab label="Awards" to="about/awards#awards" />
+      </NavTabs>
       <Router>
         <People path="about" data={data} />
         <Partners path="about/partners" data={data} />

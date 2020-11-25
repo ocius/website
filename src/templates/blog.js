@@ -7,6 +7,8 @@ import Layout from '../layouts/Layout';
 import mq from '../common/mq';
 import SEO from '../components/SEO';
 import PageHeader from '../components/PageHeader';
+import NavTabs from '../components/Tabs/NavTabs';
+import NavTab from '../components/Tabs/NavTab';
 import Container from '../components/Container';
 import Heading from '../components/Heading';
 import Segmented from '../components/Segmented';
@@ -39,6 +41,10 @@ export default ({ data, pageContext }) => {
         <Heading level={1} size="large" header underline="left">
           News
         </Heading>
+        <NavTabs>
+          <NavTab label="Blog" to="news" />
+          <NavTab label="Media Coverage" to="media-coverage" />
+        </NavTabs>
       </PageHeader>
       <section className="page-content">
         <Container>
