@@ -10,14 +10,11 @@ import Segmented from '../components/Segmented';
 import HeroBlock from '../components/HeroBlock';
 import Heading from '../components/Heading';
 import Button from '../components/Button';
-
-const Spacing = styled.div`
-  height: ${(props) => props.$value || '50px'};
-`;
+import Spacing from "../components/Spacing";
 
 const HeroSubheading = styled.p`
   color: #ffffff;
-  font-size: 2em;
+  font-size: 1.5em;
   line-height: 1.2;
 `;
 
@@ -31,8 +28,8 @@ export default ({ data }) => (
     {data.HeroBackground && (
       <HeroBlock image={data.HeroBackground.childImageSharp.fluid} masked>
         <Row>
-          <Col xs={12} md={6} lg={6}>
-            <Spacing $value="250px" />
+          <Col xs={9} md={6} lg={6}>
+            <Spacing xs="100px" md="250px" />
             <Heading level={1} color="white" size="huge" weight="thick" underline="left">
               Oil & Gas
             </Heading>
@@ -40,7 +37,7 @@ export default ({ data }) => (
               USVs are already being used in the Oil & Gas industry for projects such as seabed and
               pipeline surveys, environment monitoring and security.
             </HeroSubheading>
-            <Spacing $value="80px" />
+            <Spacing md="80px" />
           </Col>
         </Row>
       </HeroBlock>

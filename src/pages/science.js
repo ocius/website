@@ -21,7 +21,7 @@ const Spacing = styled.div`
 
 const HeroSubheading = styled.p`
   color: #ffffff;
-  font-size: 2em;
+  font-size: 1.5em;
   line-height: 1.2;
 `;
 
@@ -34,7 +34,7 @@ export default ({ data }) => (
     {data.HeroBackground && (
       <HeroBlock image={data.HeroBackground.childImageSharp.fluid} masked>
         <Row>
-          <Col xs={12} md={6} lg={6}>
+          <Col xs={10} md={6} lg={6}>
             <Spacing $value="50px" />
             <Heading level={1} color="white" size="huge" weight="thick" underline="left">
               Science
