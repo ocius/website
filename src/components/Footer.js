@@ -7,12 +7,14 @@ import mq from '../common/mq';
 import Icon from './Icon';
 import SocialLink from './SocialLink';
 import Container from './Container';
+import MaskOverlay from './MaskOverlay';
 
 const StyledFooter = styled.footer`
+  position: relative;
   background-color: #1f3643;
   width: 100%;
   clear: both;
-  padding: 4.5em 0;
+  padding: 10em 0 4.5em;
 
   @media (max-width: ${mq.max[768]}) {
     padding: 2em 0;
@@ -73,6 +75,7 @@ const FooterLink = styled(Link)`
 
 const Footer = ({ children, footerStyle }) => (
   <StyledFooter className="footer" style={footerStyle}>
+    <MaskOverlay position="top" />
     {children}
   </StyledFooter>
 );
@@ -111,7 +114,7 @@ Footer.defaultProps = {
               <FooterLink to="/defence">Defence</FooterLink>
             </li>
             <li>
-              <FooterLink to="/oil-and-gas">Oil & Gas</FooterLink>
+              <FooterLink to="/oil-and-gas">Oil &amp; Gas</FooterLink>
             </li>
             <li>
               <FooterLink to="/science">Science</FooterLink>
