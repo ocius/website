@@ -20,7 +20,7 @@ const Spacing = styled.div`
 `;
 
 const HeroSubheading = styled.p`
-  color: #ffffff;
+  color: #2d4355;
   font-size: 1.5em;
   line-height: 1.2;
 `;
@@ -37,9 +37,7 @@ export default ({ data }) => (
           <Col xs={12} md={6} lg={6}>
             <Spacing $value="180px" />
             <Heading level={1} size="huge" weight="thick" underline="left">
-              Ocius
-              <br />
-              Drones
+              Ocius Drones
             </Heading>
             <HeroSubheading level={2}>
               Persistent maritime surveillance,
