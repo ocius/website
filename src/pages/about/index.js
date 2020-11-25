@@ -1112,6 +1112,7 @@ const FloatingImage = styled(Img)`
   z-index: 10;
   @media (max-width: ${mq.max[768]}) {
     opacity: 0;
+    z-index: -999;
   }
 `;
 
