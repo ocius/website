@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import { graphql, StaticQuery } from 'gatsby';
 import styled from 'styled-components';
 import { Formik, ErrorMessage } from 'formik';
@@ -65,7 +66,7 @@ const FormGroup = styled.div`
   }
 `;
 
-const NewsletterForm = () => {
+const NewsletterForm = ({ topMaskBackgroundColor, bottomMaskBackgroundColor }) => {
   const [submitSuccess, setSubmitSuccess] = useState(false);
   const [formMessage, setFormMessage] = useState('');
 
@@ -139,7 +140,7 @@ const NewsletterForm = () => {
               const imageData = data.NewsletterBackground.childImageSharp.fluid;
               return (
                 <NewsletterContainer Tag="section" fluid={imageData}>
-                  <MaskOverlay flipped position="top" />
+                  <MaskOverlay flipped position="top" color={topMaskBackgroundColor} />
                   <Container className="centered">
                     <Row>
                       <Col xs={12} md={6} mdOffset={3}>
@@ -205,7 +206,7 @@ const NewsletterForm = () => {
                       </Col>
                     </Row>
                   </Container>
-                  <MaskOverlay flipped />
+                  <MaskOverlay flipped color={bottomMaskBackgroundColor} />
                 </NewsletterContainer>
               );
             }}
@@ -214,6 +215,16 @@ const NewsletterForm = () => {
       )}
     </Formik>
   );
+};
+
+NewsletterForm.propTypes = {
+  topMaskBackgroundColor: PropTypes.string,
+  bottomMaskBackgroundColor: PropTypes.string,
+};
+
+NewsletterForm.defaultProps = {
+  topMaskBackgroundColor: undefined,
+  bottomMaskBackgroundColor: undefined,
 };
 
 export default NewsletterForm;

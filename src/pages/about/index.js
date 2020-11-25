@@ -224,6 +224,9 @@ const Awards = ({ data }) => {
           </Row>
         </Container>
       </Segmented>
+      <Segmented>
+        <NewsletterForm />
+      </Segmented>
     </>
   );
 };
@@ -626,6 +629,9 @@ const Partners = ({ data }) => {
           </Row>
         </Container>
       </Segmented>
+      <Segmented>
+        <NewsletterForm />
+      </Segmented>
     </>
   );
 };
@@ -865,6 +871,9 @@ const OurStory = ({ data }) => {
           </Col>
         </Row>
       </Container>
+      <Segmented>
+        <NewsletterForm />
+      </Segmented>
     </>
   );
 };
@@ -1086,6 +1095,9 @@ const People = ({ data }) => {
           </Row>
         </Container>
       </AccentRowWrapper>
+      <Segmented>
+        <NewsletterForm topMaskBackgroundColor="#edf7fc" />
+      </Segmented>
     </>
   );
 };
@@ -1158,10 +1170,7 @@ export default ({ data }) => {
         <Awards path="about/awards" data={data} />
         <OurStory path="about/our-story" data={data} />
       </Router>
-      <Segmented borderBottom="">
-        <NewsletterForm />
-      </Segmented>
-      <Segmented borderBottom="">
+      <Segmented>
         <ContactUs />
       </Segmented>
     </Layout>
