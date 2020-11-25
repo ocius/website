@@ -16,6 +16,7 @@ import Segmented from '../../components/Segmented';
 import HeroBlock from '../../components/HeroBlock';
 import NewsletterForm from '../../components/NewsletterForm';
 import SocialIconButton from '../../components/SocialIconButton';
+import mq from '../../common/mq';
 
 // Import logo background
 import LogoBackground from './images/ocius-logo-transparent.png';
@@ -1112,6 +1113,9 @@ const FloatingImage = styled(Img)`
   top: 150px;
   right: 0;
   z-index: 10;
+  @media (max-width: ${mq.max[768]}) {
+    opacity: 0;
+  }
 `;
 
 export default ({ data }) => {
