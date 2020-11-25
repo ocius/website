@@ -17,7 +17,7 @@ import HeroBlock from '../../components/HeroBlock';
 import NewsletterForm from '../../components/NewsletterForm';
 import ContactUs from '../../components/ContactUs';
 import SocialIconButton from '../../components/SocialIconButton';
-import { Spacing, LogoBackgroundWrapper } from '../../components/common';
+import { HeroSubheading, Spacing, LogoBackgroundWrapper } from '../../components/common';
 
 const Awards = ({ data }) => {
   return (
@@ -1089,12 +1089,6 @@ const People = ({ data }) => {
     </>
   );
 };
-
-const HeroSubheading = styled.p`
-  color: #2d4355;
-  font-size: 2em;
-  line-height: 1.2;
-`;
 
 const FloatingImage = styled(Img)`
   position: absolute !important;

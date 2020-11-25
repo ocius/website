@@ -13,7 +13,7 @@ import Button from '../components/Button';
 import HeroBlock from '../components/HeroBlock';
 import Heading from '../components/Heading';
 import Icon from '../components/Icon';
-import { Spacing, LogoBackgroundWrapper } from '../components/common';
+import { HeroSubheading, Spacing, LogoBackgroundWrapper } from '../components/common';
 
 // Import bluebottle illustration
 import Bluebottle from '../images/bluebottle.svg';
@@ -25,12 +25,6 @@ import BluebottleVessel from '../images/vessel-bluebottle.svg';
 const ArticlePreviewBlock = Loadable(() => import(`../components/ArticlePreviewBlock`));
 const NewsletterForm = Loadable(() => import(`../components/NewsletterForm`));
 const ContactUs = Loadable(() => import(`../components/ContactUs`));
-
-const HeroSubheading = styled.p`
-  color: #2d4355;
-  font-size: 2em;
-  line-height: 1.2;
-`;
 
 const RadarImage = styled(Img)`
   margin-bottom: -6em;

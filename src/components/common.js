@@ -4,6 +4,12 @@ import { graphql, useStaticQuery } from 'gatsby';
 import { switchProp } from 'styled-tools';
 import styled, { css } from 'styled-components';
 
+export const HeroSubheading = styled.p`
+  color: ${(props) => props.$color || '#2d4355'};
+  font-size: 2em;
+  line-height: 1.2;
+`;
+
 export const Spacing = styled.div`
   height: ${(props) => props.$value || '50px'};
 `;

@@ -1,6 +1,5 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import styled from 'styled-components';
 import { Row, Col } from 'react-flexbox-grid';
 import Layout from '../layouts/Layout';
 import SEO from '../components/SEO';
@@ -12,13 +11,7 @@ import Segmented from '../components/Segmented';
 import ArticlePreviewBlock from '../components/ArticlePreviewBlock';
 import NewsletterForm from '../components/NewsletterForm';
 import ContactUs from '../components/ContactUs';
-import { Spacing } from '../components/common';
-
-const HeroSubheading = styled.p`
-  color: #ffffff;
-  font-size: 2em;
-  line-height: 1.2;
-`;
+import { HeroSubheading, Spacing } from '../components/common';
 
 export default ({ data }) => (
   <Layout>
@@ -36,7 +29,7 @@ export default ({ data }) => (
             <Heading level={1} color="white" size="huge" weight="thick" underline="left">
               Defence
             </Heading>
-            <HeroSubheading>
+            <HeroSubheading $color="#ffffff">
               Persistent USVs are seen by defence as strategic force multipliers. Bluebottles have
               more power, payload and performance making them the superior persistent USV for
               defence.
