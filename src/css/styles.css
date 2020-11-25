@@ -6,7 +6,7 @@ body {
     font-size: 14px;
     line-height: 1.5;
     /* Add padding to body to compensate navbar height */
-    padding-top: 145px;
+    padding-top: 130px;
 }
 
 html {
@@ -518,6 +518,9 @@ ul.menu-secondary li:before {
     .col-md-offset-12 {
       padding-right: 16px;
       padding-left: 16px;
+    }
+    body {
+        padding-top: 145px;
     }
 }
 
