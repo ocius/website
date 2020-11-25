@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import styled, { css } from 'styled-components';
 import { prop } from 'styled-tools';
 import { Link as GatsbyLink } from 'gatsby';
+import { AnchorLink } from 'gatsby-plugin-anchor-links';
 import { OutboundLink } from 'gatsby-plugin-gtag';
 
 const MenuItemStyle = css`
@@ -32,6 +33,10 @@ const Link = styled(GatsbyLink)`
 `;
 
 const StyledOutboundLink = styled(OutboundLink)`
+  ${MenuItemStyle}
+`;
+
+const StyledAnchorLink = styled(AnchorLink)`
   ${MenuItemStyle}
 `;
 
@@ -81,9 +86,9 @@ const DropdownMenu = ({ open, menuItems, setRef }) => (
         );
       return (
         <li key={menuItems.indexOf(item)}>
-          <Link key={item.name} to={item.href}>
+          <StyledAnchorLink key={item.name} to={item.href}>
             {item.name}
-          </Link>
+          </StyledAnchorLink>
         </li>
       );
     })}

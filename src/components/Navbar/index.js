@@ -41,13 +41,13 @@ export default () => (
         />
       </SocialLinks>
       <NavbarItems>
-        <NavbarDropdown name="About" link="/about">
+        <NavbarDropdown name="About" link="/about#hero">
           <DropdownMenu
             menuItems={[
-              { href: '/about', name: 'People' },
-              { href: '/about/partners', name: 'Partners' },
-              { href: '/about/our-story', name: 'Our Story' },
-              { href: '/about/awards', name: 'Awards' },
+              { href: '/about#people', name: 'People' },
+              { href: '/about/partners#partners', name: 'Partners' },
+              { href: '/about/our-story#story', name: 'Our Story' },
+              { href: '/about/awards#awards', name: 'Awards' },
             ]}
           />
         </NavbarDropdown>
@@ -63,7 +63,7 @@ export default () => (
         <NavbarDropdown name="Drones" link="/usv">
           <DropdownMenu
             menuItems={[
-              { href: '/usv', name: 'USV' },
+              { href: '/usv#hero', name: 'USV' },
               { href: '/usv#overview', name: 'BlueBottle' },
               { href: '/usv#technical', name: 'Tech Specs' },
             ]}

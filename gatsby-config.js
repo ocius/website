@@ -84,6 +84,14 @@ module.exports = {
       }
     },
 
+    // Add anchor links for USV page
+    {
+      resolve: 'gatsby-plugin-anchor-links',
+      options: {
+        offset: -180,
+        duration: 0,
+      },
+    },
     `gatsby-plugin-advanced-sitemap`,
     `gatsby-transformer-yaml`,
     `gatsby-plugin-react-helmet`,

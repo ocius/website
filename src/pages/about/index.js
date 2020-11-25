@@ -10,8 +10,6 @@ import Layout from '../../layouts/Layout';
 import Container from '../../components/Container';
 import Button from '../../components/Button';
 import Heading from '../../components/Heading';
-import NavTabs from '../../components/Tabs/NavTabs';
-import NavTab from '../../components/Tabs/NavTab';
 import Segmented from '../../components/Segmented';
 import HeroBlock from '../../components/HeroBlock';
 import NewsletterForm from '../../components/NewsletterForm';
@@ -1128,7 +1126,7 @@ export default ({ data }) => {
       />
       {data.HeroBackground && (
         <HeroBlock image={data.HeroBackground.childImageSharp.fluid} masked scrim="blue">
-          <Row>
+          <Row id="hero">
             <Col xs={12} md={6} lg={5}>
               <Spacing $value="80px" />
               <Heading level={1} size="huge" weight="thick" header underline="left">
@@ -1167,12 +1165,6 @@ export default ({ data }) => {
       {data.SolarSail && (
         <FloatingImage fixed={data.SolarSail.childImageSharp.fixed} alt="Solar Sail" />
       )}
-      <NavTabs>
-        <NavTab label="People" to="about" />
-        <NavTab label="Our Partners" to="about/partners" />
-        <NavTab label="Our Story" to="about/our-story" />
-        <NavTab label="Awards" to="about/awards" />
-      </NavTabs>
       <Router>
         <People path="about" data={data} />
         <Partners path="about/partners" data={data} />

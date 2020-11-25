@@ -38,12 +38,12 @@ export default ({ data, pageContext }) => {
         had a number of enquiries for small self sustaining USVs that can be deployed easily from a deck or beach."
       />
       <PageHeader>
-        <Heading level={1} size="large" header>
+        <Heading level={1} size="large" header underline="left">
           News
         </Heading>
         <NavTabs>
-          <NavTab label="Blog" to="news" />
-          <NavTab label="Media Coverage" to="media-coverage" />
+          <NavTab label="Blog" to="/news" />
+          <NavTab label="Media Coverage" to="/media-coverage" />
         </NavTabs>
       </PageHeader>
       <section className="page-content">

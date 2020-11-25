@@ -293,7 +293,7 @@ export default ({ data }) => {
       <AccentRowWrapper>
         <Segmented borderBottom="">
           <Container className="page-content">
-            <Row className="centered">
+            <Row className="centered" id="solutions">
               <Col xs={12} md={8} lg={8} mdOffset={2}>
                 <Spacing $value="80px" />
                 <Heading level={2} size="large" underline="center">

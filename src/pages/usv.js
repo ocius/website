@@ -33,7 +33,7 @@ export default ({ data }) => (
     />
     {data.HeroBackground && (
       <HeroBlock image={data.HeroBackground.childImageSharp.fluid} masked>
-        <Row>
+        <Row id="hero">
           <Col xs={12} md={6} lg={6}>
             <Spacing $value="180px" />
             <Heading level={1} size="huge" weight="thick" underline="left">
@@ -76,6 +76,10 @@ export default ({ data }) => (
               biofouling. Bluebottles are in this category.
             </li>
           </ol>
+        </Col>
+      </Row>
+      <Row id="overview">
+        <Col xs={12}>
           <header className="centered">
             <Heading level={1} size="huge" underline="center">
               The Bluebottle USV

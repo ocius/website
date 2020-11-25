@@ -20,12 +20,12 @@ export default ({ data }) => {
     <Layout>
       <SEO title="In The News" />
       <PageHeader>
-        <Heading level={1} size="large" header>
+        <Heading level={1} size="large" header underline="left">
           Media Coverage
         </Heading>
         <NavTabs>
-          <NavTab label="Blog" to="news" />
-          <NavTab label="Media Coverage" to="media-coverage" />
+          <NavTab label="Blog" to="/news" />
+          <NavTab label="Media Coverage" to="/media-coverage" />
         </NavTabs>
       </PageHeader>
       <section className="page-content">
