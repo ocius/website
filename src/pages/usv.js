@@ -1,4 +1,5 @@
 import React from 'react';
+import styled from 'styled-components';
 import { Col, Row } from 'react-flexbox-grid';
 import { graphql } from 'gatsby';
 import Img from 'gatsby-image';
@@ -7,14 +8,22 @@ import Layout from '../layouts/Layout';
 import SEO from '../components/SEO';
 import HeroBlock from '../components/HeroBlock';
 import Container from '../components/Container';
+import Segmented from '../components/Segmented';
 import Button from '../components/Button';
 import { Spacing, HeroSubheading } from '../components/common';
+
+// Import SVG images
+import Bluebottle from '../images/bluebottle.svg';
 
 // Lazy load components
 const Heading = Loadable(() => import(`../components/Heading`));
 const TechnicalSpecificationForm = Loadable(() => import(`./bluebottle-usv-brochure`));
-const ResponsiveIframe = Loadable(() => import(`../components/ResponsiveIframe`));
 const BluebottleOverview = Loadable(() => import(`../components/Overview`));
+
+const SubHeading = styled.p`
+  color: #4ab4e6;
+  margin-top: 0;
+`;
 
 export default ({ data }) => (
   <Layout>
@@ -91,34 +100,45 @@ export default ({ data }) => (
       </HeroBlock>
     )}
     <Container className="page-content">
-      <Row>
-        <Col className="primary-content" xs={12} md={12} lg={12}>
-          <header className="centered">
-            <Heading level={1} size="huge" underline="center">
-              The Bluebottle USV
-            </Heading>
-            <Heading level={2} size="medium">
-              Satellites of the Sea
-            </Heading>
-            Autonomous data gathering and communication platforms
-          </header>
-
-          <ResponsiveIframe
-            title="PAC2019 Overview"
-            src="https://www.youtube.com/embed/7vhvKcc-UPk"
-            frameBorder="0"
-            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-          />
-          <p>
-            Bluebottle USVs&nbsp;have greater <strong>power, payload and performance</strong>
-            &nbsp;compared to known competitors and are able to navigate freely and indefinitely
-            across the world’s oceans. Already Ocius is working with two major private-sector
-            partners to develop USVs capable of undertaking specific high value applications in
-            hydrography and defence.
-          </p>
+      <Row className="centered">
+        <Col xs={12} md={8} lg={8} mdOffset={2}>
+          <Spacing $value="80px" />
+          <Heading level={2} size="large" underline="center">
+            The Bluebottle USV
+          </Heading>
         </Col>
       </Row>
+      <Segmented>
+        <Row>
+          <Col className="primary-content" xs={12} md={5} lg={5}>
+            <header>
+              <Heading level={2} size="medium" underline="left">
+                Satellites of the Sea
+              </Heading>
+              <SubHeading>Autonomous data gathering and communication platforms</SubHeading>
+            </header>
+
+            <p style={{ marginBottom: 40 }}>
+              Bluebottle USVs&nbsp;have greater <strong>power, payload and performance</strong>
+              &nbsp;compared to known competitors and are able to navigate freely and indefinitely
+              across the world’s oceans. Already Ocius is working with two major private-sector
+              partners to develop USVs capable of undertaking specific high value applications in
+              hydrography and defence.
+            </p>
+            <Button
+              type="outbound"
+              size="tiny"
+              color="blue"
+              href="https://www.youtube.com/watch?v=7vhvKcc-UPk"
+            >
+              Watch video
+            </Button>
+          </Col>
+          <Col xs={12} md={6} lg={6} mdOffset={1}>
+            <img src={Bluebottle} alt="Bluebottle Ocius" />
+          </Col>
+        </Row>
+      </Segmented>
       <Row>
         <Col xs={12} md={12} lg={8}>
           <BluebottleOverview data={data} />
