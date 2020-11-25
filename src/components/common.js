@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { graphql, useStaticQuery } from 'gatsby';
 import { switchProp } from 'styled-tools';
 import styled, { css } from 'styled-components';
+import MaskOverlay from './MaskOverlay';
 
 export const HeroSubheading = styled.p`
   color: ${(props) => props.$color || '#2d4355'};
@@ -58,4 +59,29 @@ LogoBackgroundWrapper.propTypes = {
 LogoBackgroundWrapper.defaultProps = {
   children: '',
   position: 'right',
+};
+
+const AccentRowDiv = styled.div`
+  position: relative;
+  background-color: #edf7fc;
+  overflow: hidden;
+  padding: 3em 0;
+`;
+
+export const AccentRowWrapper = ({ children }) => {
+  return (
+    <AccentRowDiv>
+      <MaskOverlay flipped position="top" />
+      {children}
+      <MaskOverlay flipped />
+    </AccentRowDiv>
+  );
+};
+
+AccentRowWrapper.propTypes = {
+  children: PropTypes.node,
+};
+
+AccentRowWrapper.defaultProps = {
+  children: '',
 };
