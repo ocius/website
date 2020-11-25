@@ -10,7 +10,8 @@ import HeroBlock from '../components/HeroBlock';
 import Container from '../components/Container';
 import Segmented from '../components/Segmented';
 import Button from '../components/Button';
-import { Spacing, HeroSubheading } from '../components/common';
+import Icon from '../components/Icon';
+import { Spacing, HeroSubheading, AccentRowWrapper } from '../components/common';
 
 // Import SVG images
 import Bluebottle from '../images/bluebottle.svg';
@@ -18,7 +19,6 @@ import Bluebottle from '../images/bluebottle.svg';
 // Lazy load components
 const Heading = Loadable(() => import(`../components/Heading`));
 const TechnicalSpecificationForm = Loadable(() => import(`./bluebottle-usv-brochure`));
-const BluebottleOverview = Loadable(() => import(`../components/Overview`));
 
 const SubHeading = styled.p`
   color: #4ab4e6;
@@ -139,38 +139,93 @@ export default ({ data }) => (
           </Col>
         </Row>
       </Segmented>
-      <Row>
-        <Col xs={12} md={12} lg={8}>
-          <BluebottleOverview data={data} />
-        </Col>
-        <Col xs={12} md={6} lg={4}>
-          <h3>Bluebottle USV</h3>
-          <li>Advance in all conditions</li>
-          <li>5 knot hull speed</li>
-          <li>Launch from boat ramp / ship</li>
-          <li>300kg modular payload</li>
-          <li>50W average payload power</li>
-          <li>Intelligent network</li>
-          <li>Team behaviours</li>
-          <li>Human on the loop, not in the loop</li>
+    </Container>
 
-          <h3>Discriminators</h3>
-          <li>Solar + wind + wave power</li>
-          <li>Ability to get out of currents</li>
-          <li>More payload, power and presence</li>
-          <li>Unique solar-sail and rudder-flipper</li>
-          <li>Keel winch to lower sensors to variable depths</li>
-          <li>100% Australian Sovereign Capability</li>
+    <AccentRowWrapper>
+      <Container>
+        <Segmented>
+          <Row className="centered">
+            <Col xs={12} md={8} lg={8} mdOffset={2}>
+              <Spacing $value="80px" />
+              <Heading level={2} size="large" underline="center">
+                Key benefits of BlueBottle USVs
+              </Heading>
+            </Col>
+          </Row>
+        </Segmented>
+        <Segmented>
+          <Row>
+            <Col xs={12} md={4} lg={4}>
+              <Icon.OciusGlobeAlt
+                fill="#4db4e6"
+                style={{
+                  height: '120px',
+                  marginBottom: '10px',
+                  width: 'auto',
+                }}
+              />
+              <Heading level={4} color="#2b2e34" size="medium" weight="thick" underline="left">
+                Bluebottle USV
+              </Heading>
+              <ul className="left-align">
+                <li>Advance in all conditions</li>
+                <li>5 knot hull speed</li>
+                <li>Launch from boat ramp / ship</li>
+                <li>300kg modular payload</li>
+                <li>50W average payload power</li>
+                <li>Intelligent network</li>
+                <li>Team behaviours</li>
+                <li>Human on the loop, not in the loop</li>
+              </ul>
+            </Col>
+            <Col xs={12} md={4} lg={4}>
+              <Icon.OciusGlobeAlt
+                fill="#4db4e6"
+                style={{
+                  height: '120px',
+                  marginBottom: '10px',
+                  width: 'auto',
+                }}
+              />
+              <Heading level={4} color="#2b2e34" size="medium" weight="thick" underline="left">
+                Discriminators
+              </Heading>
+              <ul className="left-align">
+                <li>Solar + wind + wave power</li>
+                <li>Ability to get out of currents</li>
+                <li>More payload, power and presence</li>
+                <li>Unique solar-sail and rudder-flipper</li>
+                <li>Keel winch to lower sensors to variable depths</li>
+                <li>100% Australian Sovereign Capability</li>
+              </ul>
+            </Col>
+            <Col xs={12} md={4} lg={4}>
+              <Icon.OciusGlobeAlt
+                fill="#4db4e6"
+                style={{
+                  height: '120px',
+                  marginBottom: '10px',
+                  width: 'auto',
+                }}
+              />
+              <Heading level={4} color="#2b2e34" size="medium" weight="thick" underline="left">
+                Advantages
+              </Heading>
+              <ul className="left-align">
+                <li>Continuous coverage</li>
+                <li>Wide coverage</li>
+                <li>Greatly reduced capital costs</li>
+                <li>No fuel, food or crew</li>
+                <li>Elimination of errors due to human fatigue</li>
+                <li>No people or expensive assets in harm&apos;s way</li>
+              </ul>
+            </Col>
+          </Row>
+        </Segmented>
+      </Container>
+    </AccentRowWrapper>
 
-          <h3>Advantages</h3>
-          <li>Continuous coverage</li>
-          <li>Wide coverage</li>
-          <li>Greatly reduced capital costs</li>
-          <li>No fuel, food or crew</li>
-          <li>Elimination of errors due to human fatigue</li>
-          <li>No people or expensive assets in harm&apos;s way</li>
-        </Col>
-      </Row>
+    <Container>
       <Row>
         <Col className="primary-content" xs={12} md={12} lg={12}>
           <p>
