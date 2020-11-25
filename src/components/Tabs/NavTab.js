@@ -4,6 +4,7 @@ import { Link } from '@reach/router';
 import styled, { css } from 'styled-components';
 import detectActive from '../../common/detectActive';
 import font from '../../common/font';
+import mq from '../../common/mq';
 
 const NavItem = styled.li`
   box-sizing: border-box;
@@ -69,6 +70,11 @@ const StyledLink = styled(Link)`
   transition: color 70ms cubic-bezier(0.2, 0, 0.38, 0.9),
     border-bottom-color 70ms cubic-bezier(0.2, 0, 0.38, 0.9),
     outline 70ms cubic-bezier(0.2, 0, 0.38, 0.9);
+
+  @media (max-width: ${mq.max[768]}) {
+    box-shadow: none;
+    border: 0;
+  }
 
   @media (min-width: 67.2rem) {
     border-bottom: 3px solid #e0e0e0;
