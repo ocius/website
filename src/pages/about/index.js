@@ -14,6 +14,7 @@ import Segmented from '../../components/Segmented';
 import HeroBlock from '../../components/HeroBlock';
 import NewsletterForm from '../../components/NewsletterForm';
 import SocialIconButton from '../../components/SocialIconButton';
+import Spacing from '../../components/Spacing';
 import mq from '../../common/mq';
 
 // Import logo background
@@ -1098,12 +1099,8 @@ const People = ({ data }) => {
 
 const HeroSubheading = styled.p`
   color: #2d4355;
-  font-size: 2em;
+  font-size: 1.5em;
   line-height: 1.2;
-`;
-
-const Spacing = styled.div`
-  height: ${(props) => props.$value || '50px'};
 `;
 
 const FloatingImage = styled(Img)`
@@ -1128,36 +1125,48 @@ export default ({ data }) => {
         <HeroBlock image={data.HeroBackground.childImageSharp.fluid} masked scrim="blue">
           <Row id="hero">
             <Col xs={12} md={6} lg={5}>
-              <Spacing $value="80px" />
+              <Spacing xs="50px" />
               <Heading level={1} size="huge" weight="thick" header underline="left">
-                About
-                <br />
-                Ocius
+                About Ocius
               </Heading>
               <HeroSubheading>
                 Find out about the history behind Ocius and the support network that has helped
                 along the journey.
               </HeroSubheading>
-              <Spacing $value="280px" />
+              <Spacing xs="100px" md="280px" />
             </Col>
           </Row>
           <Row className="centered">
             <Col xs={12} md={4} lg={4} mdOffset={1}>
-              <Heading level={3} color="white" size="large" weight="thick" underline="center">
+              <Heading
+                level={3}
+                color="white"
+                size="large"
+                weight="thick"
+                underline="center"
+                shadow
+              >
                 Our Culture
               </Heading>
-              <p>
+              <Heading color="white" shadow>
                 We are an agile Australian company that respects our stakeholders, our team and the
                 ocean environment in which our products operate.
-              </p>
+              </Heading>
             </Col>
             <Col xs={12} md={4} lg={4} mdOffset={2}>
-              <Heading level={3} color="white" size="large" weight="thick" underline="center">
+              <Heading
+                level={3}
+                color="white"
+                size="large"
+                weight="thick"
+                underline="center"
+                shadow
+              >
                 Our Mission
               </Heading>
-              <p>
+              <Heading color="white" shadow>
                 To develop innovative, autonomous solutions for persistent maritime surveillance.
-              </p>
+              </Heading>
             </Col>
           </Row>
         </HeroBlock>
@@ -1227,7 +1236,7 @@ export default ({ data }) => {
 
 export const query = graphql`
   query getAboutPageData {
-    HeroBackground: file(relativePath: { eq: "pages/about/images/ocius-about-bg.png" }) {
+    HeroBackground: file(relativePath: { eq: "pages/about/images/ocius-about-bg.jpg" }) {
       childImageSharp {
         fluid(quality: 100, maxWidth: 1920) {
           ...GatsbyImageSharpFluid_withWebp
