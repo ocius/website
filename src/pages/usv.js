@@ -1,18 +1,29 @@
 import React from 'react';
+import styled from 'styled-components';
 import { Col, Row } from 'react-flexbox-grid';
 import { graphql } from 'gatsby';
 import Img from 'gatsby-image';
 import Loadable from '@loadable/component';
 import Layout from '../layouts/Layout';
 import SEO from '../components/SEO';
+import HeroBlock from '../components/HeroBlock';
 import Container from '../components/Container';
 
 // Lazy load components
 const Heading = Loadable(() => import(`../components/Heading`));
-const PageHeader = Loadable(() => import(`../components/PageHeader`));
 const TechnicalSpecificationForm = Loadable(() => import(`./bluebottle-usv-brochure`));
 const ResponsiveIframe = Loadable(() => import(`../components/ResponsiveIframe`));
 const BluebottleOverview = Loadable(() => import(`../components/Overview`));
+
+const Spacing = styled.div`
+  height: ${(props) => props.$value || '50px'};
+`;
+
+const HeroSubheading = styled.p`
+  color: #ffffff;
+  font-size: 2em;
+  line-height: 1.2;
+`;
 
 export default ({ data }) => (
   <Layout>
@@ -20,16 +31,31 @@ export default ({ data }) => (
       title="Unmanned Surface Vessel"
       description="A USV is an Unmanned Surface Vessel. Bluebottle USVs are autonomous data gathering communications platform, the satellites of the sea."
     />
-    <PageHeader>
-      <Heading level={1} size="huge" header>
-        Drones
-      </Heading>
-    </PageHeader>
+    {data.HeroBackground && (
+      <HeroBlock image={data.HeroBackground.childImageSharp.fluid} masked>
+        <Row>
+          <Col xs={12} md={6} lg={6}>
+            <Spacing $value="180px" />
+            <Heading level={1} size="huge" weight="thick" underline="left">
+              Ocius
+              <br />
+              Drones
+            </Heading>
+            <HeroSubheading level={2}>
+              Persistent maritime surveillance,
+              <br />
+              defences from the ground up.
+            </HeroSubheading>
+            <Spacing $value="380px" />
+          </Col>
+        </Row>
+      </HeroBlock>
+    )}
     <Container className="page-content">
       <Row>
         <Col className="primary-content" xs={12} md={12} lg={12}>
           <header className="centered">
-            <Heading level={1} size="huge" underline>
+            <Heading level={1} size="huge" underline="center">
               What is a USV?
             </Heading>
             <Heading level={2} size="medium">
@@ -51,7 +77,7 @@ export default ({ data }) => (
             </li>
           </ol>
           <header className="centered">
-            <Heading level={1} size="huge" underline>
+            <Heading level={1} size="huge" underline="center">
               The Bluebottle USV
             </Heading>
             <Heading level={2} size="medium">
@@ -160,6 +186,13 @@ export default ({ data }) => (
 
 export const query = graphql`
   query {
+    HeroBackground: file(relativePath: { eq: "images/usv-bg.jpg" }) {
+      childImageSharp {
+        fluid(quality: 100, maxWidth: 1200) {
+          ...GatsbyImageSharpFluid_withWebp
+        }
+      }
+    }
     BluebottleImage: file(relativePath: { eq: "images/wallpaperocius-768x432.jpg" }) {
       childImageSharp {
         fluid(quality: 100, maxWidth: 768) {
