@@ -485,8 +485,8 @@ ul.menu-secondary li:before {
 .col-xl-offset-10,
 .col-xl-offset-11,
 .col-xl-offset-12 {
-  padding-right: 16px;
-  padding-left: 16px;
+  padding: 16px;
+  padding: 16px;
 }
 
 @media only screen and (min-width: 768px) {
