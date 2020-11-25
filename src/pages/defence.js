@@ -41,7 +41,7 @@ export default ({ data }) => (
     )}
 
     <Container>
-      <Segmented borderBottom="">
+      <Segmented>
         <Row className="centered">
           <Col xs={12} md={8} lg={8} mdOffset={2}>
             <Spacing $value="80px" />
@@ -51,7 +51,7 @@ export default ({ data }) => (
           </Col>
         </Row>
       </Segmented>
-      <Segmented borderBottom="">
+      <Segmented>
         <Row>
           <Col xs={12} md={4} lg={4}>
             <Icon.OciusGlobeAlt

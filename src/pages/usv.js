@@ -5,11 +5,13 @@ import Img from 'gatsby-image';
 import Loadable from '@loadable/component';
 import Layout from '../layouts/Layout';
 import SEO from '../components/SEO';
+import HeroBlock from '../components/HeroBlock';
 import Container from '../components/Container';
+import Button from '../components/Button';
+import { Spacing, HeroSubheading } from '../components/common';
 
 // Lazy load components
 const Heading = Loadable(() => import(`../components/Heading`));
-const PageHeader = Loadable(() => import(`../components/PageHeader`));
 const TechnicalSpecificationForm = Loadable(() => import(`./bluebottle-usv-brochure`));
 const ResponsiveIframe = Loadable(() => import(`../components/ResponsiveIframe`));
 const BluebottleOverview = Loadable(() => import(`../components/Overview`));
@@ -20,38 +22,79 @@ export default ({ data }) => (
       title="Unmanned Surface Vessel"
       description="A USV is an Unmanned Surface Vessel. Bluebottle USVs are autonomous data gathering communications platform, the satellites of the sea."
     />
-    <PageHeader>
-      <Heading level={1} size="huge" header>
-        Drones
-      </Heading>
-    </PageHeader>
+    {data.HeroImage && (
+      <HeroBlock image={data.HeroImage.childImageSharp.fluid} masked scrim="blue">
+        <Row>
+          <Col xs={12} md={5} lg={5}>
+            <Spacing $value="80px" />
+            <Heading level={1} size="huge" weight="thick" underline="left">
+              Ocius
+              <br />
+              Drones
+            </Heading>
+            <HeroSubheading>
+              Persistent maritime surveillance, defences from the ground up.
+            </HeroSubheading>
+            <Button size="tiny" color="blue">
+              Find out more
+            </Button>
+            <Spacing $value="480px" />
+          </Col>
+        </Row>
+        <Row className="centered">
+          <Col xs={12} md={8} lg={8} mdOffset={2}>
+            <Heading
+              level={3}
+              className="centered"
+              color="white"
+              size="large"
+              weight="thick"
+              underline="center"
+            >
+              What is a USV?
+            </Heading>
+          </Col>
+        </Row>
+        <Container>
+          <Row>
+            <Col className="right-align" xs={12} md={5} lg={5}>
+              <Heading level={2} color="white" size="medium">
+                A USV is an
+              </Heading>
+              <Heading level={3} color="white" size="large" style={{ marginTop: 0 }}>
+                Unmanned
+                <br />
+                Surface
+                <br />
+                Vessel
+              </Heading>
+            </Col>
+            <Col xs={12} md={5} lg={5} mdOffset={1}>
+              <Heading level={4} color="white" size="small">
+                There are two types:
+              </Heading>
+              <ol>
+                <li style={{ marginBottom: 20 }}>
+                  Conventional powered vessels which are unmanned. They have limited time and range
+                  at sea and are acoustically noisy.
+                </li>
+                <li>
+                  Renewable energy powered vessels which are unmanned. They use solar and/or wind
+                  and/or wave energy so are persistent and can stay at sea indefinitely only limited
+                  by biofouling. Bluebottles are in this category.
+                </li>
+              </ol>
+            </Col>
+          </Row>
+        </Container>
+        <Spacing $value="100px" />
+      </HeroBlock>
+    )}
     <Container className="page-content">
       <Row>
         <Col className="primary-content" xs={12} md={12} lg={12}>
           <header className="centered">
-            <Heading level={1} size="huge" underline>
-              What is a USV?
-            </Heading>
-            <Heading level={2} size="medium">
-              A USV is an Unmanned Surface Vessel
-            </Heading>
-          </header>
-          <Heading level={4} size="small">
-            <strong>There are two types:</strong>
-          </Heading>
-          <ol>
-            <li>
-              Conventional powered vessels which are unmanned. They have limited time and range at
-              sea and are acoustically noisy.
-            </li>
-            <li>
-              Renewable energy powered vessels which are unmanned. They use solar and/or wind and/or
-              wave energy so are persistent and can stay at sea indefinitely only limited by
-              biofouling. Bluebottles are in this category.
-            </li>
-          </ol>
-          <header className="centered">
-            <Heading level={1} size="huge" underline>
+            <Heading level={1} size="huge" underline="center">
               The Bluebottle USV
             </Heading>
             <Heading level={2} size="medium">
@@ -160,6 +203,13 @@ export default ({ data }) => (
 
 export const query = graphql`
   query {
+    HeroImage: file(relativePath: { eq: "images/usv-bg.jpg" }) {
+      childImageSharp {
+        fluid(quality: 90, maxWidth: 1200) {
+          ...GatsbyImageSharpFluid_withWebp
+        }
+      }
+    }
     BluebottleImage: file(relativePath: { eq: "images/wallpaperocius-768x432.jpg" }) {
       childImageSharp {
         fluid(quality: 100, maxWidth: 768) {
