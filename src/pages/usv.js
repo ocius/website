@@ -53,15 +53,24 @@ export default ({ data }) => (
     )}
     <Container className="page-content">
       <Row>
-        <Col className="primary-content" xs={12} md={12} lg={12}>
-          <header className="centered">
-            <Heading level={1} size="huge" underline="center">
-              What is a USV?
-            </Heading>
-            <Heading level={2} size="medium">
-              A USV is an Unmanned Surface Vessel
-            </Heading>
-          </header>
+        <Col xs={12} md={12} lg={12}>
+          <Heading level={1} size="huge" underline="center" className="centered">
+            What is a USV?
+          </Heading>
+        </Col>
+        <Col xs={12} md={6} lg={6}>
+          <Row>
+            <Col xs={12} mdOffset={4} md={8} lg={8}>
+              <Heading level={2} size="medium" className="right-align">
+                A USV is an
+              </Heading>
+              <Heading level={2} size="large" className="right-align">
+                Unmanned Surface Vessel
+              </Heading>
+            </Col>
+          </Row>
+        </Col>
+        <Col xs={12} md={6} lg={6}>
           <Heading level={4} size="small">
             <strong>There are two types:</strong>
           </Heading>
@@ -80,16 +89,9 @@ export default ({ data }) => (
       </Row>
       <Row id="overview">
         <Col xs={12}>
-          <header className="centered">
-            <Heading level={1} size="huge" underline="center">
-              The Bluebottle USV
-            </Heading>
-            <Heading level={2} size="medium">
-              Satellites of the Sea
-            </Heading>
-            Autonomous data gathering and communication platforms
-          </header>
-
+          <Heading level={2} size="huge" className="centered" underline="center">
+            The Bluebottle USV
+          </Heading>
           <ResponsiveIframe
             title="PAC2019 Overview"
             src="https://www.youtube.com/embed/7vhvKcc-UPk"
@@ -97,6 +99,14 @@ export default ({ data }) => (
             allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
           />
+          <Heading level={2} size="medium" className="centered">
+            autonomous data gathering and communications platform
+          </Heading>
+          <Spacing xs="20px" />
+          <blockquote>The Satellites of the Sea</blockquote>
+          <Heading level={2} size="medium" className="right-align">
+            - Robert Dane CEO
+          </Heading>
           <p>
             Bluebottle USVs&nbsp;have greater <strong>power, payload and performance</strong>
             &nbsp;compared to known competitors and are able to navigate freely and indefinitely
@@ -192,7 +202,7 @@ export const query = graphql`
   query {
     HeroBackground: file(relativePath: { eq: "images/usv-bg.jpg" }) {
       childImageSharp {
-        fluid(quality: 100, maxWidth: 1200) {
+        fluid(quality: 100, maxWidth: 1920) {
           ...GatsbyImageSharpFluid_withWebp
         }
       }
