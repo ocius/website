@@ -8,12 +8,10 @@ import mq from '../common/mq';
 import SEO from '../components/SEO';
 import PageHeader from '../components/PageHeader';
 import Container from '../components/Container';
-import Sidebar from '../components/Sidebar';
 import Heading from '../components/Heading';
 import Segmented from '../components/Segmented';
 import Pagination from '../components/Pagination';
-import NavTabs from '../components/Tabs/NavTabs';
-import NavTab from '../components/Tabs/NavTab';
+import Button from '../components/Button';
 
 const Link = styled(GatsbyLink)`
   display: block;
@@ -41,15 +39,11 @@ export default ({ data, pageContext }) => {
         <Heading level={1} size="large" header underline="left">
           News
         </Heading>
-        <NavTabs>
-          <NavTab label="Blog" to="/news" />
-          <NavTab label="Media Coverage" to="/media-coverage" />
-        </NavTabs>
       </PageHeader>
       <section className="page-content">
         <Container>
           <Row>
-            <Col className="primary-content" xs={12} md={7} lg={8}>
+            <Col className="primary-content" xs={12}>
               {posts.map(({ node }) => (
                 <Segmented key={node.id}>
                   <Post className="post">
@@ -69,14 +63,14 @@ export default ({ data, pageContext }) => {
                       </Heading>
                       <p className="date">{node.frontmatter.date}</p>
                       <p className="preview">{node.excerpt}</p>
+                      <Button color="blue" size="tiny" href={node.fields.slug}>
+                        Read more
+                      </Button>
                     </Col>
                   </Post>
                 </Segmented>
               ))}
               <Pagination pageContext={pageContext} pathPrefix="/" />
-            </Col>
-            <Col className="secondary-content" xs={12} md={5} lg={4}>
-              <Sidebar />
             </Col>
           </Row>
         </Container>

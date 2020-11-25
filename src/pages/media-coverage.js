@@ -5,8 +5,6 @@ import Loadable from '@loadable/component';
 import Heading from '../components/Heading';
 import SEO from '../components/SEO';
 import PageHeader from '../components/PageHeader';
-import NavTabs from '../components/Tabs/NavTabs';
-import NavTab from '../components/Tabs/NavTab';
 import Container from '../components/Container';
 import Layout from '../layouts/Layout';
 
@@ -23,10 +21,6 @@ export default ({ data }) => {
         <Heading level={1} size="large" header underline="left">
           Media Coverage
         </Heading>
-        <NavTabs>
-          <NavTab label="Blog" to="/news" />
-          <NavTab label="Media Coverage" to="/media-coverage" />
-        </NavTabs>
       </PageHeader>
       <section className="page-content">
         <Container>

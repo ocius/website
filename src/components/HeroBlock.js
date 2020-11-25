@@ -107,7 +107,7 @@ const ScrimOverlay = styled.div`
 
 HeroContainer.defaultProps = {};
 
-const HeroBlock = ({ children, image, constrained, scrim, masked, fill }) => {
+const HeroBlock = ({ children, image, constrained, scrim, masked, fill, ...rest}) => {
   return image ? (
     <HeroContainer
       Tag="section"
@@ -116,6 +116,7 @@ const HeroBlock = ({ children, image, constrained, scrim, masked, fill }) => {
       constrained={constrained || undefined}
       masked={masked || undefined}
       fill={fill || 'white'}
+      {...rest}
     >
       <InnerContainer>{children}</InnerContainer>
 
@@ -130,6 +131,7 @@ const HeroBlock = ({ children, image, constrained, scrim, masked, fill }) => {
       constrained={constrained || undefined}
       masked={masked || undefined}
       fill={fill || 'white'}
+      {...rest}
     >
       <InnerContainer>{children}</InnerContainer>
 
