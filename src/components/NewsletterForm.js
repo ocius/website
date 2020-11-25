@@ -8,6 +8,7 @@ import addToMailchimp from 'gatsby-plugin-mailchimp';
 import Container from './Container';
 import Heading from './Heading';
 import Button from './Button';
+import MaskOverlay from './MaskOverlay';
 import { Feedback, Alert, FormField } from './Form';
 import mq from '../common/mq';
 
@@ -15,7 +16,7 @@ const NewsletterContainer = styled(BackgroundImage)`
   color: #ffffff;
   position: relative;
   overflow: hidden;
-  padding: 3.2rem 0;
+  padding: 12rem 0;
   background-attachment: fixed;
 
   @media (max-width: ${mq.max[720]}) {
@@ -138,11 +139,18 @@ const NewsletterForm = () => {
               const imageData = data.NewsletterBackground.childImageSharp.fluid;
               return (
                 <NewsletterContainer Tag="section" fluid={imageData}>
+                  <MaskOverlay flipped position="top" />
                   <Container className="centered">
                     <Row>
                       <Col xs={12} md={6} mdOffset={3}>
                         <form onSubmit={handleSubmit}>
-                          <Heading level={3} size="large" weight="thick" color="white">
+                          <Heading
+                            level={3}
+                            size="large"
+                            weight="thick"
+                            color="white"
+                            style={{ marginTop: 0 }}
+                          >
                             Sign up to
                             <br />
                             our newsletter
@@ -197,6 +205,7 @@ const NewsletterForm = () => {
                       </Col>
                     </Row>
                   </Container>
+                  <MaskOverlay flipped />
                 </NewsletterContainer>
               );
             }}

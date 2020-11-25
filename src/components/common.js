@@ -65,7 +65,7 @@ const AccentRowDiv = styled.div`
   position: relative;
   background-color: #edf7fc;
   overflow: hidden;
-  padding: 3em 0;
+  padding: 3.2rem 0;
 `;
 
 export const AccentRowWrapper = ({ children }) => {
