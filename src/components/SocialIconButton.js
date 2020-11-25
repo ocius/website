@@ -7,13 +7,15 @@ import iconFromString from '../common/iconFromString';
 
 const backgroundColors = {
   email: '#2c3643',
-  facebook: '#3a5999',
+  facebook: '#4ab4e6',
   facebookMessenger: '#1472fb',
   pinterest: '#cb2027',
+  instagram: '#4ab4e6',
   reddit: '#fc4220',
   twitter: '#1da1f2',
   whatsapp: '#28eb76',
   weChat: '#7bb32e',
+  linkedIn: '#4ab4e6',
 };
 
 const iconNames = {
@@ -21,10 +23,12 @@ const iconNames = {
   facebook: 'Facebook',
   facebookMessenger: 'FacebookMessenger',
   pinterest: 'Pinterest',
+  instagram: 'Instagram',
   reddit: 'Reddit',
   twitter: 'Twitter',
   whatsapp: 'Whatsapp',
   weChat: 'WeChat',
+  linkedIn: 'LinkedIn',
 };
 
 const sizeMultiplier = 2.5;
@@ -74,10 +78,12 @@ SocialIconButton.propTypes = {
     'facebook',
     'facebookMessenger',
     'pinterest',
+    'instagram',
     'reddit',
     'twitter',
     'whatsapp',
     'weChat',
+    'linkedIn',
   ]).isRequired,
   href: PropTypes.string,
   onClick: PropTypes.func,

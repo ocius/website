@@ -1,18 +1,37 @@
 import React from 'react';
+import styled from 'styled-components';
 import { Col, Row } from 'react-flexbox-grid';
 import { graphql } from 'gatsby';
 import Img from 'gatsby-image';
 import Loadable from '@loadable/component';
 import Layout from '../layouts/Layout';
 import SEO from '../components/SEO';
+import HeroBlock from '../components/HeroBlock';
 import Container from '../components/Container';
+import mq from '../common/mq';
 
 // Lazy load components
 const Heading = Loadable(() => import(`../components/Heading`));
-const PageHeader = Loadable(() => import(`../components/PageHeader`));
 const TechnicalSpecificationForm = Loadable(() => import(`./bluebottle-usv-brochure`));
 const ResponsiveIframe = Loadable(() => import(`../components/ResponsiveIframe`));
 const BluebottleOverview = Loadable(() => import(`../components/Overview`));
+
+const Spacing = styled.div`
+  height: ${(props) => props.$value || '50px'};
+`;
+
+const HeroSubheading = styled.p`
+  color: #2d4355;
+  font-size: 1.5em;
+  line-height: 1.2;
+`;
+
+const RightHeading = styled(Heading)`
+  text-alignt: right;
+  @media (max-width: ${mq.max[768]}) {
+    text-align: center;
+  }
+`;
 
 export default ({ data }) => (
   <Layout>
@@ -20,22 +39,44 @@ export default ({ data }) => (
       title="Unmanned Surface Vessel"
       description="A USV is an Unmanned Surface Vessel. Bluebottle USVs are autonomous data gathering communications platform, the satellites of the sea."
     />
-    <PageHeader>
-      <Heading level={1} size="huge" header>
-        Drones
-      </Heading>
-    </PageHeader>
+    {data.HeroBackground && (
+      <HeroBlock image={data.HeroBackground.childImageSharp.fluid} masked>
+        <Row id="hero">
+          <Col xs={12} md={6} lg={6}>
+            <Spacing $value="180px" />
+            <Heading level={1} size="huge" weight="thick" underline="left">
+              Ocius Drones
+            </Heading>
+            <HeroSubheading level={2}>
+              Persistent maritime surveillance,
+              <br />
+              defences from the ground up.
+            </HeroSubheading>
+            <Spacing $value="380px" />
+          </Col>
+        </Row>
+      </HeroBlock>
+    )}
     <Container className="page-content">
       <Row>
-        <Col className="primary-content" xs={12} md={12} lg={12}>
-          <header className="centered">
-            <Heading level={1} size="huge" underline>
-              What is a USV?
-            </Heading>
-            <Heading level={2} size="medium">
-              A USV is an Unmanned Surface Vessel
-            </Heading>
-          </header>
+        <Col xs={12} md={12} lg={12}>
+          <Heading level={1} size="huge" underline="center" className="centered">
+            What is a USV?
+          </Heading>
+        </Col>
+        <Col xs={12} md={6} lg={6}>
+          <Row>
+            <Col xs={12} mdOffset={4} md={8} lg={8}>
+              <RightHeading level={2} size="medium">
+                A USV is an
+              </RightHeading>
+              <RightHeading level={2} size="large">
+                Unmanned Surface Vessel
+              </RightHeading>
+            </Col>
+          </Row>
+        </Col>
+        <Col xs={12} md={6} lg={6}>
           <Heading level={4} size="small">
             <strong>There are two types:</strong>
           </Heading>
@@ -50,16 +91,13 @@ export default ({ data }) => (
               biofouling. Bluebottles are in this category.
             </li>
           </ol>
-          <header className="centered">
-            <Heading level={1} size="huge" underline>
-              The Bluebottle USV
-            </Heading>
-            <Heading level={2} size="medium">
-              Sattelites of the Sea
-            </Heading>
-            Autonomous data gathering and communication platforms
-          </header>
-
+        </Col>
+      </Row>
+      <Row id="overview">
+        <Col xs={12}>
+          <Heading level={2} size="huge" className="centered" underline="center">
+            The Bluebottle USV
+          </Heading>
           <ResponsiveIframe
             title="PAC2019 Overview"
             src="https://www.youtube.com/embed/7vhvKcc-UPk"
@@ -67,6 +105,14 @@ export default ({ data }) => (
             allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
           />
+          <Heading level={2} size="medium" className="centered">
+            autonomous data gathering and communications platform
+          </Heading>
+          <Spacing xs="20px" />
+          <blockquote>The Satellites of the Sea</blockquote>
+          <Heading level={2} size="medium" className="right-align">
+            - Robert Dane CEO
+          </Heading>
           <p>
             Bluebottle USVs&nbsp;have greater <strong>power, payload and performance</strong>
             &nbsp;compared to known competitors and are able to navigate freely and indefinitely
@@ -123,12 +169,12 @@ export default ({ data }) => (
             </strong>
           </p>
 
-          <p className="centered">
+          <div className="centered">
             <Img
               fluid={data.BluebottleImage ? data.BluebottleImage.childImageSharp.fluid : ''}
               alt="Bluebottle USV"
             />
-          </p>
+          </div>
           <p>
             Applications for USVs are myriad and measured in the billions of dollars. Major entities
             in offshore energy, defence and science are investing heavily in unmanned systems for
@@ -160,6 +206,13 @@ export default ({ data }) => (
 
 export const query = graphql`
   query {
+    HeroBackground: file(relativePath: { eq: "images/usv-bg.jpg" }) {
+      childImageSharp {
+        fluid(quality: 100, maxWidth: 1920) {
+          ...GatsbyImageSharpFluid_withWebp
+        }
+      }
+    }
     BluebottleImage: file(relativePath: { eq: "images/wallpaperocius-768x432.jpg" }) {
       childImageSharp {
         fluid(quality: 100, maxWidth: 768) {

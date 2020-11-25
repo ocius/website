@@ -3,25 +3,13 @@ import PropTypes from 'prop-types';
 import styled, { css } from 'styled-components';
 import { prop } from 'styled-tools';
 import { Link as GatsbyLink } from 'gatsby';
+import { AnchorLink } from 'gatsby-plugin-anchor-links';
 import { OutboundLink } from 'gatsby-plugin-gtag';
-
-const Menu = styled.ul`
-  display: ${prop('display', 'none')};
-  margin: 0px;
-  padding: 0px;
-  position: absolute;
-  left: 0;
-  border: 1px solid #ddd;
-  box-shadow: 0px 3px 2px 0px rgba(0, 0, 0, 0.1);
-  background-color: white;
-  z-index: 1000;
-  text-align: left;
-  list-style: none;
-`;
 
 const MenuItemStyle = css`
   display: block;
-  padding: 10px 20px;
+  min-width: 10em;
+  padding: 0.6em 1em;
   clear: both;
   font-size: 17px;
   font-weight: normal;
@@ -30,6 +18,7 @@ const MenuItemStyle = css`
   white-space: nowrap;
   text-decoration: none;
   box-sizing: border-box;
+  border-bottom: 1px solid rgba(51, 51, 51, 0.1);
 
   :focus,
   :hover {
@@ -47,6 +36,43 @@ const StyledOutboundLink = styled(OutboundLink)`
   ${MenuItemStyle}
 `;
 
+const StyledAnchorLink = styled(AnchorLink)`
+  ${MenuItemStyle}
+`;
+
+const Menu = styled.ul`
+  display: ${prop('display', 'none')};
+  margin: 0px;
+  padding: 8px;
+  min-width: 14em;
+  position: absolute;
+  left: 0;
+  border: 1px solid #ddd;
+  box-shadow: 0px 3px 2px 0px rgba(0, 0, 0, 0.1);
+  background-color: rgba(255, 255, 255, 0.75);
+  z-index: 1000;
+  text-align: left;
+  list-style: none;
+
+  &:after {
+    content: '';
+    border: solid #cfc6c0;
+    border-width: 0 1px 1px 0;
+    display: inline-block;
+    padding: 6px;
+    transform: rotate(-135deg);
+    position: absolute;
+    top: -7px;
+    background: #fff;
+    left: 33px;
+    z-index: -1;
+  }
+
+  li:last-child ${Link} {
+    border-bottom: none;
+  }
+`;
+
 const DropdownMenu = ({ open, menuItems, setRef }) => (
   <Menu ref={setRef} display={open ? 'block' : 'none'}>
     {menuItems.map((item) => {
@@ -60,9 +86,9 @@ const DropdownMenu = ({ open, menuItems, setRef }) => (
         );
       return (
         <li key={menuItems.indexOf(item)}>
-          <Link key={item.name} to={item.href}>
+          <StyledAnchorLink key={item.name} to={item.href}>
             {item.name}
-          </Link>
+          </StyledAnchorLink>
         </li>
       );
     })}

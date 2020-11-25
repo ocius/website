@@ -1,5 +1,6 @@
 import React from 'react';
 import { graphql } from 'gatsby';
+import styled from 'styled-components';
 import { Row, Col } from 'react-flexbox-grid';
 import Layout from '../layouts/Layout';
 import SEO from '../components/SEO';
@@ -9,6 +10,13 @@ import Segmented from '../components/Segmented';
 import HeroBlock from '../components/HeroBlock';
 import Heading from '../components/Heading';
 import Button from '../components/Button';
+import Spacing from '../components/Spacing';
+
+const HeroSubheading = styled.p`
+  color: #ffffff;
+  font-size: 1.5em;
+  line-height: 1.2;
+`;
 
 export default ({ data }) => (
   <Layout>
@@ -16,32 +24,25 @@ export default ({ data }) => (
       title="Oil &amp; Gas"
       description="Unmanned Surface Vessels (USVs) are already being used in the Oil and Gas industry. Bluebottle USVs can do more. Seadbed and Pipeline Surveys, Security, Environment Monitoring, "
     />
-    <HeroBlock
-      image={data.HeroBackground ? data.HeroBackground.childImageSharp.fluid : ''}
-      gradient="linear"
-      constrained
-    >
-      <Heading level={2} size="large" weight="thick">
-        Oil &amp; Gas
-      </Heading>
-      <Row>
-        <Col xs={12} md={6} lg={4}>
-          <Heading level={3} size="medium" weight="thick">
-            Seabed and Pipeline Surveys
-          </Heading>
-        </Col>
-        <Col xs={12} md={6} lg={4}>
-          <Heading level={3} size="medium" weight="thick">
-            Environment Monitoring
-          </Heading>
-        </Col>
-        <Col xs={12} md={6} lg={4}>
-          <Heading level={3} size="medium" weight="thick">
-            Security
-          </Heading>
-        </Col>
-      </Row>
-    </HeroBlock>
+
+    {data.HeroBackground && (
+      <HeroBlock image={data.HeroBackground.childImageSharp.fluid} masked>
+        <Row>
+          <Col xs={9} md={6} lg={6}>
+            <Spacing xs="100px" md="250px" />
+            <Heading level={1} color="white" size="huge" weight="thick" underline="left">
+              Oil & Gas
+            </Heading>
+            <HeroSubheading>
+              USVs are already being used in the Oil & Gas industry for projects such as seabed and
+              pipeline surveys, environment monitoring and security.
+            </HeroSubheading>
+            <Spacing md="80px" />
+          </Col>
+        </Row>
+      </HeroBlock>
+    )}
+
     <Container className="centered">
       <Segmented borderBottom="">
         <Heading level={3} size="medium">
@@ -134,7 +135,7 @@ export default ({ data }) => (
 
 export const query = graphql`
   query {
-    HeroBackground: file(relativePath: { eq: "images/Oil-Header-Background.jpg" }) {
+    HeroBackground: file(relativePath: { eq: "images/solutions-oil-bg.jpg" }) {
       childImageSharp {
         fluid(quality: 90, maxWidth: 1200) {
           ...GatsbyImageSharpFluid_withWebp

@@ -19,6 +19,14 @@ module.exports = {
       }
     },
 
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `fonts`,
+        path: `${__dirname}/src/fonts/`
+      }
+    },
+
     // Parse all markdown files (each plugin add/parse some data into GraphQL layer)
     {
       resolve: `gatsby-transformer-remark`,
@@ -76,6 +84,14 @@ module.exports = {
       }
     },
 
+    // Add anchor links for USV page
+    {
+      resolve: 'gatsby-plugin-anchor-links',
+      options: {
+        offset: -180,
+        duration: 0,
+      },
+    },
     `gatsby-plugin-advanced-sitemap`,
     `gatsby-transformer-yaml`,
     `gatsby-plugin-react-helmet`,

@@ -4,9 +4,11 @@ import styled from 'styled-components';
 import mq from '../../common/mq';
 
 const NavItems = styled.ul`
-  margin: 0 0 0 auto;
-  padding: 0;
-  text-align: right;
+  margin: 0;
+  padding: 0 10%;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
   list-style: outside none none;
 
   @media (max-width: ${mq.max[768]}) {
