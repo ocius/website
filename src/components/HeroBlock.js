@@ -72,7 +72,7 @@ const ScrimOverlay = styled.div`
         -180deg,
         rgba(19, 29, 33, 0) 0%,
         rgba(19, 29, 33, 0) 50%,
-        rgb(19, 29, 33) 70%,
+        rgb(19, 29, 33, 0) 70%,
         rgb(19, 29, 33) 100%
       );
     `,

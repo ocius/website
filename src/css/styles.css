@@ -138,6 +138,10 @@ ul li {
     text-align: right;
 }
 
+.white {
+    color: white;
+}
+
 textarea,
 input[type="text"],
 input[type="password"],

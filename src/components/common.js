@@ -85,3 +85,26 @@ AccentRowWrapper.propTypes = {
 AccentRowWrapper.defaultProps = {
   children: '',
 };
+
+const DarkAccentRowDiv = styled.div`
+  position: relative;
+  background-color: rgb(19, 29, 33);
+  padding: 3.2rem 0;
+`;
+
+export const DarkAccentRowWrapper = ({ children }) => {
+  return (
+    <DarkAccentRowDiv>
+      {children}
+      <MaskOverlay flipped />
+    </DarkAccentRowDiv>
+  );
+};
+
+DarkAccentRowWrapper.propTypes = {
+  children: PropTypes.node,
+};
+
+DarkAccentRowWrapper.defaultProps = {
+  children: '',
+};

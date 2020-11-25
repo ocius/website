@@ -18,6 +18,7 @@ import {
   Spacing,
   LogoBackgroundWrapper,
   AccentRowWrapper,
+  DarkAccentRowWrapper,
 } from '../components/common';
 
 // Import bluebottle illustration
@@ -32,7 +33,8 @@ const NewsletterForm = Loadable(() => import(`../components/NewsletterForm`));
 const ContactUs = Loadable(() => import(`../components/ContactUs`));
 
 const RadarImage = styled(Img)`
-  margin-bottom: -6em;
+  margin: 0 -2.5em -8em;
+  z-index: 2;
 `;
 
 export default ({ data }) => {
@@ -44,7 +46,7 @@ export default ({ data }) => {
       />
 
       {data.HeroBackground && (
-        <HeroBlock image={data.HeroBackground.childImageSharp.fluid} masked scrim="dark">
+        <HeroBlock image={data.HeroBackground.childImageSharp.fluid} scrim="dark">
           <Row>
             <Col xs={12} md={6} lg={5}>
               <Spacing $value="80px" />
@@ -59,6 +61,10 @@ export default ({ data }) => {
               <Spacing $value="280px" />
             </Col>
           </Row>
+        </HeroBlock>
+      )}
+      <DarkAccentRowWrapper>
+        <Container>
           <Row>
             <Col xs={12} md={6} lg={6}>
               {data.Computer && (
@@ -66,7 +72,7 @@ export default ({ data }) => {
               )}
             </Col>
             <Col xs={12} md={6} lg={6}>
-              <Spacing $value="80px" />
+              <Spacing $value="50px" />
               <Heading level={3} color="white" size="large" weight="thick" underline="left">
                 A new generation
                 <br />
@@ -74,7 +80,7 @@ export default ({ data }) => {
                 <br />
                 Ocean monitoring.
               </Heading>
-              <p>
+              <p className="white">
                 Power large payloads, roam widely, and stay at sea for months at a time. Ocius USVs
                 offer economic and operational advantages over conventional methods in a multitude
                 of industries. Utilising solar, wind and wave power, these vessels can autonomously
@@ -89,8 +95,8 @@ export default ({ data }) => {
               </Button>
             </Col>
           </Row>
-        </HeroBlock>
-      )}
+        </Container>
+      </DarkAccentRowWrapper>
       <LogoBackgroundWrapper>
         <Container>
           <Segmented>
