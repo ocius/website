@@ -8,6 +8,7 @@ import Layout from '../layouts/Layout';
 import SEO from '../components/SEO';
 import HeroBlock from '../components/HeroBlock';
 import Container from '../components/Container';
+import mq from '../common/mq';
 
 // Lazy load components
 const Heading = Loadable(() => import(`../components/Heading`));
@@ -23,6 +24,13 @@ const HeroSubheading = styled.p`
   color: #2d4355;
   font-size: 1.5em;
   line-height: 1.2;
+`;
+
+const RightHeading = styled(Heading)`
+  text-alignt: right;
+  @media (max-width: ${mq.max[768]}) {
+    text-align: center;
+  }
 `;
 
 export default ({ data }) => (
@@ -59,12 +67,12 @@ export default ({ data }) => (
         <Col xs={12} md={6} lg={6}>
           <Row>
             <Col xs={12} mdOffset={4} md={8} lg={8}>
-              <Heading level={2} size="medium" className="right-align">
+              <RightHeading level={2} size="medium">
                 A USV is an
-              </Heading>
-              <Heading level={2} size="large" className="right-align">
+              </RightHeading>
+              <RightHeading level={2} size="large">
                 Unmanned Surface Vessel
-              </Heading>
+              </RightHeading>
             </Col>
           </Row>
         </Col>
