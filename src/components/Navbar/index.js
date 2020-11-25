@@ -13,6 +13,7 @@ import Button from '../Button';
 const NavbarContainer = styled.section`
   display: flex;
   flex-direction: row;
+  justify-content: space-around;
   width: 100%;
   margin: 30px 0 0;
 `;
