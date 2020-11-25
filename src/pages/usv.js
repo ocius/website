@@ -385,44 +385,58 @@ export default ({ data }) => (
       </Segmented>
     </Container>
 
-    <Container>
-      <Row>
-        <Col className="primary-content" xs={12} md={12} lg={12}>
-          <p>
-            Other persistent USVs carry only small payloads, have low power for the payload and
-            often have low performance to manoeuvre, avoid collisions and &apos;make way&apos; out
-            of currents.
-          </p>
-          <p className="centered">
-            <strong>
-              Bluebottles harvest all the weather on the ocean; the sun, the wind and the waves so
-              they can advance under all conditions and can remain at sea for months at a
-              time.&nbsp;
-            </strong>
-          </p>
+    <AccentRowWrapper>
+      <Container>
+        <Segmented>
+          <Row className="centered">
+            <Col xs={12} md={8} lg={8} mdOffset={2}>
+              <Spacing $value="80px" />
+              <Heading level={2} size="large" underline="center">
+                Superior Payload,
+                <br /> Power &amp; Performance
+              </Heading>
+            </Col>
+          </Row>
+        </Segmented>
+        <Segmented>
+          <Row>
+            <Col className="centered" xs={12} md={6} lg={6}>
+              <Img
+                fluid={data.BluebottleImage ? data.BluebottleImage.childImageSharp.fluid : ''}
+                alt="Bluebottle USV"
+              />
+            </Col>
+            <Col xs={12} md={6} lg={6}>
+              <SubHeading>
+                Other persistent USVs carry only small payloads, have low power for the payload and
+                often have low performance to manoeuvre, avoid collisions and &apos;make way&apos;
+                out of currents.
+              </SubHeading>
+              <p>
+                Bluebottles harvest all the weather on the ocean; the sun, the wind and the waves so
+                they can advance under all conditions and can remain at sea for months at a time.
+              </p>
+              <p>
+                Applications for USVs are myriad and measured in the billions of dollars. Major
+                entities in offshore energy, defence and science are investing heavily in unmanned
+                systems for “dull, dirty or dangerous” operations. Independent industry research
+                estimates the USV market for defence alone to be a staggering{' '}
+                <a href="http://marketinfogroup.com/unmanned-surface-vehicles-for-defense-and-security-markets-technologies/">
+                  US$3.8Bn by 2020
+                </a>
+                .
+              </p>
+              <p>
+                The team at Ocius are focusing all of our experience, networks and love of the sea
+                to create a revolutionary Australian technology for the world’s oceans.
+              </p>
+            </Col>
+          </Row>
+        </Segmented>
+      </Container>
+    </AccentRowWrapper>
 
-          <div className="centered">
-            <Img
-              fluid={data.BluebottleImage ? data.BluebottleImage.childImageSharp.fluid : ''}
-              alt="Bluebottle USV"
-            />
-          </div>
-          <p>
-            Applications for USVs are myriad and measured in the billions of dollars. Major entities
-            in offshore energy, defence and science are investing heavily in unmanned systems for
-            “dull, dirty or dangerous” operations. Independent industry research estimates the USV
-            market for defence alone to be a staggering
-            <a href="http://marketinfogroup.com/unmanned-surface-vehicles-for-defense-and-security-markets-technologies/">
-              &nbsp;US$3.8Bn by 2020
-            </a>
-            .
-          </p>
-          <p>
-            The team at Ocius are focusing all of our experience, networks and love of the sea to
-            create a revolutionary Australian technology for the world’s oceans.
-          </p>
-        </Col>
-      </Row>
+    <Container>
       <Row>
         <p>
           <strong>
@@ -445,7 +459,7 @@ export const query = graphql`
         }
       }
     }
-    BluebottleImage: file(relativePath: { eq: "images/wallpaperocius-768x432.jpg" }) {
+    BluebottleImage: file(relativePath: { eq: "images/bluebottle-bridge.jpg" }) {
       childImageSharp {
         fluid(quality: 100, maxWidth: 768) {
           ...GatsbyImageSharpFluid_withWebp
