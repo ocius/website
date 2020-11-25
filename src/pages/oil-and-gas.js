@@ -10,7 +10,7 @@ import Segmented from '../components/Segmented';
 import HeroBlock from '../components/HeroBlock';
 import Heading from '../components/Heading';
 import Button from '../components/Button';
-import Spacing from "../components/Spacing";
+import Spacing from '../components/Spacing';
 
 const HeroSubheading = styled.p`
   color: #ffffff;
