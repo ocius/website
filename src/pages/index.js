@@ -6,6 +6,7 @@ import styled from 'styled-components';
 import Img from 'gatsby-image';
 import ReadMoreReact from 'read-more-react';
 import Layout from '../layouts/Layout';
+import mq from '../common/mq';
 import SEO from '../components/SEO';
 import Container from '../components/Container';
 import Segmented from '../components/Segmented';
@@ -27,16 +28,19 @@ const NewsletterForm = Loadable(() => import(`../components/NewsletterForm`));
 
 const HeroSubheading = styled.p`
   color: #2d4355;
-  font-size: 2em;
+  font-size: 1.5em;
   line-height: 1.2;
 `;
 
 const Spacing = styled.div`
-  height: ${(props) => props.$value || '50px'};
+  height: ${(props) => props.xs || '50px'};
+  @media (min-width: ${mq.min[768]}) {
+    height: ${(props) => props.md || '50px'};
+  }
 `;
 
-const RadarImage = styled(Img)`
-  margin-bottom: -6em;
+const HeroFooter = styled(HeroBlock)`
+  margin-top: -6em; */
 `;
 
 const LogoBackgroundWrapper = styled.div`
@@ -79,32 +83,31 @@ export default ({ data }) => {
       />
 
       {data.HeroBackground && (
-        <HeroBlock image={data.HeroBackground.childImageSharp.fluid} masked scrim="dark">
-          <Row>
-            <Col xs={12} md={6} lg={5}>
-              <Spacing $value="160px" />
-              <Heading level={1} size="huge" weight="thick" header underline="left">
-                Autonomous
-                <br />
-                maritime
-                <br />
-                surveillance
-              </Heading>
-              <HeroSubheading>Intelligent, networked &amp; integrated</HeroSubheading>
-              <Button color="blue" size="tiny" href="/usv">
-                Find out more
-              </Button>
-              <Spacing $value="280px" />
-            </Col>
-          </Row>
+        <HeroBlock image={data.HeroBackground.childImageSharp.fluid} fill="#131d21">
+          <Container>
+            <Spacing xs="30px" md="160px" />
+            <Heading level={1} size="huge" weight="thick" header underline="left">
+              Autonomous
+              <br />
+              maritime
+              <br />
+              surveillance
+            </Heading>
+            <HeroSubheading>Intelligent, networked &amp; integrated</HeroSubheading>
+            <Button color="blue" size="tiny" href="/usv">
+              Find out more
+            </Button>
+            <Spacing xs="230px" md="380px" />
+          </Container>
+        </HeroBlock>
+      )}
+      <HeroBlock masked scrim="dark" fill="#131d21">
+        <Container>
           <Row>
             <Col xs={12} md={6} lg={6}>
-              {data.Computer && (
-                <RadarImage fluid={data.Computer.childImageSharp.fluid} alt="Radar" />
-              )}
+              {data.Computer && <Img fluid={data.Computer.childImageSharp.fluid} alt="Radar" />}
             </Col>
             <Col xs={12} md={6} lg={6}>
-              <Spacing $value="80px" />
               <Heading level={3} color="white" size="large" weight="thick" underline="left">
                 A new generation
                 <br />
@@ -127,20 +130,20 @@ export default ({ data }) => {
               </Button>
             </Col>
           </Row>
-        </HeroBlock>
-      )}
+        </Container>
+      </HeroBlock>
       <LogoBackgroundWrapper>
         <Container>
           <Segmented borderBottom="">
             <Row className="centered">
               <Col xs={12} md={8} lg={8} mdOffset={2}>
-                <Spacing $value="80px" />
+                <Spacing xs="80px" />
                 <Heading level={2} size="large" underline="center">
                   The core technology behind Ocius
                 </Heading>
               </Col>
             </Row>
-            <Spacing $value="80px" />
+            <Spacing xs="80px" />
             <Row>
               <Col xs={12} md={3} lg={3}>
                 <Icon.SolarSun
@@ -182,7 +185,7 @@ export default ({ data }) => {
                   readMoreText="Read more"
                 />
 
-                <Spacing $value="40px" />
+                <Spacing xs="40px" />
                 <Icon.RudderCurrent
                   fill="#0fb0e1"
                   style={{
@@ -254,7 +257,7 @@ export default ({ data }) => {
                   readMoreText="Read more"
                 />
 
-                <Spacing $value="40px" />
+                <Spacing xs="40px" />
                 <Icon.KeelWinch
                   fill="#0fb0e1"
                   style={{
@@ -295,7 +298,7 @@ export default ({ data }) => {
           <Container className="page-content">
             <Row className="centered" id="solutions">
               <Col xs={12} md={8} lg={8} mdOffset={2}>
-                <Spacing $value="80px" />
+                <Spacing xs="80px" />
                 <Heading level={2} size="large" underline="center">
                   How Ocius is changing the world
                 </Heading>
@@ -367,7 +370,7 @@ export default ({ data }) => {
           <Container className="page-content centered">
             <Row className="centered">
               <Col xs={12} md={8} lg={8} mdOffset={2}>
-                <Spacing $value="80px" />
+                <Spacing xs="80px" />
                 <Heading level={2} size="large" underline="center">
                   Ocius Vessels
                 </Heading>
@@ -421,7 +424,7 @@ export default ({ data }) => {
           <Container>
             <Row className="centered">
               <Col xs={12} md={8} lg={8} mdOffset={2}>
-                <Spacing $value="80px" />
+                <Spacing xs="80px" />
                 <Heading level={2} size="large" underline="center">
                   Ocius news headlines
                 </Heading>

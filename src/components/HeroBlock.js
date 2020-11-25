@@ -20,13 +20,38 @@ export const ContainerStyle = css`
   min-height: 80vh;
 
   @media (max-width: ${mq.max[720]}) {
-    max-height: 592px;
   }
+`;
+
+const HeroNoImageContainer = styled.div`
+  ${ContainerStyle}
+  background: ${(props) => props.fill};
+  ${(props) =>
+    props.constrained &&
+    css`
+      text-align: center;
+      height: 35vh;
+      min-height: 300px;
+
+      @media (max-width: ${mq.max[720]}) {
+        max-height: none;
+        height: auto;
+      }
+    `}
+
+  ${(props) =>
+    props.masked &&
+    css`
+      padding-bottom: 80px;
+    `}
 `;
 
 const HeroContainer = styled(BackgroundImage)`
   ${ContainerStyle}
-
+  background: ${(props) => props.fill};
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 60% center;
   ${(props) =>
     props.constrained &&
     css`
@@ -82,20 +107,37 @@ const ScrimOverlay = styled.div`
 
 HeroContainer.defaultProps = {};
 
-const HeroBlock = ({ children, image, constrained, scrim, masked }) => (
-  <HeroContainer
-    Tag="section"
-    className="HeroBlock"
-    fluid={image}
-    constrained={constrained || undefined}
-    masked={masked || undefined}
-  >
-    <InnerContainer>{children}</InnerContainer>
+const HeroBlock = ({ children, image, constrained, scrim, masked, fill }) => {
+  return image ? (
+    <HeroContainer
+      Tag="section"
+      className="HeroBlock"
+      fluid={image}
+      constrained={constrained || undefined}
+      masked={masked || undefined}
+      fill={fill || 'white'}
+    >
+      <InnerContainer>{children}</InnerContainer>
 
-    {scrim && <ScrimOverlay $color={scrim} />}
-    {masked && <MaskOverlay />}
-  </HeroContainer>
-);
+      {scrim && <ScrimOverlay $color={scrim} />}
+      {masked && <MaskOverlay $color={fill} />}
+    </HeroContainer>
+  ) : (
+    <HeroNoImageContainer
+      Tag="section"
+      className="HeroBlock"
+      fluid={image}
+      constrained={constrained || undefined}
+      masked={masked || undefined}
+      fill={fill || 'white'}
+    >
+      <InnerContainer>{children}</InnerContainer>
+
+      {scrim && <ScrimOverlay $color={scrim} />}
+      {masked && <MaskOverlay $color={fill} />}
+    </HeroNoImageContainer>
+  );
+};
 
 HeroBlock.propTypes = {
   image: PropTypes.objectOf(PropTypes.any).isRequired,
