@@ -26,7 +26,7 @@ export default ({ data }) => (
       <HeroBlock image={data.HeroImage.childImageSharp.fluid} masked scrim="blue">
         <Row>
           <Col xs={12} md={5} lg={5}>
-            <Spacing $value="80px" />
+            <Spacing $value="180px" />
             <Heading level={1} size="huge" weight="thick" underline="left">
               Ocius
               <br />
@@ -38,7 +38,7 @@ export default ({ data }) => (
             <Button size="tiny" color="blue">
               Find out more
             </Button>
-            <Spacing $value="480px" />
+            <Spacing $value="380px" />
           </Col>
         </Row>
         <Row className="centered">
