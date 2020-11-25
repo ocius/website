@@ -17,6 +17,7 @@ export const ContainerStyle = css`
   margin-right: auto;
   position: relative;
   overflow: hidden;
+  min-height: 80vh;
 
   @media (max-width: ${mq.max[720]}) {
     max-height: 592px;
