@@ -6,7 +6,6 @@ import styled from 'styled-components';
 import Img from 'gatsby-image';
 import ReadMoreReact from 'read-more-react';
 import Layout from '../layouts/Layout';
-import mq from '../common/mq';
 import SEO from '../components/SEO';
 import Container from '../components/Container';
 import Segmented from '../components/Segmented';
@@ -14,6 +13,7 @@ import Button from '../components/Button';
 import HeroBlock from '../components/HeroBlock';
 import Heading from '../components/Heading';
 import Icon from '../components/Icon';
+import Spacing from '../components/Spacing';
 
 // Import bluebottle illustration
 import Bluebottle from '../images/bluebottle.svg';
@@ -30,17 +30,6 @@ const HeroSubheading = styled.p`
   color: #2d4355;
   font-size: 1.5em;
   line-height: 1.2;
-`;
-
-const Spacing = styled.div`
-  height: ${(props) => props.xs || '50px'};
-  @media (min-width: ${mq.min[768]}) {
-    height: ${(props) => props.md || '50px'};
-  }
-`;
-
-const HeroFooter = styled(HeroBlock)`
-  margin-top: -6em; */
 `;
 
 const LogoBackgroundWrapper = styled.div`
@@ -74,6 +63,10 @@ const AccentRowWrapper = styled.div`
   }
 `;
 
+const RadarImage = styled(Img)`
+  margin-top: -30px;
+`;
+
 export default ({ data }) => {
   return (
     <Layout>
@@ -97,7 +90,7 @@ export default ({ data }) => {
             <Button color="blue" size="tiny" href="/usv">
               Find out more
             </Button>
-            <Spacing xs="230px" md="380px" />
+            <Spacing xs="230px" md="380px" lg="500px" />
           </Container>
         </HeroBlock>
       )}
@@ -105,7 +98,9 @@ export default ({ data }) => {
         <Container>
           <Row>
             <Col xs={12} md={6} lg={6}>
-              {data.Computer && <Img fluid={data.Computer.childImageSharp.fluid} alt="Radar" />}
+              {data.Computer && (
+                <RadarImage fluid={data.Computer.childImageSharp.fluid} alt="Radar" />
+              )}
             </Col>
             <Col xs={12} md={6} lg={6}>
               <Heading level={3} color="white" size="large" weight="thick" underline="left">
