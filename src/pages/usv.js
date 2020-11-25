@@ -21,7 +21,7 @@ const Spacing = styled.div`
 
 const HeroSubheading = styled.p`
   color: #ffffff;
-  font-size: 2em;
+  font-size: 1.5em;
   line-height: 1.2;
 `;
 
