@@ -437,15 +437,7 @@ export default ({ data }) => (
     </AccentRowWrapper>
 
     <Container>
-      <Row>
-        <p>
-          <strong>
-            We&apos;d love to hear from you.&nbsp; Tell us what you think about our product or how
-            it could benefit your organisation.
-          </strong>
-        </p>
-        <TechnicalSpecificationForm />
-      </Row>
+      <TechnicalSpecificationForm />
     </Container>
   </Layout>
 );
