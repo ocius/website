@@ -51,30 +51,55 @@ export default ({ data, pageContext }) => {
         <section className="page-content">
           <Row>
             <Col className="primary-content" xs={12} md={12} lg={12}>
-              {posts.map(({ node }) => (
+              {posts.map(({ node }, index) => (
                 <Segmented key={node.id}>
-                  <Row className="post">
-                    <Col lg={6}>
-                      {node.frontmatter.featuredImage && (
-                        <Link to={node.fields.slug}>
-                          <Img
-                            fluid={node.frontmatter.featuredImage.childImageSharp.fluid}
-                            alt={node.frontmatter.title}
-                          />
-                        </Link>
-                      )}
-                    </Col>
-                    <CenteredCol lg={6}>
-                      <Heading level={3} size="medium" className="title" weight="thick">
-                        <Link to={node.fields.slug}>{node.frontmatter.title}</Link>
-                      </Heading>
-                      <p className="date">{node.frontmatter.date}</p>
-                      <p>{node.excerpt}</p>
-                      <Button color="blue" size="small" href={node.fields.slug}>
-                        Read more
-                      </Button>
-                    </CenteredCol>
-                  </Row>
+                  {!(index % 2) ? (
+                    <Row className="post">
+                      <Col lg={6}>
+                        {node.frontmatter.featuredImage && (
+                          <Link to={node.fields.slug}>
+                            <Img
+                              fluid={node.frontmatter.featuredImage.childImageSharp.fluid}
+                              alt={node.frontmatter.title}
+                            />
+                          </Link>
+                        )}
+                      </Col>
+                      <CenteredCol lg={6}>
+                        <Heading level={3} size="medium" className="title" weight="thick">
+                          <Link to={node.fields.slug}>{node.frontmatter.title}</Link>
+                        </Heading>
+                        <p className="date">{node.frontmatter.date}</p>
+                        <p>{node.excerpt}</p>
+                        <Button color="blue" size="small" href={node.fields.slug}>
+                          Read more
+                        </Button>
+                      </CenteredCol>
+                    </Row>
+                  ) : (
+                    <Row className="post">
+                      <CenteredCol lg={6}>
+                        <Heading level={3} size="medium" className="title" weight="thick">
+                          <Link to={node.fields.slug}>{node.frontmatter.title}</Link>
+                        </Heading>
+                        <p className="date">{node.frontmatter.date}</p>
+                        <p>{node.excerpt}</p>
+                        <Button color="blue" size="small" href={node.fields.slug}>
+                          Read more
+                        </Button>
+                      </CenteredCol>
+                      <Col lg={6}>
+                        {node.frontmatter.featuredImage && (
+                          <Link to={node.fields.slug}>
+                            <Img
+                              fluid={node.frontmatter.featuredImage.childImageSharp.fluid}
+                              alt={node.frontmatter.title}
+                            />
+                          </Link>
+                        )}
+                      </Col>
+                    </Row>
+                  )}
                 </Segmented>
               ))}
               <Pagination pageContext={pageContext} pathPrefix="/" />
