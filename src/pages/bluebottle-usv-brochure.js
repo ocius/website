@@ -119,7 +119,7 @@ class TechnicalSpecificationForm extends React.Component {
               }}
             >
               {({ errors, touched, handleSubmit, isSubmitting }) => (
-                <form onSubmit={handleSubmit}>
+                <form className="form-aligned" onSubmit={handleSubmit}>
                   {this.state.formMessage && (
                     <Alert success={this.state.submitSuccess}>{this.state.formMessage}</Alert>
                   )}

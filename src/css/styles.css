@@ -170,8 +170,13 @@ input[type="color"] {
     -webkit-appearance: none;
     -moz-appearance: none;
     box-sizing: border-box;
-    width: 60%;
+    width: 100%;
     transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.form-aligned input,
+.form-aligned textarea {
+    width: 60%;
 }
 
 .page-content {
