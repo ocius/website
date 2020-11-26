@@ -10,6 +10,8 @@ import Heading from '../components/Heading';
 import Segmented from '../components/Segmented';
 import Pagination from '../components/Pagination';
 import Button from '../components/Button';
+import NewsletterForm from '../components/NewsletterForm';
+import ContactUs from '../components/ContactUs';
 import { Spacing } from '../components/common';
 
 const Link = styled(GatsbyLink)`
@@ -107,6 +109,14 @@ export default ({ data, pageContext }) => {
           </Row>
         </section>
       </Container>
+
+      <Segmented>
+        <NewsletterForm />
+      </Segmented>
+
+      <Segmented>
+        <ContactUs />
+      </Segmented>
     </Layout>
   );
 };
