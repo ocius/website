@@ -5,9 +5,11 @@ import { Field } from 'formik';
 export const Feedback = styled.div`
   display: block;
   width: 100%;
+  margin-top: 0.5rem;
   margin-bottom: 0.25rem;
   font-size: 80%;
   color: #dc3545;
+  text-align: center;
 `;
 
 export const Alert = styled.span`
@@ -31,6 +33,14 @@ export const Alert = styled.span`
       border-color: #f5c6cb;
     `
   )};
+`;
+
+export const FormLabel = styled.label`
+  text-align: right;
+  display: inline-block;
+  vertical-align: middle;
+  width: calc(20% - 2em);
+  margin: 0 2em 0 0;
 `;
 
 export const FormField = styled(Field)`

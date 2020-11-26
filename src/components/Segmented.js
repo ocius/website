@@ -7,7 +7,7 @@ import { prop, withProp } from 'styled-tools';
 import mq from '../common/mq';
 
 const SegmentedContainer = styled.div`
-  border-bottom: ${prop('borderbottom', '1px solid #efefef')};
+  border-bottom: ${prop.borderBottom ? '1px solid #efefef' : '0px'};
   padding-bottom: ${withProp('multiplier', (multiplier) => `${multiplier * 2.25}rem`)};
   margin-bottom: ${withProp('multiplier', (multiplier) => `${multiplier * 2.25}rem`)};
 
@@ -30,12 +30,12 @@ const Segmented = ({ children, borderBottom, multiplier, ...rest }) => (
 
 Segmented.propTypes = {
   children: PropTypes.node.isRequired,
-  borderBottom: PropTypes.string,
+  borderBottom: PropTypes.bool,
   multiplier: PropTypes.number,
 };
 
 Segmented.defaultProps = {
-  borderBottom: '1px solid #efefef',
+  borderBottom: false,
   multiplier: 1,
 };
 

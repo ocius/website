@@ -2,13 +2,14 @@ import React from 'react';
 import { Formik, ErrorMessage } from 'formik';
 import axios from 'axios';
 import styled from 'styled-components';
-import { Col } from 'react-flexbox-grid';
-import { Feedback, Alert, FormField, TextareaField } from '../components/Form';
+import { Row, Col } from 'react-flexbox-grid';
+import { Feedback, Alert, FormField, FormLabel, TextareaField } from '../components/Form';
 import Heading from '../components/Heading';
 import Button from '../components/Button';
+import { Spacing } from '../components/common';
 
 const FieldWrapper = styled.div`
-  margin: 0 0 0.625em;
+  margin: 0 0 1.2em;
 `;
 
 class TechnicalSpecificationForm extends React.Component {
@@ -66,107 +67,146 @@ class TechnicalSpecificationForm extends React.Component {
 
   render() {
     return (
-      <Col xs={12} md={12} lg={12} style={{ paddingBottom: '20px' }}>
-        <header id="technical" className="centered">
-          <Heading level={1} size="huge" underline>
-            BlueBottle USV Brochure
-          </Heading>
-        </header>
-        <p>
-          For technical specifications of Ocius&apos; BlueBottle USV, contact us below for a PDF
-          Brochure
-        </p>
-        <Formik
-          initialValues={{
-            fullName: '',
-            position: '',
-            company: '',
-            email: '',
-            phone: '',
-            interest: '',
-          }}
-          onSubmit={({ fullName, position, company, email, phone, interest }, actions) => {
-            const endPoint = 'https://qf498rjqnj.execute-api.us-east-1.amazonaws.com';
+      <>
+        <Row id="technical" className="centered">
+          <Col xs={12} md={8} lg={8} mdOffset={2}>
+            <Spacing $value="80px" />
+            <Heading level={2} size="large" underline="center">
+              BlueBottle USV Brochure
+            </Heading>
+          </Col>
+        </Row>
 
-            axios
-              .post(`${endPoint}/Prod`, {
-                // HACK: Endpoint expects name property
-                fullName,
-                position,
-                company,
-                email,
-                phone,
-                interest,
-              })
-              .then((response) => {
-                if (response.status === 200) {
-                  this.handleFormSubmitSuccess();
-                  actions.resetForm();
-                } else {
-                  this.handleFormSubmitError();
-                }
-              })
-              .catch((error) => {
-                this.handleFormSubmitError(error);
-              });
-          }}
-        >
-          {({ errors, touched, handleSubmit, isSubmitting }) => (
-            <form onSubmit={handleSubmit}>
-              {this.state.formMessage && (
-                <Alert success={this.state.submitSuccess}>{this.state.formMessage}</Alert>
+        <Row>
+          <Col xs={12} md={8} lg={8} mdOffset={2} style={{ paddingBottom: '20px' }}>
+            <p className="centered" style={{ maxWidth: 400, margin: '0 auto 2em' }}>
+              For technical specifications of Ocius&apos; BlueBottle USV, contact us below for a PDF
+              Brochure
+            </p>
+            <Formik
+              initialValues={{
+                fullName: '',
+                position: '',
+                company: '',
+                email: '',
+                phone: '',
+                interest: '',
+              }}
+              onSubmit={({ fullName, position, company, email, phone, interest }, actions) => {
+                const endPoint = 'https://qf498rjqnj.execute-api.us-east-1.amazonaws.com';
+
+                axios
+                  .post(`${endPoint}/Prod`, {
+                    // HACK: Endpoint expects name property
+                    fullName,
+                    position,
+                    company,
+                    email,
+                    phone,
+                    interest,
+                  })
+                  .then((response) => {
+                    if (response.status === 200) {
+                      this.handleFormSubmitSuccess();
+                      actions.resetForm();
+                    } else {
+                      this.handleFormSubmitError();
+                    }
+                  })
+                  .catch((error) => {
+                    this.handleFormSubmitError(error);
+                  });
+              }}
+            >
+              {({ errors, touched, handleSubmit, isSubmitting }) => (
+                <form className="form-aligned" onSubmit={handleSubmit}>
+                  {this.state.formMessage && (
+                    <Alert success={this.state.submitSuccess}>{this.state.formMessage}</Alert>
+                  )}
+                  <FieldWrapper>
+                    <FormLabel htmlFor="fullName">Name:</FormLabel>
+                    <FormField
+                      type="text"
+                      id="fullName"
+                      name="fullName"
+                      className={`form-control ${
+                        errors.fullName && touched.fullName && 'is-invalid'
+                      }`}
+                      validate={TechnicalSpecificationForm.validateFullName}
+                      placeholder="Full Name (required)"
+                    />
+                    <ErrorMessage name="fullName">
+                      {(msg) => <Feedback>{msg}</Feedback>}
+                    </ErrorMessage>
+                  </FieldWrapper>
+
+                  <FieldWrapper>
+                    <FormLabel htmlFor="company">Company:</FormLabel>
+                    <FormField
+                      type="text"
+                      id="company"
+                      name="company"
+                      placeholder="Company or Company Website"
+                    />
+                  </FieldWrapper>
+
+                  <FieldWrapper>
+                    <FormLabel htmlFor="position">Position:</FormLabel>
+                    <FormField type="text" id="position" name="position" placeholder="Position" />
+                  </FieldWrapper>
+
+                  <FieldWrapper>
+                    <FormLabel htmlFor="email">Email:</FormLabel>
+                    <FormField
+                      type="email"
+                      id="email"
+                      name="email"
+                      className={`form-control ${errors.email && touched.email && 'is-invalid'}`}
+                      validate={TechnicalSpecificationForm.validateEmail}
+                      placeholder="Email (required)"
+                    />
+                    <ErrorMessage name="email">{(msg) => <Feedback>{msg}</Feedback>}</ErrorMessage>
+                  </FieldWrapper>
+
+                  <FieldWrapper>
+                    <FormLabel htmlFor="phone">Phone:</FormLabel>
+                    <FormField type="tel" id="phone" name="phone" placeholder="Phone" />
+                  </FieldWrapper>
+
+                  <FieldWrapper>
+                    <FormLabel htmlFor="interest">Reason for interest:</FormLabel>
+                    <TextareaField
+                      id="interest"
+                      name="interest"
+                      component="textarea"
+                      className={`form-control ${
+                        errors.interest && touched.interest && 'is-invalid'
+                      }`}
+                      validate={TechnicalSpecificationForm.validateInterest}
+                      cols={40}
+                      rows={10}
+                      placeholder="Reason for interest (required)"
+                    />
+                    <ErrorMessage name="interest">
+                      {(msg) => <Feedback>{msg}</Feedback>}
+                    </ErrorMessage>
+                  </FieldWrapper>
+
+                  <Button
+                    style={{ margin: '0 auto', display: 'block' }}
+                    type="submit"
+                    size="small"
+                    color="blue"
+                    disabled={isSubmitting}
+                  >
+                    Submit
+                  </Button>
+                </form>
               )}
-              <FieldWrapper>
-                <FormField
-                  type="text"
-                  name="fullName"
-                  className={`form-control ${errors.fullName && touched.fullName && 'is-invalid'}`}
-                  validate={TechnicalSpecificationForm.validateFullName}
-                  placeholder="Full Name (required)"
-                />
-                <ErrorMessage name="fullName">{(msg) => <Feedback>{msg}</Feedback>}</ErrorMessage>
-              </FieldWrapper>
-
-              <FieldWrapper>
-                <FormField type="text" name="position" placeholder="Position" />
-              </FieldWrapper>
-              <FieldWrapper>
-                <FormField type="text" name="company" placeholder="Company or Company Website" />
-              </FieldWrapper>
-              <FieldWrapper>
-                <FormField
-                  type="email"
-                  name="email"
-                  className={`form-control ${errors.email && touched.email && 'is-invalid'}`}
-                  validate={TechnicalSpecificationForm.validateEmail}
-                  placeholder="Email (required)"
-                />
-                <ErrorMessage name="email">{(msg) => <Feedback>{msg}</Feedback>}</ErrorMessage>
-              </FieldWrapper>
-
-              <FieldWrapper>
-                <FormField type="tel" name="phone" placeholder="Phone" />
-              </FieldWrapper>
-              <FieldWrapper>
-                <TextareaField
-                  name="interest"
-                  component="textarea"
-                  className={`form-control ${errors.interest && touched.interest && 'is-invalid'}`}
-                  validate={TechnicalSpecificationForm.validateInterest}
-                  cols={40}
-                  rows={10}
-                  placeholder="Reason for interest (required)"
-                />
-                <ErrorMessage name="interest">{(msg) => <Feedback>{msg}</Feedback>}</ErrorMessage>
-              </FieldWrapper>
-
-              <Button type="submit" size="medium" color="blue" disabled={isSubmitting}>
-                Submit
-              </Button>
-            </form>
-          )}
-        </Formik>
-      </Col>
+            </Formik>
+          </Col>
+        </Row>
+      </>
     );
   }
 }
