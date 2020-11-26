@@ -12,6 +12,9 @@ import Container from '../components/Container';
 import Segmented from '../components/Segmented';
 import Button from '../components/Button';
 import Icon from '../components/Icon';
+import ArticlePreviewBlock from '../components/ArticlePreviewBlock';
+import NewsletterForm from '../components/NewsletterForm';
+import ContactUs from '../components/ContactUs';
 import { Spacing, HeroSubheading, AccentRowWrapper } from '../components/common';
 
 // Import bluebottle illustration
@@ -465,6 +468,9 @@ export default ({ data }) => (
               <li>Scalable from 1.1m/3.6’</li>
               <li>10kg/22lb lightship &amp; 10kg/22lb payload</li>
             </ul>
+            <Button color="blue" size="tiny" href="/usv#technical">
+              Find out more
+            </Button>
           </Col>
           <Col xs={12} md={6} lg={4}>
             <img src={BluebottleVessel} alt="Bluebottle Class Vessel" />
@@ -477,6 +483,9 @@ export default ({ data }) => (
               <li>Payload up to 600kg/1320lb</li>
               <li>Keel cassette winch to 200m</li>
             </ul>
+            <Button color="blue" size="tiny" href="/usv#technical">
+              Find out more
+            </Button>
           </Col>
           <Col xs={12} md={6} lg={4}>
             <img src={TrimaranVessel} alt="Stinger Class Vessel" />
@@ -489,12 +498,34 @@ export default ({ data }) => (
               <li>Scalable</li>
               <li>Mono or multihull design</li>
             </ul>
+            <Button color="blue" size="tiny" href="/usv#technical">
+              Find out more
+            </Button>
           </Col>
         </Row>
-        <Button color="blue" size="tiny" href="/usv">
-          Find out more
-        </Button>
       </Container>
+    </Segmented>
+
+    <Segmented>
+      <Container>
+        <Row className="centered">
+          <Col xs={12} md={8} lg={8} mdOffset={2}>
+            <Spacing $value="80px" />
+            <Heading level={2} size="large" underline="center">
+              Ocius news headlines
+            </Heading>
+          </Col>
+        </Row>
+        <ArticlePreviewBlock />
+      </Container>
+    </Segmented>
+
+    <Segmented>
+      <NewsletterForm />
+    </Segmented>
+
+    <Segmented>
+      <ContactUs />
     </Segmented>
   </Layout>
 );
