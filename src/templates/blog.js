@@ -4,7 +4,6 @@ import Img from 'gatsby-image';
 import { Row, Col } from 'react-flexbox-grid';
 import styled from 'styled-components';
 import Layout from '../layouts/Layout';
-import mq from '../common/mq';
 import SEO from '../components/SEO';
 import Container from '../components/Container';
 import Heading from '../components/Heading';
