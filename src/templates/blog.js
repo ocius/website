@@ -6,14 +6,11 @@ import styled from 'styled-components';
 import Layout from '../layouts/Layout';
 import mq from '../common/mq';
 import SEO from '../components/SEO';
-import PageHeader from '../components/PageHeader';
 import Container from '../components/Container';
-import Sidebar from '../components/Sidebar';
 import Heading from '../components/Heading';
 import Segmented from '../components/Segmented';
 import Pagination from '../components/Pagination';
-import NavTabs from '../components/Tabs/NavTabs';
-import NavTab from '../components/Tabs/NavTab';
+import { Spacing } from '../components/common';
 
 const Link = styled(GatsbyLink)`
   display: block;
@@ -37,23 +34,23 @@ export default ({ data, pageContext }) => {
         vessels and today launched a &#8216;man-portable&#8217; version of the Bluebottle USV. &#8220;We&#8217;ve
         had a number of enquiries for small self sustaining USVs that can be deployed easily from a deck or beach."
       />
-      <PageHeader>
-        <Heading level={1} size="large" header>
-          News
-        </Heading>
-        <NavTabs>
-          <NavTab label="Blog" to="news" />
-          <NavTab label="Media Coverage" to="media-coverage" />
-        </NavTabs>
-      </PageHeader>
-      <section className="page-content">
-        <Container>
+
+      <Container>
+        <Row>
+          <Col xs={12} md={12} lg={12}>
+            <Spacing $value="80px" />
+            <Heading level={1} size="huge" underline="left">
+              News
+            </Heading>
+          </Col>
+        </Row>
+        <section className="page-content">
           <Row>
-            <Col className="primary-content" xs={12} md={7} lg={8}>
+            <Col className="primary-content" xs={12} md={12} lg={12}>
               {posts.map(({ node }) => (
                 <Segmented key={node.id}>
                   <Post className="post">
-                    <Col lg={5}>
+                    <Col lg={6}>
                       {node.frontmatter.featuredImage && (
                         <Link to={node.fields.slug}>
                           <Img
@@ -63,7 +60,7 @@ export default ({ data, pageContext }) => {
                         </Link>
                       )}
                     </Col>
-                    <Col lg={7}>
+                    <Col lg={6}>
                       <Heading level={3} size="medium" className="title" weight="thick">
                         <Link to={node.fields.slug}>{node.frontmatter.title}</Link>
                       </Heading>
@@ -75,12 +72,9 @@ export default ({ data, pageContext }) => {
               ))}
               <Pagination pageContext={pageContext} pathPrefix="/" />
             </Col>
-            <Col className="secondary-content" xs={12} md={5} lg={4}>
-              <Sidebar />
-            </Col>
           </Row>
-        </Container>
-      </section>
+        </section>
+      </Container>
     </Layout>
   );
 };
