@@ -239,16 +239,11 @@ figcaption {
 }
 
 .page-content .primary-content .date {
-    text-transform: uppercase;
-    color: #505050;
-    font-size: .9em;
+    color: rgb(74, 180, 230);
+    font-size: 0.9em;
     font-weight: 300;
-    margin: 0;
-}
-
-.page-content .primary-content .preview {
-    font-size: .9em;
-    font-weight: 300;
+    line-height: 1.47368;
+    margin: 0px;
 }
 
 .page-content .primary-content .author {

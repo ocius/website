@@ -10,17 +10,22 @@ import Container from '../components/Container';
 import Heading from '../components/Heading';
 import Segmented from '../components/Segmented';
 import Pagination from '../components/Pagination';
+import Button from '../components/Button';
 import { Spacing } from '../components/common';
 
 const Link = styled(GatsbyLink)`
   display: block;
   color: #001826;
+  &:hover {
+    text-decoration: none;
+  }
 `;
 
-const Post = styled(Row)`
-  @media (min-width: ${mq.min[1024]}) {
-    padding-right: 1em;
-  }
+const CenteredCol = styled(Col)`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
 `;
 
 export default ({ data, pageContext }) => {
@@ -49,7 +54,7 @@ export default ({ data, pageContext }) => {
             <Col className="primary-content" xs={12} md={12} lg={12}>
               {posts.map(({ node }) => (
                 <Segmented key={node.id}>
-                  <Post className="post">
+                  <Row className="post">
                     <Col lg={6}>
                       {node.frontmatter.featuredImage && (
                         <Link to={node.fields.slug}>
@@ -60,14 +65,17 @@ export default ({ data, pageContext }) => {
                         </Link>
                       )}
                     </Col>
-                    <Col lg={6}>
+                    <CenteredCol lg={6}>
                       <Heading level={3} size="medium" className="title" weight="thick">
                         <Link to={node.fields.slug}>{node.frontmatter.title}</Link>
                       </Heading>
                       <p className="date">{node.frontmatter.date}</p>
-                      <p className="preview">{node.excerpt}</p>
-                    </Col>
-                  </Post>
+                      <p>{node.excerpt}</p>
+                      <Button color="blue" size="small" href={node.fields.slug}>
+                        Read more
+                      </Button>
+                    </CenteredCol>
+                  </Row>
                 </Segmented>
               ))}
               <Pagination pageContext={pageContext} pathPrefix="/" />
