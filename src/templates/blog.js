@@ -52,7 +52,7 @@ export default ({ data, pageContext }) => {
           <Row>
             <Col className="primary-content" xs={12} md={12} lg={12}>
               {posts.map(({ node }, index) => (
-                <Segmented key={node.id}>
+                <Segmented key={node.id} borderBottom>
                   {!(index % 2) ? (
                     <Row className="post">
                       <Col lg={6}>
