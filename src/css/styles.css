@@ -138,6 +138,10 @@ ul li {
     text-align: right;
 }
 
+.white {
+    color: white;
+}
+
 textarea,
 input[type="text"],
 input[type="password"],
@@ -154,7 +158,7 @@ input[type="search"],
 input[type="tel"],
 input[type="image"],
 input[type="color"] {
-    display: block;
+    display: inline-block;
     padding: 1em 2.111111111111111em;
     vertical-align: middle;
     border: 1px solid #fff;
@@ -168,6 +172,11 @@ input[type="color"] {
     box-sizing: border-box;
     width: 100%;
     transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.form-aligned input,
+.form-aligned textarea {
+    width: 60%;
 }
 
 .page-content {
@@ -485,7 +494,6 @@ ul.menu-secondary li:before {
 .col-xl-offset-10,
 .col-xl-offset-11,
 .col-xl-offset-12 {
-  padding: 16px;
   padding: 16px;
 }
 
