@@ -14,8 +14,11 @@ import Button from '../components/Button';
 import Icon from '../components/Icon';
 import { Spacing, HeroSubheading, AccentRowWrapper } from '../components/common';
 
-// Import SVG images
+// Import bluebottle illustration
 import Bluebottle from '../images/bluebottle.svg';
+import Blueybuoy from '../images/vessel-blueybuoy.svg';
+import TrimaranVessel from '../images/vessel-trimaran.svg';
+import BluebottleVessel from '../images/vessel-bluebottle.svg';
 
 // Lazy load components
 const Heading = Loadable(() => import(`../components/Heading`));
@@ -439,6 +442,60 @@ export default ({ data }) => (
     <Container>
       <TechnicalSpecificationForm />
     </Container>
+
+    <Segmented>
+      <Container className="page-content centered">
+        <Row className="centered">
+          <Col xs={12} md={8} lg={8} mdOffset={2}>
+            <Spacing $value="80px" />
+            <Heading level={2} size="large" underline="center">
+              Ocius Vessels
+            </Heading>
+          </Col>
+        </Row>
+        <Row className="primary-content left-align">
+          <Col xs={12} md={6} lg={4}>
+            <img src={Blueybuoy} alt="Bluey Buoy Class Vessel" />
+            <Heading level={3} size="medium">
+              Bluey Buoy Class
+            </Heading>
+            <ul>
+              <li>Self deploying, movable, self retrieving buoy</li>
+              <li>Uses solar &amp; wave energy</li>
+              <li>Scalable from 1.1m/3.6’</li>
+              <li>10kg/22lb lightship &amp; 10kg/22lb payload</li>
+            </ul>
+          </Col>
+          <Col xs={12} md={6} lg={4}>
+            <img src={BluebottleVessel} alt="Bluebottle Class Vessel" />
+            <Heading level={3} size="medium">
+              Bluebottle Class
+            </Heading>
+            <ul>
+              <li>Uses solar, wind &amp; wave energy</li>
+              <li>Up to 6.8m/22’ in length</li>
+              <li>Payload up to 600kg/1320lb</li>
+              <li>Keel cassette winch to 200m</li>
+            </ul>
+          </Col>
+          <Col xs={12} md={6} lg={4}>
+            <img src={TrimaranVessel} alt="Stinger Class Vessel" />
+            <Heading level={3} size="medium">
+              Stinger Class (Concept)
+            </Heading>
+            <ul>
+              <li>Loiter/stealth uses solar &amp; wave energy</li>
+              <li>Pursuit uses diesel power</li>
+              <li>Scalable</li>
+              <li>Mono or multihull design</li>
+            </ul>
+          </Col>
+        </Row>
+        <Button color="blue" size="tiny" href="/usv">
+          Find out more
+        </Button>
+      </Container>
+    </Segmented>
   </Layout>
 );
 
