@@ -28,7 +28,7 @@ export default ({ data, pageContext }) => {
   const loadNextPage = useCallback(async () => {
     if (!latestPage.nextPagePath) return;
 
-    const path = withPrefix(`/page-data/${latestPage.nextPagePath}/page-data.json`);
+    const path = withPrefix(`/page-data${latestPage.nextPagePath}/page-data.json`);
 
     const res = await fetch(path);
     const json = await res.json();
