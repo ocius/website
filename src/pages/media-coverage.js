@@ -4,8 +4,11 @@ import { graphql } from 'gatsby';
 import Loadable from '@loadable/component';
 import Heading from '../components/Heading';
 import SEO from '../components/SEO';
+import Segmented from '../components/Segmented';
 import Container from '../components/Container';
 import Layout from '../layouts/Layout';
+import NewsletterForm from '../components/NewsletterForm';
+import ContactUs from '../components/ContactUs';
 import { Spacing } from '../components/common';
 
 // Lazy load component
@@ -44,6 +47,14 @@ export default ({ data }) => {
           </Row>
         </section>
       </Container>
+
+      <Segmented>
+        <NewsletterForm />
+      </Segmented>
+
+      <Segmented>
+        <ContactUs />
+      </Segmented>
     </Layout>
   );
 };
