@@ -4,11 +4,9 @@ import { graphql } from 'gatsby';
 import Loadable from '@loadable/component';
 import Heading from '../components/Heading';
 import SEO from '../components/SEO';
-import PageHeader from '../components/PageHeader';
-import NavTabs from '../components/Tabs/NavTabs';
-import NavTab from '../components/Tabs/NavTab';
 import Container from '../components/Container';
 import Layout from '../layouts/Layout';
+import { Spacing } from '../components/common';
 
 // Lazy load component
 const Card = Loadable(() => import(`../components/Card`));
@@ -19,17 +17,17 @@ export default ({ data }) => {
   return (
     <Layout>
       <SEO title="In The News" />
-      <PageHeader>
-        <Heading level={1} size="large" header>
-          Media Coverage
-        </Heading>
-        <NavTabs>
-          <NavTab label="Blog" to="news" />
-          <NavTab label="Media Coverage" to="media-coverage" />
-        </NavTabs>
-      </PageHeader>
-      <section className="page-content">
-        <Container>
+
+      <Container>
+        <Row>
+          <Col xs={12} md={12} lg={12}>
+            <Spacing $value="80px" />
+            <Heading level={1} size="huge" underline="left">
+              Media
+            </Heading>
+          </Col>
+        </Row>
+        <section className="page-content">
           <Row style={{ padding: '2.5rem 0' }}>
             {edges.map(({ node }) => (
               <Col xs={12} md={4} lg={4} key={node.id}>
@@ -44,8 +42,8 @@ export default ({ data }) => {
               </Col>
             ))}
           </Row>
-        </Container>
-      </section>
+        </section>
+      </Container>
     </Layout>
   );
 };
