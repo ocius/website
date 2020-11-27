@@ -5,6 +5,7 @@ import Img from 'gatsby-image';
 import BackgroundImage from 'gatsby-background-image';
 import styled from 'styled-components';
 import Heading from './Heading';
+import Button from './Button';
 
 const CardThumbnail = styled(BackgroundImage)`
   height: 250px;
@@ -48,16 +49,19 @@ const CardBody = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 0 16px 16px;
+  padding: 0 16px 32px;
   height: 100%;
+`;
+
+const Content = styled.div`
+  padding-bottom: 10px;
+  flex: 1;
 `;
 
 const Source = styled.div`
   font-size: 1em;
   margin: 0 0 0.25em;
   display: flex;
-  align-items: center;
-  justify-content: center;
 `;
 
 const Date = styled.p`
@@ -75,16 +79,22 @@ const Card = ({ url, thumbnail, title, source, logo, date }) => {
         <CardThumbnail fluid={thumbnail.childImageSharp.fluid} />
       </ExternalLink>
       <CardBody>
-        <CardHeading level={2} size="small" weight="thick">
-          {title}
-        </CardHeading>
-        <Date>{date}</Date>
-        <Source>
-          {logo && (
-            <Img style={{ width: 25, marginRight: 10 }} fluid={logo.childImageSharp.fluid} />
-          )}
-          {source}
-        </Source>
+        <Content>
+          <CardHeading level={2} size="small" weight="thick">
+            {title}
+          </CardHeading>
+          <Date>{date}</Date>
+          <Source>
+            {logo && (
+              <Img style={{ width: 25, marginRight: 10 }} fluid={logo.childImageSharp.fluid} />
+            )}
+            {source}
+          </Source>
+        </Content>
+
+        <Button color="blue" size="tiny" href={url} target="_blank">
+          Read more
+        </Button>
       </CardBody>
     </CardWrapper>
   );

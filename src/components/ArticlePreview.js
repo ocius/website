@@ -87,6 +87,7 @@ const Image = styled(Img)`
 `;
 
 const Content = styled.div`
+  padding-bottom: 10px;
   flex: 1;
 `;
 
