@@ -151,24 +151,5 @@ export const query = graphql`
         }
       }
     }
-
-    allLinksYaml {
-      edges {
-        node {
-          id
-          url
-          title
-          source
-          date(formatString: "DD MMMM, YYYY")
-          thumbnail {
-            childImageSharp {
-              fluid {
-                ...GatsbyImageSharpFluid
-              }
-            }
-          }
-        }
-      }
-    }
   }
 `;

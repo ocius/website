@@ -1,6 +1,7 @@
+import React, { useState, useCallback } from 'react';
 import { Col, Row } from 'react-flexbox-grid';
-import React from 'react';
-import { graphql } from 'gatsby';
+import styled from 'styled-components';
+import { graphql, withPrefix } from 'gatsby';
 import Heading from '../components/Heading';
 import SEO from '../components/SEO';
 import Segmented from '../components/Segmented';
@@ -9,10 +10,32 @@ import Layout from '../layouts/Layout';
 import NewsletterForm from '../components/NewsletterForm';
 import ContactUs from '../components/ContactUs';
 import Card from '../components/Card';
+import Button from '../components/Button';
 import { Spacing } from '../components/common';
 
-export default ({ data }) => {
-  const { edges } = data.allLinksYaml;
+const Pagination = styled.nav`
+  padding: 6.4rem;
+`;
+
+export default ({ data, pageContext }) => {
+  const initialPage = data.allLinksYaml;
+  const [latestPage, setLatestPage] = useState(pageContext);
+  const [mediaPosts, setMediaPosts] = useState(initialPage.edges);
+
+  /**
+   * Callback for making an XHR requests and dynamically add new data
+   */
+  const loadNextPage = useCallback(async () => {
+    if (!latestPage.nextPagePath) return;
+
+    const path = withPrefix(`/page-data/${latestPage.nextPagePath}/page-data.json`);
+
+    const res = await fetch(path);
+    const json = await res.json();
+
+    setMediaPosts((state) => [...state, ...json.result.data.allLinksYaml.edges]);
+    setLatestPage(json.result.pageContext);
+  }, [latestPage]);
 
   return (
     <Layout>
@@ -29,7 +52,7 @@ export default ({ data }) => {
         </Row>
         <section className="page-content">
           <Row style={{ padding: '2.5rem 0' }}>
-            {edges.map(({ node }) => (
+            {mediaPosts.map(({ node }) => (
               <Col xs={12} md={4} lg={4} key={node.id}>
                 <Card
                   url={node.url}
@@ -42,6 +65,13 @@ export default ({ data }) => {
               </Col>
             ))}
           </Row>
+          {latestPage.nextPagePath && (
+            <Pagination className="centered">
+              <Button type="button" color="blue" size="small" onClick={loadNextPage}>
+                Load more
+              </Button>
+            </Pagination>
+          )}
         </section>
       </Container>
 
@@ -57,8 +87,8 @@ export default ({ data }) => {
 };
 
 export const query = graphql`
-  query MediaCoverageQuery {
-    allLinksYaml(sort: { fields: [date], order: DESC }) {
+  query MediaCoverageQuery($limit: Int!, $skip: Int!) {
+    allLinksYaml(sort: { fields: [date], order: DESC }, limit: $limit, skip: $skip) {
       edges {
         node {
           id

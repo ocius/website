@@ -51,6 +51,14 @@ exports.createPages = ({ graphql, actions }) => {
           }
         }
       }
+
+      allLinksYaml(sort: { fields: [date], order: DESC }) {
+        edges {
+          node {
+            id
+          }
+        }
+      }
     }
   `).then(result => {
     if (result.errors) {
@@ -84,6 +92,15 @@ exports.createPages = ({ graphql, actions }) => {
       itemsPerPage: 8,
       pathPrefix: '/news',
       component: blogTemplate
+    });
+
+    // Create a paginated media coverage page, e.g., /media, /media/2, /media/3
+    paginate({
+      createPage,
+      items: result.data.allLinksYaml.edges,
+      itemsPerPage: 12,
+      pathPrefix: '/media-coverage',
+      component: path.resolve(`src/templates/media.js`)
     });
   });
 };
