@@ -19,6 +19,7 @@ const CardWrapper = styled.div`
   display: flex;
   flex: 1 0 0px;
   flex-direction: column;
+  height: 100%;
   margin: 1.5rem 0.5rem;
   max-width: 100%;
   position: relative;
@@ -44,6 +45,11 @@ const ExternalLink = styled.a`
 
 const CardBody = styled.div`
   position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0 16px 16px;
+  height: 100%;
 `;
 
 const Source = styled.div`
