@@ -58,12 +58,6 @@ const Source = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #60d2f6;
-  border-radius: 20px;
-  padding: 4px 20px;
-  position: absolute;
-  top: -20px;
-  left: 0;
 `;
 
 const Date = styled.p`
@@ -84,11 +78,13 @@ const Card = ({ url, thumbnail, title, source, logo, date }) => {
         <CardHeading level={2} size="small" weight="thick">
           {title}
         </CardHeading>
+        <Date>{date}</Date>
         <Source>
-          {logo && <Img style={{ width: 25, marginRight: 5 }} fluid={logo.childImageSharp.fluid} />}
+          {logo && (
+            <Img style={{ width: 25, marginRight: 10 }} fluid={logo.childImageSharp.fluid} />
+          )}
           {source}
         </Source>
-        <Date>{date}</Date>
       </CardBody>
     </CardWrapper>
   );
