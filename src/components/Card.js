@@ -29,6 +29,13 @@ const CardWrapper = styled.div`
   }
 `;
 
+const CardHeading = styled(Heading)`
+  color: #2b2e34;
+  font-size: 18px;
+  line-height: ${32 / 22};
+  margin-top: 1.7em;
+`;
+
 const ExternalLink = styled.a`
   border-bottom: medium none;
   color: #001826;
@@ -54,10 +61,11 @@ const Source = styled.div`
 `;
 
 const Date = styled.p`
-  font-size: 1em;
+  color: #4ab4e6;
+  font-size: 0.9em;
   font-weight: 300;
-  margin: 0 0 0.25em;
-  color: rgb(22, 65, 148);
+  line-height: ${28 / 19};
+  margin-top: 0;
 `;
 
 const Card = ({ url, thumbnail, title, source, logo, date }) => {
@@ -67,9 +75,9 @@ const Card = ({ url, thumbnail, title, source, logo, date }) => {
         <CardThumbnail fluid={thumbnail.childImageSharp.fluid} />
       </ExternalLink>
       <CardBody>
-        <Heading level={2} size="small" weight="thick">
+        <CardHeading level={2} size="small" weight="thick">
           {title}
-        </Heading>
+        </CardHeading>
         <Source>
           {logo && <Img style={{ width: 25, marginRight: 5 }} fluid={logo.childImageSharp.fluid} />}
           {source}

@@ -59,7 +59,7 @@ const StyledHeading = styled(Heading)`
   margin-top: 1.7em;
 `;
 
-const SubHeading = styled.p`
+const Date = styled.p`
   color: #4ab4e6;
   font-size: 0.9em;
   font-weight: 300;
@@ -106,7 +106,7 @@ function ArticlePreview({ title, date, paragraph, image, href }) {
           <StyledHeading level={3} size="medium" weight="thick">
             {title}
           </StyledHeading>
-          <SubHeading>{date}</SubHeading>
+          <Date>{date}</Date>
 
           <Paragraph>{paragraph}</Paragraph>
         </Content>
