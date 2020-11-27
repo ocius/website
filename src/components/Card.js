@@ -8,7 +8,9 @@ import Heading from './Heading';
 
 const CardThumbnail = styled(BackgroundImage)`
   height: 250px;
-  border-radius: 2px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  overflow: hidden;
   box-shadow: rgba(46, 41, 51, 0.08) 0px 1px 2px, rgba(71, 63, 79, 0.08) 0px 2px 4px;
   transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1) 0s;
 `;
