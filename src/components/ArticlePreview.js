@@ -10,6 +10,9 @@ import Button from './Button';
 import mq from '../common/mq';
 
 const Container = styled.article`
+  display: flex;
+  flex-direction: column;
+  height: 100%;
   font-family: ${font('main')};
   color: #001826;
   background-color: #ffffff;
@@ -30,7 +33,11 @@ const Paragraph = styled.p`
 `;
 
 const Wrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   padding: 0 16px 16px;
+  height: 100%;
 `;
 
 const StyledLink = styled(GatsbyLink)`
@@ -62,13 +69,17 @@ const SubHeading = styled.p`
 const ImageContainer = styled.figure`
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
-  margin: 0 0 26px;
+  margin: 0 0 10px;
   overflow: hidden;
 `;
 
 const Image = styled(Img)`
   display: block;
   max-width: 100%;
+`;
+
+const Content = styled.div`
+  flex: 1;
 `;
 
 function ArticlePreview({ title, date, paragraph, image, href }) {
@@ -83,12 +94,14 @@ function ArticlePreview({ title, date, paragraph, image, href }) {
       </StyledLinkMargin>
 
       <Wrapper>
-        <StyledHeading level={3} size="medium" weight="thick">
-          {title}
-        </StyledHeading>
-        <SubHeading>{date}</SubHeading>
+        <Content>
+          <StyledHeading level={3} size="medium" weight="thick">
+            {title}
+          </StyledHeading>
+          <SubHeading>{date}</SubHeading>
 
-        <Paragraph>{paragraph}</Paragraph>
+          <Paragraph>{paragraph}</Paragraph>
+        </Content>
 
         <Button color="blue" size="tiny" href={href}>
           Read more
