@@ -5,8 +5,6 @@ body {
     font-family: 'Helvetica Neue LT Roman', Helvetica Neue, Helvetica, Arial, sans-serif;
     font-size: 14px;
     line-height: 1.5;
-    /* Add padding to body to compensate navbar height */
-    padding-top: 145px;
 }
 
 html {
