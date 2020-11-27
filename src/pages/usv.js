@@ -51,7 +51,7 @@ export default ({ data }) => (
             <HeroSubheading>
               Persistent maritime surveillance, defences from the ground up.
             </HeroSubheading>
-            <Button size="tiny" color="blue">
+            <Button size="tiny" color="blue" href="/usv#technical">
               Find out more
             </Button>
             <Spacing $value="380px" />
@@ -66,6 +66,7 @@ export default ({ data }) => (
               size="large"
               weight="thick"
               underline="center"
+              shadow
             >
               What is a USV?
             </Heading>
@@ -74,10 +75,10 @@ export default ({ data }) => (
         <Container>
           <Row>
             <Col className="right-align" xs={12} md={5} lg={5}>
-              <Heading level={2} color="white" size="medium">
+              <Heading level={2} color="white" size="medium" shadow>
                 A USV is an
               </Heading>
-              <Heading level={3} color="white" size="large" style={{ marginTop: 0 }}>
+              <Heading level={3} color="white" size="large" style={{ marginTop: 0 }} shadow>
                 Unmanned
                 <br />
                 Surface
