@@ -47,7 +47,7 @@ export default ({ data }) => (
       description="A USV is an Unmanned Surface Vessel. Bluebottle USVs are autonomous data gathering communications platform, the satellites of the sea."
     />
     {data.HeroImage && (
-      <HeroBlock image={data.HeroImage.childImageSharp.fluid} masked scrim="blue">
+      <HeroBlock image={data.HeroImage.childImageSharp.fluid} masked scrim="blue" id="hero">
         <Row>
           <Col xs={12} md={5} lg={5}>
             <Spacing $value="180px" />
@@ -59,7 +59,7 @@ export default ({ data }) => (
             <HeroSubheading>
               Persistent maritime surveillance, defences from the ground up.
             </HeroSubheading>
-            <Button size="tiny" color="blue">
+            <Button size="tiny" color="blue" href="#overview">
               Find out more
             </Button>
             <Spacing $value="380px" />
@@ -115,7 +115,7 @@ export default ({ data }) => (
         <Spacing $value="100px" />
       </HeroBlock>
     )}
-    <Container className="page-content">
+    <Container className="page-content" id="overview">
       <Row className="centered">
         <Col xs={12} md={8} lg={8} mdOffset={2}>
           <Spacing $value="80px" />
