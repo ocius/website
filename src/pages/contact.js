@@ -20,9 +20,7 @@ export default () => (
   <Layout>
     <SEO
       title="Contact"
-      description="For General Enquiries Main Phone: +61 2 9924 6400 Email: contact@ocius.com.au For Shareholder Enquiries
-      Email: cosecretary@ocius.com.au
-      NSW 2052 Phone: +61 2 9924 6400 Postal Address: Office Box 4304 Castlecrag Australia 2068"
+      description="How can we help? Do you have a question or are you interested in working with us? Just fill out the form fields below."
     />
     <section className="page-content">
       <Container>
@@ -38,7 +36,7 @@ export default () => (
           <Col className="primary-content" xs={12} md={7} lg={7}>
             <Row>
               <Col xs={12} md={6} lg={6}>
-                <section itemScope itemType="https://schema.org/Organization">
+                <section itemScope itemType="https://schema.org/ResearchProject">
                   <p>
                     <strong>
                       <span itemProp="name">Ocius</span> Headquarters:
