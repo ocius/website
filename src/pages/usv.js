@@ -25,7 +25,9 @@ import BluebottleVessel from '../images/vessel-bluebottle.svg';
 
 // Lazy load components
 const Heading = Loadable(() => import(`../components/Heading`));
-const TechnicalSpecificationForm = Loadable(() => import(`./bluebottle-usv-brochure`));
+const TechnicalSpecificationForm = Loadable(() =>
+  import(`../components/Forms/TechnicalSpecificationForm`)
+);
 
 const SubHeading = styled.p`
   color: #4ab4e6;

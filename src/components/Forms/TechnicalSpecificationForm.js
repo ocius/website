@@ -3,10 +3,10 @@ import { Formik, ErrorMessage } from 'formik';
 import axios from 'axios';
 import styled from 'styled-components';
 import { Row, Col } from 'react-flexbox-grid';
-import { Feedback, Alert, FormField, FormLabel, TextareaField } from '../components/Form';
-import Heading from '../components/Heading';
-import Button from '../components/Button';
-import { Spacing } from '../components/common';
+import { Feedback, Alert, FormField, FormLabel, TextareaField } from '../Form';
+import Heading from '../Heading';
+import Button from '../Button';
+import { Spacing } from '../common';
 
 const FieldWrapper = styled.div`
   margin: 0 0 1.2em;
