@@ -3,7 +3,10 @@ import { Row, Col } from 'react-flexbox-grid';
 import Layout from '../layouts/Layout';
 import SEO from '../components/SEO';
 import Container from '../components/Container';
+import Segmented from '../components/Segmented';
 import Heading from '../components/Heading';
+import NewsletterForm from '../components/NewsletterForm';
+import ContactUs from '../components/ContactUs';
 import ContactForm from '../components/Forms/ContactForm';
 import { Spacing } from '../components/common';
 
@@ -124,6 +127,13 @@ export default () => (
           </Col>
         </Row>
       </Container>
+      <Spacing $value="80px" />
+      <Segmented>
+        <NewsletterForm />
+      </Segmented>
+      <Segmented>
+        <ContactUs />
+      </Segmented>
     </section>
   </Layout>
 );
