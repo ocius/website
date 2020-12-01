@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import NewsletterForm from './NewsletterForm';
 import RecentNews from './RecentNews';
 import SidebarWidget from './SidebarWidget';
 
@@ -17,9 +16,6 @@ Sidebar.propTypes = {
 Sidebar.defaultProps = {
   children: (
     <>
-      <SidebarWidget className="newsletter-form">
-        <NewsletterForm />
-      </SidebarWidget>
       <SidebarWidget className="recent-news">
         <RecentNews />
       </SidebarWidget>
