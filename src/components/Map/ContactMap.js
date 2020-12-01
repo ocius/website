@@ -1,6 +1,9 @@
 import React from 'react';
 import { GoogleMap, Marker, useLoadScript } from '@react-google-maps/api';
 
+// Import custom styles to customize the style of Google Map
+const styles = require('./GoogleMapStyles.json');
+
 /** Position of the OCIUS Headquarters */
 const center = {
   lat: -33.9056585,
@@ -21,7 +24,19 @@ const ContactMap = () => {
 
   const renderMap = () => {
     return (
-      <GoogleMap mapContainerStyle={mapStyle} zoom={16} center={center}>
+      <GoogleMap
+        mapContainerStyle={mapStyle}
+        zoom={16}
+        center={center}
+        options={{
+          disableDefaultUI: true, // disable default map UI
+          draggable: true, // make map draggable
+          keyboardShortcuts: false, // disable keyboard shortcuts
+          scaleControl: true, // allow scale controle
+          scrollwheel: true, // allow scroll wheel
+          styles, // change default map styles
+        }}
+      >
         <Marker position={center} />
       </GoogleMap>
     );
