@@ -1,5 +1,7 @@
 import React from 'react';
 import { GoogleMap, Marker, useLoadScript } from '@react-google-maps/api';
+import { inlineSvgIcon } from './BoatIcon';
+import Icon from '../Icon';
 
 // Import custom styles to customize the style of Google Map
 const styles = require('./GoogleMapStyles.json');
@@ -37,7 +39,7 @@ const ContactMap = () => {
           styles, // change default map styles
         }}
       >
-        <Marker position={center} />
+        <Marker position={center} icon={inlineSvgIcon(<Icon.Marker fill="#4db4e6" />)} />
       </GoogleMap>
     );
   };

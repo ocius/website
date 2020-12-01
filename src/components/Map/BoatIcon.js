@@ -84,7 +84,7 @@ Boat.defaultProps = {
   height: 70,
 };
 
-export const inlineSvgBoatIcon = (index, rotation) => {
+export const inlineSvgIcon = (icon) => {
   const svgToDataURL = (svgStr) => {
     const encoded = encodeURIComponent(svgStr).replace(/'/g, '%27').replace(/"/g, '%22');
 
@@ -92,8 +92,16 @@ export const inlineSvgBoatIcon = (index, rotation) => {
     return header + encoded;
   };
 
-  const svgString = renderToStaticMarkup(<Boat index={index} rotation={parseFloat(rotation)} />);
+  const svgString = renderToStaticMarkup(icon);
   const encodedSvg = svgToDataURL(svgString);
 
   return { url: encodedSvg, scaledSize: { width: 38, height: 38 }, labelOrigin: { x: 16, y: -10 } };
+};
+
+inlineSvgIcon.propTypes = {
+  icon: PropTypes.node,
+};
+
+inlineSvgIcon.defaultProps = {
+  icon: '',
 };

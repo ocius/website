@@ -9,7 +9,7 @@ import {
   MarkerClusterer,
 } from '@react-google-maps/api';
 import useHttp from '../../common/api/useHttp';
-import { inlineSvgBoatIcon, getColorVariation } from './BoatIcon';
+import { Boat, inlineSvgIcon, getColorVariation } from './BoatIcon';
 import CameraSlider from '../CameraImageSlider';
 import configuration from '../../common/api/configuration';
 import { useWindowSize } from '../../common/hooks';
@@ -206,7 +206,9 @@ const GMap = ({ apiKey, currentVessel, droneData }) => {
                       lat: parseFloat(boat.Props.Location.Coordinates.Lat),
                       lng: parseFloat(boat.Props.Location.Coordinates.Lon),
                     }}
-                    icon={inlineSvgBoatIcon(boat.Id, boat.Props.Heading)}
+                    icon={inlineSvgIcon(
+                      <Boat index={boat.Id} rotation={parseFloat(boat.Props.Heading)} />
+                    )}
                     label={{
                       text: boat.Name,
                       color: '#ffff00',
