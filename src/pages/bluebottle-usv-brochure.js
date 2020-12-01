@@ -136,7 +136,7 @@ class TechnicalSpecificationForm extends React.Component {
                       placeholder="Full Name (required)"
                     />
                     <ErrorMessage name="fullName">
-                      {(msg) => <Feedback>{msg}</Feedback>}
+                      {(msg) => <Feedback position="center">{msg}</Feedback>}
                     </ErrorMessage>
                   </FieldWrapper>
 
@@ -165,7 +165,9 @@ class TechnicalSpecificationForm extends React.Component {
                       validate={TechnicalSpecificationForm.validateEmail}
                       placeholder="Email (required)"
                     />
-                    <ErrorMessage name="email">{(msg) => <Feedback>{msg}</Feedback>}</ErrorMessage>
+                    <ErrorMessage name="email">
+                      {(msg) => <Feedback position="center">{msg}</Feedback>}
+                    </ErrorMessage>
                   </FieldWrapper>
 
                   <FieldWrapper>
@@ -188,7 +190,7 @@ class TechnicalSpecificationForm extends React.Component {
                       placeholder="Reason for interest (required)"
                     />
                     <ErrorMessage name="interest">
-                      {(msg) => <Feedback>{msg}</Feedback>}
+                      {(msg) => <Feedback position="center">{msg}</Feedback>}
                     </ErrorMessage>
                   </FieldWrapper>
 

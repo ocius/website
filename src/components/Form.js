@@ -10,6 +10,7 @@ export const Feedback = styled.div`
   font-size: 80%;
   color: #dc3545;
   text-align: center;
+  text-align: ${(props) => (props.position ? props.position : 'left')};
 `;
 
 export const Alert = styled.span`
