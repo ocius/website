@@ -42,8 +42,8 @@ export default () => (
                   <strong>
                     <span itemProp="name">Ocius</span> Headquarters:
                   </strong>
-                  <div itemScope itemProp="location" itemType="https://schema.org/Place">
-                    <address
+                  <span itemScope itemProp="location" itemType="https://schema.org/Place">
+                    <span
                       style={addressStyle}
                       itemProp="address"
                       itemScope
@@ -59,13 +59,13 @@ export default () => (
                       , <span itemProp="addressLocality">Randwick</span>{' '}
                       <span itemProp="addressRegion">NSW</span>{' '}
                       <span itemProp="postalCode">2031</span>
-                    </address>
-                  </div>
+                    </span>
+                  </span>
                 </p>
 
                 <p>
                   <strong>Postal Address:</strong>
-                  <address
+                  <span
                     style={addressStyle}
                     itemScope
                     itemProp="address"
@@ -77,13 +77,13 @@ export default () => (
                     <span itemProp="addressRegion">NSW</span>
                     <br />
                     <span itemProp="addressCountry">Australia</span>
-                  </address>
+                  </span>
                 </p>
 
                 <div itemScope itemProp="contactPoint" itemType="https://schema.org/ContactPoint">
                   <p>
                     <strong itemProp="contactType">General Enquiries</strong>
-                    <address style={addressStyle}>
+                    <span style={addressStyle}>
                       Phone:{' '}
                       <a itemProp="telephone" href="callto:+61299246400">
                         +61 2 9924 6400
@@ -93,19 +93,19 @@ export default () => (
                       <a itemProp="email" href="mailto:contact@ocius.com.au">
                         contact@ocius.com.au
                       </a>
-                    </address>
+                    </span>
                   </p>
                 </div>
 
                 <div itemScope itemProp="contactPoint" itemType="https://schema.org/ContactPoint">
                   <p>
                     <strong itemProp="contactType">Shareholder Enquiries</strong>
-                    <address style={addressStyle}>
+                    <span style={addressStyle}>
                       Email:{' '}
                       <a itemProp="email" href="mailto:cosecretary@ocius.com.au">
                         cosecretary@ocius.com.au
                       </a>
-                    </address>
+                    </span>
                   </p>
                 </div>
 
