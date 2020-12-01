@@ -81,49 +81,50 @@ export default () => (
                     </address>
                   </p>
 
-                  <p>
-                    <strong>General Enquiries</strong>
-                    <address
-                      style={addressStyle}
-                      itemScope
-                      itemProp="contactPoint"
-                      itemType="https://schema.org/ContactPoint"
-                    >
-                      Phone:{' '}
-                      <a itemProp="telephone" href="callto:+61299246400">
-                        +61 2 9924 6400
-                      </a>
-                      <br />
-                      Email:{' '}
-                      <a itemProp="email" href="mailto:contact@ocius.com.au">
-                        contact@ocius.com.au
-                      </a>
-                    </address>
-                  </p>
+                  <div itemScope itemProp="contactPoint" itemType="https://schema.org/ContactPoint">
+                    <p>
+                      <strong itemProp="contactType">General Enquiries</strong>
+                      <address style={addressStyle}>
+                        Phone:{' '}
+                        <a itemProp="telephone" href="callto:+61299246400">
+                          +61 2 9924 6400
+                        </a>
+                        <br />
+                        Email:{' '}
+                        <a itemProp="email" href="mailto:contact@ocius.com.au">
+                          contact@ocius.com.au
+                        </a>
+                      </address>
+                    </p>
+                  </div>
 
-                  <p>
-                    <strong>Shareholder Enquiries</strong>
-                    <address
-                      style={addressStyle}
-                      itemScope
-                      itemProp="contactPoint"
-                      itemType="https://schema.org/ContactPoint"
-                    >
-                      Email:{' '}
-                      <a itemProp="email" href="mailto:cosecretary@ocius.com.au">
-                        cosecretary@ocius.com.au
-                      </a>
-                    </address>
-                  </p>
-                  <p itemScope itemProp="contactPoint" itemType="https://schema.org/ContactPoint">
-                    <strong>Open Hours:</strong>
-                    <br />
-                    <time style={addressStyle} itemProp="hoursAvailable" value="Mo-Fr 08:00-17:00">
-                      Mon - Fri: 8am - 5pm
+                  <div itemScope itemProp="contactPoint" itemType="https://schema.org/ContactPoint">
+                    <p>
+                      <strong itemProp="contactType">Shareholder Enquiries</strong>
+                      <address style={addressStyle}>
+                        Email:{' '}
+                        <a itemProp="email" href="mailto:cosecretary@ocius.com.au">
+                          cosecretary@ocius.com.au
+                        </a>
+                      </address>
+                    </p>
+                  </div>
+
+                  <div itemScope itemProp="contactPoint" itemType="https://schema.org/ContactPoint">
+                    <p>
+                      <strong>Open Hours:</strong>
                       <br />
-                      Sat - Sun: Closed
-                    </time>
-                  </p>
+                      <time
+                        style={addressStyle}
+                        itemProp="hoursAvailable"
+                        value="Mo-Fr 08:00-17:00"
+                      >
+                        Mon - Fri: 8am - 5pm
+                        <br />
+                        Sat - Sun: Closed
+                      </time>
+                    </p>
+                  </div>
                 </section>
               </Col>
               <Col xs={12} md={6} lg={6} />
