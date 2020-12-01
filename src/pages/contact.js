@@ -12,7 +12,7 @@ const Sidebar = Loadable(() => import(`../components/Sidebar`));
 
 const addressStyle = {
   display: 'block',
-  padding: '1em 0',
+  padding: '0.5em 0',
   fontStyle: 'normal',
 };
 
@@ -38,50 +38,93 @@ export default () => (
           <Col className="primary-content" xs={12} md={7} lg={7}>
             <Row>
               <Col xs={12} md={6} lg={6}>
-                <p>
-                  <strong>Ocius Headquarters:</strong>
-                  <address style={addressStyle}>
-                    Building R13
-                    <br />
-                    UNSW Randwick Campus
-                    <br />
-                    22 King St, Randwick NSW 2031
-                  </address>
-                </p>
+                <section itemScope itemType="https://schema.org/Organization">
+                  <p>
+                    <strong>
+                      <span itemProp="name">Ocius</span> Headquarters:
+                    </strong>
+                    <div itemScope itemProp="location" itemType="https://schema.org/Place">
+                      <address
+                        style={addressStyle}
+                        itemProp="address"
+                        itemScope
+                        itemType="https://schema.org/PostalAddress"
+                      >
+                        <span itemProp="streetAddress">
+                          Building R13
+                          <br />
+                          UNSW Randwick Campus
+                          <br />
+                          22 King St
+                        </span>
+                        , <span itemProp="addressLocality">Randwick</span>{' '}
+                        <span itemProp="addressRegion">NSW</span>{' '}
+                        <span itemProp="postalCode">2031</span>
+                      </address>
+                    </div>
+                  </p>
 
-                <p>
-                  <strong>Postal Address:</strong>
-                  <address style={addressStyle}>
-                    Mail PO Box 4304 Castlecrag 2068 NSW
-                    <br />
-                    Australia
-                  </address>
-                </p>
+                  <p>
+                    <strong>Postal Address:</strong>
+                    <address
+                      style={addressStyle}
+                      itemScope
+                      itemProp="address"
+                      itemType="http://schema.org/PostalAddress"
+                    >
+                      <span itemProp="postOfficeBoxNumber">Mail PO Box 4304</span>{' '}
+                      <span itemProp="addressLocality">Castlecrag</span>{' '}
+                      <span itemProp="postalCode">2068</span>{' '}
+                      <span itemProp="addressRegion">NSW</span>
+                      <br />
+                      <span itemProp="addressCountry">Australia</span>
+                    </address>
+                  </p>
 
-                <p>
-                  <strong>General Enquiries</strong>
-                  <address style={addressStyle}>
-                    Phone: <a href="callto:+61299246400">+61 2 9924 6400</a>
-                    <br />
-                    Email: <a href="mailto:contact@ocius.com.au">contact@ocius.com.au</a>
-                  </address>
-                </p>
+                  <p>
+                    <strong>General Enquiries</strong>
+                    <address
+                      style={addressStyle}
+                      itemScope
+                      itemProp="contactPoint"
+                      itemType="https://schema.org/ContactPoint"
+                    >
+                      Phone:{' '}
+                      <a itemProp="telephone" href="callto:+61299246400">
+                        +61 2 9924 6400
+                      </a>
+                      <br />
+                      Email:{' '}
+                      <a itemProp="email" href="mailto:contact@ocius.com.au">
+                        contact@ocius.com.au
+                      </a>
+                    </address>
+                  </p>
 
-                <p>
-                  <strong>Shareholder Enquiries</strong>
-                  <address style={addressStyle}>
-                    Email: <a href="mailto:cosecretary@ocius.com.au">cosecretary@ocius.com.au</a>
-                  </address>
-                </p>
-                <p>
-                  <strong>Open Hours:</strong>
-                  <br />
-                  <time style={addressStyle} itemProp="openingHours" value="Mo-Fr 08:00-17:00">
-                    Mon - Fri: 8am - 5pm
+                  <p>
+                    <strong>Shareholder Enquiries</strong>
+                    <address
+                      style={addressStyle}
+                      itemScope
+                      itemProp="contactPoint"
+                      itemType="https://schema.org/ContactPoint"
+                    >
+                      Email:{' '}
+                      <a itemProp="email" href="mailto:cosecretary@ocius.com.au">
+                        cosecretary@ocius.com.au
+                      </a>
+                    </address>
+                  </p>
+                  <p itemScope itemProp="contactPoint" itemType="https://schema.org/ContactPoint">
+                    <strong>Open Hours:</strong>
                     <br />
-                    Sat - Sun: Closed
-                  </time>
-                </p>
+                    <time style={addressStyle} itemProp="hoursAvailable" value="Mo-Fr 08:00-17:00">
+                      Mon - Fri: 8am - 5pm
+                      <br />
+                      Sat - Sun: Closed
+                    </time>
+                  </p>
+                </section>
               </Col>
               <Col xs={12} md={6} lg={6} />
             </Row>
