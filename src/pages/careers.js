@@ -3,9 +3,9 @@ import { Row, Col } from 'react-flexbox-grid';
 import Loadable from '@loadable/component';
 import SEO from '../components/SEO';
 import Layout from '../layouts/Layout';
-import PageHeader from '../components/PageHeader';
 import Container from '../components/Container';
 import Heading from '../components/Heading';
+import { Spacing } from '../components/common';
 
 // Lazy load components
 const Sidebar = Loadable(() => import(`../components/Sidebar`));
@@ -24,13 +24,17 @@ export default () => (
       Sydney-based SME (small to medium enterprise) operating at the cutting edge of technology to design and
       build autonomous robots."
     />
-    <PageHeader>
-      <Heading level={1} size="huge" header>
-        Careers
-      </Heading>
-    </PageHeader>
     <section className="page-content">
       <Container>
+        <Row>
+          <Col xs={12} md={12} lg={12}>
+            <Spacing $value="80px" />
+            <Heading level={1} size="huge" underline="left">
+              Careers
+            </Heading>
+          </Col>
+        </Row>
+
         <Row>
           <Col className="primary-content" xs={12} md={7} lg={7}>
             <article>
