@@ -9,6 +9,8 @@ import Segmented from '../components/Segmented';
 import Layout from '../layouts/Layout';
 import Container from '../components/Container';
 import Heading from '../components/Heading';
+import NewsletterForm from '../components/NewsletterForm';
+import ContactUs from '../components/ContactUs';
 import { Spacing } from '../components/common';
 
 // Lazy load components
@@ -120,6 +122,13 @@ export default ({ data }) => (
           </Col>
         </Row>
       </Container>
+
+      <Segmented>
+        <NewsletterForm />
+      </Segmented>
+      <Segmented>
+        <ContactUs />
+      </Segmented>
     </section>
   </Layout>
 );
