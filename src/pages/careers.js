@@ -1,7 +1,11 @@
 import React from 'react';
 import { Row, Col } from 'react-flexbox-grid';
+import { graphql } from 'gatsby';
+import styled from 'styled-components';
+import Img from 'gatsby-image';
 import Loadable from '@loadable/component';
 import SEO from '../components/SEO';
+import Segmented from '../components/Segmented';
 import Layout from '../layouts/Layout';
 import Container from '../components/Container';
 import Heading from '../components/Heading';
@@ -16,7 +20,17 @@ const styles = {
   },
 };
 
-export default () => (
+const Accent = styled.span`
+  color: #4ab4e6;
+`;
+
+const CenteredCol = styled(Col)`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+`;
+
+export default ({ data }) => (
   <Layout>
     <SEO
       title="Careers"
@@ -34,12 +48,13 @@ export default () => (
             </Heading>
           </Col>
         </Row>
+        <Spacing $value="20px" />
 
-        <Row>
-          <Col className="primary-content" xs={12} md={7} lg={7}>
-            <article>
-              <Heading level={2} size="large">
-                Working with Ocius – “Oceans is us”
+        <Segmented multiplier={2} borderBottom>
+          <Row>
+            <CenteredCol xs={12} md={6} lg={5}>
+              <Heading level={2} size="medium">
+                Working with Ocius <Accent>“Oceans is us”</Accent>
               </Heading>
               <p>
                 Ocius is an Australian company that builds autonomous ocean robots. These drones use
@@ -50,6 +65,19 @@ export default () => (
                 If you like a challenge, can work in a team, and love the ocean you could be part of
                 our exciting future.
               </p>
+            </CenteredCol>
+            <Col xs={12} md={6} lg={6} lgOffset={1}>
+              <Img
+                fluid={data.OciusTeam ? data.OciusTeam.childImageSharp.fluid : ''}
+                alt="Ocius team"
+              />
+            </Col>
+          </Row>
+        </Segmented>
+
+        <Row>
+          <Col xs={12} md={7} lg={7}>
+            <article>
               <Heading level={3} size="medium">
                 Featured Jobs
               </Heading>
@@ -95,3 +123,15 @@ export default () => (
     </section>
   </Layout>
 );
+
+export const query = graphql`
+  query {
+    OciusTeam: file(relativePath: { eq: "images/ocius_team.jpg" }) {
+      childImageSharp {
+        fluid(quality: 100, maxWidth: 962) {
+          ...GatsbyImageSharpFluid_withWebp
+        }
+      }
+    }
+  }
+`;
