@@ -180,7 +180,7 @@ const NewsletterForm = ({ topMaskBackgroundColor, bottomMaskBackgroundColor }) =
                                 type="email"
                               />
                               <ErrorMessage name="email">
-                                {(msg) => <Feedback>{msg}</Feedback>}
+                                {(msg) => <Feedback position="center">{msg}</Feedback>}
                               </ErrorMessage>
                             </div>
                             <div className="form-col-4">
