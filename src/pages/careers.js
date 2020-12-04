@@ -117,6 +117,85 @@ export default ({ data }) => (
               </ul>
             </Segmented>
 
+            <Segmented multiplier={2} borderBottom>
+              <Heading level={3} size="medium">
+                Electrical Technician
+              </Heading>
+
+              <p>
+                <Accent>Contact:</Accent>
+                <br />
+                lloyd@Ocius.com.au
+              </p>
+
+              <p>
+                <Accent>Compensation:</Accent>
+                <br />
+                Commensurate to experience
+              </p>
+
+              <p>
+                <Accent>Background:</Accent>
+                <br />
+                Ocius is an Australian company that builds autonomous Unmanned Surface Vessels
+                (USVs). These USVs use the energy of the weather - sun, wind and waves - to act as
+                persistent monitoring and communications platforms. We are embarking on an ambitious
+                program of building and deploying multiple USVs for operations around the Australia.
+              </p>
+              <p>
+                This program has created the need for an Electrical Technician responsible for
+                creation, maintenance and repair of all USV electronic components and equipment used
+                in our vessels.
+              </p>
+
+              <p>
+                <Accent>Duties and Responsibilities:</Accent>
+              </p>
+              <ul style={{ marginTop: 0 }}>
+                <li>Electrical design (Power and Communications).</li>
+                <li>Installation of electrical components.</li>
+                <li>Conduct electrical maintenance on USVs.</li>
+                <li>Fault finding in mechanical and electrical systems.</li>
+                <li>Research &amp; Development support on new USV technology.</li>
+                <li>Accompanying USV offshore on support boat during testing.</li>
+                <li>On occasion particpate in remote watchkeeping of the USVs when at sea.</li>
+                <li>On occasion, conducting general mechanical maintenance of USVs.</li>
+                <li>
+                  Implementing, maintaining, managing and updating all standard operating procedures
+                  and processes appropriate to the role.
+                </li>
+              </ul>
+
+              <p>
+                <Accent>Requirements:</Accent>
+              </p>
+              <ul style={{ marginTop: 0 }}>
+                <li>Fully Qualified Electrician.</li>
+                <li>Experience in Industrial/Control system wiring.</li>
+                <li>Current drivers licence.</li>
+                <li>Mechanical aptitude.</li>
+                <li>Strong computer literacy skills.</li>
+                <li>Ability to adhere to strict health and safety guidelines.</li>
+                <li>
+                  Ability to obtain and maintain a minimum of Defence Security Clearance–Baseline.
+                </li>
+                <li>
+                  Enthusiastic, positive and proactive nature with a keen attention to detail.
+                </li>
+              </ul>
+
+              <p>
+                <Accent>Desirable:</Accent>
+              </p>
+              <ul style={{ marginTop: 0 }}>
+                <li>
+                  Maritime maintenance experience - industry/defence/hobby would be acceptable.
+                </li>
+                <li>Sailing experience.</li>
+                <li>Keen interest in autonomous systems.</li>
+              </ul>
+            </Segmented>
+
             <Segmented>
               <Heading level={3} size="medium">
                 Operation Supervisor
