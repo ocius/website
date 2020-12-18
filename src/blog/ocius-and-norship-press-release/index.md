@@ -13,4 +13,6 @@ Both companies are excited by this new collaboration which is designed to provid
 
 > Robert Dane, OCIUS Chief Executive Officer said "Designing vessels and support systems with reliability, availability and maintainability in mind is paramount to the long term adoption and success of our USVs. The collaboration with Norship represents a further milestone in the “Bluebottle” development cycle. Our design and technological expertise will be further enhanced by Norships’ vast experience in maritime sustainment.”
 
+![Bob and Bruce play follow the leader](image2.jpg)
+
 > Olav Groot, Norship Chief Executive Officer added: "autonomous, self-sustaining USVs which can carry up to six-hundred-pound sensor payload present a number of unique opportunities and challenges from a sustainment and reliability perspective. With our engineering teams working closely together we are confident that customer expectations can be both met and exceeded.”
