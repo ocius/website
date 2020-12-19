@@ -7,8 +7,10 @@ const useHttp = (url, interval = null, dependencies = []) => {
   const [isLoading, setIsLoading] = useState(true);
   const [fetchedData, setFetchedData] = useState([]);
 
+  /**
+   * Fetch and return the data
+   */
   const fetchData = () => {
-    // Fetch and return the data
     axios
       .get(url)
       .then((response) => {
@@ -24,7 +26,9 @@ const useHttp = (url, interval = null, dependencies = []) => {
       });
   };
 
-  // Check if component was unmounted to prevent memory leaks
+  /**
+   * Check if component was unmounted to prevent memory leaks
+   */
   const effectCallback = () => {
     // New stuff here
     let unmounted = false;

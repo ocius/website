@@ -17,7 +17,7 @@ const Caret = styled.b`
   display: inline-block;
   width: 0;
   height: 0;
-  margin-left: 2px;
+  margin-left: 7px;
   vertical-align: middle;
   border-top: 4px dashed;
   border-right: 4px solid transparent;
@@ -26,8 +26,8 @@ const Caret = styled.b`
 
 const Link = styled(GatsbyLink)`
   display: inline-block;
-  padding: 1.5em 1em 1.5em;
-  font-size: 1em;
+  padding: 1em;
+  font-size: 1.7rem;
   font-weight: 500;
   line-height: 100%;
   text-decoration: none;

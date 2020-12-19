@@ -20,7 +20,7 @@ export default ({ data }) => {
     <Layout>
       <SEO title="In The News" />
       <PageHeader>
-        <Heading level={1} size="large" header>
+        <Heading level={1} size="large" header underline="left">
           Media Coverage
         </Heading>
         <NavTabs>

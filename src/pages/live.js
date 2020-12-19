@@ -1,4 +1,5 @@
 import React, { useState, useRef, useContext } from 'react';
+import styled from 'styled-components';
 import EmptyLayout from '../layouts/EmptyLayout';
 import SEO from '../components/SEO';
 import TextSkeleton from '../components/carbon/TextSkeleton';
@@ -17,7 +18,11 @@ import useOnClickOutside from '../common/hooks/useOnClickOutside';
 import { FormWrapper, FormItem } from '../components/carbon/shared';
 import SplashScreen from '../components/SplashScreen';
 
-// Google Maps key
+const Main = styled.main`
+  margin-top: -145px; /* removing padding from body */
+`;
+
+/** Google Maps key */
 const apiKey = process.env.GATSBY_GOOGLE_MAPS_API_KEY;
 
 const LivePage = () => {
@@ -28,15 +33,15 @@ const LivePage = () => {
   const { leftNavIsOpen, toggleNavState } = useContext(NavContext);
   const windowSize = useWindowSize();
 
-  /*
-    Attach an event handler to vessel dropdown
+  /**
+   * Attach an event handler to vessel dropdown
    */
   const handleVesselChange = (e) => {
     setCurrentVessel(e.selectedItem.id);
   };
 
-  /*
-    Custom walker for drone data, to retrieve properties from nested objects.
+  /**
+   * Custom walker for drone data, to retrieve properties from nested objects.
    */
   const objectWalker = (propertyRetriever, obj) => {
     let result = [];
@@ -51,19 +56,21 @@ const LivePage = () => {
     return result;
   };
 
-  // Retrieve a name and id
+  /** Retrieve a name and id */
   const droneNamesAndIdsRetriever = (obj) => {
     return { name: obj.Name, id: obj.Id };
   };
 
-  // Retrieve drone name
+  /** Retrieve drone name */
   const droneNamesRetriever = (obj) => {
     return obj.Name;
   };
 
-  /*
-    Function to add custom unique Ids to fetched data.
-    So that we can use them later.
+  /**
+   * Function to add custom unique Ids to fetched data.
+   * So that we can use them later.
+   *
+   * @param {object} data API data object
    */
   const addIdsToFetchedData = (data) => {
     // Extract drone names from data
@@ -77,7 +84,11 @@ const LivePage = () => {
     });
   };
 
-  // Check if name property exists
+  /**
+   * Check if property name exists, then display it.
+   *
+   * @param {object} data API data object
+   */
   const droneName = (data) => {
     return data && typeof data.name !== 'undefined' ? data.name : '';
   };
@@ -98,7 +109,7 @@ const LivePage = () => {
   return (
     <EmptyLayout>
       <SEO title="Live" description="See where Bluebottles are at any time – LIVE." />
-      <main ref={node}>
+      <Main ref={node}>
         <Header />
         <MobileNavigation />
         <LeftNav>
@@ -127,7 +138,7 @@ const LivePage = () => {
             )}
           </FormWrapper>
         </LeftNav>
-      </main>
+      </Main>
       <SplashScreen
         isLoading={isLoading}
         text={['Connecting to satellite', 'Connecting to drones', 'Drones sending data']}

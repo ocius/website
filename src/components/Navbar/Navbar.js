@@ -4,19 +4,20 @@ import styled from 'styled-components';
 import Container from '../Container';
 
 const StyledNavbar = styled.header`
-  background-color: #efefef;
+  position: fixed;
+  background-color: #ffffff;
   margin: 0px;
   width: 100%;
-  z-index: 1;
+  z-index: 11;
   top: 0px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 `;
 
 const FlexContainer = styled(Container)`
   display: flex;
-  justify-content: space-between;
-  align-content: center;
-  min-height: 5rem;
+  flex-direction: column;
+  align-items: center;
+  padding: 25px 0 15px;
 `;
 
 const Navbar = ({ children }) => (

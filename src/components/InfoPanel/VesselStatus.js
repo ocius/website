@@ -2,6 +2,7 @@ import React from 'react';
 import { uid } from 'react-uid';
 import styled, { css } from 'styled-components';
 import PowerMonitor from './PowerMonitor';
+import FlashUpdate from './FlashUpdate';
 
 const StatusList = styled.dl`
   font-size: 1.5rem;
@@ -88,6 +89,7 @@ const StatusNames = {
   Heading: 'Heading',
   Lat: 'Latitude',
   Lon: 'Longitude',
+  Timestamp: 'Last Updated',
 };
 
 /**
@@ -192,6 +194,23 @@ const formatVesselStatusData = (data) => {
     return lowerCase.charAt(0).toUpperCase() + lowerCase.slice(1);
   };
 
+  // Convert 1599894839305 to 5 mins ago
+  const timeSince = (timestamp) => {
+    const now = new Date();
+    const localTime = new Date(parseInt(timestamp, 10));
+    const secondsPast = (now.getTime() - localTime.getTime()) / 1000;
+    if (secondsPast < 60) {
+      return `${parseInt(secondsPast, 10)}s ago`;
+    }
+    if (secondsPast < 3600) {
+      return `${parseInt(secondsPast / 60, 10)}m ago`;
+    }
+    if (secondsPast <= 86400) {
+      return `${parseInt(secondsPast / 3600, 10)}h ago`;
+    }
+    return `${localTime.toLocaleDateString('en-au')}`;
+  };
+
   if (Object.entries(flattened).length !== 0) {
     // eslint-disable-next-line no-restricted-syntax
     for (const [key, value] of Object.entries(flattened)) {
@@ -244,6 +263,8 @@ const formatVesselStatusData = (data) => {
           }
         } else if (key === 'Mode') {
           statuses[StatusNames[key]] = capitalizeFirstLetter(value);
+        } else if (key === 'Timestamp') {
+          statuses[StatusNames[key]] = timeSince(value);
         } else if (typeof StatusNames[key] !== 'undefined') {
           statuses[StatusNames[key]] = value;
         }
@@ -256,20 +277,28 @@ const formatVesselStatusData = (data) => {
 
 const VesselStatus = ({ data }) => {
   const statuses = formatVesselStatusData(data);
-
   return data ? (
     <>
       <H3Heading>Vessel Status</H3Heading>
       <StatusList>
-        {Object.keys(statuses).map((index, id) => (
-          <React.Fragment key={uid(index, id)}>
-            <dt>{index}</dt>
-            <dd>{statuses[index]}</dd>
-          </React.Fragment>
-        ))}
+        {Object.keys(statuses)
+          .filter((key) => key !== 'Last Updated')
+          .map((index, id) => (
+            <React.Fragment key={uid(index, id)}>
+              <dt>{index}</dt>
+              <dd>{statuses[index]}</dd>
+            </React.Fragment>
+          ))}
+        <dt>Last Updated</dt>
+        <dd>
+          <FlashUpdate lastUpdated={Date.now()}>{statuses['Last Updated']}</FlashUpdate>
+        </dd>
       </StatusList>
       <H3Heading>Power Monitor</H3Heading>
-      <PowerMonitor Batteries={data.Props.Batteries} />
+      <PowerMonitor
+        Batteries={data.Props.Batteries}
+        BatteryPercentages={data.Props.BatteryPercentages}
+      />
     </>
   ) : null;
 };

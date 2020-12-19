@@ -1,4 +1,5 @@
 import React from 'react';
+import { uid } from 'react-uid';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import Progress from '../Progress';
@@ -20,17 +21,15 @@ const ItemWrapper = styled.div`
   margin: 0 0 1rem;
 `;
 
-const PowerMonitor = ({ Batteries }) => {
-  const getWholePercent = (percentFor, percentOf) => {
-    return Math.floor((percentFor / percentOf) * 100);
-  };
-
+// Displays the battery levels in Volts and graphically using ProgressBars
+// Assumes Batteries.length() == BatteryPercentages.length()
+const PowerMonitor = ({ Batteries, BatteryPercentages }) => {
   const BatteryBars = Batteries.map((BatteryLevel, index) => (
-    <ItemWrapper key={BatteryLevel.id}>
+    <ItemWrapper key={uid(BatteryLevel, index)}>
       <Label>
         Battery {String.fromCharCode(65 + index)}: {BatteryLevel}V
       </Label>
-      <Progress percent={getWholePercent(BatteryLevel - 22, 8)} />
+      <Progress percent={parseFloat(BatteryPercentages[index])} />
     </ItemWrapper>
   ));
 
@@ -38,7 +37,7 @@ const PowerMonitor = ({ Batteries }) => {
 };
 
 PowerMonitor.propTypes = {
-  Batteries: PropTypes.arrayOf(PropTypes.number),
+  Batteries: PropTypes.arrayOf(PropTypes.string),
 };
 
 PowerMonitor.defaultProps = {

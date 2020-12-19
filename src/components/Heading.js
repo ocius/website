@@ -6,7 +6,7 @@ import cn from 'classnames';
 import mq from '../common/mq';
 import {
   fontSizeHeading1,
-  fontSizeHeading2,
+  fontSizeHeading3,
   fontSizeHeading4,
   fontSizeHeading5,
   fontSizeHeading7,
@@ -31,10 +31,19 @@ const Underline = css`
   &::after {
     content: '';
     display: block;
-    background-color: #60d2f6;
+    background-color: #4ab4e6;
     height: 4px;
     width: 100px;
-    margin: 10px auto;
+
+    ${switchProp('underline', {
+      left: css`
+        margin: 10px 0;
+      `,
+
+      center: css`
+        margin: 10px auto;
+      `,
+    })}
   }
 `;
 
@@ -43,7 +52,7 @@ const Shadow = css`
 `;
 
 const Header = css`
-  color: #60d2f6;
+  color: #1f3643;
   padding-top: 80px;
   margin-top: 0;
 
@@ -53,7 +62,8 @@ const Header = css`
 `;
 
 const StyledHeading = styled.h3`
-  font-family: ${font('main')};
+  color: ${(props) => props.$color || '#1f3643'};
+  font-family: ${font('bold')};
   line-height: 1.2;
 
   ${switchProp('size', {
@@ -84,14 +94,14 @@ const StyledHeading = styled.h3`
       font-size: ${fontSizeHeading4}px;
 
       @media (min-width: ${mq.min[600]}) {
-        font-size: ${fontSizeHeading2 - 5}px;
+        font-size: ${fontSizeHeading3}px;
       }
     `,
 
     huge: css`
       margin-top: 0.5em;
       margin-bottom: 0;
-      font-size: ${fontSizeHeading4 + 2}px;
+      font-size: ${fontSizeHeading4 + 4}px;
       letter-spacing: -1px;
       line-height: ${36 / 30};
 
@@ -146,6 +156,7 @@ function Heading({
   children,
   level,
   size,
+  color,
   weight,
   tracking,
   truncate,
@@ -162,6 +173,7 @@ function Heading({
       className={cn('Heading', className)}
       as={HeadingLevel}
       size={size}
+      $color={color}
       weight={weight}
       tracking={tracking}
       truncate={truncate}
@@ -192,6 +204,11 @@ Heading.propTypes = {
   size: PropTypes.oneOf(['huge', 'large', 'medium', 'small', 'tiny']).isRequired,
 
   /**
+   * Declares the color of the heading
+   */
+  color: PropTypes.string,
+
+  /**
    * Adjusts the font weight of the heading
    */
   weight: PropTypes.oneOf(['thick', 'normal', 'thin', 'extraThin']),
@@ -214,7 +231,7 @@ Heading.propTypes = {
   /**
    * Whether or not to add underline to the heading
    */
-  underline: PropTypes.bool,
+  underline: PropTypes.oneOf(['left', 'center']),
 
   /**
    * Whether or not heading is a page header
@@ -227,11 +244,12 @@ Heading.propTypes = {
 };
 
 Heading.defaultProps = {
+  color: '#1f3643',
   weight: 'normal',
   tracking: 'normal',
   truncate: false,
   caps: false,
-  underline: false,
+  underline: null,
   header: false,
   shadow: false,
 };

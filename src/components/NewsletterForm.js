@@ -1,17 +1,27 @@
 import React, { useState } from 'react';
+import { graphql, StaticQuery } from 'gatsby';
 import styled from 'styled-components';
 import { Formik, ErrorMessage } from 'formik';
+import { Col, Row } from 'react-flexbox-grid';
+import BackgroundImage from 'gatsby-background-image';
 import addToMailchimp from 'gatsby-plugin-mailchimp';
-import HeadingComponent from './Heading';
+import Container from './Container';
+import Heading from './Heading';
 import Button from './Button';
 import { Feedback, Alert, FormField } from './Form';
+import mq from '../common/mq';
 
-const Form = styled.form`
-  display: flex;
-  flex-direction: column;
-  background: #efefef;
-  color: #2a2a2a;
-  padding: 2rem;
+const NewsletterContainer = styled(BackgroundImage)`
+  color: #ffffff;
+  position: relative;
+  overflow: hidden;
+  padding: 3.2rem 0;
+  background-attachment: fixed;
+
+  @media (max-width: ${mq.max[720]}) {
+    max-height: 592px;
+    background-attachment: scroll;
+  }
 `;
 
 const Field = styled(FormField)`
@@ -39,7 +49,7 @@ const FormGroup = styled.div`
 
   @media (min-width: 576px) {
     [class*='form-col'] + [class*='form-col'] {
-      padding: 0 0 0 1em;
+      padding: 0;
     }
 
     .form-col-4 {
@@ -52,10 +62,6 @@ const FormGroup = styled.div`
       max-width: 66.66667%;
     }
   }
-`;
-
-const Heading = styled(HeadingComponent)`
-  margin-top: 0;
 `;
 
 const NewsletterForm = () => {
@@ -115,47 +121,86 @@ const NewsletterForm = () => {
     >
       {({ errors, touched, handleSubmit, isSubmitting }) => (
         <>
-          <Form onSubmit={handleSubmit}>
-            <Heading size="medium" weight="thick" level={3}>
-              Be the first to hear our latest news and updates
-            </Heading>
-            <FormGroup>
-              {/* Real people should not fill this in and expect good things - do not remove this or risk form bot signups */}
-              <div aria-hidden="true" style={{ position: 'absolute', left: '-5000px' }}>
-                <Field type="text" name="name" tabIndex="-1" />
-              </div>
+          <StaticQuery
+            query={graphql`
+              query {
+                NewsletterBackground: file(relativePath: { eq: "images/newsletter-bg.jpg" }) {
+                  childImageSharp {
+                    fluid(quality: 100, maxWidth: 1920) {
+                      ...GatsbyImageSharpFluid_withWebp
+                    }
+                  }
+                }
+              }
+            `}
+            render={(data) => {
+              // Set ImageData.
+              const imageData = data.NewsletterBackground.childImageSharp.fluid;
+              return (
+                <NewsletterContainer Tag="section" fluid={imageData}>
+                  <Container className="centered">
+                    <Row>
+                      <Col xs={12} md={6} mdOffset={3}>
+                        <form onSubmit={handleSubmit}>
+                          <Heading level={3} size="large" weight="thick" color="white">
+                            Sign up to
+                            <br />
+                            our newsletter
+                          </Heading>
+                          <p>
+                            By submitting your email address below, you agree to receive email
+                            updates on Ocius Technologies and their latest projects.
+                          </p>
+                          <FormGroup>
+                            {/* Real people should not fill this in and expect good things - do not remove this or risk form bot signups */}
+                            <div
+                              aria-hidden="true"
+                              style={{ position: 'absolute', left: '-5000px' }}
+                            >
+                              <Field type="text" name="name" tabIndex="-1" />
+                            </div>
 
-              <div className="form-col-8">
-                <Field
-                  className={`form-control ${errors.email && touched.email && 'is-invalid'}`}
-                  validate={validateEmail}
-                  placeholder="Email address"
-                  name="email"
-                  type="email"
-                />
-                <ErrorMessage name="email">{(msg) => <Feedback>{msg}</Feedback>}</ErrorMessage>
-              </div>
-              <div className="form-col-4">
-                <Button
-                  type="submit"
-                  size="tiny"
-                  color="blue"
-                  customStyles={{ maxWidth: '100%', padding: '1.6em 1em' }}
-                  disabled={isSubmitting}
-                >
-                  Subscribe
-                </Button>
-              </div>
-            </FormGroup>
-          </Form>
-          {formMessage && (
-            <Alert
-              success={submitSuccess}
-              dangerouslySetInnerHTML={{
-                __html: formMessage,
-              }}
-            />
-          )}
+                            <div className="form-col-8">
+                              <Field
+                                className={`form-control ${
+                                  errors.email && touched.email && 'is-invalid'
+                                }`}
+                                validate={validateEmail}
+                                placeholder="Email address"
+                                name="email"
+                                type="email"
+                              />
+                              <ErrorMessage name="email">
+                                {(msg) => <Feedback>{msg}</Feedback>}
+                              </ErrorMessage>
+                            </div>
+                            <div className="form-col-4">
+                              <Button
+                                type="submit"
+                                size="tiny"
+                                color="blue"
+                                disabled={isSubmitting}
+                              >
+                                Subscribe
+                              </Button>
+                            </div>
+                          </FormGroup>
+                        </form>
+                        {formMessage && (
+                          <Alert
+                            success={submitSuccess}
+                            dangerouslySetInnerHTML={{
+                              __html: formMessage,
+                            }}
+                          />
+                        )}
+                      </Col>
+                    </Row>
+                  </Container>
+                </NewsletterContainer>
+              );
+            }}
+          />
         </>
       )}
     </Formik>

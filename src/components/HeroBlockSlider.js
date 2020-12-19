@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import BackgroundSlider from 'react-background-slider';
 
 import { ContainerStyle, InnerContainer } from './HeroBlock';
-import GradientOverlay from './GradientOverlay';
+import MaskOverlay from './MaskOverlay';
 
 const HeroContainer = styled.div`
   ${ContainerStyle}
@@ -12,22 +12,22 @@ const HeroContainer = styled.div`
 
 HeroContainer.defaultProps = {};
 
-const HeroBlockSlider = ({ children, images, gradient }) => (
+const HeroBlockSlider = ({ children, images, masked }) => (
   <HeroContainer Tag="section" className="HeroBlock">
     <BackgroundSlider images={images} duration={10} transition={1.5} />
     <InnerContainer>{children}</InnerContainer>
 
-    {gradient && <GradientOverlay gradientType={gradient} />}
+    {masked && <MaskOverlay />}
   </HeroContainer>
 );
 
 HeroBlockSlider.propTypes = {
   images: PropTypes.arrayOf(PropTypes.string).isRequired,
-  gradient: PropTypes.string,
+  masked: PropTypes.bool,
 };
 
 HeroBlockSlider.defaultProps = {
-  gradient: '',
+  masked: false,
 };
 
 export default HeroBlockSlider;

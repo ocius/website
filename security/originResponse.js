@@ -26,7 +26,7 @@ exports.handler = (event, context, callback) => {
         "img-src 'self' www.google-analytics.com stats.g.doubleclick.net data:;" +
         "frame-src 'self' *.youtube.com *.youtube-nocookie.com www.instagram.com twitter.com usvna.ocius.com.au;" +
         "object-src 'self' *.googlevideo.com *.ytimg.com *.youtube.com *.youtube-nocookie.com;" +
-        "connect-src 'self' www.google-analytics.com www.googletagmanager.com stats.g.doubleclick.net c2fpksv8c0.execute-api.us-east-1.amazonaws.com;" +
+        "connect-src 'self' www.google-analytics.com www.googletagmanager.com stats.g.doubleclick.net qf498rjqnj.execute-api.us-east-1.amazonaws.com;" +
         "font-src 'self';"
     }
   ];

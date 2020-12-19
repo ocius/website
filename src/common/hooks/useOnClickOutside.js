@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 
 const useOnClickOutside = (ref, handler) => {
   useEffect(() => {
-    // Detect if it's a mobile device
+    /** Detect if it's a mobile device */
     const isTouchDevice = 'ontouchstart' in document.documentElement;
     const eventListener = isTouchDevice ? 'touchstart' : 'mousedown';
 
