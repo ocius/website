@@ -9,3 +9,15 @@ export const wrapRootElement = ({ element }) => (
     <ThemeProvider theme={theme}>{element}</ThemeProvider>
   </NavContextProvider>
 );
+
+export const onRouteUpdate = ({ location }) => {
+  if (location.hash) {
+    setTimeout(() => {
+      // Check if div exists on the page
+      const hash = document.querySelector(`${location.hash}`);
+      if (hash) {
+        hash.scrollIntoView({ behavior: 'smooth' });
+      }
+    }, 0);
+  }
+};
