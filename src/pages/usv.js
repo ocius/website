@@ -109,7 +109,7 @@ export default ({ data }) => (
         <Spacing $value="100px" />
       </HeroBlock>
     )}
-    <Container className="page-content" id="overview">
+    <Container className="page-content">
       <Row className="centered">
         <Col xs={12} md={8} lg={8} mdOffset={2}>
           <Spacing $value="80px" />
@@ -235,7 +235,7 @@ export default ({ data }) => (
       </Container>
     </AccentRowWrapper>
 
-    <Container>
+    <Container id="overview">
       <Segmented>
         <Row className="centered">
           <Col xs={12} md={8} lg={8} mdOffset={2}>

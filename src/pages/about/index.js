@@ -1135,12 +1135,14 @@ export default ({ data }) => (
     {data.SolarSail && (
       <FloatingImage fixed={data.SolarSail.childImageSharp.fixed} alt="Solar Sail" />
     )}
-    <NavTabs>
-      <NavTab label="People" to="about" />
-      <NavTab label="Our Partners" to="about/partners" />
-      <NavTab label="Our Story" to="about/our-story" />
-      <NavTab label="Awards" to="about/awards" />
-    </NavTabs>
+    <div id="tabs">
+      <NavTabs>
+        <NavTab label="People" to="about" />
+        <NavTab label="Our Partners" to="about/partners" />
+        <NavTab label="Our Story" to="about/our-story" />
+        <NavTab label="Awards" to="about/awards" />
+      </NavTabs>
+    </div>
     <Router>
       <People path="about" data={data} />
       <Partners path="about/partners" data={data} />

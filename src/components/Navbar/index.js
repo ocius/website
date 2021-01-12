@@ -44,10 +44,10 @@ export default () => (
         <NavbarDropdown name="About" link="/about">
           <DropdownMenu
             menuItems={[
-              { href: '/about', name: 'People' },
-              { href: '/about/partners', name: 'Partners' },
-              { href: '/about/our-story', name: 'Our Story' },
-              { href: '/about/awards', name: 'Awards' },
+              { href: '/about#tabs', name: 'People' },
+              { href: '/about/partners#tabs', name: 'Partners' },
+              { href: '/about/our-story#tabs', name: 'Our Story' },
+              { href: '/about/awards#tabs', name: 'Awards' },
             ]}
           />
         </NavbarDropdown>
