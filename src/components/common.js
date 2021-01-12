@@ -68,15 +68,13 @@ const AccentRowDiv = styled.div`
   padding: 3.2rem 0;
 `;
 
-export const AccentRowWrapper = ({ children }) => {
-  return (
-    <AccentRowDiv>
-      <MaskOverlay flipped position="top" />
-      {children}
-      <MaskOverlay flipped />
-    </AccentRowDiv>
-  );
-};
+export const AccentRowWrapper = ({ children }) => (
+  <AccentRowDiv>
+    <MaskOverlay flipped position="top" />
+    {children}
+    <MaskOverlay flipped />
+  </AccentRowDiv>
+);
 
 AccentRowWrapper.propTypes = {
   children: PropTypes.node,
@@ -92,14 +90,12 @@ const DarkAccentRowDiv = styled.div`
   padding: 3.2rem 0;
 `;
 
-export const DarkAccentRowWrapper = ({ children }) => {
-  return (
-    <DarkAccentRowDiv>
-      {children}
-      <MaskOverlay flipped />
-    </DarkAccentRowDiv>
-  );
-};
+export const DarkAccentRowWrapper = ({ children }) => (
+  <DarkAccentRowDiv>
+    {children}
+    <MaskOverlay flipped />
+  </DarkAccentRowDiv>
+);
 
 DarkAccentRowWrapper.propTypes = {
   children: PropTypes.node,

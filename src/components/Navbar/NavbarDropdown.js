@@ -123,12 +123,12 @@ class NavbarDropdown extends Component {
 
   renderChildren = () => {
     const { children } = this.props;
-    return React.Children.map(children, (child) => {
-      return React.cloneElement(child, {
+    return React.Children.map(children, (child) =>
+      React.cloneElement(child, {
         open: this.state.open,
         setRef: this.setRef,
-      });
-    });
+      })
+    );
   };
 
   render() {

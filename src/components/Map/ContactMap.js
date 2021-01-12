@@ -24,25 +24,23 @@ const ContactMap = () => {
     googleMapsApiKey: process.env.GATSBY_GOOGLE_MAPS_API_KEY,
   });
 
-  const renderMap = () => {
-    return (
-      <GoogleMap
-        mapContainerStyle={mapStyle}
-        zoom={16}
-        center={center}
-        options={{
-          disableDefaultUI: true, // disable default map UI
-          draggable: true, // make map draggable
-          keyboardShortcuts: false, // disable keyboard shortcuts
-          scaleControl: true, // allow scale controle
-          scrollwheel: true, // allow scroll wheel
-          styles, // change default map styles
-        }}
-      >
-        <Marker position={center} icon={inlineSvgIcon(<Icon.Marker fill="#4db4e6" />)} />
-      </GoogleMap>
-    );
-  };
+  const renderMap = () => (
+    <GoogleMap
+      mapContainerStyle={mapStyle}
+      zoom={16}
+      center={center}
+      options={{
+        disableDefaultUI: true, // disable default map UI
+        draggable: true, // make map draggable
+        keyboardShortcuts: false, // disable keyboard shortcuts
+        scaleControl: true, // allow scale controle
+        scrollwheel: true, // allow scroll wheel
+        styles, // change default map styles
+      }}
+    >
+      <Marker position={center} icon={inlineSvgIcon(<Icon.Marker fill="#4db4e6" />)} />
+    </GoogleMap>
+  );
 
   return isLoaded ? renderMap() : null;
 };

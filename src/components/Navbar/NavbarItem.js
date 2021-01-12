@@ -44,28 +44,26 @@ const ExternalLink = styled.a`
   ${LinkStyles}
 `;
 
-const NavbarItem = ({ link, title, blank }) => {
-  return (
-    <Item className="list">
-      {(() => {
-        // Check if the link should be opened in the new tab
-        if (blank) {
-          return (
-            <ExternalLink className="link" href={link} target="_blank" rel="noreferrer noopener">
-              {title}
-            </ExternalLink>
-          );
-        }
-
+const NavbarItem = ({ link, title, blank }) => (
+  <Item className="list">
+    {(() => {
+      // Check if the link should be opened in the new tab
+      if (blank) {
         return (
-          <InternalLink className="link" to={link} getProps={detectActive}>
+          <ExternalLink className="link" href={link} target="_blank" rel="noreferrer noopener">
             {title}
-          </InternalLink>
+          </ExternalLink>
         );
-      })()}
-    </Item>
-  );
-};
+      }
+
+      return (
+        <InternalLink className="link" to={link} getProps={detectActive}>
+          {title}
+        </InternalLink>
+      );
+    })()}
+  </Item>
+);
 
 NavbarItem.propTypes = {
   link: PropTypes.string.isRequired,

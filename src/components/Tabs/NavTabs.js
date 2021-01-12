@@ -125,54 +125,44 @@ const NavTabs = ({
     }
   };
 
-  const getTabs = () => {
-    return React.Children.map(children, (tab) => tab);
-  };
+  const getTabs = () => React.Children.map(children, (tab) => tab);
 
-  const getTabAt = (index, useFresh) => {
-    return !useFresh || React.Children.toArray(children)[index];
-  };
+  const getTabAt = (index, useFresh) => !useFresh || React.Children.toArray(children)[index];
 
   // following functions (handle*) are Props on Tab.js, see Tab.js for parameters
-  const handleTabClick = (selectionChangeHandler) => {
-    return (index, label, evt) => {
-      evt.preventDefault();
+  const handleTabClick = (selectionChangeHandler) => (index, label, evt) => {
+    evt.preventDefault();
+    selectTabAt(index, selectionChangeHandler);
+    setDropdownHidden(true);
+  };
+
+  const handleTabKeyDown = (selectionChangeHandler) => (index, label, evt) => {
+    const key = evt.key || evt.which;
+
+    if (key === 'Enter' || key === 13 || key === ' ' || key === 32) {
       selectTabAt(index, selectionChangeHandler);
       setDropdownHidden(true);
-    };
+    }
   };
 
-  const handleTabKeyDown = (selectionChangeHandler) => {
-    return (index, label, evt) => {
-      const key = evt.key || evt.which;
+  const handleTabAnchorFocus = (selectionChangeHandler) => (index) => {
+    const tabCount = React.Children.count(children) - 1;
+    let tabIndex = index;
 
-      if (key === 'Enter' || key === 13 || key === ' ' || key === 32) {
-        selectTabAt(index, selectionChangeHandler);
-        setDropdownHidden(true);
+    if (index < 0) {
+      tabIndex = tabCount;
+    } else if (index > tabCount) {
+      tabIndex = 0;
+    }
+
+    const tab = getTabAt(tabIndex);
+
+    if (tab) {
+      selectTabAt(tabIndex, selectionChangeHandler);
+      if (tab.tabAnchor) {
+        tab.tabAnchor.focus();
       }
-    };
-  };
-
-  const handleTabAnchorFocus = (selectionChangeHandler) => {
-    return (index) => {
-      const tabCount = React.Children.count(children) - 1;
-      let tabIndex = index;
-
-      if (index < 0) {
-        tabIndex = tabCount;
-      } else if (index > tabCount) {
-        tabIndex = 0;
-      }
-
-      const tab = getTabAt(tabIndex);
-
-      if (tab) {
-        selectTabAt(tabIndex, selectionChangeHandler);
-        if (tab.tabAnchor) {
-          tab.tabAnchor.focus();
-        }
-      }
-    };
+    }
   };
 
   /**

@@ -42,24 +42,20 @@ const LivePage = () => {
     let result = [];
     // Extract values from data
     if (typeof obj === 'object') {
-      result = Object.keys(obj).map((index) => {
+      result = Object.keys(obj).map((index) =>
         // Get property for this particular index
-        return propertyRetriever(obj[index]);
-      });
+        propertyRetriever(obj[index])
+      );
     }
 
     return result;
   };
 
   /** Retrieve a name and id */
-  const droneNamesAndIdsRetriever = (obj) => {
-    return { name: obj.Name, id: obj.Id };
-  };
+  const droneNamesAndIdsRetriever = (obj) => ({ name: obj.Name, id: obj.Id });
 
   /** Retrieve drone name */
-  const droneNamesRetriever = (obj) => {
-    return obj.Name;
-  };
+  const droneNamesRetriever = (obj) => obj.Name;
 
   /**
    * Function to add custom unique Ids to fetched data.
@@ -84,9 +80,7 @@ const LivePage = () => {
    *
    * @param {object} data API data object
    */
-  const droneName = (data) => {
-    return data && typeof data.name !== 'undefined' ? data.name : '';
-  };
+  const droneName = (data) => (data && typeof data.name !== 'undefined' ? data.name : '');
 
   // Fetch data periodically
   const [isLoading, fetchedData] = useHttp(configuration.DRONE_COLLECTION_URL, 2000);

@@ -83,16 +83,14 @@ export default () => (
             ]}
           />
         </NavbarDropdown>
-        {navitems.map((item) => {
-          return (
-            <NavbarItem
-              key={navitems.indexOf(item)}
-              link={item.link}
-              title={item.title}
-              blank={item.blank ? item.blank : undefined}
-            />
-          );
-        })}
+        {navitems.map((item) => (
+          <NavbarItem
+            key={navitems.indexOf(item)}
+            link={item.link}
+            title={item.title}
+            blank={item.blank ? item.blank : undefined}
+          />
+        ))}
       </NavbarItems>
       <Button href="/live" size="tiny" color="blue">
         Watch Live

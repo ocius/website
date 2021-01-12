@@ -72,33 +72,31 @@ const Date = styled.p`
   margin-top: 0;
 `;
 
-const Card = ({ url, thumbnail, title, source, logo, date }) => {
-  return (
-    <CardWrapper>
-      <ExternalLink target="_blank" href={url}>
-        <CardThumbnail fluid={thumbnail.childImageSharp.fluid} />
-      </ExternalLink>
-      <CardBody>
-        <Content>
-          <CardHeading level={2} size="small" weight="thick">
-            {title}
-          </CardHeading>
-          <Date>{date}</Date>
-          <Source>
-            {logo && (
-              <Img style={{ width: 25, marginRight: 10 }} fluid={logo.childImageSharp.fluid} />
-            )}
-            {source}
-          </Source>
-        </Content>
+const Card = ({ url, thumbnail, title, source, logo, date }) => (
+  <CardWrapper>
+    <ExternalLink target="_blank" href={url}>
+      <CardThumbnail fluid={thumbnail.childImageSharp.fluid} />
+    </ExternalLink>
+    <CardBody>
+      <Content>
+        <CardHeading level={2} size="small" weight="thick">
+          {title}
+        </CardHeading>
+        <Date>{date}</Date>
+        <Source>
+          {logo && (
+            <Img style={{ width: 25, marginRight: 10 }} fluid={logo.childImageSharp.fluid} />
+          )}
+          {source}
+        </Source>
+      </Content>
 
-        <Button color="blue" size="tiny" href={url} target="_blank">
-          Read more
-        </Button>
-      </CardBody>
-    </CardWrapper>
-  );
-};
+      <Button color="blue" size="tiny" href={url} target="_blank">
+        Read more
+      </Button>
+    </CardBody>
+  </CardWrapper>
+);
 
 Card.propTypes = {
   url: PropTypes.string,

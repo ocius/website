@@ -56,21 +56,19 @@ const IconButton = styled.a`
   }
 `;
 
-const SocialIconButton = ({ network, href, onClick, iconSize, id, className }) => {
-  return (
-    <IconButton
-      backgroundColor={backgroundColors[network]}
-      iconSize={iconSize}
-      className={cn('SocialIconButton', className)}
-      id={id}
-      href={href}
-      onClick={onClick}
-      data-network={network}
-    >
-      {iconFromString(iconNames[network])}
-    </IconButton>
-  );
-};
+const SocialIconButton = ({ network, href, onClick, iconSize, id, className }) => (
+  <IconButton
+    backgroundColor={backgroundColors[network]}
+    iconSize={iconSize}
+    className={cn('SocialIconButton', className)}
+    id={id}
+    href={href}
+    onClick={onClick}
+    data-network={network}
+  >
+    {iconFromString(iconNames[network])}
+  </IconButton>
+);
 
 SocialIconButton.propTypes = {
   network: PropTypes.oneOf([

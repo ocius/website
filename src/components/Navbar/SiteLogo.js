@@ -32,22 +32,20 @@ const LogoImage = styled.img`
   align-self: center;
 `;
 
-const SiteLogo = ({ className, href, maxHeight }) => {
-  return (
-    <StaticQuery
-      query={logoQuery}
-      render={(data) => (
-        <LogoLink className={className} key="brand" to={href}>
-          <LogoImage
-            style={{ maxHeight }}
-            src={data.file.childImageSharp.fluid.src}
-            alt="Website logo"
-          />
-        </LogoLink>
-      )}
-    />
-  );
-};
+const SiteLogo = ({ className, href, maxHeight }) => (
+  <StaticQuery
+    query={logoQuery}
+    render={(data) => (
+      <LogoLink className={className} key="brand" to={href}>
+        <LogoImage
+          style={{ maxHeight }}
+          src={data.file.childImageSharp.fluid.src}
+          alt="Website logo"
+        />
+      </LogoLink>
+    )}
+  />
+);
 
 SiteLogo.propTypes = {
   className: PropTypes.string,

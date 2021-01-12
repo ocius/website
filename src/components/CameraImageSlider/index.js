@@ -86,18 +86,16 @@ const CameraSlider = ({ images, title, settings, customSettings }) => {
           prevArrow={renderPaginator('Left')}
           nextArrow={renderPaginator('Right')}
         >
-          {images.map((image, index) => {
-            return (
-              <ImageZoom key={uid(image, index)}>
-                <img
-                  src={image}
-                  alt="Live camera view"
-                  className="webcam-img"
-                  style={{ width: '100%' }}
-                />
-              </ImageZoom>
-            );
-          })}
+          {images.map((image, index) => (
+            <ImageZoom key={uid(image, index)}>
+              <img
+                src={image}
+                alt="Live camera view"
+                className="webcam-img"
+                style={{ width: '100%' }}
+              />
+            </ImageZoom>
+          ))}
         </Slider>
       ) : (
         <NotAvailble>

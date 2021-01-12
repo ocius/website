@@ -25,12 +25,10 @@ const SkeletonWrapper = styled.div`
   }
 `;
 
-const PictureSkeleton = (props) => {
-  return (
-    <>
-      <SkeletonWrapper className="bx--skeleton" {...props} />
-    </>
-  );
-};
+const PictureSkeleton = (props) => (
+  <>
+    <SkeletonWrapper className="bx--skeleton" {...props} />
+  </>
+);
 
 export default PictureSkeleton;

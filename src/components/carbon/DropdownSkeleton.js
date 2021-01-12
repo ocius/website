@@ -58,15 +58,13 @@ const ListBoxLabel = styled.span`
   user-select: none;
 `;
 
-const DropdownSkeleton = (props) => {
-  return (
-    <>
-      <ListBoxLabel>{props.label}</ListBoxLabel>
-      <SkeletonWrapper className="bx--skeleton" {...props}>
-        <ListBox role="button" />
-      </SkeletonWrapper>
-    </>
-  );
-};
+const DropdownSkeleton = (props) => (
+  <>
+    <ListBoxLabel>{props.label}</ListBoxLabel>
+    <SkeletonWrapper className="bx--skeleton" {...props}>
+      <ListBox role="button" />
+    </SkeletonWrapper>
+  </>
+);
 
 export default DropdownSkeleton;

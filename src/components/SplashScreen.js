@@ -31,24 +31,22 @@ const Overlay = styled.div`
   }
 `;
 
-const SplashScreen = ({ isLoading, text }) => {
-  return (
-    <ReactCSSTransitionGroup
-      transitionName="fade"
-      transitionEnterTimeout={500}
-      transitionLeaveTimeout={300}
-    >
-      {isLoading && (
-        <Overlay className="center-xs">
-          <FadeIn>
-            <TextShuffle items={text} />
-            <Ellipsis color="#125192" />
-          </FadeIn>
-        </Overlay>
-      )}
-    </ReactCSSTransitionGroup>
-  );
-};
+const SplashScreen = ({ isLoading, text }) => (
+  <ReactCSSTransitionGroup
+    transitionName="fade"
+    transitionEnterTimeout={500}
+    transitionLeaveTimeout={300}
+  >
+    {isLoading && (
+      <Overlay className="center-xs">
+        <FadeIn>
+          <TextShuffle items={text} />
+          <Ellipsis color="#125192" />
+        </FadeIn>
+      </Overlay>
+    )}
+  </ReactCSSTransitionGroup>
+);
 
 SplashScreen.propTypes = {
   isLoading: PropTypes.bool.isRequired,

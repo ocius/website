@@ -16,9 +16,7 @@ const NavItems = styled.ul`
   }
 `;
 
-const NavbarItems = ({ children }) => {
-  return <NavItems className="navitems">{children}</NavItems>;
-};
+const NavbarItems = ({ children }) => <NavItems className="navitems">{children}</NavItems>;
 
 NavbarItems.propTypes = {
   children: PropTypes.node.isRequired,

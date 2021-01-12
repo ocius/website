@@ -130,19 +130,13 @@ const formatVesselStatusData = (data) => {
   const flattened = flattenObject(data);
 
   // Add degrees to the end - 17.7°C
-  const formatTemperature = (temperature) => {
-    return `${parseFloat(temperature).toFixed(1)}\xB0C`;
-  };
+  const formatTemperature = (temperature) => `${parseFloat(temperature).toFixed(1)}\xB0C`;
 
   // Add kts to the end - 2.5kts
-  const formatSpeed = (speed) => {
-    return `${parseFloat(speed).toFixed(2)}kts`;
-  };
+  const formatSpeed = (speed) => `${parseFloat(speed).toFixed(2)}kts`;
 
   // Add degree to the end - 10°
-  const formatDirection = (direction) => {
-    return `${parseFloat(direction).toFixed(1)}\xB0`;
-  };
+  const formatDirection = (direction) => `${parseFloat(direction).toFixed(1)}\xB0`;
 
   // Add depth units to the end, Rounds to 2 decimal places
   // If the depth is outside of the range 0<=depth<=60
