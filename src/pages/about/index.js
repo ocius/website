@@ -22,7 +22,7 @@ import { HeroSubheading, Spacing, LogoBackgroundWrapper } from '../../components
 const Awards = ({ data }) => (
   <>
     <SEO title="Awards and Milestones" />
-    <Segmented borderBottom="">
+    <Segmented borderBottom>
       <Container className="page-content">
         <Row>
           <Col xs={12} md={12} lg={12}>
