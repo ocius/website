@@ -17,7 +17,6 @@ const MenuItemStyle = css`
   white-space: nowrap;
   text-decoration: none;
   box-sizing: border-box;
-  border-bottom: 1px solid rgba(51, 51, 51, 0.1);
 
   :focus,
   :hover {
@@ -63,8 +62,11 @@ const Menu = styled.ul`
     z-index: -1;
   }
 
-  li:last-child ${Link} {
-    border-bottom: none;
+  li {
+    border-bottom: 1px solid rgba(51, 51, 51, 0.1);
+    &:last-child {
+      border-bottom: none;
+    }
   }
 `;
 
