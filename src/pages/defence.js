@@ -11,7 +11,7 @@ import Segmented from '../components/Segmented';
 import ArticlePreviewBlock from '../components/ArticlePreviewBlock';
 import NewsletterForm from '../components/NewsletterForm';
 import ContactUs from '../components/ContactUs';
-import { HeroSubheading, Spacing } from '../components/common';
+import { Spacing } from '../components/common';
 
 export default ({ data }) => (
   <Layout>
@@ -29,11 +29,11 @@ export default ({ data }) => (
             <Heading level={1} color="white" size="huge" weight="thick" underline="left">
               Defence
             </Heading>
-            <HeroSubheading $color="#ffffff">
+            <Heading level={2} color="white" size="medium" weight="normal" as="p">
               Persistent USVs are seen by defence as strategic force multipliers. Bluebottles have
               more power, payload and performance making them the superior persistent USV for
               defence.
-            </HeroSubheading>
+            </Heading>
             <Spacing $value="80px" />
           </Col>
         </Row>

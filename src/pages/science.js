@@ -11,7 +11,7 @@ import Icon from '../components/Icon';
 import ArticlePreviewBlock from '../components/ArticlePreviewBlock';
 import NewsletterForm from '../components/NewsletterForm';
 import ContactUs from '../components/ContactUs';
-import { HeroSubheading, Spacing } from '../components/common';
+import { Spacing } from '../components/common';
 
 export default ({ data }) => (
   <Layout>
@@ -27,11 +27,11 @@ export default ({ data }) => (
             <Heading level={1} color="white" size="huge" weight="thick" underline="left">
               Science
             </Heading>
-            <HeroSubheading $color="#ffffff">
+            <Heading level={2} color="white" size="medium" weight="normal" as="p">
               Persistent USVs are valuable tools for oceanographic and climate change research.
               <br />
               Find out how Ocius can help you do more.
-            </HeroSubheading>
+            </Heading>
             <Spacing $value="280px" />
           </Col>
         </Row>

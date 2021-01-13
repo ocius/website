@@ -14,12 +14,7 @@ import HeroBlock from '../components/HeroBlock';
 import Heading from '../components/Heading';
 import SolutionsBlock from '../components/SolutionsBlock';
 import Icon from '../components/Icon';
-import {
-  HeroSubheading,
-  Spacing,
-  LogoBackgroundWrapper,
-  DarkAccentRowWrapper,
-} from '../components/common';
+import { Spacing, LogoBackgroundWrapper, DarkAccentRowWrapper } from '../components/common';
 
 // Import bluebottle illustration
 import Bluebottle from '../images/bluebottle.svg';
@@ -56,7 +51,9 @@ export default ({ data }) => (
               <br />
               surveillance
             </Heading>
-            <HeroSubheading>Intelligent, networked &amp; integrated</HeroSubheading>
+            <Heading level={2} size="medium" weight="normal" as="p">
+              Intelligent, networked &amp; integrated
+            </Heading>
             <Spacing $value="280px" />
           </Col>
         </Row>

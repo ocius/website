@@ -11,7 +11,7 @@ import Heading from '../components/Heading';
 import ArticlePreviewBlock from '../components/ArticlePreviewBlock';
 import NewsletterForm from '../components/NewsletterForm';
 import ContactUs from '../components/ContactUs';
-import { HeroSubheading, Spacing } from '../components/common';
+import { Spacing } from '../components/common';
 
 export default ({ data }) => (
   <Layout>
@@ -27,10 +27,10 @@ export default ({ data }) => (
             <Heading level={1} color="white" size="huge" weight="thick" underline="left">
               Oil &amp; Gas
             </Heading>
-            <HeroSubheading $color="#ffffff">
+            <Heading level={2} color="white" size="medium" weight="normal" as="p">
               USVs are already being used in the Oil &amp; Gas industry for projects such as seabed
               and pipeline surveys, environment monitoring and security.
-            </HeroSubheading>
+            </Heading>
             <Spacing $value="80px" />
           </Col>
         </Row>

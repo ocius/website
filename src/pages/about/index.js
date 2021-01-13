@@ -17,7 +17,7 @@ import HeroBlock from '../../components/HeroBlock';
 import NewsletterForm from '../../components/NewsletterForm';
 import ContactUs from '../../components/ContactUs';
 import SocialIconButton from '../../components/SocialIconButton';
-import { HeroSubheading, Spacing, LogoBackgroundWrapper } from '../../components/common';
+import { Spacing, LogoBackgroundWrapper } from '../../components/common';
 
 const Awards = ({ data }) => (
   <>
@@ -1116,10 +1116,10 @@ export default ({ data }) => (
               <br />
               Ocius
             </Heading>
-            <HeroSubheading>
+            <Heading level={2} size="medium" weight="normal" as="p">
               Find out about the history behind Ocius and the support network that has helped along
               the journey.
-            </HeroSubheading>
+            </Heading>
             <Spacing $value="280px" />
           </Col>
         </Row>

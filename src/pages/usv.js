@@ -50,7 +50,7 @@ export default ({ data }) => (
               <br />
               Drones
             </Heading>
-            <Heading level={1} size="medium" weight="normal" as="p">
+            <Heading level={2} size="medium" weight="normal" as="p">
               Persistent maritime surveillance, defences from the ground up.
             </Heading>
             <Button size="tiny" color="blue" href="/usv#technical">
