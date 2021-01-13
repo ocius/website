@@ -63,7 +63,6 @@ const Header = css`
 
 const StyledHeading = styled.h3`
   color: ${(props) => props.$color || '#1f3643'};
-  font-family: ${font('bold')};
   line-height: 1.2;
 
   ${switchProp('size', {
@@ -126,6 +125,7 @@ const StyledHeading = styled.h3`
     `,
 
     thick: css`
+      font-family: ${font('bold')};
       font-weight: ${fontWeightMedium};
     `,
   })}

@@ -15,7 +15,7 @@ import Icon from '../components/Icon';
 import ArticlePreviewBlock from '../components/ArticlePreviewBlock';
 import NewsletterForm from '../components/NewsletterForm';
 import ContactUs from '../components/ContactUs';
-import { Spacing, HeroSubheading, AccentRowWrapper } from '../components/common';
+import { Spacing, AccentRowWrapper } from '../components/common';
 
 // Import bluebottle illustration
 import Bluebottle from '../images/bluebottle.svg';
@@ -50,9 +50,9 @@ export default ({ data }) => (
               <br />
               Drones
             </Heading>
-            <HeroSubheading>
+            <Heading level={1} size="medium" weight="normal" as="p">
               Persistent maritime surveillance, defences from the ground up.
-            </HeroSubheading>
+            </Heading>
             <Button size="tiny" color="blue" href="/usv#technical">
               Find out more
             </Button>
@@ -77,10 +77,17 @@ export default ({ data }) => (
         <Container>
           <Row>
             <Col className="right-align" xs={12} md={5} lg={5}>
-              <Heading level={2} color="white" size="medium" shadow>
+              <Heading level={2} color="white" size="medium" weight="thick" shadow>
                 A USV is an
               </Heading>
-              <Heading level={3} color="white" size="large" style={{ marginTop: 0 }} shadow>
+              <Heading
+                level={3}
+                color="white"
+                size="large"
+                weight="thick"
+                style={{ marginTop: 0 }}
+                shadow
+              >
                 Unmanned
                 <br />
                 Surface
@@ -89,7 +96,7 @@ export default ({ data }) => (
               </Heading>
             </Col>
             <Col xs={12} md={5} lg={5} mdOffset={1}>
-              <Heading level={4} color="white" size="small">
+              <Heading level={4} color="white" size="small" weight="thick">
                 There are two types:
               </Heading>
               <ol>
@@ -113,7 +120,7 @@ export default ({ data }) => (
       <Row className="centered">
         <Col xs={12} md={8} lg={8} mdOffset={2}>
           <Spacing $value="80px" />
-          <Heading level={2} size="large" underline="center">
+          <Heading level={2} size="large" weight="thick" underline="center">
             The Bluebottle USV
           </Heading>
         </Col>
@@ -122,7 +129,7 @@ export default ({ data }) => (
         <Row>
           <Col className="primary-content" xs={12} md={5} lg={5}>
             <header>
-              <Heading level={2} size="medium" underline="left">
+              <Heading level={2} size="medium" weight="thick" underline="left">
                 Satellites of the Sea
               </Heading>
               <SubHeading>Autonomous data gathering and communication platforms</SubHeading>
@@ -157,7 +164,7 @@ export default ({ data }) => (
           <Row className="centered">
             <Col xs={12} md={8} lg={8} mdOffset={2}>
               <Spacing $value="80px" />
-              <Heading level={2} size="large" underline="center">
+              <Heading level={2} size="large" weight="thick" underline="center">
                 Key benefits of BlueBottle USVs
               </Heading>
             </Col>
@@ -240,7 +247,7 @@ export default ({ data }) => (
         <Row className="centered">
           <Col xs={12} md={8} lg={8} mdOffset={2}>
             <Spacing $value="50px" />
-            <Heading level={2} size="large" underline="center">
+            <Heading level={2} size="large" weight="thick" underline="center">
               The Bluebottle’s core technology
             </Heading>
           </Col>
@@ -271,7 +278,7 @@ export default ({ data }) => (
                 marginLeft: '5px',
               }}
             />
-            <Heading level={3} size="medium">
+            <Heading level={3} size="medium" weight="thick">
               Solar Sail
             </Heading>
             <ReadMoreReact
@@ -303,7 +310,7 @@ export default ({ data }) => (
                 marginLeft: '5px',
               }}
             />
-            <Heading level={3} size="medium">
+            <Heading level={3} size="medium" weight="thick">
               Rudder Flipper
             </Heading>
             <ReadMoreReact
@@ -345,7 +352,7 @@ export default ({ data }) => (
                 height: '62px',
               }}
             />
-            <Heading level={3} size="medium">
+            <Heading level={3} size="medium" weight="thick">
               Sensors and Communication
             </Heading>
             <ReadMoreReact
@@ -374,7 +381,7 @@ export default ({ data }) => (
                 height: '62px',
               }}
             />
-            <Heading level={3} size="medium">
+            <Heading level={3} size="medium" weight="thick">
               Keel Winch Cassette
             </Heading>
             <ReadMoreReact
@@ -400,7 +407,7 @@ export default ({ data }) => (
           <Row className="centered">
             <Col xs={12} md={8} lg={8} mdOffset={2}>
               <Spacing $value="80px" />
-              <Heading level={2} size="large" underline="center">
+              <Heading level={2} size="large" weight="thick" underline="center">
                 Superior Payload,
                 <br /> Power &amp; Performance
               </Heading>
@@ -454,7 +461,7 @@ export default ({ data }) => (
         <Row className="centered">
           <Col xs={12} md={8} lg={8} mdOffset={2}>
             <Spacing $value="80px" />
-            <Heading level={2} size="large" underline="center">
+            <Heading level={2} size="large" weight="thick" underline="center">
               Ocius Vessels
             </Heading>
           </Col>
@@ -462,7 +469,7 @@ export default ({ data }) => (
         <Row className="primary-content left-align">
           <Col xs={12} md={6} lg={4}>
             <img src={Blueybuoy} alt="Bluey Buoy Class Vessel" />
-            <Heading level={3} size="medium">
+            <Heading level={3} size="medium" weight="thick">
               Bluey Buoy Class
             </Heading>
             <ul>
@@ -477,7 +484,7 @@ export default ({ data }) => (
           </Col>
           <Col xs={12} md={6} lg={4}>
             <img src={BluebottleVessel} alt="Bluebottle Class Vessel" />
-            <Heading level={3} size="medium">
+            <Heading level={3} size="medium" weight="thick">
               Bluebottle Class
             </Heading>
             <ul>
@@ -492,7 +499,7 @@ export default ({ data }) => (
           </Col>
           <Col xs={12} md={6} lg={4}>
             <img src={TrimaranVessel} alt="Stinger Class Vessel" />
-            <Heading level={3} size="medium">
+            <Heading level={3} size="medium" weight="thick">
               Stinger Class (Concept)
             </Heading>
             <ul>
@@ -514,7 +521,7 @@ export default ({ data }) => (
         <Row className="centered">
           <Col xs={12} md={8} lg={8} mdOffset={2}>
             <Spacing $value="80px" />
-            <Heading level={2} size="large" underline="center">
+            <Heading level={2} size="large" weight="thick" underline="center">
               Ocius news headlines
             </Heading>
           </Col>

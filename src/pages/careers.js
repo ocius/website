@@ -36,7 +36,7 @@ export default ({ data }) => (
         <Row>
           <Col xs={12} md={12} lg={12}>
             <Spacing $value="80px" />
-            <Heading level={1} size="huge" underline="left">
+            <Heading level={1} size="huge" weight="thick" underline="left">
               Careers
             </Heading>
           </Col>
@@ -46,7 +46,7 @@ export default ({ data }) => (
         <Segmented multiplier={2} borderBottom>
           <Row>
             <CenteredCol xs={12} md={6} lg={5}>
-              <Heading level={2} size="medium">
+              <Heading level={2} size="medium" weight="thick">
                 Working with Ocius <Accent>“Oceans is us”</Accent>
               </Heading>
               <p>
@@ -71,7 +71,7 @@ export default ({ data }) => (
         <Row>
           <Col xs={12} md={7} lg={7}>
             <Segmented multiplier={2} borderBottom>
-              <Heading level={3} size="medium">
+              <Heading level={3} size="medium" weight="thick">
                 Junior Software
                 <br />
                 and Systems Engineers
@@ -118,7 +118,7 @@ export default ({ data }) => (
             </Segmented>
 
             <Segmented multiplier={2} borderBottom>
-              <Heading level={3} size="medium">
+              <Heading level={3} size="medium" weight="thick">
                 Electrical Technician
               </Heading>
 
@@ -197,7 +197,7 @@ export default ({ data }) => (
             </Segmented>
 
             <Segmented>
-              <Heading level={3} size="medium">
+              <Heading level={3} size="medium" weight="thick">
                 Operation Supervisor
               </Heading>
 
@@ -291,7 +291,7 @@ export default ({ data }) => (
             </Segmented>
 
             <Segmented>
-              <Heading level={3} size="medium">
+              <Heading level={3} size="medium" weight="thick">
                 Ground Control Operator
               </Heading>
 

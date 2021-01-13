@@ -28,7 +28,7 @@ export default () => (
         <Row>
           <Col xs={12} md={12} lg={12}>
             <Spacing $value="80px" />
-            <Heading level={1} size="huge" underline="left">
+            <Heading level={1} size="huge" weight="thick" underline="left">
               Contact us
             </Heading>
           </Col>

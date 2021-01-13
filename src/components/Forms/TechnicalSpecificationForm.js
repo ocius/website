@@ -71,7 +71,7 @@ class TechnicalSpecificationForm extends React.Component {
         <Row id="technical" className="centered">
           <Col xs={12} md={8} lg={8} mdOffset={2}>
             <Spacing $value="80px" />
-            <Heading level={2} size="large" underline="center">
+            <Heading level={2} size="large" weight="thick" underline="center">
               BlueBottle USV Brochure
             </Heading>
           </Col>

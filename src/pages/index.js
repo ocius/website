@@ -102,7 +102,7 @@ export default ({ data }) => (
           <Row className="centered">
             <Col xs={12} md={8} lg={8} mdOffset={2}>
               <Spacing $value="80px" />
-              <Heading level={2} size="large" underline="center">
+              <Heading level={2} size="large" weight="thick" underline="center">
                 The core technology behind Ocius
               </Heading>
             </Col>
@@ -133,7 +133,7 @@ export default ({ data }) => (
                   marginLeft: '5px',
                 }}
               />
-              <Heading level={3} size="medium">
+              <Heading level={3} size="medium" weight="thick">
                 Solar Sail
               </Heading>
               <ReadMoreReact
@@ -165,7 +165,7 @@ export default ({ data }) => (
                   marginLeft: '5px',
                 }}
               />
-              <Heading level={3} size="medium">
+              <Heading level={3} size="medium" weight="thick">
                 Rudder Flipper
               </Heading>
               <ReadMoreReact
@@ -207,7 +207,7 @@ export default ({ data }) => (
                   height: '62px',
                 }}
               />
-              <Heading level={3} size="medium">
+              <Heading level={3} size="medium" weight="thick">
                 Sensors and Communication
               </Heading>
               <ReadMoreReact
@@ -236,7 +236,7 @@ export default ({ data }) => (
                   height: '62px',
                 }}
               />
-              <Heading level={3} size="medium">
+              <Heading level={3} size="medium" weight="thick">
                 Keel Winch Cassette
               </Heading>
               <ReadMoreReact
@@ -265,7 +265,7 @@ export default ({ data }) => (
           <Row className="centered">
             <Col xs={12} md={8} lg={8} mdOffset={2}>
               <Spacing $value="80px" />
-              <Heading level={2} size="large" underline="center">
+              <Heading level={2} size="large" weight="thick" underline="center">
                 Ocius Vessels
               </Heading>
             </Col>
@@ -273,7 +273,7 @@ export default ({ data }) => (
           <Row className="primary-content left-align">
             <Col xs={12} md={6} lg={4}>
               <img src={Blueybuoy} alt="Bluey Buoy Class Vessel" />
-              <Heading level={3} size="medium">
+              <Heading level={3} size="medium" weight="thick">
                 Bluey Buoy Class
               </Heading>
               <ul>
@@ -285,7 +285,7 @@ export default ({ data }) => (
             </Col>
             <Col xs={12} md={6} lg={4}>
               <img src={BluebottleVessel} alt="Bluebottle Class Vessel" />
-              <Heading level={3} size="medium">
+              <Heading level={3} size="medium" weight="thick">
                 Bluebottle Class
               </Heading>
               <ul>
@@ -297,7 +297,7 @@ export default ({ data }) => (
             </Col>
             <Col xs={12} md={6} lg={4}>
               <img src={TrimaranVessel} alt="Stinger Class Vessel" />
-              <Heading level={3} size="medium">
+              <Heading level={3} size="medium" weight="thick">
                 Stinger Class (Concept)
               </Heading>
               <ul>
@@ -319,7 +319,7 @@ export default ({ data }) => (
           <Row className="centered">
             <Col xs={12} md={8} lg={8} mdOffset={2}>
               <Spacing $value="80px" />
-              <Heading level={2} size="large" underline="center">
+              <Heading level={2} size="large" weight="thick" underline="center">
                 Ocius news headlines
               </Heading>
             </Col>

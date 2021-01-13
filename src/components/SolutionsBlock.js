@@ -35,7 +35,7 @@ export default () => (
         <Row className="centered">
           <Col xs={12} md={8} lg={8} mdOffset={2}>
             <Spacing $value="80px" />
-            <Heading level={2} size="large" underline="center">
+            <Heading level={2} size="large" weight="thick" underline="center">
               How Ocius is changing the world
             </Heading>
           </Col>
@@ -72,7 +72,7 @@ export default () => (
                     {data.DefenceIcon && (
                       <Img fixed={data.DefenceIcon.childImageSharp.fixed} alt="Defence Solutions" />
                     )}
-                    <Heading level={3} size="medium" underline="left">
+                    <Heading level={3} size="medium" weight="thick" underline="left">
                       Defence
                     </Heading>
                     <List>
@@ -98,7 +98,7 @@ export default () => (
                         alt="Oil and Gas Solutions"
                       />
                     )}
-                    <Heading level={3} size="medium" underline="left">
+                    <Heading level={3} size="medium" weight="thick" underline="left">
                       Oil &amp; Gas
                     </Heading>
                     <List>
@@ -119,7 +119,7 @@ export default () => (
                     {data.ScienceIcon && (
                       <Img fixed={data.ScienceIcon.childImageSharp.fixed} alt="Science Solutions" />
                     )}
-                    <Heading level={3} size="medium" underline="left">
+                    <Heading level={3} size="medium" weight="thick" underline="left">
                       Science
                     </Heading>
                     <List>

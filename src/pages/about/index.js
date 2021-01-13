@@ -22,12 +22,18 @@ import { HeroSubheading, Spacing, LogoBackgroundWrapper } from '../../components
 const Awards = ({ data }) => (
   <>
     <SEO title="Awards and Milestones" />
-    <Segmented borderBottom>
+    <Segmented>
       <Container className="page-content">
         <Row>
           <Col xs={12} md={12} lg={12}>
             <header id="awards">
-              <Heading level={1} size="large" underline="center" className="centered">
+              <Heading
+                level={1}
+                size="large"
+                weight="thick"
+                underline="center"
+                className="centered"
+              >
                 Awards and Milestones
               </Heading>
             </header>
@@ -232,7 +238,7 @@ const Partners = ({ data }) => (
   <>
     <SEO title="Our Partners" />
     <header id="partners" className="centered">
-      <Heading level={2} size="large" underline="center">
+      <Heading level={2} size="large" weight="thick" underline="center">
         Our Partners
       </Heading>
     </header>
@@ -251,7 +257,7 @@ const Partners = ({ data }) => (
                   />
                 </div>
               )}
-              <Heading level={3} size="medium">
+              <Heading level={3} size="medium" weight="thick">
                 Defence Innovation Hub
               </Heading>
               <p>
@@ -286,7 +292,7 @@ const Partners = ({ data }) => (
                   />
                 </div>
               )}
-              <Heading level={3} size="medium">
+              <Heading level={3} size="medium" weight="thick">
                 Department of Defence
               </Heading>
               <p>
@@ -325,7 +331,7 @@ const Partners = ({ data }) => (
                   />
                 </div>
               )}
-              <Heading level={3} size="medium">
+              <Heading level={3} size="medium" weight="thick">
                 The University of New South Wales
               </Heading>
               <p>
@@ -360,7 +366,7 @@ const Partners = ({ data }) => (
                   />
                 </div>
               )}
-              <Heading level={3} size="medium">
+              <Heading level={3} size="medium" weight="thick">
                 Thales
               </Heading>
               <p>
@@ -393,7 +399,7 @@ const Partners = ({ data }) => (
                   />
                 </div>
               )}
-              <Heading level={3} size="medium">
+              <Heading level={3} size="medium" weight="thick">
                 Van Munster Boats
               </Heading>
               <p>
@@ -439,7 +445,7 @@ const Partners = ({ data }) => (
                   />
                 </div>
               )}
-              <Heading level={3} size="medium">
+              <Heading level={3} size="medium" weight="thick">
                 Stebercraft International
               </Heading>
               <p>
@@ -482,7 +488,7 @@ const Partners = ({ data }) => (
                 />
               </div>
             )}
-            <Heading level={3} size="medium">
+            <Heading level={3} size="medium" weight="thick">
               One2three Naval Architects
             </Heading>
             <p>
@@ -515,7 +521,7 @@ const Partners = ({ data }) => (
                 />
               </div>
             )}
-            <Heading level={3} size="medium">
+            <Heading level={3} size="medium" weight="thick">
               Ulladulla Engineering and Fibreglass
             </Heading>
             <p>
@@ -545,7 +551,7 @@ const Partners = ({ data }) => (
                 />
               </div>
             )}
-            <Heading level={3} size="medium">
+            <Heading level={3} size="medium" weight="thick">
               Clark IP
             </Heading>
             <p>
@@ -586,7 +592,7 @@ const Partners = ({ data }) => (
                 />
               </div>
             )}
-            <Heading level={3} size="medium">
+            <Heading level={3} size="medium" weight="thick">
               The Spitfire Association
             </Heading>
             <p>
@@ -631,14 +637,14 @@ const OurStory = ({ data }) => (
   <>
     <SEO title="The Ocius Story" />
     <header id="story">
-      <Heading level={1} size="large" underline="center" className="centered">
+      <Heading level={1} size="large" weight="thick" underline="center" className="centered">
         The Ocius Story
       </Heading>
     </header>
     <Container className="page-content">
       <Row className="primary-content">
         <Col xs={12} md={6} lg={6}>
-          <Heading level={3} size="medium">
+          <Heading level={3} size="medium" weight="thick">
             The beginning
           </Heading>
           <p>
@@ -722,7 +728,7 @@ const OurStory = ({ data }) => (
           )}
         </Col>
         <Col xs={12} md={6} lg={6}>
-          <Heading level={3} size="medium">
+          <Heading level={3} size="medium" weight="thick">
             Unmanned Surface Vessels
           </Heading>
 
@@ -788,7 +794,7 @@ const OurStory = ({ data }) => (
       </Row>
       <Row className="primary-content">
         <Col xs={12} md={6} lg={6}>
-          <Heading level={3} size="medium">
+          <Heading level={3} size="medium" weight="thick">
             History of Commercial Ferries
           </Heading>
 
@@ -892,7 +898,7 @@ const People = ({ data }) => (
   <>
     <SEO title="Our Mission, Our Culture, People" />
     <header id="people" className="centered">
-      <Heading level={2} size="large" underline="center">
+      <Heading level={2} size="large" weight="thick" underline="center">
         The team behind Ocius
       </Heading>
     </header>
@@ -904,7 +910,7 @@ const People = ({ data }) => (
             {data.MarkBethwaite && (
               <Img fixed={data.MarkBethwaite.childImageSharp.fixed} alt="Mark Bethwaite AM" />
             )}
-            <Heading level={3} size="medium">
+            <Heading level={3} size="medium" weight="thick">
               Mark Bethwaite AM
             </Heading>
             <SubHeading>Chairman</SubHeading>
@@ -927,7 +933,7 @@ const People = ({ data }) => (
             {data.RobertDane && (
               <Img fixed={data.RobertDane.childImageSharp.fixed} alt="Robert Dane" />
             )}
-            <Heading level={3} size="medium">
+            <Heading level={3} size="medium" weight="thick">
               Robert Dane
             </Heading>
             <SubHeading>Chief Executive Officer</SubHeading>
@@ -954,7 +960,7 @@ const People = ({ data }) => (
             {data.AndrewAitken && (
               <Img fixed={data.AndrewAitken.childImageSharp.fixed} alt="Andrew Aitken" />
             )}
-            <Heading level={3} size="medium">
+            <Heading level={3} size="medium" weight="thick">
               Andrew Aitken
             </Heading>
             <SubHeading>Director and Ocius Corporate Lawyer</SubHeading>
@@ -976,7 +982,7 @@ const People = ({ data }) => (
             {data.RickTurner && (
               <Img fixed={data.RickTurner.childImageSharp.fixed} alt="Rick Turner" />
             )}
-            <Heading level={3} size="medium">
+            <Heading level={3} size="medium" weight="thick">
               Rick Turner
             </Heading>
             <SubHeading>Director</SubHeading>
@@ -1005,7 +1011,7 @@ const People = ({ data }) => (
             {data.LloydBreckenridge && (
               <Img fixed={data.LloydBreckenridge.childImageSharp.fixed} alt="Lloyd Breckenridge" />
             )}
-            <Heading level={3} size="medium">
+            <Heading level={3} size="medium" weight="thick">
               Lloyd Breckenridge
             </Heading>
             <SubHeading>Chief Engineer</SubHeading>
@@ -1032,7 +1038,7 @@ const People = ({ data }) => (
             {data.PeterWlodarczyk && (
               <Img fixed={data.PeterWlodarczyk.childImageSharp.fixed} alt="Peter Wlodarczyk" />
             )}
-            <Heading level={3} size="medium">
+            <Heading level={3} size="medium" weight="thick">
               Peter Wlodarczyk
             </Heading>
             <SubHeading>Lead Engineer</SubHeading>
@@ -1060,7 +1066,7 @@ const People = ({ data }) => (
             {data.ScottElliceFlint && (
               <Img fixed={data.ScottElliceFlint.childImageSharp.fixed} alt="Scott Ellice-Flint" />
             )}
-            <Heading level={3} size="medium">
+            <Heading level={3} size="medium" weight="thick">
               Scott Ellice-Flint
             </Heading>
             <SubHeading>Group Accountant &amp; Company Secretary</SubHeading>

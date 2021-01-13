@@ -45,7 +45,7 @@ export default ({ data }) => (
         <Row className="centered">
           <Col xs={12} md={8} lg={8} mdOffset={2}>
             <Spacing $value="80px" />
-            <Heading level={2} size="large" underline="center">
+            <Heading level={2} size="large" weight="thick" underline="center">
               Ocius key defence features
             </Heading>
           </Col>
@@ -179,7 +179,7 @@ export default ({ data }) => (
       <Container>
         <Row className="centered">
           <Col xs={12} md={8} lg={8} mdOffset={2}>
-            <Heading level={2} size="large" underline="center">
+            <Heading level={2} size="large" weight="thick" underline="center">
               Ocius news headlines
             </Heading>
           </Col>

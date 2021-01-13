@@ -21,14 +21,14 @@ export default ({ data }) => {
           <Row>
             <Col xs={12} md={12} lg={12}>
               <Spacing $value="80px" />
-              <Heading level={1} size="huge" underline="left">
+              <Heading level={1} size="huge" weight="thick" underline="left">
                 News
               </Heading>
             </Col>
           </Row>
           <Row>
             <Col className="primary-content" xs={12} md={7} lg={7}>
-              <Heading className="title" level={2} size="large">
+              <Heading className="title" level={2} size="large" weight="thick">
                 {title}
               </Heading>
               <p className="date">{date}</p>

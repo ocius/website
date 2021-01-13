@@ -42,7 +42,7 @@ export default ({ data }) => (
         <Row className="centered">
           <Col xs={12} md={12} lg={12}>
             <Spacing $value="80px" />
-            <Heading level={2} size="large" underline="center">
+            <Heading level={2} size="large" weight="thick" underline="center">
               Ocius can do more for the oil &amp; gas industry
             </Heading>
           </Col>
@@ -120,7 +120,7 @@ export default ({ data }) => (
       <Container>
         <Row className="centered">
           <Col xs={12} md={8} lg={8} mdOffset={2}>
-            <Heading level={2} size="large" underline="center">
+            <Heading level={2} size="large" weight="thick" underline="center">
               Ocius news headlines
             </Heading>
           </Col>
