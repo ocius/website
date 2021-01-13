@@ -1087,6 +1087,10 @@ const FloatingImage = styled(Img)`
   top: 150px;
   right: 0;
   z-index: 10;
+
+  @media screen and (max-width: 768px) {
+    display: none !important;
+  }
 `;
 
 export default ({ data }) => (
