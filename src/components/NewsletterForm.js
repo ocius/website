@@ -18,11 +18,21 @@ const NewsletterContainer = styled(BackgroundImage)`
   position: relative;
   overflow: hidden;
   padding: 12rem 0;
-  background-attachment: fixed;
 
-  @media (max-width: ${mq.max[720]}) {
+  @media (max-width: ${mq.max[1024]}) {
+    padding: 8rem 0;
+  }
+
+  @media (max-width: ${mq.max[768]}) {
     max-height: 592px;
-    background-attachment: scroll;
+    padding: 6rem 0;
+  }
+
+  @media (min-width: ${mq.min[1024]}) {
+    &:before,
+    &:after {
+      background-attachment: fixed;
+    }
   }
 `;
 
