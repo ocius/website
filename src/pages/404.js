@@ -1,21 +1,25 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import Img from 'gatsby-image';
+import { Col, Row } from 'react-flexbox-grid';
 import Layout from '../layouts/Layout';
 import SEO from '../components/SEO';
-import PageHeader from '../components/PageHeader';
 import Container from '../components/Container';
 import Heading from '../components/Heading';
+import { Spacing } from '../components/common';
 
 export default ({ data }) => (
   <Layout>
     <SEO title="Not Found" description="That page does not exist" />
-    <PageHeader>
-      <Heading level={1} size="huge" header>
-        404 Not Found
-      </Heading>
-    </PageHeader>
     <Container>
+      <Row>
+        <Col xs={12} md={12} lg={12}>
+          <Spacing $value="80px" />
+          <Heading level={1} size="huge" underline="left">
+            404 Not Found
+          </Heading>
+        </Col>
+      </Row>
       <p>That page does not exist</p>
       <Img
         style={{ width: '70%', margin: '20px 0' }}
