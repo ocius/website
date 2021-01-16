@@ -35,7 +35,7 @@ const RecentNews = () => (
     render={(data) => (
       <Row>
         {data.allMarkdownRemark.edges.map(({ node }) => (
-          <Col key={node.id} xs={12} md={4} lg={4}>
+          <Col key={node.id} xs={12} md={6} lg={4}>
             <ArticlePreview
               href={node.fields.slug}
               title={node.frontmatter.title}
