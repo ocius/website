@@ -33,6 +33,10 @@ module.exports = {
       options: {
         plugins: [
           {
+            resolve: 'gatsby-remark-responsive-iframe',
+          },
+
+          {
             resolve: 'gatsby-remark-images-grid',
             options: {
               gridGap: '0',

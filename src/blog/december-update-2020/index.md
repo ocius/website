@@ -12,7 +12,7 @@ Last week, Ocius held the christening of BlueBottle ‘BONNIE’ by Susie Dane a
 
 The formal ceremony was followed by a stirring rendition of “My Bonnie lies over the ocean’ and a quiet celebration.
 
-<iframe width="100%" height="390" src="https://www.youtube.com/embed/sEQKMtgsmxM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/sEQKMtgsmxM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 BONNIE is the second of our BETH class next-gen 22’ Bluebottles, being 3’ longer than our Bluebottles BRUCE and BOB. Under the laws of physics for boats, this extra 3’ gives BETH and BONNIE **2X** the power, payload, performance and winch size than BRUCE and BOB, while still enabling transport by an RTA registered trailer and launch and recovery (LARS) from a conventional boat ramp by 2 people.
 
