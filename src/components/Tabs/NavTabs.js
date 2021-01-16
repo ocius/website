@@ -69,7 +69,6 @@ const TabsTrigger = styled.div`
   cursor: pointer;
   color: #161616;
   outline: 2px solid transparent;
-  border-bottom: 1px solid #8d8d8d;
   background-color: #f4f4f4;
 
   &:focus,
