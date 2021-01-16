@@ -25,6 +25,7 @@ const LogoLink = styled(GatsbyLink)`
 
   @media (max-width: ${mq.max[768]}) {
     max-width: 120px;
+    margin-right: auto;
   }
 `;
 

@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import Container from '../Container';
+import mq from '../../common/mq';
 
 const StyledNavbar = styled.header`
   position: fixed;
@@ -18,6 +19,11 @@ const FlexContainer = styled(Container)`
   flex-direction: column;
   align-items: center;
   padding: 25px 0 15px;
+
+  @media (max-width: ${mq.max[768]}) {
+    flex-direction: row;
+    padding: 8px 5px;
+  }
 `;
 
 const Navbar = ({ children }) => (

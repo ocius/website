@@ -2,23 +2,35 @@ import React from 'react';
 import styled from 'styled-components';
 import Navbar from './Navbar';
 import SiteLogo from './SiteLogo';
+import Hamburger from './Hamburger';
 import NavbarItems from './NavbarItems';
 import NavbarItem from './NavbarItem';
 import NavbarDropdown from './NavbarDropdown';
 import DropdownMenu from './DropdownMenu';
 import SocialIconButton from '../SocialIconButton';
 import Button from '../Button';
+import mq from '../../common/mq';
 
 const NavbarContainer = styled.section`
   display: flex;
   flex-direction: row;
   width: 100%;
   margin: 30px 0 0;
+
+  @media (max-width: ${mq.max[768]}) {
+    align-items: center;
+    width: auto;
+    margin: 0;
+  }
 `;
 
 const SocialLinks = styled.div`
   display: flex;
   flex-wrap: nowrap;
+
+  @media (max-width: ${mq.max[768]}) {
+    display: none;
+  }
 `;
 
 const navitems = [
@@ -93,6 +105,7 @@ export default () => (
       <Button href="/live" size="tiny" color="blue">
         Watch Live
       </Button>
+      <Hamburger />
     </NavbarContainer>
   </Navbar>
 );
