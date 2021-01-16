@@ -53,7 +53,7 @@ export default ({ data, pageContext }) => {
         <section className="page-content">
           <Row style={{ padding: '2.5rem 0' }}>
             {mediaPosts.map(({ node }) => (
-              <Col xs={12} md={4} lg={4} key={node.id}>
+              <Col xs={12} md={6} lg={4} key={node.id}>
                 <Card
                   url={node.url}
                   thumbnail={node.thumbnail}
