@@ -15,6 +15,7 @@ import Heading from '../components/Heading';
 import SolutionsBlock from '../components/SolutionsBlock';
 import Icon from '../components/Icon';
 import { Spacing, LogoBackgroundWrapper, DarkAccentRowWrapper } from '../components/common';
+import mq from '../common/mq';
 
 // Import bluebottle illustration
 import Bluebottle from '../images/bluebottle.svg';
@@ -30,6 +31,10 @@ const ContactUs = Loadable(() => import(`../components/ContactUs`));
 const RadarImage = styled(Img)`
   margin: 0 -2.5em -8em;
   z-index: 2;
+
+  @media (max-width: ${mq.max[768]}) {
+    margin: -5em -1em 0;
+  }
 `;
 
 export default ({ data }) => (
@@ -54,7 +59,7 @@ export default ({ data }) => (
             <Heading level={2} size="medium" weight="normal" as="p">
               Intelligent, networked &amp; integrated
             </Heading>
-            <Spacing $value="280px" />
+            <Spacing $value="280px" $xsValue="230px" />
           </Col>
         </Row>
       </HeroBlock>
@@ -68,7 +73,7 @@ export default ({ data }) => (
             )}
           </Col>
           <Col xs={12} md={6} lg={6}>
-            <Spacing $value="50px" />
+            <Spacing $value="50px" $xsValue="0px" />
             <Heading level={3} color="white" size="large" weight="thick" underline="left">
               A new generation
               <br />

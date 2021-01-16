@@ -4,9 +4,14 @@ import { graphql, useStaticQuery } from 'gatsby';
 import { switchProp } from 'styled-tools';
 import styled, { css } from 'styled-components';
 import MaskOverlay from './MaskOverlay';
+import mq from '../common/mq';
 
 export const Spacing = styled.div`
   height: ${(props) => props.$value || '50px'};
+
+  @media (max-width: ${mq.max[768]}) {
+    height: ${(props) => props.$xsValue || '30px'};
+  }
 `;
 
 const LogoBackgroundDiv = styled.div`
