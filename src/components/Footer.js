@@ -66,7 +66,10 @@ const StyledFooter = styled.footer`
 const LinkStyles = css`
   display: block;
   padding: 8px 0;
-  font-size: 17px;
+
+  @media (min-width: ${mq.min[768]}) {
+    font-size: 17px;
+  }
 `;
 
 const FooterLink = styled(Link)`

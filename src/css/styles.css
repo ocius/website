@@ -39,8 +39,13 @@ a {
 .display-text-group, p {
     margin: 1em 0;
     font-weight: 300;
-    font-size: 1.2em;
     line-height: 1.45;
+}
+
+@media (min-width: 768px) {
+    .display-text-group, p {
+        font-size: 1.2em;
+    }
 }
 
 .read-more-button {
@@ -125,10 +130,16 @@ ul, ol {
 
 ol li,
 ul li {
-    font-size: 1.2em;
     line-height: 1.65;
     font-weight: 300;
     list-style-position: outside;
+}
+
+@media (min-width: 768px) {
+    ol li,
+    ul li {
+        font-size: 1.2em;
+    }
 }
 
 .centered {
