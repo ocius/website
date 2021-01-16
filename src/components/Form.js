@@ -1,6 +1,7 @@
 import styled, { css } from 'styled-components';
 import { ifProp } from 'styled-tools';
 import { Field } from 'formik';
+import mq from '../common/mq';
 
 export const Feedback = styled.div`
   display: block;
@@ -42,6 +43,12 @@ export const FormLabel = styled.label`
   vertical-align: middle;
   width: calc(20% - 2em);
   margin: 0 2em 0 0;
+
+  @media (max-width: ${mq.max[768]}) {
+    display: block;
+    width: 100%;
+    text-align: left;
+  }
 `;
 
 export const FormField = styled(Field)`

@@ -188,6 +188,13 @@ input[type="color"] {
     width: 60%;
 }
 
+@media (max-width: 768px) {
+    .form-aligned input,
+    .form-aligned textarea {
+        width: 100%;
+    }
+}
+
 .page-content {
     overflow: hidden;
     height: 100%;
