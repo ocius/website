@@ -15,7 +15,7 @@ const Article = styled.article`
   flex-direction: column;
   padding: 0.5em;
 
-  @media (min-width: ${mq.min[768]}) {
+  @media (min-width: ${mq.min[1024]}) {
     height: 100%;
   }
 `;

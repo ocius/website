@@ -10,6 +10,10 @@ import mq from '../common/mq';
 export const Spacing = styled.div`
   height: ${(props) => props.$value || '50px'};
 
+  @media (max-width: ${mq.max[1024]}) {
+    height: ${(props) => props.$mdValue || '40px'};
+  }
+
   @media (max-width: ${mq.max[768]}) {
     height: ${(props) => props.$xsValue || '30px'};
   }

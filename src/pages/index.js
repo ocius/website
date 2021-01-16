@@ -56,7 +56,7 @@ export default ({ data }) => (
             <Heading level={2} size="medium" weight="normal" as="p">
               Intelligent, networked &amp; integrated
             </Heading>
-            <Spacing $value="280px" $xsValue="230px" />
+            <Spacing $value="280px" $mdValue="270px" $xsValue="230px" />
           </Col>
         </Row>
       </HeroBlock>
@@ -70,7 +70,7 @@ export default ({ data }) => (
             )}
           </Col>
           <Col xs={12} md={6} lg={6}>
-            <Spacing $value="50px" $xsValue="0px" />
+            <Spacing $value="50px" $mdValue="0px" $xsValue="0px" />
             <Heading level={3} color="white" size="large" weight="thick" underline="left">
               A new generation
               <br />
@@ -94,6 +94,7 @@ export default ({ data }) => (
           </Col>
         </Row>
       </Container>
+      <Spacing $value="0px" $mdValue="30px" $xsValue="0px" />
     </DarkAccentRowWrapper>
 
     <LogoBackgroundWrapper>
