@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Col } from 'react-flexbox-grid';
 import { graphql, useStaticQuery } from 'gatsby';
 import { switchProp } from 'styled-tools';
 import styled, { css } from 'styled-components';
@@ -11,6 +12,18 @@ export const Spacing = styled.div`
 
   @media (max-width: ${mq.max[768]}) {
     height: ${(props) => props.$xsValue || '30px'};
+  }
+`;
+
+export const FirstColumnMobile = styled(Col)`
+  @media (max-width: ${mq.max[768]}) {
+    order: 1;
+  }
+`;
+
+export const SecondColumnMobile = styled(Col)`
+  @media (max-width: ${mq.max[768]}) {
+    order: 2;
   }
 `;
 

@@ -15,7 +15,12 @@ import ArticlePreviewBlock from '../components/ArticlePreviewBlock';
 import NewsletterForm from '../components/NewsletterForm';
 import CoreTechnologiesBlock from '../components/CoreTechnologiesBlock';
 import ContactUs from '../components/ContactUs';
-import { Spacing, AccentRowWrapper } from '../components/common';
+import {
+  Spacing,
+  FirstColumnMobile,
+  SecondColumnMobile,
+  AccentRowWrapper,
+} from '../components/common';
 
 // Import bluebottle illustration
 import Bluebottle from '../images/bluebottle.svg';
@@ -127,7 +132,7 @@ export default ({ data }) => (
       </Row>
       <Segmented>
         <Row>
-          <Col className="primary-content" xs={12} md={5} lg={5}>
+          <SecondColumnMobile className="primary-content" xs={12} md={5} lg={5}>
             <header>
               <Heading level={2} size="medium" weight="thick" underline="left">
                 Satellites of the Sea
@@ -150,10 +155,10 @@ export default ({ data }) => (
             >
               Watch video
             </Button>
-          </Col>
-          <Col xs={12} md={6} lg={6} mdOffset={1}>
+          </SecondColumnMobile>
+          <FirstColumnMobile xs={12} md={6} lg={6} mdOffset={1}>
             <img src={Bluebottle} alt="Bluebottle Ocius" />
-          </Col>
+          </FirstColumnMobile>
         </Row>
       </Segmented>
     </Container>

@@ -1,28 +1,14 @@
 import React from 'react';
 import { Row, Col } from 'react-flexbox-grid';
-import styled from 'styled-components';
 import ReadMoreReact from 'read-more-react';
 import Container from './Container';
 import Segmented from './Segmented';
 import Heading from './Heading';
 import Icon from './Icon';
-import { Spacing } from './common';
-import mq from '../common/mq';
+import { Spacing, FirstColumnMobile, SecondColumnMobile } from './common';
 
 // Import bluebottle illustration
 import Bluebottle from '../images/bluebottle.svg';
-
-const FirstColumnMobile = styled(Col)`
-  @media (max-width: ${mq.max[768]}) {
-    order: 1;
-  }
-`;
-
-const SecondColumnMobile = styled(Col)`
-  @media (max-width: ${mq.max[768]}) {
-    order: 2;
-  }
-`;
 
 export default () => (
   <Container id="overview">
