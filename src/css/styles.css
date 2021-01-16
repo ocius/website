@@ -188,7 +188,7 @@ input[type="color"] {
     width: 60%;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
     .form-aligned input,
     .form-aligned textarea {
         width: 100%;

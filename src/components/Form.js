@@ -44,7 +44,7 @@ export const FormLabel = styled.label`
   width: calc(20% - 2em);
   margin: 0 2em 0 0;
 
-  @media (max-width: ${mq.max[768]}) {
+  @media (max-width: ${mq.max[1024]}) {
     display: block;
     width: 100%;
     text-align: left;
