@@ -57,7 +57,7 @@ export default ({ data, pageContext }) => {
                 <Segmented key={node.id} borderBottom>
                   {!(index % 2) ? (
                     <Row className="post">
-                      <FirstColumnMobile lg={6}>
+                      <FirstColumnMobile lg={6} md={6}>
                         {node.frontmatter.featuredImage && (
                           <Link to={node.fields.slug}>
                             <Img
@@ -68,7 +68,7 @@ export default ({ data, pageContext }) => {
                         )}
                         <Spacing $value="0px" $xsValue="20px" />
                       </FirstColumnMobile>
-                      <CenteredCol lg={6}>
+                      <CenteredCol lg={6} md={6}>
                         <Heading level={3} size="medium" className="title" weight="thick">
                           <Link to={node.fields.slug}>{node.frontmatter.title}</Link>
                         </Heading>
@@ -81,7 +81,7 @@ export default ({ data, pageContext }) => {
                     </Row>
                   ) : (
                     <Row className="post">
-                      <CenteredCol lg={6}>
+                      <CenteredCol lg={6} md={6}>
                         <Heading level={3} size="medium" className="title" weight="thick">
                           <Link to={node.fields.slug}>{node.frontmatter.title}</Link>
                         </Heading>
@@ -91,7 +91,7 @@ export default ({ data, pageContext }) => {
                           Read more
                         </Button>
                       </CenteredCol>
-                      <FirstColumnMobile lg={6}>
+                      <FirstColumnMobile lg={6} md={6}>
                         {node.frontmatter.featuredImage && (
                           <Link to={node.fields.slug}>
                             <Img
