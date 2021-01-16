@@ -1120,7 +1120,7 @@ export default ({ data }) => (
               Find out about the history behind Ocius and the support network that has helped along
               the journey.
             </Heading>
-            <Spacing $value="280px" />
+            <Spacing $value="280px" $xsValue="100px" />
           </Col>
         </Row>
         <Row className="centered">

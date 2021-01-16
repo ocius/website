@@ -363,3 +363,13 @@ ul.menu-secondary li:before {
     transform: translate3d(0,-100%,0) scale3d(0.3,0.3,1);
   }
 }
+
+.row {
+    margin-right: -14px;
+    margin-left: -14px;
+}
+
+[class*="col-"] {
+    padding-left: 16px;
+    padding-right: 16px;
+}
