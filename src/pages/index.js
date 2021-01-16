@@ -33,7 +33,19 @@ const RadarImage = styled(Img)`
   z-index: 2;
 
   @media (max-width: ${mq.max[768]}) {
-    margin: -5em -1em 0;
+    margin: -10em -1em 0;
+  }
+`;
+
+const FirstColumnMobile = styled(Col)`
+  @media (max-width: ${mq.max[768]}) {
+    order: 1;
+  }
+`;
+
+const SecondColumnMobile = styled(Col)`
+  @media (max-width: ${mq.max[768]}) {
+    order: 2;
   }
 `;
 
@@ -109,9 +121,9 @@ export default ({ data }) => (
               </Heading>
             </Col>
           </Row>
-          <Spacing $value="80px" />
+          <Spacing $value="80px" $xsValue="0px" />
           <Row>
-            <Col xs={12} md={3} lg={3}>
+            <SecondColumnMobile xs={12} md={3} lg={3}>
               <Icon.SolarSun
                 fill="#0fb0e1"
                 style={{
@@ -183,11 +195,12 @@ export default ({ data }) => (
                 max={180}
                 readMoreText="Read more"
               />
-            </Col>
-            <Col xs={12} md={6} lg={6}>
+            </SecondColumnMobile>
+            <FirstColumnMobile xs={12} md={6} lg={6}>
               <img src={Bluebottle} alt="Bluebottle Ocius" />
-            </Col>
-            <Col xs={12} md={3} lg={3}>
+              <Spacing $value="0px" $xsValue="30px" />
+            </FirstColumnMobile>
+            <SecondColumnMobile xs={12} md={3} lg={3}>
               <Icon.SensorCommunication
                 fill="#0fb0e1"
                 style={{
@@ -223,7 +236,7 @@ export default ({ data }) => (
                 readMoreText="Read more"
               />
 
-              <Spacing $value="40px" />
+              <Spacing $value="40px" $xsValue="0px" />
               <Icon.KeelWinch
                 fill="#0fb0e1"
                 style={{
@@ -253,7 +266,7 @@ export default ({ data }) => (
                 max={200}
                 readMoreText="Read more"
               />
-            </Col>
+            </SecondColumnMobile>
           </Row>
         </Segmented>
       </Container>
