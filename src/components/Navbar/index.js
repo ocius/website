@@ -6,7 +6,6 @@ import NavbarItems from './NavbarItems';
 import NavbarItem from './NavbarItem';
 import NavbarDropdown from './NavbarDropdown';
 import DropdownMenu from './DropdownMenu';
-import MobileNavigation from './MobileNavigation';
 import SocialIconButton from '../SocialIconButton';
 import Button from '../Button';
 
@@ -30,7 +29,6 @@ const navitems = [
 export default () => (
   <Navbar>
     <SiteLogo />
-    <MobileNavigation />
     <NavbarContainer>
       <SocialLinks>
         <SocialIconButton network="facebook" href="https://www.facebook.com/ociustechnology" />
