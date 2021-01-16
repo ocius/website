@@ -12,7 +12,7 @@ import Pagination from '../components/Pagination';
 import Button from '../components/Button';
 import NewsletterForm from '../components/NewsletterForm';
 import ContactUs from '../components/ContactUs';
-import { Spacing } from '../components/common';
+import { Spacing, FirstColumnMobile, SecondColumnMobile } from '../components/common';
 
 const Link = styled(GatsbyLink)`
   display: block;
@@ -22,7 +22,7 @@ const Link = styled(GatsbyLink)`
   }
 `;
 
-const CenteredCol = styled(Col)`
+const CenteredCol = styled(SecondColumnMobile)`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -57,7 +57,7 @@ export default ({ data, pageContext }) => {
                 <Segmented key={node.id} borderBottom>
                   {!(index % 2) ? (
                     <Row className="post">
-                      <Col lg={6}>
+                      <FirstColumnMobile lg={6}>
                         {node.frontmatter.featuredImage && (
                           <Link to={node.fields.slug}>
                             <Img
@@ -66,7 +66,8 @@ export default ({ data, pageContext }) => {
                             />
                           </Link>
                         )}
-                      </Col>
+                        <Spacing $value="0px" $xsValue="20px" />
+                      </FirstColumnMobile>
                       <CenteredCol lg={6}>
                         <Heading level={3} size="medium" className="title" weight="thick">
                           <Link to={node.fields.slug}>{node.frontmatter.title}</Link>
@@ -90,7 +91,7 @@ export default ({ data, pageContext }) => {
                           Read more
                         </Button>
                       </CenteredCol>
-                      <Col lg={6}>
+                      <FirstColumnMobile lg={6}>
                         {node.frontmatter.featuredImage && (
                           <Link to={node.fields.slug}>
                             <Img
@@ -99,7 +100,8 @@ export default ({ data, pageContext }) => {
                             />
                           </Link>
                         )}
-                      </Col>
+                        <Spacing $value="0px" $xsValue="20px" />
+                      </FirstColumnMobile>
                     </Row>
                   )}
                 </Segmented>
