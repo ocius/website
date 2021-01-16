@@ -1120,11 +1120,11 @@ export default ({ data }) => (
               Find out about the history behind Ocius and the support network that has helped along
               the journey.
             </Heading>
-            <Spacing $value="280px" $xsValue="100px" />
+            <Spacing $value="280px" $mdValue="180px" $xsValue="100px" />
           </Col>
         </Row>
         <Row className="centered">
-          <Col xs={12} md={4} lg={4} mdOffset={1}>
+          <Col xs={12} md={6} lg={4} lgOffset={1}>
             <Heading level={3} color="white" size="large" weight="thick" underline="center">
               Our Culture
             </Heading>
@@ -1133,7 +1133,7 @@ export default ({ data }) => (
               ocean environment in which our products operate.
             </p>
           </Col>
-          <Col xs={12} md={4} lg={4} mdOffset={2}>
+          <Col xs={12} md={6} lg={4} lgOffset={2}>
             <Heading level={3} color="white" size="large" weight="thick" underline="center">
               Our Mission
             </Heading>
