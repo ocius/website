@@ -49,7 +49,7 @@ const StyledFooter = styled.footer`
     text-align: right;
 
     @media (max-width: ${mq.max[768]}) {
-      padding: 1.6em 0 2em;
+      padding: 1.6em 1em 2em;
       display: flex;
       flex-direction: row-reverse;
 
