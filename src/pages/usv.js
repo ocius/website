@@ -56,7 +56,7 @@ export default ({ data }) => (
             <Button size="tiny" color="blue" href="/usv#technical">
               Find out more
             </Button>
-            <Spacing $value="380px" />
+            <Spacing $value="380px" $xsValue="80px" />
           </Col>
         </Row>
         <Row className="centered">
@@ -113,7 +113,7 @@ export default ({ data }) => (
             </Col>
           </Row>
         </Container>
-        <Spacing $value="100px" />
+        <Spacing $value="100px" $xsValue="0px" />
       </HeroBlock>
     )}
     <Container className="page-content">

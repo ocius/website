@@ -4,7 +4,6 @@ import styled, { css } from 'styled-components';
 import { switchProp } from 'styled-tools';
 import BackgroundImage from 'gatsby-background-image';
 
-import mq from '../common/mq';
 import font from '../common/font';
 
 import MaskOverlay from './MaskOverlay';
@@ -17,28 +16,10 @@ export const ContainerStyle = css`
   margin-right: auto;
   position: relative;
   overflow: hidden;
-
-  @media (max-width: ${mq.max[720]}) {
-    max-height: 592px;
-  }
 `;
 
 const HeroContainer = styled(BackgroundImage)`
   ${ContainerStyle}
-
-  ${(props) =>
-    props.constrained &&
-    css`
-      text-align: center;
-      height: 35vh;
-      max-height: 592px;
-      min-height: 300px;
-
-      @media (max-width: ${mq.max[720]}) {
-        max-height: none;
-        height: auto;
-      }
-    `}
 
   ${(props) =>
     props.masked &&
