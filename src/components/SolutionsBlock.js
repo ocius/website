@@ -8,12 +8,16 @@ import Segmented from './Segmented';
 import Button from './Button';
 import Heading from './Heading';
 import { Spacing, AccentRowWrapper } from './common';
+import mq from '../common/mq';
 
 const Article = styled.article`
   display: flex;
   flex-direction: column;
-  height: 100%;
   padding: 0.5em;
+
+  @media (min-width: ${mq.min[768]}) {
+    height: 100%;
+  }
 `;
 
 const Wrapper = styled.div`
@@ -88,6 +92,7 @@ export default () => (
                     </Button>
                   </Wrapper>
                 </Article>
+                <Spacing $value="0px" />
               </Col>
               <Col xs={12} md={6} lg={4}>
                 <Article>
@@ -112,6 +117,7 @@ export default () => (
                     </Button>
                   </Wrapper>
                 </Article>
+                <Spacing $value="0px" />
               </Col>
               <Col xs={12} md={6} lg={4}>
                 <Article>

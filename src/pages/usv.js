@@ -269,6 +269,7 @@ export default ({ data }) => (
                 fluid={data.BluebottleImage ? data.BluebottleImage.childImageSharp.fluid : ''}
                 alt="Bluebottle USV"
               />
+              <Spacing $value="0px" />
             </Col>
             <Col xs={12} md={6} lg={6}>
               <SubHeading>

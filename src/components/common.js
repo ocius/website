@@ -78,6 +78,10 @@ const AccentRowDiv = styled.div`
   background-color: #edf7fc;
   overflow: hidden;
   padding: 3.2rem 0;
+
+  @media (max-width: ${mq.max[768]}) {
+    padding: 0;
+  }
 `;
 
 export const AccentRowWrapper = ({ children }) => (

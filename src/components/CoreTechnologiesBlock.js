@@ -63,7 +63,7 @@ export default () => (
             readMoreText="Read more"
           />
 
-          <Spacing $value="40px" />
+          <Spacing $value="40px" $xsValue="0px" />
           <Icon.RudderCurrent
             fill="#0fb0e1"
             style={{
