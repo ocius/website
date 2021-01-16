@@ -23,7 +23,7 @@ export default () => (
       </Row>
       <Spacing $value="80px" $xsValue="0px" />
       <Row>
-        <SecondColumnMobile xs={12} md={3} lg={3}>
+        <SecondColumnMobile xs={12} md={6} lg={3}>
           <Icon.SolarSun
             fill="#0fb0e1"
             style={{
@@ -96,11 +96,11 @@ export default () => (
             readMoreText="Read more"
           />
         </SecondColumnMobile>
-        <FirstColumnMobile xs={12} md={6} lg={6}>
+        <FirstColumnMobile xs={12} md={8} lg={6} mdOffset={2}>
           <img src={Bluebottle} alt="Bluebottle Ocius" />
           <Spacing $value="0px" $xsValue="30px" />
         </FirstColumnMobile>
-        <SecondColumnMobile xs={12} md={3} lg={3}>
+        <SecondColumnMobile xs={12} md={6} lg={3}>
           <Icon.SensorCommunication
             fill="#0fb0e1"
             style={{

@@ -20,13 +20,13 @@ export const Spacing = styled.div`
 `;
 
 export const FirstColumnMobile = styled(Col)`
-  @media (max-width: ${mq.max[768]}) {
+  @media (max-width: ${mq.max[1024]}) {
     order: 1;
   }
 `;
 
 export const SecondColumnMobile = styled(Col)`
-  @media (max-width: ${mq.max[768]}) {
+  @media (max-width: ${mq.max[1024]}) {
     order: 2;
   }
 `;
