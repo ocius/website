@@ -96,7 +96,7 @@ export default () => (
             readMoreText="Read more"
           />
         </SecondColumnMobile>
-        <FirstColumnMobile xs={12} md={8} lg={6} mdOffset={2}>
+        <FirstColumnMobile xs={12} md={8} lg={6} mdOffset={2} lgOffset={0}>
           <img src={Bluebottle} alt="Bluebottle Ocius" />
           <Spacing $value="0px" $xsValue="30px" />
         </FirstColumnMobile>

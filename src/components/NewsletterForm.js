@@ -153,7 +153,7 @@ const NewsletterForm = ({ topMaskBackgroundColor, bottomMaskBackgroundColor }) =
                   <MaskOverlay flipped position="top" color={topMaskBackgroundColor} />
                   <Container className="centered">
                     <Row>
-                      <Col xs={12} md={6} mdOffset={3}>
+                      <Col xs={12} md={8} mdOffset={2} lg={6} lgOffset={3}>
                         <form onSubmit={handleSubmit}>
                           <Heading
                             level={3}

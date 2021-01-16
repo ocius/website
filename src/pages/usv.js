@@ -132,7 +132,7 @@ export default ({ data }) => (
       </Row>
       <Segmented>
         <Row>
-          <SecondColumnMobile className="primary-content" xs={12} md={5} lg={5}>
+          <SecondColumnMobile className="primary-content" xs={12} md={6} lg={5}>
             <header>
               <Heading level={2} size="medium" weight="thick" underline="left">
                 Satellites of the Sea
@@ -156,7 +156,7 @@ export default ({ data }) => (
               Watch video
             </Button>
           </SecondColumnMobile>
-          <FirstColumnMobile xs={12} md={6} lg={6} mdOffset={1}>
+          <FirstColumnMobile xs={12} md={6} lg={6} lgOffset={1}>
             <img src={Bluebottle} alt="Bluebottle Ocius" />
           </FirstColumnMobile>
         </Row>
