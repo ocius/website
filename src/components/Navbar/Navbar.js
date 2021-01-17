@@ -22,7 +22,7 @@ const FlexContainer = styled(Container)`
 
   @media (max-width: ${mq.max[768]}) {
     flex-direction: row;
-    padding: 8px 5px;
+    padding: 4px 5px;
   }
 `;
 

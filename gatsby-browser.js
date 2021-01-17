@@ -1,13 +1,16 @@
 import React from 'react';
 import { ThemeProvider } from 'styled-components';
 import { NavContextProvider } from './src/common/context/NavContext';
+import MainNavState from './src/common/context/MainNavContext';
 
 const theme = {};
 
 export const wrapRootElement = ({ element }) => (
-  <NavContextProvider>
-    <ThemeProvider theme={theme}>{element}</ThemeProvider>
-  </NavContextProvider>
+  <MainNavState>
+    <NavContextProvider>
+      <ThemeProvider theme={theme}>{element}</ThemeProvider>
+    </NavContextProvider>
+  </MainNavState>
 );
 
 export const onRouteUpdate = ({ location }) => {
