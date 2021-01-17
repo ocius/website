@@ -47,9 +47,7 @@ const Dropdown = styled.li`
   &:hover,
   &:focus-within {
     ul {
-      max-height: 500px;
-      opacity: 1;
-      transform: translateY(0);
+      display: block;
     }
   }
 `;

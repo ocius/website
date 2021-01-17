@@ -34,17 +34,15 @@ const StyledOutboundLink = styled(OutboundLink)`
 `;
 
 const Menu = styled.ul`
-  opacity: 0;
+  display: none;
   margin: 0px;
   padding: 8px;
   min-width: 14em;
-  max-height: 0;
   position: absolute;
   left: 0;
   border: 1px solid #ddd;
   box-shadow: 0px 3px 2px 0px rgba(0, 0, 0, 0.1);
   background-color: rgba(255, 255, 255, 0.75);
-  transition: max-height 0.5s ease-in-out, opacity 0.5s ease;
   z-index: 1000;
   text-align: left;
   list-style: none;
