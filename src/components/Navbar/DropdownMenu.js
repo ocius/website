@@ -70,8 +70,8 @@ const Menu = styled.ul`
   }
 `;
 
-const DropdownMenu = ({ open, menuItems, setRef }) => (
-  <Menu ref={setRef} display={open ? 'block' : 'none'}>
+const DropdownMenu = ({ menuItems }) => (
+  <Menu>
     {menuItems.map((item) => {
       if (item.outbound)
         return (
@@ -99,11 +99,6 @@ DropdownMenu.propTypes = {
       name: PropTypes.string.isRequired,
     })
   ).isRequired,
-  open: PropTypes.bool,
-};
-
-DropdownMenu.defaultProps = {
-  open: false,
 };
 
 export default DropdownMenu;

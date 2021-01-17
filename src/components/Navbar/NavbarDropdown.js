@@ -54,7 +54,7 @@ const Dropdown = styled.li`
 
 const NavbarDropdown = ({ name, link, children }) => (
   <Dropdown>
-    <Link to={link}>
+    <Link to={link} aria-haspopup="true">
       {name}
       <Caret />
     </Link>
