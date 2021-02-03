@@ -68,7 +68,7 @@ const Awards = ({ data }) => (
                   <GatsbyLink to="blog/defence-connect-ocius-technology-awarded-defence-innovation-hub-contract/">
                     $1.6M DST Group Defence Innovation Hub contract
                   </GatsbyLink>{' '}
-                  to demonstrate a network of intelligent persistent unmanned surface vessels
+                  to demonstrate a network of intelligent persistent uncrewed surface vessels
                   Australian Maritime Innovation Award: Defence SME - With a $10 000 grant
                 </p>
                 <p>
@@ -85,7 +85,7 @@ const Awards = ({ data }) => (
                   <a href="/150914OCIUSCTDPressRelease.pdf">
                     Capability Technology Demonstrator (CTD) Contract
                   </a>{' '}
-                  for development of Anti-Submarine Unmanned Surface Vessel (ASW-USV)
+                  for development of Anti-Submarine Uncrewed Surface Vessel (ASW-USV)
                 </p>
                 <p>
                   <strong>2016</strong> – Finalist{' '}
@@ -299,11 +299,11 @@ const Partners = ({ data }) => (
                 DST Group is a national leader in safeguarding Australia by delivering valued
                 scientific advice and innovative solutions for Defence and national security. OCIUS
                 Technology Limited was selected for the Capability and Technology Demonstrator
-                Program (CTD) in 2015 to develop an Anti-Submarine Warfare Unmanned Surface Vessel
+                Program (CTD) in 2015 to develop an Anti-Submarine Warfare Uncrewed Surface Vessel
                 (ASW-USV). The A$3M contract provided extensive validation of our strategy to draw
                 on proprietary technology for the development of long-range, autonomous surveillance
                 and sensing platforms. Specifically, it allowed us to develop a high-performance
-                OCIUS Bluebottle Unmanned Surface Vessel (USV) coupled with an integrated Thales
+                OCIUS Bluebottle Uncrewed Surface Vessel (USV) coupled with an integrated Thales
                 Australia thin-line towed array sonar system. This was demonstrated to NAVY on Aug
                 10, 2017, and exceeded all contract performance measures. OCIUS has been invited to
                 apply for further Technology Demonstrator funding under the Defence Innovation Hub
@@ -729,13 +729,13 @@ const OurStory = ({ data }) => (
         </Col>
         <Col xs={12} md={6} lg={6}>
           <Heading level={3} size="medium" weight="thick">
-            Unmanned Surface Vessels
+            Uncrewed Surface Vessels
           </Heading>
 
           <p>
             Following an enquiry from the USA in 2007 for a ‘platform that could go to sea forever’,
-            the company began research into the development of unmanned solar/wind/wave powered
-            ocean vessels or autonomous unmanned surface vessels. Initially, a 20-foot manned
+            the company began research into the development of uncrewed solar/wind/wave powered
+            ocean vessels or autonomous uncrewed surface vessels. Initially, a 20-foot manned
             engineering development model (EDM) proved ‘speed of advance’ in all conditions,
             adequate power, payload and persistence for a sustainable platform to go to sea for
             months.
@@ -743,7 +743,7 @@ const OurStory = ({ data }) => (
 
           <p>
             OCIUS built multiple scale models for tank and lake testing, culminating in the building
-            of the first 10’ prototype called ‘Nemo’ (Latin for ‘no one’ i.e. unmanned) which
+            of the first 10’ prototype called ‘Nemo’ (Latin for ‘no one’ i.e. uncrewed) which
             provided significant proof of concept of a solar, wind and wave powered USV carrying a
             significant payload.
           </p>
@@ -759,7 +759,7 @@ const OurStory = ({ data }) => (
           <p>
             In Sept 2018, Ocius was awarded its second defence contract under the Defence Innovation
             Hub to build an intelligent “Command and Control (C2) network” of intelligent persistent
-            unmanned surface vessels.
+            uncrewed surface vessels.
           </p>
 
           <p>
@@ -1103,7 +1103,7 @@ export default ({ data }) => (
   <Layout>
     <SEO
       title="About"
-      description="Our Mission. To supply the world's best unmanned surface vessels with more power, payload and
+      description="Our Mission. To supply the world's best uncrewed surface vessels with more power, payload and
       performance."
     />
     {data.HeroBackground && (

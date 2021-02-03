@@ -17,7 +17,7 @@ export default ({ data }) => (
   <Layout>
     <SEO
       title="Defence"
-      description="Persistent Unmanned Surface Vessels (USVs) are being seen as strategic in Defence as force multipliers Bluebottles have more
+      description="Persistent Uncrewed Surface Vessels (USVs) are being seen as strategic in Defence as force multipliers Bluebottles have more
        power payload and performance making them the superior persistent USV for defence"
     />
 

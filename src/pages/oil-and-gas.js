@@ -17,7 +17,7 @@ export default ({ data }) => (
   <Layout>
     <SEO
       title="Oil &amp; Gas"
-      description="Unmanned Surface Vessels (USVs) are already being used in the Oil and Gas industry. Bluebottle USVs can do more. Seadbed and Pipeline Surveys, Security, Environment Monitoring, "
+      description="Uncrewed Surface Vessels (USVs) are already being used in the Oil and Gas industry. Bluebottle USVs can do more. Seadbed and Pipeline Surveys, Security, Environment Monitoring, "
     />
     {data.HeroBackground && (
       <HeroBlock image={data.HeroBackground.childImageSharp.fluid} masked scrim="blue">

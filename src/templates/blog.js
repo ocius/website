@@ -36,7 +36,7 @@ export default ({ data, pageContext }) => {
     <Layout>
       <SEO
         title="News"
-        description="Ocius technology Ltd is building a new network of renewable energy powered unmanned surface
+        description="Ocius technology Ltd is building a new network of renewable energy powered uncrewed surface
         vessels and today launched a &#8216;man-portable&#8217; version of the Bluebottle USV. &#8220;We&#8217;ve
         had a number of enquiries for small self sustaining USVs that can be deployed easily from a deck or beach."
       />

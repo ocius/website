@@ -94,7 +94,7 @@ export default ({ data }) => (
                 <br />
                 Are you a talented C++ Embedded Software Engineer with experience developing
                 autonomous vehicle solutions? You will be involved in a wide variety of
-                software/hardware product development activities for Ocius’ Unmanned Surface
+                software/hardware product development activities for Ocius’ Uncrewed Surface
                 Vehicles. You will contribute to product requirements and designs. You will be
                 hands-on in the development, assembly,and testing of prototype vehicles.
               </p>
@@ -137,7 +137,7 @@ export default ({ data }) => (
               <p>
                 <Accent>Background:</Accent>
                 <br />
-                Ocius is an Australian company that builds autonomous Unmanned Surface Vessels
+                Ocius is an Australian company that builds autonomous Uncrewed Surface Vessels
                 (USVs). These USVs use the energy of the weather - sun, wind and waves - to act as
                 persistent monitoring and communications platforms. We are embarking on an ambitious
                 program of building and deploying multiple USVs for operations around the Australia.
@@ -216,7 +216,7 @@ export default ({ data }) => (
               <p>
                 <Accent>Background:</Accent>
                 <br />
-                Ocius is an Australian company that builds autonomous Unmanned Surface Vessels
+                Ocius is an Australian company that builds autonomous Uncrewed Surface Vessels
                 (USVs). These USVs use the energy of the weather – sun wind and waves – to act as
                 persistent monitoring and communications platforms. We are embarking on an ambitious
                 program of building and deploying multiple USVs for operations.
@@ -310,7 +310,7 @@ export default ({ data }) => (
               <p>
                 <Accent>Background:</Accent>
                 <br />
-                Ocius is an Australian company that builds autonomous Unmanned Surface Vessels
+                Ocius is an Australian company that builds autonomous Uncrewed Surface Vessels
                 (USVs). These USVs use the energy of the weather – sun wind and waves – to act as
                 persistent monitoring and communications platforms. We are embarking on an ambitious
                 program of building and deploying multiple USVs for operations.

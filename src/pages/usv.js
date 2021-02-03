@@ -42,8 +42,8 @@ const SubHeading = styled.p`
 export default ({ data }) => (
   <Layout>
     <SEO
-      title="Unmanned Surface Vessel"
-      description="A USV is an Unmanned Surface Vessel. Bluebottle USVs are autonomous data gathering communications platform, the satellites of the sea."
+      title="Uncrewed Surface Vessel"
+      description="A USV is an Uncrewed Surface Vessel. Bluebottle USVs are autonomous data gathering communications platform, the satellites of the sea."
     />
     {data.HeroImage && (
       <HeroBlock image={data.HeroImage.childImageSharp.fluid} masked scrim="blue">
@@ -93,7 +93,7 @@ export default ({ data }) => (
                 style={{ marginTop: 0 }}
                 shadow
               >
-                Unmanned
+                Uncrewed
                 <br />
                 Surface
                 <br />
@@ -106,11 +106,11 @@ export default ({ data }) => (
               </Heading>
               <ol>
                 <li style={{ marginBottom: 20 }}>
-                  Conventional powered vessels which are unmanned. They have limited time and range
+                  Conventional powered vessels which are uncrewed. They have limited time and range
                   at sea and are acoustically noisy.
                 </li>
                 <li>
-                  Renewable energy powered vessels which are unmanned. They use solar and/or wind
+                  Renewable energy powered vessels which are uncrewed. They use solar and/or wind
                   and/or wave energy so are persistent and can stay at sea indefinitely only limited
                   by biofouling. Bluebottles are in this category.
                 </li>
@@ -283,7 +283,7 @@ export default ({ data }) => (
               </p>
               <p>
                 Applications for USVs are myriad and measured in the billions of dollars. Major
-                entities in offshore energy, defence and science are investing heavily in unmanned
+                entities in offshore energy, defence and science are investing heavily in uncrewed
                 systems for “dull, dirty or dangerous” operations. Independent industry research
                 estimates the USV market for defence alone to be a staggering{' '}
                 <a href="http://marketinfogroup.com/unmanned-surface-vehicles-for-defense-and-security-markets-technologies/">

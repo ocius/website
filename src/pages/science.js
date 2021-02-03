@@ -17,7 +17,7 @@ export default ({ data }) => (
   <Layout>
     <SEO
       title="Science"
-      description="Persistent Unmanned Surface Vessels (USVs) are valuable tools for oceanographic and climate change research. Bluebottle USVs can monitor Weather “ground truth“, Climate Change, Hurricane landfall, Fisheries."
+      description="Persistent Uncrewed Surface Vessels (USVs) are valuable tools for oceanographic and climate change research. Bluebottle USVs can monitor Weather “ground truth“, Climate Change, Hurricane landfall, Fisheries."
     />
     {data.HeroBackground && (
       <HeroBlock image={data.HeroBackground.childImageSharp.fluid} masked scrim="blue">

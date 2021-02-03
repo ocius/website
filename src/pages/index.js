@@ -38,7 +38,7 @@ export default ({ data }) => (
   <Layout>
     <SEO
       title="OCIUS - Satellites of the Sea"
-      description="OCIUS Technology's Unmanned Surface Vessels (USVs) provide innovative autonomous solutions for persistent maritime surveillance"
+      description="OCIUS Technology's Uncrewed Surface Vessels (USVs) provide innovative autonomous solutions for persistent maritime surveillance"
     />
 
     {data.HeroBackground && (
