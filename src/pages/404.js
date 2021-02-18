@@ -8,7 +8,7 @@ import Container from '../components/Container';
 import Heading from '../components/Heading';
 import { Spacing } from '../components/common';
 
-export default ({ data }) => (
+const NotFoundPage = ({ data }) => (
   <Layout>
     <SEO title="Not Found" description="That page does not exist" />
     <Container>
@@ -40,3 +40,5 @@ export const query = graphql`
     }
   }
 `;
+
+export default NotFoundPage;

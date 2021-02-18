@@ -17,7 +17,7 @@ const Pagination = styled.nav`
   padding: 6.4rem;
 `;
 
-export default ({ data, pageContext }) => {
+const MediaPage = ({ data, pageContext }) => {
   const initialPage = data.allLinksYaml;
   const [latestPage, setLatestPage] = useState(pageContext);
   const [mediaPosts, setMediaPosts] = useState(initialPage.edges);
@@ -115,3 +115,5 @@ export const query = graphql`
     }
   }
 `;
+
+export default MediaPage;

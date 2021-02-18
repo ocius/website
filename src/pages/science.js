@@ -13,7 +13,7 @@ import NewsletterForm from '../components/NewsletterForm';
 import ContactUs from '../components/ContactUs';
 import { Spacing } from '../components/common';
 
-export default ({ data }) => (
+const SciencePage = ({ data }) => (
   <Layout>
     <SEO
       title="Science"
@@ -149,3 +149,5 @@ export const query = graphql`
     }
   }
 `;
+
+export default SciencePage;

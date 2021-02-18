@@ -23,7 +23,7 @@ const CenteredCol = styled(Col)`
   justify-content: center;
 `;
 
-export default ({ data }) => (
+const CareersPage = ({ data }) => (
   <Layout>
     <SEO
       title="Careers"
@@ -408,3 +408,5 @@ export const query = graphql`
     }
   }
 `;
+
+export default CareersPage;

@@ -34,7 +34,7 @@ const RadarImage = styled(Img)`
   }
 `;
 
-export default ({ data }) => (
+const IndexPage = ({ data }) => (
   <Layout>
     <SEO
       title="OCIUS - Satellites of the Sea"
@@ -205,3 +205,5 @@ export const query = graphql`
     }
   }
 `;
+
+export default IndexPage;

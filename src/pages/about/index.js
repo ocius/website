@@ -1099,7 +1099,7 @@ const FloatingImage = styled(Img)`
   }
 `;
 
-export default ({ data }) => (
+const AboutPage = ({ data }) => (
   <Layout>
     <SEO
       title="About"
@@ -1316,3 +1316,5 @@ export const query = graphql`
     }
   }
 `;
+
+export default AboutPage;

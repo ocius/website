@@ -10,7 +10,7 @@ import SocialShare from '../components/SocialShare';
 import Heading from '../components/Heading';
 import { Spacing } from '../components/common';
 
-export default ({ data }) => {
+const BlogPage = ({ data }) => {
   const post = data.markdownRemark;
   const { title, date, author } = post.frontmatter;
   return (
@@ -67,3 +67,5 @@ export const query = graphql`
     }
   }
 `;
+
+export default BlogPage;

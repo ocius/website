@@ -17,7 +17,7 @@ const addressStyle = {
   fontStyle: 'normal',
 };
 
-export default () => (
+const ContactPage = () => (
   <Layout>
     <SEO
       title="Contact"
@@ -147,3 +147,5 @@ export default () => (
     </section>
   </Layout>
 );
+
+export default ContactPage;

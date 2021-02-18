@@ -29,7 +29,7 @@ const CenteredCol = styled(SecondColumnMobile)`
   align-items: flex-start;
 `;
 
-export default ({ data, pageContext }) => {
+const Blog = ({ data, pageContext }) => {
   const { edges: posts } = data.allMarkdownRemark;
 
   return (
@@ -155,3 +155,5 @@ export const query = graphql`
     }
   }
 `;
+
+export default Blog;

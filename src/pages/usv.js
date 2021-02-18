@@ -39,7 +39,7 @@ const SubHeading = styled.p`
   margin-top: 0;
 `;
 
-export default ({ data }) => (
+const USVPage = ({ data }) => (
   <Layout>
     <SEO
       title="Uncrewed Surface Vessel"
@@ -470,3 +470,5 @@ export const query = graphql`
     }
   }
 `;
+
+export default USVPage;
