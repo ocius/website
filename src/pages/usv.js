@@ -9,6 +9,7 @@ import SEO from '../components/SEO';
 import HeroBlock from '../components/HeroBlock';
 import Container from '../components/Container';
 import Segmented from '../components/Segmented';
+import Heading from '../components/Heading';
 import Button from '../components/Button';
 import Icon from '../components/Icon';
 import ArticlePreviewBlock from '../components/ArticlePreviewBlock';
@@ -29,7 +30,6 @@ import TrimaranVessel from '../images/vessel-trimaran.svg';
 import BluebottleVessel from '../images/vessel-bluebottle.svg';
 
 // Lazy load components
-const Heading = Loadable(() => import(`../components/Heading`));
 const TechnicalSpecificationForm = Loadable(() =>
   import(`../components/Forms/TechnicalSpecificationForm`)
 );
