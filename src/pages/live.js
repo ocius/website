@@ -5,7 +5,7 @@ import TextSkeleton from '../components/carbon/TextSkeleton';
 import DropdownSkeleton from '../components/carbon/DropdownSkeleton';
 import Dropdown from '../components/carbon/Dropdown';
 import Header from '../components/carbon/Header';
-import LeftNav from '../components/carbon/LeftNav';
+import SideNav from '../components/carbon/SideNav';
 import GMap from '../components/Map/GMap';
 import MobileNavigation from '../components/Navbar/MobileNavigation';
 import { VesselStatus } from '../components/InfoPanel';
@@ -21,11 +21,11 @@ import SplashScreen from '../components/SplashScreen';
 const apiKey = process.env.GATSBY_GOOGLE_MAPS_API_KEY;
 
 const LivePage = () => {
-  // Save ref of navbar + leftnav for future reference
+  // Save ref of navbar + sidenav for future reference
   const node = useRef();
   // Add state handlers
   const [currentVessel, setCurrentVessel] = useState(0);
-  const { leftNavIsOpen, toggleNavState } = useContext(NavContext);
+  const { sideNavIsOpen, toggleNavState } = useContext(NavContext);
   const windowSize = useWindowSize();
 
   /**
@@ -90,8 +90,8 @@ const LivePage = () => {
   // Hide left nav when user clicks outside of container
   useOnClickOutside(node, () => {
     // Only if left nav is open
-    if (windowSize.innerWidth <= 1056 && leftNavIsOpen) {
-      toggleNavState('leftNavIsOpen', 'close');
+    if (windowSize.innerWidth <= 1056 && sideNavIsOpen) {
+      toggleNavState('sideNavIsOpen', 'close');
     }
   });
 
@@ -101,7 +101,7 @@ const LivePage = () => {
       <main ref={node}>
         <Header />
         <MobileNavigation />
-        <LeftNav>
+        <SideNav>
           <FormWrapper>
             <FormItem>
               {isLoading ? (
@@ -126,7 +126,7 @@ const LivePage = () => {
               <VesselStatus data={orderedDrones[currentVessel]} />
             )}
           </FormWrapper>
-        </LeftNav>
+        </SideNav>
       </main>
       <SplashScreen
         isLoading={isLoading}

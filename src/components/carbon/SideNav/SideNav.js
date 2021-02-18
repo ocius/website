@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 import SideNav from 'carbon-components-react/lib/components/UIShell/SideNav';
 
-import LeftNavWrapper from './LeftNavWrapper';
+import SideNavWrapper from './SideNavWrapper';
 import NavContext from '../../../common/context/NavContext';
 import { useWindowSize } from '../../../common/hooks';
 
@@ -58,7 +58,7 @@ const LeftNav = ({ children }) => {
   }
 
   return (
-    <LeftNavWrapper expanded={leftNavIsOpen}>
+    <SideNavWrapper expanded={leftNavIsOpen}>
       <SideNavStyled
         expanded
         defaultExpanded
@@ -67,7 +67,7 @@ const LeftNav = ({ children }) => {
       >
         {children}
       </SideNavStyled>
-    </LeftNavWrapper>
+    </SideNavWrapper>
   );
 };
 
