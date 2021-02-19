@@ -2,7 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled, { css } from 'styled-components';
 import { Link as GatsbyLink } from 'gatsby';
+import { OutboundLink } from 'gatsby-plugin-gtag';
 import detectActive from '../../common/detectActive';
+import isExternalURL from '../../common/detectExternalURL';
+import DynamicLink from '../DynamicLink';
 
 const Item = styled.li`
   position: relative;
@@ -11,9 +14,16 @@ const Item = styled.li`
   font-size: 1em;
   font-weight: 300;
   line-height: 1.4;
+
+  &:hover,
+  &:focus-within {
+    ul {
+      display: block;
+    }
+  }
 `;
 
-const LinkStyles = css`
+const NavbarLink = styled(DynamicLink)`
   display: inline-block;
   padding: 1em;
   font-size: 1.7rem;
@@ -31,48 +41,138 @@ const LinkStyles = css`
     background-color: #ffffff;
   }
 
+  :focus {
+    background: #efefef;
+    color: #001826;
+  }
+
   &[data-active] {
     background-color: #f7f7f7;
   }
 `;
 
-const InternalLink = styled(GatsbyLink)`
-  ${LinkStyles}
+const Caret = styled.b`
+  display: inline-block;
+  width: 0;
+  height: 0;
+  margin-left: 7px;
+  vertical-align: middle;
+  border-top: 4px dashed;
+  border-right: 4px solid transparent;
+  border-left: 4px solid transparent;
 `;
 
-const ExternalLink = styled.a`
-  ${LinkStyles}
+const MenuItemStyle = css`
+  display: block;
+  min-width: 10em;
+  padding: 0.6em 1em;
+  clear: both;
+  font-size: 17px;
+  font-weight: normal;
+  line-height: 1.42857143;
+  color: #333;
+  white-space: nowrap;
+  text-decoration: none;
+  box-sizing: border-box;
+
+  :focus,
+  :hover {
+    background: #efefef;
+    color: #001826;
+    text-decoration: none;
+  }
 `;
 
-const NavbarItem = ({ link, title, blank }) => (
+const DropdownLink = styled(GatsbyLink)`
+  ${MenuItemStyle}
+`;
+
+const DropdownOutboundLink = styled(OutboundLink)`
+  ${MenuItemStyle}
+`;
+
+const Menu = styled.ul`
+  display: none;
+  margin: 0px;
+  padding: 8px;
+  min-width: 14em;
+  position: absolute;
+  left: 0;
+  border: 1px solid #ddd;
+  box-shadow: 0px 3px 2px 0px rgba(0, 0, 0, 0.1);
+  background-color: rgba(255, 255, 255, 0.75);
+  z-index: 1000;
+  text-align: left;
+  list-style: none;
+
+  &:after {
+    content: '';
+    border: solid #cfc6c0;
+    border-width: 0 1px 1px 0;
+    display: inline-block;
+    padding: 6px;
+    transform: rotate(-135deg);
+    position: absolute;
+    top: -7px;
+    background: #fff;
+    left: 33px;
+    z-index: -1;
+  }
+
+  li {
+    border-bottom: 1px solid rgba(51, 51, 51, 0.1);
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+`;
+
+const NavbarItem = ({ path, title, menuItems }) => (
   <Item className="list">
-    {(() => {
-      // Check if the link should be opened in the new tab
-      if (blank) {
-        return (
-          <ExternalLink className="link" href={link} target="_blank" rel="noreferrer noopener">
-            {title}
-          </ExternalLink>
-        );
-      }
+    <NavbarLink className="link" to={path} getProps={detectActive}>
+      {title}
+      {menuItems && <Caret />}
+    </NavbarLink>
 
-      return (
-        <InternalLink className="link" to={link} getProps={detectActive}>
-          {title}
-        </InternalLink>
-      );
-    })()}
+    {menuItems && (
+      <Menu>
+        {menuItems.map((item) => {
+          if (isExternalURL(item.path)) {
+            return (
+              <li key={menuItems.indexOf(item)}>
+                <DropdownOutboundLink key={item.title} href={item.path}>
+                  {item.title}
+                </DropdownOutboundLink>
+              </li>
+            );
+          }
+
+          return (
+            <li key={menuItems.indexOf(item)}>
+              <DropdownLink key={item.title} to={item.path}>
+                {item.title}
+              </DropdownLink>
+            </li>
+          );
+        })}
+      </Menu>
+    )}
   </Item>
 );
 
 NavbarItem.propTypes = {
-  link: PropTypes.string.isRequired,
+  path: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
-  blank: PropTypes.bool,
+  menuItems: PropTypes.arrayOf(
+    PropTypes.shape({
+      path: PropTypes.string.isRequired,
+      title: PropTypes.string.isRequired,
+    })
+  ),
 };
 
 NavbarItem.defaultProps = {
-  blank: false,
+  menuItems: null,
 };
 
 export default NavbarItem;

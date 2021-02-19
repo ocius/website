@@ -6,11 +6,10 @@ import MainNav from '../carbon/MainNav';
 import HeaderMenuButton from '../carbon/HeaderMenuButton';
 import NavbarItems from './NavbarItems';
 import NavbarItem from './NavbarItem';
-import NavbarDropdown from './NavbarDropdown';
-import DropdownMenu from './DropdownMenu';
 import SocialIconButton from '../SocialIconButton';
 import Button from '../Button';
 import mq from '../../common/mq';
+import useNavItems from '../../common/hooks/useNavItems';
 import useOnClickOutside from '../../common/hooks/useOnClickOutside';
 import { MenuContext } from '../../common/context/MainNavContext';
 
@@ -36,12 +35,9 @@ const SocialLinks = styled.div`
   }
 `;
 
-const navitems = [
-  { link: '/contact', title: 'Contact' },
-  { link: '/careers', title: 'Careers' },
-];
-
 export default () => {
+  // Load navbar items from YAML file
+  const navItems = useNavItems();
   // Save ref of navbar + sidenav for future reference
   const node = useRef();
   const { isMenuOpen, toggleMenuMode } = useContext(MenuContext);
@@ -75,54 +71,12 @@ export default () => {
             />
           </SocialLinks>
           <NavbarItems>
-            <NavbarDropdown name="About" link="/about">
-              <DropdownMenu
-                menuItems={[
-                  { href: '/about#tabs', name: 'People' },
-                  { href: '/about/partners#tabs', name: 'Partners' },
-                  { href: '/about/our-story#tabs', name: 'Our Story' },
-                  { href: '/about/awards#tabs', name: 'Awards' },
-                ]}
-              />
-            </NavbarDropdown>
-            <NavbarDropdown name="Solutions" link="/#solutions">
-              <DropdownMenu
-                menuItems={[
-                  { href: '/defence', name: 'Defence' },
-                  { href: '/oil-and-gas', name: 'Oil & Gas' },
-                  { href: '/science', name: 'Science' },
-                ]}
-              />
-            </NavbarDropdown>
-            <NavbarDropdown name="Drones" link="/usv">
-              <DropdownMenu
-                menuItems={[
-                  { href: '/usv', name: 'USV' },
-                  { href: '/usv#overview', name: 'BlueBottle' },
-                  { href: '/usv#technical', name: 'Tech Specs' },
-                ]}
-              />
-            </NavbarDropdown>
-            <NavbarDropdown name="News" link="/news">
-              <DropdownMenu
-                menuItems={[
-                  { href: '/news', name: 'Blog' },
-                  { href: '/media-coverage', name: 'Media Coverage' },
-                  {
-                    href:
-                      'https://drive.google.com/drive/folders/1beCdCnYaKyE4455mAd4kJKjPJWBAgSfb?usp=sharing',
-                    name: 'Press Kit',
-                    outbound: true,
-                  },
-                ]}
-              />
-            </NavbarDropdown>
-            {navitems.map((item) => (
+            {navItems.map((item) => (
               <NavbarItem
-                key={navitems.indexOf(item)}
-                link={item.link}
+                key={navItems.indexOf(item)}
+                path={item.path}
                 title={item.title}
-                blank={item.blank ? item.blank : undefined}
+                menuItems={item.pages}
               />
             ))}
           </NavbarItems>
