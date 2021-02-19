@@ -11,7 +11,7 @@ const PaddingWrapper = styled.div`
   padding-top: 145px;
 
   @media (max-width: ${mq.max[768]}) {
-    padding-top: 58px;
+    padding-top: 50px;
   }
 `;
 

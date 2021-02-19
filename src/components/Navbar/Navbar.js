@@ -9,7 +9,7 @@ const StyledNavbar = styled.header`
   background-color: #ffffff;
   margin: 0px;
   width: 100%;
-  z-index: 11;
+  z-index: 6000;
   top: 0px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 `;
@@ -22,7 +22,7 @@ const FlexContainer = styled(Container)`
 
   @media (max-width: ${mq.max[768]}) {
     flex-direction: row;
-    padding: 4px 5px;
+    padding: 0 5px;
   }
 `;
 
