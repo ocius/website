@@ -175,7 +175,7 @@ const DefencePage = ({ data }) => (
       </Segmented>
     </Container>
 
-    <Segmented borderBottom="">
+    <Segmented>
       <Container>
         <Row className="centered">
           <Col xs={12} md={8} lg={8} mdOffset={2}>
@@ -188,10 +188,10 @@ const DefencePage = ({ data }) => (
       </Container>
     </Segmented>
 
-    <Segmented borderBottom="">
+    <Segmented>
       <NewsletterForm />
     </Segmented>
-    <Segmented borderBottom="">
+    <Segmented>
       <ContactUs />
     </Segmented>
   </Layout>
