@@ -3,10 +3,10 @@ import PropTypes from 'prop-types';
 import styled, { css } from 'styled-components';
 import { switchProp } from 'styled-tools';
 import cn from 'classnames';
-import { Link as GatsbyLink } from 'gatsby';
 import { OutboundLink as GtagLink } from 'gatsby-plugin-gtag';
 import propTypes from '../common/propTypes';
 import font from '../common/font';
+import DynamicLink from './DynamicLink';
 
 const colors = {
   // Background colors
@@ -186,7 +186,7 @@ const ButtonStyles = css`
   ${(props) => !props.border && borderStyle}
 `;
 
-const ButtonLink = styled(GatsbyLink)`
+const ButtonLink = styled(DynamicLink)`
   ${ButtonStyles}
 `;
 
