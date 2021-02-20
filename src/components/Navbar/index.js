@@ -6,6 +6,7 @@ import MainNav from '../carbon/MainNav';
 import HeaderMenuButton from '../carbon/HeaderMenuButton';
 import NavbarItems from './NavbarItems';
 import NavbarItem from './NavbarItem';
+import LeftNavItem from './LeftNavItem';
 import SocialIconButton from '../SocialIconButton';
 import Button from '../Button';
 import mq from '../../common/mq';
@@ -91,7 +92,16 @@ export default () => {
           />
         </NavbarContainer>
       </Navbar>
-      <MainNav />
+      <MainNav>
+        {navItems.map((item) => (
+          <LeftNavItem
+            menuItems={item.pages}
+            title={item.title}
+            path={item.path}
+            key={navItems.indexOf(item)}
+          />
+        ))}
+      </MainNav>
     </div>
   );
 };

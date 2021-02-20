@@ -2,6 +2,7 @@ import styled, { css } from 'styled-components';
 import React from 'react';
 import PropTypes from 'prop-types';
 import Icon from '../Icon';
+import mq from '../../common/mq';
 
 const ActiveStyle = css`
   border-left: 0.2rem solid rgba(14, 190, 255, 0.4);
@@ -48,7 +49,7 @@ const MenuButton = styled.button`
     fill: #171717;
   }
 
-  @media (min-width: 1054px) {
+  @media (min-width: ${mq.min[768]}) {
     display: none;
   }
 

@@ -9,7 +9,7 @@ import isExternalURL from '../common/detectExternalURL';
  */
 const DynamicLink = ({ children, to, activeClassName, partiallyActive, getProps, ...other }) => {
   // Use Gatsby Link for internal links, and <a> for others
-  if (isExternalURL(to)) {
+  if (!isExternalURL(to)) {
     return (
       <GatsbyLink
         to={to}
