@@ -11,7 +11,7 @@ const NavIcon = styled.div`
   > svg {
     width: 1rem;
     height: 1rem;
-    fill: #525252;
+    fill: ${(props) => props.theme.neutralPrimary};
     transition: transform 0.11s;
 
     [aria-expanded='true'] & {

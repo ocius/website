@@ -21,8 +21,8 @@ const NavLink = styled(DynamicLink)`
   &[data-active],
   &[aria-current='page'],
   &:hover {
-    color: #161616;
-    background-color: #e5e5e5;
+    color: ${(props) => props.theme.themeDark};
+    background-color: ${(props) => props.theme.neutralLight};
   }
 
   &[aria-current='page'] :before {
@@ -31,7 +31,7 @@ const NavLink = styled(DynamicLink)`
     bottom: 0;
     left: 0;
     width: 4px;
-    background-color: #0f62fe;
+    background-color: ${(props) => props.theme.themePrimary};
     content: '';
   }
 `;

@@ -30,7 +30,7 @@ const NavbarLink = styled(DynamicLink)`
   font-weight: 500;
   line-height: 100%;
   text-decoration: none;
-  color: #001826;
+  color: ${(props) => props.theme.themeDarker};
 
   :hover {
     text-decoration: none;
@@ -42,12 +42,12 @@ const NavbarLink = styled(DynamicLink)`
   }
 
   :focus {
-    background: #efefef;
-    color: #001826;
+    background: ${(props) => props.theme.neutralLight};
+    color: ${(props) => props.theme.themeDarker};
   }
 
   &[data-active] {
-    background-color: #f7f7f7;
+    background-color: ${(props) => props.theme.neutralLight};
   }
 `;
 
@@ -78,7 +78,7 @@ const MenuItemStyle = css`
   :focus,
   :hover {
     background: #efefef;
-    color: #001826;
+    color: ${(props) => props.theme.themeDarker};
     text-decoration: none;
   }
 `;

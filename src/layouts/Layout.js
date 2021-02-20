@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { ThemeProvider } from 'styled-components';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import mq from '../common/mq';
@@ -15,10 +15,21 @@ const PaddingWrapper = styled.div`
   }
 `;
 
+// Define what props.theme will look like
+const theme = {
+  themePrimary: '#4ab4e6',
+  themeDark: '#1f3643',
+  themeDarker: '#001826',
+  neutralPrimary: '#6f7175',
+  neutralLight: '#f7f7f7',
+};
+
 export default ({ children }) => (
-  <PaddingWrapper>
-    <Navbar />
-    {children}
-    <Footer />
-  </PaddingWrapper>
+  <ThemeProvider theme={theme}>
+    <PaddingWrapper>
+      <Navbar />
+      {children}
+      <Footer />
+    </PaddingWrapper>
+  </ThemeProvider>
 );
