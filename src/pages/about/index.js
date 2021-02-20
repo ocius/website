@@ -242,7 +242,7 @@ const Partners = ({ data }) => (
         Our Partners
       </Heading>
     </header>
-    <Segmented borderBottom="">
+    <Segmented>
       <LogoBackgroundWrapper>
         <Container className="page-content">
           <Row className="primary-content">
