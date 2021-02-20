@@ -19,13 +19,12 @@ const NavLink = styled(DynamicLink)`
   font-weight: 400;
 
   &[data-active],
-  &[aria-current='page'],
   &:hover {
     color: ${(props) => props.theme.themeDark};
     background-color: ${(props) => props.theme.neutralLight};
   }
 
-  &[aria-current='page'] :before {
+  &[data-active] :before {
     position: absolute;
     top: 0;
     bottom: 0;

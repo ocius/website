@@ -4,6 +4,7 @@ import Link from './Link';
 import SideNavIcon from './SideNavIcon';
 import SideNavItem from './SideNavItem';
 import SideNavLinkText from './SideNavLinkText';
+import detectActive from '../../common/detectActive';
 
 const SideNavLink = React.forwardRef(
   (
@@ -18,7 +19,7 @@ const SideNavLink = React.forwardRef(
     ref
   ) => (
     <SideNavItem>
-      <Link {...rest} className={className} ref={ref}>
+      <Link {...rest} className={className} ref={ref} getProps={detectActive}>
         {IconElement && (
           <SideNavIcon>
             <IconElement />
