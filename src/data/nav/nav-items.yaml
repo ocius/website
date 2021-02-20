@@ -1,47 +1,47 @@
 - title: About
-  path: /about
+  path: /about/
   pages:
     - title: People
-      path: /about#tabs
+      path: /about/#tabs
     - title: Partners
-      path: /about/partners#tabs
+      path: /about/partners/#tabs
     - title: Our Story
-      path: /about/our-story#tabs
+      path: /about/our-story/#tabs
     - title: Awards
-      path: /about/awards#tabs
+      path: /about/awards/#tabs
 
 - title: Solutions
   path: /#solutions
   pages:
     - title: Defence
-      path: /defence
+      path: /defence/
     - title: Oil & Gas
-      path: /oil-and-gas
+      path: /oil-and-gas/
     - title: Science
-      path: /science
+      path: /science/
 
 - title: Drones
-  path: /usv
+  path: /usv/
   pages:
     - title: USV
-      path: /usv
+      path: /usv/
     - title: BlueBottle
-      path: /usv#overview
+      path: /usv/#overview
     - title: Tech Specs
-      path: /usv#technical
+      path: /usv/#technical
 
 - title: News
-  path: /news
+  path: /news/
   pages:
     - title: Blog
-      path: /news
+      path: /news/
     - title: Media Coverage
-      path: /media-coverage
+      path: /media-coverage/
     - title: Press Kit
       path: https://drive.google.com/drive/folders/1beCdCnYaKyE4455mAd4kJKjPJWBAgSfb?usp=sharing
 
 - title: Contact
-  path: /contact
+  path: /contact/
 
 - title: Careers
-  path: /careers
+  path: /careers/

@@ -2,7 +2,12 @@ import React from 'react';
 import { ThemeProvider } from 'styled-components';
 import { NavContextProvider } from './src/common/context/NavContext';
 
-const theme = {};
+// Define what props.theme will look like
+const theme = {
+  themePrimary: '#4ab4e6',
+  themeDark: '#1f3643',
+  neutralPrimary: '#6f7175',
+};
 
 export const wrapRootElement = ({ element }) => (
   <NavContextProvider>
@@ -26,20 +31,6 @@ export const onRenderBody = ({ setHeadComponents }) => {
       rel="dns-prefetch"
       key="dns-prefetch-marketingplatform"
       href="https://marketingplatform.google.com"
-    />,
-    <script
-      dangerouslySetInnerHTML={{
-        __html: `
-        console.log("Hit script tag");
-        navigator.serviceWorker.getRegistrations()
-        .then(function(registrations) {
-            registrations.forEach(function(registration) { 
-                console.log("Delete service worker");
-                registration.unregister(); 
-            })
-        });
-            `,
-      }}
     />
   ]);
 };
