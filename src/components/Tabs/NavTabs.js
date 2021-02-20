@@ -40,7 +40,7 @@ const Nav = styled.ul`
   display: flex;
   justify-content: center;
   flex-direction: column;
-  z-index: 9100;
+  z-index: 9;
   background: #efefef;
   border-bottom: 0.25px solid rgb(31, 54, 67, 0.4);
   transition: max-height 70ms cubic-bezier(0.2, 0, 0.38, 0.9);
