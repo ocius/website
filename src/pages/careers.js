@@ -41,7 +41,7 @@ const CareersPage = ({ data }) => (
             </Heading>
           </Col>
         </Row>
-        <Spacing $value="20px" />
+        <Spacing $value="20px" $xsValue="0" />
 
         <Segmented multiplier={2} borderBottom>
           <Row>
