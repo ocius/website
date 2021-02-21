@@ -13,7 +13,7 @@ const NavItem = styled.li`
   font-size: 100%;
   font-family: inherit;
   vertical-align: baseline;
-  background-color: #efefef;
+  background-color: ${(props) => props.theme.neutralLightAlt};
   display: flex;
   padding: 0;
   cursor: pointer;
@@ -21,7 +21,7 @@ const NavItem = styled.li`
   transition: background-color 70ms cubic-bezier(0.2, 0, 0.38, 0.9);
 
   &:hover {
-    background-color: #efefef;
+    background-color: ${(props) => props.theme.neutralLightAlt};
   }
 
   @media (min-width: 67.2rem) {
@@ -65,11 +65,11 @@ const StyledLink = styled(Link)`
     outline 70ms cubic-bezier(0.2, 0, 0.38, 0.9);
 
   @media (min-width: 67.2rem) {
-    color: #4ab4e6;
+    color: ${(props) => props.theme.themePrimary};
     font-weight: 400;
     font-family: ${font('bold')};
     border-bottom: 3px solid #e0e0e0;
-    box-shadow: inset 0px 0px 1px #1f3643;
+    box-shadow: inset 0px 0px 1px ${(props) => props.theme.themeDark};
     padding: 0.8rem 1.6rem;
     width: 16rem;
     margin: 0;
@@ -85,9 +85,9 @@ const StyledLink = styled(Link)`
 
   &[data-active],
   &[aria-current*='page'] {
-    color: #1f3643;
+    color: ${(props) => props.theme.themeDark};
     background-color: #edf7fa;
-    box-shadow: inset 0px 0px 1px #1f3643;
+    box-shadow: inset 0px 0px 1px ${(props) => props.theme.themeDark};
     border-bottom: none;
   }
 

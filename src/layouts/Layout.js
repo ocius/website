@@ -22,6 +22,7 @@ const theme = {
   themeDarker: '#001826',
   neutralPrimary: '#6f7175',
   neutralLight: '#f7f7f7',
+  neutralLightAlt: '#efefef',
   bgPrimary: '#ffffff',
 };
 

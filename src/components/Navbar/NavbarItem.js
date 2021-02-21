@@ -76,7 +76,8 @@ const MenuItemStyle = css`
   box-sizing: border-box;
 
   :focus,
-  :hover {
+  :hover,
+  &[data-active] {
     background: #efefef;
     color: ${(props) => props.theme.themeDarker};
     text-decoration: none;
@@ -149,7 +150,7 @@ const NavbarItem = ({ path, title, menuItems }) => (
 
           return (
             <li key={menuItems.indexOf(item)}>
-              <DropdownLink key={item.title} to={item.path}>
+              <DropdownLink key={item.title} to={item.path} getProps={detectActive}>
                 {item.title}
               </DropdownLink>
             </li>

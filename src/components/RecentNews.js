@@ -21,7 +21,7 @@ const List = styled.ul`
     list-style: none;
     margin-bottom: 10px;
     padding-top: 15px;
-    border-top: 1px solid ${(props) => props.theme.neutralLight};
+    border-top: 1px solid ${(props) => props.theme.neutralLightAlt};
 
     &:first-child {
       border-top: none;

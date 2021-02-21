@@ -1147,10 +1147,10 @@ const AboutPage = ({ data }) => (
     )}
     <div id="tabs">
       <NavTabs>
-        <NavTab label="People" to="about#tabs" />
-        <NavTab label="Our Partners" to="about/partners#tabs" />
-        <NavTab label="Our Story" to="about/our-story#tabs" />
-        <NavTab label="Awards" to="about/awards#tabs" />
+        <NavTab label="People" to="about/#tabs" />
+        <NavTab label="Our Partners" to="about/partners/#tabs" />
+        <NavTab label="Our Story" to="about/our-story/#tabs" />
+        <NavTab label="Awards" to="about/awards/#tabs" />
       </NavTabs>
     </div>
     <Router>
