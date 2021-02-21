@@ -76,11 +76,14 @@ const MenuItemStyle = css`
   box-sizing: border-box;
 
   :focus,
-  :hover,
-  &[data-active] {
+  :hover {
     background: ${(props) => props.theme.neutralLightAlt};
     color: ${(props) => props.theme.themePrimaryLight};
     text-decoration: none;
+  }
+
+  &[data-active] {
+    background: ${(props) => props.theme.neutralLightAlt};
   }
 `;
 
