@@ -1,5 +1,5 @@
 import React from 'react';
-import styled, { ThemeProvider } from 'styled-components';
+import { ThemeProvider, createGlobalStyle } from 'styled-components';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import mq from '../common/mq';
@@ -7,11 +7,13 @@ import '../fonts/fonts.css';
 import '../css/styles.css';
 
 /* Add padding to body to compensate navbar height */
-const PaddingWrapper = styled.div`
-  padding-top: 145px;
+const GlobalStyle = createGlobalStyle`
+  body {
+    padding-top: 145px;
 
-  @media (max-width: ${mq.max[768]}) {
-    padding-top: 50px;
+    @media (max-width: ${mq.max[768]}) {
+      padding-top: 50px;
+    }
   }
 `;
 
@@ -29,10 +31,9 @@ export const theme = {
 
 export default ({ children }) => (
   <ThemeProvider theme={theme}>
-    <PaddingWrapper>
-      <Navbar />
-      {children}
-      <Footer />
-    </PaddingWrapper>
+    <GlobalStyle />
+    <Navbar />
+    {children}
+    <Footer />
   </ThemeProvider>
 );
