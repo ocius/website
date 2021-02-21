@@ -97,7 +97,7 @@ const StyledLink = styled(Link)`
 
   &:focus,
   &:active {
-    outline: 2px solid #60d2f6;
+    outline: 2px solid ${(props) => props.theme.themePrimaryLight};
     outline-offset: -2px;
   }
 `;
