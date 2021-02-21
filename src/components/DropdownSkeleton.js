@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { skeletonAnimation } from './shared';
+import { skeletonAnimation } from './common';
 
 const SkeletonWrapper = styled.div`
   position: relative;
@@ -61,7 +61,7 @@ const ListBoxLabel = styled.span`
 const DropdownSkeleton = (props) => (
   <>
     <ListBoxLabel>{props.label}</ListBoxLabel>
-    <SkeletonWrapper className="bx--skeleton" {...props}>
+    <SkeletonWrapper {...props}>
       <ListBox role="button" />
     </SkeletonWrapper>
   </>

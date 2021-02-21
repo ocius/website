@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
-import { skeletonAnimation } from './shared';
+import { skeletonAnimation } from './common';
 
 const Text = styled.p`
   position: relative;

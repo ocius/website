@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { skeletonAnimation } from './shared';
+import { skeletonAnimation } from './common';
 
 const SkeletonWrapper = styled.div`
   position: relative;
@@ -25,10 +25,6 @@ const SkeletonWrapper = styled.div`
   }
 `;
 
-const PictureSkeleton = (props) => (
-  <>
-    <SkeletonWrapper className="bx--skeleton" {...props} />
-  </>
-);
+const PictureSkeleton = (props) => <SkeletonWrapper {...props} />;
 
 export default PictureSkeleton;

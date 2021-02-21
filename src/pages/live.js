@@ -1,8 +1,8 @@
 import React, { useState, useRef, useContext } from 'react';
 import EmptyLayout from '../layouts/EmptyLayout';
 import SEO from '../components/SEO';
-import TextSkeleton from '../components/carbon/TextSkeleton';
-import DropdownSkeleton from '../components/carbon/DropdownSkeleton';
+import TextSkeleton from '../components/TextSkeleton';
+import DropdownSkeleton from '../components/DropdownSkeleton';
 import Dropdown from '../components/carbon/Dropdown';
 import SideNav from '../components/carbon/SideNav';
 import GMap from '../components/Map/GMap';

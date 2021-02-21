@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Col } from 'react-flexbox-grid';
 import { graphql, useStaticQuery } from 'gatsby';
 import { switchProp } from 'styled-tools';
-import styled, { css } from 'styled-components';
+import styled, { css, keyframes } from 'styled-components';
 import MaskOverlay from './MaskOverlay';
 import mq from '../common/mq';
 
@@ -124,3 +124,62 @@ DarkAccentRowWrapper.propTypes = {
 DarkAccentRowWrapper.defaultProps = {
   children: '',
 };
+
+export const skeletonAnimation = keyframes`
+  0% {
+    width: 0%;
+    left: 0;
+    right: auto;
+    opacity: 0.3;
+  }
+
+  20% {
+    width: 100%;
+    left: 0;
+    right: auto;
+    opacity: 1;
+  }
+  
+  28% {
+    width: 100%;
+    left: auto;
+    right: 0;
+  }
+
+  51% {
+    width: 0%;
+    left: auto;
+    right: 0;
+  }
+
+  58% {
+    width: 0%;
+    left: auto;
+    right: 0;
+  }
+
+  82% {
+    width: 100%;
+    left: auto;
+    right: 0;
+  }
+
+  83% {
+    width: 100%;
+    left: 0;
+    right: auto;
+  }
+
+  96% {
+    width: 0%;
+    left: 0;
+    right: auto;
+  }
+
+  100% {
+    width: 0%;
+    left: 0;
+    right: auto;
+    opacity: 0.3;
+  }
+`;
