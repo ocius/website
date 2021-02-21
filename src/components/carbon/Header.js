@@ -3,7 +3,7 @@ import SkipToContent from 'carbon-components-react/lib/components/UIShell/SkipTo
 import Header from 'carbon-components-react/lib/components/UIShell/Header';
 import styled from 'styled-components';
 
-import HeaderMenuButton from './HeaderMenuButton';
+import HeaderMenuButton from '../Navbar/HeaderMenuButton';
 import NavContext from '../../common/context/NavContext';
 import SiteLogo from '../Navbar/SiteLogo';
 

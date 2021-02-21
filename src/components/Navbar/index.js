@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import Navbar from './Navbar';
 import SiteLogo from './SiteLogo';
 import MainNav from '../carbon/MainNav';
-import HeaderMenuButton from '../carbon/HeaderMenuButton';
+import HeaderMenuButton from './HeaderMenuButton';
 import NavbarItems from './NavbarItems';
 import NavbarItem from './NavbarItem';
 import LeftNavItem from './LeftNavItem';
