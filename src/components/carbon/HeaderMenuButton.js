@@ -2,6 +2,7 @@ import styled, { css } from 'styled-components';
 import React from 'react';
 import PropTypes from 'prop-types';
 import Icon from '../Icon';
+import iconFromString from '../../common/iconFromString';
 import mq from '../../common/mq';
 
 const ActiveStyle = css`
@@ -61,12 +62,15 @@ const HeaderMenuButton = ({
   'aria-labelledby': ariaLabelledBy,
   onClick,
   isActive,
+  iconName,
   ...rest
 }) => {
   const accessibilityLabel = {
     'aria-label': ariaLabel,
     'aria-labelledby': ariaLabelledBy,
   };
+  const icon = iconFromString(iconName);
+
   return (
     <MenuButton
       {...rest}
@@ -85,11 +89,7 @@ const HeaderMenuButton = ({
           }}
         />
       ) : (
-        <Icon.Sliders
-          style={{
-            marginBottom: '5px',
-          }}
-        />
+        icon
       )}
     </MenuButton>
   );
@@ -112,6 +112,11 @@ HeaderMenuButton.propTypes = {
    * Specify whether the action is currently active
    */
   isActive: PropTypes.bool,
+
+  /**
+   * Name of the icon to display
+   */
+  iconName: PropTypes.string,
 };
 
 HeaderMenuButton.defaultProps = {
@@ -119,6 +124,7 @@ HeaderMenuButton.defaultProps = {
   'aria-labelledby': '',
   onClick: null,
   isActive: false,
+  iconName: 'Sliders',
 };
 
 export default HeaderMenuButton;

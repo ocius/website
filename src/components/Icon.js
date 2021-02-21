@@ -416,6 +416,12 @@ const Sliders = (props) => (
   </Icon>
 );
 
+const Menu = (props) => (
+  <Icon {...props} viewBox="0 0 20 20">
+    <path d="M2 14.8H18V16H2zM2 11.2H18V12.399999999999999H2zM2 7.6H18V8.799999999999999H2zM2 4H18V5.2H2z" />
+  </Icon>
+);
+
 const ChevronDoubleDown = (props) => (
   <Icon {...props} viewBox="0 0 512 512">
     <path d="M443.5 98.5l-211 211.1c-4.7 4.7-12.3 4.7-17 0L4.5 98.5c-4.7-4.7-4.7-12.3 0-17l7.1-7.1c4.7-4.7 12.3-4.7 17 0L224 269.9 419.5 74.5c4.7-4.7 12.3-4.7 17 0l7.1 7.1c4.6 4.6 4.6 12.2-.1 16.9zm0 111l-7.1-7.1c-4.7-4.7-12.3-4.7-17 0L224 397.9 28.5 202.5c-4.7-4.7-12.3-4.7-17 0l-7.1 7.1c-4.7 4.7-4.7 12.3 0 17l211 211.1c4.7 4.7 12.3 4.7 17 0l211-211.1c4.8-4.8 4.8-12.4.1-17.1z" />
@@ -481,6 +487,7 @@ export default {
   Drone,
   Globe,
   Sliders,
+  Menu,
   ChevronDoubleDown,
   ChevronDownGlyph,
   Close20,

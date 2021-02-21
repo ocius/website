@@ -89,6 +89,7 @@ export default () => {
             aria-label="Open main menu"
             onClick={hamburgerClickHandler}
             isActive={isMenuOpen}
+            iconName="Menu"
           />
         </NavbarContainer>
       </Navbar>
