@@ -31,7 +31,7 @@ const Underline = css`
   &::after {
     content: '';
     display: block;
-    background-color: #4ab4e6;
+    background-color: ${(props) => props.theme.themePrimary};
     height: 4px;
     width: 100px;
 
@@ -52,7 +52,7 @@ const Shadow = css`
 `;
 
 const Header = css`
-  color: #1f3643;
+  color: ${(props) => props.theme.themeDark};
   padding-top: 80px;
   margin-top: 0;
 
@@ -62,7 +62,7 @@ const Header = css`
 `;
 
 const StyledHeading = styled.h3`
-  color: ${(props) => props.$color || '#1f3643'};
+  color: ${(props) => props.$color || props.theme.themeDark};
   line-height: 1.2;
 
   ${switchProp('size', {

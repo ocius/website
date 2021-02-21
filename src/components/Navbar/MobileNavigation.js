@@ -41,7 +41,7 @@ const Link = styled(GatsbyLink)`
   &[data-active] {
     text-decoration: none;
     font-weight: bold;
-    color: #60d2f6;
+    color: ${(props) => props.theme.themePrimaryLight};
   }
 `;
 

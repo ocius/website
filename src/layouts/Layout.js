@@ -16,7 +16,7 @@ const PaddingWrapper = styled.div`
 `;
 
 // Define what props.theme will look like
-const theme = {
+export const theme = {
   themePrimary: '#4ab4e6',
   themePrimaryLight: '#60d2f6',
   themeDark: '#1f3643',

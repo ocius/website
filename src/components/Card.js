@@ -40,7 +40,7 @@ const CardHeading = styled(Heading)`
 
 const ExternalLink = styled.a`
   border-bottom: medium none;
-  color: #001826;
+  color: ${(props) => props.theme.themeDarker};
   transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1) 0s;
 `;
 
@@ -65,7 +65,7 @@ const Source = styled.div`
 `;
 
 const Date = styled.p`
-  color: #4ab4e6;
+  color: ${(props) => props.theme.themePrimary};
   font-size: 0.9em;
   font-weight: 300;
   line-height: ${28 / 19};

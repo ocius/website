@@ -63,7 +63,7 @@ const H3Heading = styled.h3`
   font-family: inherit;
   font-weight: 400;
   border-bottom: 1px solid #e9e9e9;
-  color: #171717;
+  color: ${(props) => props.theme.themeDark};
   margin-top: 3.2rem;
   padding-bottom: 0.8rem;
   margin-bottom: 1.6rem;

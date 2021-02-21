@@ -37,7 +37,7 @@ const NavbarLink = styled(DynamicLink)`
   }
 
   ${Item}:hover & {
-    color: #60d2f6;
+    color: ${(props) => props.theme.themePrimaryLight};
     background-color: #ffffff;
   }
 
@@ -78,8 +78,8 @@ const MenuItemStyle = css`
   :focus,
   :hover,
   &[data-active] {
-    background: #efefef;
-    color: ${(props) => props.theme.themeDarker};
+    background: ${(props) => props.theme.neutralLightAlt};
+    color: ${(props) => props.theme.themePrimaryLight};
     text-decoration: none;
   }
 `;
