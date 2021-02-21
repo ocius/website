@@ -23,6 +23,10 @@ const LogoLink = styled(GatsbyLink)`
   white-space: nowrap;
   user-select: none;
 
+  @media (min-width: ${mq.min[768]}) and (max-width: ${mq.max[1024]}) {
+    max-width: 160px;
+  }
+
   @media (max-width: ${mq.max[768]}) {
     max-width: 120px;
     margin-right: auto;

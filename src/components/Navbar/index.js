@@ -20,6 +20,10 @@ const NavbarContainer = styled.section`
   width: 100%;
   margin: 30px 0 0;
 
+  @media (min-width: ${mq.min[768]}) and (max-width: ${mq.max[1200]}) {
+    margin: 15px 0 0;
+  }
+
   @media (max-width: ${mq.max[768]}) {
     align-items: center;
     width: auto;
@@ -31,7 +35,7 @@ const SocialLinks = styled.div`
   display: flex;
   flex-wrap: nowrap;
 
-  @media (max-width: ${mq.max[768]}) {
+  @media (max-width: ${mq.max[1024]}) {
     display: none;
   }
 `;

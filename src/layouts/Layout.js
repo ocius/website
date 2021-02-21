@@ -11,6 +11,10 @@ const GlobalStyle = createGlobalStyle`
   body {
     padding-top: 145px;
 
+    @media (min-width: ${mq.min[768]}) and (max-width: ${mq.max[1200]}) {
+      padding-top: 130px;
+    }
+
     @media (max-width: ${mq.max[768]}) {
       padding-top: 50px;
     }
