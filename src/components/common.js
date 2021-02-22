@@ -31,6 +31,23 @@ export const SecondColumnMobile = styled(Col)`
   }
 `;
 
+export const FormWrapper = styled.div`
+  padding: 1.5rem;
+  flex: 1 1;
+
+  hr {
+    border: 0;
+    height: 1px;
+    background: rgba(0, 0, 0, 0.1);
+    margin: 30px 0rem 16px;
+  }
+`;
+
+export const FormItem = styled.div`
+  font-size: 1.5rem;
+  margin: 0 0 1rem;
+`;
+
 const LogoBackgroundDiv = styled.div`
   background-image: ${(props) => `url(${props.$image})` || 'none'};
   background-repeat: no-repeat;

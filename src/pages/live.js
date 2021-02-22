@@ -14,7 +14,7 @@ import useHttp from '../common/api/useHttp';
 import NavContext from '../common/context/NavContext';
 import { useWindowSize } from '../common/hooks';
 import useOnClickOutside from '../common/hooks/useOnClickOutside';
-import { FormWrapper, FormItem } from '../components/carbon/shared';
+import { FormWrapper, FormItem } from '../components/common';
 import SplashScreen from '../components/SplashScreen';
 
 /** Google Maps key */
