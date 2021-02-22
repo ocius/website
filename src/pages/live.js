@@ -3,7 +3,7 @@ import EmptyLayout from '../layouts/EmptyLayout';
 import SEO from '../components/SEO';
 import TextSkeleton from '../components/TextSkeleton';
 import DropdownSkeleton from '../components/DropdownSkeleton';
-import Dropdown from '../components/carbon/Dropdown';
+import Dropdown from '../components/Dropdown';
 import SideNav from '../components/carbon/SideNav';
 import GMap from '../components/Map/GMap';
 import Header from '../components/Navbar/Header';
@@ -109,7 +109,6 @@ const LivePage = () => {
               ) : (
                 <Dropdown
                   id="vessel"
-                  type="default"
                   label="Choose vessel"
                   ariaLabel="Dropdown"
                   titleText="Vessel:"
