@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled, { css } from 'styled-components';
 
 const NavWrapper = styled.div`
@@ -9,7 +10,14 @@ const NavWrapper = styled.div`
   bottom: 0;
   z-index: 5999;
   scrollbar-width: none;
-  transform: translateX(-256px);
+  transform: ${(props) =>
+    props.$direction === 'right' ? 'translateX(256px)' : 'translateX(-256px)'};
+
+  ${(props) =>
+    props.$direction === 'right' &&
+    css`
+      right: 0;
+    `}
 
   @media (min-width: 100rem) {
     transform: translateX(0px);
@@ -27,8 +35,21 @@ const NavWrapper = styled.div`
     `}
 `;
 
-const LeftNavWrapper = ({ expanded, children }) => (
-  <NavWrapper $expanded={expanded}>{children}</NavWrapper>
+const SideNavWrapper = ({ expanded, direction, children }) => (
+  <NavWrapper $expanded={expanded} $direction={direction}>
+    {children}
+  </NavWrapper>
 );
 
-export default LeftNavWrapper;
+SideNavWrapper.propTypes = {
+  children: PropTypes.node.isRequired,
+  expanded: PropTypes.bool,
+  direction: PropTypes.oneOf(['left', 'right']),
+};
+
+SideNavWrapper.defaultProps = {
+  expanded: false,
+  direction: 'left',
+};
+
+export default SideNavWrapper;

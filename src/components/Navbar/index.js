@@ -2,7 +2,8 @@ import React, { useContext, useRef } from 'react';
 import styled from 'styled-components';
 import Navbar from './Navbar';
 import SiteLogo from './SiteLogo';
-import MainNav from '../carbon/MainNav';
+import SideNav from '../SideNav';
+import SideNavWrapper from '../SideNav/SideNavWrapper';
 import HeaderMenuButton from './HeaderMenuButton';
 import NavbarItems from './NavbarItems';
 import NavbarItem from './NavbarItem';
@@ -97,16 +98,18 @@ export default () => {
           />
         </NavbarContainer>
       </Navbar>
-      <MainNav>
-        {navItems.map((item) => (
-          <LeftNavItem
-            menuItems={item.pages}
-            title={item.title}
-            path={item.path}
-            key={navItems.indexOf(item)}
-          />
-        ))}
-      </MainNav>
+      <SideNavWrapper expanded={isMenuOpen} direction="right">
+        <SideNav expanded defaultExpanded aria-label="Side navigation">
+          {navItems.map((item) => (
+            <LeftNavItem
+              menuItems={item.pages}
+              title={item.title}
+              path={item.path}
+              key={navItems.indexOf(item)}
+            />
+          ))}
+        </SideNav>
+      </SideNavWrapper>
     </div>
   );
 };

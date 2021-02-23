@@ -20,6 +20,7 @@ const Nav = styled.nav`
   background-color: #ffffff;
   transition: width 0.11s cubic-bezier(0.2, 0, 1, 0.9);
   will-change: width;
+  padding: 1.6rem 0 0;
 
   ${(props) =>
     !props.$expanded &&
