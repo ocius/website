@@ -87,7 +87,7 @@ export default () => (
                       <li>Gateway Communications</li>
                     </List>
 
-                    <Button color="blue" size="tiny" href="/defence">
+                    <Button color="blue" size="tiny" href="/defence/">
                       Find out more
                     </Button>
                   </Wrapper>
@@ -112,7 +112,7 @@ export default () => (
                       <li>Security</li>
                     </List>
 
-                    <Button color="blue" size="tiny" href="/oil-and-gas">
+                    <Button color="blue" size="tiny" href="/oil-and-gas/">
                       Find out more
                     </Button>
                   </Wrapper>
@@ -136,7 +136,7 @@ export default () => (
                       <li>Fisheries</li>
                     </List>
 
-                    <Button color="blue" size="tiny" href="/science">
+                    <Button color="blue" size="tiny" href="/science/">
                       Find out more
                     </Button>
                   </Wrapper>

@@ -152,7 +152,7 @@ const IndexPage = ({ data }) => (
               </ul>
             </Col>
           </Row>
-          <Button color="blue" size="tiny" href="/usv">
+          <Button color="blue" size="tiny" href="/usv/">
             Find out more
           </Button>
         </Container>

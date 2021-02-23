@@ -65,7 +65,7 @@ const Awards = ({ data }) => (
                 </p>
                 <p>
                   <strong>2018</strong> – Awarded{' '}
-                  <GatsbyLink to="blog/defence-connect-ocius-technology-awarded-defence-innovation-hub-contract/">
+                  <GatsbyLink to="/blog/defence-connect-ocius-technology-awarded-defence-innovation-hub-contract/">
                     $1.6M DST Group Defence Innovation Hub contract
                   </GatsbyLink>{' '}
                   to demonstrate a network of intelligent persistent uncrewed surface vessels
@@ -871,7 +871,7 @@ const OurStory = ({ data }) => (
 );
 
 const SubHeading = styled.p`
-  color: #4ab4e6;
+  color: ${(props) => props.theme.themePrimary};
   margin-top: 0;
 `;
 

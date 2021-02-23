@@ -58,7 +58,7 @@ const USVPage = ({ data }) => (
             <Heading level={2} size="medium" weight="normal" as="p">
               Persistent maritime surveillance, defences from the ground up.
             </Heading>
-            <Button size="tiny" color="blue" href="/usv#technical">
+            <Button size="tiny" color="blue" href="/usv/#technical">
               Find out more
             </Button>
             <Spacing $value="380px" $xsValue="80px" />
@@ -327,7 +327,7 @@ const USVPage = ({ data }) => (
               <li>Scalable from 1.1m/3.6’</li>
               <li>10kg/22lb lightship &amp; 10kg/22lb payload</li>
             </ul>
-            <Button color="blue" size="tiny" href="/usv#technical">
+            <Button color="blue" size="tiny" href="/usv/#technical">
               Find out more
             </Button>
           </Col>
@@ -342,7 +342,7 @@ const USVPage = ({ data }) => (
               <li>Payload up to 600kg/1320lb</li>
               <li>Keel cassette winch to 200m</li>
             </ul>
-            <Button color="blue" size="tiny" href="/usv#technical">
+            <Button color="blue" size="tiny" href="/usv/#technical">
               Find out more
             </Button>
           </Col>
@@ -357,7 +357,7 @@ const USVPage = ({ data }) => (
               <li>Scalable</li>
               <li>Mono or multihull design</li>
             </ul>
-            <Button color="blue" size="tiny" href="/usv#technical">
+            <Button color="blue" size="tiny" href="/usv/#technical">
               Find out more
             </Button>
           </Col>
