@@ -38,8 +38,20 @@ const SideNavWrapper = ({ expanded, direction, children }) => (
 );
 
 SideNavWrapper.propTypes = {
+  /**
+   * Specify the children to be rendered inside of the `SideNavWrapper`
+   */
   children: PropTypes.node.isRequired,
+
+  /**
+   * Property to indicate if the side nav container is open (or not). Use to
+   * keep local state and styling in step with the SideNav expansion state.
+   */
   expanded: PropTypes.bool,
+
+  /**
+   * Property to indicate the side nav open direction - from left or from right.
+   */
   direction: PropTypes.oneOf(['left', 'right']),
 };
 

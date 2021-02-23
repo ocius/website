@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import Navbar from './Navbar';
 import SiteLogo from './SiteLogo';
 import SideNav from '../SideNav';
+import SideNavItems from '../SideNav/SideNavItems';
 import SideNavWrapper from '../SideNav/SideNavWrapper';
 import HeaderMenuButton from './HeaderMenuButton';
 import NavbarItems from './NavbarItems';
@@ -109,14 +110,16 @@ export default () => {
       </Navbar>
       <SideNavWrapper expanded={isMenuOpen} direction="right">
         <SideNav expanded defaultExpanded aria-label="Side navigation">
-          {navItems.map((item) => (
-            <LeftNavItem
-              menuItems={item.pages}
-              title={item.title}
-              path={item.path}
-              key={navItems.indexOf(item)}
-            />
-          ))}
+          <SideNavItems>
+            {navItems.map((item) => (
+              <LeftNavItem
+                menuItems={item.pages}
+                title={item.title}
+                path={item.path}
+                key={navItems.indexOf(item)}
+              />
+            ))}
+          </SideNavItems>
         </SideNav>
       </SideNavWrapper>
     </div>

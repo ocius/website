@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import SideNavLinkText from './SideNavLinkText';
-import Link from './Link';
+import Link from '../Navbar/Link';
 import detectActive from '../../common/detectActive';
 
 const NavLink = styled(Link)`

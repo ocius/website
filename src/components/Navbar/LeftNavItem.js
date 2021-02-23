@@ -1,9 +1,9 @@
 import React, { useContext } from 'react';
 import { Location } from '@reach/router';
 
-import SideNavMenu from './SideNavMenu';
-import SideNavMenuItem from './SideNavMenuItem';
-import SideNavLink from './SideNavLink';
+import SideNavMenu from '../SideNav/SideNavMenu';
+import SideNavMenuItem from '../SideNav/SideNavMenuItem';
+import SideNavLink from '../SideNav/SideNavLink';
 
 import { MenuContext } from '../../common/context/MainNavContext';
 
