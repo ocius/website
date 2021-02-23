@@ -8,33 +8,30 @@ const useHttp = (url, interval = null, dependencies = []) => {
   const [fetchedData, setFetchedData] = useState([]);
 
   /**
-   * Fetch and return the data
-   */
-  const fetchData = () => {
-    axios
-      .get(url)
-      .then((response) => {
-        setIsLoading(false);
-        setFetchedData(response.data);
-      })
-      .catch((error) => {
-        // eslint-disable-next-line no-console
-        console.log(`😱 useHttp() request failed: ${error}`);
-        setIsLoading(false);
-        // Stop execute javascript
-        return false;
-      });
-  };
-
-  /**
    * Check if component was unmounted to prevent memory leaks
    */
   const effectCallback = () => {
     // New stuff here
     let unmounted = false;
-    if (!unmounted) {
-      fetchData();
-    }
+
+    // Fetch and return the data
+    axios
+      .get(url)
+      .then((response) => {
+        // Avoid memory leaks
+        if (!unmounted) {
+          setIsLoading(false);
+          setFetchedData(response.data);
+        }
+      })
+      .catch((error) => {
+        // eslint-disable-next-line no-console
+        console.log(`😱 useHttp() request failed: ${error}`);
+        if (!unmounted) setIsLoading(false);
+        // Stop execute javascript
+        return false;
+      });
+
     return () => {
       // Bye bye!
       unmounted = true;
