@@ -2,12 +2,11 @@ import React from 'react';
 import { Link as GatsbyLink } from 'gatsby';
 import styled from 'styled-components';
 import detectActive from '../../common/detectActive';
-import font from '../../common/font';
 import mq from '../../common/mq';
 import iconFromString from '../../common/iconFromString';
 
 const Wrapper = styled.div`
-  font-family: ${font('main')};
+  font-family: ${(props) => props.theme.fonts.main};
   position: fixed;
   display: flex;
   justify-content: space-around;
@@ -41,7 +40,7 @@ const Link = styled(GatsbyLink)`
   &[data-active] {
     text-decoration: none;
     font-weight: bold;
-    color: ${(props) => props.theme.themePrimaryLight};
+    color: ${(props) => props.theme.colors.themePrimaryLight};
   }
 `;
 

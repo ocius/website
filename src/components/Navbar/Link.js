@@ -19,9 +19,9 @@ const NavLink = styled(DynamicLink)`
   font-weight: 400;
 
   &[data-active],
-  &:hover {
-    color: ${(props) => props.theme.themeDark};
-    background-color: ${(props) => props.theme.neutralLight};
+  :hover {
+    color: ${(props) => props.theme.colors.themeDark};
+    background-color: ${(props) => props.theme.colors.neutralLight};
   }
 
   &[data-active] :before {
@@ -30,7 +30,7 @@ const NavLink = styled(DynamicLink)`
     bottom: 0;
     left: 0;
     width: 4px;
-    background-color: ${(props) => props.theme.themePrimary};
+    background-color: ${(props) => props.theme.colors.themePrimary};
     content: '';
   }
 `;

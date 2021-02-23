@@ -4,7 +4,6 @@ import styled from 'styled-components';
 import { Link as GatsbyLink } from 'gatsby';
 import Img from 'gatsby-image';
 
-import font from '../common/font';
 import Heading from './Heading';
 import Button from './Button';
 import mq from '../common/mq';
@@ -13,8 +12,8 @@ const Container = styled.article`
   display: flex;
   flex-direction: column;
   height: 100%;
-  font-family: ${font('main')};
-  color: #001826;
+  font-family: ${(props) => props.theme.fonts.main};
+  color: ${(props) => props.theme.colors.themeDarker};
   background-color: #ffffff;
   max-width: 540px;
   padding: 1em;
@@ -60,7 +59,7 @@ const StyledHeading = styled(Heading)`
 `;
 
 const Date = styled.p`
-  color: #4ab4e6;
+  color: ${(props) => props.theme.colors.themePrimary};
   font-size: 0.9em;
   font-weight: 300;
   line-height: ${28 / 19};
@@ -75,7 +74,7 @@ const ImageContainer = styled.figure`
   box-shadow: rgba(46, 41, 51, 0.08) 0px 1px 2px, rgba(71, 63, 79, 0.08) 0px 2px 4px;
   transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1) 0s;
 
-  &:hover {
+  :hover {
     transform: translateY(-0.25rem);
     box-shadow: rgba(46, 41, 51, 0.08) 0px 4px 8px, rgba(71, 63, 79, 0.16) 0px 8px 16px;
   }

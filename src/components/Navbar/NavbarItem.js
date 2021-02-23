@@ -15,8 +15,8 @@ const Item = styled.li`
   font-weight: 300;
   line-height: 1.4;
 
-  &:hover,
-  &:focus-within {
+  :hover,
+  :focus-within {
     ul {
       display: block;
     }
@@ -30,24 +30,24 @@ const NavbarLink = styled(DynamicLink)`
   font-weight: 500;
   line-height: 100%;
   text-decoration: none;
-  color: ${(props) => props.theme.themeDarker};
+  color: ${(props) => props.theme.colors.themeDarker};
 
   :hover {
     text-decoration: none;
   }
 
   ${Item}:hover & {
-    color: ${(props) => props.theme.themePrimaryLight};
+    color: ${(props) => props.theme.colors.themePrimaryLight};
     background-color: #ffffff;
   }
 
   :focus {
-    background: ${(props) => props.theme.neutralLight};
-    color: ${(props) => props.theme.themeDarker};
+    background: ${(props) => props.theme.colors.neutralLight};
+    color: ${(props) => props.theme.colors.themeDarker};
   }
 
   &[data-active] {
-    background-color: ${(props) => props.theme.neutralLight};
+    background-color: ${(props) => props.theme.colors.neutralLight};
   }
 `;
 
@@ -77,13 +77,13 @@ const MenuItemStyle = css`
 
   :focus,
   :hover {
-    background: ${(props) => props.theme.neutralLightAlt};
-    color: ${(props) => props.theme.themePrimaryLight};
+    background: ${(props) => props.theme.colors.neutralLightAlt};
+    color: ${(props) => props.theme.colors.themePrimaryLight};
     text-decoration: none;
   }
 
   &[data-active] {
-    background: ${(props) => props.theme.neutralLightAlt};
+    background: ${(props) => props.theme.colors.neutralLightAlt};
   }
 `;
 
@@ -109,7 +109,7 @@ const Menu = styled.ul`
   text-align: left;
   list-style: none;
 
-  &:after {
+  :after {
     content: '';
     border: solid #cfc6c0;
     border-width: 0 1px 1px 0;
@@ -125,7 +125,7 @@ const Menu = styled.ul`
 
   li {
     border-bottom: 1px solid rgba(51, 51, 51, 0.1);
-    &:last-child {
+    :last-child {
       border-bottom: none;
     }
   }

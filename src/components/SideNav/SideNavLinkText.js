@@ -6,7 +6,7 @@ const LinkText = styled.span`
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
-  color: ${(props) => props.theme.neutralPrimary};
+  color: ${(props) => props.theme.colors.neutralPrimary};
   font-size: 1.4rem;
   line-height: 2rem;
   letter-spacing: 0.1px;

@@ -5,7 +5,6 @@ import { switchProp } from 'styled-tools';
 import cn from 'classnames';
 import { OutboundLink as GtagLink } from 'gatsby-plugin-gtag';
 import propTypes from '../common/propTypes';
-import font from '../common/font';
 import DynamicLink from './DynamicLink';
 
 const borderStyle = css`
@@ -57,7 +56,7 @@ const ButtonStyles = css`
   -moz-box-align: center;
   align-items: center;
   font-weight: 700;
-  font-family: ${font('bold')};
+  font-family: ${(props) => props.theme.fonts.bold};
   line-height: 1;
   overflow: hidden;
   padding-left: ${30 / 13}em;
@@ -81,55 +80,55 @@ const ButtonStyles = css`
 
   ${switchProp('$color', {
     gray: css`
-      background-color: ${(props) => props.theme.neutralLight};
-      color: ${(props) => props.theme.neutralPrimary};
-      box-shadow: 0 0 0 2px ${(props) => props.theme.neutralPrimary} inset;
+      background-color: ${(props) => props.theme.colors.neutralLight};
+      color: ${(props) => props.theme.colors.neutralPrimary};
+      box-shadow: 0 0 0 2px ${(props) => props.theme.colors.neutralPrimary} inset;
 
       :focus,
       :hover,
       :active {
-        background-color: ${(props) => props.theme.neutralPrimary};
-        color: ${(props) => props.theme.neutralLight};
+        background-color: ${(props) => props.theme.colors.neutralPrimary};
+        color: ${(props) => props.theme.colors.neutralLight};
       }
     `,
 
     blue: css`
-      background-color: ${(props) => props.theme.themePrimary};
-      color: ${(props) => props.theme.bgPrimary};
-      box-shadow: 0 0 0 2px ${(props) => props.theme.themePrimary} inset;
+      background-color: ${(props) => props.theme.colors.themePrimary};
+      color: ${(props) => props.theme.colors.bgPrimary};
+      box-shadow: 0 0 0 2px ${(props) => props.theme.colors.themePrimary} inset;
 
       :focus,
       :hover,
       :active {
-        background-color: ${(props) => props.theme.themeDark};
-        color: ${(props) => props.theme.neutralLight};
+        background-color: ${(props) => props.theme.colors.themeDark};
+        color: ${(props) => props.theme.colors.neutralLight};
       }
     `,
 
     white: css`
-      background-color: ${(props) => props.theme.bgPrimary};
+      background-color: ${(props) => props.theme.colors.bgPrimary};
       background-size: 4rem 4rem;
-      color: ${(props) => props.theme.themeDark};
-      box-shadow: 0 0 0 2px ${(props) => props.theme.themePrimary} inset;
+      color: ${(props) => props.theme.colors.themeDark};
+      box-shadow: 0 0 0 2px ${(props) => props.theme.colors.themePrimary} inset;
 
       :focus,
       :hover,
       :active {
-        color: ${(props) => props.theme.bgPrimary};
-        background-color: ${(props) => props.theme.themePrimary};
+        color: ${(props) => props.theme.colors.bgPrimary};
+        background-color: ${(props) => props.theme.colors.themePrimary};
       }
     `,
 
     transparent: css`
       background-color: transparent;
-      color: ${(props) => props.theme.bgPrimary};
-      box-shadow: 0 0 0 2px ${(props) => props.theme.themePrimary} inset;
+      color: ${(props) => props.theme.colors.bgPrimary};
+      box-shadow: 0 0 0 2px ${(props) => props.theme.colors.themePrimary} inset;
 
       :focus,
       :hover,
       :active {
         background-color: transparent;
-        color: ${(props) => props.theme.themePrimary};
+        color: ${(props) => props.theme.colors.themePrimary};
       }
     `,
   })}

@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { Link } from '@reach/router';
 import styled, { css } from 'styled-components';
 import detectActive from '../../common/detectActive';
-import font from '../../common/font';
 
 const NavItem = styled.li`
   box-sizing: border-box;
@@ -13,15 +12,15 @@ const NavItem = styled.li`
   font-size: 100%;
   font-family: inherit;
   vertical-align: baseline;
-  background-color: ${(props) => props.theme.neutralLightAlt};
+  background-color: ${(props) => props.theme.colors.neutralLightAlt};
   display: flex;
   padding: 0;
   cursor: pointer;
   height: 4rem;
   transition: background-color 70ms cubic-bezier(0.2, 0, 0.38, 0.9);
 
-  &:hover {
-    background-color: ${(props) => props.theme.neutralLightAlt};
+  :hover {
+    background-color: ${(props) => props.theme.colors.neutralLightAlt};
   }
 
   @media (min-width: 67.2rem) {
@@ -65,11 +64,11 @@ const StyledLink = styled(Link)`
     outline 70ms cubic-bezier(0.2, 0, 0.38, 0.9);
 
   @media (min-width: 67.2rem) {
-    color: ${(props) => props.theme.themePrimary};
+    color: ${(props) => props.theme.colors.themePrimary};
     font-weight: 400;
-    font-family: ${font('bold')};
+    font-family: ${(props) => props.theme.fonts.bold};
     border-bottom: 3px solid #e0e0e0;
-    box-shadow: inset 0px 0px 1px ${(props) => props.theme.themeDark};
+    box-shadow: inset 0px 0px 1px ${(props) => props.theme.colors.themeDark};
     padding: 0.8rem 1.6rem;
     width: 16rem;
     margin: 0;
@@ -85,19 +84,19 @@ const StyledLink = styled(Link)`
 
   &[data-active],
   &[aria-current*='page'] {
-    color: ${(props) => props.theme.themeDark};
+    color: ${(props) => props.theme.colors.themeDark};
     background-color: #edf7fa;
-    box-shadow: inset 0px 0px 1px ${(props) => props.theme.themeDark};
+    box-shadow: inset 0px 0px 1px ${(props) => props.theme.colors.themeDark};
     border-bottom: none;
   }
 
-  &:hover {
+  :hover {
     text-decoration: none;
   }
 
-  &:focus,
-  &:active {
-    outline: 2px solid ${(props) => props.theme.themePrimaryLight};
+  :focus,
+  :active {
+    outline: 2px solid ${(props) => props.theme.colors.themePrimaryLight};
     outline-offset: -2px;
   }
 `;

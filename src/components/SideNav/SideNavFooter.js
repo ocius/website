@@ -6,7 +6,7 @@ import Icon from '../Icon';
 const NavFooter = styled.footer`
   flex: 0 0 4.8rem;
   width: 100%;
-  background-color: ${(props) => props.theme.bgPrimary};
+  background-color: ${(props) => props.theme.colors.bgPrimary};
 `;
 
 const ButtonToggle = styled.button`
@@ -29,7 +29,7 @@ const ButtonToggle = styled.button`
   transition: outline 0.11s;
 
   :focus {
-    outline: 2px solid ${(props) => props.theme.themePrimary};
+    outline: 2px solid ${(props) => props.theme.colors.themePrimary};
     outline-offset: -2px;
   }
 

@@ -871,7 +871,7 @@ const OurStory = ({ data }) => (
 );
 
 const SubHeading = styled.p`
-  color: ${(props) => props.theme.themePrimary};
+  color: ${(props) => props.theme.colors.themePrimary};
   margin-top: 0;
 `;
 

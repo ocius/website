@@ -25,7 +25,7 @@ const CardWrapper = styled.div`
   max-width: 100%;
   position: relative;
 
-  &:hover ${CardThumbnail} {
+  :hover ${CardThumbnail} {
     transform: translateY(-0.25rem);
     box-shadow: rgba(46, 41, 51, 0.08) 0px 4px 8px, rgba(71, 63, 79, 0.16) 0px 8px 16px;
   }
@@ -40,7 +40,7 @@ const CardHeading = styled(Heading)`
 
 const ExternalLink = styled.a`
   border-bottom: medium none;
-  color: ${(props) => props.theme.themeDarker};
+  color: ${(props) => props.theme.colors.themeDarker};
   transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1) 0s;
 `;
 
@@ -65,7 +65,7 @@ const Source = styled.div`
 `;
 
 const Date = styled.p`
-  color: ${(props) => props.theme.themePrimary};
+  color: ${(props) => props.theme.colors.themePrimary};
   font-size: 0.9em;
   font-weight: 300;
   line-height: ${28 / 19};

@@ -4,14 +4,12 @@ import styled, { css } from 'styled-components';
 import { switchProp } from 'styled-tools';
 import BackgroundImage from 'gatsby-background-image';
 
-import font from '../common/font';
-
 import MaskOverlay from './MaskOverlay';
 import Container from './Container';
 
 export const ContainerStyle = css`
   color: #ffffff;
-  font-family: ${font('main')};
+  font-family: ${(props) => props.theme.fonts.main};
   margin-left: auto;
   margin-right: auto;
   position: relative;

@@ -28,17 +28,17 @@ const SubmenuButton = styled.button`
   align-items: center;
   height: 3.2rem;
   padding: 0 1.6rem;
-  color: ${(props) => props.theme.neutralPrimary};
+  color: ${(props) => props.theme.colors.neutralPrimary};
   transition: color 0.11s, background-color 0.11s, outline 0.11s;
   user-select: none;
 
   :hover {
-    color: ${(props) => props.theme.themeDark};
-    background-color: ${(props) => props.theme.neutralLight};
+    color: ${(props) => props.theme.colors.themeDark};
+    background-color: ${(props) => props.theme.colors.neutralLight};
   }
 
   :focus {
-    outline: 2px solid ${(props) => props.theme.themePrimary};
+    outline: 2px solid ${(props) => props.theme.colors.themePrimary};
     outline-offset: -2px;
   }
 
@@ -47,8 +47,8 @@ const SubmenuButton = styled.button`
     css`
       &[aria-expanded='false'] {
         position: relative;
-        color: ${props.theme.themeDark};
-        background-color: ${props.theme.neutralLight};
+        color: ${props.theme.colors.themeDark};
+        background-color: ${props.theme.colors.neutralLight};
 
         :before {
           position: absolute;
@@ -56,7 +56,7 @@ const SubmenuButton = styled.button`
           bottom: 0;
           left: 0;
           width: 4px;
-          background-color: ${props.theme.themePrimary};
+          background-color: ${props.theme.colors.themePrimary};
           content: '';
         }
       }

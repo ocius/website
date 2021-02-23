@@ -12,7 +12,7 @@ const Wrapper = styled.div`
   font-family: inherit;
   vertical-align: baseline;
   letter-spacing: 0.16px;
-  color: ${(props) => props.theme.themeDark};
+  color: ${(props) => props.theme.colors.themeDark};
   height: auto;
   width: 100%;
   position: relative;
@@ -41,7 +41,7 @@ const Nav = styled.ul`
   justify-content: center;
   flex-direction: column;
   z-index: 9;
-  background: ${(props) => props.theme.neutralLightAlt};
+  background: ${(props) => props.theme.colors.neutralLightAlt};
   border-bottom: 0.25px solid rgb(31, 54, 67, 0.4);
   transition: max-height 70ms cubic-bezier(0.2, 0, 0.38, 0.9);
   max-height: 600px;
@@ -67,13 +67,13 @@ const TabsTrigger = styled.div`
   padding: 0 1.6rem;
   height: 4rem;
   cursor: pointer;
-  color: ${(props) => props.theme.themeDark};
+  color: ${(props) => props.theme.colors.themeDark};
   outline: 2px solid transparent;
   background-color: #f4f4f4;
 
   &:focus,
   &:active {
-    outline: 2px solid ${(props) => props.theme.themePrimaryLight};
+    outline: 2px solid ${(props) => props.theme.colors.themePrimaryLight};
     outline-offset: -2px;
   }
 
@@ -84,7 +84,7 @@ const TabsTrigger = styled.div`
   svg {
     width: 1.2rem;
     height: 0.7rem;
-    fill: ${(props) => props.theme.themeDark};
+    fill: ${(props) => props.theme.colors.themeDark};
     transition: transform 70ms cubic-bezier(0.2, 0, 0.38, 0.9);
   }
 `;
@@ -92,7 +92,7 @@ const TabsTrigger = styled.div`
 const TabsTriggerText = styled.a`
   text-decoration: none;
   padding-top: 2px;
-  color: ${(props) => props.theme.themeDark};
+  color: ${(props) => props.theme.colors.themeDark};
   font-weight: 400;
 `;
 

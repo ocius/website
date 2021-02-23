@@ -16,7 +16,7 @@ const ListMenu = styled.div`
   transition: max-height 0.11s cubic-bezier(0.2, 0, 0.38, 0.9);
 
   :focus {
-    outline: 1px solid ${(props) => props.theme.themePrimary};
+    outline: 1px solid ${(props) => props.theme.colors.themePrimary};
   }
 `;
 
