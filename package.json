@@ -39,7 +39,7 @@
     "gatsby-transformer-remark": "^2.16.0",
     "gatsby-transformer-sharp": "^2.12.0",
     "gatsby-transformer-yaml": "^2.11.0",
-    "lodash": "^4.17.20",
+    "lodash": "^4.17.21",
     "node-sass": "^5.0.0",
     "object-assign": "^4.1.1",
     "prop-types": "^15.7.2",
@@ -54,7 +54,7 @@
     "react-slick": "^0.28.0",
     "react-uid": "^2.3.1",
     "read-more-react": "^1.0.10",
-    "sharp": "^0.27.1",
+    "sharp": "^0.27.2",
     "styled-components": "^5.2.1",
     "styled-tools": "^1.7.2"
   },
@@ -69,12 +69,12 @@
     "babel-eslint": "^10.1.0",
     "eslint": "^7.20.0",
     "eslint-config-airbnb": "^18.2.1",
-    "eslint-config-prettier": "^7.2.0",
+    "eslint-config-prettier": "^8.0.0",
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-jsx-a11y": "^6.4.1",
     "eslint-plugin-prettier": "^3.3.1",
     "eslint-plugin-react": "^7.22.0",
-    "husky": "^5.0.9",
+    "husky": "^5.1.1",
     "prettier": "^2.2.1"
   },
   "husky": {

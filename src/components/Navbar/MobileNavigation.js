@@ -55,10 +55,10 @@ const MobileNavItem = ({ linkTo, label, icon }) => (
 const MobileNavigation = () => (
   <Wrapper>
     <MobileNavItem linkTo="/" label="Home" icon="Home" />
-    <MobileNavItem linkTo="/about" label="About" icon="Idea" />
-    <MobileNavItem linkTo="/live" label="Live" icon="Globe" />
-    <MobileNavItem linkTo="/usv" label="Drones" icon="Drone" />
-    <MobileNavItem linkTo="/news" label="News" icon="News" />
+    <MobileNavItem linkTo="/about/" label="About" icon="Idea" />
+    <MobileNavItem linkTo="/live/" label="Live" icon="Globe" />
+    <MobileNavItem linkTo="/usv/" label="Drones" icon="Drone" />
+    <MobileNavItem linkTo="/news/" label="News" icon="News" />
   </Wrapper>
 );
 
