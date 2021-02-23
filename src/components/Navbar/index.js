@@ -1,4 +1,4 @@
-import React, { useContext, useRef } from 'react';
+import React, { useContext, useRef, useEffect } from 'react';
 import styled from 'styled-components';
 import Navbar from './Navbar';
 import SiteLogo from './SiteLogo';
@@ -11,6 +11,7 @@ import LeftNavItem from './LeftNavItem';
 import SocialIconButton from '../SocialIconButton';
 import Button from '../Button';
 import mq from '../../common/mq';
+import useWindowSize from '../../common/hooks/useWindowSize';
 import useNavItems from '../../common/hooks/useNavItems';
 import useOnClickOutside from '../../common/hooks/useOnClickOutside';
 import { MenuContext } from '../../common/context/MainNavContext';
@@ -46,6 +47,7 @@ export default () => {
   const navItems = useNavItems();
   // Save ref of navbar + sidenav for future reference
   const node = useRef();
+  const windowSize = useWindowSize();
   const { isMenuOpen, toggleMenuMode } = useContext(MenuContext);
 
   const hamburgerClickHandler = () => {
@@ -59,6 +61,13 @@ export default () => {
       toggleMenuMode();
     }
   });
+
+  // Keep mobile navigation closed on big screens
+  useEffect(() => {
+    if (windowSize.innerWidth > 768 && isMenuOpen) {
+      toggleMenuMode();
+    }
+  }, [windowSize, isMenuOpen]);
 
   return (
     <div ref={node}>

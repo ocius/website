@@ -19,10 +19,6 @@ const NavWrapper = styled.div`
       right: 0;
     `}
 
-  @media (min-width: 100rem) {
-    transform: translateX(0px);
-  }
-
   ${(props) =>
     props.$expanded &&
     css`
