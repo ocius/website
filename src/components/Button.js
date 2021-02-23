@@ -4,7 +4,6 @@ import styled, { css } from 'styled-components';
 import { switchProp } from 'styled-tools';
 import cn from 'classnames';
 import { OutboundLink as GtagLink } from 'gatsby-plugin-gtag';
-import propTypes from '../common/propTypes';
 import DynamicLink from './DynamicLink';
 
 const borderStyle = css`
@@ -309,7 +308,9 @@ Button.propTypes = {
   /**
    * Special styles passed in props
    */
-  customStyles: propTypes.style,
+  customStyles: PropTypes.objectOf(
+    PropTypes.oneOfType([PropTypes.string, PropTypes.number, PropTypes.object])
+  ),
 
   /**
    * Use a border
