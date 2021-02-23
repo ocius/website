@@ -29,16 +29,16 @@ const Header = styled.header`
 `;
 
 const WebsiteHeader = () => {
-  const { leftNavIsOpen, toggleNavState } = useContext(NavContext);
+  const { sideNavIsOpen, toggleNavState } = useContext(NavContext);
 
   return (
     <Header aria-label="Header">
       <HeaderMenuButton
         aria-label="Open menu"
         onClick={() => {
-          toggleNavState('leftNavIsOpen');
+          toggleNavState('sideNavIsOpen');
         }}
-        isActive={leftNavIsOpen}
+        isActive={sideNavIsOpen}
       />
       <Logo maxHeight="20px" />
     </Header>

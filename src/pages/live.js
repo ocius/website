@@ -1,10 +1,11 @@
-import React, { useState, useRef, useContext } from 'react';
+import React, { useState, useRef, useContext, useEffect } from 'react';
 import EmptyLayout from '../layouts/EmptyLayout';
 import SEO from '../components/SEO';
 import TextSkeleton from '../components/TextSkeleton';
 import DropdownSkeleton from '../components/DropdownSkeleton';
 import Dropdown from '../components/Dropdown';
-import SideNav from '../components/carbon/SideNav';
+import SideNav from '../components/SideNav';
+import SideNavWrapper from '../components/SideNav/SideNavWrapper';
 import GMap from '../components/Map/GMap';
 import Header from '../components/Navbar/Header';
 import MobileNavigation from '../components/Navbar/MobileNavigation';
@@ -95,37 +96,46 @@ const LivePage = () => {
     }
   });
 
+  // Keep side navigation open on big screens
+  useEffect(() => {
+    if (windowSize.innerWidth > 1056 && !sideNavIsOpen) {
+      toggleNavState('sideNavIsOpen', 'open');
+    }
+  }, [windowSize, sideNavIsOpen]);
+
   return (
     <EmptyLayout>
       <SEO title="Live" description="See where Bluebottles are at any time – LIVE." />
       <main ref={node}>
         <Header />
         <MobileNavigation />
-        <SideNav>
-          <FormWrapper>
-            <FormItem>
+        <SideNavWrapper expanded={sideNavIsOpen}>
+          <SideNav expanded defaultExpanded aria-label="Side navigation">
+            <FormWrapper>
+              <FormItem>
+                {isLoading ? (
+                  <DropdownSkeleton label="Vessel:" />
+                ) : (
+                  <Dropdown
+                    id="vessel"
+                    label="Choose vessel"
+                    ariaLabel="Dropdown"
+                    titleText="Vessel:"
+                    onChange={handleVesselChange}
+                    items={droneNames}
+                    itemToString={droneName}
+                    selectedItem={droneNames[currentVessel]}
+                  />
+                )}
+              </FormItem>
               {isLoading ? (
-                <DropdownSkeleton label="Vessel:" />
+                <TextSkeleton count={8} />
               ) : (
-                <Dropdown
-                  id="vessel"
-                  label="Choose vessel"
-                  ariaLabel="Dropdown"
-                  titleText="Vessel:"
-                  onChange={handleVesselChange}
-                  items={droneNames}
-                  itemToString={droneName}
-                  selectedItem={droneNames[currentVessel]}
-                />
+                <VesselStatus data={orderedDrones[currentVessel]} />
               )}
-            </FormItem>
-            {isLoading ? (
-              <TextSkeleton count={8} />
-            ) : (
-              <VesselStatus data={orderedDrones[currentVessel]} />
-            )}
-          </FormWrapper>
-        </SideNav>
+            </FormWrapper>
+          </SideNav>
+        </SideNavWrapper>
       </main>
       <SplashScreen
         isLoading={isLoading}

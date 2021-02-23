@@ -1,7 +1,7 @@
 import React, { useReducer } from 'react';
 
 const NavContext = React.createContext({
-  leftNavIsOpen: false,
+  sideNavIsOpen: false,
   switcherIsOpen: false,
 });
 
@@ -16,8 +16,8 @@ const reducer = (state, action) => {
   }
 };
 export const NavContextProvider = ({ children }) => {
-  const [{ leftNavIsOpen, switcherIsOpen }, dispatch] = useReducer(reducer, {
-    leftNavIsOpen: false,
+  const [{ sideNavIsOpen, switcherIsOpen }, dispatch] = useReducer(reducer, {
+    sideNavIsOpen: false,
     switcherIsOpen: false,
   });
 
@@ -28,7 +28,7 @@ export const NavContextProvider = ({ children }) => {
   return (
     <NavContext.Provider
       value={{
-        leftNavIsOpen,
+        sideNavIsOpen,
         switcherIsOpen,
         toggleNavState,
       }}
