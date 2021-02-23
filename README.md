@@ -10,6 +10,8 @@ Also,
 
 - We removed ~~[Carbon Components](https://www.carbondesignsystem.com/)~~. Unfortunately, this bloated library don't mix very well with styled-components. It added a ton of dead code and unnecessary dependencies, even though we used only a few controls. R.I.P.
 - HTML Microdata was added to contact page.
+- AJAX pagination was added to media coverage page.
+- Navbar links now are not hardcoded now, they are queried using GraphQL from YAML file.
 - Better optimization for tablets, mobile devices.
 - Some of the bugs were fixed, memory leaks.
 - More consistent codebase, code was heavily refactored and simplified.
