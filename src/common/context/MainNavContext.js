@@ -2,7 +2,7 @@ import React, { createContext, useState } from 'react';
 import PropTypes from 'prop-types';
 
 export const MenuContext = createContext({
-  isMenuOpen: true,
+  isMenuOpen: false,
   toggleMenu: () => {},
 });
 
