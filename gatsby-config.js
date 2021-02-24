@@ -92,6 +92,7 @@ module.exports = {
     `gatsby-transformer-yaml`,
     `gatsby-plugin-react-helmet`,
     `gatsby-transformer-sharp`,
+    `gatsby-plugin-optimize-svgs`,
     `gatsby-plugin-sharp`,
   ],
 };
