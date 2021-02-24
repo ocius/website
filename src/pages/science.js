@@ -142,7 +142,7 @@ export const query = graphql`
   query {
     HeroBackground: file(relativePath: { eq: "images/solutions-science-bg.jpg" }) {
       childImageSharp {
-        fluid(quality: 90, maxWidth: 1200) {
+        fluid(quality: 86, maxWidth: 1200) {
           ...GatsbyImageSharpFluid_withWebp
         }
       }

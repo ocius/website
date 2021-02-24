@@ -33,7 +33,7 @@ export const query = graphql`
   query {
     Overview: file(relativePath: { eq: "images/wallpaperocius-768x432.jpg" }) {
       childImageSharp {
-        fluid(quality: 100, maxWidth: 1200) {
+        fluid(quality: 84, maxWidth: 1200) {
           ...GatsbyImageSharpFluid_withWebp
         }
       }

@@ -393,78 +393,15 @@ export const query = graphql`
   query {
     HeroImage: file(relativePath: { eq: "images/usv-bg.jpg" }) {
       childImageSharp {
-        fluid(quality: 90, maxWidth: 1200) {
+        fluid(quality: 83, maxWidth: 1200) {
           ...GatsbyImageSharpFluid_withWebp
         }
       }
     }
     BluebottleImage: file(relativePath: { eq: "images/bluebottle-bridge.jpg" }) {
       childImageSharp {
-        fluid(quality: 100, maxWidth: 768) {
+        fluid(quality: 80, maxWidth: 768) {
           ...GatsbyImageSharpFluid_withWebp
-        }
-      }
-    }
-    Background: file(relativePath: { eq: "images/overview/bluebottle.png" }) {
-      childImageSharp {
-        fluid(quality: 100, maxWidth: 1920) {
-          ...GatsbyImageSharpFluid_withWebp
-        }
-      }
-    }
-    Keel: file(relativePath: { eq: "images/overview/keel.png" }) {
-      childImageSharp {
-        fixed(width: 130) {
-          ...GatsbyImageSharpFixed_withWebp
-        }
-      }
-    }
-    Comms: file(relativePath: { eq: "images/overview/comms.jpg" }) {
-      childImageSharp {
-        fixed(width: 130) {
-          ...GatsbyImageSharpFixed_withWebp
-        }
-      }
-    }
-    Flipper: file(relativePath: { eq: "images/overview/flipper.png" }) {
-      childImageSharp {
-        fixed(width: 130) {
-          ...GatsbyImageSharpFixed_withWebp
-        }
-      }
-    }
-    Hmi: file(relativePath: { eq: "images/overview/hmi.png" }) {
-      childImageSharp {
-        fixed(width: 130) {
-          ...GatsbyImageSharpFixed_withWebp
-        }
-      }
-    }
-    Ramp: file(relativePath: { eq: "images/overview/ramp.jpg" }) {
-      childImageSharp {
-        fixed(width: 130) {
-          ...GatsbyImageSharpFixed_withWebp
-        }
-      }
-    }
-    Sail: file(relativePath: { eq: "images/overview/sail.jpg" }) {
-      childImageSharp {
-        fixed(width: 130) {
-          ...GatsbyImageSharpFixed_withWebp
-        }
-      }
-    }
-    Team: file(relativePath: { eq: "images/overview/team.jpg" }) {
-      childImageSharp {
-        fixed(width: 130) {
-          ...GatsbyImageSharpFixed_withWebp
-        }
-      }
-    }
-    Winch: file(relativePath: { eq: "images/overview/winch.png" }) {
-      childImageSharp {
-        fixed(width: 130) {
-          ...GatsbyImageSharpFixed_withWebp
         }
       }
     }

@@ -1169,7 +1169,7 @@ export const query = graphql`
   query getAboutPageData {
     HeroBackground: file(relativePath: { eq: "pages/about/images/ocius-about-bg.png" }) {
       childImageSharp {
-        fluid(quality: 100, maxWidth: 1920) {
+        fluid(quality: 75, maxWidth: 1920) {
           ...GatsbyImageSharpFluid_withWebp
         }
       }
@@ -1177,8 +1177,8 @@ export const query = graphql`
 
     SolarSail: file(relativePath: { eq: "pages/about/images/solar-sail.png" }) {
       childImageSharp {
-        fixed(quality: 100, width: 441) {
-          ...GatsbyImageSharpFixed
+        fixed(quality: 80, width: 441) {
+          ...GatsbyImageSharpFixed_withWebp
         }
       }
     }
@@ -1295,7 +1295,7 @@ export const query = graphql`
   fragment imageSharpAvatar on File {
     childImageSharp {
       fixed(width: 199) {
-        ...GatsbyImageSharpFixed
+        ...GatsbyImageSharpFixed_withWebp
       }
     }
   }
@@ -1303,14 +1303,14 @@ export const query = graphql`
   fragment imageSharpLogotype on File {
     childImageSharp {
       fixed(height: 200) {
-        ...GatsbyImageSharpFixed
+        ...GatsbyImageSharpFixed_withWebp
       }
     }
   }
 
   fragment fluidImages on File {
     childImageSharp {
-      fluid(quality: 100, maxWidth: 800) {
+      fluid(quality: 85, maxWidth: 800) {
         ...GatsbyImageSharpFluid_withWebp
       }
     }

@@ -190,7 +190,7 @@ export const query = graphql`
 
     Computer: file(relativePath: { eq: "images/computer.png" }) {
       childImageSharp {
-        fluid(quality: 100, maxWidth: 800) {
+        fluid(quality: 80, maxWidth: 700) {
           ...GatsbyImageSharpFluid_withWebp
         }
       }
@@ -199,7 +199,7 @@ export const query = graphql`
 
   fragment imageSharpHeroBackground on File {
     childImageSharp {
-      fluid(quality: 100, maxWidth: 1920) {
+      fluid(quality: 80, maxWidth: 1920) {
         ...GatsbyImageSharpFluid_withWebp
       }
     }

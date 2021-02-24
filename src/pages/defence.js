@@ -201,7 +201,7 @@ export const query = graphql`
   query {
     HeroBackground: file(relativePath: { eq: "images/solutions-defence-bg.png" }) {
       childImageSharp {
-        fluid(quality: 90, maxWidth: 1200) {
+        fluid(quality: 80, maxWidth: 1200) {
           ...GatsbyImageSharpFluid_withWebp
         }
       }

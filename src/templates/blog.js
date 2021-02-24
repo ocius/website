@@ -16,8 +16,8 @@ import { Spacing, FirstColumnMobile, SecondColumnMobile } from '../components/co
 
 const Link = styled(GatsbyLink)`
   display: block;
-  color: #001826;
-  &:hover {
+  color: ${(props) => props.theme.colors.themeDarker};
+  :hover {
     text-decoration: none;
   }
 `;
@@ -141,7 +141,7 @@ export const query = graphql`
             featuredImage {
               childImageSharp {
                 fluid(maxWidth: 700, maxHeight: 400) {
-                  ...GatsbyImageSharpFluid
+                  ...GatsbyImageSharpFluid_withWebp
                 }
               }
             }

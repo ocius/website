@@ -29,8 +29,8 @@ const NewsletterContainer = styled(BackgroundImage)`
   }
 
   @media (min-width: ${mq.min[1024]}) {
-    &:before,
-    &:after {
+    :before,
+    :after {
       background-attachment: fixed;
     }
   }
@@ -138,7 +138,7 @@ const NewsletterForm = ({ topMaskBackgroundColor, bottomMaskBackgroundColor }) =
               query {
                 NewsletterBackground: file(relativePath: { eq: "images/newsletter-bg.jpg" }) {
                   childImageSharp {
-                    fluid(quality: 100, maxWidth: 1920) {
+                    fluid(quality: 85, maxWidth: 1920) {
                       ...GatsbyImageSharpFluid_withWebp
                     }
                   }
