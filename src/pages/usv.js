@@ -57,7 +57,7 @@ const USVPage = ({ data }) => (
               Drones
             </Heading>
             <Heading level={2} size="medium" weight="normal" as="p">
-              Persistent maritime surveillance, defences from the ground up.
+              Persistent maritime surveillance
             </Heading>
             <Button size="tiny" color="blue" href="/usv/#technical">
               Find out more
