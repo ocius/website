@@ -64,14 +64,17 @@ const USVPage = ({ data }) => (
             </Button>
             <Spacing $value="380px" $xsValue="80px" />
           </SecondColumnMobile>
-          <FirstColumnMobile xs={12} md={7} lg={7}>
+          <FirstColumnMobile className="centered" xs={12} md={7} lg={7}>
             <Spacing $value="180px" />
             <ResponsiveIframe
-              src="https://www.youtube.com/embed/7vhvKcc-UPk"
+              src="https://www.youtube.com/embed/7vhvKcc-UPk?rel=0"
               frameborder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowfullscreen
             />
+            <Heading level={2} size="medium">
+              Watch video
+            </Heading>
           </FirstColumnMobile>
         </Row>
         <Row className="centered">
