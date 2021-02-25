@@ -12,8 +12,8 @@ const Nav = styled.nav`
   bottom: 0;
   left: 0;
   z-index: 6000;
-  width: 25.6rem;
-  max-width: 25.6rem;
+  width: 28rem;
+  max-width: 28rem;
   overflow-x: hidden;
   overflow-y: auto;
   color: #565656;

@@ -78,7 +78,8 @@ const StatusNames = {
   Next_wp: 'Next WP',
   Water_depth: 'Water Depth',
   Water_temp: 'Water Temp',
-  Water_speed: 'Water Speed',
+  Current_speed: 'Current Speed',
+  Current_direction: 'Current Direction',
   Wind_speed: 'Wind Speed',
   Wind_direction: 'Wind Direction',
   Boat_speed: 'Boat Speed',
@@ -129,18 +130,30 @@ const formatVesselStatusData = (data) => {
   const statuses = [];
   const flattened = flattenObject(data);
 
-  // Add degrees to the end - 17.7°C
+  /**
+   * Add degrees to the end - 17.7°C.
+   * @param {String} temperature Temperature string to be formatted
+   */
   const formatTemperature = (temperature) => `${parseFloat(temperature).toFixed(1)}\xB0C`;
 
-  // Add kts to the end - 2.5kts
-  const formatSpeed = (speed) => `${parseFloat(speed).toFixed(2)}kts`;
+  /**
+   * Add m/s to the end - 2.5m/s.
+   * @param {String} speed Speed string to be formatted
+   */
+  const formatSpeed = (speed) => `${parseFloat(speed).toFixed(2)}m/s`;
 
-  // Add degree to the end - 10°
+  /**
+   * Add degree to the end - 10°
+   * @param {String} direction Direction string to be formatted
+   */
   const formatDirection = (direction) => `${parseFloat(direction).toFixed(1)}\xB0`;
 
-  // Add depth units to the end, Rounds to 2 decimal places
-  // If the depth is outside of the range 0<=depth<=60
-  // returns '> 60m'
+  /**
+   * Add depth units to the end, Rounds to 2 decimal places
+   * If the depth is outside of the range 0<=depth<=60
+   * returns '> 60m'
+   * @param {String} depth Depth string to be formatted
+   */
   const formatDepth = (depth) => {
     const depthRounded = parseFloat(depth).toFixed(2);
     if (depthRounded < 0 || depthRounded > 60.0) {
@@ -149,10 +162,10 @@ const formatVesselStatusData = (data) => {
     return `${depthRounded}m`;
   };
 
-  /*
-    Convert coordinate to degree, minutes, seconds
-    For example:
-      -33°54.35'
+  /**
+   * Convert coordinate to degree, minutes, seconds/
+   * For example:
+   *   -33°54.35'
    */
   const toDegreesMinutesAndSeconds = (coordinate) => {
     const absolute = Math.abs(coordinate);
@@ -164,7 +177,10 @@ const formatVesselStatusData = (data) => {
     return `${degrees}°${minutes}.${seconds}'`;
   };
 
-  // Convert latitude to degree, minutes, seconds
+  /**
+   * Convert latitude to degree, minutes, seconds.
+   * @param {String} lat Latitude to be formatted
+   */
   const formatLatitude = (lat) => {
     const latitude = toDegreesMinutesAndSeconds(lat);
     const latitudeCardinal = lat >= 0 ? 'N' : 'S';
@@ -172,7 +188,10 @@ const formatVesselStatusData = (data) => {
     return `${latitude} ${latitudeCardinal}`;
   };
 
-  // Convert longitude to degree, minutes, seconds
+  /**
+   * Convert longitude to degree, minutes, seconds.
+   * @param {String} lng Longitude to be formatted
+   */
   const formatLongitude = (lng) => {
     const longitude = toDegreesMinutesAndSeconds(lng);
     const longitudeCardinal = lng >= 0 ? 'E' : 'W';
@@ -180,10 +199,22 @@ const formatVesselStatusData = (data) => {
     return `${longitude} ${longitudeCardinal}`;
   };
 
-  // Convert MANUAL --> Manual
+  /**
+   * Convert MANUAL --> Manual.
+   * @param {String} string String to be formatted
+   */
   const capitalizeFirstLetter = (string) => {
     const lowerCase = string.toLowerCase();
     return lowerCase.charAt(0).toUpperCase() + lowerCase.slice(1);
+  };
+
+  /**
+   * Convert centidegrees to degrees (1 degree = 100 centidegrees).
+   * @param {String} string String to be formatted
+   */
+  const formatCentidegrees = (string) => {
+    const degrees = parseFloat(string).toFixed(1) / 100;
+    return `${degrees}\xB0`;
   };
 
   if (Object.entries(flattened).length !== 0) {
@@ -195,14 +226,18 @@ const formatVesselStatusData = (data) => {
           statuses[StatusNames[key]] = formatTemperature(value);
         } else if (key === 'Water_depth') {
           statuses[StatusNames[key]] = formatDepth(value);
-        } else if (key === 'Boat_speed' || key === 'Wind_speed' || key === 'Water_speed') {
+        } else if (key === 'Boat_speed' || key === 'Wind_speed' || key === 'Current_speed') {
           statuses[StatusNames[key]] = formatSpeed(value);
-        } else if (key === 'Wind_direction' || key === 'Heading') {
+        } else if (key === 'Wind_direction') {
+          statuses[StatusNames[key]] = `${formatDirection(value)} N`;
+        } else if (key === 'Heading') {
           statuses[StatusNames[key]] = formatDirection(value);
         } else if (key === 'Lat') {
           statuses[StatusNames[key]] = formatLatitude(value);
         } else if (key === 'Lon') {
           statuses[StatusNames[key]] = formatLongitude(value);
+        } else if (key === 'Current_direction') {
+          statuses[StatusNames[key]] = formatCentidegrees(value);
         } else if (key === 'Status') {
           // Used default MAVLink status codes
           switch (value) {
