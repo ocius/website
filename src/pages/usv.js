@@ -12,6 +12,7 @@ import Segmented from '../components/Segmented';
 import Heading from '../components/Heading';
 import Button from '../components/Button';
 import Icon from '../components/Icon';
+import ResponsiveIframe from '../components/ResponsiveIframe';
 import ArticlePreviewBlock from '../components/ArticlePreviewBlock';
 import NewsletterForm from '../components/NewsletterForm';
 import CoreTechnologiesBlock from '../components/CoreTechnologiesBlock';
@@ -48,7 +49,7 @@ const USVPage = ({ data }) => (
     {data.HeroImage && (
       <HeroBlock image={data.HeroImage.childImageSharp.fluid} masked scrim="blue">
         <Row>
-          <Col xs={12} md={5} lg={5}>
+          <SecondColumnMobile xs={12} md={5} lg={5}>
             <Spacing $value="180px" />
             <Heading level={1} size="huge" weight="thick" underline="left">
               Ocius
@@ -62,7 +63,16 @@ const USVPage = ({ data }) => (
               Find out more
             </Button>
             <Spacing $value="380px" $xsValue="80px" />
-          </Col>
+          </SecondColumnMobile>
+          <FirstColumnMobile xs={12} md={7} lg={7}>
+            <Spacing $value="180px" />
+            <ResponsiveIframe
+              src="https://www.youtube.com/embed/7vhvKcc-UPk"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            />
+          </FirstColumnMobile>
         </Row>
         <Row className="centered">
           <Col xs={12} md={8} lg={8} mdOffset={2}>
