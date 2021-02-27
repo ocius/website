@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled, { css } from 'styled-components';
 import { switchProp } from 'styled-tools';
-import BackgroundImage from 'gatsby-background-image';
 
 import MaskOverlay from './MaskOverlay';
 import Container from './Container';
@@ -16,8 +15,12 @@ export const ContainerStyle = css`
   overflow: hidden;
 `;
 
-const HeroContainer = styled(BackgroundImage)`
+const HeroContainer = styled.section`
   ${ContainerStyle}
+  background-image: url(${(props) => (props.fluid ? props.fluid.src : '')});
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 
   ${(props) =>
     props.masked &&
@@ -62,7 +65,6 @@ HeroContainer.defaultProps = {};
 
 const HeroBlock = ({ children, image, constrained, scrim, masked }) => (
   <HeroContainer
-    Tag="section"
     className="HeroBlock"
     fluid={image}
     constrained={constrained || undefined}
