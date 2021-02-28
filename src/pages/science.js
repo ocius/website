@@ -20,7 +20,12 @@ const SciencePage = ({ data }) => (
       description="Persistent Uncrewed Surface Vessels (USVs) are valuable tools for oceanographic and climate change research. Bluebottle USVs can monitor Weather “ground truth“, Climate Change, Hurricane landfall, Fisheries."
     />
     {data.HeroBackground && (
-      <HeroBlock image={data.HeroBackground.childImageSharp.fluid} masked scrim="blue">
+      <HeroBlock
+        image={data.HeroBackground.childImageSharp.fluid}
+        masked
+        scrim="blue"
+        fallbackColor="#00b4b0"
+      >
         <Row>
           <Col xs={12} md={6} lg={6}>
             <Spacing $value="80px" />

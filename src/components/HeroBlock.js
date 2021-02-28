@@ -17,6 +17,7 @@ export const ContainerStyle = css`
 
 const HeroContainer = styled.section`
   ${ContainerStyle}
+  background-color: ${(props) => (props.fallbackColor ? props.fallbackColor : 'rgb(0, 99, 131)')};
   background-image: url(${(props) => (props.fluid ? props.fluid.src : '')});
   background-position: center;
   background-repeat: no-repeat;
@@ -63,11 +64,12 @@ const ScrimOverlay = styled.div`
 
 HeroContainer.defaultProps = {};
 
-const HeroBlock = ({ children, image, constrained, scrim, masked }) => (
+const HeroBlock = ({ children, image, fallbackColor, constrained, scrim, masked }) => (
   <HeroContainer
     className="HeroBlock"
     fluid={image}
     constrained={constrained || undefined}
+    fallbackColor={fallbackColor}
     masked={masked || undefined}
   >
     <InnerContainer>{children}</InnerContainer>
@@ -79,6 +81,7 @@ const HeroBlock = ({ children, image, constrained, scrim, masked }) => (
 
 HeroBlock.propTypes = {
   image: PropTypes.objectOf(PropTypes.any).isRequired,
+  fallbackColor: PropTypes.string,
   constrained: PropTypes.bool,
   scrim: PropTypes.oneOf(['blue', 'dark']),
   masked: PropTypes.bool,
@@ -86,6 +89,7 @@ HeroBlock.propTypes = {
 
 HeroBlock.defaultProps = {
   constrained: false,
+  fallbackColor: '',
   scrim: false,
   masked: false,
 };

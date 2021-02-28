@@ -42,7 +42,11 @@ const IndexPage = ({ data }) => (
     />
 
     {data.HeroBackground && (
-      <HeroBlock image={data.HeroBackground.childImageSharp.fluid} scrim="dark">
+      <HeroBlock
+        image={data.HeroBackground.childImageSharp.fluid}
+        scrim="dark"
+        fallbackColor="#8cbeda"
+      >
         <Row>
           <Col xs={12} md={6} lg={5}>
             <Spacing $value="80px" />

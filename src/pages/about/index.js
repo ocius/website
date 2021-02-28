@@ -1107,7 +1107,12 @@ const AboutPage = ({ data }) => (
       performance."
     />
     {data.HeroBackground && (
-      <HeroBlock image={data.HeroBackground.childImageSharp.fluid} masked scrim="blue">
+      <HeroBlock
+        image={data.HeroBackground.childImageSharp.fluid}
+        masked
+        scrim="blue"
+        fallbackColor="#7bbfd4"
+      >
         <Row>
           <Col xs={12} md={6} lg={5}>
             <Spacing $value="80px" />

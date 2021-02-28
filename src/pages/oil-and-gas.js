@@ -20,7 +20,12 @@ const OilAndGasPage = ({ data }) => (
       description="Uncrewed Surface Vessels (USVs) are already being used in the Oil and Gas industry. Bluebottle USVs can do more. Seadbed and Pipeline Surveys, Security, Environment Monitoring, "
     />
     {data.HeroBackground && (
-      <HeroBlock image={data.HeroBackground.childImageSharp.fluid} masked scrim="blue">
+      <HeroBlock
+        image={data.HeroBackground.childImageSharp.fluid}
+        masked
+        scrim="blue"
+        fallbackColor="#55a1d2"
+      >
         <Row>
           <Col xs={12} md={6} lg={6}>
             <Spacing $value="280px" />

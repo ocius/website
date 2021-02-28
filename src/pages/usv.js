@@ -47,7 +47,12 @@ const USVPage = ({ data }) => (
       description="A USV is an Uncrewed Surface Vessel. Bluebottle USVs are autonomous data gathering communications platform, the satellites of the sea."
     />
     {data.HeroImage && (
-      <HeroBlock image={data.HeroImage.childImageSharp.fluid} masked scrim="blue">
+      <HeroBlock
+        image={data.HeroImage.childImageSharp.fluid}
+        masked
+        scrim="blue"
+        fallbackColor="#bacce2"
+      >
         <Row>
           <SecondColumnMobile xs={12} md={5} lg={5}>
             <Spacing $value="180px" />
