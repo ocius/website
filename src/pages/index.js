@@ -45,7 +45,7 @@ const IndexPage = ({ data }) => (
       <HeroBlock
         image={data.HeroBackground.childImageSharp.fluid}
         scrim="dark"
-        fallbackColor="#8cbeda"
+        fallbackColor="#e3edf3"
       >
         <Row>
           <Col xs={12} md={6} lg={5}>
