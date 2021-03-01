@@ -1,85 +1,151 @@
 import React from 'react';
 import { Row, Col } from 'react-flexbox-grid';
-import Loadable from '@loadable/component';
 import Layout from '../layouts/Layout';
 import SEO from '../components/SEO';
-import PageHeader from '../components/PageHeader';
 import Container from '../components/Container';
+import Segmented from '../components/Segmented';
 import Heading from '../components/Heading';
-
-// Lazy load components
-const Sidebar = Loadable(() => import(`../components/Sidebar`));
+import NewsletterForm from '../components/NewsletterForm';
+import ContactUs from '../components/ContactUs';
+import ContactForm from '../components/Forms/ContactForm';
+import ContactMap from '../components/Map/ContactMap';
+import { Spacing } from '../components/common';
 
 const addressStyle = {
-  padding: '1em 0',
+  display: 'block',
+  padding: '0.5em 0',
   fontStyle: 'normal',
 };
 
-export default () => (
+const ContactPage = () => (
   <Layout>
     <SEO
       title="Contact"
-      description="For General Enquiries Main Phone: +61 2 9924 6400 Email: contact@ocius.com.au For Shareholder Enquiries
-      Email: cosecretary@ocius.com.au
-      NSW 2052 Phone: +61 2 9924 6400 Postal Address: Office Box 4304 Castlecrag Australia 2068"
+      description="How can we help? Do you have a question or are you interested in working with us? Just fill out the form fields below."
     />
-    <PageHeader>
-      <Heading level={1} size="huge" header>
-        Contact
-      </Heading>
-    </PageHeader>
     <section className="page-content">
       <Container>
         <Row>
-          <Col className="primary-content" xs={12} md={7} lg={7}>
-            <Row>
-              <Col xs={12} md={6} lg={6}>
-                <strong>For General Enquiries</strong>
-                <address style={addressStyle}>
-                  Main Phone: <a href="callto:+61299246400">+61 2 9924 6400</a>
-                  <br />
-                  Email: <a href="mailto:contact@ocius.com.au">contact@ocius.com.au</a>
-                </address>
-              </Col>
-              <Col xs={12} md={6} lg={6}>
-                <strong>For Shareholder Enquiries</strong>
-                <address style={addressStyle}>
-                  Email: <a href="mailto:cosecretary@ocius.com.au">cosecretary@ocius.com.au</a>
-                </address>
-              </Col>
-            </Row>
-            <Row>
-              <Col xs={12} md={6} lg={6}>
-                <strong>Address:</strong>
-                <address style={addressStyle}>
-                  22 King St
-                  <br />
-                  Building R13
-                  <br />
-                  UNSW Randwick Campus
-                  <br />
-                  Randwick NSW 2031
-                  <br />
-                  Phone: <a href="callto:+61299246400">+61 2 9924 6400</a>
-                </address>
-              </Col>
-              <Col xs={12} md={6} lg={6}>
-                <strong>Postal Address:</strong>
-                <address style={addressStyle}>
-                  Office Box 4304
-                  <br />
-                  Castlecrag
-                  <br />
-                  Australia 2068
-                </address>
-              </Col>
-            </Row>
-          </Col>
-          <Col className="secondary-content" xs={12} md={5} lg={4} lgOffset={1}>
-            <Sidebar />
+          <Col xs={12} md={12} lg={12}>
+            <Spacing $value="80px" />
+            <Heading level={1} size="huge" weight="thick" underline="left">
+              Contact us
+            </Heading>
           </Col>
         </Row>
+
+        <Segmented>
+          <Row>
+            <Col xs={12} md={6} lg={6}>
+              <section itemScope itemType="https://schema.org/ResearchProject">
+                <p>
+                  <strong>
+                    <span itemProp="name">Ocius</span> Headquarters:
+                  </strong>
+                  <span itemScope itemProp="location" itemType="https://schema.org/Place">
+                    <span
+                      style={addressStyle}
+                      itemProp="address"
+                      itemScope
+                      itemType="https://schema.org/PostalAddress"
+                    >
+                      <span itemProp="streetAddress">
+                        Building R13
+                        <br />
+                        UNSW Randwick Campus
+                        <br />
+                        22 King St
+                      </span>
+                      , <span itemProp="addressLocality">Randwick</span>{' '}
+                      <span itemProp="addressRegion">NSW</span>{' '}
+                      <span itemProp="postalCode">2031</span>
+                    </span>
+                  </span>
+                </p>
+
+                <p>
+                  <strong>Postal Address:</strong>
+                  <span
+                    style={addressStyle}
+                    itemScope
+                    itemProp="address"
+                    itemType="http://schema.org/PostalAddress"
+                  >
+                    <span itemProp="postOfficeBoxNumber">Mail PO Box 4304</span>{' '}
+                    <span itemProp="addressLocality">Castlecrag</span>{' '}
+                    <span itemProp="postalCode">2068</span>{' '}
+                    <span itemProp="addressRegion">NSW</span>
+                    <br />
+                    <span itemProp="addressCountry">Australia</span>
+                  </span>
+                </p>
+
+                <div itemScope itemProp="contactPoint" itemType="https://schema.org/ContactPoint">
+                  <p>
+                    <strong itemProp="contactType">General Enquiries</strong>
+                    <span style={addressStyle}>
+                      Phone:{' '}
+                      <a itemProp="telephone" href="callto:+61299246400">
+                        +61 2 9924 6400
+                      </a>
+                      <br />
+                      Email:{' '}
+                      <a itemProp="email" href="mailto:contact@ocius.com.au">
+                        contact@ocius.com.au
+                      </a>
+                    </span>
+                  </p>
+                </div>
+
+                <div itemScope itemProp="contactPoint" itemType="https://schema.org/ContactPoint">
+                  <p>
+                    <strong itemProp="contactType">Shareholder Enquiries</strong>
+                    <span style={addressStyle}>
+                      Email:{' '}
+                      <a itemProp="email" href="mailto:cosecretary@ocius.com.au">
+                        cosecretary@ocius.com.au
+                      </a>
+                    </span>
+                  </p>
+                </div>
+
+                <div itemScope itemProp="contactPoint" itemType="https://schema.org/ContactPoint">
+                  <p>
+                    <strong>Open Hours:</strong>
+                    <br />
+                    <time style={addressStyle} itemProp="hoursAvailable" value="Mo-Fr 08:00-17:00">
+                      Mon - Fri: 8am - 5pm
+                      <br />
+                      Sat - Sun: Closed
+                    </time>
+                  </p>
+                </div>
+              </section>
+            </Col>
+            <Col xs={12} md={6} lg={5}>
+              <Heading level={4} size="small" style={{ marginBottom: '1em' }}>
+                Send us a message:
+              </Heading>
+              <ContactForm />
+            </Col>
+          </Row>
+        </Segmented>
+        <Segmented>
+          <Row>
+            <Col xs={12} md={12} lg={11}>
+              <ContactMap />
+            </Col>
+          </Row>
+        </Segmented>
       </Container>
+      <Segmented>
+        <NewsletterForm />
+      </Segmented>
+      <Segmented>
+        <ContactUs />
+      </Segmented>
     </section>
   </Layout>
 );
+
+export default ContactPage;

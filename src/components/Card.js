@@ -5,10 +5,13 @@ import Img from 'gatsby-image';
 import BackgroundImage from 'gatsby-background-image';
 import styled from 'styled-components';
 import Heading from './Heading';
+import Button from './Button';
 
 const CardThumbnail = styled(BackgroundImage)`
   height: 250px;
-  border-radius: 2px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  overflow: hidden;
   box-shadow: rgba(46, 41, 51, 0.08) 0px 1px 2px, rgba(71, 63, 79, 0.08) 0px 2px 4px;
   transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1) 0s;
 `;
@@ -17,66 +20,83 @@ const CardWrapper = styled.div`
   display: flex;
   flex: 1 0 0px;
   flex-direction: column;
+  height: 100%;
   margin: 1.5rem 0.5rem;
   max-width: 100%;
   position: relative;
 
-  &:hover ${CardThumbnail} {
+  :hover ${CardThumbnail} {
     transform: translateY(-0.25rem);
     box-shadow: rgba(46, 41, 51, 0.08) 0px 4px 8px, rgba(71, 63, 79, 0.16) 0px 8px 16px;
   }
 `;
 
+const CardHeading = styled(Heading)`
+  color: #2b2e34;
+  font-size: 18px;
+  line-height: ${32 / 22};
+  margin-top: 1.7em;
+`;
+
 const ExternalLink = styled.a`
   border-bottom: medium none;
-  color: #001826;
+  color: ${(props) => props.theme.colors.themeDarker};
   transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1) 0s;
 `;
 
 const CardBody = styled.div`
   position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0 16px 32px;
+  height: 100%;
+`;
+
+const Content = styled.div`
+  padding-bottom: 10px;
+  flex: 1;
 `;
 
 const Source = styled.div`
   font-size: 1em;
   margin: 0 0 0.25em;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #60d2f6;
-  border-radius: 20px;
-  padding: 4px 20px;
-  position: absolute;
-  top: -20px;
-  left: 0;
 `;
 
 const Date = styled.p`
-  font-size: 1em;
+  color: ${(props) => props.theme.colors.themePrimary};
+  font-size: 0.9em;
   font-weight: 300;
-  margin: 0 0 0.25em;
-  color: rgb(22, 65, 148);
+  line-height: ${28 / 19};
+  margin-top: 0;
 `;
 
-const Card = ({ url, thumbnail, title, source, logo, date }) => {
-  return (
-    <CardWrapper>
-      <ExternalLink target="_blank" href={url}>
-        <CardThumbnail fluid={thumbnail.childImageSharp.fluid} />
-      </ExternalLink>
-      <CardBody>
-        <Heading level={2} size="small" weight="thick">
+const Card = ({ url, thumbnail, title, source, logo, date }) => (
+  <CardWrapper>
+    <ExternalLink target="_blank" href={url}>
+      <CardThumbnail fluid={thumbnail.childImageSharp.fluid} />
+    </ExternalLink>
+    <CardBody>
+      <Content>
+        <CardHeading level={2} size="small" weight="thick">
           {title}
-        </Heading>
+        </CardHeading>
+        <Date>{date}</Date>
         <Source>
-          {logo && <Img style={{ width: 25, marginRight: 5 }} fluid={logo.childImageSharp.fluid} />}
+          {logo && (
+            <Img style={{ width: 25, marginRight: 10 }} fluid={logo.childImageSharp.fluid} />
+          )}
           {source}
         </Source>
-        <Date>{date}</Date>
-      </CardBody>
-    </CardWrapper>
-  );
-};
+      </Content>
+
+      <Button color="blue" size="tiny" href={url} target="_blank">
+        Read more
+      </Button>
+    </CardBody>
+  </CardWrapper>
+);
 
 Card.propTypes = {
   url: PropTypes.string,

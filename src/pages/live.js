@@ -1,12 +1,13 @@
-import React, { useState, useRef, useContext } from 'react';
+import React, { useState, useRef, useContext, useEffect } from 'react';
 import EmptyLayout from '../layouts/EmptyLayout';
 import SEO from '../components/SEO';
-import TextSkeleton from '../components/carbon/TextSkeleton';
-import DropdownSkeleton from '../components/carbon/DropdownSkeleton';
-import Dropdown from '../components/carbon/Dropdown';
-import Header from '../components/carbon/Header';
-import LeftNav from '../components/carbon/LeftNav';
+import TextSkeleton from '../components/TextSkeleton';
+import DropdownSkeleton from '../components/DropdownSkeleton';
+import Dropdown from '../components/Dropdown';
+import SideNav from '../components/SideNav';
+import SideNavWrapper from '../components/SideNav/SideNavWrapper';
 import GMap from '../components/Map/GMap';
+import Header from '../components/Navbar/Header';
 import MobileNavigation from '../components/Navbar/MobileNavigation';
 import { VesselStatus } from '../components/InfoPanel';
 import configuration from '../common/api/configuration';
@@ -14,18 +15,18 @@ import useHttp from '../common/api/useHttp';
 import NavContext from '../common/context/NavContext';
 import { useWindowSize } from '../common/hooks';
 import useOnClickOutside from '../common/hooks/useOnClickOutside';
-import { FormWrapper, FormItem } from '../components/carbon/shared';
+import { FormWrapper, FormItem } from '../components/common';
 import SplashScreen from '../components/SplashScreen';
 
 /** Google Maps key */
 const apiKey = process.env.GATSBY_GOOGLE_MAPS_API_KEY;
 
 const LivePage = () => {
-  // Save ref of navbar + leftnav for future reference
+  // Save ref of navbar + sidenav for future reference
   const node = useRef();
   // Add state handlers
   const [currentVessel, setCurrentVessel] = useState(0);
-  const { leftNavIsOpen, toggleNavState } = useContext(NavContext);
+  const { sideNavIsOpen, toggleNavState } = useContext(NavContext);
   const windowSize = useWindowSize();
 
   /**
@@ -42,24 +43,20 @@ const LivePage = () => {
     let result = [];
     // Extract values from data
     if (typeof obj === 'object') {
-      result = Object.keys(obj).map((index) => {
+      result = Object.keys(obj).map((index) =>
         // Get property for this particular index
-        return propertyRetriever(obj[index]);
-      });
+        propertyRetriever(obj[index])
+      );
     }
 
     return result;
   };
 
   /** Retrieve a name and id */
-  const droneNamesAndIdsRetriever = (obj) => {
-    return { name: obj.Name, id: obj.Id };
-  };
+  const droneNamesAndIdsRetriever = (obj) => ({ name: obj.Name, id: obj.Id });
 
   /** Retrieve drone name */
-  const droneNamesRetriever = (obj) => {
-    return obj.Name;
-  };
+  const droneNamesRetriever = (obj) => obj.Name;
 
   /**
    * Function to add custom unique Ids to fetched data.
@@ -84,9 +81,7 @@ const LivePage = () => {
    *
    * @param {object} data API data object
    */
-  const droneName = (data) => {
-    return data && typeof data.name !== 'undefined' ? data.name : '';
-  };
+  const droneName = (data) => (data && typeof data.name !== 'undefined' ? data.name : '');
 
   // Fetch data periodically
   const [isLoading, fetchedData] = useHttp(configuration.DRONE_COLLECTION_URL, 2000);
@@ -96,10 +91,17 @@ const LivePage = () => {
   // Hide left nav when user clicks outside of container
   useOnClickOutside(node, () => {
     // Only if left nav is open
-    if (windowSize.innerWidth <= 1056 && leftNavIsOpen) {
-      toggleNavState('leftNavIsOpen', 'close');
+    if (windowSize.innerWidth <= 1056 && sideNavIsOpen) {
+      toggleNavState('sideNavIsOpen', 'close');
     }
   });
+
+  // Keep side navigation open on big screens
+  useEffect(() => {
+    if (windowSize.innerWidth > 1056 && !sideNavIsOpen) {
+      toggleNavState('sideNavIsOpen', 'open');
+    }
+  }, [windowSize, sideNavIsOpen]);
 
   return (
     <EmptyLayout>
@@ -107,32 +109,33 @@ const LivePage = () => {
       <main ref={node}>
         <Header />
         <MobileNavigation />
-        <LeftNav>
-          <FormWrapper>
-            <FormItem>
+        <SideNavWrapper expanded={sideNavIsOpen}>
+          <SideNav expanded defaultExpanded aria-label="Side navigation">
+            <FormWrapper>
+              <FormItem>
+                {isLoading ? (
+                  <DropdownSkeleton label="Vessel:" />
+                ) : (
+                  <Dropdown
+                    id="vessel"
+                    label="Choose vessel"
+                    ariaLabel="Dropdown"
+                    titleText="Vessel:"
+                    onChange={handleVesselChange}
+                    items={droneNames}
+                    itemToString={droneName}
+                    selectedItem={droneNames[currentVessel]}
+                  />
+                )}
+              </FormItem>
               {isLoading ? (
-                <DropdownSkeleton label="Vessel:" />
+                <TextSkeleton count={8} />
               ) : (
-                <Dropdown
-                  id="vessel"
-                  type="default"
-                  label="Choose vessel"
-                  ariaLabel="Dropdown"
-                  titleText="Vessel:"
-                  onChange={handleVesselChange}
-                  items={droneNames}
-                  itemToString={droneName}
-                  selectedItem={droneNames[currentVessel]}
-                />
+                <VesselStatus data={orderedDrones[currentVessel]} />
               )}
-            </FormItem>
-            {isLoading ? (
-              <TextSkeleton count={8} />
-            ) : (
-              <VesselStatus data={orderedDrones[currentVessel]} />
-            )}
-          </FormWrapper>
-        </LeftNav>
+            </FormWrapper>
+          </SideNav>
+        </SideNavWrapper>
       </main>
       <SplashScreen
         isLoading={isLoading}

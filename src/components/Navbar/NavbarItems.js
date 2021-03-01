@@ -11,14 +11,16 @@ const NavItems = styled.ul`
   width: 100%;
   list-style: outside none none;
 
+  @media (min-width: ${mq.min[768]}) and (max-width: ${mq.max[1200]}) {
+    padding: 0 2%;
+  }
+
   @media (max-width: ${mq.max[768]}) {
     display: none;
   }
 `;
 
-const NavbarItems = ({ children }) => {
-  return <NavItems className="navitems">{children}</NavItems>;
-};
+const NavbarItems = ({ children }) => <NavItems className="navitems">{children}</NavItems>;
 
 NavbarItems.propTypes = {
   children: PropTypes.node.isRequired,

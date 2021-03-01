@@ -15,7 +15,6 @@ import {
   fontWeightRegular,
   fontWeightMedium,
 } from '../common/typography';
-import font from '../common/font';
 
 const VariantCaps = css`
   text-transform: uppercase;
@@ -31,7 +30,7 @@ const Underline = css`
   &::after {
     content: '';
     display: block;
-    background-color: #4ab4e6;
+    background-color: ${(props) => props.theme.colors.themePrimary};
     height: 4px;
     width: 100px;
 
@@ -52,7 +51,7 @@ const Shadow = css`
 `;
 
 const Header = css`
-  color: #1f3643;
+  color: ${(props) => props.theme.colors.themeDark};
   padding-top: 80px;
   margin-top: 0;
 
@@ -62,8 +61,7 @@ const Header = css`
 `;
 
 const StyledHeading = styled.h3`
-  color: ${(props) => props.$color || '#1f3643'};
-  font-family: ${font('bold')};
+  color: ${(props) => props.$color || props.theme.colors.themeDark};
   line-height: 1.2;
 
   ${switchProp('size', {
@@ -126,6 +124,7 @@ const StyledHeading = styled.h3`
     `,
 
     thick: css`
+      font-family: ${(props) => props.theme.fonts.bold};
       font-weight: ${fontWeightMedium};
     `,
   })}

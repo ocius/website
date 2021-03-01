@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import { graphql, StaticQuery } from 'gatsby';
 import styled from 'styled-components';
 import { Formik, ErrorMessage } from 'formik';
@@ -8,6 +9,7 @@ import addToMailchimp from 'gatsby-plugin-mailchimp';
 import Container from './Container';
 import Heading from './Heading';
 import Button from './Button';
+import MaskOverlay from './MaskOverlay';
 import { Feedback, Alert, FormField } from './Form';
 import mq from '../common/mq';
 
@@ -15,12 +17,22 @@ const NewsletterContainer = styled(BackgroundImage)`
   color: #ffffff;
   position: relative;
   overflow: hidden;
-  padding: 3.2rem 0;
-  background-attachment: fixed;
+  padding: 12rem 0;
 
-  @media (max-width: ${mq.max[720]}) {
+  @media (max-width: ${mq.max[1024]}) {
+    padding: 8rem 0;
+  }
+
+  @media (max-width: ${mq.max[768]}) {
     max-height: 592px;
-    background-attachment: scroll;
+    padding: 6rem 0;
+  }
+
+  @media (min-width: ${mq.min[1024]}) {
+    :before,
+    :after {
+      background-attachment: fixed;
+    }
   }
 `;
 
@@ -64,7 +76,7 @@ const FormGroup = styled.div`
   }
 `;
 
-const NewsletterForm = () => {
+const NewsletterForm = ({ topMaskBackgroundColor, bottomMaskBackgroundColor }) => {
   const [submitSuccess, setSubmitSuccess] = useState(false);
   const [formMessage, setFormMessage] = useState('');
 
@@ -126,7 +138,7 @@ const NewsletterForm = () => {
               query {
                 NewsletterBackground: file(relativePath: { eq: "images/newsletter-bg.jpg" }) {
                   childImageSharp {
-                    fluid(quality: 100, maxWidth: 1920) {
+                    fluid(quality: 85, maxWidth: 1920) {
                       ...GatsbyImageSharpFluid_withWebp
                     }
                   }
@@ -138,11 +150,18 @@ const NewsletterForm = () => {
               const imageData = data.NewsletterBackground.childImageSharp.fluid;
               return (
                 <NewsletterContainer Tag="section" fluid={imageData}>
+                  <MaskOverlay flipped position="top" color={topMaskBackgroundColor} />
                   <Container className="centered">
                     <Row>
-                      <Col xs={12} md={6} mdOffset={3}>
+                      <Col xs={12} md={8} mdOffset={2} lg={6} lgOffset={3}>
                         <form onSubmit={handleSubmit}>
-                          <Heading level={3} size="large" weight="thick" color="white">
+                          <Heading
+                            level={3}
+                            size="large"
+                            weight="thick"
+                            color="white"
+                            style={{ marginTop: 0 }}
+                          >
                             Sign up to
                             <br />
                             our newsletter
@@ -171,7 +190,7 @@ const NewsletterForm = () => {
                                 type="email"
                               />
                               <ErrorMessage name="email">
-                                {(msg) => <Feedback>{msg}</Feedback>}
+                                {(msg) => <Feedback position="center">{msg}</Feedback>}
                               </ErrorMessage>
                             </div>
                             <div className="form-col-4">
@@ -197,6 +216,7 @@ const NewsletterForm = () => {
                       </Col>
                     </Row>
                   </Container>
+                  <MaskOverlay flipped color={bottomMaskBackgroundColor} />
                 </NewsletterContainer>
               );
             }}
@@ -205,6 +225,16 @@ const NewsletterForm = () => {
       )}
     </Formik>
   );
+};
+
+NewsletterForm.propTypes = {
+  topMaskBackgroundColor: PropTypes.string,
+  bottomMaskBackgroundColor: PropTypes.string,
+};
+
+NewsletterForm.defaultProps = {
+  topMaskBackgroundColor: undefined,
+  bottomMaskBackgroundColor: undefined,
 };
 
 export default NewsletterForm;

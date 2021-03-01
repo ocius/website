@@ -1,14 +1,7 @@
 import React from 'react';
-import { ThemeProvider } from 'styled-components';
 import { NavContextProvider } from './src/common/context/NavContext';
 
-const theme = {};
-
-export const wrapRootElement = ({ element }) => (
-  <NavContextProvider>
-    <ThemeProvider theme={theme}>{element}</ThemeProvider>
-  </NavContextProvider>
-);
+export const wrapRootElement = ({ element }) => <NavContextProvider>{element}</NavContextProvider>;
 
 export const onRenderBody = ({ setHeadComponents }) => {
   return setHeadComponents([
@@ -26,20 +19,6 @@ export const onRenderBody = ({ setHeadComponents }) => {
       rel="dns-prefetch"
       key="dns-prefetch-marketingplatform"
       href="https://marketingplatform.google.com"
-    />,
-    <script
-      dangerouslySetInnerHTML={{
-        __html: `
-        console.log("Hit script tag");
-        navigator.serviceWorker.getRegistrations()
-        .then(function(registrations) {
-            registrations.forEach(function(registration) { 
-                console.log("Delete service worker");
-                registration.unregister(); 
-            })
-        });
-            `,
-      }}
     />
   ]);
 };

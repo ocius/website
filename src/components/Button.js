@@ -3,23 +3,8 @@ import PropTypes from 'prop-types';
 import styled, { css } from 'styled-components';
 import { switchProp } from 'styled-tools';
 import cn from 'classnames';
-import { Link as GatsbyLink } from 'gatsby';
 import { OutboundLink as GtagLink } from 'gatsby-plugin-gtag';
-import propTypes from '../common/propTypes';
-import font from '../common/font';
-
-const colors = {
-  // Background colors
-  primaryBlue: '#4ab4e6',
-  bgPrimary: '#ffffff',
-  textPrimary: '#000000',
-  borderPrimary: '#4ab4e6',
-  bgSecondary: '#efefef',
-  textSecondary: '#7a96a2',
-  accent: '#003859',
-  accentSecondary: '#001826',
-  bgAccent: 'rgba(126, 130, 126, 0.1)',
-};
+import DynamicLink from './DynamicLink';
 
 const borderStyle = css`
   box-shadow: none;
@@ -31,7 +16,7 @@ const roundedStyle = css`
   padding-right: ${21 / 9}em;
   padding-top: ${12 / 9}em;
 
-  ${switchProp('size', {
+  ${switchProp('$size', {
     tiny: css`
       padding-bottom: ${9 / 9}em;
     `,
@@ -70,7 +55,7 @@ const ButtonStyles = css`
   -moz-box-align: center;
   align-items: center;
   font-weight: 700;
-  font-family: ${font('bold')};
+  font-family: ${(props) => props.theme.fonts.bold};
   line-height: 1;
   overflow: hidden;
   padding-left: ${30 / 13}em;
@@ -92,62 +77,62 @@ const ButtonStyles = css`
     text-decoration: none;
   }
 
-  ${switchProp('color', {
+  ${switchProp('$color', {
     gray: css`
-      background-color: ${colors.bgSecondary};
-      color: ${colors.textSecondary};
-      box-shadow: 0 0 0 2px ${colors.borderPrimary} inset;
+      background-color: ${(props) => props.theme.colors.neutralLight};
+      color: ${(props) => props.theme.colors.neutralPrimary};
+      box-shadow: 0 0 0 2px ${(props) => props.theme.colors.neutralPrimary} inset;
 
       :focus,
       :hover,
       :active {
-        background-color: ${colors.accent};
-        color: ${colors.bgPrimary};
+        background-color: ${(props) => props.theme.colors.neutralPrimary};
+        color: ${(props) => props.theme.colors.neutralLight};
       }
     `,
 
     blue: css`
-      background-color: ${colors.primaryBlue};
-      color: ${colors.bgPrimary};
-      box-shadow: 0 0 0 2px ${colors.borderPrimary} inset;
+      background-color: ${(props) => props.theme.colors.themePrimary};
+      color: ${(props) => props.theme.colors.bgPrimary};
+      box-shadow: 0 0 0 2px ${(props) => props.theme.colors.themePrimary} inset;
 
       :focus,
       :hover,
       :active {
-        background-color: ${colors.accent};
-        color: ${colors.bgSecondary};
+        background-color: ${(props) => props.theme.colors.themeDark};
+        color: ${(props) => props.theme.colors.neutralLight};
       }
     `,
 
     white: css`
-      background-color: ${colors.bgPrimary};
+      background-color: ${(props) => props.theme.colors.bgPrimary};
       background-size: 4rem 4rem;
-      color: ${colors.borderPrimary};
-      box-shadow: 0 0 0 2px ${colors.borderPrimary} inset;
+      color: ${(props) => props.theme.colors.themeDark};
+      box-shadow: 0 0 0 2px ${(props) => props.theme.colors.themePrimary} inset;
 
       :focus,
       :hover,
       :active {
-        color: ${colors.textPrimary};
-        background-color: ${colors.bgAccent};
+        color: ${(props) => props.theme.colors.bgPrimary};
+        background-color: ${(props) => props.theme.colors.themePrimary};
       }
     `,
 
     transparent: css`
       background-color: transparent;
-      color: ${colors.bgPrimary};
-      box-shadow: 0 0 0 2px ${colors.borderPrimary} inset;
+      color: ${(props) => props.theme.colors.bgPrimary};
+      box-shadow: 0 0 0 2px ${(props) => props.theme.colors.themePrimary} inset;
 
       :focus,
       :hover,
       :active {
         background-color: transparent;
-        color: ${colors.borderPrimary};
+        color: ${(props) => props.theme.colors.themePrimary};
       }
     `,
   })}
 
-  ${switchProp('size', {
+  ${switchProp('$size', {
     tiny: css`
       font-size: 13px;
       padding-bottom: ${9 / 9}em;
@@ -181,12 +166,12 @@ const ButtonStyles = css`
     `,
   })}
 
-  ${(props) => props.rounded && roundedStyle}
-  ${(props) => props.full && fullStyle}
-  ${(props) => !props.border && borderStyle}
+  ${(props) => props.$rounded && roundedStyle}
+  ${(props) => props.$full && fullStyle}
+  ${(props) => !props.$border && borderStyle}
 `;
 
-const ButtonLink = styled(GatsbyLink)`
+const ButtonLink = styled(DynamicLink)`
   ${ButtonStyles}
 `;
 
@@ -234,11 +219,11 @@ function Button({
         style={customStyles}
         to={href}
         onClick={onClick}
-        color={color}
-        size={size}
-        rounded={rounded ? 1 : undefined}
-        full={full ? 1 : undefined}
-        border={border ? 1 : undefined}
+        $color={color}
+        $size={size}
+        $rounded={rounded ? 1 : undefined}
+        $full={full ? 1 : undefined}
+        $border={border ? 1 : undefined}
         {...rest}
       >
         {children}
@@ -251,11 +236,11 @@ function Button({
         style={customStyles}
         href={href}
         onClick={onClick}
-        color={color}
-        size={size}
-        rounded={rounded ? 1 : undefined}
-        full={full ? 1 : undefined}
-        border={border ? 1 : undefined}
+        $color={color}
+        $size={size}
+        $rounded={rounded ? 1 : undefined}
+        $full={full ? 1 : undefined}
+        $border={border ? 1 : undefined}
         {...rest}
       >
         {children}
@@ -267,11 +252,11 @@ function Button({
       style={customStyles}
       type={type}
       onClick={onClick}
-      color={color}
-      size={size}
-      rounded={rounded ? 1 : undefined}
-      full={full ? 1 : undefined}
-      border={border ? 1 : undefined}
+      $color={color}
+      $size={size}
+      $rounded={rounded ? 1 : undefined}
+      $full={full ? 1 : undefined}
+      $border={border ? 1 : undefined}
       {...rest}
     >
       {children}
@@ -323,7 +308,9 @@ Button.propTypes = {
   /**
    * Special styles passed in props
    */
-  customStyles: propTypes.style,
+  customStyles: PropTypes.objectOf(
+    PropTypes.oneOfType([PropTypes.string, PropTypes.number, PropTypes.object])
+  ),
 
   /**
    * Use a border

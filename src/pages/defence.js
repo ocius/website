@@ -1,6 +1,5 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import styled from 'styled-components';
 import { Row, Col } from 'react-flexbox-grid';
 import Layout from '../layouts/Layout';
 import SEO from '../components/SEO';
@@ -11,22 +10,14 @@ import Heading from '../components/Heading';
 import Segmented from '../components/Segmented';
 import ArticlePreviewBlock from '../components/ArticlePreviewBlock';
 import NewsletterForm from '../components/NewsletterForm';
+import ContactUs from '../components/ContactUs';
+import { Spacing } from '../components/common';
 
-const Spacing = styled.div`
-  height: ${(props) => props.$value || '50px'};
-`;
-
-const HeroSubheading = styled.p`
-  color: #ffffff;
-  font-size: 2em;
-  line-height: 1.2;
-`;
-
-export default ({ data }) => (
+const DefencePage = ({ data }) => (
   <Layout>
     <SEO
       title="Defence"
-      description="Persistent Unmanned Surface Vessels (USVs) are being seen as strategic in Defence as force multipliers Bluebottles have more
+      description="Persistent Uncrewed Surface Vessels (USVs) are being seen as strategic in Defence as force multipliers Bluebottles have more
        power payload and performance making them the superior persistent USV for defence"
     />
 
@@ -38,11 +29,11 @@ export default ({ data }) => (
             <Heading level={1} color="white" size="huge" weight="thick" underline="left">
               Defence
             </Heading>
-            <HeroSubheading>
+            <Heading level={2} color="white" size="medium" weight="normal" as="p">
               Persistent USVs are seen by defence as strategic force multipliers. Bluebottles have
               more power, payload and performance making them the superior persistent USV for
               defence.
-            </HeroSubheading>
+            </Heading>
             <Spacing $value="80px" />
           </Col>
         </Row>
@@ -50,17 +41,17 @@ export default ({ data }) => (
     )}
 
     <Container>
-      <Segmented borderBottom="">
+      <Segmented>
         <Row className="centered">
           <Col xs={12} md={8} lg={8} mdOffset={2}>
             <Spacing $value="80px" />
-            <Heading level={2} size="large" underline="center">
+            <Heading level={2} size="large" weight="thick" underline="center">
               Ocius key defence features
             </Heading>
           </Col>
         </Row>
       </Segmented>
-      <Segmented borderBottom="">
+      <Segmented>
         <Row>
           <Col xs={12} md={4} lg={4}>
             <Icon.OciusGlobeAlt
@@ -184,11 +175,11 @@ export default ({ data }) => (
       </Segmented>
     </Container>
 
-    <Segmented borderBottom="">
+    <Segmented>
       <Container>
         <Row className="centered">
           <Col xs={12} md={8} lg={8} mdOffset={2}>
-            <Heading level={2} size="large" underline="center">
+            <Heading level={2} size="large" weight="thick" underline="center">
               Ocius news headlines
             </Heading>
           </Col>
@@ -197,55 +188,11 @@ export default ({ data }) => (
       </Container>
     </Segmented>
 
-    <Segmented borderBottom="">
+    <Segmented>
       <NewsletterForm />
     </Segmented>
-    <Segmented borderBottom="">
-      <Container className="page-content">
-        <Heading level={3} color="#36BBE7" size="large" weight="thick" underline="left">
-          Contact Us
-        </Heading>
-        <Row>
-          <Col xs={12} md={3} lg={3}>
-            <p>
-              <strong>Ocius Headquarters</strong>
-              <br />
-              Building R13
-              <br />
-              UNSW Randwick Campus
-              <br />
-              22 King St, Randwick NSW 2031
-            </p>
-          </Col>
-          <Col xs={12} md={3} lg={3}>
-            <p>
-              <strong>Postal Address</strong>
-              <br />
-              Mail PO Box 4304 Castlecrag
-              <br />
-              NSW 2068
-            </p>
-          </Col>
-          <Col xs={12} md={3} lg={3}>
-            <p>
-              <strong>General Enquiries:</strong>
-              <br />
-              +61 2 9924 6400
-              <br />
-              contact@ocius.com.au
-            </p>
-          </Col>
-          <Col xs={12} md={3} lg={3}>
-            <p>
-              <strong>Open Hours:</strong>
-              <br />
-              Mon - Fri: 9am - 5pm
-              <br />
-              Sat - Sun: Closed
-            </p>
-          </Col>
-        </Row>
-      </Container>
+    <Segmented>
+      <ContactUs />
     </Segmented>
   </Layout>
 );
@@ -254,35 +201,12 @@ export const query = graphql`
   query {
     HeroBackground: file(relativePath: { eq: "images/solutions-defence-bg.png" }) {
       childImageSharp {
-        fluid(quality: 90, maxWidth: 1200) {
+        fluid(quality: 80, maxWidth: 1200) {
           ...GatsbyImageSharpFluid_withWebp
-        }
-      }
-    }
-
-    allMarkdownRemark(
-      limit: 10
-      sort: { fields: [frontmatter___date], order: DESC }
-      filter: { frontmatter: { category: { in: "Defence" } } }
-    ) {
-      edges {
-        node {
-          id
-          frontmatter {
-            title
-            featuredImage {
-              childImageSharp {
-                fluid(maxWidth: 272, maxHeight: 164, quality: 100) {
-                  ...GatsbyImageSharpFluid_withWebp
-                }
-              }
-            }
-          }
-          fields {
-            slug
-          }
         }
       }
     }
   }
 `;
+
+export default DefencePage;

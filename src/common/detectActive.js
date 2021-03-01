@@ -2,12 +2,10 @@
  * Helper function for better detection of active links.
  */
 const detectActive = ({ href, location }) => {
-  // Remove trailing slashes
-  const updatedHref = href.replace(/\/$/, '');
-  const updatedPath = location.pathname.replace(/\/$/, '');
+  const updatedPath = location.pathname + location.hash;
 
   return {
-    ...(updatedHref === updatedPath
+    ...(href === updatedPath
       ? {
           'data-active': true,
         }

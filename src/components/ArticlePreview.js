@@ -4,14 +4,16 @@ import styled from 'styled-components';
 import { Link as GatsbyLink } from 'gatsby';
 import Img from 'gatsby-image';
 
-import font from '../common/font';
 import Heading from './Heading';
 import Button from './Button';
 import mq from '../common/mq';
 
 const Container = styled.article`
-  font-family: ${font('main')};
-  color: #001826;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  font-family: ${(props) => props.theme.fonts.main};
+  color: ${(props) => props.theme.colors.themeDarker};
   background-color: #ffffff;
   max-width: 540px;
   padding: 1em;
@@ -30,7 +32,11 @@ const Paragraph = styled.p`
 `;
 
 const Wrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   padding: 0 16px 16px;
+  height: 100%;
 `;
 
 const StyledLink = styled(GatsbyLink)`
@@ -49,10 +55,11 @@ const StyledHeading = styled(Heading)`
   color: #2b2e34;
   font-size: 18px;
   line-height: ${32 / 22};
+  margin-top: 1.7em;
 `;
 
-const SubHeading = styled.p`
-  color: #4ab4e6;
+const Date = styled.p`
+  color: ${(props) => props.theme.colors.themePrimary};
   font-size: 0.9em;
   font-weight: 300;
   line-height: ${28 / 19};
@@ -62,13 +69,25 @@ const SubHeading = styled.p`
 const ImageContainer = styled.figure`
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
-  margin: 0 0 26px;
+  margin: 0;
   overflow: hidden;
+  box-shadow: rgba(46, 41, 51, 0.08) 0px 1px 2px, rgba(71, 63, 79, 0.08) 0px 2px 4px;
+  transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1) 0s;
+
+  :hover {
+    transform: translateY(-0.25rem);
+    box-shadow: rgba(46, 41, 51, 0.08) 0px 4px 8px, rgba(71, 63, 79, 0.16) 0px 8px 16px;
+  }
 `;
 
 const Image = styled(Img)`
   display: block;
   max-width: 100%;
+`;
+
+const Content = styled.div`
+  padding-bottom: 10px;
+  flex: 1;
 `;
 
 function ArticlePreview({ title, date, paragraph, image, href }) {
@@ -83,12 +102,14 @@ function ArticlePreview({ title, date, paragraph, image, href }) {
       </StyledLinkMargin>
 
       <Wrapper>
-        <StyledHeading level={3} size="medium" weight="thick">
-          {title}
-        </StyledHeading>
-        <SubHeading>{date}</SubHeading>
+        <Content>
+          <StyledHeading level={3} size="medium" weight="thick">
+            {title}
+          </StyledHeading>
+          <Date>{date}</Date>
 
-        <Paragraph>{paragraph}</Paragraph>
+          <Paragraph>{paragraph}</Paragraph>
+        </Content>
 
         <Button color="blue" size="tiny" href={href}>
           Read more

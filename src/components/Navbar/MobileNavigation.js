@@ -2,12 +2,11 @@ import React from 'react';
 import { Link as GatsbyLink } from 'gatsby';
 import styled from 'styled-components';
 import detectActive from '../../common/detectActive';
-import font from '../../common/font';
 import mq from '../../common/mq';
 import iconFromString from '../../common/iconFromString';
 
 const Wrapper = styled.div`
-  font-family: ${font('main')};
+  font-family: ${(props) => props.theme.fonts.main};
   position: fixed;
   display: flex;
   justify-content: space-around;
@@ -41,7 +40,7 @@ const Link = styled(GatsbyLink)`
   &[data-active] {
     text-decoration: none;
     font-weight: bold;
-    color: #60d2f6;
+    color: ${(props) => props.theme.colors.themePrimaryLight};
   }
 `;
 
@@ -55,10 +54,10 @@ const MobileNavItem = ({ linkTo, label, icon }) => (
 const MobileNavigation = () => (
   <Wrapper>
     <MobileNavItem linkTo="/" label="Home" icon="Home" />
-    <MobileNavItem linkTo="/about" label="About" icon="Idea" />
-    <MobileNavItem linkTo="/live" label="Live" icon="Globe" />
-    <MobileNavItem linkTo="/usv" label="Drones" icon="Drone" />
-    <MobileNavItem linkTo="/news" label="News" icon="News" />
+    <MobileNavItem linkTo="/about/" label="About" icon="Idea" />
+    <MobileNavItem linkTo="/live/" label="Live" icon="Globe" />
+    <MobileNavItem linkTo="/usv/" label="Drones" icon="Drone" />
+    <MobileNavItem linkTo="/news/" label="News" icon="News" />
   </Wrapper>
 );
 

@@ -1,79 +1,77 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import { Row, Col } from 'react-flexbox-grid';
-import Loadable from '@loadable/component';
 import Layout from '../layouts/Layout';
 import HeroBlock from '../components/HeroBlock';
+import Heading from '../components/Heading';
 import SEO from '../components/SEO';
 import Container from '../components/Container';
 import Segmented from '../components/Segmented';
 import Icon from '../components/Icon';
+import ArticlePreviewBlock from '../components/ArticlePreviewBlock';
+import NewsletterForm from '../components/NewsletterForm';
+import ContactUs from '../components/ContactUs';
+import { Spacing } from '../components/common';
 
-// Lazy load components
-const Heading = Loadable(() => import(`../components/Heading`));
-const Button = Loadable(() => import(`../components/Button`));
-const TallCarousel = Loadable(() => import(`../components/TallCarousel`));
-
-export default ({ data }) => (
+const SciencePage = ({ data }) => (
   <Layout>
     <SEO
       title="Science"
-      description="Persistent Unmanned Surface Vessels (USVs) are valuable tools for oceanographic and climate change research. Bluebottle USVs can monitor Weather “ground truth“, Climate Change, Hurricane landfall, Fisheries."
+      description="Persistent Uncrewed Surface Vessels (USVs) are valuable tools for oceanographic and climate change research. Bluebottle USVs can monitor Weather “ground truth“, Climate Change, Hurricane landfall, Fisheries."
     />
-    <Segmented borderBottom="">
+    {data.HeroBackground && (
       <HeroBlock
-        image={data.HeroBackground ? data.HeroBackground.childImageSharp.fluid : ''}
-        gradient="linear"
-        constrained
+        image={data.HeroBackground.childImageSharp.fluid}
+        masked
+        scrim="blue"
+        fallbackColor="#00b4b0"
       >
-        <Heading size="large" level={2} weight="thick">
-          Science
-        </Heading>
         <Row>
           <Col xs={12} md={6} lg={6}>
-            <Heading level={3} size="medium" weight="thick">
-              Weather “ground truth“
+            <Spacing $value="80px" />
+            <Heading level={1} color="white" size="huge" weight="thick" underline="left">
+              Science
             </Heading>
-          </Col>
-          <Col sm={12} md={6} lg={6}>
-            <Heading level={3} size="medium" weight="thick">
-              Climate Change
+            <Heading level={2} color="white" size="medium" weight="normal" as="p">
+              Persistent USVs are valuable tools for oceanographic and climate change research.
+              <br />
+              Find out how Ocius can help you do more.
             </Heading>
-          </Col>
-        </Row>
-        <Row>
-          <Col xs={12} md={6} lg={6}>
-            <Heading level={3} size="medium" weight="thick">
-              Hurricane Landfall Prediction
-            </Heading>
-          </Col>
-          <Col sm={12} md={6} lg={6}>
-            <Heading level={3} size="medium" weight="thick">
-              Fisheries
-            </Heading>
+            <Spacing $value="280px" />
           </Col>
         </Row>
       </HeroBlock>
-    </Segmented>
-    <Container className="centered">
+    )}
+
+    <Container>
+      <Segmented>
+        <Row className="centered">
+          <Col xs={12} md={12} lg={12}>
+            <Spacing $value="80px" />
+            <Heading level={2} size="large" weight="thick" underline="center">
+              How Ocius can help monitor our natural environment
+            </Heading>
+          </Col>
+        </Row>
+      </Segmented>
       <Segmented>
         <Row>
           <Col xs={12} md={4} lg={4}>
-            <Icon.Bolt
+            <Icon.OciusGlobeAlt
               fill="#4db4e6"
               style={{
-                height: '70px',
-                marginBottom: '3px',
+                height: '120px',
+                marginBottom: '10px',
                 width: 'auto',
               }}
             />
-            <Heading level={4} size="small" weight="thick">
+            <Heading level={4} color="#2b2e34" size="medium" weight="thick" underline="left">
               Weather LIVE
             </Heading>
             <ul className="left-align">
-              <li>Wind direction & strength</li>
-              <li>Solar intensity & cloud</li>
-              <li>Wave direction & height</li>
+              <li>Wind direction &amp; strength</li>
+              <li>Solar intensity &amp; cloud</li>
+              <li>Wave direction &amp; height</li>
               <li>Air pressure</li>
               <li>Water temperature</li>
               <li>Camera shots</li>
@@ -81,16 +79,16 @@ export default ({ data }) => (
             </ul>
           </Col>
           <Col xs={12} md={4} lg={4}>
-            <Icon.StackOverflow
+            <Icon.OciusGlobeAlt
               fill="#4db4e6"
               style={{
-                height: '70px',
-                marginBottom: '3px',
+                height: '120px',
+                marginBottom: '10px',
                 width: 'auto',
               }}
             />
-            <Heading level={4} size="small" weight="thick">
-              Data storage on board for later use
+            <Heading level={4} color="#2b2e34" size="medium" weight="thick" underline="left">
+              Data Storage On-Board
             </Heading>
             <ul className="left-align">
               <li>
@@ -101,72 +99,60 @@ export default ({ data }) => (
             </ul>
           </Col>
           <Col xs={12} md={4} lg={4}>
-            <Icon.Handshake
+            <Icon.OciusGlobeAlt
               fill="#4db4e6"
               style={{
-                height: '70px',
-                marginBottom: '3px',
+                height: '120px',
+                marginBottom: '10px',
                 width: 'auto',
               }}
             />
-            <Heading level={4} size="small" weight="thick">
+            <Heading level={4} color="#2b2e34" size="medium" weight="thick" underline="left">
               Multiple options
             </Heading>
             <ul className="left-align">
               <li>Discuss with us your mission goals</li>
               <li>Replace expensive bouys with mobile platforms</li>
               <li>Configure your own modular payload</li>
-              <li>150 kg &amp;wet&amp; sensors & 150 kg &amp;dry&amp; equipment</li>
+              <li>150 kg wet sensors and 150 kg dry equipment</li>
             </ul>
           </Col>
         </Row>
       </Segmented>
-      <Segmented borderBottom="">
-        <Heading size="medium" level={3}>
-          Persistent USVs are valuable tools for oceanographic and climate change research
-          <br />
-          <strong>Let Bluebottles help you do more</strong>
-          <br />
-          For how we can support your goals...
-        </Heading>
-        <Button color="white" size="medium" href="/contact" border>
-          Contact Us Now
-        </Button>
-      </Segmented>
-      <TallCarousel title="Ocius in Research" slides={data.allMarkdownRemark.edges} />
     </Container>
+
+    <Segmented>
+      <Container>
+        <Row className="centered">
+          <Col xs={12} md={8} lg={8} mdOffset={2}>
+            <Heading level={2} size="large" weight="thick" underline="center">
+              Ocius news headlines
+            </Heading>
+          </Col>
+        </Row>
+        <ArticlePreviewBlock />
+      </Container>
+    </Segmented>
+
+    <Segmented>
+      <NewsletterForm />
+    </Segmented>
+    <Segmented>
+      <ContactUs />
+    </Segmented>
   </Layout>
 );
 
 export const query = graphql`
   query {
-    HeroBackground: file(relativePath: { eq: "images/Elevation.jpg" }) {
+    HeroBackground: file(relativePath: { eq: "images/solutions-science-bg.jpg" }) {
       childImageSharp {
-        fluid(quality: 90, maxWidth: 1200) {
+        fluid(quality: 86, maxWidth: 1200) {
           ...GatsbyImageSharpFluid_withWebp
-        }
-      }
-    }
-
-    allMarkdownRemark(limit: 10, sort: { fields: [frontmatter___date], order: DESC }) {
-      edges {
-        node {
-          id
-          frontmatter {
-            title
-            featuredImage {
-              childImageSharp {
-                fluid(maxWidth: 272, maxHeight: 164, quality: 100) {
-                  ...GatsbyImageSharpFluid_withWebp
-                }
-              }
-            }
-          }
-          fields {
-            slug
-          }
         }
       }
     }
   }
 `;
+
+export default SciencePage;

@@ -8,7 +8,7 @@ const LoadablePlugin = require('@loadable/webpack-plugin');
 
 exports.onCreateWebpackConfig = ({ stage, getConfig, rules, loaders, plugins, actions }) => {
   actions.setWebpackConfig({
-    plugins: [new LoadablePlugin()]
+    plugins: [new LoadablePlugin()],
   });
 };
 
@@ -20,7 +20,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
     createNodeField({
       name: `slug`,
       node,
-      value
+      value,
     });
   }
 };
@@ -51,10 +51,18 @@ exports.createPages = ({ graphql, actions }) => {
           }
         }
       }
+
+      allLinksYaml(sort: { fields: [date], order: DESC }) {
+        edges {
+          node {
+            id
+          }
+        }
+      }
     }
-  `).then(result => {
+  `).then((result) => {
     if (result.errors) {
-      result.errors.forEach(e => console.error(e.toString()));
+      result.errors.forEach((e) => console.error(e.toString()));
       return Promise.reject(result.errors);
     }
 
@@ -72,8 +80,8 @@ exports.createPages = ({ graphql, actions }) => {
         context: {
           // Data passed to context is available
           // in page queries as GraphQL variables.
-          slug: post.fields.slug
-        }
+          slug: post.fields.slug,
+        },
       });
     });
 
@@ -83,7 +91,40 @@ exports.createPages = ({ graphql, actions }) => {
       items: allPosts,
       itemsPerPage: 8,
       pathPrefix: '/news',
-      component: blogTemplate
+      component: blogTemplate,
+    });
+
+    // Create a paginated media coverage page, e.g., /media, /media/2, /media/3
+    paginate({
+      createPage,
+      items: result.data.allLinksYaml.edges,
+      itemsPerPage: 12,
+      pathPrefix: '/media-coverage',
+      component: path.resolve(`src/templates/media.js`),
     });
   });
+};
+
+// In the case where none of the nav items have child pages, an error occurs in the left nav
+// that prevents the site from working because of the missing "title" field.
+// By overriding the type definitions for NavItemsYaml we can allow the title to be nullable.
+
+exports.createSchemaCustomization = ({ actions }) => {
+  const { createTypes } = actions;
+
+  const typeDefs = [
+    `
+  type NavItemsYamlPage {
+    title: String
+    path: String!
+  }
+  type NavItemsYaml implements Node {
+    title: String!
+    path: String!
+    pages: [NavItemsYamlPage]
+    hasDivider: Boolean
+  }`,
+  ];
+
+  createTypes(typeDefs);
 };

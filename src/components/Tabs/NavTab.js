@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { Link } from '@reach/router';
 import styled, { css } from 'styled-components';
 import detectActive from '../../common/detectActive';
-import font from '../../common/font';
 
 const NavItem = styled.li`
   box-sizing: border-box;
@@ -13,15 +12,15 @@ const NavItem = styled.li`
   font-size: 100%;
   font-family: inherit;
   vertical-align: baseline;
-  background-color: #efefef;
+  background-color: ${(props) => props.theme.colors.neutralLightAlt};
   display: flex;
   padding: 0;
   cursor: pointer;
   height: 4rem;
   transition: background-color 70ms cubic-bezier(0.2, 0, 0.38, 0.9);
 
-  &:hover {
-    background-color: #efefef;
+  :hover {
+    background-color: ${(props) => props.theme.colors.neutralLightAlt};
   }
 
   @media (min-width: 67.2rem) {
@@ -50,10 +49,7 @@ const StyledLink = styled(Link)`
   outline: 2px solid transparent;
   outline-offset: -2px;
   display: inline-block;
-  color: #4ab4e6;
   text-decoration: none;
-  font-weight: 400;
-  font-family: ${font('bold')};
   padding: 1.2rem 0;
   width: calc(100% - 32px);
   height: 4rem;
@@ -63,15 +59,16 @@ const StyledLink = styled(Link)`
   line-height: 2.55rem;
   border-bottom: 1px solid #e0e0e0;
   overflow: hidden;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-  box-shadow: inset 0px 0px 1px #1f3643;
   transition: color 70ms cubic-bezier(0.2, 0, 0.38, 0.9),
     border-bottom-color 70ms cubic-bezier(0.2, 0, 0.38, 0.9),
     outline 70ms cubic-bezier(0.2, 0, 0.38, 0.9);
 
   @media (min-width: 67.2rem) {
+    color: ${(props) => props.theme.colors.themePrimary};
+    font-weight: 400;
+    font-family: ${(props) => props.theme.fonts.bold};
     border-bottom: 3px solid #e0e0e0;
+    box-shadow: inset 0px 0px 1px ${(props) => props.theme.colors.themeDark};
     padding: 0.8rem 1.6rem;
     width: 16rem;
     margin: 0;
@@ -81,23 +78,25 @@ const StyledLink = styled(Link)`
     justify-content: center;
     height: 5rem;
     border-bottom: none;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
   }
 
   &[data-active],
   &[aria-current*='page'] {
-    color: #1f3643;
+    color: ${(props) => props.theme.colors.themeDark};
     background-color: #edf7fa;
-    box-shadow: inset 0px 0px 1px #1f3643;
+    box-shadow: inset 0px 0px 1px ${(props) => props.theme.colors.themeDark};
     border-bottom: none;
   }
 
-  &:hover {
+  :hover {
     text-decoration: none;
   }
 
-  &:focus,
-  &:active {
-    outline: 2px solid #60d2f6;
+  :focus,
+  :active {
+    outline: 2px solid ${(props) => props.theme.colors.themePrimaryLight};
     outline-offset: -2px;
   }
 `;

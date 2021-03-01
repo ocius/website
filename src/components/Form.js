@@ -1,13 +1,17 @@
 import styled, { css } from 'styled-components';
 import { ifProp } from 'styled-tools';
 import { Field } from 'formik';
+import mq from '../common/mq';
 
 export const Feedback = styled.div`
   display: block;
   width: 100%;
+  margin-top: 0.5rem;
   margin-bottom: 0.25rem;
   font-size: 80%;
   color: #dc3545;
+  text-align: center;
+  text-align: ${(props) => (props.position ? props.position : 'left')};
 `;
 
 export const Alert = styled.span`
@@ -31,6 +35,20 @@ export const Alert = styled.span`
       border-color: #f5c6cb;
     `
   )};
+`;
+
+export const FormLabel = styled.label`
+  text-align: right;
+  display: inline-block;
+  vertical-align: middle;
+  width: calc(20% - 2em);
+  margin: 0 2em 0 0;
+
+  @media (max-width: ${mq.max[1024]}) {
+    display: block;
+    width: 100%;
+    text-align: left;
+  }
 `;
 
 export const FormField = styled(Field)`

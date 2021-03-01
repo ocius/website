@@ -8,61 +8,64 @@ import Icon from '../components/Icon';
 import Segmented from '../components/Segmented';
 import HeroBlock from '../components/HeroBlock';
 import Heading from '../components/Heading';
-import Button from '../components/Button';
+import ArticlePreviewBlock from '../components/ArticlePreviewBlock';
+import NewsletterForm from '../components/NewsletterForm';
+import ContactUs from '../components/ContactUs';
+import { Spacing } from '../components/common';
 
-export default ({ data }) => (
+const OilAndGasPage = ({ data }) => (
   <Layout>
     <SEO
       title="Oil &amp; Gas"
-      description="Unmanned Surface Vessels (USVs) are already being used in the Oil and Gas industry. Bluebottle USVs can do more. Seadbed and Pipeline Surveys, Security, Environment Monitoring, "
+      description="Uncrewed Surface Vessels (USVs) are already being used in the Oil and Gas industry. Bluebottle USVs can do more. Seadbed and Pipeline Surveys, Security, Environment Monitoring, "
     />
-    <HeroBlock
-      image={data.HeroBackground ? data.HeroBackground.childImageSharp.fluid : ''}
-      gradient="linear"
-      constrained
-    >
-      <Heading level={2} size="large" weight="thick">
-        Oil &amp; Gas
-      </Heading>
-      <Row>
-        <Col xs={12} md={6} lg={4}>
-          <Heading level={3} size="medium" weight="thick">
-            Seabed and Pipeline Surveys
-          </Heading>
-        </Col>
-        <Col xs={12} md={6} lg={4}>
-          <Heading level={3} size="medium" weight="thick">
-            Environment Monitoring
-          </Heading>
-        </Col>
-        <Col xs={12} md={6} lg={4}>
-          <Heading level={3} size="medium" weight="thick">
-            Security
-          </Heading>
-        </Col>
-      </Row>
-    </HeroBlock>
-    <Container className="centered">
-      <Segmented borderBottom="">
-        <Heading level={3} size="medium">
-          USVs are already being used in the Oil &amp; Gas industry
-          <br />
-          <strong>Bluebottles can do more</strong>
-        </Heading>
+    {data.HeroBackground && (
+      <HeroBlock
+        image={data.HeroBackground.childImageSharp.fluid}
+        masked
+        scrim="blue"
+        fallbackColor="#55a1d2"
+      >
+        <Row>
+          <Col xs={12} md={6} lg={6}>
+            <Spacing $value="280px" />
+            <Heading level={1} color="white" size="huge" weight="thick" underline="left">
+              Oil &amp; Gas
+            </Heading>
+            <Heading level={2} color="white" size="medium" weight="normal" as="p">
+              USVs are already being used in the Oil &amp; Gas industry for projects such as seabed
+              and pipeline surveys, environment monitoring and security.
+            </Heading>
+            <Spacing $value="80px" />
+          </Col>
+        </Row>
+      </HeroBlock>
+    )}
+
+    <Container>
+      <Segmented>
+        <Row className="centered">
+          <Col xs={12} md={12} lg={12}>
+            <Spacing $value="80px" />
+            <Heading level={2} size="large" weight="thick" underline="center">
+              Ocius can do more for the oil &amp; gas industry
+            </Heading>
+          </Col>
+        </Row>
       </Segmented>
       <Segmented>
         <Row>
           <Col xs={12} md={4} lg={4}>
-            <Icon.Compass
+            <Icon.OciusGlobeAlt
               fill="#4db4e6"
               style={{
-                height: '70px',
-                marginBottom: '3px',
+                height: '120px',
+                marginBottom: '10px',
                 width: 'auto',
               }}
             />
-            <Heading level={4} size="small" weight="thick">
-              Seabed & Pipeline Surveys
+            <Heading level={4} color="#2b2e34" size="medium" weight="thick" underline="left">
+              Seabed &amp; Pipeline Surveys
             </Heading>
             <ul className="left-align">
               <li>GPS mapping</li>
@@ -74,15 +77,15 @@ export default ({ data }) => (
             </ul>
           </Col>
           <Col xs={12} md={4} lg={4}>
-            <Icon.Envira
+            <Icon.OciusGlobeAlt
               fill="#4db4e6"
               style={{
-                height: '70px',
-                marginBottom: '3px',
+                height: '120px',
+                marginBottom: '10px',
                 width: 'auto',
               }}
             />
-            <Heading level={4} size="small" weight="thick">
+            <Heading level={4} color="#2b2e34" size="medium" weight="thick" underline="left">
               Environmental Monitoring
             </Heading>
             <ul className="left-align">
@@ -94,15 +97,15 @@ export default ({ data }) => (
             </ul>
           </Col>
           <Col sm={12} md={4} lg={4}>
-            <Icon.Lock
+            <Icon.OciusGlobeAlt
               fill="#4db4e6"
               style={{
-                height: '70px',
-                marginBottom: '3px',
+                height: '120px',
+                marginBottom: '10px',
                 width: 'auto',
               }}
             />
-            <Heading level={4} size="small" weight="thick">
+            <Heading level={4} color="#2b2e34" size="medium" weight="thick" underline="left">
               Security
             </Heading>
             <ul className="left-align">
@@ -116,30 +119,40 @@ export default ({ data }) => (
           </Col>
         </Row>
       </Segmented>
-      <Segmented borderBottom="">
-        <Row>
-          <Col xs={12} md={12} lg={12}>
-            <Heading size="medium" level={3}>
-              We are looking for partners to do joint venture and demonstration projects.
+    </Container>
+
+    <Segmented>
+      <Container>
+        <Row className="centered">
+          <Col xs={12} md={8} lg={8} mdOffset={2}>
+            <Heading level={2} size="large" weight="thick" underline="center">
+              Ocius news headlines
             </Heading>
-            <Button color="white" size="medium" href="/contact" border>
-              Contact Us Now
-            </Button>
           </Col>
         </Row>
-      </Segmented>
-    </Container>
+        <ArticlePreviewBlock />
+      </Container>
+    </Segmented>
+
+    <Segmented>
+      <NewsletterForm />
+    </Segmented>
+    <Segmented>
+      <ContactUs />
+    </Segmented>
   </Layout>
 );
 
 export const query = graphql`
   query {
-    HeroBackground: file(relativePath: { eq: "images/Oil-Header-Background.jpg" }) {
+    HeroBackground: file(relativePath: { eq: "images/solutions-oil-and-gas-bg.jpg" }) {
       childImageSharp {
-        fluid(quality: 90, maxWidth: 1200) {
+        fluid(quality: 85, maxWidth: 1200) {
           ...GatsbyImageSharpFluid_withWebp
         }
       }
     }
   }
 `;
+
+export default OilAndGasPage;

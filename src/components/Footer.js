@@ -7,12 +7,14 @@ import mq from '../common/mq';
 import Icon from './Icon';
 import SocialLink from './SocialLink';
 import Container from './Container';
+import MaskOverlay from './MaskOverlay';
 
 const StyledFooter = styled.footer`
+  position: relative;
   background-color: #1f3643;
   width: 100%;
   clear: both;
-  padding: 4.5em 0;
+  padding: 10em 0 4.5em;
 
   @media (max-width: ${mq.max[768]}) {
     padding: 2em 0;
@@ -47,7 +49,7 @@ const StyledFooter = styled.footer`
     text-align: right;
 
     @media (max-width: ${mq.max[768]}) {
-      padding: 1.6em 0 2em;
+      padding: 1.6em 1em 0;
       display: flex;
       flex-direction: row-reverse;
 
@@ -64,7 +66,10 @@ const StyledFooter = styled.footer`
 const LinkStyles = css`
   display: block;
   padding: 8px 0;
-  font-size: 17px;
+
+  @media (min-width: ${mq.min[768]}) {
+    font-size: 17px;
+  }
 `;
 
 const FooterLink = styled(Link)`
@@ -73,6 +78,7 @@ const FooterLink = styled(Link)`
 
 const Footer = ({ children, footerStyle }) => (
   <StyledFooter className="footer" style={footerStyle}>
+    <MaskOverlay position="top" />
     {children}
   </StyledFooter>
 );
@@ -111,7 +117,7 @@ Footer.defaultProps = {
               <FooterLink to="/defence">Defence</FooterLink>
             </li>
             <li>
-              <FooterLink to="/oil-and-gas">Oil & Gas</FooterLink>
+              <FooterLink to="/oil-and-gas">Oil &amp; Gas</FooterLink>
             </li>
             <li>
               <FooterLink to="/science">Science</FooterLink>

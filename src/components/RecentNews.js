@@ -6,7 +6,7 @@ import styled from 'styled-components';
   Change color of sidebar links
  */
 const Link = styled(UnstyledLink)`
-  color: #001826;
+  color: ${(props) => props.theme.colors.themeDark};
   font-weight: bold;
 `;
 
@@ -21,9 +21,9 @@ const List = styled.ul`
     list-style: none;
     margin-bottom: 10px;
     padding-top: 15px;
-    border-top: 1px solid #efefef;
+    border-top: 1px solid ${(props) => props.theme.colors.neutralLightAlt};
 
-    &:first-child {
+    :first-child {
       border-top: none;
     }
   }
@@ -36,7 +36,7 @@ const List = styled.ul`
     font-size: 0.9em;
     font-weight: 300;
     margin-top: -10px;
-    color: #164194;
+    color: ${(props) => props.theme.colors.themePrimary};
   }
 `;
 
