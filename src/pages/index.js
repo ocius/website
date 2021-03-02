@@ -78,9 +78,9 @@ const IndexPage = ({ data }) => (
             <Heading level={3} color="white" size="large" weight="thick" underline="left">
               A new generation
               <br />
-              Of autonomous
+              of autonomous
               <br />
-              Ocean monitoring.
+              ocean monitoring
             </Heading>
             <p className="white">
               Power large payloads, roam widely, and stay at sea for months at a time. Ocius USVs
