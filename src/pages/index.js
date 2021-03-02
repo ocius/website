@@ -188,7 +188,7 @@ const IndexPage = ({ data }) => (
 
 export const query = graphql`
   query getHomepageImages {
-    HeroBackground: file(relativePath: { eq: "images/ocius-bg.png" }) {
+    HeroBackground: file(relativePath: { eq: "images/ocius-bg.jpg" }) {
       ...imageSharpHeroBackground
     }
 
