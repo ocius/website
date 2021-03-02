@@ -30,9 +30,9 @@ const DefencePage = ({ data }) => (
               Defence
             </Heading>
             <Heading level={2} color="white" size="medium" weight="normal" as="p">
-              Persistent USVs are seen by defence as strategic force multipliers. Bluebottles have
+              Persistent USVs are seen by Defence as strategic force multipliers. Bluebottles have
               more power, payload and performance making them the superior persistent USV for
-              defence.
+              Defence.
             </Heading>
             <Spacing $value="80px" />
           </Col>
