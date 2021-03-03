@@ -18,8 +18,7 @@ export const ContainerStyle = css`
 const HeroContainer = styled.section`
   ${ContainerStyle}
   background-color: ${(props) => (props.fallbackColor ? props.fallbackColor : 'rgb(0, 99, 131)')};
-  background-image: url(${(props) => (props.fluid ? props.fluid.srcWebp : '')}),
-    url(${(props) => (props.fluid ? props.fluid.src : '')});
+  background-image: url(${(props) => (props.fluid ? props.fluid.src : '')});
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
