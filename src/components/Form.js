@@ -1,6 +1,5 @@
 import styled, { css } from 'styled-components';
 import { ifProp } from 'styled-tools';
-import { Field } from 'formik';
 import mq from '../common/mq';
 
 export const Feedback = styled.div`
@@ -51,7 +50,7 @@ export const FormLabel = styled.label`
   }
 `;
 
-export const FormField = styled(Field)`
+export const FormField = styled.input`
   &.is-invalid,
   &:invalid {
     border-color: #dc3545;

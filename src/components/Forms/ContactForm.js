@@ -1,5 +1,5 @@
-import React from 'react';
-import { Formik, ErrorMessage } from 'formik';
+import React, { useState } from 'react';
+import { useForm } from 'react-hook-form';
 import axios from 'axios';
 import styled from 'styled-components';
 import { Feedback, Alert, FormField, TextareaField } from '../Form';
@@ -9,155 +9,118 @@ const FieldWrapper = styled.div`
   margin: 0 0 1.2em;
 `;
 
-class ContactForm extends React.Component {
-  static validateName(value) {
-    let error;
-    if (!value) {
-      error = 'Please enter your name';
+const ContactForm = () => {
+  const { register, handleSubmit, errors, reset, formState } = useForm({
+    mode: 'onBlur',
+    defaultValues: {
+      name: '',
+      email: '',
+      company: '',
+      message: '',
+    },
+  });
+  const [formSuccess, setFormSuccess] = useState(false);
+  const [formMessage, setFormMessage] = useState(null);
+  const { isSubmitting, isValid } = formState;
+
+  const handleFormSubmitError = (error) => {
+    setFormSuccess(false);
+    setFormMessage(`Unable to submit form. ${error}. Please try again.`);
+  };
+
+  const onSubmit = ({ name, company, email, message }) => {
+    if (isValid) {
+      // TODO: Fix lambda URL
+      const endPoint = 'https://qf498rjqnj.execute-api.us-east-1.amazonaws.com';
+
+      axios
+        .post(`${endPoint}/Prod`, {
+          // HACK: Endpoint expects name property
+          name,
+          company,
+          email,
+          message,
+        })
+        .then((response) => {
+          if (response.status === 200) {
+            setFormSuccess(true);
+            setFormMessage(
+              'Your message was sent successfully. You will receive a reply within 24 hours.'
+            );
+            reset();
+          } else {
+            handleFormSubmitError();
+          }
+        })
+        .catch((error) => {
+          handleFormSubmitError(error);
+        });
     }
-    return error;
-  }
+  };
 
-  static validateMessage(value) {
-    let error;
-    if (!value) {
-      error = 'Please enter your message';
-    }
-    return error;
-  }
+  return (
+    <form onSubmit={handleSubmit(onSubmit)}>
+      {formMessage && <Alert success={formSuccess}>{formMessage}</Alert>}
+      <FieldWrapper>
+        <FormField
+          type="text"
+          id="name"
+          name="name"
+          className={`form-control ${errors.name && 'is-invalid'}`}
+          placeholder="Name (required)"
+          ref={register({ required: true })}
+        />
+        {/* show an error when name field is empty */}
+        {errors.name && <Feedback>Please enter your name</Feedback>}
+      </FieldWrapper>
 
-  static validateEmail(value) {
-    let error;
-    if (!value) {
-      error = 'Please enter your email';
-    } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(value)) {
-      error = 'Please provide a valid email';
-    }
-    return error;
-  }
+      <FieldWrapper>
+        <FormField
+          type="email"
+          id="email"
+          name="email"
+          className={`form-control ${errors.email && 'is-invalid'}`}
+          placeholder="Email (required)"
+          ref={register({
+            required: true,
+            pattern: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
+          })}
+        />
+        {/* show an error when an invalid email provided */}
+        {errors.email && <Feedback>Please provide a valid email</Feedback>}
+      </FieldWrapper>
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      submitSuccess: false,
-      formMessage: null,
-    };
+      <FieldWrapper>
+        <FormField
+          type="text"
+          id="company"
+          name="company"
+          placeholder="Company or Company Website"
+          ref={register()}
+        />
+      </FieldWrapper>
 
-    // Bind class methods
-    this.handleFormSubmitSuccess = this.handleFormSubmitSuccess.bind(this);
-    this.handleFormSubmitError = this.handleFormSubmitError.bind(this);
-  }
+      <FieldWrapper>
+        <TextareaField
+          as="textarea"
+          id="message"
+          name="message"
+          className={`form-control ${errors.message && 'is-invalid'}`}
+          cols={40}
+          rows={10}
+          placeholder="Message (required)"
+          ref={register({ required: true })}
+        />
+        {/* show an error when message field is empty */}
+        {errors.message && <Feedback>Please enter your message</Feedback>}
+      </FieldWrapper>
 
-  handleFormSubmitSuccess() {
-    this.setState({
-      submitSuccess: true,
-      formMessage: 'Your message was sent successfully. You will receive a reply within 24 hours.',
-    });
-  }
-
-  handleFormSubmitError(error) {
-    this.setState({
-      submitSuccess: false,
-      formMessage: `Unable to submit form. ${error}. Please try again.`,
-    });
-  }
-
-  render() {
-    return (
-      <>
-        <Formik
-          initialValues={{
-            name: '',
-            company: '',
-            email: '',
-            message: '',
-          }}
-          onSubmit={({ name, company, email, message }, actions) => {
-            const endPoint = 'https://qf498rjqnj.execute-api.us-east-1.amazonaws.com';
-
-            axios
-              .post(`${endPoint}/Prod`, {
-                // HACK: Endpoint expects name property
-                name,
-                company,
-                email,
-                message,
-              })
-              .then((response) => {
-                if (response.status === 200) {
-                  this.handleFormSubmitSuccess();
-                  actions.resetForm();
-                } else {
-                  this.handleFormSubmitError();
-                }
-              })
-              .catch((error) => {
-                this.handleFormSubmitError(error);
-              });
-          }}
-        >
-          {({ errors, touched, handleSubmit, isSubmitting }) => (
-            <form onSubmit={handleSubmit}>
-              {this.state.formMessage && (
-                <Alert success={this.state.submitSuccess}>{this.state.formMessage}</Alert>
-              )}
-              <FieldWrapper>
-                <FormField
-                  type="text"
-                  id="name"
-                  name="name"
-                  className={`form-control ${errors.name && touched.name && 'is-invalid'}`}
-                  validate={ContactForm.validateName}
-                  placeholder="Name (required)"
-                />
-                <ErrorMessage name="name">{(msg) => <Feedback>{msg}</Feedback>}</ErrorMessage>
-              </FieldWrapper>
-
-              <FieldWrapper>
-                <FormField
-                  type="email"
-                  id="email"
-                  name="email"
-                  className={`form-control ${errors.email && touched.email && 'is-invalid'}`}
-                  validate={ContactForm.validateEmail}
-                  placeholder="Email (required)"
-                />
-                <ErrorMessage name="email">{(msg) => <Feedback>{msg}</Feedback>}</ErrorMessage>
-              </FieldWrapper>
-
-              <FieldWrapper>
-                <FormField
-                  type="text"
-                  id="company"
-                  name="company"
-                  placeholder="Company or Company Website"
-                />
-              </FieldWrapper>
-
-              <FieldWrapper>
-                <TextareaField
-                  id="message"
-                  name="message"
-                  component="textarea"
-                  className={`form-control ${errors.message && touched.message && 'is-invalid'}`}
-                  validate={ContactForm.validateMessage}
-                  cols={40}
-                  rows={10}
-                  placeholder="Message (required)"
-                />
-                <ErrorMessage name="message">{(msg) => <Feedback>{msg}</Feedback>}</ErrorMessage>
-              </FieldWrapper>
-
-              <Button type="submit" size="small" color="blue" disabled={isSubmitting}>
-                Submit
-              </Button>
-            </form>
-          )}
-        </Formik>
-      </>
-    );
-  }
-}
+      <Button type="submit" size="small" color="blue" disabled={isSubmitting}>
+        Submit
+      </Button>
+    </form>
+  );
+};
 
 ContactForm.propTypes = {};
 ContactForm.defaultProps = {};
