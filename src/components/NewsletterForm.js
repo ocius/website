@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { graphql, StaticQuery } from 'gatsby';
 import styled from 'styled-components';
-import { Formik, ErrorMessage } from 'formik';
+import { useForm } from 'react-hook-form';
 import { Col, Row } from 'react-flexbox-grid';
 import BackgroundImage from 'gatsby-background-image';
 import addToMailchimp from 'gatsby-plugin-mailchimp';
@@ -77,18 +77,16 @@ const FormGroup = styled.div`
 `;
 
 const NewsletterForm = ({ topMaskBackgroundColor, bottomMaskBackgroundColor }) => {
+  const { register, handleSubmit, errors, reset, formState } = useForm({
+    mode: 'onBlur',
+    defaultValues: {
+      email: '',
+      name: '',
+    },
+  });
   const [submitSuccess, setSubmitSuccess] = useState(false);
   const [formMessage, setFormMessage] = useState('');
-
-  const validateEmail = (value) => {
-    let error;
-    if (!value) {
-      error = 'Please enter your email';
-    } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(value)) {
-      error = 'Please provide a valid email';
-    }
-    return error;
-  };
+  const { isSubmitting, isValid } = formState;
 
   const handleFormSubmitSuccess = () => {
     setSubmitSuccess(true);
@@ -102,128 +100,112 @@ const NewsletterForm = ({ topMaskBackgroundColor, bottomMaskBackgroundColor }) =
     setFormMessage(`Oops, unexpected error occurred: ${error}`);
   };
 
+  const onSubmit = ({ email, name }) => {
+    if (isValid) {
+      // Honeypot for bots
+      if (name) {
+        handleFormSubmitError('Automatic subscriptions are prohibited');
+        return;
+      }
+
+      addToMailchimp(email)
+        .then((data) => {
+          if (data.result === 'success') {
+            handleFormSubmitSuccess();
+            reset();
+          } else {
+            handleFormSubmitError(data.msg);
+          }
+        })
+        .catch((error) => {
+          // Errors in here are client side
+          // Mailchimp always returns a 200
+          handleFormSubmitError(error);
+        });
+    }
+  };
+
   return (
-    <Formik
-      initialValues={{
-        email: '',
-        name: '',
-      }}
-      onSubmit={({ email, name }, actions) => {
-        // Honeypot for bots
-        if (name) {
-          handleFormSubmitError('Automatic subscriptions are prohibited');
-          return;
-        }
-
-        addToMailchimp(email)
-          .then((data) => {
-            if (data.result === 'success') {
-              handleFormSubmitSuccess();
-              actions.resetForm();
-            } else {
-              handleFormSubmitError(data.msg);
-            }
-          })
-          .catch((error) => {
-            // Errors in here are client side
-            // Mailchimp always returns a 200
-            handleFormSubmitError(error);
-          });
-      }}
-    >
-      {({ errors, touched, handleSubmit, isSubmitting }) => (
-        <>
-          <StaticQuery
-            query={graphql`
-              query {
-                NewsletterBackground: file(relativePath: { eq: "images/newsletter-bg.jpg" }) {
-                  childImageSharp {
-                    fluid(quality: 85, maxWidth: 1920) {
-                      ...GatsbyImageSharpFluid_withWebp
-                    }
-                  }
-                }
+    <StaticQuery
+      query={graphql`
+        query {
+          NewsletterBackground: file(relativePath: { eq: "images/newsletter-bg.jpg" }) {
+            childImageSharp {
+              fluid(quality: 85, maxWidth: 1920) {
+                ...GatsbyImageSharpFluid_withWebp
               }
-            `}
-            render={(data) => {
-              // Set ImageData.
-              const imageData = data.NewsletterBackground.childImageSharp.fluid;
-              return (
-                <NewsletterContainer Tag="section" fluid={imageData}>
-                  <MaskOverlay flipped position="top" color={topMaskBackgroundColor} />
-                  <Container className="centered">
-                    <Row>
-                      <Col xs={12} md={8} mdOffset={2} lg={6} lgOffset={3}>
-                        <form onSubmit={handleSubmit}>
-                          <Heading
-                            level={3}
-                            size="large"
-                            weight="thick"
-                            color="white"
-                            style={{ marginTop: 0 }}
-                          >
-                            Sign up to
-                            <br />
-                            our newsletter
-                          </Heading>
-                          <p>
-                            By submitting your email address below, you agree to receive email
-                            updates on Ocius Technologies and their latest projects.
-                          </p>
-                          <FormGroup>
-                            {/* Real people should not fill this in and expect good things - do not remove this or risk form bot signups */}
-                            <div
-                              aria-hidden="true"
-                              style={{ position: 'absolute', left: '-5000px' }}
-                            >
-                              <Field type="text" name="name" tabIndex="-1" />
-                            </div>
+            }
+          }
+        }
+      `}
+      render={(data) => {
+        // Set ImageData.
+        const imageData = data.NewsletterBackground.childImageSharp.fluid;
+        return (
+          <NewsletterContainer Tag="section" fluid={imageData}>
+            <MaskOverlay flipped position="top" color={topMaskBackgroundColor} />
+            <Container className="centered">
+              <Row>
+                <Col xs={12} md={8} mdOffset={2} lg={6} lgOffset={3}>
+                  <form onSubmit={handleSubmit(onSubmit)}>
+                    <Heading
+                      level={3}
+                      size="large"
+                      weight="thick"
+                      color="white"
+                      style={{ marginTop: 0 }}
+                    >
+                      Sign up to
+                      <br />
+                      our newsletter
+                    </Heading>
+                    <p>
+                      By submitting your email address below, you agree to receive email updates on
+                      Ocius Technologies and their latest projects.
+                    </p>
+                    <FormGroup>
+                      {/* Real people should not fill this in and expect good things - do not remove this or risk form bot signups */}
+                      <div aria-hidden="true" style={{ position: 'absolute', left: '-5000px' }}>
+                        <Field type="text" name="name" tabIndex="-1" ref={register} />
+                      </div>
 
-                            <div className="form-col-8">
-                              <Field
-                                className={`form-control ${
-                                  errors.email && touched.email && 'is-invalid'
-                                }`}
-                                validate={validateEmail}
-                                placeholder="Email address"
-                                name="email"
-                                type="email"
-                              />
-                              <ErrorMessage name="email">
-                                {(msg) => <Feedback position="center">{msg}</Feedback>}
-                              </ErrorMessage>
-                            </div>
-                            <div className="form-col-4">
-                              <Button
-                                type="submit"
-                                size="tiny"
-                                color="blue"
-                                disabled={isSubmitting}
-                              >
-                                Subscribe
-                              </Button>
-                            </div>
-                          </FormGroup>
-                        </form>
-                        {formMessage && (
-                          <Alert
-                            success={submitSuccess}
-                            dangerouslySetInnerHTML={{
-                              __html: formMessage,
-                            }}
-                          />
-                        )}
-                      </Col>
-                    </Row>
-                  </Container>
-                  <MaskOverlay flipped color={bottomMaskBackgroundColor} />
-                </NewsletterContainer>
-              );
-            }}
-          />
-        </>
-      )}
-    </Formik>
+                      <div className="form-col-8">
+                        <Field
+                          className={`form-control ${errors.email && 'is-invalid'}`}
+                          placeholder="Email address"
+                          name="email"
+                          type="email"
+                          ref={register({
+                            required: true,
+                            pattern: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
+                          })}
+                        />
+                        {/* show an error when an invalid email provided */}
+                        {errors.email && <Feedback>Please provide a valid email</Feedback>}
+                      </div>
+                      <div className="form-col-4">
+                        <Button type="submit" size="tiny" color="blue" disabled={isSubmitting}>
+                          Subscribe
+                        </Button>
+                      </div>
+                    </FormGroup>
+                  </form>
+                  {formMessage && (
+                    <Alert
+                      success={submitSuccess}
+                      dangerouslySetInnerHTML={{
+                        __html: formMessage,
+                      }}
+                    />
+                  )}
+                </Col>
+              </Row>
+            </Container>
+            <MaskOverlay flipped color={bottomMaskBackgroundColor} />
+          </NewsletterContainer>
+        );
+      }}
+    />
   );
 };
 
