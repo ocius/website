@@ -2,7 +2,7 @@
   "name": "ocius-website",
   "description": "Static site for ocius.com.au",
   "license": "MIT",
-  "version": "2.0.10",
+  "version": "2.0.11",
   "scripts": {
     "develop": "gatsby develop",
     "start": "npm run develop",
