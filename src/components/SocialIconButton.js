@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { prop, withProp } from 'styled-tools';
-import cn from 'classnames';
 import iconFromString from '../common/iconFromString';
 
 const backgroundColors = {
@@ -60,7 +59,7 @@ const SocialIconButton = ({ network, href, onClick, iconSize, id, className }) =
   <IconButton
     backgroundColor={backgroundColors[network]}
     iconSize={iconSize}
-    className={cn('SocialIconButton', className)}
+    className={className}
     id={id}
     href={href}
     onClick={onClick}
