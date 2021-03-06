@@ -96,7 +96,7 @@ const ContactForm = () => {
           id="company"
           name="company"
           placeholder="Company or Company Website"
-          ref={register()}
+          ref={register}
         />
       </FieldWrapper>
 
