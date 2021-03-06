@@ -1,16 +1,11 @@
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import axios from 'axios';
-import styled from 'styled-components';
 import { Row, Col } from 'react-flexbox-grid';
-import { Feedback, Alert, FormField, FormLabel, TextareaField } from '../Form';
+import { Feedback, Alert, FormField, FormLabel, TextareaField, FieldWrapper } from '../Form';
 import Heading from '../Heading';
 import Button from '../Button';
 import { Spacing } from '../common';
-
-const FieldWrapper = styled.div`
-  margin: 0 0 1.2em;
-`;
 
 const TechnicalSpecificationForm = () => {
   const { register, handleSubmit, errors, reset, formState } = useForm({

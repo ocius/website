@@ -36,6 +36,10 @@ export const Alert = styled.span`
   )};
 `;
 
+export const FieldWrapper = styled.div`
+  margin: 0 0 1.2em;
+`;
+
 export const FormLabel = styled.label`
   text-align: right;
   display: inline-block;

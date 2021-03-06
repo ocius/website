@@ -1,13 +1,8 @@
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import axios from 'axios';
-import styled from 'styled-components';
-import { Feedback, Alert, FormField, TextareaField } from '../Form';
+import { Feedback, Alert, FormField, TextareaField, FieldWrapper } from '../Form';
 import Button from '../Button';
-
-const FieldWrapper = styled.div`
-  margin: 0 0 1.2em;
-`;
 
 const ContactForm = () => {
   const { register, handleSubmit, errors, reset, formState } = useForm({
