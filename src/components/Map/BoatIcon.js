@@ -1,6 +1,5 @@
-import classNames from 'classnames';
-import PropTypes from 'prop-types';
 import React from 'react';
+import PropTypes from 'prop-types';
 import { renderToStaticMarkup } from 'react-dom/server';
 
 export const getColorVariation = (index) => {
@@ -25,7 +24,7 @@ export const Boat = ({ index, className, height, width, viewBox, rotation }) => 
 
   return (
     <svg
-      className={classNames('BoatIcon', className)}
+      className={className}
       xmlns="http://www.w3.org/2000/svg"
       xmlnsXlink="http://www.w3.org/1999/xlink"
       width={width}

@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled, { css } from 'styled-components';
 import { switchProp } from 'styled-tools';
-import cn from 'classnames';
 import { OutboundLink as GtagLink } from 'gatsby-plugin-gtag';
 import DynamicLink from './DynamicLink';
 
@@ -215,7 +214,7 @@ function Button({
   if (!type)
     return (
       <ButtonLink
-        className={cn('Button', className)}
+        className={className}
         style={customStyles}
         to={href}
         onClick={onClick}
@@ -232,7 +231,7 @@ function Button({
   if (type === 'outbound')
     return (
       <OutboundLink
-        className={cn('Button', className)}
+        className={className}
         style={customStyles}
         href={href}
         onClick={onClick}
@@ -248,7 +247,7 @@ function Button({
     );
   return (
     <FormButton
-      className={cn('Button', className)}
+      className={className}
       style={customStyles}
       type={type}
       onClick={onClick}

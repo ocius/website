@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import assign from 'object-assign';
-import classNames from 'classnames';
 
 function getIconDimensions(height, width) {
   if (height && width) {
@@ -51,7 +50,7 @@ function Icon(props) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      className={classNames('Icon', className)}
+      className={className}
       style={props && props.style ? assign({}, style, props.style) : style}
       viewBox={viewBox}
       role={label ? 'img' : null}

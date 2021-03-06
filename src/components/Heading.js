@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled, { css } from 'styled-components';
 import { switchProp } from 'styled-tools';
-import cn from 'classnames';
 import mq from '../common/mq';
 import {
   fontSizeHeading1,
@@ -169,7 +168,7 @@ function Heading({
 
   return (
     <StyledHeading
-      className={cn('Heading', className)}
+      className={className}
       as={HeadingLevel}
       size={size}
       $color={color}
