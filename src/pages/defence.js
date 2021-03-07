@@ -4,7 +4,7 @@ import { Row, Col } from 'react-flexbox-grid';
 import Layout from '../layouts/Layout';
 import SEO from '../components/SEO';
 import Container from '../components/Container';
-import Icon from '../components/Icon';
+import OciusGlobeAlt from '../components/Icons/OciusGlobeAlt';
 import HeroBlock from '../components/HeroBlock';
 import Heading from '../components/Heading';
 import Segmented from '../components/Segmented';
@@ -54,7 +54,7 @@ const DefencePage = ({ data }) => (
       <Segmented>
         <Row>
           <Col xs={12} md={4} lg={4}>
-            <Icon.OciusGlobeAlt
+            <OciusGlobeAlt
               fill="#4db4e6"
               style={{
                 height: '120px',
@@ -76,7 +76,7 @@ const DefencePage = ({ data }) => (
             </ul>
           </Col>
           <Col xs={12} md={4} lg={4}>
-            <Icon.OciusGlobeAlt
+            <OciusGlobeAlt
               fill="#4db4e6"
               style={{
                 height: '120px',
@@ -95,7 +95,7 @@ const DefencePage = ({ data }) => (
             </ul>
           </Col>
           <Col xs={12} md={4} lg={4}>
-            <Icon.OciusGlobeAlt
+            <OciusGlobeAlt
               fill="#4db4e6"
               style={{
                 height: '120px',
@@ -116,7 +116,7 @@ const DefencePage = ({ data }) => (
         <Spacing />
         <Row>
           <Col xs={12} md={4} lg={4}>
-            <Icon.OciusGlobeAlt
+            <OciusGlobeAlt
               fill="#4db4e6"
               style={{
                 height: '120px',
@@ -134,7 +134,7 @@ const DefencePage = ({ data }) => (
             </ul>
           </Col>
           <Col xs={12} md={4} lg={4}>
-            <Icon.OciusGlobeAlt
+            <OciusGlobeAlt
               fill="#4db4e6"
               style={{
                 height: '120px',
@@ -152,7 +152,7 @@ const DefencePage = ({ data }) => (
             </ul>
           </Col>
           <Col xs={12} md={4} lg={4}>
-            <Icon.OciusGlobeAlt
+            <OciusGlobeAlt
               fill="#4db4e6"
               style={{
                 height: '120px',

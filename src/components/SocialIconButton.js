@@ -2,7 +2,16 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { prop, withProp } from 'styled-tools';
-import iconFromString from '../common/iconFromString';
+import Email from './Icons/Email';
+import Facebook from './Icons/Facebook';
+import FacebookMessenger from './Icons/FacebookMessenger';
+import Pinterest from './Icons/Pinterest';
+import Instagram from './Icons/Instagram';
+import Reddit from './Icons/Reddit';
+import Twitter from './Icons/Twitter';
+import Whatsapp from './Icons/Whatsapp';
+import WeChat from './Icons/WeChat';
+import LinkedIn from './Icons/LinkedIn';
 
 const backgroundColors = {
   email: '#2c3643',
@@ -17,29 +26,16 @@ const backgroundColors = {
   linkedIn: '#4ab4e6',
 };
 
-const iconNames = {
-  email: 'Email',
-  facebook: 'Facebook',
-  facebookMessenger: 'FacebookMessenger',
-  pinterest: 'Pinterest',
-  instagram: 'Instagram',
-  reddit: 'Reddit',
-  twitter: 'Twitter',
-  whatsapp: 'Whatsapp',
-  weChat: 'WeChat',
-  linkedIn: 'LinkedIn',
-};
-
 const sizeMultiplier = 2.5;
 const IconButton = styled.a`
-  background-color: ${prop('backgroundColor')};
+  background-color: ${prop('$backgroundColor')};
   color: #fff;
   cursor: pointer;
   display: inline-block;
-  font-size: ${prop('iconSize', 16)}px;
-  width: ${withProp('iconSize', (size) => `${size * sizeMultiplier}`)}px;
-  height: ${withProp('iconSize', (size) => `${size * sizeMultiplier}`)}px;
-  line-height: ${withProp('iconSize', (size) => `${size * sizeMultiplier}`)}px;
+  font-size: ${prop('$iconSize', 16)}px;
+  width: ${withProp('$iconSize', (size) => `${size * sizeMultiplier}`)}px;
+  height: ${withProp('$iconSize', (size) => `${size * sizeMultiplier}`)}px;
+  line-height: ${withProp('$iconSize', (size) => `${size * sizeMultiplier}`)}px;
   text-align: center;
   text-decoration: none;
   border-radius: 100%;
@@ -57,15 +53,28 @@ const IconButton = styled.a`
 
 const SocialIconButton = ({ network, href, onClick, iconSize, id, className }) => (
   <IconButton
-    backgroundColor={backgroundColors[network]}
-    iconSize={iconSize}
+    $backgroundColor={backgroundColors[network]}
+    $iconSize={iconSize}
     className={className}
     id={id}
     href={href}
     onClick={onClick}
     data-network={network}
   >
-    {iconFromString(iconNames[network])}
+    {
+      {
+        email: <Email />,
+        facebook: <Facebook />,
+        facebookMessenger: <FacebookMessenger />,
+        pinterest: <Pinterest />,
+        instagram: <Instagram />,
+        reddit: <Reddit />,
+        twitter: <Twitter />,
+        whatsapp: <Whatsapp />,
+        wechat: <WeChat />,
+        linkedIn: <LinkedIn />,
+      }[network]
+    }
   </IconButton>
 );
 

@@ -1,9 +1,13 @@
 import React from 'react';
 import { Link as GatsbyLink } from 'gatsby';
 import styled from 'styled-components';
+import Home from '../Icons/Home';
+import Idea from '../Icons/Idea';
+import Globe from '../Icons/Globe';
+import Drone from '../Icons/Drone';
+import News from '../Icons/News';
 import detectActive from '../../common/detectActive';
 import mq from '../../common/mq';
-import iconFromString from '../../common/iconFromString';
 
 const Wrapper = styled.div`
   font-family: ${(props) => props.theme.fonts.main};
@@ -44,20 +48,30 @@ const Link = styled(GatsbyLink)`
   }
 `;
 
-const MobileNavItem = ({ linkTo, label, icon }) => (
+const MobileNavItem = ({ linkTo, label, children }) => (
   <Link getProps={detectActive} to={linkTo}>
-    {iconFromString(icon, { width: '32px' })}
+    {children}
     <div>{label}</div>
   </Link>
 );
 
 const MobileNavigation = () => (
   <Wrapper>
-    <MobileNavItem linkTo="/" label="Home" icon="Home" />
-    <MobileNavItem linkTo="/about/" label="About" icon="Idea" />
-    <MobileNavItem linkTo="/live/" label="Live" icon="Globe" />
-    <MobileNavItem linkTo="/usv/" label="Drones" icon="Drone" />
-    <MobileNavItem linkTo="/news/" label="News" icon="News" />
+    <MobileNavItem linkTo="/" label="Home">
+      <Home width="32px" />
+    </MobileNavItem>
+    <MobileNavItem linkTo="/about/" label="About">
+      <Idea width="32px" />
+    </MobileNavItem>
+    <MobileNavItem linkTo="/live/" label="Live">
+      <Globe width="32px" />
+    </MobileNavItem>
+    <MobileNavItem linkTo="/usv/" label="Drones">
+      <Drone width="32px" />
+    </MobileNavItem>
+    <MobileNavItem linkTo="/news/" label="News">
+      <News width="32px" />
+    </MobileNavItem>
   </Wrapper>
 );
 

@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React, { useState } from 'react';
 import styled, { css } from 'styled-components';
-import Icon from '../Icon';
+import ChevronDownGlyph from '../Icons/ChevronDownGlyph';
 
 const Wrapper = styled.div`
   box-sizing: border-box;
@@ -204,7 +204,7 @@ const NavTabs = ({
         <TabsTriggerText tabIndex={-1} href={triggerHref} onClick={handleDropdownClick}>
           {selectedLabel}
         </TabsTriggerText>
-        <Icon.ChevronDownGlyph
+        <ChevronDownGlyph
           focusable="false"
           preserveAspectRatio="xMidYMid meet"
           aria-hidden="true"

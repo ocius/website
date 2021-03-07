@@ -1,8 +1,8 @@
 import styled, { css } from 'styled-components';
 import React from 'react';
 import PropTypes from 'prop-types';
-import Icon from '../Icon';
-import iconFromString from '../../common/iconFromString';
+import Close20 from '../Icons/Close20';
+import Sliders from '../Icons/Sliders';
 import mq from '../../common/mq';
 
 const ActiveStyle = css`
@@ -62,14 +62,13 @@ const HeaderMenuButton = ({
   'aria-labelledby': ariaLabelledBy,
   onClick,
   isActive,
-  iconName,
+  customIcon,
   ...rest
 }) => {
   const accessibilityLabel = {
     'aria-label': ariaLabel,
     'aria-labelledby': ariaLabelledBy,
   };
-  const icon = iconFromString(iconName);
 
   return (
     <MenuButton
@@ -81,7 +80,7 @@ const HeaderMenuButton = ({
       isActive={isActive ? 1 : undefined}
     >
       {isActive ? (
-        <Icon.Close20
+        <Close20
           style={{
             height: 20,
             width: 20,
@@ -89,7 +88,7 @@ const HeaderMenuButton = ({
           }}
         />
       ) : (
-        icon
+        customIcon || <Sliders />
       )}
     </MenuButton>
   );
@@ -114,9 +113,9 @@ HeaderMenuButton.propTypes = {
   isActive: PropTypes.bool,
 
   /**
-   * Name of the icon to display
+   * Custom icon to be rendered
    */
-  iconName: PropTypes.string,
+  customIcon: PropTypes.node,
 };
 
 HeaderMenuButton.defaultProps = {
@@ -124,7 +123,7 @@ HeaderMenuButton.defaultProps = {
   'aria-labelledby': '',
   onClick: null,
   isActive: false,
-  iconName: 'Sliders',
+  customIcon: null,
 };
 
 export default HeaderMenuButton;

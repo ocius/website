@@ -2,7 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled, { css } from 'styled-components';
 import { switchProp } from 'styled-tools';
-import iconFromString from '../../common/iconFromString';
+import ChevronLeft from '../Icons/ChevronLeft';
+import ChevronRight from '../Icons/ChevronRight';
 
 const Button = styled.button`
   position: absolute;
@@ -29,8 +30,7 @@ const Button = styled.button`
 `;
 
 function PaginatorButton({ direction, onClick }) {
-  const iconName = `Chevron${direction}`;
-
+  const icon = direction === 'Left' ? <ChevronLeft /> : <ChevronRight />;
   const label = direction === 'Left' ? 'Previous' : 'Next';
 
   return (
@@ -41,7 +41,7 @@ function PaginatorButton({ direction, onClick }) {
       onClick={onClick}
       aria-label={label}
     >
-      {iconFromString(iconName, { label })}
+      {icon}
     </Button>
   );
 }

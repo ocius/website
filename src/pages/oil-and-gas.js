@@ -4,7 +4,7 @@ import { Row, Col } from 'react-flexbox-grid';
 import Layout from '../layouts/Layout';
 import SEO from '../components/SEO';
 import Container from '../components/Container';
-import Icon from '../components/Icon';
+import OciusGlobeAlt from '../components/Icons/OciusGlobeAlt';
 import Segmented from '../components/Segmented';
 import HeroBlock from '../components/HeroBlock';
 import Heading from '../components/Heading';
@@ -56,7 +56,7 @@ const OilAndGasPage = ({ data }) => (
       <Segmented>
         <Row>
           <Col xs={12} md={4} lg={4}>
-            <Icon.OciusGlobeAlt
+            <OciusGlobeAlt
               fill="#4db4e6"
               style={{
                 height: '120px',
@@ -77,7 +77,7 @@ const OilAndGasPage = ({ data }) => (
             </ul>
           </Col>
           <Col xs={12} md={4} lg={4}>
-            <Icon.OciusGlobeAlt
+            <OciusGlobeAlt
               fill="#4db4e6"
               style={{
                 height: '120px',
@@ -97,7 +97,7 @@ const OilAndGasPage = ({ data }) => (
             </ul>
           </Col>
           <Col sm={12} md={4} lg={4}>
-            <Icon.OciusGlobeAlt
+            <OciusGlobeAlt
               fill="#4db4e6"
               style={{
                 height: '120px',

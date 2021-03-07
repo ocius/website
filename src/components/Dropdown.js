@@ -2,7 +2,7 @@ import React from 'react';
 import Downshift from 'downshift';
 import PropTypes from 'prop-types';
 import styled, { css } from 'styled-components';
-import Icon from './Icon';
+import ChevronDownGlyph from './Icons/ChevronDownGlyph';
 
 const ListMenu = styled.div`
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
@@ -334,7 +334,7 @@ class Dropdown extends React.Component {
                   {selectedItem ? itemToString(selectedItem) : label}
                 </Label>
                 <IconWrapper $isOpen={isOpen} role="button">
-                  <Icon.ChevronDownGlyph
+                  <ChevronDownGlyph
                     focusable="false"
                     preserveAspectRatio="xMidYMid meet"
                     aria-hidden="true"

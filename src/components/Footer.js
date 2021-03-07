@@ -4,7 +4,7 @@ import styled, { css } from 'styled-components';
 import { Col, Row } from 'react-flexbox-grid';
 import { Link } from 'gatsby';
 import mq from '../common/mq';
-import Icon from './Icon';
+import OciusGlobe from './Icons/OciusGlobe';
 import SocialLink from './SocialLink';
 import Container from './Container';
 import MaskOverlay from './MaskOverlay';
@@ -146,7 +146,7 @@ Footer.defaultProps = {
           <FooterLink to="/careers">Careers</FooterLink>
         </Col>
         <Col className="footer-info" xs={12} md={4} lg={3} lgOffset={1}>
-          <Icon.OciusGlobe
+          <OciusGlobe
             fill="#ffffff"
             style={{
               height: '110px',
