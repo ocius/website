@@ -4,7 +4,16 @@ import ReadMoreReact from 'read-more-react';
 import Container from './Container';
 import Segmented from './Segmented';
 import Heading from './Heading';
-import Icon from './Icon';
+import SolarSun from './Icons/SolarSun';
+import SolarFlare from './Icons/SolarFlare';
+import SolarPower from './Icons/SolarPower';
+import RudderCurrent from './Icons/RudderCurrent';
+import RudderNav from './Icons/RudderNav';
+import SensorCommunication from './Icons/SensorCommunication';
+import SensorLocation from './Icons/SensorLocation';
+import SensorTravel from './Icons/SensorTravel';
+import KeelWinch from './Icons/KeelWinch';
+import KeelLength from './Icons/KeelLength';
 import { Spacing, FirstColumnMobile, SecondColumnMobile } from './common';
 
 // Import bluebottle illustration
@@ -24,14 +33,14 @@ export default () => (
       <Spacing $value="80px" $xsValue="0px" />
       <Row>
         <SecondColumnMobile xs={12} md={6} lg={3}>
-          <Icon.SolarSun
+          <SolarSun
             fill="#0fb0e1"
             style={{
               width: '62px',
               height: '62px',
             }}
           />
-          <Icon.SolarFlare
+          <SolarFlare
             fill="#0fb0e1"
             style={{
               width: '62px',
@@ -39,7 +48,7 @@ export default () => (
               marginLeft: '5px',
             }}
           />
-          <Icon.SolarPower
+          <SolarPower
             fill="#0fb0e1"
             style={{
               width: '62px',
@@ -64,14 +73,14 @@ export default () => (
           />
 
           <Spacing $value="40px" $xsValue="0px" />
-          <Icon.RudderCurrent
+          <RudderCurrent
             fill="#0fb0e1"
             style={{
               width: '62px',
               height: '62px',
             }}
           />
-          <Icon.RudderNav
+          <RudderNav
             fill="#0fb0e1"
             style={{
               width: '62px',
@@ -101,21 +110,21 @@ export default () => (
           <Spacing $value="0px" $xsValue="30px" />
         </FirstColumnMobile>
         <SecondColumnMobile xs={12} md={6} lg={3}>
-          <Icon.SensorCommunication
+          <SensorCommunication
             fill="#0fb0e1"
             style={{
               width: '62px',
               height: '62px',
             }}
           />
-          <Icon.SensorLocation
+          <SensorLocation
             fill="#0fb0e1"
             style={{
               width: '62px',
               height: '62px',
             }}
           />
-          <Icon.SensorTravel
+          <SensorTravel
             fill="#0fb0e1"
             style={{
               width: '62px',
@@ -137,14 +146,14 @@ export default () => (
           />
 
           <Spacing $value="40px" $xsValue="0px" />
-          <Icon.KeelWinch
+          <KeelWinch
             fill="#0fb0e1"
             style={{
               width: '62px',
               height: '62px',
             }}
           />
-          <Icon.KeelLength
+          <KeelLength
             fill="#0fb0e1"
             style={{
               width: '62px',

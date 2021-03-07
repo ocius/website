@@ -4,14 +4,14 @@ import styled, { css } from 'styled-components';
 
 const NavWrapper = styled.div`
   transition: transform 0.15s cubic-bezier(0.2, 0.2, 0.38, 0.9), top 110ms;
-  width: 256px;
+  width: 280px;
   position: fixed;
   top: 0px;
   bottom: 0;
   z-index: 5999;
   scrollbar-width: none;
   transform: ${(props) =>
-    props.$direction === 'right' ? 'translateX(256px)' : 'translateX(-256px)'};
+    props.$direction === 'right' ? 'translateX(280px)' : 'translateX(-280px)'};
 
   ${(props) =>
     props.$direction === 'right' &&

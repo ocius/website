@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import Icon from '../Icon';
+import Close20 from '../Icons/Close20';
+import ChevronRight from '../Icons/ChevronRight';
 
 const NavFooter = styled.footer`
   flex: 0 0 4.8rem;
@@ -75,7 +76,7 @@ const AssistiveText = styled.span`
 const SideNavFooter = ({ assistiveText, className, expanded, onToggle }) => (
   <NavFooter className={className}>
     <ButtonToggle type="button" onClick={(evt) => onToggle(evt)} title={assistiveText}>
-      <NavIcon>{expanded ? <Icon.Close20 /> : <Icon.ChevronRight />}</NavIcon>
+      <NavIcon>{expanded ? <Close20 /> : <ChevronRight />}</NavIcon>
       <AssistiveText>{assistiveText}</AssistiveText>
     </ButtonToggle>
   </NavFooter>

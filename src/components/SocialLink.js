@@ -2,7 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { OutboundLink } from 'gatsby-plugin-gtag';
-import iconFromString from '../common/iconFromString';
+import Facebook from './Icons/Facebook';
+import Reddit from './Icons/Reddit';
+import Twitter from './Icons/Twitter';
 
 const Link = styled(OutboundLink)`
   padding: 0.5em 0.625em;
@@ -40,7 +42,13 @@ const SocialLink = ({ network, href, ...rest }) => {
 
   return (
     <Link href={href} target="_blank" rel="noopener" aria-label={label} {...rest}>
-      {iconFromString(iconNames[network])}
+      {
+        {
+          facebook: <Facebook />,
+          reddit: <Reddit />,
+          twitter: <Twitter />,
+        }[network]
+      }
     </Link>
   );
 };

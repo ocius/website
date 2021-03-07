@@ -11,6 +11,7 @@ import NavbarItem from './NavbarItem';
 import LeftNavItem from './LeftNavItem';
 import SocialIconButton from '../SocialIconButton';
 import Button from '../Button';
+import Menu from '../Icons/Menu';
 import mq from '../../common/mq';
 import useWindowSize from '../../common/hooks/useWindowSize';
 import useNavItems from '../../common/hooks/useNavItems';
@@ -104,7 +105,7 @@ export default () => {
             aria-label="Open main menu"
             onClick={hamburgerClickHandler}
             isActive={isMenuOpen}
-            iconName="Menu"
+            customIcon={<Menu />}
           />
         </NavbarContainer>
       </Navbar>

@@ -4,7 +4,7 @@ import styled, { css } from 'styled-components';
 import match from '../../common/keyboard/match';
 import keys from '../../common/keyboard/keys';
 import SideNavIcon from './SideNavIcon';
-import Icon from '../Icon';
+import ChevronDownGlyph from '../Icons/ChevronDownGlyph';
 
 const SubmenuButton = styled.button`
   box-sizing: border-box;
@@ -156,7 +156,7 @@ class SideNavMenu extends React.Component {
           )}
           <SubmenuTitle>{title}</SubmenuTitle>
           <SideNavIcon>
-            <Icon.ChevronDownGlyph
+            <ChevronDownGlyph
               focusable="false"
               preserveAspectRatio="xMidYMid meet"
               aria-hidden="true"

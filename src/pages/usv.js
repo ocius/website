@@ -11,8 +11,8 @@ import Container from '../components/Container';
 import Segmented from '../components/Segmented';
 import Heading from '../components/Heading';
 import Button from '../components/Button';
-import Icon from '../components/Icon';
 import ResponsiveIframe from '../components/ResponsiveIframe';
+import OciusGlobeAlt from '../components/Icons/OciusGlobeAlt';
 import ArticlePreviewBlock from '../components/ArticlePreviewBlock';
 import NewsletterForm from '../components/NewsletterForm';
 import CoreTechnologiesBlock from '../components/CoreTechnologiesBlock';
@@ -196,7 +196,7 @@ const USVPage = ({ data }) => (
         <Segmented>
           <Row>
             <Col xs={12} md={4} lg={4}>
-              <Icon.OciusGlobeAlt
+              <OciusGlobeAlt
                 fill="#4db4e6"
                 style={{
                   height: '120px',
@@ -219,7 +219,7 @@ const USVPage = ({ data }) => (
               </ul>
             </Col>
             <Col xs={12} md={4} lg={4}>
-              <Icon.OciusGlobeAlt
+              <OciusGlobeAlt
                 fill="#4db4e6"
                 style={{
                   height: '120px',
@@ -240,7 +240,7 @@ const USVPage = ({ data }) => (
               </ul>
             </Col>
             <Col xs={12} md={4} lg={4}>
-              <Icon.OciusGlobeAlt
+              <OciusGlobeAlt
                 fill="#4db4e6"
                 style={{
                   height: '120px',

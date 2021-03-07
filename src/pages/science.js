@@ -7,7 +7,7 @@ import Heading from '../components/Heading';
 import SEO from '../components/SEO';
 import Container from '../components/Container';
 import Segmented from '../components/Segmented';
-import Icon from '../components/Icon';
+import OciusGlobeAlt from '../components/Icons/OciusGlobeAlt';
 import ArticlePreviewBlock from '../components/ArticlePreviewBlock';
 import NewsletterForm from '../components/NewsletterForm';
 import ContactUs from '../components/ContactUs';
@@ -57,7 +57,7 @@ const SciencePage = ({ data }) => (
       <Segmented>
         <Row>
           <Col xs={12} md={4} lg={4}>
-            <Icon.OciusGlobeAlt
+            <OciusGlobeAlt
               fill="#4db4e6"
               style={{
                 height: '120px',
@@ -79,7 +79,7 @@ const SciencePage = ({ data }) => (
             </ul>
           </Col>
           <Col xs={12} md={4} lg={4}>
-            <Icon.OciusGlobeAlt
+            <OciusGlobeAlt
               fill="#4db4e6"
               style={{
                 height: '120px',
@@ -99,7 +99,7 @@ const SciencePage = ({ data }) => (
             </ul>
           </Col>
           <Col xs={12} md={4} lg={4}>
-            <Icon.OciusGlobeAlt
+            <OciusGlobeAlt
               fill="#4db4e6"
               style={{
                 height: '120px',

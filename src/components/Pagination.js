@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link as GatsbyLink } from 'gatsby';
 import styled from 'styled-components';
-import Icon from './Icon';
+import ArrowLeft from './Icons/ArrowLeft';
+import ArrowRight from './Icons/ArrowRight';
 
 const Item = styled.div`
   display: inline-block;
@@ -34,7 +35,7 @@ const Pagination = ({ pageContext }) => {
       {nextPagePath && (
         <Item>
           <Link to={nextPagePath} rel="next">
-            <Icon.ArrowLeft
+            <ArrowLeft
               fill="#125192"
               style={{
                 width: '12px',
@@ -50,7 +51,7 @@ const Pagination = ({ pageContext }) => {
         <Item>
           <Link to={previousPagePath} rel="prev">
             Newer posts
-            <Icon.ArrowRight
+            <ArrowRight
               fill="#125192"
               style={{
                 width: '12px',
