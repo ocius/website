@@ -106,7 +106,7 @@ export default () => (
           />
         </SecondColumnMobile>
         <FirstColumnMobile xs={12} md={8} lg={6} mdOffset={2} lgOffset={0}>
-          <img src={Bluebottle} alt="Bluebottle Ocius" />
+          <img src={Bluebottle} width="566" height="581" alt="Bluebottle Ocius" />
           <Spacing $value="0px" $xsValue="30px" />
         </FirstColumnMobile>
         <SecondColumnMobile xs={12} md={6} lg={3}>

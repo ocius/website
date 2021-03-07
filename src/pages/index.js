@@ -120,7 +120,7 @@ const IndexPage = ({ data }) => (
           </Row>
           <Row className="primary-content left-align">
             <Col xs={12} md={6} lg={4}>
-              <img src={Blueybuoy} alt="Bluey Buoy Class Vessel" />
+              <img src={Blueybuoy} width="367" height="314" alt="Bluey Buoy Class Vessel" />
               <Heading level={3} size="medium" weight="thick">
                 Bluey Buoy Class
               </Heading>
@@ -132,7 +132,7 @@ const IndexPage = ({ data }) => (
               </ul>
             </Col>
             <Col xs={12} md={6} lg={4}>
-              <img src={BluebottleVessel} alt="Bluebottle Class Vessel" />
+              <img src={BluebottleVessel} width="367" height="314" alt="Bluebottle Class Vessel" />
               <Heading level={3} size="medium" weight="thick">
                 Bluebottle Class
               </Heading>
@@ -144,7 +144,7 @@ const IndexPage = ({ data }) => (
               </ul>
             </Col>
             <Col xs={12} md={6} lg={4}>
-              <img src={TrimaranVessel} alt="Stinger Class Vessel" />
+              <img src={TrimaranVessel} width="367" height="314" alt="Stinger Class Vessel" />
               <Heading level={3} size="medium" weight="thick">
                 Stinger Class (Concept)
               </Heading>

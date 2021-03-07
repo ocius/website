@@ -7,7 +7,6 @@ import mq from '../../common/mq';
 const LogoLink = styled(GatsbyLink)`
   display: flex;
   align-items: center;
-  height: 32px;
   white-space: nowrap;
   user-select: none;
 
@@ -44,7 +43,7 @@ const SiteLogo = ({ className, href }) => {
 
   return (
     <LogoLink className={className} key="brand" to={href}>
-      <LogoImage src={file.childImageSharp.fluid.src} alt="Website logo" />
+      <LogoImage src={file.childImageSharp.fluid.src} alt="Website logo" width="200" height="32" />
     </LogoLink>
   );
 };
