@@ -9,6 +9,7 @@ const LogoLink = styled(GatsbyLink)`
   align-items: center;
   white-space: nowrap;
   user-select: none;
+  height: 32px;
 
   @media (min-width: ${mq.min[768]}) and (max-width: ${mq.max[1024]}) {
     height: 25px;
