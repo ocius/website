@@ -1,11 +1,10 @@
 import React from 'react';
 import { Link as GatsbyLink, graphql } from 'gatsby';
 import Img from 'gatsby-image';
-import { Row, Col } from 'react-flexbox-grid';
+import { Grid, Row, Col } from 'react-styled-flexboxgrid/src';
 import styled from 'styled-components';
 import Layout from '../layouts/Layout';
 import SEO from '../components/SEO';
-import Container from '../components/Container';
 import Heading from '../components/Heading';
 import Segmented from '../components/Segmented';
 import Pagination from '../components/Pagination';
@@ -41,7 +40,7 @@ const Blog = ({ data, pageContext }) => {
         had a number of enquiries for small self sustaining USVs that can be deployed easily from a deck or beach."
       />
 
-      <Container>
+      <Grid>
         <Row>
           <Col xs={12} md={12} lg={12}>
             <Spacing $value="80px" />
@@ -57,7 +56,7 @@ const Blog = ({ data, pageContext }) => {
                 <Segmented key={node.id} borderBottom>
                   {!(index % 2) ? (
                     <Row className="post">
-                      <FirstColumnMobile lg={6} md={6}>
+                      <FirstColumnMobile lg={6} md={6} xs={12}>
                         {node.frontmatter.featuredImage && (
                           <Link to={node.fields.slug}>
                             <Img
@@ -68,7 +67,7 @@ const Blog = ({ data, pageContext }) => {
                         )}
                         <Spacing $value="0px" $xsValue="20px" />
                       </FirstColumnMobile>
-                      <CenteredCol lg={6} md={6}>
+                      <CenteredCol lg={6} md={6} xs={12}>
                         <Heading level={3} size="medium" className="title" weight="thick">
                           <Link to={node.fields.slug}>{node.frontmatter.title}</Link>
                         </Heading>
@@ -81,7 +80,7 @@ const Blog = ({ data, pageContext }) => {
                     </Row>
                   ) : (
                     <Row className="post">
-                      <CenteredCol lg={6} md={6}>
+                      <CenteredCol lg={6} md={6} xs={12}>
                         <Heading level={3} size="medium" className="title" weight="thick">
                           <Link to={node.fields.slug}>{node.frontmatter.title}</Link>
                         </Heading>
@@ -91,7 +90,7 @@ const Blog = ({ data, pageContext }) => {
                           Read more
                         </Button>
                       </CenteredCol>
-                      <FirstColumnMobile lg={6} md={6}>
+                      <FirstColumnMobile lg={6} md={6} xs={12}>
                         {node.frontmatter.featuredImage && (
                           <Link to={node.fields.slug}>
                             <Img
@@ -110,7 +109,7 @@ const Blog = ({ data, pageContext }) => {
             </Col>
           </Row>
         </section>
-      </Container>
+      </Grid>
 
       <Segmented>
         <NewsletterForm />

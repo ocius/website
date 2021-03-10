@@ -1,12 +1,11 @@
 import React from 'react';
-import { Row, Col } from 'react-flexbox-grid';
+import { Grid, Row, Col } from 'react-styled-flexboxgrid/src';
 import { graphql } from 'gatsby';
 import styled from 'styled-components';
 import Img from 'gatsby-image';
 import SEO from '../components/SEO';
 import Segmented from '../components/Segmented';
 import Layout from '../layouts/Layout';
-import Container from '../components/Container';
 import Heading from '../components/Heading';
 import NewsletterForm from '../components/NewsletterForm';
 import ContactUs from '../components/ContactUs';
@@ -32,7 +31,7 @@ const CareersPage = ({ data }) => (
       build autonomous robots."
     />
     <section className="page-content">
-      <Container>
+      <Grid>
         <Row>
           <Col xs={12} md={12} lg={12}>
             <Spacing $value="80px" />
@@ -385,7 +384,7 @@ const CareersPage = ({ data }) => (
             </Segmented>
           </Col>
         </Row>
-      </Container>
+      </Grid>
 
       <Segmented>
         <NewsletterForm />

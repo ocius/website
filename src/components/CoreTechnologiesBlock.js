@@ -1,7 +1,6 @@
 import React from 'react';
-import { Row, Col } from 'react-flexbox-grid';
+import { Grid, Row, Col } from 'react-styled-flexboxgrid/src';
 import ReadMoreReact from 'read-more-react';
-import Container from './Container';
 import Segmented from './Segmented';
 import Heading from './Heading';
 import SolarSun from './Icons/SolarSun';
@@ -20,7 +19,7 @@ import { Spacing, FirstColumnMobile, SecondColumnMobile } from './common';
 import Bluebottle from '../images/bluebottle.svg';
 
 export default () => (
-  <Container id="overview">
+  <Grid id="overview">
     <Segmented>
       <Row className="centered">
         <Col xs={12} md={8} lg={8} mdOffset={2}>
@@ -178,5 +177,5 @@ export default () => (
         </SecondColumnMobile>
       </Row>
     </Segmented>
-  </Container>
+  </Grid>
 );

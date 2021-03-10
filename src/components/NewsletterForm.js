@@ -3,10 +3,9 @@ import PropTypes from 'prop-types';
 import { graphql, StaticQuery } from 'gatsby';
 import styled from 'styled-components';
 import { useForm } from 'react-hook-form';
-import { Col, Row } from 'react-flexbox-grid';
+import { Grid, Col, Row } from 'react-styled-flexboxgrid/src';
 import BackgroundImage from 'gatsby-background-image';
 import addToMailchimp from 'gatsby-plugin-mailchimp';
-import Container from './Container';
 import Heading from './Heading';
 import Button from './Button';
 import MaskOverlay from './MaskOverlay';
@@ -144,7 +143,7 @@ const NewsletterForm = ({ topMaskBackgroundColor, bottomMaskBackgroundColor }) =
         return (
           <NewsletterContainer Tag="section" fluid={imageData}>
             <MaskOverlay flipped position="top" color={topMaskBackgroundColor} />
-            <Container className="centered">
+            <Grid className="centered">
               <Row>
                 <Col xs={12} md={8} mdOffset={2} lg={6} lgOffset={3}>
                   <form onSubmit={handleSubmit(onSubmit)}>
@@ -200,7 +199,7 @@ const NewsletterForm = ({ topMaskBackgroundColor, bottomMaskBackgroundColor }) =
                   )}
                 </Col>
               </Row>
-            </Container>
+            </Grid>
             <MaskOverlay flipped color={bottomMaskBackgroundColor} />
           </NewsletterContainer>
         );

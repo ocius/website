@@ -1,8 +1,7 @@
 import React from 'react';
-import { Row, Col } from 'react-flexbox-grid';
+import { Grid, Row, Col } from 'react-styled-flexboxgrid/src';
 import Layout from '../layouts/Layout';
 import SEO from '../components/SEO';
-import Container from '../components/Container';
 import Segmented from '../components/Segmented';
 import Heading from '../components/Heading';
 import NewsletterForm from '../components/NewsletterForm';
@@ -24,7 +23,7 @@ const ContactPage = () => (
       description="How can we help? Do you have a question or are you interested in working with us? Just fill out the form fields below."
     />
     <section className="page-content">
-      <Container>
+      <Grid>
         <Row>
           <Col xs={12} md={12} lg={12}>
             <Spacing $value="80px" />
@@ -137,7 +136,7 @@ const ContactPage = () => (
             </Col>
           </Row>
         </Segmented>
-      </Container>
+      </Grid>
       <Segmented>
         <NewsletterForm />
       </Segmented>

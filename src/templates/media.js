@@ -1,11 +1,10 @@
 import React, { useState, useCallback } from 'react';
-import { Col, Row } from 'react-flexbox-grid';
+import { Grid, Col, Row } from 'react-styled-flexboxgrid/src';
 import styled from 'styled-components';
 import { graphql, withPrefix } from 'gatsby';
 import Heading from '../components/Heading';
 import SEO from '../components/SEO';
 import Segmented from '../components/Segmented';
-import Container from '../components/Container';
 import Layout from '../layouts/Layout';
 import NewsletterForm from '../components/NewsletterForm';
 import ContactUs from '../components/ContactUs';
@@ -41,7 +40,7 @@ const MediaPage = ({ data, pageContext }) => {
     <Layout>
       <SEO title="In The News" />
 
-      <Container>
+      <Grid>
         <Row>
           <Col xs={12} md={12} lg={12}>
             <Spacing $value="80px" />
@@ -73,7 +72,7 @@ const MediaPage = ({ data, pageContext }) => {
             </Pagination>
           )}
         </section>
-      </Container>
+      </Grid>
 
       <Segmented>
         <NewsletterForm />

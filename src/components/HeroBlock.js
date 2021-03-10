@@ -1,10 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled, { css } from 'styled-components';
+import { Grid } from 'react-styled-flexboxgrid/src';
 import { switchProp } from 'styled-tools';
-
 import MaskOverlay from './MaskOverlay';
-import Container from './Container';
 
 export const ContainerStyle = css`
   color: #ffffff;
@@ -30,7 +29,7 @@ const HeroContainer = styled.section`
     `}
 `;
 
-export const InnerContainer = styled(Container)`
+export const InnerContainer = styled(Grid)`
   height: 100%;
   position: relative;
   z-index: 2;

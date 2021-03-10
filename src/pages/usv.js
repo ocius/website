@@ -1,13 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Col, Row } from 'react-flexbox-grid';
+import { Grid, Col, Row } from 'react-styled-flexboxgrid/src';
 import { graphql } from 'gatsby';
 import Img from 'gatsby-image';
 import Loadable from '@loadable/component';
 import Layout from '../layouts/Layout';
 import SEO from '../components/SEO';
 import HeroBlock from '../components/HeroBlock';
-import Container from '../components/Container';
 import Segmented from '../components/Segmented';
 import Heading from '../components/Heading';
 import Button from '../components/Button';
@@ -97,7 +96,7 @@ const USVPage = ({ data }) => (
             </Heading>
           </Col>
         </Row>
-        <Container>
+        <Grid>
           <Row>
             <Col className="right-align" xs={12} md={5} lg={5}>
               <Heading level={2} color="white" size="medium" weight="thick" shadow>
@@ -135,11 +134,11 @@ const USVPage = ({ data }) => (
               </ol>
             </Col>
           </Row>
-        </Container>
+        </Grid>
         <Spacing $value="100px" $xsValue="0px" />
       </HeroBlock>
     )}
-    <Container className="page-content">
+    <Grid className="page-content">
       <Row className="centered">
         <Col xs={12} md={8} lg={8} mdOffset={2}>
           <Spacing $value="80px" />
@@ -179,10 +178,10 @@ const USVPage = ({ data }) => (
           </FirstColumnMobile>
         </Row>
       </Segmented>
-    </Container>
+    </Grid>
 
     <AccentRowWrapper>
-      <Container>
+      <Grid>
         <Segmented>
           <Row className="centered">
             <Col xs={12} md={8} lg={8} mdOffset={2}>
@@ -262,13 +261,13 @@ const USVPage = ({ data }) => (
             </Col>
           </Row>
         </Segmented>
-      </Container>
+      </Grid>
     </AccentRowWrapper>
 
     <CoreTechnologiesBlock />
 
     <AccentRowWrapper>
-      <Container>
+      <Grid>
         <Segmented>
           <Row className="centered">
             <Col xs={12} md={8} lg={8} mdOffset={2}>
@@ -316,15 +315,15 @@ const USVPage = ({ data }) => (
             </Col>
           </Row>
         </Segmented>
-      </Container>
+      </Grid>
     </AccentRowWrapper>
 
-    <Container>
+    <Grid>
       <TechnicalSpecificationForm />
-    </Container>
+    </Grid>
 
     <Segmented>
-      <Container className="page-content centered">
+      <Grid className="page-content centered">
         <Row className="centered">
           <Col xs={12} md={8} lg={8} mdOffset={2}>
             <Spacing $value="80px" />
@@ -380,11 +379,11 @@ const USVPage = ({ data }) => (
             </Button>
           </Col>
         </Row>
-      </Container>
+      </Grid>
     </Segmented>
 
     <Segmented>
-      <Container>
+      <Grid>
         <Row className="centered">
           <Col xs={12} md={8} lg={8} mdOffset={2}>
             <Spacing $value="80px" />
@@ -394,7 +393,7 @@ const USVPage = ({ data }) => (
           </Col>
         </Row>
         <ArticlePreviewBlock />
-      </Container>
+      </Grid>
     </Segmented>
 
     <Segmented>

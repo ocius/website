@@ -1,10 +1,9 @@
 import React from 'react';
-import { Col, Row } from 'react-flexbox-grid';
-import Container from './Container';
+import { Grid, Col, Row } from 'react-styled-flexboxgrid/src';
 import Heading from './Heading';
 
 const ContactUs = () => (
-  <Container className="page-content">
+  <Grid>
     <Heading level={3} color="#36BBE7" size="large" weight="thick" underline="left">
       Contact Us
     </Heading>
@@ -48,7 +47,7 @@ const ContactUs = () => (
         </p>
       </Col>
     </Row>
-  </Container>
+  </Grid>
 );
 
 ContactUs.propTypes = {};

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import Container from '../Container';
+import { Grid } from 'react-styled-flexboxgrid/src';
 import mq from '../../common/mq';
 
 const StyledNavbar = styled.header`
@@ -14,7 +14,7 @@ const StyledNavbar = styled.header`
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 `;
 
-const FlexContainer = styled(Container)`
+const FlexContainer = styled(Grid)`
   display: flex;
   flex-direction: column;
   align-items: center;
