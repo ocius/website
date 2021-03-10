@@ -642,7 +642,7 @@ const OurStory = ({ data }) => (
     </header>
     <Grid className="page-content">
       <Row className="primary-content">
-        <Col xs={12} md={6} lg={6}>
+        <Col xs={12} md={12} lg={6}>
           <Heading level={3} size="medium" weight="thick">
             The beginning
           </Heading>
@@ -672,7 +672,7 @@ const OurStory = ({ data }) => (
             Chau using half the fuel of the ferries they replaced.
           </p>
         </Col>
-        <Col xs={12} md={6} lg={6}>
+        <Col xs={12} md={12} lg={6}>
           {data.Robert && (
             <figure>
               <Img fluid={data.Robert.childImageSharp.fluid} alt="Robert Dane" />
@@ -683,7 +683,7 @@ const OurStory = ({ data }) => (
           )}
         </Col>
       </Row>
-      <Row className="primary-content">
+      <Row>
         <Col xs={12} md={12} lg={12}>
           <blockquote>
             In 2014, Solar Sailor changed its name to OCIUS (Latin for ‘fleet’) to reflect an
@@ -692,7 +692,7 @@ const OurStory = ({ data }) => (
         </Col>
       </Row>
       <Row className="primary-content">
-        <Col xs={12} md={6} lg={6}>
+        <Col xs={12} md={12} lg={6}>
           {data.Nemo && (
             <figure>
               <Img
@@ -726,7 +726,7 @@ const OurStory = ({ data }) => (
             </figure>
           )}
         </Col>
-        <Col xs={12} md={6} lg={6}>
+        <Col xs={12} md={12} lg={6}>
           <Heading level={3} size="medium" weight="thick">
             Uncrewed Surface Vessels
           </Heading>
@@ -783,7 +783,7 @@ const OurStory = ({ data }) => (
           </p>
         </Col>
       </Row>
-      <Row className="primary-content">
+      <Row>
         <Col xs={12} md={12} lg={12}>
           <blockquote>
             SolarSailor vessel was completed in one year and won the Australian Design Award of the
@@ -792,7 +792,7 @@ const OurStory = ({ data }) => (
         </Col>
       </Row>
       <Row className="primary-content">
-        <Col xs={12} md={6} lg={6}>
+        <Col xs={12} md={12} lg={6}>
           <Heading level={3} size="medium" weight="thick">
             History of Commercial Ferries
           </Heading>
@@ -837,7 +837,7 @@ const OurStory = ({ data }) => (
             vessels.
           </p>
         </Col>
-        <Col xs={12} md={6} lg={6}>
+        <Col xs={12} md={12} lg={6}>
           <figure>
             {data.SolarSailor && (
               <Img

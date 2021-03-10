@@ -26,7 +26,7 @@ const BlogPage = ({ data }) => {
             </Col>
           </Row>
           <Row>
-            <Col className="primary-content" xs={12} md={7} lg={7}>
+            <Col className="primary-content" xs={12} md={12} lg={7}>
               <Heading className="title" level={2} size="large" weight="thick">
                 {title}
               </Heading>
@@ -43,7 +43,7 @@ const BlogPage = ({ data }) => {
                 </SocialShareContainer>
               )}
             </Col>
-            <Col className="secondary-content" xs={12} md={5} lg={4} lgOffset={1}>
+            <Col className="secondary-content" xs={12} md={12} lg={4} lgOffset={1}>
               <Sidebar />
             </Col>
           </Row>
