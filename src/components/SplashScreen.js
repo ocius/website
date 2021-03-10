@@ -11,6 +11,7 @@ const Overlay = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  text-align: center;
   background-color: rgba(255, 255, 255, 0.55);
   position: fixed;
   left: 0;
@@ -38,7 +39,7 @@ const SplashScreen = ({ isLoading, text }) => (
     transitionLeaveTimeout={300}
   >
     {isLoading && (
-      <Overlay className="center-xs">
+      <Overlay>
         <FadeIn>
           <TextShuffle items={text} />
           <Ellipsis color="#125192" />
