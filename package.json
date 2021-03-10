@@ -29,7 +29,7 @@
     "gatsby-plugin-mailchimp": "^5.2.2",
     "gatsby-plugin-optimize-svgs": "^1.0.5",
     "gatsby-plugin-react-helmet": "^4.0.0",
-    "gatsby-plugin-sharp": "^3.0.0",
+    "gatsby-plugin-sharp": "^3.0.1",
     "gatsby-plugin-styled-components": "^4.0.0",
     "gatsby-remark-copy-linked-files": "^3.0.0",
     "gatsby-remark-images": "^4.0.0",
