@@ -53,7 +53,7 @@ const USVPage = ({ data }) => (
         fallbackColor="#bacce2"
       >
         <Row>
-          <SecondColumnMobile xs={12} md={5} lg={5}>
+          <SecondColumnMobile xs={12} md={12} lg={5}>
             <Spacing $value="180px" />
             <Heading level={1} size="huge" weight="thick" underline="left">
               Ocius
@@ -68,7 +68,7 @@ const USVPage = ({ data }) => (
             </Button>
             <Spacing $value="380px" $xsValue="80px" />
           </SecondColumnMobile>
-          <FirstColumnMobile className="centered" xs={12} md={7} lg={7}>
+          <FirstColumnMobile className="centered" xs={12} md={12} lg={7}>
             <Spacing $value="180px" />
             <ResponsiveIframe
               src="https://www.youtube.com/embed/7vhvKcc-UPk?rel=0"
