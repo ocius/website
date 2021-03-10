@@ -1,9 +1,8 @@
 import React from 'react';
 import { graphql, StaticQuery } from 'gatsby';
 import styled from 'styled-components';
-import { Row, Col } from 'react-flexbox-grid';
+import { Grid, Row, Col } from 'react-styled-flexboxgrid/src';
 import Img from 'gatsby-image';
-import Container from './Container';
 import Segmented from './Segmented';
 import Button from './Button';
 import Heading from './Heading';
@@ -35,7 +34,7 @@ const List = styled.ul`
 export default () => (
   <AccentRowWrapper>
     <Segmented>
-      <Container className="page-content" id="solutions">
+      <Grid className="page-content" id="solutions">
         <Row className="centered">
           <Col xs={12} md={8} lg={8} mdOffset={2}>
             <Spacing $value="80px" />
@@ -145,7 +144,7 @@ export default () => (
             </Row>
           )}
         />
-      </Container>
+      </Grid>
     </Segmented>
   </AccentRowWrapper>
 );

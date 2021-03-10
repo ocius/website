@@ -1,12 +1,11 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import Loadable from '@loadable/component';
-import { Row, Col } from 'react-flexbox-grid';
+import { Grid, Row, Col } from 'react-styled-flexboxgrid/src';
 import styled from 'styled-components';
 import Img from 'gatsby-image';
 import Layout from '../layouts/Layout';
 import SEO from '../components/SEO';
-import Container from '../components/Container';
 import Segmented from '../components/Segmented';
 import Button from '../components/Button';
 import HeroBlock from '../components/HeroBlock';
@@ -66,7 +65,7 @@ const IndexPage = ({ data }) => (
       </HeroBlock>
     )}
     <DarkAccentRowWrapper>
-      <Container>
+      <Grid>
         <Row>
           <Col xs={12} md={6} lg={6}>
             {data.Computer && (
@@ -97,7 +96,7 @@ const IndexPage = ({ data }) => (
             </Button>
           </Col>
         </Row>
-      </Container>
+      </Grid>
       <Spacing $value="0px" $mdValue="30px" $xsValue="0px" />
     </DarkAccentRowWrapper>
 
@@ -109,7 +108,7 @@ const IndexPage = ({ data }) => (
 
     <LogoBackgroundWrapper position="left">
       <Segmented>
-        <Container className="page-content centered">
+        <Grid className="page-content centered">
           <Row className="centered">
             <Col xs={12} md={8} lg={8} mdOffset={2}>
               <Spacing $value="80px" />
@@ -159,11 +158,11 @@ const IndexPage = ({ data }) => (
           <Button color="blue" size="tiny" href="/usv/">
             Find out more
           </Button>
-        </Container>
+        </Grid>
       </Segmented>
 
       <Segmented>
-        <Container>
+        <Grid>
           <Row className="centered">
             <Col xs={12} md={8} lg={8} mdOffset={2}>
               <Spacing $value="80px" />
@@ -173,7 +172,7 @@ const IndexPage = ({ data }) => (
             </Col>
           </Row>
           <ArticlePreviewBlock />
-        </Container>
+        </Grid>
       </Segmented>
     </LogoBackgroundWrapper>
 

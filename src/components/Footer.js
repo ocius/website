@@ -1,12 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled, { css } from 'styled-components';
-import { Col, Row } from 'react-flexbox-grid';
+import { Grid, Col, Row } from 'react-styled-flexboxgrid/src';
 import { Link } from 'gatsby';
 import mq from '../common/mq';
 import OciusGlobe from './Icons/OciusGlobe';
 import SocialLink from './SocialLink';
-import Container from './Container';
 import MaskOverlay from './MaskOverlay';
 
 const StyledFooter = styled.footer`
@@ -91,22 +90,22 @@ Footer.propTypes = {
 Footer.defaultProps = {
   footerStyle: {},
   children: (
-    <Container>
+    <Grid>
       <Row>
         <Col className="separated-section" xs={4} md={2} lg={2}>
-          <FooterLink to="/about">About</FooterLink>
+          <FooterLink to="/about/#tabs">About</FooterLink>
           <ul className="menu-secondary">
             <li>
-              <FooterLink to="/about">People</FooterLink>
+              <FooterLink to="/about/#tabs">People</FooterLink>
             </li>
             <li>
-              <FooterLink to="/about/partners">Partners</FooterLink>
+              <FooterLink to="/about/partners/#tabs">Partners</FooterLink>
             </li>
             <li>
-              <FooterLink to="/about/our-story">Our Story</FooterLink>
+              <FooterLink to="/about/our-story/#tabs">Our Story</FooterLink>
             </li>
             <li>
-              <FooterLink to="/about/awards">Awards</FooterLink>
+              <FooterLink to="/about/awards/#tabs">Awards</FooterLink>
             </li>
           </ul>
         </Col>
@@ -114,36 +113,36 @@ Footer.defaultProps = {
           <FooterLink to="/#solutions">Solutions</FooterLink>
           <ul className="menu-secondary">
             <li>
-              <FooterLink to="/defence">Defence</FooterLink>
+              <FooterLink to="/defence/">Defence</FooterLink>
             </li>
             <li>
-              <FooterLink to="/oil-and-gas">Oil &amp; Gas</FooterLink>
+              <FooterLink to="/oil-and-gas/">Oil &amp; Gas</FooterLink>
             </li>
             <li>
-              <FooterLink to="/science">Science</FooterLink>
+              <FooterLink to="/science/">Science</FooterLink>
             </li>
           </ul>
         </Col>
         <Col className="separated-section" xs={4} md={2} lg={2}>
-          <FooterLink to="/usv">Drones</FooterLink>
+          <FooterLink to="/usv/">Drones</FooterLink>
           <ul className="menu-secondary">
             <li>
-              <FooterLink to="/usv">USV</FooterLink>
+              <FooterLink to="/usv/">USV</FooterLink>
             </li>
             <li>
-              <FooterLink to="/usv#overview">BlueBottle</FooterLink>
+              <FooterLink to="/usv/#overview">BlueBottle</FooterLink>
             </li>
             <li>
-              <FooterLink to="/usv#technical">Tech Specs</FooterLink>
+              <FooterLink to="/usv/#technical">Tech Specs</FooterLink>
             </li>
           </ul>
         </Col>
         <Col className="full-section" xs={12} md={2} lg={2}>
-          <FooterLink to="/news">News</FooterLink>
-          <FooterLink to="/media-coverage">Media Coverage</FooterLink>
-          <FooterLink to="/live">Live</FooterLink>
-          <FooterLink to="/contact">Contact</FooterLink>
-          <FooterLink to="/careers">Careers</FooterLink>
+          <FooterLink to="/news/">News</FooterLink>
+          <FooterLink to="/media-coverage/">Media Coverage</FooterLink>
+          <FooterLink to="/live/">Live</FooterLink>
+          <FooterLink to="/contact/">Contact</FooterLink>
+          <FooterLink to="/careers/">Careers</FooterLink>
         </Col>
         <Col className="footer-info" xs={12} md={4} lg={3} lgOffset={1}>
           <OciusGlobe
@@ -171,7 +170,7 @@ Footer.defaultProps = {
           </div>
         </Col>
       </Row>
-    </Container>
+    </Grid>
   ),
 };
 

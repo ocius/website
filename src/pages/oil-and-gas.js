@@ -1,9 +1,8 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import { Row, Col } from 'react-flexbox-grid';
+import { Grid, Row, Col } from 'react-styled-flexboxgrid/src';
 import Layout from '../layouts/Layout';
 import SEO from '../components/SEO';
-import Container from '../components/Container';
 import OciusGlobeAlt from '../components/Icons/OciusGlobeAlt';
 import Segmented from '../components/Segmented';
 import HeroBlock from '../components/HeroBlock';
@@ -42,7 +41,7 @@ const OilAndGasPage = ({ data }) => (
       </HeroBlock>
     )}
 
-    <Container>
+    <Grid>
       <Segmented>
         <Row className="centered">
           <Col xs={12} md={12} lg={12}>
@@ -53,6 +52,7 @@ const OilAndGasPage = ({ data }) => (
           </Col>
         </Row>
       </Segmented>
+
       <Segmented>
         <Row>
           <Col xs={12} md={4} lg={4}>
@@ -96,7 +96,7 @@ const OilAndGasPage = ({ data }) => (
               <li>Pre-exploration meteorological and oceanographic data</li>
             </ul>
           </Col>
-          <Col sm={12} md={4} lg={4}>
+          <Col xs={12} md={4} lg={4}>
             <OciusGlobeAlt
               fill="#4db4e6"
               style={{
@@ -119,10 +119,10 @@ const OilAndGasPage = ({ data }) => (
           </Col>
         </Row>
       </Segmented>
-    </Container>
+    </Grid>
 
     <Segmented>
-      <Container>
+      <Grid>
         <Row className="centered">
           <Col xs={12} md={8} lg={8} mdOffset={2}>
             <Heading level={2} size="large" weight="thick" underline="center">
@@ -131,7 +131,7 @@ const OilAndGasPage = ({ data }) => (
           </Col>
         </Row>
         <ArticlePreviewBlock />
-      </Container>
+      </Grid>
     </Segmented>
 
     <Segmented>

@@ -1,13 +1,12 @@
 import React from 'react';
 import { graphql, Link as GatsbyLink } from 'gatsby';
 import { Router } from '@reach/router';
-import { Col, Row } from 'react-flexbox-grid';
+import { Grid, Col, Row } from 'react-styled-flexboxgrid/src';
 import Img from 'gatsby-image';
 import styled from 'styled-components';
 import { OutboundLink } from 'gatsby-plugin-gtag';
 import SEO from '../../components/SEO';
 import Layout from '../../layouts/Layout';
-import Container from '../../components/Container';
 import Button from '../../components/Button';
 import Heading from '../../components/Heading';
 import NavTabs from '../../components/Tabs/NavTabs';
@@ -23,7 +22,7 @@ const Awards = ({ data }) => (
   <>
     <SEO title="Awards and Milestones" />
     <Segmented>
-      <Container className="page-content">
+      <Grid className="page-content">
         <Row>
           <Col xs={12} md={12} lg={12}>
             <header id="awards">
@@ -226,7 +225,7 @@ const Awards = ({ data }) => (
             </Row>
           </Col>
         </Row>
-      </Container>
+      </Grid>
     </Segmented>
     <Segmented>
       <NewsletterForm />
@@ -244,7 +243,7 @@ const Partners = ({ data }) => (
     </header>
     <Segmented>
       <LogoBackgroundWrapper>
-        <Container className="page-content">
+        <Grid className="page-content">
           <Row className="primary-content">
             <Col xs={12} md={4} lg={4}>
               {data.DefenceInnovationHub && (
@@ -473,9 +472,9 @@ const Partners = ({ data }) => (
               </Button>
             </Col>
           </Row>
-        </Container>
+        </Grid>
       </LogoBackgroundWrapper>
-      <Container className="page-content">
+      <Grid className="page-content">
         <Row className="primary-content">
           <Col xs={12} md={4} lg={4}>
             {data.OneTwoThree && (
@@ -625,7 +624,7 @@ const Partners = ({ data }) => (
             </Button>
           </Col>
         </Row>
-      </Container>
+      </Grid>
     </Segmented>
     <Segmented>
       <NewsletterForm />
@@ -641,9 +640,9 @@ const OurStory = ({ data }) => (
         The Ocius Story
       </Heading>
     </header>
-    <Container className="page-content">
+    <Grid className="page-content">
       <Row className="primary-content">
-        <Col xs={12} md={6} lg={6}>
+        <Col xs={12} md={12} lg={6}>
           <Heading level={3} size="medium" weight="thick">
             The beginning
           </Heading>
@@ -673,7 +672,7 @@ const OurStory = ({ data }) => (
             Chau using half the fuel of the ferries they replaced.
           </p>
         </Col>
-        <Col xs={12} md={6} lg={6}>
+        <Col xs={12} md={12} lg={6}>
           {data.Robert && (
             <figure>
               <Img fluid={data.Robert.childImageSharp.fluid} alt="Robert Dane" />
@@ -684,7 +683,7 @@ const OurStory = ({ data }) => (
           )}
         </Col>
       </Row>
-      <Row className="primary-content">
+      <Row>
         <Col xs={12} md={12} lg={12}>
           <blockquote>
             In 2014, Solar Sailor changed its name to OCIUS (Latin for ‘fleet’) to reflect an
@@ -693,7 +692,7 @@ const OurStory = ({ data }) => (
         </Col>
       </Row>
       <Row className="primary-content">
-        <Col xs={12} md={6} lg={6}>
+        <Col xs={12} md={12} lg={6}>
           {data.Nemo && (
             <figure>
               <Img
@@ -727,7 +726,7 @@ const OurStory = ({ data }) => (
             </figure>
           )}
         </Col>
-        <Col xs={12} md={6} lg={6}>
+        <Col xs={12} md={12} lg={6}>
           <Heading level={3} size="medium" weight="thick">
             Uncrewed Surface Vessels
           </Heading>
@@ -784,7 +783,7 @@ const OurStory = ({ data }) => (
           </p>
         </Col>
       </Row>
-      <Row className="primary-content">
+      <Row>
         <Col xs={12} md={12} lg={12}>
           <blockquote>
             SolarSailor vessel was completed in one year and won the Australian Design Award of the
@@ -793,7 +792,7 @@ const OurStory = ({ data }) => (
         </Col>
       </Row>
       <Row className="primary-content">
-        <Col xs={12} md={6} lg={6}>
+        <Col xs={12} md={12} lg={6}>
           <Heading level={3} size="medium" weight="thick">
             History of Commercial Ferries
           </Heading>
@@ -838,7 +837,7 @@ const OurStory = ({ data }) => (
             vessels.
           </p>
         </Col>
-        <Col xs={12} md={6} lg={6}>
+        <Col xs={12} md={12} lg={6}>
           <figure>
             {data.SolarSailor && (
               <Img
@@ -863,7 +862,7 @@ const OurStory = ({ data }) => (
           </figure>
         </Col>
       </Row>
-    </Container>
+    </Grid>
     <Segmented>
       <NewsletterForm />
     </Segmented>
@@ -904,7 +903,7 @@ const People = ({ data }) => (
     </header>
 
     <LogoBackgroundWrapper>
-      <Container className="page-content">
+      <Grid className="page-content">
         <Row className="primary-content">
           <Col xs={12} md={6} lg={6}>
             {data.MarkBethwaite && (
@@ -1001,11 +1000,11 @@ const People = ({ data }) => (
             </div>
           </Col>
         </Row>
-      </Container>
+      </Grid>
     </LogoBackgroundWrapper>
 
     <AccentRowWrapper>
-      <Container className="page-content">
+      <Grid className="page-content">
         <Row className="primary-content">
           <Col xs={12} md={6} lg={4}>
             {data.LloydBreckenridge && (
@@ -1080,7 +1079,7 @@ const People = ({ data }) => (
             </div>
           </Col>
         </Row>
-      </Container>
+      </Grid>
     </AccentRowWrapper>
     <Segmented>
       <NewsletterForm topMaskBackgroundColor="#edf7fc" />

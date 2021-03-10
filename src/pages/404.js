@@ -1,17 +1,16 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import Img from 'gatsby-image';
-import { Col, Row } from 'react-flexbox-grid';
+import { Grid, Col, Row } from 'react-styled-flexboxgrid/src';
 import Layout from '../layouts/Layout';
 import SEO from '../components/SEO';
-import Container from '../components/Container';
 import Heading from '../components/Heading';
 import { Spacing } from '../components/common';
 
 const NotFoundPage = ({ data }) => (
   <Layout>
     <SEO title="Not Found" description="That page does not exist" />
-    <Container>
+    <Grid>
       <Row>
         <Col xs={12} md={12} lg={12}>
           <Spacing $value="80px" />
@@ -25,7 +24,7 @@ const NotFoundPage = ({ data }) => (
         style={{ width: '70%', margin: '20px 0' }}
         fluid={data.Overview ? data.Overview.childImageSharp.fluid : ''}
       />
-    </Container>
+    </Grid>
   </Layout>
 );
 

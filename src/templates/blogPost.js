@@ -1,9 +1,8 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import { Row, Col } from 'react-flexbox-grid';
+import { Grid, Row, Col } from 'react-styled-flexboxgrid/src';
 import Layout from '../layouts/Layout';
 import SEO from '../components/SEO';
-import Container from '../components/Container';
 import Sidebar from '../components/Sidebar';
 import SocialShareContainer from '../components/SocialShareContainer';
 import SocialShare from '../components/SocialShare';
@@ -17,7 +16,7 @@ const BlogPage = ({ data }) => {
     <Layout>
       <SEO title={title} description={post.excerpt} />
       <section className="page-content">
-        <Container>
+        <Grid>
           <Row>
             <Col xs={12} md={12} lg={12}>
               <Spacing $value="80px" />
@@ -27,7 +26,7 @@ const BlogPage = ({ data }) => {
             </Col>
           </Row>
           <Row>
-            <Col className="primary-content" xs={12} md={7} lg={7}>
+            <Col className="primary-content" xs={12} md={12} lg={7}>
               <Heading className="title" level={2} size="large" weight="thick">
                 {title}
               </Heading>
@@ -44,11 +43,11 @@ const BlogPage = ({ data }) => {
                 </SocialShareContainer>
               )}
             </Col>
-            <Col className="secondary-content" xs={12} md={5} lg={4} lgOffset={1}>
+            <Col className="secondary-content" xs={12} md={12} lg={4} lgOffset={1}>
               <Sidebar />
             </Col>
           </Row>
-        </Container>
+        </Grid>
       </section>
     </Layout>
   );

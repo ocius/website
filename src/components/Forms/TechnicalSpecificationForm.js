@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import axios from 'axios';
-import { Row, Col } from 'react-flexbox-grid';
+import { Row, Col } from 'react-styled-flexboxgrid/src';
 import { Feedback, Alert, FormField, FormLabel, TextareaField, FieldWrapper } from '../Form';
 import Heading from '../Heading';
 import Button from '../Button';

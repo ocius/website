@@ -1,11 +1,10 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import { Row, Col } from 'react-flexbox-grid';
+import { Grid, Row, Col } from 'react-styled-flexboxgrid/src';
 import Layout from '../layouts/Layout';
 import HeroBlock from '../components/HeroBlock';
 import Heading from '../components/Heading';
 import SEO from '../components/SEO';
-import Container from '../components/Container';
 import Segmented from '../components/Segmented';
 import OciusGlobeAlt from '../components/Icons/OciusGlobeAlt';
 import ArticlePreviewBlock from '../components/ArticlePreviewBlock';
@@ -43,7 +42,7 @@ const SciencePage = ({ data }) => (
       </HeroBlock>
     )}
 
-    <Container>
+    <Grid>
       <Segmented>
         <Row className="centered">
           <Col xs={12} md={12} lg={12}>
@@ -119,10 +118,10 @@ const SciencePage = ({ data }) => (
           </Col>
         </Row>
       </Segmented>
-    </Container>
+    </Grid>
 
     <Segmented>
-      <Container>
+      <Grid>
         <Row className="centered">
           <Col xs={12} md={8} lg={8} mdOffset={2}>
             <Heading level={2} size="large" weight="thick" underline="center">
@@ -131,7 +130,7 @@ const SciencePage = ({ data }) => (
           </Col>
         </Row>
         <ArticlePreviewBlock />
-      </Container>
+      </Grid>
     </Segmented>
 
     <Segmented>
