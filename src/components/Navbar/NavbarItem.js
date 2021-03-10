@@ -25,7 +25,7 @@ const Item = styled.li`
 
 const NavbarLink = styled(DynamicLink)`
   display: inline-block;
-  padding: 1em;
+  padding: 1em 0.8em;
   font-size: 1.7rem;
   font-weight: 500;
   line-height: 100%;
