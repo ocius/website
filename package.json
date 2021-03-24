@@ -8,7 +8,8 @@
     "start": "npm run develop",
     "build": "gatsby build",
     "serve": "gatsby serve",
-    "lint": "eslint src"
+    "lint": "eslint src",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@loadable/component": "^5.14.1",
@@ -77,10 +78,5 @@
     "eslint-plugin-react": "^7.23.1",
     "husky": "^5.2.0",
     "prettier": "^2.2.1"
-  },
-  "husky": {
-    "hooks": {
-      "pre-push": "npm run lint"
-    }
   }
 }
