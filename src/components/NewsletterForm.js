@@ -4,7 +4,8 @@ import { graphql, StaticQuery } from 'gatsby';
 import styled from 'styled-components';
 import { useForm } from 'react-hook-form';
 import { Grid, Col, Row } from 'react-styled-flexboxgrid/src';
-import BackgroundImage from 'gatsby-background-image';
+import { getImage } from 'gatsby-plugin-image';
+import { BgImage } from 'gbimage-bridge';
 import addToMailchimp from 'gatsby-plugin-mailchimp';
 import Heading from './Heading';
 import Button from './Button';
@@ -12,7 +13,7 @@ import MaskOverlay from './MaskOverlay';
 import { Feedback, Alert, FormField } from './Form';
 import mq from '../common/mq';
 
-const NewsletterContainer = styled(BackgroundImage)`
+const NewsletterContainer = styled(BgImage)`
   color: #ffffff;
   position: relative;
   overflow: hidden;
@@ -127,21 +128,24 @@ const NewsletterForm = ({ topMaskBackgroundColor, bottomMaskBackgroundColor }) =
   return (
     <StaticQuery
       query={graphql`
-        query {
+        {
           NewsletterBackground: file(relativePath: { eq: "images/newsletter-bg.jpg" }) {
             childImageSharp {
-              fluid(quality: 85, maxWidth: 1920) {
-                ...GatsbyImageSharpFluid_withWebp
-              }
+              gatsbyImageData(
+                quality: 85
+                placeholder: BLURRED
+                formats: [AUTO, WEBP, AVIF]
+                layout: FULL_WIDTH
+              )
             }
           }
         }
       `}
-      render={(data) => {
+      render={({ NewsletterBackground }) => {
         // Set ImageData.
-        const imageData = data.NewsletterBackground.childImageSharp.fluid;
+        const background = getImage(NewsletterBackground);
         return (
-          <NewsletterContainer Tag="section" fluid={imageData}>
+          <NewsletterContainer Tag="section" image={background}>
             <MaskOverlay flipped position="top" color={topMaskBackgroundColor} />
             <Grid className="centered">
               <Row>

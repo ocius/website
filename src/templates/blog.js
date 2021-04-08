@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link as GatsbyLink, graphql } from 'gatsby';
-import Img from 'gatsby-image';
+import { GatsbyImage } from 'gatsby-plugin-image';
 import { Grid, Row, Col } from 'react-styled-flexboxgrid/src';
 import styled from 'styled-components';
 import Layout from '../layouts/Layout';
@@ -59,8 +59,8 @@ const Blog = ({ data, pageContext }) => {
                       <FirstColumnMobile lg={6} md={6} xs={12}>
                         {node.frontmatter.featuredImage && (
                           <Link to={node.fields.slug}>
-                            <Img
-                              fluid={node.frontmatter.featuredImage.childImageSharp.fluid}
+                            <GatsbyImage
+                              image={node.frontmatter.featuredImage.childImageSharp.gatsbyImageData}
                               alt={node.frontmatter.title}
                             />
                           </Link>
@@ -93,8 +93,8 @@ const Blog = ({ data, pageContext }) => {
                       <FirstColumnMobile lg={6} md={6} xs={12}>
                         {node.frontmatter.featuredImage && (
                           <Link to={node.fields.slug}>
-                            <Img
-                              fluid={node.frontmatter.featuredImage.childImageSharp.fluid}
+                            <GatsbyImage
+                              image={node.frontmatter.featuredImage.childImageSharp.gatsbyImageData}
                               alt={node.frontmatter.title}
                             />
                           </Link>
@@ -139,9 +139,7 @@ export const query = graphql`
             date(formatString: "MMMM DD, YYYY")
             featuredImage {
               childImageSharp {
-                fluid(maxWidth: 700, maxHeight: 400) {
-                  ...GatsbyImageSharpFluid_withWebp
-                }
+                gatsbyImageData(width: 700, height: 400, layout: CONSTRAINED)
               }
             }
           }

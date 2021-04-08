@@ -20,7 +20,7 @@ const SciencePage = ({ data }) => (
     />
     {data.HeroBackground && (
       <HeroBlock
-        image={data.HeroBackground.childImageSharp.fluid}
+        image={data.HeroBackground.childImageSharp.gatsbyImageData.images.fallback}
         masked
         scrim="blue"
         fallbackColor="#00b4b0"
@@ -143,12 +143,10 @@ const SciencePage = ({ data }) => (
 );
 
 export const query = graphql`
-  query {
+  {
     HeroBackground: file(relativePath: { eq: "images/solutions-science-bg.jpg" }) {
       childImageSharp {
-        fluid(quality: 86, maxWidth: 1200) {
-          ...GatsbyImageSharpFluid_withWebp
-        }
+        gatsbyImageData(quality: 86, layout: FULL_WIDTH)
       }
     }
   }

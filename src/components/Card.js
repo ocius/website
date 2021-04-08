@@ -1,7 +1,7 @@
 /* eslint-disable react/forbid-prop-types */
 import React from 'react';
 import PropTypes from 'prop-types';
-import Img from 'gatsby-image';
+import { GatsbyImage } from 'gatsby-plugin-image';
 import BackgroundImage from 'gatsby-background-image';
 import styled from 'styled-components';
 import Heading from './Heading';
@@ -75,7 +75,7 @@ const Date = styled.p`
 const Card = ({ url, thumbnail, title, source, logo, date }) => (
   <CardWrapper>
     <ExternalLink target="_blank" href={url}>
-      <CardThumbnail fluid={thumbnail.childImageSharp.fluid} />
+      <CardThumbnail fluid={thumbnail.childImageSharp.gatsbyImageData} />
     </ExternalLink>
     <CardBody>
       <Content>
@@ -85,7 +85,10 @@ const Card = ({ url, thumbnail, title, source, logo, date }) => (
         <Date>{date}</Date>
         <Source>
           {logo && (
-            <Img style={{ width: 25, marginRight: 10 }} fluid={logo.childImageSharp.fluid} />
+            <GatsbyImage
+              image={logo.childImageSharp.gatsbyImageData}
+              style={{ width: 25, marginRight: 10 }}
+            />
           )}
           {source}
         </Source>

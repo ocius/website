@@ -6,7 +6,7 @@ import ArticlePreview from './ArticlePreview';
 const RecentNews = () => (
   <StaticQuery
     query={graphql`
-      query {
+      {
         allMarkdownRemark(limit: 3, sort: { fields: [frontmatter___date], order: DESC }) {
           edges {
             node {
@@ -16,9 +16,7 @@ const RecentNews = () => (
                 date(formatString: "DD MMMM, YYYY")
                 featuredImage {
                   childImageSharp {
-                    fluid(maxWidth: 540, maxHeight: 320) {
-                      ...GatsbyImageSharpFluid_withWebp
-                    }
+                    gatsbyImageData(width: 540, height: 320, layout: CONSTRAINED)
                   }
                 }
               }
@@ -42,7 +40,7 @@ const RecentNews = () => (
               paragraph={node.excerpt}
               image={
                 node.frontmatter.featuredImage
-                  ? node.frontmatter.featuredImage.childImageSharp.fluid
+                  ? node.frontmatter.featuredImage.childImageSharp.gatsbyImageData
                   : ''
               }
             />

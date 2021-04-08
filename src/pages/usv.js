@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { Grid, Col, Row } from 'react-styled-flexboxgrid/src';
 import { graphql } from 'gatsby';
-import Img from 'gatsby-image';
+import { GatsbyImage } from 'gatsby-plugin-image';
 import Loadable from '@loadable/component';
 import Layout from '../layouts/Layout';
 import SEO from '../components/SEO';
@@ -47,7 +47,7 @@ const USVPage = ({ data }) => (
     />
     {data.HeroImage && (
       <HeroBlock
-        image={data.HeroImage.childImageSharp.fluid}
+        image={data.HeroImage.childImageSharp.gatsbyImageData.images.fallback}
         masked
         scrim="blue"
         fallbackColor="#bacce2"
@@ -282,8 +282,10 @@ const USVPage = ({ data }) => (
         <Segmented>
           <Row>
             <Col className="centered" xs={12} md={6} lg={6}>
-              <Img
-                fluid={data.BluebottleImage ? data.BluebottleImage.childImageSharp.fluid : ''}
+              <GatsbyImage
+                image={
+                  data.BluebottleImage ? data.BluebottleImage.childImageSharp.gatsbyImageData : ''
+                }
                 alt="Bluebottle USV"
               />
               <Spacing $value="0px" />
@@ -407,19 +409,15 @@ const USVPage = ({ data }) => (
 );
 
 export const query = graphql`
-  query {
+  {
     HeroImage: file(relativePath: { eq: "images/usv-bg.jpg" }) {
       childImageSharp {
-        fluid(quality: 83, maxWidth: 1200) {
-          ...GatsbyImageSharpFluid_withWebp
-        }
+        gatsbyImageData(quality: 83, layout: FULL_WIDTH)
       }
     }
     BluebottleImage: file(relativePath: { eq: "images/bluebottle-bridge.jpg" }) {
       childImageSharp {
-        fluid(quality: 80, maxWidth: 768) {
-          ...GatsbyImageSharpFluid_withWebp
-        }
+        gatsbyImageData(quality: 80, width: 768, layout: CONSTRAINED)
       }
     }
   }

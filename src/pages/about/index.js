@@ -2,7 +2,7 @@ import React from 'react';
 import { graphql, Link as GatsbyLink } from 'gatsby';
 import { Router } from '@reach/router';
 import { Grid, Col, Row } from 'react-styled-flexboxgrid/src';
-import Img from 'gatsby-image';
+import { GatsbyImage } from 'gatsby-plugin-image';
 import styled from 'styled-components';
 import { OutboundLink } from 'gatsby-plugin-gtag';
 import SEO from '../../components/SEO';
@@ -152,8 +152,8 @@ const Awards = ({ data }) => (
               <Col xs={12} md={6} lg={6}>
                 {data.Awards && (
                   <figure>
-                    <Img
-                      fluid={data.Awards.childImageSharp.fluid}
+                    <GatsbyImage
+                      image={data.Awards.childImageSharp.gatsbyImageData}
                       alt="Robert Dane receiving the Intel Tech Award 2007"
                     />
                     <figcaption>Robert Dane receiving the Intel Tech Award 2007.</figcaption>
@@ -248,10 +248,10 @@ const Partners = ({ data }) => (
             <Col xs={12} md={4} lg={4}>
               {data.DefenceInnovationHub && (
                 <div className="centered">
-                  <Img
+                  <GatsbyImage
+                    image={data.DefenceInnovationHub.childImageSharp.gatsbyImageData}
                     style={{ maxWidth: '100%' }}
                     imgStyle={{ objectFit: 'contain' }}
-                    fixed={data.DefenceInnovationHub.childImageSharp.fixed}
                     alt="Defence Innovation Hub"
                   />
                 </div>
@@ -283,10 +283,10 @@ const Partners = ({ data }) => (
             <Col xs={12} md={4} lg={4}>
               {data.AustralianGovernment && (
                 <div className="centered">
-                  <Img
+                  <GatsbyImage
+                    image={data.AustralianGovernment.childImageSharp.gatsbyImageData}
                     style={{ maxWidth: '100%' }}
                     imgStyle={{ objectFit: 'contain' }}
-                    fixed={data.AustralianGovernment.childImageSharp.fixed}
                     alt="Australian Government Logotype"
                   />
                 </div>
@@ -322,10 +322,10 @@ const Partners = ({ data }) => (
             <Col xs={12} md={4} lg={4}>
               {data.UNSW && (
                 <div className="centered">
-                  <Img
+                  <GatsbyImage
+                    image={data.UNSW.childImageSharp.gatsbyImageData}
                     style={{ maxWidth: '100%' }}
                     imgStyle={{ objectFit: 'contain' }}
-                    fixed={data.UNSW.childImageSharp.fixed}
                     alt="The University of New South Wales"
                   />
                 </div>
@@ -357,10 +357,10 @@ const Partners = ({ data }) => (
             <Col xs={12} md={4} lg={4}>
               {data.Thales && (
                 <div className="centered">
-                  <Img
+                  <GatsbyImage
+                    image={data.Thales.childImageSharp.gatsbyImageData}
                     style={{ maxWidth: '100%' }}
                     imgStyle={{ objectFit: 'contain' }}
-                    fixed={data.Thales.childImageSharp.fixed}
                     alt="Thales"
                   />
                 </div>
@@ -390,10 +390,10 @@ const Partners = ({ data }) => (
             <Col xs={12} md={4} lg={4}>
               {data.VanMunsterBoats && (
                 <div className="centered">
-                  <Img
+                  <GatsbyImage
+                    image={data.VanMunsterBoats.childImageSharp.gatsbyImageData}
                     style={{ maxWidth: '100%' }}
                     imgStyle={{ objectFit: 'contain' }}
-                    fixed={data.VanMunsterBoats.childImageSharp.fixed}
                     alt="Thales"
                   />
                 </div>
@@ -436,10 +436,10 @@ const Partners = ({ data }) => (
             <Col xs={12} md={4} lg={4}>
               {data.SteberInternational && (
                 <div className="centered">
-                  <Img
+                  <GatsbyImage
+                    image={data.SteberInternational.childImageSharp.gatsbyImageData}
                     style={{ maxWidth: '100%' }}
                     imgStyle={{ objectFit: 'contain' }}
-                    fixed={data.SteberInternational.childImageSharp.fixed}
                     alt="Steber International"
                   />
                 </div>
@@ -479,10 +479,10 @@ const Partners = ({ data }) => (
           <Col xs={12} md={4} lg={4}>
             {data.OneTwoThree && (
               <div className="centered">
-                <Img
+                <GatsbyImage
+                  image={data.OneTwoThree.childImageSharp.gatsbyImageData}
                   style={{ maxWidth: '100%' }}
                   imgStyle={{ objectFit: 'contain' }}
-                  fixed={data.OneTwoThree.childImageSharp.fixed}
                   alt="One2three Naval Architects"
                 />
               </div>
@@ -512,10 +512,10 @@ const Partners = ({ data }) => (
           <Col xs={12} md={4} lg={4}>
             {data.Ullandulla && (
               <div className="centered">
-                <Img
+                <GatsbyImage
+                  image={data.Ullandulla.childImageSharp.gatsbyImageData}
                   style={{ maxWidth: '100%' }}
                   imgStyle={{ objectFit: 'contain' }}
-                  fixed={data.Ullandulla.childImageSharp.fixed}
                   alt="Ulladulla Engineering and Fibreglass"
                 />
               </div>
@@ -542,10 +542,10 @@ const Partners = ({ data }) => (
           <Col xs={12} md={4} lg={4}>
             {data.ClarkIP && (
               <div className="centered">
-                <Img
+                <GatsbyImage
+                  image={data.ClarkIP.childImageSharp.gatsbyImageData}
                   style={{ maxWidth: '100%' }}
                   imgStyle={{ objectFit: 'contain' }}
-                  fixed={data.ClarkIP.childImageSharp.fixed}
                   alt="Clark IP"
                 />
               </div>
@@ -583,10 +583,10 @@ const Partners = ({ data }) => (
           <Col xs={12} md={4} lg={4}>
             {data.Spitfire && (
               <div className="centered">
-                <Img
+                <GatsbyImage
+                  image={data.Spitfire.childImageSharp.gatsbyImageData}
                   style={{ maxWidth: '100%' }}
                   imgStyle={{ objectFit: 'contain' }}
-                  fixed={data.Spitfire.childImageSharp.fixed}
                   alt="The Spitfire Association"
                 />
               </div>
@@ -675,7 +675,7 @@ const OurStory = ({ data }) => (
         <Col xs={12} md={12} lg={6}>
           {data.Robert && (
             <figure>
-              <Img fluid={data.Robert.childImageSharp.fluid} alt="Robert Dane" />
+              <GatsbyImage image={data.Robert.childImageSharp.gatsbyImageData} alt="Robert Dane" />
               <figcaption>
                 Above: Robert Dane CEO and founder of Ocius Technology pty ltd
               </figcaption>
@@ -695,8 +695,8 @@ const OurStory = ({ data }) => (
         <Col xs={12} md={12} lg={6}>
           {data.Nemo && (
             <figure>
-              <Img
-                fluid={data.Nemo.childImageSharp.fluid}
+              <GatsbyImage
+                image={data.Nemo.childImageSharp.gatsbyImageData}
                 alt="Ocean research prototype vessel Nemo"
               />
               <figcaption>
@@ -706,8 +706,8 @@ const OurStory = ({ data }) => (
           )}
           {data.OciusTeam && (
             <figure>
-              <Img
-                fluid={data.OciusTeam.childImageSharp.fluid}
+              <GatsbyImage
+                image={data.OciusTeam.childImageSharp.gatsbyImageData}
                 alt="Ocius Team wins Innovation award for BlueBottle Bruce 2017"
               />
               <figcaption>Ocius Team wins Innovation award for BlueBottle ‘Bruce’ 2017.</figcaption>
@@ -715,8 +715,8 @@ const OurStory = ({ data }) => (
           )}
           {data.Award && (
             <figure>
-              <Img
-                fluid={data.Award.childImageSharp.fluid}
+              <GatsbyImage
+                image={data.Award.childImageSharp.gatsbyImageData}
                 alt="CEO Robert Dane accepts design award from the Honerable Christopher Pyne at APAC2017"
               />
               <figcaption>
@@ -840,15 +840,15 @@ const OurStory = ({ data }) => (
         <Col xs={12} md={12} lg={6}>
           <figure>
             {data.SolarSailor && (
-              <Img
-                fluid={data.SolarSailor.childImageSharp.fluid}
+              <GatsbyImage
+                image={data.SolarSailor.childImageSharp.gatsbyImageData}
                 alt="Solar Sailor Vessel that was awarded Australian Design Award of the Year in 2001"
               />
             )}
             <br />
             {data.SolarSails && (
-              <Img
-                fluid={data.SolarSails.childImageSharp.fluid}
+              <GatsbyImage
+                image={data.SolarSails.childImageSharp.gatsbyImageData}
                 alt="SolarSailor vessel that operates as a commercial ferry in Hong Kong"
               />
             )}
@@ -907,7 +907,10 @@ const People = ({ data }) => (
         <Row className="primary-content">
           <Col xs={12} md={6} lg={6}>
             {data.MarkBethwaite && (
-              <Img fixed={data.MarkBethwaite.childImageSharp.fixed} alt="Mark Bethwaite AM" />
+              <GatsbyImage
+                image={data.MarkBethwaite.childImageSharp.gatsbyImageData}
+                alt="Mark Bethwaite AM"
+              />
             )}
             <Heading level={3} size="medium" weight="thick">
               Mark Bethwaite AM
@@ -930,7 +933,10 @@ const People = ({ data }) => (
           </Col>
           <Col xs={12} md={6} lg={6}>
             {data.RobertDane && (
-              <Img fixed={data.RobertDane.childImageSharp.fixed} alt="Robert Dane" />
+              <GatsbyImage
+                image={data.RobertDane.childImageSharp.gatsbyImageData}
+                alt="Robert Dane"
+              />
             )}
             <Heading level={3} size="medium" weight="thick">
               Robert Dane
@@ -957,7 +963,10 @@ const People = ({ data }) => (
           </Col>
           <Col xs={12} md={6} lg={6}>
             {data.AndrewAitken && (
-              <Img fixed={data.AndrewAitken.childImageSharp.fixed} alt="Andrew Aitken" />
+              <GatsbyImage
+                image={data.AndrewAitken.childImageSharp.gatsbyImageData}
+                alt="Andrew Aitken"
+              />
             )}
             <Heading level={3} size="medium" weight="thick">
               Andrew Aitken
@@ -979,7 +988,10 @@ const People = ({ data }) => (
           </Col>
           <Col xs={12} md={6} lg={6}>
             {data.RickTurner && (
-              <Img fixed={data.RickTurner.childImageSharp.fixed} alt="Rick Turner" />
+              <GatsbyImage
+                image={data.RickTurner.childImageSharp.gatsbyImageData}
+                alt="Rick Turner"
+              />
             )}
             <Heading level={3} size="medium" weight="thick">
               Rick Turner
@@ -1008,7 +1020,10 @@ const People = ({ data }) => (
         <Row className="primary-content">
           <Col xs={12} md={6} lg={4}>
             {data.LloydBreckenridge && (
-              <Img fixed={data.LloydBreckenridge.childImageSharp.fixed} alt="Lloyd Breckenridge" />
+              <GatsbyImage
+                image={data.LloydBreckenridge.childImageSharp.gatsbyImageData}
+                alt="Lloyd Breckenridge"
+              />
             )}
             <Heading level={3} size="medium" weight="thick">
               Lloyd Breckenridge
@@ -1035,7 +1050,10 @@ const People = ({ data }) => (
           </Col>
           <Col xs={12} md={6} lg={4}>
             {data.PeterWlodarczyk && (
-              <Img fixed={data.PeterWlodarczyk.childImageSharp.fixed} alt="Peter Wlodarczyk" />
+              <GatsbyImage
+                image={data.PeterWlodarczyk.childImageSharp.gatsbyImageData}
+                alt="Peter Wlodarczyk"
+              />
             )}
             <Heading level={3} size="medium" weight="thick">
               Peter Wlodarczyk
@@ -1063,7 +1081,10 @@ const People = ({ data }) => (
           </Col>
           <Col xs={12} md={6} lg={4}>
             {data.ScottElliceFlint && (
-              <Img fixed={data.ScottElliceFlint.childImageSharp.fixed} alt="Scott Ellice-Flint" />
+              <GatsbyImage
+                image={data.ScottElliceFlint.childImageSharp.gatsbyImageData}
+                alt="Scott Ellice-Flint"
+              />
             )}
             <Heading level={3} size="medium" weight="thick">
               Scott Ellice-Flint
@@ -1087,7 +1108,7 @@ const People = ({ data }) => (
   </>
 );
 
-const FloatingImage = styled(Img)`
+const FloatingImage = styled(GatsbyImage)`
   position: absolute !important;
   top: 150px;
   right: 0;
@@ -1107,7 +1128,7 @@ const AboutPage = ({ data }) => (
     />
     {data.HeroBackground && (
       <HeroBlock
-        image={data.HeroBackground.childImageSharp.fluid}
+        image={data.HeroBackground.childImageSharp.gatsbyImageData.images.fallback}
         masked
         scrim="blue"
         fallbackColor="#7bbfd4"
@@ -1147,7 +1168,7 @@ const AboutPage = ({ data }) => (
       </HeroBlock>
     )}
     {data.SolarSail && (
-      <FloatingImage fixed={data.SolarSail.childImageSharp.fixed} alt="Solar Sail" />
+      <FloatingImage fixed={data.SolarSail.childImageSharp.gatsbyImageData} alt="Solar Sail" />
     )}
     <div id="tabs">
       <NavTabs>
@@ -1173,94 +1194,69 @@ export const query = graphql`
   query getAboutPageData {
     HeroBackground: file(relativePath: { eq: "pages/about/images/ocius-about-bg.png" }) {
       childImageSharp {
-        fluid(quality: 75, maxWidth: 1920) {
-          ...GatsbyImageSharpFluid_withWebp
-        }
+        gatsbyImageData(quality: 75, layout: FULL_WIDTH)
       }
     }
-
     SolarSail: file(relativePath: { eq: "pages/about/images/solar-sail.png" }) {
       childImageSharp {
-        fixed(quality: 80, width: 441) {
-          ...GatsbyImageSharpFixed_withWebp
-        }
+        gatsbyImageData(quality: 80, width: 441, layout: FIXED)
       }
     }
-
     OciusLogo: file(relativePath: { eq: "pages/about/images/ocius-logo-transparent.png" }) {
       childImageSharp {
-        fixed(quality: 100, width: 762) {
-          ...GatsbyImageSharpFixed
-        }
+        gatsbyImageData(quality: 100, width: 762, layout: FIXED)
       }
     }
-
     MarkBethwaite: file(relativePath: { eq: "pages/about/images/mark-bethwaite.png" }) {
       ...imageSharpAvatar
     }
-
     RobertDane: file(relativePath: { eq: "pages/about/images/robert-dane.png" }) {
       ...imageSharpAvatar
     }
-
     LloydBreckenridge: file(relativePath: { eq: "pages/about/images/lloyd-breckenridge.png" }) {
       ...imageSharpAvatar
     }
-
     PeterWlodarczyk: file(relativePath: { eq: "pages/about/images/peter-wlodarczyk.png" }) {
       ...imageSharpAvatar
     }
-
     ScottElliceFlint: file(relativePath: { eq: "pages/about/images/scott-ellice-flint.png" }) {
       ...imageSharpAvatar
     }
-
     AndrewAitken: file(relativePath: { eq: "pages/about/images/andrew-aitken.png" }) {
       ...imageSharpAvatar
     }
-
     RickTurner: file(relativePath: { eq: "pages/about/images/rick-turner.png" }) {
       ...imageSharpAvatar
     }
-
     Robert: file(relativePath: { eq: "pages/about/images/robert.png" }) {
       ...fluidImages
     }
-
     Nemo: file(relativePath: { eq: "pages/about/images/nemo.jpg" }) {
       ...fluidImages
     }
-
     OciusTeam: file(relativePath: { eq: "pages/about/images/ocius_team.jpg" }) {
       ...fluidImages
     }
-
     Award: file(relativePath: { eq: "pages/about/images/award-christopher-pyne.jpg" }) {
       ...fluidImages
     }
-
     SolarSailor: file(relativePath: { eq: "pages/about/images/solar-sailor.jpg" }) {
       ...fluidImages
     }
-
     SolarSails: file(relativePath: { eq: "pages/about/images/solarsails.jpg" }) {
       ...fluidImages
     }
-
     Awards: file(relativePath: { eq: "pages/about/images/awards.png" }) {
       ...fluidImages
     }
-
     AustralianGovernment: file(
       relativePath: { eq: "pages/about/images/australiangovernment.png" }
     ) {
       ...imageSharpLogotype
     }
-
     SteberInternational: file(relativePath: { eq: "pages/about/images/Steber-International.jpg" }) {
       ...imageSharpLogotype
     }
-
     DefenceInnovationHub: file(
       relativePath: { eq: "pages/about/images/Defence-Innovation-Hub.png" }
     ) {
@@ -1272,25 +1268,20 @@ export const query = graphql`
     Thales: file(relativePath: { eq: "pages/about/images/thales-logo.png" }) {
       ...imageSharpLogotype
     }
-
     OneTwoThree: file(
       relativePath: { eq: "pages/about/images/One-Two-Three-Naval-Architects.jpg" }
     ) {
       ...imageSharpLogotype
     }
-
     UNSW: file(relativePath: { eq: "pages/about/images/UNSW.jpg" }) {
       ...imageSharpLogotype
     }
-
     ClarkIP: file(relativePath: { eq: "pages/about/images/Clark-IP-Logo.png" }) {
       ...imageSharpLogotype
     }
-
     Ullandulla: file(relativePath: { eq: "pages/about/images/ulladulla.png" }) {
       ...imageSharpLogotype
     }
-
     Spitfire: file(relativePath: { eq: "pages/about/images/Spitfire-Assoc-Logo.jpg" }) {
       ...imageSharpLogotype
     }
@@ -1298,25 +1289,19 @@ export const query = graphql`
 
   fragment imageSharpAvatar on File {
     childImageSharp {
-      fixed(width: 199) {
-        ...GatsbyImageSharpFixed_withWebp
-      }
+      gatsbyImageData(width: 199, placeholder: BLURRED, layout: FIXED)
     }
   }
 
   fragment imageSharpLogotype on File {
     childImageSharp {
-      fixed(height: 200) {
-        ...GatsbyImageSharpFixed_withWebp
-      }
+      gatsbyImageData(height: 200, placeholder: BLURRED, layout: FIXED)
     }
   }
 
   fragment fluidImages on File {
     childImageSharp {
-      fluid(quality: 85, maxWidth: 800) {
-        ...GatsbyImageSharpFluid_withWebp
-      }
+      gatsbyImageData(quality: 85, width: 800, placeholder: BLURRED, layout: CONSTRAINED)
     }
   }
 `;
