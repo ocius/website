@@ -1074,7 +1074,8 @@ const People = ({ data }) => (
                 Scott has over 40 years experience as a Chartered Accountant. As principal of his
                 own practice, Scott has focused on accounting, taxation and business development
                 advice for small to medium enterprises ensuring compliance and commercial outcomes.
-                Scott has been Ocius Gp Accountant and Company Secretary since
+                Scott has been Ocius Gp Accountant and Company Secretary intermittently since 
+                25 February 2013.
               </p>
             </div>
           </Col>
