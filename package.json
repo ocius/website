@@ -41,6 +41,7 @@
     "gatsby-transformer-sharp": "^3.4.0",
     "gatsby-transformer-yaml": "^3.4.0",
     "gbimage-bridge": "^0.1.4",
+    "imagemin-pngquant": "^9.0.2",
     "lodash": "^4.17.21",
     "node-sass": "^5.0.0",
     "object-assign": "^4.1.1",
