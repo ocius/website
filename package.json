@@ -37,7 +37,7 @@
     "gatsby-remark-images-grid": "^1.1.2",
     "gatsby-remark-responsive-iframe": "^4.1.0",
     "gatsby-source-filesystem": "^3.4.0",
-    "gatsby-transformer-remark": "^4.1.0",
+    "gatsby-transformer-remark": "^3.2.0",
     "gatsby-transformer-sharp": "^3.4.0",
     "gatsby-transformer-yaml": "^3.4.0",
     "gbimage-bridge": "^0.1.4",
