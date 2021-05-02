@@ -81,7 +81,7 @@ const ImageContainer = styled.figure`
 `;
 
 const Image = styled(GatsbyImage)`
-  display: block;
+  display: block !important;
   max-width: 100%;
 `;
 

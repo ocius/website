@@ -59,7 +59,7 @@ export default () => (
 
             fragment imageSharpIcons on File {
               childImageSharp {
-                gatsbyImageData(width: 199, layout: FIXED)
+                gatsbyImageData(width: 199, placeholder: BLURRED, layout: FIXED)
               }
             }
           `}
