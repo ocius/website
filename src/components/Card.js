@@ -1,8 +1,9 @@
 /* eslint-disable react/forbid-prop-types */
 import React from 'react';
 import PropTypes from 'prop-types';
-import { GatsbyImage } from 'gatsby-plugin-image';
+import { getImage, GatsbyImage } from 'gatsby-plugin-image';
 import BackgroundImage from 'gatsby-background-image';
+import { convertToBgImage } from 'gbimage-bridge';
 import styled from 'styled-components';
 import Heading from './Heading';
 import Button from './Button';
@@ -72,34 +73,39 @@ const Date = styled.p`
   margin-top: 0;
 `;
 
-const Card = ({ url, thumbnail, title, source, logo, date }) => (
-  <CardWrapper>
-    <ExternalLink target="_blank" href={url}>
-      <CardThumbnail fluid={thumbnail.childImageSharp.gatsbyImageData} />
-    </ExternalLink>
-    <CardBody>
-      <Content>
-        <CardHeading level={2} size="small" weight="thick">
-          {title}
-        </CardHeading>
-        <Date>{date}</Date>
-        <Source>
-          {logo && (
-            <GatsbyImage
-              image={logo.childImageSharp.gatsbyImageData}
-              style={{ width: 25, marginRight: 10 }}
-            />
-          )}
-          {source}
-        </Source>
-      </Content>
+const Card = ({ url, thumbnail, title, source, logo, date }) => {
+  const image = getImage(thumbnail);
+  const bgImage = convertToBgImage(image);
 
-      <Button color="blue" size="tiny" href={url} target="_blank">
-        Read more
-      </Button>
-    </CardBody>
-  </CardWrapper>
-);
+  return (
+    <CardWrapper>
+      <ExternalLink target="_blank" href={url}>
+        <CardThumbnail {...bgImage} />
+      </ExternalLink>
+      <CardBody>
+        <Content>
+          <CardHeading level={2} size="small" weight="thick">
+            {title}
+          </CardHeading>
+          <Date>{date}</Date>
+          <Source>
+            {logo && (
+              <GatsbyImage
+                image={logo.childImageSharp.gatsbyImageData}
+                style={{ width: 25, marginRight: 10 }}
+              />
+            )}
+            {source}
+          </Source>
+        </Content>
+
+        <Button color="blue" size="tiny" href={url} target="_blank">
+          Read more
+        </Button>
+      </CardBody>
+    </CardWrapper>
+  );
+};
 
 Card.propTypes = {
   url: PropTypes.string,
