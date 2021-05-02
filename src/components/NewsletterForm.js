@@ -77,7 +77,7 @@ const FormGroup = styled.div`
 `;
 
 const NewsletterForm = ({ topMaskBackgroundColor, bottomMaskBackgroundColor }) => {
-  const { register, handleSubmit, errors, reset, formState } = useForm({
+  const { register, handleSubmit, reset, formState } = useForm({
     mode: 'onBlur',
     defaultValues: {
       email: '',
@@ -86,7 +86,7 @@ const NewsletterForm = ({ topMaskBackgroundColor, bottomMaskBackgroundColor }) =
   });
   const [submitSuccess, setSubmitSuccess] = useState(false);
   const [formMessage, setFormMessage] = useState('');
-  const { isSubmitting, isValid } = formState;
+  const { isSubmitting, isValid, errors } = formState;
 
   const handleFormSubmitSuccess = () => {
     setSubmitSuccess(true);
@@ -169,7 +169,7 @@ const NewsletterForm = ({ topMaskBackgroundColor, bottomMaskBackgroundColor }) =
                     <FormGroup>
                       {/* Real people should not fill this in and expect good things - do not remove this or risk form bot signups */}
                       <div aria-hidden="true" style={{ position: 'absolute', left: '-5000px' }}>
-                        <Field type="text" name="name" tabIndex="-1" ref={register} />
+                        <Field type="text" name="name" tabIndex="-1" {...register('name')} />
                       </div>
 
                       <div className="form-col-8">
@@ -178,9 +178,8 @@ const NewsletterForm = ({ topMaskBackgroundColor, bottomMaskBackgroundColor }) =
                           placeholder="Email address"
                           name="email"
                           type="email"
-                          ref={register({
+                          {...register('email', {
                             required: true,
-                            pattern: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
                           })}
                         />
                         {/* show an error when an invalid email provided */}
