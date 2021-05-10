@@ -39,6 +39,6 @@ Finally, we successfully tested Thales’ new innovative underwater comms protoc
 ### Pacific 2019 Expo Darling Harbour Oct 8 -10:
 All this testing is in preparation for Pac 2019. Thales and Ocius will have two Bluebottles on the harbour or off the coast beaming LIVE data and camera footage back to our display on the NSW Government Stand 2B2.  This development has been the result of a long-term collaboration between Ocius, Thales and Defence, with all parties committed to the advancement of autonomous sonar solutions as part of their respective development programs. Without this level of collaborative commitment between partners such projects would not be possible.
 
-We’ll be presenting this testing and our recent Intelligent Network trials off the NSW coast at the Australian Association for Uncrewed Systems’ (AAUS) “Autonomy in the Maritime Domain” conference and the Defence Innovation Network conferences - both held within the Expo.
+We’ll be presenting this testing and our recent Intelligent Network trials off the NSW coast at the Australian Association for Unmanned Systems’ (AAUS) “Autonomy in the Maritime Domain” conference and the Defence Innovation Network conferences - both held within the Expo.
 
 We look forward to updating you again soon.
