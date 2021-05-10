@@ -9,7 +9,7 @@ featuredImage: cover-page.jpg
 
 ### It is with great pleasure I present this years’ Shareholder update and invitation to our AGM.
 
-**Unmanned surface vessels:** At the time of writing, we have just finished exhibiting two versions of our unmanned surface vessels with Steber International at the Pacific 2013 Exhibition held at Darling Harbour Convention Centre on 7th to 9th October 2013.
+**Uncrewed surface vessels:** At the time of writing, we have just finished exhibiting two versions of our unmanned surface vessels with Steber International at the Pacific 2013 Exhibition held at Darling Harbour Convention Centre on 7th to 9th October 2013.
 
 ![Cover page](./cover-page.jpg)
 

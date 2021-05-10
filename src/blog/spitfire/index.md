@@ -17,7 +17,7 @@ This is an unusual Memorial to participants of World War II, the survivors being
 
 Spitfire pilot Lysle Roberts said “the Spitfire Memorial Fellowship was conceived and established by Pilots of my old Spitfire Squadron No. 457 to honour the memory of that great Aircraft and it’s versatility. The aim of the Fellowship is to find projects, being carried out by Australian Citizens which can aid the defences of our fine Country.”
 
-Following a visit to Ocius facility at UNSW by Lysle Roberts and Les Field from the the Spitfire Memorial Fellowship committee, Ocius has been awarded a scholarship to engage four UNSW engineering and computer science undergaduates to work on the Ocius Bluebottle Unmanned Surface Vessel Stinger V1 prototype. The successful students are pictured from Left to Right in the photograph – Connor Mcleod, Tom Drainsfield, Lysle Roberts (Spitfire pilot and comittee member) Ravi Raj, Aamir Alikhan and Brett Ryall (not present).
+Following a visit to Ocius facility at UNSW by Lysle Roberts and Les Field from the the Spitfire Memorial Fellowship committee, Ocius has been awarded a scholarship to engage four UNSW engineering and computer science undergaduates to work on the Ocius Bluebottle Uncrewed Surface Vessel Stinger V1 prototype. The successful students are pictured from Left to Right in the photograph – Connor Mcleod, Tom Drainsfield, Lysle Roberts (Spitfire pilot and comittee member) Ravi Raj, Aamir Alikhan and Brett Ryall (not present).
 
 ![Ocius Interns](./DSC_0436-1024x683.jpg)
 

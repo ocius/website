@@ -5,7 +5,7 @@ author: "Robert Dane"
 featuredImage: ./parliament.jpg
 ---
 
-Last week, we were honoured to be invited by the Australian Maritime Safety Authority (AMSA) and approved by the National Capital Authority (NCA) to operate 2 Bluebottle Unmanned Surface Vessels (USVs) on Lake Burley Griffin in the week leading up to an AMSA and Trusted Autonomous Cooperative Research Centre (TASCRC) conference at the National Museum of Australia.
+Last week, we were honoured to be invited by the Australian Maritime Safety Authority (AMSA) and approved by the National Capital Authority (NCA) to operate 2 Bluebottle Uncrewed Surface Vessels (USVs) on Lake Burley Griffin in the week leading up to an AMSA and Trusted Autonomous Cooperative Research Centre (TASCRC) conference at the National Museum of Australia.
 
 Just like at Autonomous Warrior Wargames in November, the weather was terrible. But, despite overcast conditions, freezing winds, rain and snow on the mountains, Bob & Bruce happily performed their duties.
 

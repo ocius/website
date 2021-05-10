@@ -6,7 +6,7 @@ author: "Ocius Administrator"
 
 **BlueBottles–new solar, wind and wave powered autonomous drones that ‘live’ at sea.**
 
-*   Ocius Technology Limited, formerly known as award winning marine technology company SolarSailor, is working with the University of Wollongong to build a series of new types of Unmanned Surface Vessel (**USV**) called “BlueBottles”.
+*   Ocius Technology Limited, formerly known as award winning marine technology company SolarSailor, is working with the University of Wollongong to build a series of new types of Uncrewed Surface Vessel (**USV**) called “BlueBottles”.
 *   Robert Dane CEO of OCIUS said:
 
 “_Conventional methods for data collection such as ships, buoys, air surveillance and satellites have limitations to give 24/7/365 coverage on, in and below the water –but it is possible now to do it in a new way – using USVs.”_

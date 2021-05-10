@@ -1,5 +1,5 @@
 ---
-title: "“Unmanned marine drone designed to patrol our borders”"
+title: "“Uncrewed marine drone designed to patrol our borders”"
 date: "2017-10-01"
 author: "Kevin Chan"
 category: "Defence"

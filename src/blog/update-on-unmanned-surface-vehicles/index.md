@@ -1,5 +1,5 @@
 ---
-title: "Update on Unmanned Surface Vehicles"
+title: "Update on Uncrewed Surface Vehicles"
 date: "2013-08-23"
 author: "Ocius Administrator"
 ---

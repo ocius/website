@@ -19,7 +19,7 @@ _The R&D Tax Incentive has also provided support to the ongoing research and dev
 
 _In 2012, business advisers from the Defence Industry Innovation Centre (DIIC) began working with one of Ocius’ partners, Steber International, and in 2013 the DIIC provided Defence specific market knowledge and advice to both Steber International and Ocius through a Defence Industry Change Plan. Part of the advice included development of a strategy to pursue funding for development activities including through the Capability Technology Demonstrator (CTD) program._
 
-_In September 2015, Ocius was awarded a $3 million contract through one of Defence’s industry innovation support programs – the CTD program. The contract was to develop and demonstrate an Unmanned Surface Vessel, coupled with a thin-line towed array system uniquely suited for anti-submarine warfare surveillance._
+_In September 2015, Ocius was awarded a $3 million contract through one of Defence’s industry innovation support programs – the CTD program. The contract was to develop and demonstrate an Uncrewed Surface Vessel, coupled with a thin-line towed array system uniquely suited for anti-submarine warfare surveillance._
 
 _In addition to being awarded CTD funding, Ocius recently won the award of ‘Best Advanced Manufacturing Company’ at the 2015 Australian Technology Competition. This award recognises the company’s innovative and commercial approach to business which has included taking advantage of Government programs to help drive efficiencies and pursue exports._
 

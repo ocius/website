@@ -73,8 +73,7 @@ const USVPage = ({ data }) => (
             <ResponsiveIframe
               src="https://www.youtube.com/embed/7vhvKcc-UPk?rel=0"
               frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
             />
             <Heading level={2} size="medium">
               Watch video
