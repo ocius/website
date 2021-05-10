@@ -8,7 +8,7 @@ featuredImage: "./summerfest-2019-autonomy-trials.png"
 
 From Dec 2 - Dec 6, we attended ‘Summerfest 2019’, marine autonomy trials at HMAS Creswell, driven by a collaboration between DSTG, RAN, academia and industry.
 
-![This activity involved two Autonomous Underwater Vehicle (AUVs), a Bluebottle Unmanned Surface Vessel (USV), support boats, support personnel and observers - photos courtesy of 3ME Technology](./summerfest-2019-autonomy-trials.png)
+![This activity involved two Autonomous Underwater Vehicle (AUVs), a Bluebottle Uncrewed Surface Vessel (USV), support boats, support personnel and observers - photos courtesy of 3ME Technology](./summerfest-2019-autonomy-trials.png)
 
 ____
 
@@ -19,7 +19,7 @@ The aim of ‘Summerfest’ was to demonstrate the enhanced speed of Maritime Au
 
 ![Photos courtesy of Mission Systems](./remote-mine-hunting.png)
 
-In an Australian first, DSTG and Ocius demonstrated remote mine hunting. A Bluebottle Unmanned Surface Vessel (USV) was tasked over a minefield as a ‘Communications Gateway’ relaying information and data between a DST Remus Autonomous Underwater Vehicle (AUV) in the minefield and a manned vessel, MV Kimbla, standing off at a safe distance. The Automatic Target Recognition (ATR) on the Remus AUV was able to report positions of mine contacts immediately via the acoustic relay on the Bluebottle USV, back to the command and control (C2) centre.
+In an Australian first, DSTG and Ocius demonstrated remote mine hunting. A Bluebottle Uncrewed Surface Vessel (USV) was tasked over a minefield as a ‘Communications Gateway’ relaying information and data between a DST Remus Autonomous Underwater Vehicle (AUV) in the minefield and a manned vessel, MV Kimbla, standing off at a safe distance. The Automatic Target Recognition (ATR) on the Remus AUV was able to report positions of mine contacts immediately via the acoustic relay on the Bluebottle USV, back to the command and control (C2) centre.
 
 The DST Remus AUV then surfaced and sent snippets of sidescan sonar data representing the ATR contacts via WiFi to the Bluebottle USV and then back to the C2 centre whilst the Remus AUV was still in the water over the minefield.
 

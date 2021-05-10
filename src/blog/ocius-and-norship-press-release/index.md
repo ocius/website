@@ -5,7 +5,7 @@ author: "Cameron Moses"
 featuredImage: image1.jpg
 ---
 
-**Cairns/Sydney, 18th December, 2020** – Ocius Technology, world leader in Unmanned Surface Vessels (USV) and Norship Marine have signed a Heads of Agreement to work together in order to develop a sustainment and support model for this new class of vessel. With a unique understanding of the extended mission challenges faced by its ‘Bluebottle’ USV, an autonomous vessel designed to spend weeks or months on station, Ocius is working with Norship’s expertise in supporting marine assets that demand high reliability and availability outcomes.
+**Cairns/Sydney, 18th December, 2020** – Ocius Technology, world leader in Uncrewed Surface Vessels (USV) and Norship Marine have signed a Heads of Agreement to work together in order to develop a sustainment and support model for this new class of vessel. With a unique understanding of the extended mission challenges faced by its ‘Bluebottle’ USV, an autonomous vessel designed to spend weeks or months on station, Ocius is working with Norship’s expertise in supporting marine assets that demand high reliability and availability outcomes.
 
 ![ocius bluebottle](image1.jpg)
 

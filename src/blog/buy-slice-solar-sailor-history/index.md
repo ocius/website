@@ -23,7 +23,7 @@ Time is running out. There have been several offers, both locally and overseas b
 
 The Solar Sailor is currently doing events and cruises for special occasions. It has become very familiar, continuing the tradition of the boat on the Lake in the wake of the Wangi Queen, which operated for 35 years.’
 
-Ocius is mostly focused on solar-wind-wave powered unmanned vessels, such as the Solar Sailor Blue Bottle developed in collaboration with Steber International. ‘Unmanned drones are becoming increasingly popular, with the rising costs of fuel.’  
+Ocius is mostly focused on solar-wind-wave powered unmanned vessels, such as the Solar Sailor Blue Bottle developed in collaboration with Steber International. ‘Uncrewed drones are becoming increasingly popular, with the rising costs of fuel.’  
 Bluebottles combine Steber’s proven 50 years of quality rugged boatbuilding with SolarSailor’s proven patented technology developed over 14 years.
 
 The worldwide market for unmanned surface vessels is directly proportional to all the information and intelligence gathering requirements desired by authorities which includes oceanography, defence, border protection, hydrography, fisheries and oil and gas and security.

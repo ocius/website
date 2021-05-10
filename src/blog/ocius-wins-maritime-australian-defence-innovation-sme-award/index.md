@@ -12,7 +12,7 @@ featuredImage: DSC_9138.jpg
 
 ![Robert Dane – CEO of OCIUS accepting award from Christopher Pyne – Minister of Defence Industry](./DSC_9138.jpg)
 
-**OCIUS Technology’s ‘Bluebottle’ ocean drones are Unmanned Surface Vessels (USVs)**. They are named after the Australian marine animal that lives at sea and uses it’s body as a sail. **They harness the energy of the ocean, solar, wind and wave action to power themselves** allowing them to stay at sea almost indefinitely and move forward under all conditions.
+**OCIUS Technology’s ‘Bluebottle’ ocean drones are Uncrewed Surface Vessels (USVs)**. They are named after the Australian marine animal that lives at sea and uses it’s body as a sail. **They harness the energy of the ocean, solar, wind and wave action to power themselves** allowing them to stay at sea almost indefinitely and move forward under all conditions.
 
 The Bluebottle’s patented ‘solar sail’ collects both solar and wind power, so it can sail when the wind is blowing or use solar power to drive its motor. If there is no sun and wind, the Bluebottle’s patented flipper and rudder appendage under the water steers and drives it forward against the waves. This means Bluebottles have a ‘speed of advance’ under all conditions.
 

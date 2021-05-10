@@ -7,7 +7,7 @@ featuredImage: kioloaroute.png
 
 Dear Shareholders of Ocius, Friends and Colleagues,
 
-I am very pleased to report that our Bluebottle Unmanned Surface Vessels (USVs) have successfully completed all our sea trial requirements for our Defence Innovation Hub contract, three months ahead of schedule.
+I am very pleased to report that our Bluebottle Uncrewed Surface Vessels (USVs) have successfully completed all our sea trial requirements for our Defence Innovation Hub contract, three months ahead of schedule.
 
 An important final test was demonstrating our “visual acuity target recognition and collision avoidance” software. In these scenarios, we put a Bluebottle (BB) on a collision course with the Ocius support boat, a difficult to see, low to the water, small, rigid hull inflatable boat (RHIB):
 

@@ -21,7 +21,7 @@ ___
 
 ### Pacific 2019
 
-On Day One we started at dawn, deploying two Bluebottle Unmanned Surface Vessels (USVs) off the coast performing ‘bistatic sonar’. Just like at Autonomous Warrior Wargames and on Lake Burley Griffin, the conditions were overcast, cold, raining and strong winds, but Bluebottle USVs Bob & Bruce methodically performed their duties.
+On Day One we started at dawn, deploying two Bluebottle Uncrewed Surface Vessels (USVs) off the coast performing ‘bistatic sonar’. Just like at Autonomous Warrior Wargames and on Lake Burley Griffin, the conditions were overcast, cold, raining and strong winds, but Bluebottle USVs Bob & Bruce methodically performed their duties.
 
 ![Pacific 2019 Day One 1500hrs: After demonstrating ‘bistatic sonar’ off the coast since dawn Bluebottle USVs Bob and Bruce are told to ‘wait at the bridge’](./PAC-2019-1500.png)
 
