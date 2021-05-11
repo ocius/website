@@ -76,6 +76,7 @@ const StatusNames = {
   Sail_mode: 'Sail Mode',
   Wp_dist: 'WP Dist',
   Next_wp: 'Next WP',
+  Air_temp: 'Air Temperature',
   Water_depth: 'Water Depth',
   Water_temp: 'Water Temp',
   Current_speed: 'Current Speed',
@@ -229,6 +230,8 @@ const formatVesselStatusData = (data) => {
       if (value !== null) {
         // We have a value, display it
         if (key === 'Water_temp') {
+          statuses[StatusNames[key]] = formatTemperature(value);
+        } else if (key === 'Air_temp') {
           statuses[StatusNames[key]] = formatTemperature(value);
         } else if (key === 'Water_depth') {
           statuses[StatusNames[key]] = formatDepth(value);
