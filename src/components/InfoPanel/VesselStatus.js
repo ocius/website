@@ -230,6 +230,8 @@ const formatVesselStatusData = (data) => {
         // We have a value, display it
         if (key === 'Water_temp') {
           statuses[StatusNames[key]] = formatTemperature(value);
+        } else if (key === 'Air_temp') {
+          statuses[StatusNames[key]] = formatTemperature(value);
         } else if (key === 'Water_depth') {
           statuses[StatusNames[key]] = formatDepth(value);
         } else if (key === 'Wind_speed' || key === 'Current_speed') {
