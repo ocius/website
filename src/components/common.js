@@ -68,9 +68,7 @@ export const LogoBackgroundWrapper = ({ children, position }) => {
     query BackgroundQuery {
       logoImage: file(relativePath: { eq: "images/ocius-logo-transparent.png" }) {
         childImageSharp {
-          fluid(maxWidth: 2000, quality: 100) {
-            ...GatsbyImageSharpFluid
-          }
+          gatsbyImageData(quality: 100, layout: FULL_WIDTH)
         }
       }
     }
@@ -78,7 +76,10 @@ export const LogoBackgroundWrapper = ({ children, position }) => {
 
   return (
     // Use the styled component here
-    <LogoBackgroundDiv $image={data.logoImage.childImageSharp.fluid.src} $position={position}>
+    <LogoBackgroundDiv
+      $image={data.logoImage.childImageSharp.gatsbyImageData.src}
+      $position={position}
+    >
       {children}
     </LogoBackgroundDiv>
   );

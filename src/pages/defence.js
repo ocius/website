@@ -21,7 +21,11 @@ const DefencePage = ({ data }) => (
     />
 
     {data.HeroBackground && (
-      <HeroBlock image={data.HeroBackground.childImageSharp.fluid} masked scrim="blue">
+      <HeroBlock
+        image={data.HeroBackground.childImageSharp.gatsbyImageData.images.fallback}
+        masked
+        scrim="blue"
+      >
         <Row>
           <Col xs={12} md={6} lg={6}>
             <Spacing $value="280px" />
@@ -197,12 +201,10 @@ const DefencePage = ({ data }) => (
 );
 
 export const query = graphql`
-  query {
+  {
     HeroBackground: file(relativePath: { eq: "images/solutions-defence-bg.png" }) {
       childImageSharp {
-        fluid(quality: 80, maxWidth: 1200) {
-          ...GatsbyImageSharpFluid_withWebp
-        }
+        gatsbyImageData(quality: 80, layout: FULL_WIDTH)
       }
     }
   }

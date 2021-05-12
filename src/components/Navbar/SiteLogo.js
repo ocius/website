@@ -30,12 +30,10 @@ const LogoImage = styled.img`
 const SiteLogo = ({ className, href }) => {
   const { file } = useStaticQuery(
     graphql`
-      query {
+      {
         file(relativePath: { eq: "images/ocius-logo-header.png" }) {
           childImageSharp {
-            fluid(maxWidth: 200) {
-              src
-            }
+            gatsbyImageData(width: 200, placeholder: BLURRED, layout: CONSTRAINED)
           }
         }
       }
@@ -44,7 +42,12 @@ const SiteLogo = ({ className, href }) => {
 
   return (
     <LogoLink className={className} key="brand" to={href}>
-      <LogoImage src={file.childImageSharp.fluid.src} alt="Website logo" width="200" height="32" />
+      <LogoImage
+        src={file.childImageSharp.gatsbyImageData.images.fallback.src}
+        alt="Website logo"
+        width="200"
+        height="32"
+      />
     </LogoLink>
   );
 };

@@ -2,7 +2,7 @@ import React from 'react';
 import { graphql, StaticQuery } from 'gatsby';
 import styled from 'styled-components';
 import { Grid, Row, Col } from 'react-styled-flexboxgrid/src';
-import Img from 'gatsby-image';
+import { GatsbyImage } from 'gatsby-plugin-image';
 import Segmented from './Segmented';
 import Button from './Button';
 import Heading from './Heading';
@@ -45,15 +45,13 @@ export default () => (
         </Row>
         <StaticQuery
           query={graphql`
-            query {
+            {
               DefenceIcon: file(relativePath: { eq: "images/solutions-defence.png" }) {
                 ...imageSharpIcons
               }
-
               OilAndGasIcon: file(relativePath: { eq: "images/solutions-oilandgas.png" }) {
                 ...imageSharpIcons
               }
-
               ScienceIcon: file(relativePath: { eq: "images/solutions-science.png" }) {
                 ...imageSharpIcons
               }
@@ -61,9 +59,7 @@ export default () => (
 
             fragment imageSharpIcons on File {
               childImageSharp {
-                fixed(width: 199) {
-                  ...GatsbyImageSharpFixed
-                }
+                gatsbyImageData(width: 199, placeholder: BLURRED, layout: FIXED)
               }
             }
           `}
@@ -73,7 +69,10 @@ export default () => (
                 <Article>
                   <Wrapper>
                     {data.DefenceIcon && (
-                      <Img fixed={data.DefenceIcon.childImageSharp.fixed} alt="Defence Solutions" />
+                      <GatsbyImage
+                        image={data.DefenceIcon.childImageSharp.gatsbyImageData}
+                        alt="Defence Solutions"
+                      />
                     )}
                     <Heading level={3} size="medium" weight="thick" underline="left">
                       Defence
@@ -97,8 +96,8 @@ export default () => (
                 <Article>
                   <Wrapper>
                     {data.OilAndGasIcon && (
-                      <Img
-                        fixed={data.OilAndGasIcon.childImageSharp.fixed}
+                      <GatsbyImage
+                        image={data.OilAndGasIcon.childImageSharp.gatsbyImageData}
                         alt="Oil and Gas Solutions"
                       />
                     )}
@@ -122,7 +121,10 @@ export default () => (
                 <Article>
                   <Wrapper>
                     {data.ScienceIcon && (
-                      <Img fixed={data.ScienceIcon.childImageSharp.fixed} alt="Science Solutions" />
+                      <GatsbyImage
+                        image={data.ScienceIcon.childImageSharp.gatsbyImageData}
+                        alt="Science Solutions"
+                      />
                     )}
                     <Heading level={3} size="medium" weight="thick" underline="left">
                       Science

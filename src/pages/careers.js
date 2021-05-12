@@ -2,7 +2,7 @@ import React from 'react';
 import { Grid, Row, Col } from 'react-styled-flexboxgrid/src';
 import { graphql } from 'gatsby';
 import styled from 'styled-components';
-import Img from 'gatsby-image';
+import { GatsbyImage } from 'gatsby-plugin-image';
 import SEO from '../components/SEO';
 import Segmented from '../components/Segmented';
 import Layout from '../layouts/Layout';
@@ -59,8 +59,8 @@ const CareersPage = ({ data }) => (
               </p>
             </CenteredCol>
             <Col xs={12} md={6} lg={6} lgOffset={1}>
-              <Img
-                fluid={data.OciusTeam ? data.OciusTeam.childImageSharp.fluid : ''}
+              <GatsbyImage
+                image={data.OciusTeam ? data.OciusTeam.childImageSharp.gatsbyImageData : ''}
                 alt="Ocius team"
               />
             </Col>
@@ -397,12 +397,10 @@ const CareersPage = ({ data }) => (
 );
 
 export const query = graphql`
-  query {
+  {
     OciusTeam: file(relativePath: { eq: "images/ocius_team.jpg" }) {
       childImageSharp {
-        fluid(quality: 100, maxWidth: 962) {
-          ...GatsbyImageSharpFluid_withWebp
-        }
+        gatsbyImageData(quality: 100, width: 962, layout: CONSTRAINED)
       }
     }
   }

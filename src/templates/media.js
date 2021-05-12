@@ -97,16 +97,12 @@ export const query = graphql`
           date(formatString: "DD MMMM, YYYY")
           thumbnail {
             childImageSharp {
-              fluid(maxWidth: 400) {
-                ...GatsbyImageSharpFluid_withWebp
-              }
+              gatsbyImageData(width: 400, layout: CONSTRAINED)
             }
           }
           logo {
             childImageSharp {
-              fluid {
-                ...GatsbyImageSharpFluid
-              }
+              gatsbyImageData(layout: FULL_WIDTH)
             }
           }
         }

@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { Link as GatsbyLink } from 'gatsby';
-import Img from 'gatsby-image';
+import { GatsbyImage } from 'gatsby-plugin-image';
 
 import Heading from './Heading';
 import Button from './Button';
@@ -80,8 +80,8 @@ const ImageContainer = styled.figure`
   }
 `;
 
-const Image = styled(Img)`
-  display: block;
+const Image = styled(GatsbyImage)`
+  display: block !important;
   max-width: 100%;
 `;
 
@@ -96,7 +96,7 @@ function ArticlePreview({ title, date, paragraph, image, href }) {
       <StyledLinkMargin to={href}>
         {image && (
           <ImageContainer className="ArticlePreview-image">
-            <Image fluid={image} alt="" />
+            <Image image={image} alt="" />
           </ImageContainer>
         )}
       </StyledLinkMargin>

@@ -3,7 +3,7 @@ import { graphql } from 'gatsby';
 import Loadable from '@loadable/component';
 import { Grid, Row, Col } from 'react-styled-flexboxgrid/src';
 import styled from 'styled-components';
-import Img from 'gatsby-image';
+import { GatsbyImage } from 'gatsby-plugin-image';
 import Layout from '../layouts/Layout';
 import SEO from '../components/SEO';
 import Segmented from '../components/Segmented';
@@ -24,7 +24,7 @@ const ArticlePreviewBlock = Loadable(() => import(`../components/ArticlePreviewB
 const NewsletterForm = Loadable(() => import(`../components/NewsletterForm`));
 const ContactUs = Loadable(() => import(`../components/ContactUs`));
 
-const RadarImage = styled(Img)`
+const RadarImage = styled(GatsbyImage)`
   margin: 0 -2.5em -8em;
   z-index: 2;
 
@@ -42,7 +42,7 @@ const IndexPage = ({ data }) => (
 
     {data.HeroBackground && (
       <HeroBlock
-        image={data.HeroBackground.childImageSharp.fluid}
+        image={data.HeroBackground.childImageSharp.gatsbyImageData.images.fallback}
         scrim="dark"
         fallbackColor="#e3edf3"
       >
@@ -69,7 +69,7 @@ const IndexPage = ({ data }) => (
         <Row>
           <Col xs={12} md={6} lg={6}>
             {data.Computer && (
-              <RadarImage fluid={data.Computer.childImageSharp.fluid} alt="Radar" />
+              <RadarImage image={data.Computer.childImageSharp.gatsbyImageData} alt="Radar" />
             )}
           </Col>
           <Col xs={12} md={6} lg={6}>
@@ -190,21 +190,16 @@ export const query = graphql`
     HeroBackground: file(relativePath: { eq: "images/ocius-bg.jpg" }) {
       ...imageSharpHeroBackground
     }
-
     Computer: file(relativePath: { eq: "images/computer.png" }) {
       childImageSharp {
-        fluid(quality: 80, maxWidth: 700) {
-          ...GatsbyImageSharpFluid_withWebp
-        }
+        gatsbyImageData(quality: 80, width: 700, placeholder: BLURRED, layout: CONSTRAINED)
       }
     }
   }
 
   fragment imageSharpHeroBackground on File {
     childImageSharp {
-      fluid(quality: 80, maxWidth: 1920) {
-        ...GatsbyImageSharpFluid_withWebp
-      }
+      gatsbyImageData(quality: 80, layout: FULL_WIDTH)
     }
   }
 `;

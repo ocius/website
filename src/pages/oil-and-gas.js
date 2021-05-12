@@ -20,7 +20,7 @@ const OilAndGasPage = ({ data }) => (
     />
     {data.HeroBackground && (
       <HeroBlock
-        image={data.HeroBackground.childImageSharp.fluid}
+        image={data.HeroBackground.childImageSharp.gatsbyImageData.images.fallback}
         masked
         scrim="blue"
         fallbackColor="#55a1d2"
@@ -144,12 +144,10 @@ const OilAndGasPage = ({ data }) => (
 );
 
 export const query = graphql`
-  query {
+  {
     HeroBackground: file(relativePath: { eq: "images/solutions-oil-and-gas-bg.jpg" }) {
       childImageSharp {
-        fluid(quality: 85, maxWidth: 1200) {
-          ...GatsbyImageSharpFluid_withWebp
-        }
+        gatsbyImageData(quality: 85, layout: FULL_WIDTH)
       }
     }
   }

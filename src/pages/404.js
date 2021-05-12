@@ -1,6 +1,6 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import Img from 'gatsby-image';
+import { GatsbyImage } from 'gatsby-plugin-image';
 import { Grid, Col, Row } from 'react-styled-flexboxgrid/src';
 import Layout from '../layouts/Layout';
 import SEO from '../components/SEO';
@@ -20,21 +20,19 @@ const NotFoundPage = ({ data }) => (
         </Col>
       </Row>
       <p>That page does not exist</p>
-      <Img
+      <GatsbyImage
+        image={data.Overview ? data.Overview.childImageSharp.gatsbyImageData : ''}
         style={{ width: '70%', margin: '20px 0' }}
-        fluid={data.Overview ? data.Overview.childImageSharp.fluid : ''}
       />
     </Grid>
   </Layout>
 );
 
 export const query = graphql`
-  query {
+  {
     Overview: file(relativePath: { eq: "images/wallpaperocius-768x432.jpg" }) {
       childImageSharp {
-        fluid(quality: 84, maxWidth: 1200) {
-          ...GatsbyImageSharpFluid_withWebp
-        }
+        gatsbyImageData(quality: 84, layout: FULL_WIDTH)
       }
     }
   }

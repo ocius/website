@@ -5,7 +5,7 @@ import { Feedback, Alert, FormField, TextareaField, FieldWrapper } from '../Form
 import Button from '../Button';
 
 const ContactForm = () => {
-  const { register, handleSubmit, errors, reset, formState } = useForm({
+  const { register, handleSubmit, reset, formState } = useForm({
     mode: 'onBlur',
     defaultValues: {
       name: '',
@@ -16,7 +16,7 @@ const ContactForm = () => {
   });
   const [formSuccess, setFormSuccess] = useState(false);
   const [formMessage, setFormMessage] = useState(null);
-  const { isSubmitting, isValid } = formState;
+  const { isSubmitting, isValid, errors } = formState;
 
   const handleFormSubmitError = (error) => {
     setFormSuccess(false);
@@ -63,7 +63,7 @@ const ContactForm = () => {
           name="name"
           className={`form-control ${errors.name && 'is-invalid'}`}
           placeholder="Name (required)"
-          ref={register({ required: true })}
+          {...register('name', { required: true })}
         />
         {/* show an error when name field is empty */}
         {errors.name && <Feedback>Please enter your name</Feedback>}
@@ -76,9 +76,8 @@ const ContactForm = () => {
           name="email"
           className={`form-control ${errors.email && 'is-invalid'}`}
           placeholder="Email (required)"
-          ref={register({
+          {...register('email', {
             required: true,
-            pattern: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
           })}
         />
         {/* show an error when an invalid email provided */}
@@ -91,7 +90,7 @@ const ContactForm = () => {
           id="company"
           name="company"
           placeholder="Company or Company Website"
-          ref={register}
+          {...register('company')}
         />
       </FieldWrapper>
 
@@ -104,7 +103,7 @@ const ContactForm = () => {
           cols={40}
           rows={10}
           placeholder="Message (required)"
-          ref={register({ required: true })}
+          {...register('message', { required: true })}
         />
         {/* show an error when message field is empty */}
         {errors.message && <Feedback>Please enter your message</Feedback>}

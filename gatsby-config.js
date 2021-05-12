@@ -94,5 +94,6 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-optimize-svgs`,
     `gatsby-plugin-sharp`,
+    `gatsby-plugin-image`,
   ],
 };
