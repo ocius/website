@@ -79,10 +79,6 @@ const StatusNames = {
   Air_temp: 'Air Temperature',
   Water_depth: 'Water Depth',
   Water_temp: 'Water Temp',
-  Current_speed: 'Current Speed',
-  Current_direction: 'Current Direction',
-  Wind_speed: 'Wind Speed',
-  Wind_direction: 'Wind Direction',
   Boat_speed: 'Boat Speed',
   Throttle: 'Throttle',
   // Num_Sats: 'Num Sats'
@@ -142,12 +138,6 @@ const formatVesselStatusData = (data) => {
    * @param {String} speed Speed string to be formatted
    */
   const formatSpeed = (speed) => `${parseFloat(speed).toFixed(2)} knots`;
-
-  /**
-   * Take speed in m/s as input, then convert to knots.
-   * @param {Number} speed Speed number to be converted
-   */
-  const convertMsToKnots = (speed) => parseFloat(speed) * 1.94384;
 
   /**
    * Add degree to the end - 10°
@@ -215,15 +205,6 @@ const formatVesselStatusData = (data) => {
     return lowerCase.charAt(0).toUpperCase() + lowerCase.slice(1);
   };
 
-  /**
-   * Convert centidegrees to degrees (1 degree = 100 centidegrees).
-   * @param {String} string String to be formatted
-   */
-  const formatCentidegrees = (string) => {
-    const degrees = parseFloat(string).toFixed(1) / 100;
-    return `${degrees}\xB0`;
-  };
-
   if (Object.entries(flattened).length !== 0) {
     // eslint-disable-next-line no-restricted-syntax
     for (const [key, value] of Object.entries(flattened)) {
@@ -237,18 +218,12 @@ const formatVesselStatusData = (data) => {
           statuses[StatusNames[key]] = formatDepth(value);
         } else if (key === 'Boat_speed') {
           statuses[StatusNames[key]] = formatSpeed(value);
-        } else if (key === 'Wind_speed' || key === 'Current_speed') {
-          statuses[StatusNames[key]] = formatSpeed(convertMsToKnots(value));
-        } else if (key === 'Wind_direction') {
-          statuses[StatusNames[key]] = `${formatDirection(value)} N`;
         } else if (key === 'Heading') {
           statuses[StatusNames[key]] = formatDirection(value);
         } else if (key === 'Lat') {
           statuses[StatusNames[key]] = formatLatitude(value);
         } else if (key === 'Lon') {
           statuses[StatusNames[key]] = formatLongitude(value);
-        } else if (key === 'Current_direction') {
-          statuses[StatusNames[key]] = formatCentidegrees(value);
         } else if (key === 'Status') {
           // Used default MAVLink status codes
           switch (value) {
