@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 import React, { useState, useRef, useContext, useEffect } from 'react';
 import EmptyLayout from '../layouts/EmptyLayout';
 import SEO from '../components/SEO';
@@ -17,6 +18,7 @@ import { useWindowSize } from '../common/hooks';
 import useOnClickOutside from '../common/hooks/useOnClickOutside';
 import { FormWrapper, FormItem } from '../components/common';
 import SplashScreen from '../components/SplashScreen';
+import WindRose from '../components/WindRose';
 
 /** Google Maps key */
 const apiKey = process.env.GATSBY_GOOGLE_MAPS_API_KEY;
@@ -142,6 +144,13 @@ const LivePage = () => {
         text={['Connecting to satellite', 'Connecting to drones', 'Drones sending data']}
       />
       <GMap apiKey={apiKey} currentVessel={currentVessel} droneData={orderedDrones} />
+
+      <WindRose
+        windDirection={parseFloat(orderedDrones[currentVessel]?.Props?.Wind_direction)}
+        windSpeed={parseFloat(orderedDrones[currentVessel]?.Props?.Wind_speed)}
+        currentDirection={parseFloat(orderedDrones[currentVessel]?.Props?.Current_direction)}
+        currentSpeed={parseFloat(orderedDrones[currentVessel]?.Props?.Current_speed)}
+      />
     </EmptyLayout>
   );
 };
