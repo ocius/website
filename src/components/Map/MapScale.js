@@ -32,11 +32,12 @@ const MapScale = ({ zoom }) => {
    */
   const formatZoomRange = (range) => {
     if (range < 1000) {
-      return `${parseFloat(range).toFixed(1)}m`;
+      return `<1000m`;
     }
 
-    const km = range / 1000;
-    return `${parseFloat(km).toFixed(1)}km`;
+    // Convert to nautical miles
+    const nm = range / 1852;
+    return `${parseFloat(nm).toFixed(1)}nmi`;
   };
 
   /**
