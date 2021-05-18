@@ -13,6 +13,7 @@ import { Boat, inlineSvgIcon, getColorVariation } from './BoatIcon';
 import CameraSlider from '../CameraImageSlider';
 import configuration from '../../common/api/configuration';
 import { useWindowSize } from '../../common/hooks';
+import MapScale from './MapScale';
 
 // Reference for options:
 // https://developers.google.com/maps/documentation/javascript/reference/map#MapOptions
@@ -257,6 +258,8 @@ const GMap = ({ apiKey, currentVessel, droneData }) => {
           })}
         </>
       )}
+
+      {zoom && <MapScale zoom={parseInt(zoom, 10)} />}
     </GoogleMap>
   );
 
