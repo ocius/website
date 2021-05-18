@@ -79,7 +79,7 @@ const WindRose = ({ windDirection, windSpeed, currentDirection, currentSpeed }) 
           style={{
             height: '100%',
             width: '100%',
-            transform: `rotate(-${windDirection}deg)`,
+            transform: `rotate(${windDirection + 90}deg)`,
             position: 'absolute',
             top: 0,
             left: 0,
@@ -93,7 +93,7 @@ const WindRose = ({ windDirection, windSpeed, currentDirection, currentSpeed }) 
           style={{
             height: '100%',
             width: '100%',
-            transform: `rotate(-${formatCentidegrees(currentDirection)}deg)`,
+            transform: `rotate(${formatCentidegrees(currentDirection) + 90}deg)`,
             position: 'absolute',
             top: 0,
             left: 0,
