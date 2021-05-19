@@ -6,22 +6,20 @@ const Scale = styled.div`
   position: absolute;
   left: 10px;
   bottom: 10px;
-  border: 2px solid #777;
+  border: 2px solid #fff;
   border-top: none;
-  color: #565656;
+  color: #ffffff;
   font-size: 12px;
   font-weight: bold;
   line-height: 1.1;
-  padding: 2px 4px 1px;
+  padding: 2px ${(props) => (props.$padding ? `${props.$padding}px` : '8px')} 1px;
   white-space: nowrap;
   overflow: hidden;
   box-sizing: border-box;
-  background: #ffffff;
+  background: rgba(255, 255, 255, 0.35);
 
   @media (min-width: 1056px) {
     left: 30rem;
-    font-size: 14px;
-    padding: 4px 8px 1px;
   }
 `;
 
@@ -37,11 +35,11 @@ const MapScale = ({ zoom }) => {
 
     // Convert to nautical miles
     const nm = range / 1852;
-    return `${parseFloat(nm).toFixed(1)}nmi`;
+    return `${parseFloat(nm).toFixed(0)} nmi`;
   };
 
   /**
-   * convert GMap zoom level to GE lookAt range
+   * Convert GMap zoom level to GE lookAt range
    * @param {Number} level Current GMap zoom level
    */
   const getGEZoom = (level) => {
@@ -50,7 +48,23 @@ const MapScale = ({ zoom }) => {
     return formatZoomRange(range);
   };
 
-  return <Scale>{getGEZoom(zoom)}</Scale>;
+  /**
+   * Calculate scale padding depending on zoom level.
+   * Applies only for zoom levels bigger or equal to 12.
+   * @param {Number} level Current GMap zoom level
+   */
+  const getScalePadding = (level) => {
+    if (level === 20) {
+      return 90;
+    }
+    // Reverse the number, for example 19 becomes 90 minus 10
+    if (level >= 12) {
+      return parseFloat(level.toString().split('').reverse().join('')) * Math.sign(level) - 11;
+    }
+    return false;
+  };
+
+  return <Scale $padding={getScalePadding(zoom)}>{getGEZoom(zoom)}</Scale>;
 };
 
 MapScale.propTypes = {
