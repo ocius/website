@@ -29,8 +29,14 @@ const MapScale = ({ zoom }) => {
    * @param {Number} range LookAt range
    */
   const formatZoomRange = (range) => {
-    if (range < 1000) {
-      return `<1000m`;
+    // Round tens to the nearest ten
+    if (range < 100) {
+      return `${Math.round(range / 10) * 10}m`;
+    }
+
+    // Round hundreds to the nearest hundred
+    if (range >= 100 && range <= 1000) {
+      return `${Math.round(range / 100) * 100}m`;
     }
 
     // Convert to nautical miles
@@ -43,8 +49,7 @@ const MapScale = ({ zoom }) => {
    * @param {Number} level Current GMap zoom level
    */
   const getGEZoom = (level) => {
-    let range = 35200000 / 2 ** level;
-    if (range < 300) range = 300;
+    const range = 35200000 / 2 ** level;
     return formatZoomRange(range);
   };
 
