@@ -79,7 +79,8 @@ const WindRose = ({ windDirection, windSpeed, currentDirection, currentSpeed }) 
           style={{
             height: '100%',
             width: '100%',
-            transform: `rotate(${windDirection + 90}deg)`,
+            // Rotated 180 degrees -> raw data is bearing blowing from.
+            transform: `rotate(${windDirection - 90}deg)`,
             position: 'absolute',
             top: 0,
             left: 0,
