@@ -76,9 +76,9 @@ const StatusNames = {
   Sail_mode: 'Sail Mode',
   Wp_dist: 'WP Dist',
   Next_wp: 'Next WP',
-  Air_temp: 'Air Temperature',
-  Water_depth: 'Water Depth',
+  Air_temp: 'Air Temp',
   Water_temp: 'Water Temp',
+  Water_depth: 'Water Depth',
   Boat_speed: 'Boat Speed',
   Throttle: 'Throttle',
   // Num_Sats: 'Num Sats'
