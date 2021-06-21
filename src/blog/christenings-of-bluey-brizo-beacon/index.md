@@ -5,12 +5,12 @@ author: "Cameron Moses"
 featuredImage: image01.png
 ---
 
-**Christenings 
-of 
-BLUEY BRIZO BEACON 
-Ocius Bluebottle USVs 18 June 2021 
-BLUEY - RADM Pete Quinn 
-BRIZO (Greek Goddess of Mariners) - Ulladula Shareholder Michelle Moulos 
+**Christenings <br>
+of <br>
+BLUEY BRIZO BEACON <br>
+Ocius Bluebottle USVs 18 June 2021 <br>
+BLUEY - RADM Pete Quinn <br>
+BRIZO (Greek Goddess of Mariners) - Ulladula Shareholder Michelle Moulos <br>
 BEACON - Senator Holly Hughes**
 
 Dear Friends, Shareholders and Colleagues of Ocius,
