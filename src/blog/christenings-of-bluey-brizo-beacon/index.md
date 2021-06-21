@@ -34,11 +34,11 @@ They will join Bluebottles BETH and BEACON in Darwin by Sept and we look forward
 Robert Dane
 
 
-![crowd](image01.jpg)
+![Crowd during the christening](image01.jpg)
 ![Rear Admiral Quinn](image02.jpg)
 ![Robert Dane](image03.jpg)
-![Senator Hollie](image04.jpg)
+![Senator Hollie Hughes](image04.jpg)
 ![Rear Admiral Quinn and Senator Hollie](image05.jpg)
 ![Michelle Moulos](image06.jpg)
-![Engineers](image07.jpg)
+![Engineers Tom Grimes, George Richardson and Harry Hall](image07.jpg)
 ![Munster Boats](image08.jpg)
