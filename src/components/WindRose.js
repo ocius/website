@@ -63,7 +63,7 @@ const WindRose = ({ windDirection, windSpeed, currentDirection, currentSpeed }) 
    * Add knots to the end - 2.5knots.
    * @param {String} speed Speed string to be formatted
    */
-  const formatSpeed = (speed) => `${parseFloat(speed).toFixed(2)} knt`;
+  const formatSpeed = (speed) => `${parseFloat(speed).toFixed(1)} knt`;
 
   // Make proper formatting of speed
   const formattedWindSpeed = formatSpeed(convertMsToKnots(windSpeed));
